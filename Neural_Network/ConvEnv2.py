@@ -30,10 +30,10 @@ x_val = f3[:,:,:]
 encoding_dim = 60
 #------Encoder------
 encoder_input = Input(shape=(40,200,1),name='original_data')
-e = Conv2D(8,(5,5), activation='elu', padding='same', strides=(2,2))(encoder_input)
-e = Conv2D(16,(5,5), activation='elu', padding='same', strides=(2,2))(e)
-e = Conv2D(32,(5,5), activation='elu', padding='same', strides=(2,2))(e)
-e = Conv2D(64,(5,5), padding='same', activation='elu', strides=(2,2))(e)
+e = Conv2D(8,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(encoder_input)
+e = Conv2D(16,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(e)
+e = Conv2D(32,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(e)
+e = Conv2D(64,(5,5), kernel_initilizer='zeros',padding='same', activation='elu', strides=(2,2))(e)
 l = Flatten()(e)
 encoder_output = Dense(encoding_dim, activation='elu')(l)
 
