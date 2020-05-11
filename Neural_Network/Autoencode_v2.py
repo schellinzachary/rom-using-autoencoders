@@ -8,12 +8,13 @@ import scipy.io as sio
 from tensorflow import keras
 from keras.layers import Input, Dense
 from keras.models import Model
+from keras import regularizers
 
 
 #load data
-f1 = sio.loadmat('A:/Desktop/BA/data_sod/sod241Kn0p00001/f.mat')
-f2 = sio.loadmat('A:/Desktop/BA/data_sod/sod25Kn0p00001/f.mat')
-f3 = sio.loadmat('A:/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f1 = sio.loadmat('/home/zachary/BA/data_sod/sod241Kn0p00001/f.mat')
+f2 = sio.loadmat('/home/zachary/BA/data_sod/sod25Kn0p00001/f.mat')
+f3 = sio.loadmat('/home/zachary/BA/data_sod/sod25Kn0p01/f.mat')
 
 f1 = f1['f']
 f2 = f2['f']
@@ -25,8 +26,8 @@ t = shape[0]
 v = shape[1] 
 x = shape[2] 
 #dividing snapshots into different times for training
-x_train = f1[:,:,:]
-x_test = f2[:,:,:]
+x_train = f2[:,:,:]
+x_test = f1[:,:,:]
 x_val = f3[:,:,:]
 
 #Data Normalization as Proposed by Section 6.2 Sandia
@@ -42,16 +43,16 @@ encoding_dim=32
 #input placeholder
 input_img = Input(shape=(x*v,))     
 print(input_img.shape)
-encoded = Dense(128, activation='relu')(input_img)
+encoded = Dense(128, activation='relu',activity_regularizer=regularizers.l1(10e-5))(input_img)
 print(encoded.shape)
-encoded = Dense(64, activation='relu')(encoded)
+encoded = Dense(64, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
 print(encoded.shape)
-encoded = Dense(encoding_dim, activation='relu')(encoded)
+encoded = Dense(encoding_dim, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
 (encoded.shape)
 #"lossy" recontruction of input
-decoded = Dense(64, activation='relu')(encoded)
-decoded = Dense(128, activation='relu')(decoded)
-decoded = Dense(v*x, activation='relu')(decoded)
+decoded = Dense(64, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
+decoded = Dense(128, activation='relu',activity_regularizer=regularizers.l1(10e-5))(decoded)
+decoded = Dense(v*x, activation='relu',activity_regularizer=regularizers.l1(10e-5))(decoded)
 
 autoencoder = Model(input_img, decoded)
 #-----------------------Encoder model-----------------------------------
@@ -72,12 +73,14 @@ decoder = Model(input = encoded_input, output = decoder_layer3(decoder_layer2(de
 
 
 #----------------------------------------------------------------------
-autoencoder.compile(optimizer='adadelta', loss='mean_absolute_percentage_error',metrics=['acc'])
+autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy',metrics=['acc'])
 
+callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', patience=3)
 
 history = autoencoder.fit(x_train, x_train,
-                epochs=100,
-                batch_size=20,
+                epochs=400,
+                #callbacks = ['callback'],
+                batch_size=256,
                 shuffle=True,
                 validation_data=(x_test,x_test))
                 
@@ -109,17 +112,17 @@ plt.show()
 
 
 
-encoded_imgs = encoder.predict(x_test)
-decoded_imgs = decoder.predict(encoded_imgs)
-sio.savemat('A:/Desktop/BA/data_sod/sod25Kn0p00001auto/f.mat', mdict={'fa': decoded_imgs})  
+#encoded_imgs = encoder.predict(x_test)
+#decoded_imgs = decoder.predict(encoded_imgs)
+#sio.savemat('A:/Desktop/BA/data_sod/sod25Kn0p00001auto/f.mat', mdict={'fa': decoded_imgs})  
               
-encoded_imgs = encoder.predict(x_train)
-decoded_imgs = decoder.predict(encoded_imgs)
-sio.savemat('A:/Desktop/BA/data_sod/sod241Kn0p00001auto/f.mat', mdict={'fa': decoded_imgs})
+#encoded_imgs = encoder.predict(x_train)
+#decoded_imgs = decoder.predict(encoded_imgs)
+#sio.savemat('A:/Desktop/BA/data_sod/sod241Kn0p00001auto/f.mat', mdict={'fa': decoded_imgs})
 
-encoded_imgs = encoder.predict(x_val)
-decoded_imgs = decoder.predict(encoded_imgs)
-sio.savemat('A:/Desktop/BA/data_sod/sod25Kn0p01auto/f.mat', mdict={'fa': decoded_imgs})
+#encoded_imgs = encoder.predict(x_val)
+#decoded_imgs = decoder.predict(encoded_imgs)
+#sio.savemat('A:/Desktop/BA/data_sod/sod25Kn0p01auto/f.mat', mdict={'fa': decoded_imgs})
 
 
 
@@ -133,7 +136,7 @@ for i in range(n):
     plt.imshow(x_test[i+20].reshape(v,x))
     plt.gray()
     ax = plt.subplot(2,n,i + 1 + n)
-    plt.imshow(decoded_imgs[i].reshape(v,x))
+    plt.imshow(decoded[i].reshape(v,x))
     plt.gray()
 plt.show()
 

@@ -8,10 +8,12 @@ from keras.layers import Input, Dense, Conv2D, Conv2DTranspose, Flatten, Reshape
 from keras.models import Model, Sequential
 from keras import backend as K
 import scipy.io as sio
+from keras import regularizers
+
 #load data
-f1 = sio.loadmat('A:/Desktop/BA/data_sod/sod241Kn0p00001/f.mat')
-f2 = sio.loadmat('A:/Desktop/BA/data_sod/sod25Kn0p00001/f.mat')
-f3 = sio.loadmat('A:/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f1 = sio.loadmat('/home/zachary/BA/data_sod/sod241Kn0p00001/f.mat')
+f2 = sio.loadmat('/home/zachary/BA/data_sod/sod25Kn0p00001/f.mat')
+f3 = sio.loadmat('/home/zachary/BA/data_sod/sod25Kn0p01/f.mat')
 
 f1 = f1['f']
 f2 = f2['f']
@@ -27,13 +29,13 @@ x_train = f1[:,:,:]
 x_test = f2[:,:,:]
 x_val = f3[:,:,:]
 
-encoding_dim = 60
+encoding_dim = 5
 #------Encoder------
 encoder_input = Input(shape=(40,200,1),name='original_data')
-e = Conv2D(8,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(encoder_input)
-e = Conv2D(16,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(e)
-e = Conv2D(32,(5,5), kernel_initilizer='zeros',activation='elu', padding='same', strides=(2,2))(e)
-e = Conv2D(64,(5,5), kernel_initilizer='zeros',padding='same', activation='elu', strides=(2,2))(e)
+e = Conv2D(8,(5,5), activation='elu', padding='same', strides=(2,2))(encoder_input)
+e = Conv2D(16,(5,5),activation='elu', padding='same', strides=(2,2))(e)
+e = Conv2D(32,(5,5), activation='elu', padding='same', strides=(2,2))(e)
+e = Conv2D(64,(5,5), padding='same', activation='elu', strides=(2,2))(e)
 l = Flatten()(e)
 encoder_output = Dense(encoding_dim, activation='elu')(l)
 
@@ -45,8 +47,8 @@ l = Dense(125, activation = 'elu')(decoder_input)
 d = Reshape((5,25,1))(l)
 d = Conv2DTranspose(64,(5,5), activation='elu', padding= 'same', strides=(2,2))(d)
 d = Conv2DTranspose(32,(5,5), activation = 'elu', padding= 'same', strides=(2,2))(d)
-d = Conv2DTranspose(16,(5,5), activation='elu', padding='same')(d)
-decoder_output = Conv2DTranspose(1,(5,5), activation='sigmoid', padding='same', strides=(2,2))(d)
+d = Conv2DTranspose(16,(5,5), activation='elu', padding='same',strides=(2,2))(d)
+decoder_output = Conv2DTranspose(1,(5,5), activation='elu', padding='same')(d)
 
 decoder = Model(decoder_input, decoder_output, name='decoder')
 decoder.summary()
@@ -57,12 +59,16 @@ encoded_img = encoder(autoencoder_input)
 decoded_img = decoder(encoded_img)
 autoencoder = Model(autoencoder_input, decoded_img, name='autoencoder')
 autoencoder.summary()
-autoencoder.compile(optimizer='adadelta', loss='mean_absolute_percentage_error',metrics=["acc"])
+autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy',metrics=["acc"])
 autoencoder.summary()
 
 #keras.utils.plot_model(autoencoder, 'autoencoder.png')
 
 import numpy as np
+
+
+#x_train = x_train - np.mean(x_train,axis=1)
+#x_test = x_test - np.mean(x_test,axis=1)
 
 x_train = (x_train - np.amin(x_train))/(np.amax(x_train)-np.amin(x_train))
 x_test = (x_test - np.amin(x_test))/(np.amax(x_test)-np.amin(x_test))
@@ -72,9 +78,16 @@ x_test = np.reshape(x_test, (len(x_test),40,200,1))
 x_val = np.reshape(x_train, (len(x_train),40,200,1))
 x_val = np.reshape(x_test, (len(x_test),40,200,1))
 
+callback = [tf.keras.callbacks.EarlyStopping(
+                            monitor='val_loss',
+                            patience=30,
+                            restore_best_weights= True,
+                            min_delta = 0.01)]
+
 history = autoencoder.fit(x_train,x_train,
                             epochs=400,
-                            batch_size=128,
+                            callbacks = callback,
+                            batch_size=100,
                             shuffle=True,
                             validation_split=0.25)
                 
@@ -105,17 +118,17 @@ plt.show()
 decoded_imgs = autoencoder.predict(x_val)
 
 
-n = 10
+n = 2
 plt.figure(figsize=(20, 4))
 for i in range(n):
     # display original
     ax = plt.subplot(2, n, i+1)
-    plt.imshow(x_test[i].reshape(40, 200))
+    plt.imshow(x_test[-i].reshape(40, 200))
     plt.colorbar()
 
     # display reconstruction
     ax = plt.subplot(2, n, i + n+1)
-    plt.imshow(decoded_imgs[i].reshape(40, 200))
+    plt.imshow(decoded_imgs[-i].reshape(40, 200))
     plt.colorbar()
 
 plt.show()
