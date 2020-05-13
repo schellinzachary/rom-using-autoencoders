@@ -5,7 +5,6 @@ import matplotlib.pyplot as plt
 import tensorflow as tf
 import numpy as np
 import scipy.io as sio
-from tensorflow import keras
 from keras.layers import Input, Dense
 from keras.models import Model
 from keras import regularizers
@@ -26,9 +25,9 @@ t = shape[0]
 v = shape[1] 
 x = shape[2] 
 #dividing snapshots into different times for training
-x_train = f2[:,:,:]
-x_test = f1[:,:,:]
-x_val = f3[:,:,:]
+x_train = f2
+x_test = f1
+x_val = f3
 
 #Data Normalization as Proposed by Section 6.2 Sandia
 x_train = (x_train - np.amin(x_train))/(np.amax(x_train)-np.amin(x_train))
@@ -41,14 +40,11 @@ x_val = x_val.reshape((len(x_val), np.prod(x_val.shape[1:])))
 encoding_dim=32
 
 #input placeholder
-input_img = Input(shape=(x*v,))     
-print(input_img.shape)
+input_img = Input(shape=(x*v,))
 encoded = Dense(128, activation='relu',activity_regularizer=regularizers.l1(10e-5))(input_img)
-print(encoded.shape)
 encoded = Dense(64, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
-print(encoded.shape)
 encoded = Dense(encoding_dim, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
-(encoded.shape)
+
 #"lossy" recontruction of input
 decoded = Dense(64, activation='relu',activity_regularizer=regularizers.l1(10e-5))(encoded)
 decoded = Dense(128, activation='relu',activity_regularizer=regularizers.l1(10e-5))(decoded)
@@ -91,15 +87,17 @@ print('Test loss:', evaluate[0])
 print('Test accuracy:', evaluate[1])
 
 # Plot training & validation accuracy values
+plt.figure()
 plt.plot(history.history['acc'])
 plt.plot(history.history['val_acc'])
 plt.title('Model accuracy')
 plt.ylabel('Accuracy')
 plt.xlabel('Epoch')
 plt.legend(['Train', 'Test'], loc='upper left')
-plt.show()
+
 
 # Plot training & validation loss values
+plt.figure()
 plt.plot(history.history['loss'])
 plt.plot(history.history['val_loss'])
 plt.title('Model loss')
