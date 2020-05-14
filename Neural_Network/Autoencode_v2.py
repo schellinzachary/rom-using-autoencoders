@@ -109,7 +109,6 @@ plt.show()
 
 
 
-
 #encoded_imgs = encoder.predict(x_test)
 #decoded_imgs = decoder.predict(encoded_imgs)
 #sio.savemat('A:/Desktop/BA/data_sod/sod25Kn0p00001auto/f.mat', mdict={'fa': decoded_imgs})  
