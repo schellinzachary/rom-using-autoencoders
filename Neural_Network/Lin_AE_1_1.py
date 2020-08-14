@@ -15,23 +15,26 @@ import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 200
-BATCH_SIZE = 2
-INPUT_DIM = 25*200
-HIDDEN_DIM = 500
+N_EPOCHS = 6000
+BATCH_SIZE = 1000
+INPUT_DIM = 40
+HIDDEN_DIM = 20
 LATENT_DIM = 5
-lr = 1e-5
+lr = 1e-3
 
 
 
 #load data
-f1 = np.load('preprocessed_samples_lin.npy')
-f1 = tensor(f1, dtype=torch.float).to(device)
-f1 = torch.reshape(f1,(40,200*25))
-train_in = f1[0:30]
-val_in = f1[31:39]
+f = np.load('preprocessed_samples_lin.npy')
+np.random.shuffle(f)
+f = tensor(f, dtype=torch.float).to(device)
+
+train_in = f[0:3999]
+val_in = f[4000:4999]
+
+
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
-test_iterator = DataLoader(val_in, batch_size= 2)
+test_iterator = DataLoader(val_in)
 
 
 class Encoder(nn.Module):
@@ -125,7 +128,7 @@ def train():
 
         optimizer.step()
 
-    return train_loss
+    return train_loss, x, predicted
 
 def test():
 
@@ -150,27 +153,45 @@ def test():
         
         print('Epoch :',step, 'train_loss:',train_loss,':)')
 
+test_losses = []
+val_losses = []
+
 for n_iter in range(N_EPOCHS):
 
-    train_loss = train()
+    train_loss, x, predicted = train()
     test_loss = test()
 
     #save and print the loss
-    train_loss /= len(train_iterator)
-    test_loss /= len(test_iterator)
+    train_loss /= (len(train_iterator)/BATCH_SIZE)
+    
+    train_losses.append(train_loss)
+    test_losses.append(test_loss)
 
     print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
 
 
-# plt.figure()
-# plt.semilogy(np.arange(5*step+5), train_losses, label='Training loss')
-# plt.legend(loc='upper right')
-# plt.xlabel('trainstep')
-# plt.ylabel('loss')
-# plt.show()
+    if n_iter % 1000 == 0:
+
+        x = x.to('cpu')
+        predicted = predicted.to('cpu')
+        data = x.detach().numpy()
+        predict = predicted.detach().numpy()
+
+        plt.plot(x[10], label='Original')
+        plt.plot(predict[10], label='Predicted')
+        plt.legend()
+        plt.show()
+
+plt.figure()
+plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+plt.legend(loc='upper right')
+plt.xlabel('trainstep')
+plt.ylabel('loss')
+plt.show()
+
 
 
 
 #save the models state dictionary for inference
-model.eval()
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT.pt')
