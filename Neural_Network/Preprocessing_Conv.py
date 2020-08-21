@@ -1,5 +1,5 @@
 '''
-Data-Preprocessing
+Data-Preprocessing Convolutional
 '''
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -11,51 +11,48 @@ data_set = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
 
 
 dataset  = data_set['f']
-print(dataset.shape)
-
-dataset = np.reshape(dataset,(40,25,200),order='A')
-
-
-for i in range(40):
-    dataset[i] = dataset[i]/np.linalg.norm(dataset)
+#dataset = np.array(dataset,order='C')
+dataset = np.reshape(dataset,(40,25,200),order='C')
 
 
-for i in range(40):
-    dataset[i] = dataset[i] - np.mean(dataset[i], axis=1,keepdims=True)
+plt.imshow(dataset[1,:,:])
+plt.xlabel('x')
+plt.ylabel('t')
+plt.colorbar()
+plt.show()
+
+
+#Normalizing the Input
+
+dataset = (dataset - np.min(dataset)) / ( np.max(dataset) - np.min(dataset) )
+
+
+#dataset = np.expand_dims(dataset, axis=1)
+
+#np.save('preprocessed_samples_conv',dataset)
 
 
 
-np.random.shuffle(dataset)
-
-dataset = np.expand_dims(dataset, axis=1)
-
-np.save('preprocessed_samples_conv',dataset)
 
 
-# fps = 30
-# nSeconds = 5
+#First set up the figure, the axis, and the plot element we want to animate
+fig = plt.figure( )
+
+a = dataset[0]
+im = plt.imshow(a)
+
+def animate_func(i):
+
+    im.set_array(dataset[i])
+    return [im]
+
+anim = animation.FuncAnimation(
+                               fig, 
+                               animate_func, 
+                               #frames = nSeconds * fps,
+                               #interval = 1000 / fps, # in ms
+                               )
 
 
-# # First set up the figure, the axis, and the plot element we want to animate
-# fig = plt.figure( )
-
-# a = dataset[0]
-# im = plt.imshow(a)
-
-# def animate_func(i):
-#     if i % fps == 0:
-#         print( '.', end ='' )
-
-#     im.set_array(dataset[i])
-#     return [im]
-
-# anim = animation.FuncAnimation(
-#                                fig, 
-#                                animate_func, 
-#                                frames = nSeconds * fps,
-#                                interval = 1000 / fps, # in ms
-#                                )
-
-
-# plt.show()
+plt.show()
 

@@ -5,6 +5,7 @@ Convolutional Autoencoder v1.2
 import numpy as np
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 from torch.optim import Adam
 import torch.tensor as tensor
 from torch.utils.data import DataLoader
@@ -14,7 +15,7 @@ import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 500
+N_EPOCHS = 6000
 BATCH_SIZE = 2
 INPUT_DIM = 25*200
 HIDDEN_DIM = 500
@@ -26,8 +27,8 @@ lr = 1e-5
 #load data
 f1 = np.load('preprocessed_samples_conv.npy')
 f1 = tensor(f1, dtype=torch.float).to(device)
-train_in = f1[0:30]
-val_in = f1[31:39]
+train_in = f1[0:19]
+val_in = f1[20:24]
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
 test_iterator = DataLoader(val_in, batch_size= 2)
 
@@ -37,13 +38,13 @@ class Encoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, lat_dim):
         super(Encoder, self).__init__()
 
-        self.conv1 = nn.Conv2d(1,4,(5,5),stride=(2,3))
+        self.conv1 = nn.Conv2d(1,8,(5,5),stride=(2,3))
         #11x66x8
-        self.conv2 = nn.Conv2d(4,8,(5,6),stride=(2,2))
+        self.conv2 = nn.Conv2d(8,16,(5,6),stride=(2,2))
         #4x31x16
-        self.conv3 = nn.Conv2d(8,16,(2,5),stride=(2,2))
+        self.conv3 = nn.Conv2d(16,32,(2,5),stride=(2,2))
         #2x14x16
-        self.linear1 = nn.Linear(in_features=448, out_features=5)
+        self.linear1 = nn.Linear(in_features=896, out_features=5)
         self.activation_out = nn.LeakyReLU()
 
     def forward(self, x):
@@ -60,16 +61,17 @@ class Decoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, lat_dim):
         super(Decoder, self).__init__()
 
-        self.linear2 = nn.Linear(in_features=5, out_features=448)
-        self.conv4 = nn.ConvTranspose2d(16,8,(2,5),stride=(2,2))
-        self.conv5 = nn.ConvTranspose2d(8,4,(5,6),stride=(2,2))
-        self.conv6 = nn.ConvTranspose2d(4,1,(5,5),stride=(2,3))
+        self.linear2 = nn.Linear(in_features=5, out_features=896)
+        self.conv4 = nn.ConvTranspose2d(32,16,(2,5),stride=(2,2))
+        self.conv5 = nn.ConvTranspose2d(16,8,(5,6),stride=(2,2))
+        self.conv6 = nn.ConvTranspose2d(8,1,(5,5),stride=(2,3))
         self.activation_out = nn.LeakyReLU()
+        self.activation_out1 = nn.Sigmoid()
 
     def forward(self, x):
         x = self.activation_out(self.linear2(x))
         dim = x.shape[0]
-        x = torch.reshape(x,[dim,16,2,14])
+        x = torch.reshape(x,[dim,32,2,14])
         x = self.activation_out(self.conv4(x))
         x = self.activation_out(self.conv5(x))
         x = self.activation_out(self.conv6(x))
@@ -101,7 +103,7 @@ model = Autoencoder(encoder, decoder).to(device)
     
 optimizer = Adam(params=model.parameters(), lr=lr)
 
-loss_crit = nn.L1Loss()
+loss_crit  = nn.MSELoss()
 train_losses = []
 val_losses = []
 
@@ -119,7 +121,7 @@ def train():
 
         predicted = model(x)
 
-        loss = loss_crit(x,predicted)
+        loss = loss_crit(predicted, x)
 
         loss.backward()
         train_loss += loss.item()
@@ -151,6 +153,9 @@ def test():
         
         print('Epoch :',step, 'train_loss:',train_loss,':)')
 
+train_losses = []
+test_losses = []
+
 for n_iter in range(N_EPOCHS):
 
     train_loss = train()
@@ -160,18 +165,24 @@ for n_iter in range(N_EPOCHS):
     train_loss /= len(train_iterator)
     test_loss /= len(test_iterator)
 
+    train_losses.append(train_loss)
+    test_losses.append(test_loss)
+
     print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
 
 
-# plt.figure()
-# plt.semilogy(np.arange(5*step+5), train_losses, label='Training loss')
-# plt.legend(loc='upper right')
-# plt.xlabel('trainstep')
-# plt.ylabel('loss')
-# plt.show()
+plt.figure()
+plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+plt.legend(loc='upper right')
+plt.xlabel('trainstep')
+plt.ylabel('loss')
+plt.show()
 
 
 
 #save the models state dictionary for inference
 model.eval()
-torch.save(model.state_dict(),'Conv_AE_STATE_DICT')
+torch.save(model.state_dict(),'Conv_AE_STATE_DICT.pt')
+
+ 

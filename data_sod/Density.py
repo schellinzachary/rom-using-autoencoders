@@ -6,15 +6,17 @@ Density
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
-plt.rc('xtick', labelsize=17) 
-plt.rc('ytick', labelsize=17) 
+#plt.rc('text', usetex=True)
+#plt.rc('font', family='serif')
+#plt.rc('xtick', labelsize=17) 
+#plt.rc('ytick', labelsize=17) 
 
 
 
 datalocation = ['sod25Kn0p01/f.mat','sod25Kn0p00001/f.mat','sod241Kn0p00001/f.mat']
-datalocation2 = ['A:/Desktop/BA/data_sod/sod25Kn0p01auto/f.mat','A:/Desktop/BA/data_sod/sod25Kn0p00001auto/f.mat','A:/Desktop/BA/data_sod/sod241Kn0p00001auto/f.mat']
+datalocation2 = ['/home/zachary/BA/data_sod/sod25Kn0p01auto/f.mat',
+                '/home/zachary/BA/data_sod/sod25Kn0p00001auto/f.mat',
+                '/home/zachary/BA/data_sod/sod241Kn0p00001auto/f.mat']
 q = 1 #Plot variable
 fig, (ax1,ax2,ax3) = plt.subplots(3, sharex = True, sharey=True)
 

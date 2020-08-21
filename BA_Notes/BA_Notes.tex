@@ -7,6 +7,8 @@
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.8}
+\usepackage{cleveref}
+\usepackage{graphicx}
 
 \begin{document}
 	\section{Vocabulary Statistics}
@@ -71,10 +73,19 @@ A first working model of a linear autoencoder is proposed and evaluated on the d
 	f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
 	\end{bmatrix}\]
 During training every 1000 epochs a sample against its prediction was printed in order to link the value of the L1-Loss to a prediction. Using this method a first verification of the model was achieved. Continuing the search for any possible shortage of the models performance, that this method could not cover, eg. samples lying between every 1000 sample, that the model was not able to reconstruct correctly, a second verification process is conducted. 
-\begin{tikzpicture}
-	\begin{axis}[ybar, bar, width=2pt]
-	\pgfplotstableread{/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt}\mydata;
-	\addplot table[x=x, y=y] {\mydata};
-	\end{axis}
-\end{tikzpicture}   
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{Error_samples_v1_1.png}
+	\caption{Error of each sample}
+	\label{Fig:error_sample}
+\end{figure}
+Inference is conducted after training using the same, but not shuffled input data. \Cref{Fig: error_sample} shows the error of every sample from the inference run. The largest mistake can be observed in sample 500. 
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.49\textwidth]{Sample500_v1_1.png}
+	\includegraphics[width=.49\textwidth]{Density_last_v1_1.png}
+	\caption{Error of each sample}
+	\label{Fig:Errormore}
+\end{figure}
+Absolute Error for density is 0.59!!!!
 \end{document}

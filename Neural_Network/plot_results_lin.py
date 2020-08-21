@@ -9,7 +9,7 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
 
 # ## for Palatino and other serif fonts use:
 # #rc('font',**{'family':'serif','serif':['Palatino']})
@@ -85,7 +85,7 @@ decoder = Decoder(INPUT_DIM,HIDDEN_DIM,LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT.pt',map_location='cpu'))
+model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1_v2.pt',map_location='cpu'))
 model.eval()
 
 # load original data
@@ -120,9 +120,9 @@ predict = predict.detach().numpy()
 
 # # plot code
 
-# print(z.shape)
-# plt.plot(np.arange(5000),z[:,0].detach().numpy())
-# plt.show()
+print(z.shape)
+plt.plot(np.arange(5000),z[:,0].detach().numpy())
+plt.show()
 
 # #Visualizing
 
@@ -160,29 +160,35 @@ def visualize(c,predict):
 
 # #Bad Mistakes
 
-# mistake_list = []
-# for i in range(4999):
-#     mistake = np.sum(np.abs(c[i] - predict[i]))
-#     mistake_list.append(mistake)
+mistake_list = []
+for i in range(4999):
+    mistake = np.sum(np.abs(c[i] - predict[i]))
+    mistake_list.append((i,mistake))
+
+zip(mistake_list)
 
 
-# index=mistake_list.index(np.max(mistake_list))
+#index=mistake_list.index(np.max(mistake_list[0,:]))
 
 
-# plt.plot(c[500])
-# plt.plot(predict[500])
-# plt.show()
+plt.plot(c[900],'-o''m',label='$Original$')
+plt.plot(predict[900],'-v''k',label='$Prediction$')
+plt.xlabel('$Velocity$')
+plt.ylabel('$Probability$')
+plt.legend()
+plt.show()
 
+# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_c.txt',c[500])
+# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
+# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 
-# np.save('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin',mistake_list)
-
-# plt.bar(np.arange(4999),mistake_list,label='$Absolute Error$')
-# plt.legend()
-# plt.xlabel('$Samples$')
-# plt.ylabel('$Absolute Error$')
-# plt.grid()
-# plt.tight_layout(pad=0.2)
-# plt.show()
+plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],label='$Absolute Error$')
+plt.legend()
+plt.xlabel('$Samples$')
+plt.ylabel('$Absolute Error$')
+plt.grid()
+plt.tight_layout()
+plt.show()
 
 #Visualizing Density
 
@@ -203,6 +209,11 @@ rho_s, rho_p = density(c,predict)
 
 visualize(rho_s,rho_p)
 
-plt.plot(rho_s[-1])
-plt.plot(rho_p[-1])
+print('mis', np.sum(np.abs(rho_s[-1] - rho_p[-1])))
+
+plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
+plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
+plt.legend()
+plt.xlabel('$Space$')
+plt.ylabel('$Density$')
 plt.show()

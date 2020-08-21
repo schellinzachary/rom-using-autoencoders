@@ -35,7 +35,6 @@ for i in datalocation:
                 c[j,n:n+x]=f[i,j,:]
     
         n = n + x
-
     #SVD
     print(c.shape)
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues

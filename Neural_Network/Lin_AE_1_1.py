@@ -15,12 +15,12 @@ import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 6000
-BATCH_SIZE = 1000
+N_EPOCHS = 400
+BATCH_SIZE = 32
 INPUT_DIM = 40
 HIDDEN_DIM = 20
 LATENT_DIM = 5
-lr = 1e-3
+lr = 1e-7
 
 
 
@@ -35,7 +35,7 @@ val_in = f[4000:4999]
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
 test_iterator = DataLoader(val_in)
-
+print(len(train_iterator))
 
 class Encoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, lat_dim):
@@ -107,6 +107,8 @@ loss_crit = nn.L1Loss()
 train_losses = []
 val_losses = []
 
+model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1_v1.pt'))
+
 def train():
 
     model.train()
@@ -162,7 +164,7 @@ for n_iter in range(N_EPOCHS):
     test_loss = test()
 
     #save and print the loss
-    train_loss /= (len(train_iterator)/BATCH_SIZE)
+    train_loss /= len(train_iterator)
     
     train_losses.append(train_loss)
     test_losses.append(test_loss)
@@ -177,8 +179,8 @@ for n_iter in range(N_EPOCHS):
         data = x.detach().numpy()
         predict = predicted.detach().numpy()
 
-        plt.plot(x[10], label='Original')
-        plt.plot(predict[10], label='Predicted')
+        plt.plot(x[-1], label='Original')
+        plt.plot(predict[-1], label='Predicted')
         plt.legend()
         plt.show()
 
@@ -194,4 +196,4 @@ plt.show()
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT.pt')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_1_v2.pt')

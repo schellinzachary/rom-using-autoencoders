@@ -5,10 +5,10 @@ V-X plot over time
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
-plt.rc('xtick', labelsize=15)
-plt.rc('ytick', labelsize=15)
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
+#plt.rc('xtick', labelsize=15)
+#plt.rc('ytick', labelsize=15)
+#plt.rc('text', usetex=True)
+#plt.rc('font', family='serif')
 
 fig , (ax1,ax2,ax3) = plt.subplots(nrows = 3)
 
