@@ -12,11 +12,13 @@ import torch.tensor as tensor
 from torch.utils.data import DataLoader
 import matplotlib.pyplot as plt
 import scipy.io as sio
+from random import randint
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+#device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 
-N_EPOCHS = 800
-BATCH_SIZE = 32
+N_EPOCHS = 600
+BATCH_SIZE = 16
 INPUT_DIM = 40
 LATENT_DIM = 5
 lr = 1e-3
@@ -24,12 +26,14 @@ lr = 1e-3
 
 
 #load data
-f = np.load('preprocessed_samples_lin.npy')
+f = np.load('preprocessed_samples_lin_substract50.npy')
+
+
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
-train_in = f[0:3999]
-val_in = f[4000:4999]
+train_in = f[0:2999]
+val_in = f[3000:3749]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -72,9 +76,6 @@ class Autoencoder(nn.Module):
         predicted = self.dec(z)
         return predicted
 
-class Swish(nn.Module):
-    def forward(self, x):
-        return x * torch.sigmoid(x)
 
 
 #encoder
@@ -86,8 +87,6 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-#model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5.pt'))
-   
 optimizer = Adam(params=model.parameters(), lr=lr)
 
 loss_crit = nn.MSELoss()
@@ -109,15 +108,14 @@ def train():
 
         predicted = model(x)
 
-        loss = loss_crit(x,predicted)
+        loss = loss_crit(predicted,x)
 
         loss.backward()
         train_loss += loss.item()
 
         optimizer.step()
 
-    return train_loss, x, predicted
-
+    return train_loss
 def test():
 
     model.eval()
@@ -131,22 +129,28 @@ def test():
 
             predicted = model(x)
 
-            loss = loss_crit(x,predicted)
+            loss = loss_crit(predicted,x)
             test_loss += loss.item()
 
         return test_loss
 
-
-
-        
-        print('Epoch :',step, 'train_loss:',train_loss,':)')
-
 test_losses = []
 val_losses = []
 
-for n_iter in range(N_EPOCHS):
+#checkpoint Load
+# checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5.pt')
+# model.load_state_dict(checkpoint['model_state_dict'])
+# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+# epoch_o = checkpoint['epoch']
+# train_loss = checkpoint['train_loss']
+# test_loss = checkpoint['test_loss']
+# train_losses = checkpoint['train_losses']
+# test_losses = checkpoint['test_losses']
 
-    train_loss, x, predicted = train()
+
+for epoch in range(N_EPOCHS):
+
+    train_loss = train()
     test_loss = test()
 
     #save and print the loss
@@ -155,35 +159,47 @@ for n_iter in range(N_EPOCHS):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
+    print(f'Epoch {epoch}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
 
 
-    # if n_iter % 20 == 0:
+    # if epoch % 100 == 0:
 
+    #     i = randint(0,999)
+    #     x = val_in[i].to(device)
+
+    #     predicted = model(x)
     #     x = x.to('cpu')
     #     predicted = predicted.to('cpu')
     #     data = x.detach().numpy()
     #     predict = predicted.detach().numpy()
-
-    #     plt.plot(x[-1], label='Original')
-    #     plt.plot(predict[-1], label='Predicted')
+        
+    #     plt.plot(x, label='Original')
+    #     plt.plot(predict, label='Predicted')
     #     plt.legend()
     #     plt.show()
 
 plt.figure()
-plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
-plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+plt.semilogy(np.arange(600), train_losses, label='Training loss')
+plt.semilogy(np.arange(600), test_losses, label='Test loss')
 plt.legend(loc='upper right')
 plt.xlabel('trainstep')
 plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_Lin_0_9_L5.npy',train_losses)
-np.save('Test_Loss_Lin_0_9_L5.npy',test_losses)
+np.save('Train_Loss_Lin_0_9_L5_substr50.npy',train_losses)
+np.save('Test_Loss_Lin_0_9_L5_substr50.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_0_9_L5.pt')
+torch.save({
+    'epoch': epoch,
+    'model_state_dict':model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'train_loss': train_loss,
+    'test_loss': test_loss,
+    'train_losses':train_losses,
+    'test_losses': test_losses
+    },'Lin_AE_STATE_DICT_0_9_L5_substr50.pt')

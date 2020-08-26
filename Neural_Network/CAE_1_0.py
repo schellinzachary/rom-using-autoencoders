@@ -1,5 +1,5 @@
 '''
-Linear Autoencoder v0.9
+Linear Autoencoder v1.0
 '''
 
 
@@ -13,12 +13,14 @@ from torch.utils.data import DataLoader
 from torch.autograd import Variable
 import matplotlib.pyplot as plt
 import scipy.io as sio
+from random import randint
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 N_EPOCHS = 200
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 INPUT_DIM = 40
+HIDDEN_DIM = 20
 LATENT_DIM = 5
 lr = 1e-3
 lam = 1e-4
@@ -38,28 +40,33 @@ train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
 test_iterator = DataLoader(val_in)
 
 class Encoder(nn.Module):
-    def __init__(self, input_dim, lat_dim):
+    def __init__(self, input_dim, hidden_dim, lat_dim):
         super(Encoder, self).__init__()
 
         self.linear1 = nn.Linear(in_features=input_dim, 
+                                    out_features=hidden_dim)
+        self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
-        self.activation_out = nn.Sigmoid()
+        self.activation_out = nn.LeakyReLU()
+        self.activation_out1 = nn.Sigmoid()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
+        x = self.activation_out1(self.linear2(x))
         return x
 
 
 class Decoder(nn.Module):
-    def __init__(self, input_dim, lat_dim):
+    def __init__(self, input_dim, hidden_dim, lat_dim):
         super(Decoder, self).__init__()
-        self.linear2 = nn.Linear(in_features=lat_dim, 
-                                out_features=input_dim,bias=False)
-        self.activation_out = nn.Sigmoid()
+        self.linear3 = nn.Linear(in_features=lat_dim, 
+                                out_features=hidden_dim)
+        self.linear4 = nn.Linear(in_features=hidden_dim, 
+                                out_features=input_dim)
+        self.activation_out = nn.LeakyReLU()
 
     def forward(self,x):
-
-        x = self.activation_out(self.linear2(x))
-      
+        x = self.activation_out(self.linear3(x))
+        x = self.activation_out(self.linear4(x))
         return x
 
 
@@ -75,19 +82,19 @@ class Autoencoder(nn.Module):
         return predicted, h
 
 #encoder
-encoder = Encoder(INPUT_DIM,LATENT_DIM)
+encoder = Encoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 
 #decoder
-decoder = Decoder(INPUT_DIM,LATENT_DIM)
+decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-#model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5.pt'))
+#model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5.pt'))
    
 optimizer = Adam(params=model.parameters(), lr=lr)
 
-loss_crit = nn.L1Loss()
+loss_crit = nn.MSELoss()
 train_losses = []
 val_losses = []
 
@@ -101,6 +108,7 @@ def loss_function(W, x, predicted, h, lam):
     w_sum = torch.sum(W**2, dim=1)
 
     w_sum = w_sum.unsqueeze(1)
+
 
     contractive_loss = torch.sum(torch.mm(dh**2,w_sum), 0)
 
@@ -121,8 +129,7 @@ def train():
 
         predicted, h = model(x)
 
-        W = encoder.state_dict()['linear1.weight']
-
+        W = encoder.state_dict()['linear2.weight']
 
         loss = loss_function(W, x, predicted, h, lam)
 
@@ -146,17 +153,13 @@ def test():
 
             predicted, h = model(x)
 
-            W = encoder.state_dict()['linear1.weight']
+            W = encoder.state_dict()['linear2.weight']
 
             loss = loss_function(W, x, predicted, h, lam)
             test_loss += loss.item()
 
         return test_loss
 
-
-
-        
-        print('Epoch :',step, 'train_loss:',train_loss,':)')
 
 test_losses = []
 val_losses = []
@@ -175,17 +178,22 @@ for n_iter in range(N_EPOCHS):
     print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
 
 
-    # if n_iter % 100 == 0:
+    if n_iter % 300 == 0:
 
-    #     x = x.to('cpu')
-    #     predicted = predicted.to('cpu')
-    #     data = x.detach().numpy()
-    #     predict = predicted.detach().numpy()
+        i = randint(0,999)
+        x = val_in[i].to(device)
 
-    #     plt.plot(x[-1], label='Original')
-    #     plt.plot(predict[-1], label='Predicted')
-    #     plt.legend()
-    #     plt.show()
+        predicted, h = model(x)
+        x = x.to('cpu')
+        predicted = predicted.to('cpu')
+        data = x.detach().numpy()
+        predict = predicted.detach().numpy()
+        
+        plt.plot(x, label='Original')
+        plt.plot(predict, label='Predicted')
+        plt.legend()
+        plt.show()
+
 
 plt.figure()
 plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
@@ -196,11 +204,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_CAE_0_1_L5.npy',train_losses)
-np.save('Test_Loss_CAE_0_1_L5.npy',test_losses)
+np.save('Train_Loss_CAE_1_0_L5.npy',train_losses)
+np.save('Test_Loss_CAE_1_0_L5.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_0_1_L5.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_lr-3.pt')

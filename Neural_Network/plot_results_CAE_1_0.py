@@ -1,5 +1,5 @@
 '''
-Plot results Linear 1.0
+Plot results CAE 1.0
 '''
 import numpy as np
 import matplotlib.pyplot as plt
@@ -28,7 +28,7 @@ class Encoder(nn.Module):
         self.linear1 = nn.Linear(in_features=input_dim, 
                                     out_features=hidden_dim)
         self.linear2 = nn.Linear(in_features=hidden_dim, 
-                                    out_features=lat_dim)
+                                    out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
         self.activation_out1 = nn.Sigmoid()
     def forward(self, x):
@@ -59,6 +59,19 @@ class Autoencoder(nn.Module):
         self.dec = dec
 
     def forward(self, x):
+        h = self.enc(x)
+        predicted = self.dec(h)
+        return predicted
+
+
+
+class Autoencoder(nn.Module):
+    def __init__(self, enc, dec):
+        super().__init__()
+        self.enc = enc
+        self.dec = dec
+
+    def forward(self, x):
         z = self.enc(x)
         predicted = self.dec(z)
         return predicted, z
@@ -67,9 +80,8 @@ class Swish(nn.Module):
     def forward(self, x):
         return x * torch.sigmoid(x)
 
-
 #encoder
-encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
+encoder = Encoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 
 #decoder
 decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
@@ -78,7 +90,7 @@ decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5.pt',map_location='cpu'))
+model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_lr-3.pt',map_location='cpu'))
 model.eval()
 
 # load original data
@@ -213,8 +225,6 @@ def density(c,predict):
             rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128   
         n += 200
     return rho_samples, rho_predict
-
-
 
 rho_s, rho_p = density(c,predict)
 

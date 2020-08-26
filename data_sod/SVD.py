@@ -15,7 +15,7 @@ q = 1 #Plot variable
 
 
 for i in datalocation:
-    
+
     #Load Data
     f = sio.loadmat(i)
     f = f['f']
@@ -36,12 +36,18 @@ for i in datalocation:
     
         n = n + x
     #SVD
-    print(c.shape)
+  
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
     
     x = np.linspace(-10,10,v) #Zeitvariable
-    
 
+    if q == 1:
+        S = np.diagflat(s)
+        xx = u[:,:5]@S[:5,:5]@vh[:5,:]
+        np.save('SVD.npy',xx)
+        print(xx.shape)
+        plt.plot(xx[:,0])
+        plt.show()
     #Plot sigma over k Kn 0.01 (25 snaps)
     if q == 1:
         #Sigulärwerte
@@ -151,7 +157,7 @@ for i in datalocation:
         plt.ylabel('U6',fontsize=17)
         plt.xlabel('v', fontsize=17)
         plt.show()
-    q = q+1  
+    q = q+1 
 # Integration
 
 

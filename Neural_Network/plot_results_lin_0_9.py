@@ -72,7 +72,8 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5.pt',map_location='cpu'))
+model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50.pt',map_location='cpu')['model_state_dict'])
+
 model.eval()
 
 # load original data
@@ -97,9 +98,16 @@ for i in range(t):                                             # T (zeilen)
 
 #Inference
 
+# row_mean = np.mean(c,axis=1)
+
+# de_meaned = c.copy()
+# for i in range(4999):
+#   de_meaned[i] = de_meaned[i] - row_mean[i]
+# #c = np.load('preprocessed_samples_lin_meaned.npy')
+
+
+
 c = tensor(c, dtype=torch.float)
-
-
 predict, z = model(c)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
@@ -107,15 +115,21 @@ predict = predict.detach().numpy()
 
 # # plot code
 
-print(z.shape)
-plt.plot(np.arange(5000),z[:,0].detach().numpy())
+
+fig, axs = plt.subplots(6)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy())
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy())
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy())
+axs[3].plot(np.arange(5000),z[:,3].detach().numpy())
+axs[4].plot(np.arange(5000),z[:,4].detach().numpy())
+# axs[5].plot(np.arange(5000),z[:,5].detach().numpy())
 plt.show()
 
 # #Visualizing
 
 def visualize(c,predict):
     fig = plt.figure()
-    ax = plt.axes(ylim=(0,1),xlim=(0,200))
+    ax = plt.axes(ylim=(0,2),xlim=(0,200))
 
     line1, = ax.plot([],[],label='original')
     line2, = ax.plot([],[],label='prediction')
@@ -158,8 +172,8 @@ zip(mistake_list)
 #index=mistake_list.index(np.max(mistake_list[0,:]))
 
 
-plt.plot(c[900],'-o''m',label='$Original$')
-plt.plot(predict[900],'-v''k',label='$Prediction$')
+plt.plot(c[4999],'-o''m',label='$Original$')
+plt.plot(predict[4999],'-v''k',label='$Prediction$')
 plt.xlabel('$Velocity$')
 plt.ylabel('$Probability$')
 plt.legend()
@@ -192,11 +206,30 @@ def density(c,predict):
         n += 200
     return rho_samples, rho_predict
 
+def density_svd(c):
+
+    rho_svd = np.zeros([25,200])
+    n=0
+
+    for k in range(25):
+        for i in range(200):
+            rho_svd[k,i] = np.sum(c[:,i+n]) * 0.5128
+   
+        n += 200
+    return rho_svd
+
+SVD = np.load('/home/zachary/Desktop/BA/data_sod/SVD.npy')
+
+rho_svd = density_svd(SVD)
+
 rho_s, rho_p = density(c,predict)
 
 visualize(rho_s,rho_p)
 
-print('mis', np.sum(np.abs(rho_s - rho_p)))
+visualize(rho_s,rho_svd)
+
+print('mis_auto', np.sum(np.abs(rho_s - rho_p)))
+print('mis_SVD',np.sum(np.abs(rho_svd - rho_s)))
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')

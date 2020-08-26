@@ -17,7 +17,7 @@ import matplotlib.animation as animation
 
 
 INPUT_DIM = 40
-LATENT_DIM = 5
+LATENT_DIM = 10
 
 
 class Encoder(nn.Module):

@@ -15,7 +15,7 @@ import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 800
+N_EPOCHS = 600
 BATCH_SIZE = 32
 INPUT_DIM = 40
 HIDDEN_DIM = 20
@@ -45,9 +45,10 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
         self.activation_out = nn.LeakyReLU()
+        self.activation_out1 = nn.Sigmoid()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
-        x = self.activation_out(self.linear2(x))
+        x = self.activation_out1(self.linear2(x))
         return x
 
 
@@ -77,9 +78,6 @@ class Autoencoder(nn.Module):
         predicted = self.dec(z)
         return predicted
 
-class Swish(nn.Module):
-    def forward(self, x):
-        return x * torch.sigmoid(x)
 
 
 #encoder
@@ -91,7 +89,7 @@ decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5.pt'))
+#model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_sigmoid.pt'))
    
 optimizer = Adam(params=model.parameters(), lr=lr)
 
@@ -140,11 +138,6 @@ def test():
             test_loss += loss.item()
 
         return test_loss
-
-
-
-        
-        print('Epoch :',step, 'train_loss:',train_loss,':)')
 
 test_losses = []
 val_losses = []
