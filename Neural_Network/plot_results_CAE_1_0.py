@@ -30,7 +30,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Sigmoid()
+        self.activation_out1 = nn.LeakyReLU()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -90,7 +90,7 @@ decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_lr-3.pt',map_location='cpu'))
+model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_substr50.pt',map_location='cpu'))
 model.eval()
 
 # load original data
@@ -123,28 +123,27 @@ c = c.detach().numpy()
 predict = predict.detach().numpy()
 
 
+
+W = encoder.state_dict()['linear2.weight']
+dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+j = W * dh
+print(j.shape)
+u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+
+plt.plot(np.arange(s.shape[0]),s,'*')
+plt.show()
+
+
 # # plot code
 
-plt.figure()
-plt.plot(np.arange(5000),z[:,0].detach().numpy())
+fig, axs = plt.subplots(6)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy())
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy())
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy())
+axs[3].plot(np.arange(5000),z[:,3].detach().numpy())
+axs[4].plot(np.arange(5000),z[:,4].detach().numpy())
+# axs[5].plot(np.arange(5000),z[:,5].detach().numpy())
 plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,1].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,2].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,3].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,4].detach().numpy())
-plt.show()
-
 # #Visualizing
 
 def visualize(c,predict):

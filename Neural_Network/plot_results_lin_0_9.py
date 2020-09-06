@@ -113,6 +113,19 @@ c = c.detach().numpy()
 predict = predict.detach().numpy()
 
 
+W = encoder.state_dict()['linear1.weight']
+dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+
+
+
+j = W * dh
+
+
+u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+
+plt.plot(s,'*')
+plt.show()
+
 # # plot code
 
 

@@ -17,7 +17,7 @@ from random import randint
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-N_EPOCHS = 600
+N_EPOCHS = 300
 BATCH_SIZE = 16
 INPUT_DIM = 40
 LATENT_DIM = 5
@@ -37,7 +37,7 @@ val_in = f[3000:3749]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
-test_iterator = DataLoader(val_in)
+test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 
 class Encoder(nn.Module):
     def __init__(self, input_dim, lat_dim):
@@ -70,13 +70,18 @@ class Autoencoder(nn.Module):
         super().__init__()
         self.enc = enc
         self.dec = dec
+        # #tie the weights
+        # a =  enc.linear1.weight
+        # dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
 
     def forward(self, x):
         z = self.enc(x)
         predicted = self.dec(z)
         return predicted
 
-
+class Swish(nn.Module):
+    def forward(self, x):
+        return x * torch.sigmoid(x)
 
 #encoder
 encoder = Encoder(INPUT_DIM,LATENT_DIM)
@@ -137,10 +142,10 @@ def test():
 test_losses = []
 val_losses = []
 
-#checkpoint Load
-# checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5.pt')
+# #checkpoint Load
+# checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50.pt')
 # model.load_state_dict(checkpoint['model_state_dict'])
-# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+# #optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 # epoch_o = checkpoint['epoch']
 # train_loss = checkpoint['train_loss']
 # test_loss = checkpoint['test_loss']
@@ -179,8 +184,8 @@ for epoch in range(N_EPOCHS):
     #     plt.show()
 
 plt.figure()
-plt.semilogy(np.arange(600), train_losses, label='Training loss')
-plt.semilogy(np.arange(600), test_losses, label='Test loss')
+plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
 plt.legend(loc='upper right')
 plt.xlabel('trainstep')
 plt.ylabel('loss')

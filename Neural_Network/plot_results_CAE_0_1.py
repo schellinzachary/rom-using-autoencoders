@@ -17,7 +17,7 @@ import matplotlib.animation as animation
 
 
 INPUT_DIM = 40
-LATENT_DIM = 10
+LATENT_DIM = 5
 
 
 class Encoder(nn.Module):
@@ -62,6 +62,8 @@ class Swish(nn.Module):
     def forward(self, x):
         return x * torch.sigmoid(x)
 
+
+
 #encoder
 encoder = Encoder(INPUT_DIM,LATENT_DIM)
 
@@ -72,7 +74,7 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5.pt',map_location='cpu'))
+model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt',map_location='cpu')['model_state_dict'])
 model.eval()
 
 # load original data
@@ -99,33 +101,44 @@ for i in range(t):                                             # T (zeilen)
 
 c = tensor(c, dtype=torch.float)
 
-
 predict, z = model(c)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
 
 
+print('Test Error:',np.sum(np.abs(predict - c))/len(c))
+#dh = torch.where(z >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+
+W = encoder.state_dict()['linear1.weight']
+dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+j = dh * W
+print(j.shape)
+
+u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+
+plt.plot(s,'*')
+plt.show()
+c = tensor(c, dtype=torch.float)
+c_plus = torch.normal(c[900],torch.ones(40)*0)
+
+print(c[900] - c_plus)
+
+plt.plot(c_plus)
+plt.show()
+c = c.detach().numpy()
+
+
 # # plot code
 
-plt.figure()
-plt.plot(np.arange(5000),z[:,0].detach().numpy())
+fig, axs = plt.subplots(6)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy())
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy())
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy())
+axs[3].plot(np.arange(5000),z[:,3].detach().numpy())
+axs[4].plot(np.arange(5000),z[:,4].detach().numpy())
+#axs[5].plot(np.arange(5000),z[:,5].detach().numpy())
 plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,1].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,2].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,3].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,4].detach().numpy())
-plt.show()
+# # #Visualizing
 
 # #Visualizing
 

@@ -16,8 +16,9 @@ import scipy.io as sio
 from random import randint
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 
-N_EPOCHS = 200
+N_EPOCHS = 1000
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
@@ -28,16 +29,17 @@ lam = 1e-4
 
 
 #load data
-f = np.load('preprocessed_samples_lin.npy')
+f = np.load('preprocessed_samples_lin_substract50.npy')
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
-train_in = f[0:3999]
-val_in = f[4000:4999]
+
+train_in = f[0:2999]
+val_in = f[3000:3749]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
-test_iterator = DataLoader(val_in)
+test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 
 class Encoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, lat_dim):
@@ -48,7 +50,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Sigmoid()
+        self.activation_out1 = nn.LeakyReLU()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -101,18 +103,18 @@ val_losses = []
 
 
 def loss_function(W, x, predicted, h, lam):
+
     mse = loss_crit(predicted, x)
 
-    dh = h * (1 - h) 
+    dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
 
-    w_sum = torch.sum(W**2, dim=1)
-
-    w_sum = w_sum.unsqueeze(1)
+    j = dh * W
 
 
-    contractive_loss = torch.sum(torch.mm(dh**2,w_sum), 0)
+    contractive_loss  = torch.sqrt(torch.sum(j**2))
 
-    return mse + contractive_loss * lam
+
+    return mse + contractive_loss * lam, contractive_loss
 
 
 def train():
@@ -120,7 +122,7 @@ def train():
     model.train()
 
     train_loss = 0.0
-
+    con_train_loss = 0
     for batch_ndx, x in enumerate(train_iterator):
 
         x = x.to(device)
@@ -131,21 +133,22 @@ def train():
 
         W = encoder.state_dict()['linear2.weight']
 
-        loss = loss_function(W, x, predicted, h, lam)
+        loss, c_loss = loss_function(W, x, predicted, h, lam)
 
         loss.backward()
         train_loss += loss.item()
+        con_train_loss += c_loss.item()
 
         optimizer.step()
 
-    return train_loss, x, predicted
+    return train_loss, x, predicted, con_train_loss
 
 def test():
 
     model.eval()
 
     test_loss = 0
-
+    con_test_loss = 0
     with torch.no_grad():
         for i, x in enumerate(test_iterator):
 
@@ -155,10 +158,11 @@ def test():
 
             W = encoder.state_dict()['linear2.weight']
 
-            loss = loss_function(W, x, predicted, h, lam)
-            test_loss += loss.item()
+            loss, c_loss = loss_function(W, x, predicted, h, lam)
 
-        return test_loss
+            test_loss += loss.item()
+            con_test_loss += c_loss.item()
+        return test_loss, con_test_loss
 
 
 test_losses = []
@@ -166,33 +170,36 @@ val_losses = []
 
 for n_iter in range(N_EPOCHS):
 
-    train_loss, x, predicted = train()
-    test_loss = test()
+    train_loss, x, predicted, con_train_loss = train()
+    test_loss, con_test_loss = test()
 
     #save and print the loss
     train_loss /= len(train_iterator)
-    
+    con_train_loss /= len(train_iterator)
+    #test_loss /= int(len(f*0.2))
+
+
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
+    print(f'Epoch {n_iter}, Train Loss: {train_loss:.5f}, con_train: {con_train_loss:.5f}, Test Loss: {test_loss:.5f}, con_test: {con_test_loss:.5f}')
 
 
-    if n_iter % 300 == 0:
+    # if n_iter % 300 == 0:
 
-        i = randint(0,999)
-        x = val_in[i].to(device)
+    #     i = randint(0,999)
+    #     x = val_in[i].to(device)
 
-        predicted, h = model(x)
-        x = x.to('cpu')
-        predicted = predicted.to('cpu')
-        data = x.detach().numpy()
-        predict = predicted.detach().numpy()
+    #     predicted, h = model(x)
+    #     x = x.to('cpu')
+    #     predicted = predicted.to('cpu')
+    #     data = x.detach().numpy()
+    #     predict = predicted.detach().numpy()
         
-        plt.plot(x, label='Original')
-        plt.plot(predict, label='Predicted')
-        plt.legend()
-        plt.show()
+    #     plt.plot(x, label='Original')
+    #     plt.plot(predict, label='Predicted')
+    #     plt.legend()
+    #     plt.show()
 
 
 plt.figure()
@@ -204,11 +211,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_CAE_1_0_L5.npy',train_losses)
-np.save('Test_Loss_CAE_1_0_L5.npy',test_losses)
+np.save('Train_Loss_CAE_1_0_L5_16_subtr50.npy',train_losses)
+np.save('Test_Loss_CAE_1_0_L5_substr50.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_lr-3.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50.pt')

@@ -50,7 +50,13 @@ def delete(c):
 
 g = delete(c)
 
-np.save('preprocessed_samples_lin_substract50',g)
+def normalize(a):
+  return (a - np.min(a)) / (np.max(a) - np.min(a))
+
+g = normalize(g)
+
+
+np.save('preprocessed_samples_lin_substract50_normalized',g)
 
 
 
