@@ -1,5 +1,5 @@
 '''
-Plot results Linear 1.0
+VAE_0_1_plot_results
 '''
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,59 +9,86 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
-
-# ## for Palatino and other serif fonts use:
-# #rc('font',**{'family':'serif','serif':['Palatino']})
-# rc('text', usetex=True)
 
 
-INPUT_DIM = 40
-HIDDEN_DIM = 20
-LATENT_DIM = 5
+INPUT_DIM = 40 # size of each input
+HIDDEN_DIM = 20    # hidden dimension
+LATENT_DIM = 5     # latent vector dimension
+beta = 10
+
+
+# Defining neural network
+# Encoder
+
 
 
 class Encoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim, lat_dim):
-        super(Encoder, self).__init__()
 
-        self.linear1 = nn.Linear(in_features=input_dim, 
-                                    out_features=hidden_dim)
-        self.linear2 = nn.Linear(in_features=hidden_dim, 
-                                    out_features=lat_dim)
+    def __init__(self, input_dim, hidden_dim, lat_dim):
+        # initialize as nn.Module
+        super().__init__()
+        self.linear0 = nn.Linear(in_features=input_dim, out_features=hidden_dim)
+        self.linear1 = nn.Linear(in_features=hidden_dim, out_features=2*lat_dim)
+        self.linear21 = nn.Linear(in_features=2 * lat_dim, out_features=lat_dim) #mu layer
+        self.linear22 = nn.Linear(in_features=2* lat_dim, out_features=lat_dim) #logvariance layer
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Tanh()
+
     def forward(self, x):
+        x = self.activation_out(self.linear0(x))
         x = self.activation_out(self.linear1(x))
-        x = self.activation_out1(self.linear2(x))
-        return x
+        x21 = self.linear21(x)
+        x22 = self.linear22(x)
+
+        return x21,x22
+
+# Decoder
 
 
 class Decoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim, lat_dim):
-        super(Decoder, self).__init__()
-        self.linear3 = nn.Linear(in_features=lat_dim, 
-                                out_features=hidden_dim)
-        self.linear4 = nn.Linear(in_features=hidden_dim, 
-                                out_features=input_dim)
-        self.activation_out = nn.LeakyReLU()
+    def __init__(self, lat_dim, hidden_dim, output_dim):
 
-    def forward(self,x):
+        # initialize as nn.Module
+        super().__init__()
+        self.linear3 = nn.Linear(in_features=lat_dim, out_features=hidden_dim)
+        self.linear4 = nn.Linear(in_features=hidden_dim, out_features=output_dim)
+        self.activation_out = nn.LeakyReLU()
+        self.activation_out1 = nn.LeakyReLU()
+
+    def forward(self, x):
         x = self.activation_out(self.linear3(x))
-        x = self.activation_out(self.linear4(x))
+        x = self.activation_out1(self.linear4(x))
+
         return x
 
 
-class Autoencoder(nn.Module):
+
+
+
+class VAE(nn.Module):
+    '''
+    Autoencoder which takes the encoder and the decoder
+    '''
     def __init__(self, enc, dec):
         super().__init__()
+
         self.enc = enc
         self.dec = dec
 
+
+
     def forward(self, x):
-        z = self.enc(x)
+        #encoder
+        mu,logvar = self.enc(x)
+
+
+        #sample from distribution & reparametrize
+        std = torch.exp(logvar*0.5)
+        eps = torch.randn_like(std)
+        z = eps.mul(std).add_(mu)
+
+        #decode
         predicted = self.dec(z)
-        return predicted, z
+        return predicted, mu, logvar
 
 class Swish(nn.Module):
     def forward(self, x):
@@ -69,16 +96,17 @@ class Swish(nn.Module):
 
 
 #encoder
-encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
+#encoder
+encoder = Encoder(INPUT_DIM,HIDDEN_DIM,LATENT_DIM)
 
 #decoder
-decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
+decoder = Decoder(LATENT_DIM,HIDDEN_DIM,INPUT_DIM)
 
-#Autoencoder
-model = Autoencoder(encoder, decoder)
+#VAE
+model = VAE(encoder, decoder)
 
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5.pt',map_location='cpu'))
+model.load_state_dict(torch.load('VAE_0_1_STATE_DICT_BETA_10.pt',map_location='cpu'))
 model.eval()
 
 # load original data
@@ -106,31 +134,22 @@ for i in range(t):                                             # T (zeilen)
 c = tensor(c, dtype=torch.float)
 
 
-predict, z = model(c)
+mu, logvar= encoder(c)
+predict = decoder(logvar)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
 
 
 # # plot code
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,0].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,1].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,2].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,3].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,4].detach().numpy())
+# # plot code
+z = logvar
+fig, axs = plt.subplots(6)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy())
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy())
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy())
+axs[3].plot(np.arange(5000),z[:,3].detach().numpy())
+axs[4].plot(np.arange(5000),z[:,4].detach().numpy())
+# axs[5].plot(np.arange(5000),z[:,5].detach().numpy())
 plt.show()
 
 # #Visualizing

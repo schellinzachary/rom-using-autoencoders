@@ -77,7 +77,7 @@ model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50.pt',map_loca
 model.eval()
 
 # load original data
-f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f = f['f']
 
 x=200
@@ -119,6 +119,8 @@ dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2)
 
 
 j = W * dh
+
+print(torch.sqrt(torch.sum(j**2)))
 
 
 u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
@@ -231,7 +233,7 @@ def density_svd(c):
         n += 200
     return rho_svd
 
-SVD = np.load('/home/zachary/Desktop/BA/data_sod/SVD.npy')
+SVD = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/SVD.npy')
 
 rho_svd = density_svd(SVD)
 

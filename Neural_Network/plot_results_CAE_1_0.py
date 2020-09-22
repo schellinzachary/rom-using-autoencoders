@@ -30,7 +30,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.LeakyReLU()
+        self.activation_out1 = nn.Sigmoid()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -72,13 +72,9 @@ class Autoencoder(nn.Module):
         self.dec = dec
 
     def forward(self, x):
-        z = self.enc(x)
-        predicted = self.dec(z)
-        return predicted, z
-
-class Swish(nn.Module):
-    def forward(self, x):
-        return x * torch.sigmoid(x)
+        h = self.enc(x)
+        predicted = self.dec(h)
+        return predicted, h
 
 #encoder
 encoder = Encoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
@@ -90,11 +86,11 @@ decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_substr50.pt',map_location='cpu'))
+model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_substr50_sigmoid.pt',map_location='cpu'))
 model.eval()
 
 # load original data
-f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f = f['f']
 
 x=200
@@ -121,13 +117,17 @@ c = tensor(c, dtype=torch.float)
 predict, z = model(c)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
+#z = z.detach().numpy()
 
 
 
 W = encoder.state_dict()['linear2.weight']
-dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
-j = W * dh
-print(j.shape)
+#dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+#j = W * dh
+dh = z.detach().numpy() * (1 - z.detach().numpy())
+
+j = np.matmul(dh,W)
+
 u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
 
 plt.plot(np.arange(s.shape[0]),s,'*')
@@ -191,8 +191,8 @@ zip(mistake_list)
 #index=mistake_list.index(np.max(mistake_list[0,:]))
 
 
-plt.plot(c[900],'-o''m',label='$Original$')
-plt.plot(predict[900],'-v''k',label='$Prediction$')
+plt.plot(c[700],'-o''m',label='$Original$')
+plt.plot(predict[700],'-v''k',label='$Prediction$')
 plt.xlabel('$Velocity$')
 plt.ylabel('$Probability$')
 plt.legend()

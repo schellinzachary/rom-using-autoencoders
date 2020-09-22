@@ -23,7 +23,7 @@ BATCH_SIZE = 16
 INPUT_DIM = 40
 LATENT_DIM = 5
 lr = 1e-3
-lam = 1e-2
+lam = 1e-4
 
 
 

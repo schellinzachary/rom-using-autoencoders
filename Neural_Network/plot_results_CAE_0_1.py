@@ -78,7 +78,7 @@ model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt',map_l
 model.eval()
 
 # load original data
-f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f = f['f']
 
 x=200
