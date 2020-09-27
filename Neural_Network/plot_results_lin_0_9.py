@@ -9,11 +9,11 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
 
 # ## for Palatino and other serif fonts use:
 # #rc('font',**{'family':'serif','serif':['Palatino']})
-# rc('text', usetex=True)
+rc('text', usetex=True)
 
 
 INPUT_DIM = 40

@@ -1,0 +1,67 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{footnote}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.8}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+
+\begin{document}
+
+\section{Results}
+\subsection{POD}
+The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young]. \Cref{Fig:cumu_sing} shows the singular values (top) and the cumulative energy (bottom) derived from \cref{Eq:cumsum}:
+\begin{equation}
+	S_N = \sum_{k=1}^{N}a_k \qquad\textrm{with a sequence} \qquad\{a_k\}_{k=1}^{n} 
+	\label{Eq:cumsum}
+\end{equation}
+\begin{equation}
+	\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
+	\label{Eg:eckard-young}
+\end{equation}
+The first five singular values give an accurate approximation $\tilde{X}$ of $X$ as described in [Section 1]. 
+As a means to evaluate the low-rank approximation of $X$ we will compare the density derived from \cref{Eq:dense}, computed from $X$ and $\tilde{X}$.
+\begin{equation}
+	\int_{\Re^3}f(\textbf{x},\xi,t)\colvec{1\\\xi\\\frac{||\xi||^2}{2}}d\xi= \colvec{\rho(\textbf{x},t)\\\rho(\textbf{x},t)U(\textbf{x},t)\\E(\textbf{x},t)}
+	\label{Eq:dense}
+\end{equation}
+
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=\textwidth]{Figures/Cumultative_Singular_Values_kn001.png}
+	\caption{Singular Values (top) and cumultative enrgy (bottom) over the number of singular values}
+	\label{Fig:cumu_sing}
+\end{figure}
+\subsection{Linear Autoencoder with two Layers}
+A first working model of a linear autoencoder is proposed and evaluated on the density over space in time of the BGK equation. The same matrix as in POD is used as input data for the autoencoder:
+		\[S = \begin{bmatrix}
+	f(\xi_1,t_1,x_1)&\cdots &f(\xi_n,t_1,x_1) \\
+	f(\xi_1,t_1,x_2)&\cdots &f(\xi_n,t_1,x_2) \\
+	f(\xi_1,t_1,x_n)&\cdots &f(\xi_n,t_1,x_n)\\
+	f(\xi_1,t_2,x_1)&\cdots &f(\xi_n,t_2,x_1)\\
+	\vdots & \ddots & \vdots\\
+	f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
+	\end{bmatrix}\]
+During training every 1000 epochs a sample against its prediction was printed in order to link the value of the L1-Loss to a prediction. Using this method a first verification of the model was achieved. Continuing the search for any possible shortage of the models performance, that this method could not cover, eg. samples lying between every 1000 sample, that the model was not able to reconstruct correctly, a second verification process is conducted. 
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.8\textwidth]{Figures/Error_samples_v1_1.png}
+	\caption{Error of each sample}
+	\label{Fig:error_sample}
+\end{figure}
+Inference is conducted after training using the same, but not shuffled input data. \Cref{Fig:error_sample} shows the error of every sample from the inference run. The largest mistake can be observed in sample 900. 
+\begin{figure}[htb!]
+	\centering
+	\includegraphics[width=.49\textwidth]{Figures/Sample500_v1_1.png}
+	\includegraphics[width=.49\textwidth]{Figures/Density_last_v1_1.png}
+	\caption{Error of each sample}
+	\label{Fig:Errormore}
+\end{figure}
+Absolute Error for density is 0.59!!!!
+\end{document}
