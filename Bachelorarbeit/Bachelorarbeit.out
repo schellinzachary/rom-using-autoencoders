@@ -1,3 +1,9 @@
-\BOOKMARK [1][-]{section.1}{\376\377\000R\000e\000s\000u\000l\000t\000s}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{\376\377\000P\000O\000D}{section.1}% 2
-\BOOKMARK [2][-]{subsection.1.2}{\376\377\000L\000i\000n\000e\000a\000r\000\040\000A\000u\000t\000o\000e\000n\000c\000o\000d\000e\000r\000\040\000w\000i\000t\000h\000\040\000t\000w\000o\000\040\000L\000a\000y\000e\000r\000s}{section.1}% 3
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{The BGK Equation}{}% 2
+\BOOKMARK [1][-]{section.3}{Reduced Order Algorithms}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Data Sampling}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{POD}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Autoencoders}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Results}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Evaluation Methods}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Results}{section.4}% 9

@@ -18,7 +18,7 @@ from random import randint
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-N_EPOCHS = 2000
+N_EPOCHS = 600
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
@@ -77,6 +77,11 @@ class Autoencoder(nn.Module):
         super().__init__()
         self.enc = enc
         self.dec = dec
+        # tie the weights
+        a = enc.linear1.weight
+        b = enc.linear2.weight
+        dec.linear4.weight = nn.Parameter(torch.transpose(a,0,1))
+        dec.linear3.weight = nn.Parameter(torch.transpose(b,0,1))
 
     def forward(self, x):
         h = self.enc(x)
@@ -106,12 +111,12 @@ def loss_function(W, x, predicted, h, lam):
 
     mse = loss_crit(predicted, x)
 
-    #dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+    # dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
 
-    #j = dh * W
+    # j = dh * W
 
 
-    #contractive_loss  = torch.sqrt(torch.sum(j**2))
+    # contractive_loss  = torch.sqrt(torch.sum(j**2))
 
     dh = h * (1 - h)
 
@@ -218,11 +223,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_CAE_1_0_L5_16_subtr50_sigmoid.npy',train_losses)
-np.save('Test_Loss_CAE_1_0_L5_substr50_sigmoid.npy',test_losses)
+np.save('Train_Loss_CAE_1_0_L5_16_subtr50_tiedWeights_SIG.npy',train_losses)
+np.save('Test_Loss_CAE_1_0_L5_substr50_tiedWeights_SIG.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50_sigmoid.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50_tiedWeights_SIG.pt')

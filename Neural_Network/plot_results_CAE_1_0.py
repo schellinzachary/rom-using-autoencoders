@@ -86,7 +86,7 @@ decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_substr50_sigmoid.pt',map_location='cpu'))
+model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_substr50_SIG.pt',map_location='cpu'))
 model.eval()
 
 # load original data

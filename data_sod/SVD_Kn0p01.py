@@ -44,11 +44,11 @@ def plot_cumu():
 	#Plot Cumultative Energy and Singular Vaules
 	k = range(len(s))
 	plt.figure(1)
-	plt.subplot(2,1,1)
+	plt.subplot(1,2,1)
 	plt.semilogy(k,s,'.-''k')
 	plt.ylabel(r'$\sigma$',fontsize=fontsize)
 	plt.xlabel(r'k',fontsize=fontsize)
-	plt.subplot(2,1,2)
+	plt.subplot(1,2,2)
 	plt.plot(k,np.cumsum(s)/np.sum(s),'.-''k')
 	plt.ylabel('Cumultative Energy', fontsize=fontsize)
 	plt.xlabel(r'k',fontsize=fontsize)
@@ -56,6 +56,7 @@ def plot_cumu():
 
 	return
 
+print('sample error:',np.sum(np.abs(xx-c)))
 
 # Plot the Density
 def density_svd(c):
@@ -79,6 +80,26 @@ plt.plot(rho[20],'-*''k')
 plt.ylabel(r'$Density \quad \rho$',fontsize=fontsize)
 plt.xlabel(r'$x$',fontsize=fontsize)
 plt.show()
+
+print(np.sum(np.abs(rho_svd - rho)))
+
+### Overall mistakes sample-wise
+
+mistake_list = []
+for i in range(4999):
+    mistake = np.sum(np.abs(xx[:,i] - c[:,i]))
+    mistake_list.append((i,mistake))
+
+zip(mistake_list)
+
+plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k')
+plt.xlabel(r'$Samples$',fontsize=fontsize)
+plt.ylabel(r'$Absolute Error$',fontsize=fontsize)
+plt.grid()
+plt.tight_layout()
+plt.show()
+
+plot_cumu()
 # plt.figure(2)
 # plt.subplot(3,2,1)
 # plt.plot(x,u[:,0])

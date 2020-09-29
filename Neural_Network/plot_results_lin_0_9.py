@@ -94,7 +94,7 @@ for i in range(t):                                             # T (zeilen)
             c[n:n+x,j]=f[i,j,:]
 
     n += x
-
+print(c.shape)
 
 #Inference
 
@@ -111,6 +111,8 @@ c = tensor(c, dtype=torch.float)
 predict, z = model(c)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
+
+print('sample error:',np.sum(np.abs(c - predict)))
 
 
 W = encoder.state_dict()['linear1.weight']
@@ -198,8 +200,7 @@ plt.show()
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 
-plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],label='$Absolute Error$')
-plt.legend()
+plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k')
 plt.xlabel('$Samples$')
 plt.ylabel('$Absolute Error$')
 plt.grid()
@@ -244,7 +245,7 @@ visualize(rho_s,rho_p)
 visualize(rho_s,rho_svd)
 
 print('mis_auto', np.sum(np.abs(rho_s - rho_p)))
-print('mis_SVD',np.sum(np.abs(rho_svd - rho_s)))
+print('mis_SVD',np.sum(np.abs(rho_s - rho_svd)))
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
