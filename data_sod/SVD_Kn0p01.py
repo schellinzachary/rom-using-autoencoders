@@ -14,24 +14,9 @@ plt.rc('ytick', labelsize=fontsize)
 
 
 #Load Data
-f = sio.loadmat('sod25Kn0p01/f.mat')
-f = f['f']
 
-#Getting dimensions                                                     #t x v x x (25x40x200)
-shape = f.shape
-t = shape[0] 
-v = shape[1] 
-x = shape[2] 
-#Submatrix
-c = np.zeros((v,t*x))
-n = 0
+c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
 
-#Build 2D-Version
-for i in range(t):                                             # T (zeilen)
-    for j in range(v):                                         # V (spalten)
-            c[j,n:n+x]=f[i,j,:]
-
-    n = n + x
 #SVD
 
 u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
@@ -56,7 +41,7 @@ def plot_cumu():
 
 	return
 
-print('Test Error:',np.sum(np.abs(xx-c))/len(c))
+
 
 # Plot the Density
 def density_svd(c):
@@ -81,8 +66,10 @@ plt.ylabel(r'$Density \quad \rho$',fontsize=fontsize)
 plt.xlabel(r'$x$',fontsize=fontsize)
 plt.show()
 
-print(np.sum(np.abs(rho_svd - rho)))
-
+print('Density Error:',np.sum(np.abs(rho_svd - rho))/25)
+print('Summed Eucledian Distances:',np.sum(np.abs(c - xx))/5000)
+print(c.shape)
+print(xx.shape)
 ### Overall mistakes sample-wise
 
 mistake_list = []

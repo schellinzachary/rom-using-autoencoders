@@ -74,28 +74,12 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt',map_location='cpu')['model_state_dict'])
+model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_tiedWeights_LR.pt',map_location='cpu')['model_state_dict'])
 model.eval()
 
 # load original data
-f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
-f = f['f']
-
-x=200
-t=25
-v=40
-
-#Submatrix
-c = np.zeros((t*x,v))
-n = 0
-
-#Build 2D-Version
-for i in range(t):                                             # T (zeilen)
-    for j in range(v):                                         # V (spalten)
-            c[n:n+x,j]=f[i,j,:]
-
-    n += x
-
+c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+c = c.T
 
 #Inference
 
@@ -225,8 +209,8 @@ rho_s, rho_p = density(c,predict)
 
 visualize(rho_s,rho_p)
 
-print('mis_rho', np.sum(np.abs(rho_s - rho_p)))
-print('mis_samples', np.sum(np.abs(c - predict)))
+print('mis_rho', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
+print('mis_samples', np.sum(np.abs(c - predict))/len(c))
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')

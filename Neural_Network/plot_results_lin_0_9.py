@@ -72,54 +72,27 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 model = Autoencoder(encoder, decoder)
 
 
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50.pt',map_location='cpu')['model_state_dict'])
+model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt',map_location='cpu')['model_state_dict'])
 
 model.eval()
 
 # load original data
-f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
-f = f['f']
 
-x=200
-t=25
-v=40
-
-#Submatrix
-c = np.zeros((t*x,v))
-n = 0
-
-#Build 2D-Version
-for i in range(t):                                             # T (zeilen)
-    for j in range(v):                                         # V (spalten)
-            c[n:n+x,j]=f[i,j,:]
-
-    n += x
-print(c.shape)
+c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+c = c.T
 
 #Inference
-
-# row_mean = np.mean(c,axis=1)
-
-# de_meaned = c.copy()
-# for i in range(4999):
-#   de_meaned[i] = de_meaned[i] - row_mean[i]
-# #c = np.load('preprocessed_samples_lin_meaned.npy')
-
-
 
 c = tensor(c, dtype=torch.float)
 predict, z = model(c)
 c = c.detach().numpy()
 predict = predict.detach().numpy()
 
-print('sample error:',np.sum(np.abs(c - predict)))
+print('sample error:',np.sum(np.abs(c - predict))/5000)
 
 
 W = encoder.state_dict()['linear1.weight']
 dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
-
-
-
 j = W * dh
 
 print(torch.sqrt(torch.sum(j**2)))
@@ -223,7 +196,6 @@ def density(c,predict):
     return rho_samples, rho_predict
 
 def density_svd(c):
-
     rho_svd = np.zeros([25,200])
     n=0
 
@@ -234,19 +206,21 @@ def density_svd(c):
         n += 200
     return rho_svd
 
-SVD = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/SVD.npy')
+SVD = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/SVD_reconstruction.npy')
 
 rho_svd = density_svd(SVD)
-
-rho_s, rho_p = density(c,predict)
+c = c.T
+rho_s= density_svd(c)
+predict = predict.T
+rho_p = density_svd(predict)
 
 visualize(rho_s,rho_p)
 
 visualize(rho_s,rho_svd)
 
-print('mis_auto', np.sum(np.abs(rho_s - rho_p)))
-print('mis_SVD',np.sum(np.abs(rho_s - rho_svd)))
-print('Test Error',np.sum(np.abs(c-predict))/len(c))
+print('Summed Euclidian Distances of Density AE', np.sum(np.abs(rho_s - rho_p))/25)
+print('Summed Euclidian Distances of Density POD',np.sum(np.abs(rho_s - rho_svd))/25)
+print('Test Error',np.sum(np.abs(c-predict))/5000)
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')

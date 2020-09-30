@@ -32,8 +32,18 @@ import scipy.io as sio
 # a, i, c = compare(de_meaned)
 # print('a=',a,'i=',i, 'c=',c)
 
-f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/v.mat')
-f  = f['v']
+# f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/v.mat')
+# f  = f['v']
 
-f = np.array(f)
-print(f[2] - f[1])
+# f = np.array(f)
+# print(f[2] - f[1])
+
+a  = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+b = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/SVD.npy')
+
+
+b = b.T
+print(c.shape)
+print(np.sum(np.abs(c - b)))
+
+

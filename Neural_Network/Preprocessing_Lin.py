@@ -10,7 +10,7 @@ import sys
 np.set_printoptions(threshold=sys.maxsize)
 
 
-f = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f  = f['f']
 
 
@@ -28,6 +28,7 @@ for i in range(t):                                             # T (zeilen)
             c[n:n+x,j]=f[i,j,:]
 
     n = n + x
+
 def meaned(c):
   row_mean = np.mean(c,axis=1)
 
@@ -53,12 +54,17 @@ g = delete(c)
 def normalize(a):
   return (a - np.min(a)) / (np.max(a) - np.min(a))
 
+
+
+
 g = normalize(g)
 
 
-np.save('preprocessed_samples_lin_substract50_normalized',g)
+#np.save('preprocessed_samples_lin_substract50_normalized',g)
 
+a = np.load('preprocessed_samples_lin_substract50.npy')
 
+print(np.sum(np.abs(a - g)))
 
 
 

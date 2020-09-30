@@ -17,7 +17,7 @@ from random import randint
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-N_EPOCHS = 300
+N_EPOCHS = 400
 BATCH_SIZE = 16
 INPUT_DIM = 40
 LATENT_DIM = 5
@@ -71,8 +71,8 @@ class Autoencoder(nn.Module):
         self.enc = enc
         self.dec = dec
         # #tie the weights
-        # a =  enc.linear1.weight
-        # dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
+        a =  enc.linear1.weight
+        dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
 
     def forward(self, x):
         z = self.enc(x)
@@ -142,15 +142,15 @@ def test():
 test_losses = []
 val_losses = []
 
-# #checkpoint Load
-# checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50.pt')
-# model.load_state_dict(checkpoint['model_state_dict'])
-# #optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-# epoch_o = checkpoint['epoch']
-# train_loss = checkpoint['train_loss']
-# test_loss = checkpoint['test_loss']
-# train_losses = checkpoint['train_losses']
-# test_losses = checkpoint['test_losses']
+#checkpoint Load
+checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
+model.load_state_dict(checkpoint['model_state_dict'])
+#optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+epoch_o = checkpoint['epoch']
+train_loss = checkpoint['train_loss']
+test_loss = checkpoint['test_loss']
+train_losses = checkpoint['train_losses']
+test_losses = checkpoint['test_losses']
 
 
 for epoch in range(N_EPOCHS):
@@ -164,7 +164,7 @@ for epoch in range(N_EPOCHS):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {epoch}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f}')
+    print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
 
 
     # if epoch % 100 == 0:
@@ -184,16 +184,16 @@ for epoch in range(N_EPOCHS):
     #     plt.show()
 
 plt.figure()
-plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
-plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+plt.semilogy(np.arange(N_EPOCHS+600), train_losses, label='Training loss')
+plt.semilogy(np.arange(N_EPOCHS+600), test_losses, label='Test loss')
 plt.legend(loc='upper right')
 plt.xlabel('trainstep')
 plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_Lin_0_9_L5_substr50.npy',train_losses)
-np.save('Test_Loss_Lin_0_9_L5_substr50.npy',test_losses)
+np.save('Train_Loss_Lin_0_9_L5_substr50_test.npy',train_losses)
+np.save('Test_Loss_Lin_0_9_L5_substr50_test.npy',test_losses)
 
 
 
@@ -207,4 +207,4 @@ torch.save({
     'test_loss': test_loss,
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'Lin_AE_STATE_DICT_0_9_L5_substr50.pt')
+    },'Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')

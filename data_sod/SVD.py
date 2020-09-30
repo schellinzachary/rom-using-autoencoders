@@ -44,7 +44,8 @@ for i in datalocation:
     if q == 1:
         S = np.diagflat(s)
         xx = u[:,:5]@S[:5,:5]@vh[:5,:]
-        np.save('SVD.npy',xx)
+        np.save('original_data_in_format.npy',c)
+        np.save('SVD_reconstruction.npy',xx)
         print(xx.shape)
         plt.plot(xx[:,0])
         plt.show()

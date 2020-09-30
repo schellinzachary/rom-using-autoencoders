@@ -18,7 +18,7 @@ from random import randint
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-N_EPOCHS = 600
+N_EPOCHS = 1000
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
@@ -50,7 +50,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Sigmoid()
+        self.activation_out1 = nn.LeakyReLU()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -77,7 +77,7 @@ class Autoencoder(nn.Module):
         super().__init__()
         self.enc = enc
         self.dec = dec
-        # tie the weights
+        #tie the weights
         a = enc.linear1.weight
         b = enc.linear2.weight
         dec.linear4.weight = nn.Parameter(torch.transpose(a,0,1))
@@ -86,6 +86,7 @@ class Autoencoder(nn.Module):
     def forward(self, x):
         h = self.enc(x)
         predicted = self.dec(h)
+        #print(torch.sum(torch.abs(self.dec.linear4.weight - torch.transpose(self.enc.linear1.weight,0,1))))
         return predicted, h
 
 #encoder
@@ -99,7 +100,7 @@ model = Autoencoder(encoder, decoder).to(device)
 
 #model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L4_16_substr50xyz.pt'))
    
-optimizer = Adam(params=model.parameters(), lr=lr)
+optimizer = Adam(params=encoder.parameters(), lr=lr)
 
 loss_crit = nn.MSELoss()
 train_losses = []
@@ -111,20 +112,20 @@ def loss_function(W, x, predicted, h, lam):
 
     mse = loss_crit(predicted, x)
 
-    # dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+    dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
 
-    # j = dh * W
+    j = dh * W
 
 
-    # contractive_loss  = torch.sqrt(torch.sum(j**2))
+    contractive_loss  = torch.sqrt(torch.sum(j**2))
 
-    dh = h * (1 - h)
+    # dh = h * (1 - h)
 
-    w_sum = torch.sum(W**2,dim=1)
+    # w_sum = torch.sum(W**2,dim=1)
 
-    w_sum = w_sum.unsqueeze(1)
+    # w_sum = w_sum.unsqueeze(1)
 
-    contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
+    # contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
 
     return mse + contractive_loss * lam, contractive_loss
 
@@ -223,11 +224,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_CAE_1_0_L5_16_subtr50_tiedWeights_SIG.npy',train_losses)
-np.save('Test_Loss_CAE_1_0_L5_substr50_tiedWeights_SIG.npy',test_losses)
+np.save('Train_Loss_CAE_1_0_L5_16_subtr50_tiedWeights_LR.npy',train_losses)
+np.save('Test_Loss_CAE_1_0_L5_substr503_tiedWeights_LR.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50_tiedWeights_SIG.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50_tiedWeights_LR.pt')

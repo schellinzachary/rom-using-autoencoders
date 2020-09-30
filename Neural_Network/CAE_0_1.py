@@ -71,12 +71,13 @@ class Autoencoder(nn.Module):
         self.enc = enc
         self.dec = dec
         # #tie the weights
-        # a =  enc.linear1.weight
-        # dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
+        a =  enc.linear1.weight
+        dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
         
     def forward(self, x):
         h = self.enc(x)
         predicted = self.dec(h)
+        #print(torch.sum(torch.abs(self.dec.linear2.weight - torch.transpose(self.enc.linear1.weight,0,1))))
         return predicted, h
 
 class Swish(nn.Module):
@@ -236,4 +237,4 @@ torch.save({
     'test_loss': test_loss,
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt')
+    },'CAE_STATE_DICT_0_1_L5_16_substr50_tiedWeights_LR.pt')
