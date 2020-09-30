@@ -56,7 +56,7 @@ def plot_cumu():
 
 	return
 
-print('sample error:',np.sum(np.abs(xx-c)))
+print('Test Error:',np.sum(np.abs(xx-c))/len(c))
 
 # Plot the Density
 def density_svd(c):

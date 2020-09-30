@@ -4,6 +4,6 @@
 \contentsline {subsection}{\numberline {3.1}Data Sampling}{1}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}POD}{1}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Autoencoders}{2}{subsection.3.3}%
-\contentsline {section}{\numberline {4}Results}{3}{section.4}%
+\contentsline {section}{\numberline {4}Results and Latent Manifold Properties}{3}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Evaluation Methods}{3}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results}{3}{subsection.4.2}%

@@ -246,6 +246,7 @@ visualize(rho_s,rho_svd)
 
 print('mis_auto', np.sum(np.abs(rho_s - rho_p)))
 print('mis_SVD',np.sum(np.abs(rho_s - rho_svd)))
+print('Test Error',np.sum(np.abs(c-predict))/len(c))
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')

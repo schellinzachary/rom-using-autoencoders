@@ -217,7 +217,7 @@ def density(c,predict):
     for k in range(25):
         for i in range(200):
             rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
-            rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128   
+            rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128  
         n += 200
     return rho_samples, rho_predict
 
@@ -225,7 +225,8 @@ rho_s, rho_p = density(c,predict)
 
 visualize(rho_s,rho_p)
 
-print('mis', np.sum(np.abs(rho_s - rho_p)))
+print('mis_rho', np.sum(np.abs(rho_s - rho_p)))
+print('mis_samples', np.sum(np.abs(c - predict)))
 
 plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
 plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
