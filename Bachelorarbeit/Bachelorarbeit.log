@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.29)  30 SEP 2020 17:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.29)  1 OCT 2020 11:09
 entering extended mode
 **./Bachelorarbeit.tex
 (Bachelorarbeit.tex
@@ -781,44 +781,44 @@ Package pdftex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on
  input line 39.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
  [2 <./Figures/Cumultative_Singular_Values_kn001.png>]
-<Figures/Error_samples_SVD.png, id=84, 984.3174pt x 456.7464pt>
+<Figures/Error_samples_SVD.png, id=90, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_SVD.png Graphic file (type png)
 <use Figures/Error_samples_SVD.png>
-Package pdftex.def Info: Figures/Error_samples_SVD.png  used on input line 87.
+Package pdftex.def Info: Figures/Error_samples_SVD.png  used on input line 88.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Error_samples_v1_1.png, id=85, 984.3174pt x 456.7464pt>
+<Figures/Error_samples_v1_1.png, id=91, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_v1_1.png Graphic file (type png)
 <use Figures/Error_samples_v1_1.png>
-Package pdftex.def Info: Figures/Error_samples_v1_1.png  used on input line 93.
+Package pdftex.def Info: Figures/Error_samples_v1_1.png  used on input line 94.
 
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Sample500_v1_1.png, id=86, 867.24pt x 616.4631pt>
+<Figures/Sample500_v1_1.png, id=92, 867.24pt x 616.4631pt>
 File: Figures/Sample500_v1_1.png Graphic file (type png)
 <use Figures/Sample500_v1_1.png>
-Package pdftex.def Info: Figures/Sample500_v1_1.png  used on input line 99.
+Package pdftex.def Info: Figures/Sample500_v1_1.png  used on input line 100.
 (pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
-<Figures/Density_last_v1_1.png, id=87, 867.24pt x 616.4631pt>
+<Figures/Density_last_v1_1.png, id=93, 867.24pt x 616.4631pt>
 File: Figures/Density_last_v1_1.png Graphic file (type png)
 <use Figures/Density_last_v1_1.png>
-Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 100.
+Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 101.
 
 (pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
  [3] [4 <./Figures/Error_samples_SVD.png> <./Figures/Error_samples_v1_1.png>] [
 5 <./Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 104.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 104.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
  (Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 104.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 104.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: AB4276881E125B7CF3A7778B6B936AEF;528.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 104.
+(rerunfilecheck)             Checksum: 9654FF4926CB2A5F89838719BD86D7D9;600.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
  ) 
 Here is how much of TeX's memory you used:
- 28224 strings out of 483132
- 701828 string characters out of 2956949
- 1062803 words of memory out of 3000000
- 43088 multiletter control sequences out of 15000+200000
+ 28226 strings out of 483132
+ 701858 string characters out of 2956949
+ 1063803 words of memory out of 3000000
+ 43089 multiletter control sequences out of 15000+200000
  542229 words of font info for 54 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
  68i,9n,98p,739b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -833,9 +833,9 @@ pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb>
-Output written on Bachelorarbeit.pdf (5 pages, 292021 bytes).
+Output written on Bachelorarbeit.pdf (5 pages, 293812 bytes).
 PDF statistics:
- 149 PDF objects out of 1000 (max. 8388607)
- 25 named destinations out of 1000 (max. 500000)
- 110 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 155 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 500000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

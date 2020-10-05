@@ -1,53 +1,65 @@
 '''
-Plot results CAE 0.1
+Plot results Linear
 '''
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib
-print(matplotlib.__version__)
 from matplotlib import rc
 import torch
 import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
 
 # ## for Palatino and other serif fonts use:
-#rc('font',**{'family':'serif','serif':['Palatino']})
-rc('text', usetex=True)
-
+# #rc('font',**{'family':'serif','serif':['Palatino']})
+# rc('text', usetex=True)
 
 def net(c):
+
     INPUT_DIM = 40
+    HIDDEN_DIM = 20
     LATENT_DIM = 5
 
 
     class Encoder(nn.Module):
-        def __init__(self, input_dim, lat_dim):
+        def __init__(self, input_dim, hidden_dim, lat_dim):
             super(Encoder, self).__init__()
 
             self.linear1 = nn.Linear(in_features=input_dim, 
-                                        out_features=lat_dim,bias=False)
+                                        out_features=hidden_dim)
+            self.linear2 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=hidden_dim)
+            self.linear3 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=lat_dim)
             self.activation_out = nn.LeakyReLU()
+            self.activation_out1 = nn.Tanh()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
+            x = self.activation_out(self.linear2(x))
+            x = self.activation_out1(self.linear3(x))
+
             return x
 
 
     class Decoder(nn.Module):
-        def __init__(self, input_dim, lat_dim):
+        def __init__(self, input_dim, hidden_dim, lat_dim):
             super(Decoder, self).__init__()
-            self.linear2 = nn.Linear(in_features=lat_dim, 
-                                    out_features=input_dim,bias=False)
+
+            self.linear4 = nn.Linear(in_features=lat_dim, 
+                                        out_features=hidden_dim)
+            self.linear5 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=hidden_dim)
+            self.linear6 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=input_dim)
             self.activation_out = nn.LeakyReLU()
 
         def forward(self,x):
-
-            x = self.activation_out(self.linear2(x))
+            x = self.activation_out(self.linear4(x))
+            x = self.activation_out(self.linear5(x))
+            x = self.activation_out(self.linear6(x))
           
             return x
-
 
 
     class Autoencoder(nn.Module):
@@ -61,24 +73,24 @@ def net(c):
             predicted = self.dec(z)
             return predicted, z
 
-
-
+    class Swish(nn.Module):
+        def forward(self, x):
+            return x * torch.sigmoid(x)
 
     #encoder
-    encoder = Encoder(INPUT_DIM,LATENT_DIM)
+    encoder = Encoder(INPUT_DIM,HIDDEN_DIM,LATENT_DIM)
 
     #decoder
-    decoder = Decoder(INPUT_DIM,LATENT_DIM)
+    decoder = Decoder(INPUT_DIM,HIDDEN_DIM,LATENT_DIM)
 
     #Autoencoder
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt',map_location='cpu')['model_state_dict'])
+    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1_16_L5_substr50_lr-3_TH.pt',map_location='cpu'))
     model.eval()
 
-    W = encoder.state_dict()['linear1.weight']
-
+    W = encoder.state_dict()['linear3.weight']
     #-------------------------------------------------------------------------------------------
     #Inference---------------------------------------------------------------------------------
     c = tensor(c, dtype=torch.float)
@@ -88,6 +100,8 @@ def net(c):
     predict = predict.detach().numpy()
 
     return predict, W, z
+
+
 
 # load original data-----------------------------------------------------------------------
 c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
@@ -166,13 +180,14 @@ zip(mistake_list)
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
-#width = (2*np.pi) / 5000
+width = 1/5000
 ax = plt.subplot(111, polar=False)
-bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width = 1)
 axr = ax.twiny()    
 axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
 axr.set_xlim((0,25))
 ax.set_xlim((0,4999))
+ax.set_ylim((0,0.06))
 ax.yaxis.grid(True)
 axr.xaxis.grid(True)
 ax.set_xlabel(r'$Samples$')

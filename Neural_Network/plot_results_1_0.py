@@ -9,131 +9,117 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':25})
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
 
 # ## for Palatino and other serif fonts use:
 # #rc('font',**{'family':'serif','serif':['Palatino']})
-# rc('text', usetex=True)
+rc('text', usetex=True)
+
+def net(c):
+
+    INPUT_DIM = 40
+    HIDDEN_DIM = 20
+    LATENT_DIM = 5
 
 
-INPUT_DIM = 40
-HIDDEN_DIM = 20
-LATENT_DIM = 5
+    class Encoder(nn.Module):
+        def __init__(self, input_dim, hidden_dim, lat_dim):
+            super(Encoder, self).__init__()
+
+            self.linear1 = nn.Linear(in_features=input_dim, 
+                                        out_features=hidden_dim)
+            self.linear2 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=lat_dim)
+            self.activation_out = nn.LeakyReLU()
+            self.activation_out1 = nn.Tanh()
+        def forward(self, x):
+            x = self.activation_out(self.linear1(x))
+            x = self.activation_out1(self.linear2(x))
+            return x
 
 
-class Encoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim, lat_dim):
-        super(Encoder, self).__init__()
-
-        self.linear1 = nn.Linear(in_features=input_dim, 
+    class Decoder(nn.Module):
+        def __init__(self, input_dim, hidden_dim, lat_dim):
+            super(Decoder, self).__init__()
+            self.linear3 = nn.Linear(in_features=lat_dim, 
                                     out_features=hidden_dim)
-        self.linear2 = nn.Linear(in_features=hidden_dim, 
-                                    out_features=lat_dim)
-        self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Tanh()
-    def forward(self, x):
-        x = self.activation_out(self.linear1(x))
-        x = self.activation_out1(self.linear2(x))
-        return x
+            self.linear4 = nn.Linear(in_features=hidden_dim, 
+                                    out_features=input_dim)
+            self.activation_out = nn.LeakyReLU()
+
+        def forward(self,x):
+            x = self.activation_out(self.linear3(x))
+            x = self.activation_out(self.linear4(x))
+            return x
 
 
-class Decoder(nn.Module):
-    def __init__(self, input_dim, hidden_dim, lat_dim):
-        super(Decoder, self).__init__()
-        self.linear3 = nn.Linear(in_features=lat_dim, 
-                                out_features=hidden_dim)
-        self.linear4 = nn.Linear(in_features=hidden_dim, 
-                                out_features=input_dim)
-        self.activation_out = nn.LeakyReLU()
+    class Autoencoder(nn.Module):
+        def __init__(self, enc, dec):
+            super().__init__()
+            self.enc = enc
+            self.dec = dec
 
-    def forward(self,x):
-        x = self.activation_out(self.linear3(x))
-        x = self.activation_out(self.linear4(x))
-        return x
+        def forward(self, x):
+            z = self.enc(x)
+            predicted = self.dec(z)
+            return predicted, z
 
-
-class Autoencoder(nn.Module):
-    def __init__(self, enc, dec):
-        super().__init__()
-        self.enc = enc
-        self.dec = dec
-
-    def forward(self, x):
-        z = self.enc(x)
-        predicted = self.dec(z)
-        return predicted, z
-
-class Swish(nn.Module):
-    def forward(self, x):
-        return x * torch.sigmoid(x)
+    class Swish(nn.Module):
+        def forward(self, x):
+            return x * torch.sigmoid(x)
 
 
-#encoder
-encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
+    #encoder
+    encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
 
-#decoder
-decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
+    #decoder
+    decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 
-#Autoencoder
-model = Autoencoder(encoder, decoder)
-
-
-model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5.pt',map_location='cpu'))
-model.eval()
-
-# load original data
-f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
-f = f['f']
-
-x=200
-t=25
-v=40
-
-#Submatrix
-c = np.zeros((t*x,v))
-n = 0
-
-#Build 2D-Version
-for i in range(t):                                             # T (zeilen)
-    for j in range(v):                                         # V (spalten)
-            c[n:n+x,j]=f[i,j,:]
-
-    n += x
+    #Autoencoder
+    model = Autoencoder(encoder, decoder)
 
 
-#Inference
+    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH.pt',map_location='cpu'))
+    model.eval()
 
-c = tensor(c, dtype=torch.float)
+    W = encoder.state_dict()['linear2.weight']
 
+    #-------------------------------------------------------------------------------------------
+    #Inference---------------------------------------------------------------------------------
+    c = tensor(c, dtype=torch.float)
 
-predict, z = model(c)
-c = c.detach().numpy()
-predict = predict.detach().numpy()
+    predict,z = model(c)
+    c = c.detach().numpy()
+    predict = predict.detach().numpy()
 
+    return predict, W, z
 
-# # plot code
+# load original data-----------------------------------------------------------------------
+c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+c = c.T
+#Inference-----------------------------------------------------------------------------------
+predict, W, z = net(c)
+#-------------------------------------------------------------------------------------------
+# Jacobian---------------------------------------------------------------------------------
+# dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+# j = dh * W
+# u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
 
-plt.figure()
-plt.plot(np.arange(5000),z[:,0].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,1].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,2].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,3].detach().numpy())
-plt.show()
-
-plt.figure()
-plt.plot(np.arange(5000),z[:,4].detach().numpy())
-plt.show()
-
-# #Visualizing
+# plt.plot(s,'-*''k')
+# plt.ylabel(r'Singular Values')
+# plt.xlabel(r'Number')
+# plt.show()
+#------------------------------------------------------------------------------------------
+# plot code-------------------------------------------------------------------------------
+# fig, axs = plt.subplots(5)
+# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+# axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
+# axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
+# plt.show()
+#-----------------------------------------------------------------------------------------
+#Visualizing-----------------------------------------------------------------------------
 
 def visualize(c,predict):
     fig = plt.figure()
@@ -165,10 +151,8 @@ def visualize(c,predict):
 
     ax.legend()
     plt.show()
-
-
-# #Bad Mistakes
-
+#-----------------------------------------------------------------------------------------
+#Bad Mistakes----------------------------------------------------------------------------
 mistake_list = []
 for i in range(4999):
     mistake = np.sum(np.abs(c[i] - predict[i]))
@@ -176,55 +160,56 @@ for i in range(4999):
 
 zip(mistake_list)
 
-
-#index=mistake_list.index(np.max(mistake_list[0,:]))
-
-
-plt.plot(c[900],'-o''m',label='$Original$')
-plt.plot(predict[900],'-v''k',label='$Prediction$')
-plt.xlabel('$Velocity$')
-plt.ylabel('$Probability$')
-plt.legend()
-plt.show()
+# plt.plot(c[900],'-o''m',label='$Original$')
+# plt.plot(predict[900],'-v''k',label='$Prediction$')
+# plt.xlabel('$Velocity$')
+# plt.ylabel('$Probability$')
+# plt.legend()
+# plt.show()
 
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_c.txt',c[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
-
-plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],label='$Absolute Error$')
-plt.legend()
-plt.xlabel('$Samples$')
-plt.ylabel('$Absolute Error$')
-plt.grid()
-plt.tight_layout()
+#theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
+#width = (2*np.pi) / 5000
+ax = plt.subplot(111, polar=False)
+bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+axr = ax.twiny()    
+axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
+axr.set_xlim((0,25))
+ax.set_xlim((0,4999))
+ax.yaxis.grid(True)
+axr.xaxis.grid(True)
+ax.set_xlabel(r'$Samples$')
+axr.set_xlabel(r'$Timesteps$')
+ax.set_ylabel(r'$Absolute Error$')
 plt.show()
+#-------------------------------------------------------------------------------------------
+#Visualizing Density-----------------------------------------------------------------------
+# def density(c,predict):
 
-#Visualizing Density
+#     rho_predict = np.zeros([25,200])
+#     rho_samples = np.zeros([25,200])
+#     n=0
 
-def density(c,predict):
+#     for k in range(25):
+#         for i in range(200):
+#             rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
+#             rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128  
+#         n += 200
+#     return rho_samples, rho_predict
 
-    rho_predict = np.zeros([25,200])
-    rho_samples = np.zeros([25,200])
-    n=0
+# rho_s, rho_p = density(c,predict)
 
-    for k in range(25):
-        for i in range(200):
-            rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
-            rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128   
-        n += 200
-    return rho_samples, rho_predict
+# visualize(rho_s,rho_p)
 
+# print('Verage Density Error', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
+# print('Average Test Error', np.sum(np.abs(c - predict))/len(c))
 
-
-rho_s, rho_p = density(c,predict)
-
-visualize(rho_s,rho_p)
-
-print('mis', np.sum(np.abs(rho_s - rho_p)))
-
-plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''m',label='$Original$')
-plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
-plt.legend()
-plt.xlabel('$Space$')
-plt.ylabel('$Density$')
-plt.show()
+# plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''k',label='$Original$')
+# plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
+# plt.legend()
+# plt.xlabel('$Space$')
+# plt.ylabel('$Density$')
+# plt.show()
+# -------------------------------------------------------------------------------------------

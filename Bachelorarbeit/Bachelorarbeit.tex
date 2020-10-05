@@ -67,6 +67,7 @@ As a second quantitative approach a comparison of the density over space in time
 \int_{\Re^3}f(\textbf{x},\xi,t)\colvec{1\\\xi\\\frac{||\xi||^2}{2}}d\xi= \colvec{\rho(\textbf{x},t)\\\rho(\textbf{x},t)U(\textbf{x},t)\\E(\textbf{x},t)}
 \label{Eq:dense}
 \end{equation}
+In order to evaluate the performance of the proposed dimensionality reduction algorithms, qualitative and quantitative methods are being introduced. The qualitative analysis comprises a comparision of the sample wise test error following \cref{Eq:sample_dist} on the microscopic data. The Jacobian of the latent code is strongly linked to this measure, as it measures the contraction of the latent manifold. A quantitative measure is taken on the average test error over all over all samples of the microscopic data as well as on the macroscopic data. Both can lead to different conclusions and will be discussed in Section 4.3.
 \subsection{Results}
 A quantitative measure shows, that the linear Autoencoder performs slightly better than the POD on the input data comparing the density of the original data against the reconstruction. In contrast to this measure, the comparison of the original data to the reconstruction yields the opposite conclusion. 
 \begin{center}
@@ -101,4 +102,5 @@ A quantitative measure shows, that the linear Autoencoder performs slightly bett
 	\caption{Error of each sample}
 	\label{Fig:Errormore}
 \end{figure}
+\subsection{Discussion and Outlook}
 \end{document}

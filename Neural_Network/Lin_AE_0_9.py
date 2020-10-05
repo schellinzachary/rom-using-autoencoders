@@ -184,8 +184,8 @@ for epoch in range(N_EPOCHS):
     #     plt.show()
 
 plt.figure()
-plt.semilogy(np.arange(N_EPOCHS+600), train_losses, label='Training loss')
-plt.semilogy(np.arange(N_EPOCHS+600), test_losses, label='Test loss')
+plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
 plt.legend(loc='upper right')
 plt.xlabel('trainstep')
 plt.ylabel('loss')

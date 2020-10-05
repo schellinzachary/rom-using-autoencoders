@@ -17,7 +17,7 @@ from random import randint
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 N_EPOCHS = 600
-BATCH_SIZE = 32
+BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
 LATENT_DIM = 5
@@ -158,21 +158,21 @@ for n_iter in range(N_EPOCHS):
     print(f'Epoch {n_iter}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
 
 
-    if n_iter % 300 == 0:
+    # if n_iter % 300 == 0:
 
-         i = randint(0,999)
-         x = val_in[i].to(device)
+    #      i = randint(0,999)
+    #      x = val_in[i].to(device)
 
-         predicted = model(x)
-         x = x.to('cpu')
-         predicted = predicted.to('cpu')
-         data = x.detach().numpy()
-         predict = predicted.detach().numpy()
+    #      predicted = model(x)
+    #      x = x.to('cpu')
+    #      predicted = predicted.to('cpu')
+    #      data = x.detach().numpy()
+    #      predict = predicted.detach().numpy()
         
-         plt.plot(x, label='Original')
-         plt.plot(predict, label='Predicted')
-         plt.legend()
-         plt.show()
+    #      plt.plot(x, label='Original')
+    #      plt.plot(predict, label='Predicted')
+    #      plt.legend()
+    #      plt.show()
 
 plt.figure()
 plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
@@ -190,4 +190,4 @@ np.save('Test_Loss_Lin_1_0_L5.npy',test_losses)
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5.pt')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH.pt')
