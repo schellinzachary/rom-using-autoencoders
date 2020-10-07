@@ -29,6 +29,7 @@ def net(c):
             self.linear1 = nn.Linear(in_features=input_dim, 
                                         out_features=lat_dim)
             self.activation_out = nn.LeakyReLU()
+            #self.activation_out = nn.Sigmoid()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             return x
@@ -40,6 +41,7 @@ def net(c):
             self.linear2 = nn.Linear(in_features=lat_dim, 
                                     out_features=input_dim)
             self.activation_out = nn.LeakyReLU()
+            #self.activation_out = nn.Sigmoid()
 
         def forward(self,x):
 
@@ -74,7 +76,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt',map_location='cpu')['model_state_dict'])
+    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5.pt',map_location='cpu'))#['model_state_dict'])
     model.eval()
 
     W = encoder.state_dict()['linear1.weight']
@@ -168,6 +170,8 @@ zip(mistake_list)
 #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
 #width = (2*np.pi) / 5000
 ax = plt.subplot(111, polar=False)
+test_error = np.abs(c - predict)
+#bars = ax.bar(np.arange(4999),test_error,color='k',width=1)
 bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
 axr = ax.twiny()    
 axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
@@ -199,7 +203,13 @@ plt.show()
 # visualize(rho_s,rho_p)
 
 # print('Verage Density Error', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
-# print('Average Test Error', np.sum(np.abs(c - predict))/len(c))
+test_error = np.sum(np.abs(c - predict),axis=1)
+mean = np.sum(test_error)/len(test_error)
+print('Mean Test Error', mean)
+print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+print('Highest Sample Error',np.max(test_error))
+print('Lowest Sample Error', np.min(test_error))
 
 # plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''k',label='$Original$')
 # plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')

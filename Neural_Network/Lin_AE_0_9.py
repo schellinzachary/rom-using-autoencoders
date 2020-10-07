@@ -17,7 +17,7 @@ from random import randint
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-N_EPOCHS = 400
+N_EPOCHS = 1000
 BATCH_SIZE = 16
 INPUT_DIM = 40
 LATENT_DIM = 5
@@ -26,7 +26,7 @@ lr = 1e-3
 
 
 #load data
-f = np.load('preprocessed_samples_lin_substract50.npy')
+f = np.load('preprocessed_samples_lin.npy')
 
 
 np.random.shuffle(f)
@@ -45,7 +45,8 @@ class Encoder(nn.Module):
 
         self.linear1 = nn.Linear(in_features=input_dim, 
                                     out_features=lat_dim)
-        self.activation_out = nn.LeakyReLU()
+        #self.activation_out = nn.LeakyReLU()
+        self.activation_out = nn.Sigmoid()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         return x
@@ -71,8 +72,8 @@ class Autoencoder(nn.Module):
         self.enc = enc
         self.dec = dec
         # #tie the weights
-        a =  enc.linear1.weight
-        dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
+        # a =  enc.linear1.weight
+        # dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
 
     def forward(self, x):
         z = self.enc(x)
@@ -143,14 +144,14 @@ test_losses = []
 val_losses = []
 
 #checkpoint Load
-checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
-model.load_state_dict(checkpoint['model_state_dict'])
-#optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-epoch_o = checkpoint['epoch']
-train_loss = checkpoint['train_loss']
-test_loss = checkpoint['test_loss']
-train_losses = checkpoint['train_losses']
-test_losses = checkpoint['test_losses']
+# checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
+# model.load_state_dict(checkpoint['model_state_dict'])
+# #optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+# epoch_o = checkpoint['epoch']
+# train_loss = checkpoint['train_loss']
+# test_loss = checkpoint['test_loss']
+# train_losses = checkpoint['train_losses']
+# test_losses = checkpoint['test_losses']
 
 
 for epoch in range(N_EPOCHS):
@@ -207,4 +208,4 @@ torch.save({
     'test_loss': test_loss,
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
+    },'Lin_AE_STATE_DICT_0_9_L5_sigmoid.pt')

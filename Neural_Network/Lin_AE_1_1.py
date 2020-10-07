@@ -48,7 +48,7 @@ class Encoder(nn.Module):
         self.linear3 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Tanh()
+        self.activation_out1 = nn.LeakyReLU()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out(self.linear2(x))
@@ -197,4 +197,4 @@ plt.show()
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_1_16_L5_substr50_lr-3_TH.pt')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_1_L5_16_subtr50_LR.pt')

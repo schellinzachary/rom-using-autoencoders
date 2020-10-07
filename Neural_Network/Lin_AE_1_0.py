@@ -16,7 +16,7 @@ from random import randint
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 600
+N_EPOCHS = 1000
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
@@ -46,7 +46,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.Tanh()
+        self.activation_out1 = nn.Sigmoid()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -183,11 +183,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_Lin_1_0_L5.npy',train_losses)
-np.save('Test_Loss_Lin_1_0_L5.npy',test_losses)
+np.save('Train_Loss_Lin_1_0_L5_16_lr-3_SIG.npy',train_losses)
+np.save('Test_Loss_Lin_1_0_L5_16_lr-3_SIG.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH.pt')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5_16_lr-3_SIG.pt')

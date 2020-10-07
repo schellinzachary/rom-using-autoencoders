@@ -31,7 +31,9 @@ def net(c):
             self.linear2 = nn.Linear(in_features=hidden_dim, 
                                         out_features=lat_dim)
             self.activation_out = nn.LeakyReLU()
-            self.activation_out1 = nn.Tanh()
+            #self.activation_out1 = nn.Tanh()
+            #self.activation_out1 = nn.LeakyReLU()
+            self.activation_out1 = nn.Sigmoid()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             x = self.activation_out1(self.linear2(x))
@@ -79,7 +81,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH.pt',map_location='cpu'))
+    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_16_lr-3_SIG.pt',map_location='cpu'))
     model.eval()
 
     W = encoder.state_dict()['linear2.weight']
@@ -213,3 +215,10 @@ plt.show()
 # plt.ylabel('$Density$')
 # plt.show()
 # -------------------------------------------------------------------------------------------
+test_error = np.sum(np.abs(c - predict),axis=1)
+mean = np.sum(test_error)/len(test_error)
+print('Mean Test Error', mean)
+print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+print('Highest Sample Error',np.max(test_error))
+print('Lowest Sample Error', np.min(test_error))
