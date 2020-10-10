@@ -89,7 +89,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1.pt',map_location='cpu'))
+    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1_v2.pt',map_location='cpu'))
     model.eval()
 
     W = encoder.state_dict()['linear3.weight']
