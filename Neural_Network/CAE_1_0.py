@@ -29,13 +29,13 @@ lam = 1e-4
 
 
 #load data
-f = np.load('preprocessed_samples_lin_substract50.npy')
+f = np.load('preprocessed_samples_lin.npy')
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
 
-train_in = f[0:2999]
-val_in = f[3000:3749]
+train_in = f[0:3999]
+val_in = f[4000:4999]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -233,11 +233,11 @@ plt.ylabel('loss')
 plt.show()
 
 
-np.save('Train_Loss_CAE_1_0_L5_16_subtr50__TH.npy',train_losses)
-np.save('Test_Loss_CAE_1_0_L5_substr50_TH.npy',test_losses)
+np.save('Train_Loss_CAE_1_0_L5_16_TH.npy',train_losses)
+np.save('Test_Loss_CAE_1_0_L5_16_TH.npy',test_losses)
 
 
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_substr50_TH.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_TH.pt')
