@@ -29,6 +29,7 @@ lam = 1e-4
 
 #load data
 f = np.load('preprocessed_samples_lin_substract50.npy')
+
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
@@ -45,7 +46,7 @@ class Encoder(nn.Module):
 
         self.linear1 = nn.Linear(in_features=input_dim, 
                                     out_features=lat_dim, bias=False)
-        self.activation_out = nn.LeakyReLU()
+        self.activation_out = nn.Tanh()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         return x
@@ -55,13 +56,11 @@ class Decoder(nn.Module):
     def __init__(self, input_dim, lat_dim):
         super(Decoder, self).__init__()
         self.linear2 = nn.Linear(in_features=lat_dim, 
-                                out_features=input_dim,bias=False)
+                                out_features=input_dim)
         self.activation_out = nn.LeakyReLU()
 
     def forward(self,x):
-
         x = self.activation_out(self.linear2(x))
-      
         return x
 
 
@@ -71,8 +70,8 @@ class Autoencoder(nn.Module):
         self.enc = enc
         self.dec = dec
         # #tie the weights
-        a =  enc.linear1.weight
-        dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
+        # a =  enc.linear1.weight
+        # dec.linear2.weight = nn.Parameter(torch.transpose(a,0,1))
         
     def forward(self, x):
         h = self.enc(x)
@@ -80,9 +79,9 @@ class Autoencoder(nn.Module):
         #print(torch.sum(torch.abs(self.dec.linear2.weight - torch.transpose(self.enc.linear1.weight,0,1))))
         return predicted, h
 
-class Swish(nn.Module):
-    def forward(self, x):
-        return x * torch.sigmoid(x)
+# class Swish(nn.Module):
+#     def forward(self, x):
+#         return x * torch.sigmoid(x)
 
 #encoder
 encoder = Encoder(INPUT_DIM,LATENT_DIM)
@@ -93,24 +92,41 @@ decoder = Decoder(INPUT_DIM,LATENT_DIM)
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-#model.load_state_dict(torch.load('Lin_AE_STATE_DICT_0_9_L5.pt'))
+#model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_TH_subtr50.pt')['model_state_dict'])
    
 optimizer = Adam(params=model.parameters(), lr=lr)
 
 loss_crit = nn.MSELoss()
-train_losses = []
-val_losses = []
-
 
 
 def loss_function(W, x, predicted, h, lam):
     mse = loss_crit(predicted, x)
 
-    dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+    #     #Sigmoid
+    # dh = h * (1 - h)
 
-    j = dh * W
+    # w_sum = torch.sum(W**2,dim=1)
 
-    contractive_loss  = torch.sqrt(torch.sum(j**2))
+    # w_sum = w_sum.unsqueeze(1)
+
+    # contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
+
+        #LeakyReLU
+
+    # dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+
+    # j = dh*W
+
+    # contractive_loss  = torch.sqrt(torch.sum(j**2))
+
+        #Tanh
+    dh = 1 - h**2
+
+    w_sum = torch.sum(W**2,dim=1)
+
+    w_sum = w_sum.unsqueeze(1)
+
+    contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
 
     return mse + contractive_loss * lam, mse, contractive_loss
 
@@ -137,7 +153,7 @@ def train():
 
         loss.backward()
         train_loss += loss.item()
-        train_mse_loss += loss.item()
+        train_mse_loss += mse.item()
         train_con_loss += con.item()
 
         optimizer.step()
@@ -166,7 +182,7 @@ def test():
             test_mse_loss += mse.item()
             test_con_loss += con.item()
 
-        return test_loss, test_mse_loss, test_con_loss
+    return test_loss, test_mse_loss, test_con_loss
 
 
 
@@ -199,7 +215,7 @@ for epoch in range(N_EPOCHS):
     test_con_losses.append(test_con_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {epoch}, Train Loss: {train_loss:.5f}, Test Loss: {test_loss:.5f},Test CON Loss: {test_con_loss:.5f}, Train CON Loss: {train_con_loss:.5f}')
+    print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f},Test CON Loss: {test_con_loss:.5f}, Train CON Loss: {train_con_loss:.5f}')
 
 
     # if epoch % 100 == 0:
@@ -237,4 +253,4 @@ torch.save({
     'test_loss': test_loss,
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'CAE_STATE_DICT_0_1_L5_16_substr50_tiedWeights_LR.pt')
+    },'CAE_STATE_DICT_0_1_L5_16_TH_subtr50.pt')

@@ -29,7 +29,7 @@ def net(c):
 
             self.linear1 = nn.Linear(in_features=input_dim, 
                                         out_features=lat_dim,bias=False)
-            self.activation_out = nn.LeakyReLU()
+            self.activation_out = nn.Tanh()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             return x
@@ -39,7 +39,7 @@ def net(c):
         def __init__(self, input_dim, lat_dim):
             super(Decoder, self).__init__()
             self.linear2 = nn.Linear(in_features=lat_dim, 
-                                    out_features=input_dim,bias=False)
+                                    out_features=input_dim)
             self.activation_out = nn.LeakyReLU()
 
         def forward(self,x):
@@ -48,6 +48,9 @@ def net(c):
           
             return x
 
+    class Swish(nn.Module):
+        def forward(self, x):
+            return x * torch.sigmoid(x)
 
 
     class Autoencoder(nn.Module):
@@ -74,7 +77,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_substr50_LR.pt',map_location='cpu')['model_state_dict'])
+    model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_TH_subtr50.pt',map_location='cpu')['model_state_dict'])
     model.eval()
 
     W = encoder.state_dict()['linear1.weight']
@@ -208,3 +211,10 @@ plt.show()
 # plt.ylabel('$Density$')
 # plt.show()
 # -------------------------------------------------------------------------------------------
+test_error = np.sum(np.abs(c - predict),axis=1)
+mean = np.sum(test_error)/len(test_error)
+print('Mean Test Error', mean)
+print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+print('Highest Sample Error',np.max(test_error))
+print('Lowest Sample Error', np.min(test_error))

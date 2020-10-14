@@ -61,6 +61,7 @@ class Encoder(nn.Module):
         x1 = self.activation_out1(self.linear21(x))
         x2 = self.activation_out1(self.linear22(x))
         x3 = self.activation_out1(self.linear23(x))
+        
         x4 = self.activation_out1(self.linear24(x))
 
         return x0,x1,x2,x3,x4
