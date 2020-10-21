@@ -47,28 +47,34 @@ class Encoder(nn.Module):
 
         self.linear1 = nn.Linear(in_features=input_dim, 
                                     out_features=hidden_dim)
-        self.linear2 = nn.Linear(in_features=hidden_dim, 
+        self.linear2 = nn.Linear(in_features=hidden_dim,
+                                out_features=hidden_dim)
+        self.linear3 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim, bias=False)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.LeakyReLU()
+        self.activation_out1 = nn.Tanh()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
-        x = self.activation_out1(self.linear2(x))
+        x = self.activation_out(self.linear2(x))
+        x = self.activation_out1(self.linear3(x))
         return x
 
 
 class Decoder(nn.Module):
     def __init__(self, input_dim, hidden_dim, lat_dim):
         super(Decoder, self).__init__()
-        self.linear3 = nn.Linear(in_features=lat_dim, 
+        self.linear4 = nn.Linear(in_features=lat_dim, 
                                 out_features=hidden_dim)
-        self.linear4 = nn.Linear(in_features=hidden_dim, 
+        self.linear5 = nn.Linear(in_features=hidden_dim, 
+                                out_features=hidden_dim)
+        self.linear6 = nn.Linear(in_features=hidden_dim,
                                 out_features=input_dim)
         self.activation_out = nn.LeakyReLU()
 
     def forward(self,x):
-        x = self.activation_out(self.linear3(x))
         x = self.activation_out(self.linear4(x))
+        x = self.activation_out(self.linear5(x))
+        x = self.activation_out(self.linear6(x))
         return x
 
 
@@ -112,14 +118,12 @@ def loss_function(W, x, predicted, h, lam):
 
     mse = loss_crit(predicted, x)
     # LeakyReLU
-    dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+    # dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
 
-    j = dh * W
+    # j = dh * W
 
 
-    contractive_loss  = torch.sum(j**2)
-
-    #contractive_loss = torch.norm(j,p='fro')
+    # contractive_loss  = torch.sqrt(torch.sum(j**2))
     #Sigmoid
     # dh = h * (1 - h)
 
@@ -129,14 +133,14 @@ def loss_function(W, x, predicted, h, lam):
 
     # contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
 
-    # #Tanh
-    # dh = (1 - h**2)
+    #Tanh
+    dh = (1 - h**2)
 
-    # w_sum = torch.sum(W**2,dim=1)
+    w_sum = torch.sum(W**2,dim=1)
 
-    # w_sum = w_sum.unsqueeze(1)
+    w_sum = w_sum.unsqueeze(1)
 
-    # contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
+    contractive_loss = torch.sum(torch.mm(dh**2, w_sum))
 
     return mse + contractive_loss * lam, contractive_loss
 
@@ -155,7 +159,8 @@ def train():
 
         predicted, h = model(x)
 
-        W = encoder.state_dict()['linear2.weight']
+        W = encoder.state_dict()['linear3.weight']
+
 
         loss, c_loss = loss_function(W, x, predicted, h, lam)
 
@@ -180,7 +185,7 @@ def test():
 
             predicted, h = model(x)
 
-            W = encoder.state_dict()['linear2.weight']
+            W = encoder.state_dict()['linear3.weight']
 
             loss, c_loss = loss_function(W, x, predicted, h, lam)
 
@@ -242,4 +247,4 @@ plt.show()
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'CAE_STATE_DICT_1_0_L5_16_LR_test.pt')
+torch.save(model.state_dict(),'CAE_STATE_DICT_1_1_L5_16_TH.pt')
