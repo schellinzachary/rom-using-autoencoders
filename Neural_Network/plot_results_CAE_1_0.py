@@ -31,7 +31,7 @@ def net(c):
             self.linear2 = nn.Linear(in_features=hidden_dim, 
                                         out_features=lat_dim, bias=False)
             self.activation_out = nn.LeakyReLU()
-            self.activation_out1 = nn.Sigmoid()
+            self.activation_out1 = nn.LeakyReLU()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             x = self.activation_out1(self.linear2(x))
@@ -87,7 +87,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_...pt',map_location='cpu'))
+    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_LR_test.pt',map_location='cpu'))
     model.eval()
 
     W = encoder.state_dict()['linear2.weight']

@@ -1,5 +1,5 @@
 '''
-Plot results Linear 1.0
+Plot results CAE 1.0
 '''
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,44 +15,50 @@ rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
 # #rc('font',**{'family':'serif','serif':['Palatino']})
 rc('text', usetex=True)
 
-def net(c):
 
+
+
+def net(c):
     INPUT_DIM = 40
     HIDDEN_DIM = 20
     LATENT_DIM = 5
-
-
     class Encoder(nn.Module):
         def __init__(self, input_dim, hidden_dim, lat_dim):
             super(Encoder, self).__init__()
 
             self.linear1 = nn.Linear(in_features=input_dim, 
                                         out_features=hidden_dim)
-            self.linear2 = nn.Linear(in_features=hidden_dim, 
-                                        out_features=lat_dim)
+            self.linear2 = nn.Linear(in_features=hidden_dim,
+                                    out_features=hidden_dim)
+            self.linear3 = nn.Linear(in_features=hidden_dim, 
+                                        out_features=lat_dim, bias=False)
             self.activation_out = nn.LeakyReLU()
             self.activation_out1 = nn.Tanh()
-            #self.activation_out1 = nn.LeakyReLU()
-            #self.activation_out1 = nn.Sigmoid()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
-            x = self.activation_out1(self.linear2(x))
+            x = self.activation_out(self.linear2(x))
+            x = self.activation_out1(self.linear3(x))
             return x
 
 
     class Decoder(nn.Module):
         def __init__(self, input_dim, hidden_dim, lat_dim):
             super(Decoder, self).__init__()
-            self.linear3 = nn.Linear(in_features=lat_dim, 
+            self.linear4 = nn.Linear(in_features=lat_dim, 
                                     out_features=hidden_dim)
-            self.linear4 = nn.Linear(in_features=hidden_dim, 
+            self.linear5 = nn.Linear(in_features=hidden_dim, 
+                                    out_features=hidden_dim)
+            self.linear6 = nn.Linear(in_features=hidden_dim,
                                     out_features=input_dim)
             self.activation_out = nn.LeakyReLU()
 
         def forward(self,x):
-            x = self.activation_out(self.linear3(x))
             x = self.activation_out(self.linear4(x))
+            x = self.activation_out(self.linear5(x))
+            x = self.activation_out(self.linear6(x))
             return x
+
+
 
 
     class Autoencoder(nn.Module):
@@ -62,17 +68,25 @@ def net(c):
             self.dec = dec
 
         def forward(self, x):
-            z = self.enc(x)
-            predicted = self.dec(z)
-            return predicted, z
+            h = self.enc(x)
+            predicted = self.dec(h)
+            return predicted
 
-    class Swish(nn.Module):
+
+
+    class Autoencoder(nn.Module):
+        def __init__(self, enc, dec):
+            super().__init__()
+            self.enc = enc
+            self.dec = dec
+
         def forward(self, x):
-            return x * torch.sigmoid(x)
-
+            h = self.enc(x)
+            predicted = self.dec(h)
+            return predicted, h
 
     #encoder
-    encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
+    encoder = Encoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
 
     #decoder
     decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
@@ -81,11 +95,10 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_16_l3-3_TH_test.pt',map_location='cpu'))
+    model.load_state_dict(torch.load('CAE_STATE_DICT_1_1_L5_16_TH.pt',map_location='cpu'))
     model.eval()
 
-    W = encoder.state_dict()['linear2.weight']
-
+    W = encoder.state_dict()['linear3.weight']
     #-------------------------------------------------------------------------------------------
     #Inference---------------------------------------------------------------------------------
     c = tensor(c, dtype=torch.float)
@@ -96,31 +109,31 @@ def net(c):
 
     return predict, W, z
 
+
 # load original data-----------------------------------------------------------------------
 c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
-c = c[:,4799:-1]
 c = c.T
 #Inference-----------------------------------------------------------------------------------
 predict, W, z = net(c)
 #-------------------------------------------------------------------------------------------
 # Jacobian---------------------------------------------------------------------------------
-dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
-j = dh * W
-u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+# dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+# j = dh * W
+# u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
 
-plt.plot(s,'-*''k')
-plt.ylabel(r'Singular Values')
-plt.xlabel(r'Number')
-plt.show()
+# plt.plot(s,'-*''k')
+# plt.ylabel(r'Singular Values')
+# plt.xlabel(r'Number')
+# plt.show()
 #------------------------------------------------------------------------------------------
 # plot code-------------------------------------------------------------------------------
-fig, axs = plt.subplots(5)
-axs[0].plot(np.arange(200),z[:,0].detach().numpy(),'k')
-axs[1].plot(np.arange(200),z[:,1].detach().numpy(),'k')
-axs[2].plot(np.arange(200),z[:,2].detach().numpy(),'k')
-axs[3].plot(np.arange(200),z[:,3].detach().numpy(),'k')
-axs[4].plot(np.arange(200),z[:,4].detach().numpy(),'k')
-plt.show()
+# fig, axs = plt.subplots(5)
+# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+# axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
+# axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
+# plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
@@ -174,9 +187,9 @@ zip(mistake_list)
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
-#width = (2*np.pi) / 5000
+width = 1/5000
 ax = plt.subplot(111, polar=False)
-bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width = 1)
 axr = ax.twiny()    
 axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
 axr.set_xlim((0,25))
@@ -216,10 +229,11 @@ plt.show()
 # plt.ylabel('$Density$')
 # plt.show()
 # -------------------------------------------------------------------------------------------
+#Some Statistics
 test_error = np.sum(np.abs(c - predict),axis=1)
 mean = np.sum(test_error)/len(test_error)
+print('Highest Sample Error',np.max(test_error))
+print('Lowest Sample Error', np.min(test_error))
 print('Mean Test Error', mean)
 print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
 print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
-print('Highest Sample Error',np.max(test_error))
-print('Lowest Sample Error', np.min(test_error))
