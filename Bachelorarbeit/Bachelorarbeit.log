@@ -1,96 +1,172 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.29)  1 OCT 2020 11:09
-entering extended mode
-**./Bachelorarbeit.tex
-(Bachelorarbeit.tex
-LaTeX2e <2020-02-02> patch level 5
-L3 programming layer <2020-09-03>
-(/home/fusilly/.miktex/texmfs/install/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/home/fusilly/.miktex/texmfs/install/tex/latex/base/size12.clo
-File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-)
-\c@part=\count168
-\c@section=\count169
-\c@subsection=\count170
-\c@subsubsection=\count171
-\c@paragraph=\count172
-\c@subparagraph=\count173
-\c@figure=\count174
-\c@table=\count175
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 20.10) (format=lualatex 2020.10.21)  21 OCT 2020 18:42
+ restricted system commands enabled.
+**Bachelorarbeit.tex
+(./Bachelorarbeit.tex
+LaTeX2e <2020-10-01> patch level 1
+Lua module: luaotfload-main 2020-09-02 3.15 luaotfload entry point
+Lua module: luaotfload-init 2020-09-02 3.15 luaotfload submodule / initializatio
+n
+Lua module: lualibs 2020-08-31 2.72 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-08-31 2.72 ConTeXt Lua libraries -- extended c
+ollection.
+Lua module: luaotfload-log 2020-09-02 3.15 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-09-02 3.15 luaotfload submodule / parsers
+Lua module: luaotfload-configuration 2020-09-02 3.15 luaotfload submodule / conf
+ig file reader
+luaotfload | conf : Root cache directory is "/home/fusily/.miktex/texmfs/data/lu
+atex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2020-08-31.lua" from kpse-res
+olved path "/usr/local/share/miktex-texmf/tex/luatex/luaotfload/fontloader-2020-
+08-31.lua".
+Lua-only attribute luaotfload@noligature = 1
+Lua-only attribute luaotfload@syllabe = 2
+luaotfload | init : Context OpenType loader version 0x1.8e353f7ced917p+1
+Lua module: luaotfload-fallback 2020-09-02 3.15 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-09-02 3.15 luaotfload submodule / multis
+cript
+Lua module: luaotfload-script 2020-09-02 3.15 luaotfload submodule / Script help
+ers
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' at position 1 in `glyph_stream_provider'.
+Lua module: luaotfload-loaders 2020-09-02 3.15 luaotfload submodule / callback h
+andling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-09-02 3.15 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-09-02 3.15 luaotfload submodule / Unicode he
+lpers
+Lua module: luaotfload-colors 2020-09-02 3.15 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 3
+Lua module: luaotfload-resolvers 2020-09-02 3.15 luaotfload submodule / resolver
+s
+luaotfload | conf : Root cache directory is "/home/fusily/.miktex/texmfs/data/lu
+atex-cache/generic/names".
+Lua module: luaotfload-features 2020-09-02 3.15 luaotfload submodule / features
+Lua module: luaotfload-harf-define 2020-09-02 3.15 luaotfload submodule / HarfBu
+zz font loading
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' at position 1 in `find_truetype_file'.
+Lua module: luaotfload-harf-plug 2020-09-02 3.15 luaotfload submodule / HarfBuzz
+ shaping
+Inserting `Harf pre_output_filter callback' at position 1 in `pre_output_filter'
+.
+Inserting `Harf wrapup_run callback' at position 1 in `wrapup_run'.
+Inserting `Harf finish_pdffile callback' at position 1 in `finish_pdffile'.
+Inserting `Harf glyph_info callback' at position 1 in `glyph_info'.
+Lua module: luaotfload-letterspace 2020-09-02 3.15 luaotfload submodule / letter
+spacing
+Lua module: luaotfload-embolden 2020-09-02 3.15 luaotfload submodule / embolden
+Lua module: luaotfload-notdef 2020-09-02 3.15 luaotfload submodule / notdef
+Lua module: luaotfload-suppress 2020-09-02 3.15 luaotfload submodule / suppress
+Lua module: luaotfload-szss 2020-09-02 3.15 luaotfload submodule / Special featu
+re handling
+Lua module: luaotfload-auxiliary 2020-09-02 3.15 luaotfload submodule / auxiliar
+y functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-tounicode 2020-09-02 3.15 luaotfload submodule / tounicod
+e
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2020-10-05> xparse <2020-03-03>
+(/usr/local/share/miktex-texmf/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/local/share/miktex-texmf/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/fusily/.miktex/texmfs/da
+ta/luatex-cache/generic/names/luaotfload-names.luc)
+\c@part=\count171
+\c@section=\count172
+\c@subsection=\count173
+\c@subsubsection=\count174
+\c@paragraph=\count175
+\c@subparagraph=\count176
+\c@figure=\count177
+\c@table=\count178
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen134
+\bibindent=\dimen138
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/base/inputenc.sty
-Package: inputenc 2018/08/11 v1.3c Input encoding file
+(/usr/local/share/miktex-texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks15
 \inpenc@posthook=\toks16
-)
-(/home/fusilly/.miktex/texmfs/install/tex/latex/mdwtools/footnote.sty
+
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/home/fusily/.miktex/texmfs/install/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box45
-\fn@width=\dimen135
+\fn@notes=\box47
+\fn@width=\dimen139
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/hyperref/hyperref.sty
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+(/home/fusily/.miktex/texmfs/install/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/iftex/iftex.sty
+(/usr/local/share/miktex-texmf/tex/generic/iftex/iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
-)
+(/usr/local/share/miktex-texmf/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
+
+(/home/fusily/.miktex/texmfs/install/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks17
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics/keyval.sty
+(/usr/local/share/miktex-texmf/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks18
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/kvsetkeys/kvsetkeys.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/home/fusilly/.miktex/texmfs/install/tex/generic/pdfescape/pdfescape.sty
+) (/home/fusily/.miktex/texmfs/install/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/hycolor/hycolor.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/letltxmacro/letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
 )
-\@linkdim=\dimen136
-\Hy@linkcounter=\count176
-\Hy@pagecounter=\count177
+\@linkdim=\dimen140
+\Hy@linkcounter=\count179
+\Hy@pagecounter=\count180
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/hyperref/pd1enc.def
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/etexcmds/etexcmds.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count178
+\Hy@SavedSpaceFactor=\count181
 Package hyperref Info: Hyper figures OFF on input line 4464.
 Package hyperref Info: Link nesting OFF on input line 4469.
 Package hyperref Info: Hyper index ON on input line 4472.
@@ -98,25 +174,25 @@ Package hyperref Info: Plain pages OFF on input line 4479.
 Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
-\c@Hy@tempcnt=\count179
+\c@Hy@tempcnt=\count182
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/url/url.sty
+(/usr/local/share/miktex-texmf/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
-\XeTeXLinkMargin=\dimen137
+\XeTeXLinkMargin=\dimen141
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
-)
+(/home/fusily/.miktex/texmfs/install/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
 ))
-\Fld@menulength=\count180
-\Field@Width=\dimen138
-\Fld@charsize=\dimen139
+\Fld@menulength=\count183
+\Field@Width=\dimen142
+\Fld@charsize=\dimen143
 Package hyperref Info: Hyper figures OFF on input line 6347.
 Package hyperref Info: Link nesting OFF on input line 6352.
 Package hyperref Info: Hyper index ON on input line 6355.
@@ -127,211 +203,211 @@ Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/atbegshi/atbegshi.sty
-Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+(/usr/local/share/miktex-texmf/tex/latex/base/atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packag
+e
+with kernel methods
 )
-\Hy@abspage=\count181
-\c@Item=\count182
-\c@Hfootnote=\count183
+\Hy@abspage=\count184
+\c@Item=\count185
+\c@Hfootnote=\count186
 )
-Package hyperref Info: Driver (autodetected): hpdftex.
+Package hyperref Info: Driver (autodetected): hluatex.
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2020-05-15 v7.00e Hyperref driver for luaTeX
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/atveryend/atveryend.sty
-Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
-Package atveryend Info: \enddocument detected (standard20110627).
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/puenc.def
+File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 )
-\Fld@listcount=\count184
-\c@bookmark@seq@number=\count185
+(/home/fusily/.miktex/texmfs/install/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.s
-ty
+)
+(/usr/local/share/miktex-texmf/tex/latex/base/atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery package
+
+with kernel methods
+)
+\Fld@listcount=\count187
+\c@bookmark@seq@number=\count188
+
+(/home/fusily/.miktex/texmfs/install/tex/latex/rerunfilecheck/rerunfilecheck.st
+y
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/uniquecounter/uniquecounter.s
-ty
+(/home/fusily/.miktex/texmfs/install/tex/generic/uniquecounter/uniquecounter.st
+y
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
-86.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+6.
 )
 \Hy@SectionHShift=\skip49
-) (/home/fusilly/.miktex/texmfs/install/tex/latex/preprint/fullpage.sty
+) (/home/fusily/.miktex/texmfs/install/tex/latex/preprint/fullpage.sty
 Package: fullpage 1999/02/23 1.1 (PWD)
 \FP@margin=\skip50
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip51
 
 For additional information on amsmath, use the `?' option.
-(/home/fusilly/.miktex/texmfs/install/tex/latex/amsmath/amstext.sty
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/amsmath/amsgen.sty
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks18
-\ex@=\dimen140
+\@emptytoks=\toks19
+\ex@=\dimen144
 ))
-(/home/fusilly/.miktex/texmfs/install/tex/latex/amsmath/amsbsy.sty
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen141
+\pmbraise@=\dimen145
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/amsmath/amsopn.sty
+(/usr/local/share/miktex-texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count186
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count187
-\leftroot@=\count188
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count189
-\DOTSCASE@=\count190
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box46
-\strutbox@=\box47
-\big@size=\dimen142
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count191
-\c@MaxMatrixCols=\count192
+\inf@bad=\count189
+LaTeX Info: Redefining \frac on input line 236.
+\uproot@=\count190
+\leftroot@=\count191
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count192
+\DOTSCASE@=\count193
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box48
+\strutbox@=\box49
+\big@size=\dimen146
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count194
+\c@MaxMatrixCols=\count195
 \dotsspace@=\muskip17
-\c@parentequation=\count193
-\dspbrk@lvl=\count194
-\tag@help=\toks19
-\row@=\count195
-\column@=\count196
-\maxfields@=\count197
-\andhelp@=\toks20
-\eqnshift@=\dimen143
-\alignsep@=\dimen144
-\tagshift@=\dimen145
-\tagwidth@=\dimen146
-\totwidth@=\dimen147
-\lineht@=\dimen148
-\@envbody=\toks21
+\c@parentequation=\count196
+\dspbrk@lvl=\count197
+\tag@help=\toks20
+\row@=\count198
+\column@=\count199
+\maxfields@=\count266
+\andhelp@=\toks21
+\eqnshift@=\dimen147
+\alignsep@=\dimen148
+\tagshift@=\dimen149
+\tagwidth@=\dimen150
+\totwidth@=\dimen151
+\lineht@=\dimen152
+\@envbody=\toks22
 \multlinegap=\skip52
 \multlinetaggap=\skip53
-\mathdisplay@stack=\toks22
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgfplots/pgfplots.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.te
-x)
+(/usr/local/share/miktex-texmf/tex/latex/pgfplots/pgfplots.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2020/02/29 v1.17 Data Visualization (1.17)
- (/home/fusilly/.miktex/texmfs/install/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/share/miktex-texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics/trig.sty
+(/usr/local/share/miktex-texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/share/miktex-texmf/tex/latex/graphics/trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
+(/usr/local/share/miktex-texmf/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: luatex.def on input line 105.
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/08/26 v1.2 Graphics/color driver for pdftex
+(/usr/local/share/miktex-texmf/tex/latex/graphics-def/luatex.def
+File: luatex.def 2020/10/05 v1.2a Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen149
-\Gin@req@width=\dimen150
+\Gin@req@height=\dimen153
+\Gin@req@width=\dimen154
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/frontendlayer/tikz.sty
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgf.sty
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfrcs.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-common.
-tex
-\pgfutil@everybye=\toks23
-\pgfutil@tempdima=\dimen151
-\pgfutil@tempdimb=\dimen152
+(/usr/local/share/miktex-texmf/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen155
+\pgfutil@tempdimb=\dimen156
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-common-
-lists.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfutil-latex.d
-ef
-\pgfutil@abb=\box48
- (/home/fusilly/.miktex/texmfs/install/tex/latex/ms/everyshi.sty
-Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box50
+) (/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/10/01 v3.1.6a (3.1.6a)
 ))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfrcs.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/pgf.revision.tex)
-Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
-))
-Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+Package: pgf 2020/10/01 v3.1.6a (3.1.6a)
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/basiclayer/pgfcore.sty
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/systemlayer/pgfsys.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys.code.t
+(/usr/local/share/miktex-texmf/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/10/01 v3.1.6a (3.1.6a)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.te
-x
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeysfiltered
-.code.tex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks27
 ))
-\pgf@x=\dimen153
-\pgf@y=\dimen154
-\pgf@xa=\dimen155
-\pgf@ya=\dimen156
-\pgf@xb=\dimen157
-\pgf@yb=\dimen158
-\pgf@xc=\dimen159
-\pgf@yc=\dimen160
-\pgf@xd=\dimen161
-\pgf@yd=\dimen162
+\pgf@x=\dimen157
+\pgf@y=\dimen158
+\pgf@xa=\dimen159
+\pgf@ya=\dimen160
+\pgf@xb=\dimen161
+\pgf@yb=\dimen162
+\pgf@xc=\dimen163
+\pgf@yc=\dimen164
+\pgf@xd=\dimen165
+\pgf@yd=\dimen166
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count198
-\c@pgf@countb=\count199
-\c@pgf@countc=\count266
-\c@pgf@countd=\count267
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count268
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgf.cfg
-File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+\c@pgf@counta=\count267
+\c@pgf@countb=\count268
+\c@pgf@countc=\count269
+\c@pgf@countd=\count270
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count271
+ (/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/10/01 v3.1.6a (3.1.6a)
 )
-Driver file for pgf: pgfsys-pdftex.def
+Driver file for pgf: pgfsys-luatex.def
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-pdftex
-.def
-File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2020/10/01 v3.1.6a (3.1.6a)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsys-common
--pdf.def
-File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2020/10/01 v3.1.6a (3.1.6a)
 )))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsyssoftpat
-h.code.tex
-File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count269
-\pgfsyssoftpath@bigbuffer@items=\count270
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfsyssoftpath@smallbuffer@items=\count272
+\pgfsyssoftpath@bigbuffer@items=\count273
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/systemlayer/pgfsysprotoco
-l.code.tex
-File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)) (/home/fusilly/.miktex/texmfs/install/tex/latex/xcolor/xcolor.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)) (/usr/local/share/miktex-texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/graphics-cfg/color.cfg
+(/usr/local/share/miktex-texmf/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Driver file: luatex.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
@@ -342,349 +418,336 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcore.code.t
-ex
-Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
- (/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/10/01 v3.1.6a (3.1.6a)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathutil.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen167
+\pgfmath@count=\count274
+\pgfmath@box=\box51
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathparser.code.t
-ex
-\pgfmath@dimen=\dimen163
-\pgfmath@count=\count271
-\pgfmath@box=\box49
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.cod
-e.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.bas
-ic.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.tri
-gonometric.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.ran
-dom.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.com
-parison.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.bas
-e.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.rou
-nd.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.mis
-c.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfunctions.int
-egerarithmetics.code.tex)))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmathfloat.code.te
-x
-\c@pgfmathroundto@lastzeros=\count272
-)) (/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfint.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepoints.
-code.tex
-File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen164
-\pgf@picmaxx=\dimen165
-\pgf@picminy=\dimen166
-\pgf@picmaxy=\dimen167
-\pgf@pathminx=\dimen168
-\pgf@pathmaxx=\dimen169
-\pgf@pathminy=\dimen170
-\pgf@pathmaxy=\dimen171
-\pgf@xx=\dimen172
-\pgf@xy=\dimen173
-\pgf@yx=\dimen174
-\pgf@yy=\dimen175
-\pgf@zx=\dimen176
-\pgf@zy=\dimen177
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathcon
-struct.code.tex
-File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen178
-\pgf@path@lasty=\dimen179
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathusa
-ge.code.tex
-File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen180
-\pgf@shorten@start@additional=\dimen181
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorescopes.
-code.tex
-File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box50
-\pgf@hbox=\box51
-\pgf@layerbox@main=\box52
-\pgf@picture@serial@count=\count273
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoregraphic
-state.code.tex
-File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen182
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretransfo
-rmations.code.tex
-File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen183
-\pgf@pt@y=\dimen184
-\pgf@pt@temp=\dimen185
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorequick.c
-ode.tex
-File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreobjects
-.code.tex
-File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepathpro
-cessing.code.tex
-File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorearrows.
-code.tex
-File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen186
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreshade.c
-ode.tex
-File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen187
-\pgf@sys@shading@range@num=\count274
-\pgf@shadingcount=\count275
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreimage.c
-ode.tex
-File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoreexterna
-l.code.tex
-File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box53
-))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorelayers.
-code.tex
-File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcoretranspa
-rency.code.tex
-File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorepattern
-s.code.tex
-File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/basiclayer/pgfcorerdf.cod
-e.tex
-File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleshapes.c
-ode.tex
-File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box54
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduleplot.cod
-e.tex
-File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-versi
-on-0-65.sty
-Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen188
-\pgf@nodesepend=\dimen189
-)
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/compatibility/pgfcomp-versi
-on-1-18.sty
-Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
-))
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/utilities/pgffor.sty
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/utilities/pgfkeys.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgfkeys.code.te
-x)) (/home/fusilly/.miktex/texmfs/install/tex/latex/pgf/math/pgfmath.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen190
-\pgffor@skip=\dimen191
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
-))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/tikz.c
-ode.tex
-Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryploth
-andlers.code.tex
-File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count276
-\pgfplotmarksize=\dimen192
-)
-\tikz@lastx=\dimen193
-\tikz@lasty=\dimen194
-\tikz@lastxsaved=\dimen195
-\tikz@lastysaved=\dimen196
-\tikz@lastmovetox=\dimen197
-\tikz@lastmovetoy=\dimen198
-\tikzleveldistance=\dimen199
-\tikzsiblingdistance=\dimen256
-\tikz@figbox=\box55
-\tikz@figbox@bg=\box56
-\tikz@tempbox=\box57
-\tikz@tempbox@bg=\box58
-\tikztreelevel=\count277
-\tikznumberofchildren=\count278
-\tikznumberofcurrentchild=\count279
-\tikz@fig@count=\count280
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmodulematrix.c
-ode.tex
-File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count281
-\pgfmatrixcurrentcolumn=\count282
-\pgf@matrix@numberofcolumns=\count283
-)
-\tikz@expandcount=\count284
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/librar
-ies/tikzlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-)))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscore.code.te
-x
-\t@pgfplots@toka=\toks35
-\t@pgfplots@tokb=\toks36
-\t@pgfplots@tokc=\toks37
-\pgfplots@tmpa=\dimen257
-\c@pgfplots@coordindex=\count285
-\c@pgfplots@scanlineindex=\count286
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgfplotssysgener
-ic.code.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgfplotslibrary
-.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/oldpgfcompatib/pgfpl
-otsoldpgfsupp_loader.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryfpu.c
-ode.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.co
-de.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfplo
-tsliststructure.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfplo
-tsliststructureext.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfplo
-tsarray.code.tex
-\c@pgfplotsarray@tmp=\count287
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfplo
-tsmatrix.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotstab
-leshared.code.tex
-\c@pgfplotstable@counta=\count288
-\t@pgfplotstable@a=\toks38
-)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/liststructure/pgfplo
-tsdeque.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinary.
-code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsbinary.
-data.code.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotsutil.ve
-rb.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/libs/pgflibrarypgfpl
-ots.surfshading.code.tex
-\c@pgfplotslibrarysurf@no=\count289
-
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/sys/pgflibrarypgfplo
-ts.surfshading.pgfsys-pdftex.def)))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolorma
-p.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/util/pgfplotscolor.c
-ode.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsstackedplots
-.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsplothandlers
-.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplothand
-ler.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsmeshplotimag
-e.code.tex)))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.scaling.cod
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.random.cod
 e.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotscoordprocess
-ing.code.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.errorbars.c
-ode.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.markers.cod
-e.tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplotsticks.code.t
-ex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.paths.code.
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.base.code.
 tex)
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/librar
-ies/tikzlibrarydecorations.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/modules/pgfmoduledecorati
-ons.code.tex
-\pgfdecoratedcompleteddistance=\dimen258
-\pgfdecoratedremainingdistance=\dimen259
-\pgfdecoratedinputsegmentcompleteddistance=\dimen260
-\pgfdecoratedinputsegmentremainingdistance=\dimen261
-\pgf@decorate@distancetomove=\dimen262
-\pgf@decorate@repeatstate=\count290
-\pgfdecorationsegmentamplitude=\dimen263
-\pgfdecorationsegmentlength=\dimen264
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count275
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@picminx=\dimen168
+\pgf@picmaxx=\dimen169
+\pgf@picminy=\dimen170
+\pgf@picmaxy=\dimen171
+\pgf@pathminx=\dimen172
+\pgf@pathmaxx=\dimen173
+\pgf@pathminy=\dimen174
+\pgf@pathmaxy=\dimen175
+\pgf@xx=\dimen176
+\pgf@xy=\dimen177
+\pgf@yx=\dimen178
+\pgf@yy=\dimen179
+\pgf@zx=\dimen180
+\pgf@zy=\dimen181
 )
-\tikz@lib@dec@box=\box59
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@path@lastx=\dimen182
+\pgf@path@lasty=\dimen183
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/librar
-ies/tikzlibrarydecorations.pathmorphing.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/pgf
-librarydecorations.pathmorphing.code.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/librar
-ies/tikzlibrarydecorations.pathreplacing.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/libraries/decorations/pgf
-librarydecorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count291
-\pgfplots@xmin@reg=\dimen265
-\pgfplots@xmax@reg=\dimen266
-\pgfplots@ymin@reg=\dimen267
-\pgfplots@ymax@reg=\dimen268
-\pgfplots@zmin@reg=\dimen269
-\pgfplots@zmax@reg=\dimen270
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@shorten@end@additional=\dimen184
+\pgf@shorten@start@additional=\dimen185
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/frontendlayer/tikz/librar
-ies/tikzlibraryplotmarks.code.tex
-File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfpic=\box52
+\pgf@hbox=\box53
+\pgf@layerbox@main=\box54
+\pgf@picture@serial@count=\count276
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgflinewidth=\dimen186
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@pt@x=\dimen187
+\pgf@pt@y=\dimen188
+\pgf@pt@temp=\dimen189
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfarrowsep=\dimen190
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@max=\dimen191
+\pgf@sys@shading@range@num=\count277
+\pgf@shadingcount=\count278
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgf/libraries/pgflibraryplotm
-arks.code.tex
-File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfexternal@startupbox=\box55
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 )))
-(/home/fusilly/.miktex/texmfs/install/tex/latex/pgfplots/pgfplotstable.sty
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/pgfplots.revision.te
-x)
-Package: pgfplotstable 2020/02/29 v1.17 Table typesetting and Pretty-printing (
-1.17)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfnodeparttextbox=\box56
+) (/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)
+(/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@nodesepstart=\dimen192
+\pgf@nodesepend=\dimen193
+)
+(/usr/local/share/miktex-texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2020/10/01 v3.1.6a (3.1.6a)
+)) (/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/share/miktex-texmf/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/local/share/miktex-texmf/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2020/10/01 v3.1.6a (3.1.6a)
 
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotstab
-le.code.tex
-(/home/fusilly/.miktex/texmfs/install/tex/generic/pgfplots/numtable/pgfplotstab
-le.coltype.code.tex))
-(/home/fusilly/.miktex/texmfs/install/tex/latex/tools/array.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen194
+\pgffor@skip=\dimen195
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/10/01 v3.1.6a (3.1.6a)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgf@plot@mark@count=\count279
+\pgfplotmarksize=\dimen196
+)
+\tikz@lastx=\dimen197
+\tikz@lasty=\dimen198
+\tikz@lastxsaved=\dimen199
+\tikz@lastysaved=\dimen256
+\tikz@lastmovetox=\dimen257
+\tikz@lastmovetoy=\dimen258
+\tikzleveldistance=\dimen259
+\tikzsiblingdistance=\dimen260
+\tikz@figbox=\box57
+\tikz@figbox@bg=\box58
+\tikz@tempbox=\box59
+\tikz@tempbox@bg=\box60
+\tikztreelevel=\count280
+\tikznumberofchildren=\count281
+\tikznumberofcurrentchild=\count282
+\tikz@fig@count=\count283
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+\pgfmatrixcurrentrow=\count284
+\pgfmatrixcurrentcolumn=\count285
+\pgf@matrix@numberofcolumns=\count286
+)
+\tikz@expandcount=\count287
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+)))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscore.code.tex
+Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
+\pgfplots@luabackend@table=\catcodetable12
+\t@pgfplots@toka=\toks36
+\t@pgfplots@tokb=\toks37
+\t@pgfplots@tokc=\toks38
+\pgfplots@tmpa=\dimen261
+\c@pgfplots@coordindex=\count288
+\c@pgfplots@scanlineindex=\count289
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/luamath/pgflibraryluam
+ath.code.tex)
+Package pgfplots info on input line 290: luamath library shipped with pgf 3.1.6a
+ is up-to-date
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+Package pgfplots info on input line 82: Found new luatex: initializing lua comma
+nds instead of write18 (shell-escape)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count290
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count291
+\t@pgfplotstable@a=\toks39
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count292
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-luatex.def)))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen262
+\pgfdecoratedremainingdistance=\dimen263
+\pgfdecoratedinputsegmentcompleteddistance=\dimen264
+\pgfdecoratedinputsegmentremainingdistance=\dimen265
+\pgf@decorate@distancetomove=\dimen266
+\pgf@decorate@repeatstate=\count293
+\pgfdecorationsegmentamplitude=\dimen267
+\pgfdecorationsegmentlength=\dimen268
+)
+\tikz@lib@dec@box=\box61
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count294
+\pgfplots@xmin@reg=\dimen269
+\pgfplots@xmax@reg=\dimen270
+\pgfplots@ymin@reg=\dimen271
+\pgfplots@ymax@reg=\dimen272
+\pgfplots@zmin@reg=\dimen273
+\pgfplots@zmax@reg=\dimen274
+)
+(/usr/local/share/miktex-texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2020/10/01 v3.1.6a (3.1.6a)
+))) (/usr/local/share/miktex-texmf/tex/latex/pgfplots/pgfplotstable.sty
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplotstable 2020/02/29 v1.17 Table typesetting and Pretty-printing (1
+.17)
+
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/numtable/pgfplotstable.code
+.tex
+(/usr/local/share/miktex-texmf/tex/generic/pgfplots/numtable/pgfplotstable.colt
+ype.code.tex)) (/usr/local/share/miktex-texmf/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen271
-\ar@mcellbox=\box60
-\extrarowheight=\dimen272
-\NC@list=\toks39
+\col@sep=\dimen275
+\ar@mcellbox=\box62
+\extrarowheight=\dimen276
+\NC@list=\toks40
 \extratabsurround=\skip54
 \backup@length=\skip55
-\ar@cellbox=\box61
+\ar@cellbox=\box63
 ))
-(/home/fusilly/.miktex/texmfs/install/tex/latex/cleveref/cleveref.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
 LaTeX Info: Redefining \cref on input line 2370.
@@ -698,12 +761,13 @@ LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
 )
-(/home/fusilly/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2020-09-01 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count292
-\l__pdf_internal_box=\box62
-) (Bachelorarbeit.aux)
-\openout1 = `Bachelorarbeit.aux'.
+(/usr/local/share/miktex-texmf/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2020-09-24 L3 backend support: PDF output (LuaTeX)
+\l__kernel_color_stack_int=\count295
+\l__pdf_internal_box=\box64
+)
+(./Bachelorarbeit.aux)
+\openout1 = Bachelorarbeit.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -714,6 +778,13 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 15.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 15
+.
+ (/usr/local/share/miktex-texmf/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -721,121 +792,116 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-\AtBeginShipoutBox=\box63
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 Package hyperref Info: Link coloring OFF on input line 15.
-
-(/home/fusilly/.miktex/texmfs/install/tex/latex/hyperref/nameref.sty
+(/usr/local/share/miktex-texmf/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(/home/fusilly/.miktex/texmfs/install/tex/latex/refcount/refcount.sty
+(/home/fusily/.miktex/texmfs/install/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(/home/fusilly/.miktex/texmfs/install/tex/generic/gettitlestring/gettitlestring
-.sty
+(/home/fusily/.miktex/texmfs/install/tex/generic/gettitlestring/gettitlestring.
+sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count293
+\c@section@level=\count296
 )
 LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
- (Bachelorarbeit.out) (Bachelorarbeit.out)
+ (./Bachelorarbeit.out) (./Bachelorarbeit.out)
 \@outlinefile=\write4
-\openout4 = `Bachelorarbeit.out'.
 
+\openout4 = Bachelorarbeit.out
 
-(/home/fusilly/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
+(/usr/local/share/miktex-texmf/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
-\scratchdimen=\dimen273
-\scratchbox=\box64
-\nofMPsegments=\count295
-\nofMParguments=\count296
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count297
-\MPscratchDim=\dimen274
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
-\everyMPtoPDFconversion=\toks41
-)
-(/home/fusilly/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
+\scratchcounter=\count297
+\scratchdimen=\dimen277
+\scratchbox=\box65
+\nofMPsegments=\count298
+\nofMParguments=\count299
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count300
+\MPscratchDim=\dimen278
+\MPnumerator=\count301
+\makeMPintoPDFobject=\count302
+\everyMPtoPDFconversion=\toks42
+) (/usr/local/share/miktex-texmf/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
-) ABD: EveryShipout initializing macros
-Package pgfplots notification 'compat/show suggested version=true': you might b
-enefit from \pgfplotsset{compat=1.17} (current compat level: 1.8).
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
+5.
+)
+Package pgfplots notification 'compat/show suggested version=true': you might be
+nefit from \pgfplotsset{compat=1.17} (current compat level: 1.8).
 
-(Bachelorarbeit.toc)
+(./Bachelorarbeit.toc)
 \tf@toc=\write5
-\openout5 = `Bachelorarbeit.toc'.
 
+\openout5 = Bachelorarbeit.toc
  [1
 
-{/home/fusilly/.miktex/texmfs/data/pdftex/config/pdftex.map}]
-<Figures/Cumultative_Singular_Values_kn001.png, id=72, 984.3174pt x 456.7464pt>
-
+{/home/fusily/.miktex/texmfs/data/pdftex/config/pdftex.map}]
+<Figures/Cumultative_Singular_Values_kn001.png, id=74, 984.3174pt x 456.7464pt>
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
-Package pdftex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on
- input line 39.
-(pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
- [2 <./Figures/Cumultative_Singular_Values_kn001.png>]
-<Figures/Error_samples_SVD.png, id=90, 984.3174pt x 456.7464pt>
+Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
+input line 39.
+(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
+ [2<./Figures/Cumultative_Singular_Values_kn001.png>]
+<Figures/Error_samples_SVD.png, id=92, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_SVD.png Graphic file (type png)
 <use Figures/Error_samples_SVD.png>
-Package pdftex.def Info: Figures/Error_samples_SVD.png  used on input line 88.
-(pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Error_samples_v1_1.png, id=91, 984.3174pt x 456.7464pt>
+Package luatex.def Info: Figures/Error_samples_SVD.png  used on input line 88.
+(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
+<Figures/Error_samples_v1_1.png, id=93, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_v1_1.png Graphic file (type png)
 <use Figures/Error_samples_v1_1.png>
-Package pdftex.def Info: Figures/Error_samples_v1_1.png  used on input line 94.
-
-(pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Sample500_v1_1.png, id=92, 867.24pt x 616.4631pt>
+Package luatex.def Info: Figures/Error_samples_v1_1.png  used on input line 94.
+(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
+<Figures/Sample500_v1_1.png, id=94, 867.24pt x 616.4631pt>
 File: Figures/Sample500_v1_1.png Graphic file (type png)
 <use Figures/Sample500_v1_1.png>
-Package pdftex.def Info: Figures/Sample500_v1_1.png  used on input line 100.
-(pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
-<Figures/Density_last_v1_1.png, id=93, 867.24pt x 616.4631pt>
+Package luatex.def Info: Figures/Sample500_v1_1.png  used on input line 100.
+(luatex.def)             Requested size: 221.95676pt x 157.7745pt.
+<Figures/Density_last_v1_1.png, id=95, 867.24pt x 616.4631pt>
 File: Figures/Density_last_v1_1.png Graphic file (type png)
 <use Figures/Density_last_v1_1.png>
-Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 101.
-
-(pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
- [3] [4 <./Figures/Error_samples_SVD.png> <./Figures/Error_samples_v1_1.png>] [
-5 <./Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 106.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 106.
- (Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 106.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 106.
+Package luatex.def Info: Figures/Density_last_v1_1.png  used on input line 101.
+(luatex.def)             Requested size: 221.95676pt x 157.7745pt.
+ [3] [4<./Figures/Error_samples_SVD.png><./Figures/Error_samples_v1_1.png>] [5<.
+/Figures/Sample500_v1_1.png><./Figures/Density_last_v1_1.png>] (./Bachelorarbei
+t.aux)
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 9654FF4926CB2A5F89838719BD86D7D9;600.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 106.
- ) 
-Here is how much of TeX's memory you used:
- 28226 strings out of 483132
- 701858 string characters out of 2956949
- 1063803 words of memory out of 3000000
- 43089 multiletter control sequences out of 15000+200000
- 542229 words of font info for 54 fonts, out of 3000000 for 9000
- 0 hyphenation exceptions out of 8191
- 68i,9n,98p,739b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.p
-fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.
-pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12
-.pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12
-.pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17
-.pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb>
-Output written on Bachelorarbeit.pdf (5 pages, 293812 bytes).
-PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 26 named destinations out of 1000 (max. 500000)
- 118 words of extra memory for PDF output out of 10000 (max. 10000000)
+(rerunfilecheck)             Checksum: E2A37EF032E85FB125638FC593FCBC5A;1376.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 33336 strings out of 479059
+ 100000,1373583 words of node,token memory allocated
+ 555 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 18 attribute, 56 glue_spec
+, 18 attribute_list, 2 write nodes
+   avail lists: 2:562,3:218,4:40,5:292,6:58,7:5064,8:50,9:496,10:6,11:397
+ 51661 multiletter control sequences out of 65536+200000
+ 64 fonts using 6447123 bytes
+ 89i,9n,104p,735b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/share/miktex-texmf/fonts/opentype/public/lm/lmroman8-regular.otf></u
+sr/local/share/miktex-texmf/fonts/opentype/public/lm/lmroman12-bold.otf></usr/lo
+cal/share/miktex-texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/loca
+l/share/miktex-texmf/fonts/opentype/public/lm/lmroman17-regular.otf></usr/local/
+share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/share/m
+iktex-texmf/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/share/miktex-t
+exmf/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/share/miktex-texmf/fon
+ts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1
+/public/amsfonts/cm/cmr6.pfb></usr/local/share/miktex-texmf/fonts/type1/public/a
+msfonts/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy8
+.pfb>
+Output written on Bachelorarbeit.pdf (5 pages, 277647 bytes).
+
+PDF statistics: 172 PDF objects out of 1000 (max. 8388607)
+ 26 named destinations out of 1000 (max. 131072)
+ 96 words of extra memory for PDF output out of 10000 (max. 100000000)
 
