@@ -9,6 +9,7 @@
 \pgfplotsset{compat=1.8}
 \usepackage{cleveref}
 \usepackage{graphicx}
+\usepackage{tocbibind}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 
@@ -19,6 +20,9 @@
 \maketitle
 \tableofcontents
 \section{Introduction}
+The Bhatnagar, Gross, Krook equation (BGK) is a kinetic collision description of ionized and neutral gases valid for rarefied as well as other pressure regimes \cite{BGK}. Generating data of such a flow field is essential for various industry and scientific applications[\textbf{REF}]. 
+\subsection{Objective of this thesis}
+\subsection{Thesis outline}
 \section{The BGK Equation}
 \section{Reduced Order Algorithms}
 \subsection{Data Sampling}
@@ -103,4 +107,7 @@ A quantitative measure shows, that the linear Autoencoder performs slightly bett
 	\label{Fig:Errormore}
 \end{figure}
 \subsection{Discussion and Outlook}
+\section{Bibliography}
+\bibliography{Bibliography}{}
+\bibliographystyle{plain}
 \end{document}
