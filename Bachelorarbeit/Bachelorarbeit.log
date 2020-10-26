@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.29)  26 OCT 2020 17:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.9.29)  26 OCT 2020 18:21
 entering extended mode
 **./Bachelorarbeit.tex
 (Bachelorarbeit.tex
@@ -827,7 +827,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 113.
 Here is how much of TeX's memory you used:
  28326 strings out of 483132
  703318 string characters out of 2956949
- 1063803 words of memory out of 3000000
+ 1064803 words of memory out of 3000000
  43177 multiletter control sequences out of 15000+200000
  542229 words of font info for 54 fonts, out of 3000000 for 9000
  0 hyphenation exceptions out of 8191
@@ -843,7 +843,7 @@ pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb>
-Output written on Bachelorarbeit.pdf (5 pages, 298674 bytes).
+Output written on Bachelorarbeit.pdf (5 pages, 299189 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  31 named destinations out of 1000 (max. 500000)
