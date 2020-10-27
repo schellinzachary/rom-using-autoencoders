@@ -6,10 +6,10 @@
 \contentsline {section}{\numberline {3}Reduced Order Algorithms}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Data Sampling}{2}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}POD}{2}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Autoencoders}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.3}Autoencoders}{2}{subsection.3.3}%
 \contentsline {section}{\numberline {4}Results and Latent Manifold Properties}{3}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Evaluation Methods}{3}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{4}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Bibliography}{4}{section.5}%
-\contentsline {section}{References}{4}{section*.2}%
+\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{5}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Bibliography}{5}{section.5}%
+\contentsline {section}{References}{5}{section*.2}%

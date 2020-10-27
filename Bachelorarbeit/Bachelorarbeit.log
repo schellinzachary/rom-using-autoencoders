@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  27 OCT 2020 11:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  27 OCT 2020 12:15
 entering extended mode
 **./Bachelorarbeit.tex
 (Bachelorarbeit.tex
@@ -781,6 +781,15 @@ enefit from \pgfplotsset{compat=1.17} (current compat level: 1.8).
  [1
 
 {/home/fusilly/.miktex/texmfs/data/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `bibid' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Citation `bibid' on page 2 undefined on input line 25.
+
+
+LaTeX Warning: Citation `bibid' on page 2 undefined on input line 25.
+
 <Figures/Cumultative_Singular_Values_kn001.png, id=95, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
@@ -788,7 +797,7 @@ File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 Package pdftex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on
  input line 44.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
- [2 <./Figures/Cumultative_Singular_Values_kn001.png>] [3]
+[2] [3 <./Figures/Cumultative_Singular_Values_kn001.png>]
 <Figures/Error_samples_SVD.png, id=123, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_SVD.png Graphic file (type png)
 <use Figures/Error_samples_SVD.png>
@@ -811,23 +820,27 @@ File: Figures/Density_last_v1_1.png Graphic file (type png)
 Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 106.
 
 (pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
-
-(Bachelorarbeit.bbl) [4 <./Figures/Error_samples_SVD.png>] [5 <./Figures/Error_
-samples_v1_1.png> <./Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.p
-ng>]
+ (Bachelorarbeit.bbl
+[4 <./Figures/Error_samples_SVD.png>]) [5 <./Figures/Error_samples_v1_1.png> <.
+/Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 114.
- (Bachelorarbeit.aux)
+
+(Bachelorarbeit.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 114.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 114.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: 010D6AEBA98712ACD526FD91721A4230;878.
+
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
  28326 strings out of 481200
  703318 string characters out of 2909384
- 1069593 words of memory out of 3000000
+ 1068593 words of memory out of 3000000
  43419 multiletter control sequences out of 15000+200000
  542229 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -843,7 +856,7 @@ pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb>
-Output written on Bachelorarbeit.pdf (5 pages, 299219 bytes).
+Output written on Bachelorarbeit.pdf (5 pages, 299982 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  31 named destinations out of 1000 (max. 500000)
