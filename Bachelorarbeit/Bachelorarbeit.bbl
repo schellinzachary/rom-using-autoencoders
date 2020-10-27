@@ -5,15 +5,27 @@ Bhatnagar, Gross, and Krook.
 \newblock A model for collision processes in gases.
 \newblock 1954.
 
-\bibitem{Kutz}
-Steve~L. Brunton and J.~Nathan Kutz.
-\newblock {\em Data driven science and engineering}.
-\newblock 2019.
-
 \bibitem{Franz}
 Thomas Franz.
 \newblock {\em Reduced-order modeling of steady transonic flows via manifold
   learning}.
 \newblock 2016.
+
+\bibitem{Kutz}
+Steve~L. Brunton and J.~Nathan Kutz.
+\newblock {\em Data driven science and engineering}.
+\newblock 2019.
+
+\bibitem{Bernard}
+Florian Bernard, Angelo Iollo, and Sebatian Riffaud.
+\newblock Reduced-order model for the bgk equation based on pod and optimal
+  transport.
+\newblock 2018.
+
+\bibitem{Carlberg}
+Kookjin Lee and Kevin~T. Carlberg.
+\newblock Model reduction of dynamical systems on nonlinear manifolds using
+  deep convolutional autoencoders.
+\newblock 2019.
 
 \end{thebibliography}

@@ -3,51 +3,53 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Bachelorarbeit.aux
 Reallocating 'name_of_file' (item size: 1) to 13 items.
 Reallocating 'name_of_file' (item size: 1) to 6 items.
-The style file: plain.bst
+The style file: unsrt.bst
 Database file #1: Bibliography.bib
 Warning--I didn't find a database entry for "bibid"
 Warning--empty journal in BGK
-Warning--empty publisher in Kutz
 Warning--empty publisher in Franz
-You've used 3 entries,
-            2118 wiz_defined-function locations,
-            513 strings with 4275 characters,
-and the built_in function-call counts, 760 in all, are:
-= -- 63
-> -- 38
+Warning--empty publisher in Kutz
+Warning--empty journal in Bernard
+Warning--empty journal in Carlberg
+You've used 5 entries,
+            1791 wiz_defined-function locations,
+            470 strings with 4092 characters,
+and the built_in function-call counts, 796 in all, are:
+= -- 56
+> -- 42
 < -- 0
 + -- 16
-- -- 12
-* -- 43
-:= -- 139
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 13
+- -- 11
+* -- 35
+:= -- 140
+add.period$ -- 15
+call.type$ -- 5
+change.case$ -- 3
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 34
-empty$ -- 62
-format.name$ -- 12
-if$ -- 150
+cite$ -- 10
+duplicate$ -- 44
+empty$ -- 81
+format.name$ -- 11
+if$ -- 170
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 5
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 27
+int.to.str$ -- 5
+missing$ -- 7
+newline$ -- 28
+num.names$ -- 5
+pop$ -- 31
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 0
 quote$ -- 0
-skip$ -- 20
+skip$ -- 15
 stack$ -- 0
-substring$ -- 16
+substring$ -- 0
 swap$ -- 2
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
-warning$ -- 3
-while$ -- 6
-width$ -- 4
-write$ -- 29
-(There were 4 warnings)
+type$ -- 0
+warning$ -- 5
+while$ -- 5
+width$ -- 6
+write$ -- 47
+(There were 6 warnings)
