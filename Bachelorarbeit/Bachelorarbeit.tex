@@ -20,9 +20,11 @@
 \maketitle
 \tableofcontents
 \section{Introduction}
-The Bhatnagar, Gross, Krook equation (BGK) is a kinetic collision model of ionized and neutral gases valid for rarefied as well as other pressure regimes \cite{BGK}. Generating data of such a flow field is essential for various industry and scientific applications[\textbf{REF}]. With the intention to reduce time and cost during the data generating process, experiments were substituted with computational fluid dynamics (CFD) computations. Consequently reduced-order models (ROMs) coupled to afore-mentioned computations were introduced to further the reduction of time and cost. 
+The Bhatnagar, Gross, Krook equation (BGK) is a kinetic collision model of ionized and neutral gases valid for rarefied as well as other pressure regimes \cite{BGK}. Generating data of such a flow field is essential for various industry and scientific applications[\textbf{REF}]. With the intention to reduce time and cost during the data generating process, experiments were substituted with computational fluid dynamics (CFD) computations. Consequently reduced-order models (ROMs) coupled to aforementioned computations were introduced to further the reduction of time and cost. The thriving field of artificial intelligence appears since the 80's in model order reduction for data visualization/analysis and has now surfaced in fluid mechanics. This thesis will cover the use of artificial intelligence for model order reduction in fluid mechanics.
+\subsection{State of the art}
+State of the art model reduction of dynamical systems is done via proper orthogonal decmposition (POD) which is an algorithm incorporating singular value decomposition (SVD)\cite{Franz}\cite{Kutz}.   
 \subsection{Objective of this thesis}
-Due to the non-linearity of transport problems in particular shock fronts, the construction of a robust ROM for those cases poses several challenges. Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name to name only a few of them, try to solve this problem by......
+Due to the non-linearity of transport problems in particular shock fronts, the construction of a robust ROM for those cases poses several challenges. Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......
 \subsection{Thesis outline}
 \section{The BGK Equation}
 \section{Reduced Order Algorithms}
@@ -80,7 +82,7 @@ A quantitative measure shows, that the linear Autoencoder performs slightly bett
 	\hline
 	Algorithm & Euclidian distance in Density & Euclidian Distance & Jacobian \\ \hline
 	POD & 0.151 & 0.0101 &\\ 
-	AE & 0.101 & 0.0102 &\\ 
+	AE & 0.051 & 0.0102 &\\ 
 	CAE 1 & 0.205 & 0.0106 & \\
 	CAE 2 & 0.669 & 0.001 & \\
 	CAE 2 + tw & 0.385 & 0.0117 & \\
@@ -108,7 +110,6 @@ A quantitative measure shows, that the linear Autoencoder performs slightly bett
 	\label{Fig:Errormore}
 \end{figure}
 \subsection{Discussion and Outlook}
-\section{Bibliography}
 \bibliography{Bibliography}{}
 \bibliographystyle{plain}
 \end{document}

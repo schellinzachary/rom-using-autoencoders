@@ -3,6 +3,17 @@
 \bibitem{BGK}
 Bhatnagar, Gross, and Krook.
 \newblock A model for collision processes in gases.
-\newblock 19545.
+\newblock 1954.
+
+\bibitem{Kutz}
+Steve~L. Brunton and J.~Nathan Kutz.
+\newblock {\em Data driven science and engineering}.
+\newblock 2019.
+
+\bibitem{Franz}
+Thomas Franz.
+\newblock {\em Reduced-order modeling of steady transonic flows via manifold
+  learning}.
+\newblock 2016.
 
 \end{thebibliography}
