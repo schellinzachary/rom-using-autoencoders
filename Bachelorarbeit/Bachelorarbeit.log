@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  28 OCT 2020 15:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  28 OCT 2020 17:48
 entering extended mode
 **./Bachelorarbeit.tex
 (Bachelorarbeit.tex
@@ -774,83 +774,85 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.17} (current compat level: 1.8).
 
+[1
+
+{/home/fusilly/.miktex/texmfs/data/pdftex/config/pdftex.map}]
 (Bachelorarbeit.toc)
 \tf@toc=\write5
 \openout5 = `Bachelorarbeit.toc'.
 
- [1
-
-{/home/fusilly/.miktex/texmfs/data/pdftex/config/pdftex.map}]
-Overfull \hbox (3.55525pt too wide) in paragraph at lines 28--30
+ [2]
+Overfull \hbox (3.55525pt too wide) in paragraph at lines 30--32
 \OT1/cmr/m/n/12 shot database via op-ti-mal trans-port for the pro-posed BGK eq
 ua-tion [[]]....ergebnis..wieviele
  []
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 31.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 31.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 31.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
 
-[2]
-<Figures/Cumultative_Singular_Values_kn001.png, id=116, 984.3174pt x 456.7464pt
+[3]
+<Figures/Cumultative_Singular_Values_kn001.png, id=122, 984.3174pt x 456.7464pt
 >
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package pdftex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on
- input line 50.
+ input line 52.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
- [3 <./Figures/Cumultative_Singular_Values_kn001.png>]
-<Figures/Error_samples_SVD.png, id=129, 984.3174pt x 456.7464pt>
+ [4 <./Figures/Cumultative_Singular_Values_kn001.png>] [5]
+<Figures/Error_samples_SVD.png, id=148, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_SVD.png Graphic file (type png)
 <use Figures/Error_samples_SVD.png>
-Package pdftex.def Info: Figures/Error_samples_SVD.png  used on input line 99.
+Package pdftex.def Info: Figures/Error_samples_SVD.png  used on input line 101.
+
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Error_samples_v1_1.png, id=130, 984.3174pt x 456.7464pt>
+<Figures/Error_samples_v1_1.png, id=149, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_v1_1.png Graphic file (type png)
 <use Figures/Error_samples_v1_1.png>
-Package pdftex.def Info: Figures/Error_samples_v1_1.png  used on input line 105
+Package pdftex.def Info: Figures/Error_samples_v1_1.png  used on input line 107
 .
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Sample500_v1_1.png, id=131, 867.24pt x 616.4631pt>
+<Figures/Sample500_v1_1.png, id=150, 867.24pt x 616.4631pt>
 File: Figures/Sample500_v1_1.png Graphic file (type png)
 <use Figures/Sample500_v1_1.png>
-Package pdftex.def Info: Figures/Sample500_v1_1.png  used on input line 111.
+Package pdftex.def Info: Figures/Sample500_v1_1.png  used on input line 113.
 (pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
-<Figures/Density_last_v1_1.png, id=132, 867.24pt x 616.4631pt>
+<Figures/Density_last_v1_1.png, id=151, 867.24pt x 616.4631pt>
 File: Figures/Density_last_v1_1.png Graphic file (type png)
 <use Figures/Density_last_v1_1.png>
-Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 112.
+Package pdftex.def Info: Figures/Density_last_v1_1.png  used on input line 114.
 
 (pdftex.def)             Requested size: 221.95676pt x 157.7745pt.
- (Bachelorarbeit.bbl
-[4]) [5 <./Figures/Error_samples_SVD.png> <./Figures/Error_samples_v1_1.png>]
-[6 <./Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
 
-(Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+(Bachelorarbeit.bbl [6 <./Figures/Error_samples_SVD.png>]) [7 <./Figures/Error_
+samples_v1_1.png> <./Figures/Sample500_v1_1.png> <./Figures/Density_last_v1_1.p
+ng>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 121.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 121.
+ (Bachelorarbeit.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 121.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 121.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: C20B340BF7701404057302159A8E9A71;896.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 119.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 121.
  ) 
 Here is how much of TeX's memory you used:
- 28338 strings out of 481200
- 703443 string characters out of 2909384
+ 28349 strings out of 481200
+ 703568 string characters out of 2909384
  1069593 words of memory out of 3000000
- 43424 multiletter control sequences out of 15000+200000
- 542576 words of font info for 55 fonts, out of 3000000 for 9000
+ 43429 multiletter control sequences out of 15000+200000
+ 542745 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,98p,893b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,9n,98p,1243b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 </home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12
@@ -862,10 +864,11 @@ pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr8.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12
-.pfb>
-Output written on Bachelorarbeit.pdf (6 pages, 317067 bytes).
+.pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt1
+2.pfb>
+Output written on Bachelorarbeit.pdf (7 pages, 327583 bytes).
 PDF statistics:
- 202 PDF objects out of 1000 (max. 8388607)
- 37 named destinations out of 1000 (max. 500000)
+ 221 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
  158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
