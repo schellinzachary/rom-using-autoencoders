@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  28 OCT 2020 17:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.6.29) (preloaded format=pdflatex 2020.10.26)  28 OCT 2020 18:32
 entering extended mode
 **./Bachelorarbeit.tex
 (Bachelorarbeit.tex
@@ -852,7 +852,7 @@ Here is how much of TeX's memory you used:
  43429 multiletter control sequences out of 15000+200000
  542745 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 68i,9n,98p,1243b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 68i,9n,98p,1268b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
 </home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.p
 fb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi12
@@ -866,7 +866,7 @@ pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy8.
 pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmti12
 .pfb></home/fusilly/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt1
 2.pfb>
-Output written on Bachelorarbeit.pdf (7 pages, 327583 bytes).
+Output written on Bachelorarbeit.pdf (7 pages, 327584 bytes).
 PDF statistics:
  221 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
