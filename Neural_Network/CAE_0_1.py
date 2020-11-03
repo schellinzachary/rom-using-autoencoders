@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-device='cpu'
+#device='cpu'
 
 
 N_EPOCHS = 1000
@@ -215,7 +215,7 @@ for epoch in range(N_EPOCHS):
     test_con_losses.append(test_con_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f},Test CON Loss: {test_con_loss:.5f}, Train CON Loss: {train_con_loss:.5f}')
+    #print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f},Test CON Loss: {test_con_loss:.5f}, Train CON Loss: {train_con_loss:.5f}')
 
 
     # if epoch % 100 == 0:
