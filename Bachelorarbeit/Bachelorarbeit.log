@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.12.0 (MiKTeX 20.11) (format=lualatex 2020.11.3)  4 NOV 2020 15:36
+This is LuaHBTeX, Version 1.12.0 (MiKTeX 20.11) (format=lualatex 2020.11.3)  4 NOV 2020 19:40
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -856,48 +856,49 @@ Overfull \hbox (0.8137pt too wide) in paragraph at lines 30--32
 n of their snap-shot database
  []
 
-
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
-
-
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
-
-
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 33.
-
 [3]
-<Figures/Cumultative_Singular_Values_kn001.png, id=128, 984.3174pt x 456.7464pt>
+
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+
+
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+
+
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+
+<Figures/Cumultative_Singular_Values_kn001.png, id=129, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
 input line 52.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
- [4] [5<./Figures/Cumultative_Singular_Values_kn001.png>]
-<Figures/Error_samples_SVD.png, id=156, 984.3174pt x 456.7464pt>
+[4] [5<./Figures/Cumultative_Singular_Values_kn001.png>]
+<Figures/Error_samples_SVD.png, id=158, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_SVD.png Graphic file (type png)
 <use Figures/Error_samples_SVD.png>
 Package luatex.def Info: Figures/Error_samples_SVD.png  used on input line 101.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Error_samples_v1_1.png, id=157, 984.3174pt x 456.7464pt>
+<Figures/Error_samples_v1_1.png, id=159, 984.3174pt x 456.7464pt>
 File: Figures/Error_samples_v1_1.png Graphic file (type png)
 <use Figures/Error_samples_v1_1.png>
 Package luatex.def Info: Figures/Error_samples_v1_1.png  used on input line 107.
 
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Sample500_v1_1.png, id=158, 867.24pt x 616.4631pt>
+<Figures/Sample500_v1_1.png, id=160, 867.24pt x 616.4631pt>
 File: Figures/Sample500_v1_1.png Graphic file (type png)
 <use Figures/Sample500_v1_1.png>
 Package luatex.def Info: Figures/Sample500_v1_1.png  used on input line 113.
 (luatex.def)             Requested size: 221.95676pt x 157.7745pt.
-<Figures/Density_last_v1_1.png, id=159, 867.24pt x 616.4631pt>
+<Figures/Density_last_v1_1.png, id=161, 867.24pt x 616.4631pt>
 File: Figures/Density_last_v1_1.png Graphic file (type png)
 <use Figures/Density_last_v1_1.png>
 Package luatex.def Info: Figures/Density_last_v1_1.png  used on input line 114.
 (luatex.def)             Requested size: 221.95676pt x 157.7745pt.
-
-(./Bachelorarbeit.bbl [6<./Figures/Error_samples_SVD.png>]) [7<./Figures/Error_s
-amples_v1_1.png><./Figures/Sample500_v1_1.png><./Figures/Density_last_v1_1.png>] (./Bachelorarbeit.aux)
+ (./Bachelorarbeit.bbl
+[6<./Figures/Error_samples_SVD.png>] [7<./Figures/Error_samples_v1_1.png><./Figu
+res/Sample500_v1_1.png><./Figures/Density_last_v1_1.png>]) [8]
+(./Bachelorarbeit.aux)
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: CDF197ED5D7BE73885D939ED943A7BB8;2021.
 
@@ -907,15 +908,15 @@ LaTeX Warning: There were undefined references.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33473 strings out of 479017
+ 33476 strings out of 479017
  100000,1373583 words of node,token memory allocated
  558 words of node memory still in use:
    6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 20 attribute, 55 glue_spec
 , 20 attribute_list, 2 write nodes
-   avail lists: 2:494,3:205,4:48,5:381,6:47,7:7933,8:51,9:451,10:26,11:741
- 51807 multiletter control sequences out of 65536+200000
+   avail lists: 2:448,3:194,4:46,5:385,6:47,7:7938,8:51,9:449,10:26,11:750
+ 51808 multiletter control sequences out of 65536+200000
  66 fonts using 6704899 bytes
- 99i,9n,106p,2102b,483s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 99i,9n,106p,2395b,485s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/share/miktex-texmf/fonts/opentype/public/lm/lmmono12-regular.otf></u
 sr/local/share/miktex-texmf/fonts/opentype/public/lm/lmroman12-italic.otf></usr/
 local/share/miktex-texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/loc
@@ -929,9 +930,9 @@ e1/public/amsfonts/cm/cmr12.pfb></usr/local/share/miktex-texmf/fonts/type1/publi
 c/amsfonts/cm/cmr6.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfont
 s/cm/cmr8.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb></usr/local/share/miktex-texmf/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on Bachelorarbeit.pdf (7 pages, 303831 bytes).
+Output written on Bachelorarbeit.pdf (8 pages, 306089 bytes).
 
-PDF statistics: 245 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 131072)
+PDF statistics: 252 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 131072)
  136 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -55,4 +55,8 @@ Salah Rifai, Yann~N Dauphin, Pascal Vincent, Yoshua Bengio, and Xavier Muller.
 \newblock {\em The Manifold Tangent Classifier}.
 \newblock Curran Associates, Inc., 2011.
 
+\bibitem{rifai2012generative}
+Salah Rifai, Yoshua Bengio, Yann Dauphin, and Pascal Vincent.
+\newblock A generative process for sampling contractive auto-encoders, 2012.
+
 \end{thebibliography}
