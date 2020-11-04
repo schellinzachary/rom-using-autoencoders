@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{BGK}
 Bhatnagar, Gross, and Krook.
@@ -49,5 +49,10 @@ Salah Rifai, Pascal Vincent, Xavier Muller, Xavier Glorot, and Yoshua Bengio.
 \newblock Contractive auto-encoders: Explicit invariance during feature
   extraction.
 \newblock 2011.
+
+\bibitem{Rifai_2011a}
+Salah Rifai, Yann~N Dauphin, Pascal Vincent, Yoshua Bengio, and Xavier Muller.
+\newblock {\em The Manifold Tangent Classifier}.
+\newblock Curran Associates, Inc., 2011.
 
 \end{thebibliography}
