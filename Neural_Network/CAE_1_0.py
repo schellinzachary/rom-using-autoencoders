@@ -119,7 +119,7 @@ def loss_function(W, x, predicted, h, lam):
 
     contractive_loss  = torch.sum(j**2)
 
-    #contractive_loss = torch.norm(j,p='fro')
+    contractive_loss = torch.norm(j,p='fro')
     #Sigmoid
     # dh = h * (1 - h)
 
