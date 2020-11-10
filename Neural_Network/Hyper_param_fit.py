@@ -8,12 +8,15 @@ from sklearn.model_selection import RandomizedSearchCV
 
 #Hyperparameters
 log_learning_rate = np.random.randint(-7,0)
-hidden_units = np.random.randint(1,5)
+hidden_layers = np.random.randint(1,5)
+batch_size = np.random.randint(2,33)
 input_activation = [nn.Sigmoid,nn.Tanh,nn.ReLU,nn.ELU,nn.PreLU]
 hidden_activation = [nn.Sigmoid,nn.Tanh,nn.ReLU,nn.ELU,nn.PreLU]
 output_activation = [nn.Sigmoid,nn.Tanh,nn.ReLU,nn.ELU,nn.PreLU]
+in_features = [20,10,5]
+out_features = [20,10,5]
 
-hyperparameters = [log_learning_rate,hidden_units,hidden_activation,input_activation,output_activation]
+hyperparameters = [log_learning_rate, hidden_units, batch_size, hidden_activation, input_activation, output_activation,in_features]
 
 #Estimtor architecture
 
@@ -22,13 +25,14 @@ class Encoder(nn.Module):
         super(Encoder, self).__init__()
         self.linear1 = nn.Linear(in_features=input_dim, 
                                     out_features=hidden_dim)
-        self.linear2 = nn.Linear(in_features=hidden_dim, 
-                                    out_features=lat_dim)
-        self.activation_out = nn.LeakyReLU()
+        for l in range(hidden_layers + 1):
+            self.add_module('layer_' + str(l), torch.nn.Linear(in_features=in_features,out_features=out_features))
+            self.add_module('activ_' + str(l), input_activation)
+
 
     def forward(self, x):
 
-    	x = self.activation_out(self.linear1)
+    	x = self.activation_out(self.linear1(x))
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
         return x
