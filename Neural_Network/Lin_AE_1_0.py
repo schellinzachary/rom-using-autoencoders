@@ -26,12 +26,13 @@ lr = 1e-3
 
 
 #load data
-f = np.load('preprocessed_samples_lin_substract50.npy')
+f = np.load('preprocessed_samples_lin.npy')
+f = f[::2]
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
-train_in = f[0:2999]
-val_in = f[3000:3749]
+train_in = f[0:1999]
+val_in = f[2000:2499]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -45,7 +46,7 @@ class Encoder(nn.Module):
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
         self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.LeakyReLU()
+        self.activation_out1 = nn.Tanh()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out1(self.linear2(x))
@@ -189,4 +190,4 @@ plt.show()
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5_16_l3-3_LR_substr50_test.pt')
+torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH_second_02.pt')
