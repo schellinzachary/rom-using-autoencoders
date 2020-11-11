@@ -4,7 +4,6 @@ Plot results CAE 0.1
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-print(matplotlib.__version__)
 from matplotlib import rc
 import torch
 import torch.nn as nn
@@ -16,6 +15,8 @@ import matplotlib.animation as animation
 # ## for Palatino and other serif fonts use:
 #rc('font',**{'family':'serif','serif':['Palatino']})
 #rc('text', usetex=True)
+plt.rcParams['xtick.labelsize']=15
+plt.rcParams['ytick.labelsize']=15
 
 
 def net(c):
@@ -77,7 +78,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_LR.pt',map_location='cpu')['model_state_dict'])
+    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_TH.pt',map_location='cpu')['model_state_dict'])
     model.eval()
 
     W = encoder.state_dict()['linear1.weight']
