@@ -5,17 +5,25 @@ SVD PLOTS for BA
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rc
 
-fontsize=25
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
-plt.rc('xtick', labelsize=fontsize) 
-plt.rc('ytick', labelsize=fontsize) 
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+
+# ## for Palatino and other serif fonts use:
+# #rc('font',**{'family':'serif','serif':['Palatino']})
+rc('text', usetex=True)
 
 
 #Load Data
 
 c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+
+
+plt.plot(np.arange(-20,20),c[:,900])
+plt.plot(np.arange(-20,20),c[:,700])
+plt.plot(np.arange(-20,20),c[:,500])
+plt.plot(np.arange(-20,20), c[:,4501])
+plt.show()
 
 #SVD
 
@@ -62,8 +70,8 @@ rho = density_svd(c)
 
 plt.plot(rho_svd[20],'-.''k')
 plt.plot(rho[20],'-*''k')
-plt.ylabel(r'$Density \quad \rho$',fontsize=fontsize)
-plt.xlabel(r'$x$',fontsize=fontsize)
+plt.ylabel(r'$Density \quad \rho$',fontsize=25)
+plt.xlabel(r'$x$',fontsize=25)
 plt.show()
 
 print('Density Error:',np.sum(np.abs(rho_svd - rho))/25)
@@ -79,14 +87,20 @@ for i in range(4999):
 
 zip(mistake_list)
 
-plt.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k')
-plt.xlabel(r'$Samples$',fontsize=fontsize)
-plt.ylabel(r'$Absolute Error$',fontsize=fontsize)
-plt.grid()
-plt.tight_layout()
-plt.show()
+# ax = plt.subplot(111, polar=False)
+# bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+# axr = ax.twiny()    
+# axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
+# axr.set_xlim((0,25))
+# ax.set_xlim((0,4999))
+# ax.yaxis.grid(True)
+# axr.xaxis.grid(True)
+# ax.set_xlabel(r'$Samples$')
+# axr.set_xlabel(r'$Timesteps$')
+# ax.set_ylabel(r'$Absolute Error$')
+# plt.show()
 
-plot_cumu()
+#plot_cumu()
 # plt.figure(2)
 # plt.subplot(3,2,1)
 # plt.plot(x,u[:,0])
@@ -112,3 +126,12 @@ plot_cumu()
 # plt.plot(x,u[:,5])
 # plt.ylabel('U6',fontsize=17)
 # plt.xlabel('v', fontsize=17)
+
+predict = xx
+test_error = np.sum(np.abs(c - predict),axis=0)
+mean = np.sum(test_error)/len(test_error)
+print('Mean Test Error', mean)
+print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+print('Highest Sample Error',np.max(test_error))
+print('Lowest Sample Error', np.min(test_error))

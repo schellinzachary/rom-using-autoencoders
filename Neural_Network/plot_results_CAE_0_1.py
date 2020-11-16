@@ -4,18 +4,19 @@ Plot results CAE 0.1
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-print(matplotlib.__version__)
 from matplotlib import rc
 import torch
 import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
 
 # ## for Palatino and other serif fonts use:
 #rc('font',**{'family':'serif','serif':['Palatino']})
-rc('text', usetex=True)
+#rc('text', usetex=True)
+plt.rcParams['xtick.labelsize']=15
+plt.rcParams['ytick.labelsize']=15
 
 
 def net(c):
@@ -29,7 +30,7 @@ def net(c):
 
             self.linear1 = nn.Linear(in_features=input_dim, 
                                         out_features=lat_dim,bias=False)
-            self.activation_out = nn.Tanh()
+            self.activation_out = nn.LeakyReLU()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             return x
@@ -77,7 +78,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_0_1_L5_16_TH_subtr50.pt',map_location='cpu')['model_state_dict'])
+    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_TH.pt',map_location='cpu')['model_state_dict'])
     model.eval()
 
     W = encoder.state_dict()['linear1.weight']
@@ -99,14 +100,14 @@ c = c.T
 predict, W, z = net(c)
 #-------------------------------------------------------------------------------------------
 # Jacobian---------------------------------------------------------------------------------
-# dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
-# j = dh * W
-# u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
+j = dh * W
+u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
 
-# plt.plot(s,'-*''k')
-# plt.ylabel(r'Singular Values')
-# plt.xlabel(r'Number')
-# plt.show()
+plt.plot(s,'-*''k')
+plt.ylabel(r'Singular Values')
+plt.xlabel(r'Number')
+plt.show()
 #------------------------------------------------------------------------------------------
 # plot code-------------------------------------------------------------------------------
 # fig, axs = plt.subplots(5)

@@ -9,11 +9,14 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
 
 # ## for Palatino and other serif fonts use:
 # #rc('font',**{'family':'serif','serif':['Palatino']})
-rc('text', usetex=True)
+#rc('text', usetex=True)
+plt.rcParams['xtick.labelsize']=15
+plt.rcParams['ytick.labelsize']=15
+
 
 
 
@@ -31,7 +34,8 @@ def net(c):
             self.linear2 = nn.Linear(in_features=hidden_dim, 
                                         out_features=lat_dim, bias=False)
             self.activation_out = nn.LeakyReLU()
-            self.activation_out1 = nn.LeakyReLU()
+            #self.activation_out1 = nn.LeakyReLU()
+            self.activation_out1 = nn.Tanh()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
             x = self.activation_out1(self.linear2(x))
@@ -87,7 +91,7 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_LR_test.pt',map_location='cpu'))
+    model.load_state_dict(torch.load('CAE_STATE_DICT_1_0_L5_16_TH.pt',map_location='cpu'))
     model.eval()
 
     W = encoder.state_dict()['linear2.weight']
@@ -109,23 +113,34 @@ c = c.T
 predict, W, z = net(c)
 #-------------------------------------------------------------------------------------------
 # Jacobian---------------------------------------------------------------------------------
+#LeakyReLU
 # dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2) 
 # j = dh * W
-# u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
 
-# plt.plot(s,'-*''k')
-# plt.ylabel(r'Singular Values')
-# plt.xlabel(r'Number')
-# plt.show()
+
+# #Tanh
+dh = (1 - z**2)
+j = torch.mm(dh,W)
+
+w_sum = torch.sum(W,dim=1)
+
+u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
+
+plt.plot(np.arange(1,21),s,'-*''k')
+plt.ylabel(r'#',fontsize=25)
+plt.xlabel(r'Singular Value',fontsize=25)
+plt.xticks(fontsize=25)
+plt.yticks(fontsize=25)
+plt.show()
 #------------------------------------------------------------------------------------------
-# plot code-------------------------------------------------------------------------------
-# fig, axs = plt.subplots(5)
-# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
-# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
-# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
-# axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
-# axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
-# plt.show()
+#plot code-------------------------------------------------------------------------------
+fig, axs = plt.subplots(5)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
+axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
+plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
@@ -179,7 +194,7 @@ zip(mistake_list)
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
-width = 1/5000
+# width = 1/5000
 ax = plt.subplot(111, polar=False)
 bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width = 1)
 axr = ax.twiny()    
@@ -188,9 +203,9 @@ axr.set_xlim((0,25))
 ax.set_xlim((0,4999))
 ax.yaxis.grid(True)
 axr.xaxis.grid(True)
-ax.set_xlabel(r'$Samples$')
-axr.set_xlabel(r'$Timesteps$')
-ax.set_ylabel(r'$Absolute Error$')
+ax.set_xlabel(r'$Samples$',fontsize=25)
+axr.set_xlabel(r'$Timesteps$',fontsize=25)
+ax.set_ylabel(r'$Absolute Error$',fontsize=25)
 plt.show()
 #-------------------------------------------------------------------------------------------
 #Visualizing Density-----------------------------------------------------------------------
