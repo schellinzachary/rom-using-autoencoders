@@ -2,7 +2,7 @@
 Convolutional Autoencoder v1.0
 '''
 
-
+import os
 import numpy as np
 import torch
 import torch.nn as nn
@@ -12,15 +12,20 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 from torch.utils.data import DataLoader
 
+parent_dir = "/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Learning_rate"
+
 torch.cuda.empty_cache()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 print(torch.cuda.is_available())
 
-N_EPOCHS = 1000
+
+
+N_EPOCHS = 6000
 BATCH_SIZE = 4
-lr = 1e-3
+lr = 1e-4
+
 
 device = 'cpu'
 
@@ -33,6 +38,8 @@ f = tensor(f, dtype=torch.float).to(device)
 
 train_in = f[0:31]
 val_in = f[32:39]
+
+print(val_in[1].shape)
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -111,7 +118,7 @@ model = Autoencoder(encoder, decoder).to(device)
 
 optimizer = Adam(params=model.parameters(), lr=lr)
 
-loss_crit = nn.MSELoss()
+loss_crit = nn.MSELoss(reduction='mean')
 train_losses = []
 val_losses = []
 
@@ -156,8 +163,8 @@ def test():
 
         return test_loss
 
+train_losses = []
 test_losses = []
-val_losses = []
 
 #checkpoint Load
 # checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
@@ -185,29 +192,33 @@ for epoch in range(N_EPOCHS):
     print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
 
 
-    # if epoch % 100 == 0:
+    if epoch % 100 == 0:
 
-    #     i = randint(0,999)
-    #     x = val_in[i].to(device)
-
-    #     predicted = model(x)
-    #     x = x.to('cpu')
-    #     predicted = predicted.to('cpu')
-    #     data = x.detach().numpy()
-    #     predict = predicted.detach().numpy()
+        #i = randint(0,7)
+        #i=3
+        x = val_in[0]
+        x = x.unsqueeze(0)
+        predicted = model(x)
+        x = x.to('cpu')
+        predicted = predicted.to('cpu')
+        data = x.detach().numpy()
+        predict = predicted.detach().numpy()
         
-    #     plt.plot(x, label='Original')
-    #     plt.plot(predict, label='Predicted')
-    #     plt.legend()
-    #     plt.show()
+        #plt.plot(x, label='Original')
+        plt.imshow(predict.squeeze(), label='Predicted')
+        plt.legend()
+        plt.show()
 
-plt.figure()
-plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
-plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
-plt.legend(loc='upper right')
-plt.xlabel('trainstep')
-plt.ylabel('loss')
-plt.show()
+    if test_loss <= 9.9e-5:
+        break
+
+# plt.figure()
+# plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+# plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+# plt.legend(loc='upper right')
+# plt.xlabel('trainstep')
+# plt.ylabel('loss')
+# plt.show()
 
 
 # np.save('Train_Loss_Lin_0_9_L5_substr50_test.npy',train_losses)
@@ -217,12 +228,14 @@ plt.show()
 
 
 #save the models state dictionary for inference
-# torch.save({
-#     'epoch': epoch,
-#     'model_state_dict':model.state_dict(),
-#     'optimizer_state_dict': optimizer.state_dict(),
-#     'train_loss': train_loss,
-#     'test_loss': test_loss,
-#     'train_losses':train_losses,
-#     'test_losses': test_losses
-#     },'Conv_AE_STATE_DICT_0_9_L3_Tanh.pt')
+torch.save({
+    'epoch': epoch,
+    'model_state_dict':model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'train_loss': train_loss,
+    'test_loss': test_loss,
+    'train_losses':train_losses,
+    'test_losses': test_losses
+    },'/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_0_9_L3_B4_lr-4_Tanh.pt')
+
+
