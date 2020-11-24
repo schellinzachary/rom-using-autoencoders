@@ -1,6 +1,7 @@
 '''
 Plot results Convolutional AE 1.0 '''
 import numpy as np
+from numpy.linalg import norm as norm
 import matplotlib.pyplot as plt
 from matplotlib import rc
 import torch
@@ -36,6 +37,7 @@ def net(c):
             x = self.act(self.convE4(x))
             original_size = x.size()
             x = x.view(original_size[0],-1)
+            #x = self.act(self.linearE1(x))
             x = self.linearE1(x)
             return x
 
@@ -51,6 +53,7 @@ def net(c):
             self.act = nn.Tanh()
 
         def forward(self, x):
+            #x = self.act(self.linearD1(x))
             x = self.linearD1(x)
             dim = x.shape[0]
             x = torch.reshape(x,[dim,64,1,12])
@@ -85,9 +88,12 @@ def net(c):
 
 
 
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_0_9_L3_B4_lr-4_Tanh.pt')
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_1_0_1c_2_1.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
+    train_losses = checkpoint['train_losses']
+    test_losses = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
     #model.eval()
 
 
@@ -103,7 +109,7 @@ def net(c):
     return predict, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/preprocessed_samples_conv.npy')
+c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_conv_unshuffled.npy')
 
 
 #Inference-----------------------------------------------------------------------------------
@@ -111,7 +117,7 @@ predict, z = net(c)
 
 #------------------------------------------------------------------------------------------
 # plot code-------------------------------------------------------------------------------
-fig, axs = plt.subplots(5)
+fig, axs = plt.subplots(3)
 
 axs[0].plot(np.arange(40),z[:,0].detach().numpy(),'k')
 axs[0].set_ylabel('#')
@@ -125,16 +131,21 @@ axs[2].plot(np.arange(40),z[:,2].detach().numpy(),'k')
 axs[2].set_ylabel('#')
 axs[2].set_xlabel('x')
 
-plt.show()
+
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 c = np.squeeze(c,axis=1)
 predict = np.squeeze(predict,axis=1)
 
-#plt.imshow(c[37])
-plt.imshow(predict[37])
-plt.colorbar()
+fig1, axs1 = plt.subplots(nrows=2)
+a = 37
+org = axs1[0].imshow(c[a],vmin=0, vmax=np.max(c[a]))
+pred = axs1[1].imshow(predict[a],vmin=0,vmax=np.max(c[a]))
+fig1.colorbar(org, ax = axs1[0])
+fig1.colorbar(pred, ax = axs1[1])
 plt.show()
+
+
 def visualize(c,predict):
     fig = plt.figure()
     ax = plt.axes(ylim=(0,1),xlim=(0,200))
@@ -164,77 +175,66 @@ def visualize(c,predict):
                                    )
 
     ax.legend()
-    plt.show()
+
 #-----------------------------------------------------------------------------------------
 #Bad Mistakes----------------------------------------------------------------------------
-mistake_list = []
-for i in range(40):
-    mistake = np.sum(np.abs(c[i] - predict[i]),axis=None)/(200*25)
-    mistake_list.append((i,mistake))
+# mistake_list = []
+# for i in range(40):
+#     mistake = np.sum(np.abs(c[i] - predict[i]),axis=None)/(200*25)
+#     mistake_list.append((i,mistake))
 
-zip(mistake_list)
+# zip(mistake_list)
 
-# plt.plot(c[900],'-o''m',label='$Original$')
-# plt.plot(predict[900],'-v''k',label='$Prediction$')
-# plt.xlabel('$Velocity$')
-# plt.ylabel('$Probability$')
-# plt.legend()
-# plt.show()
+# ax = plt.subplot(111, polar=False)
+# bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k')
+# #ax.set_xlim((0,39))
+# #ax.yaxis.grid(True)
+# ax.xaxis.grid(True, which='major')
+# ax.set_xlabel(r'$Samples$')
+# ax.set_ylabel(r'$Absolute Error$')
 
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_c.txt',c[500])
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
-#theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
-#width = (2*np.pi) / 5000
-ax = plt.subplot(111, polar=False)
-bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
-axr = ax.twiny()    
-axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
-axr.set_xlim((0,25))
-ax.set_xlim((0,40))
-ax.yaxis.grid(True)
-axr.xaxis.grid(True)
-ax.set_xlabel(r'$Samples$')
-axr.set_xlabel(r'$Timesteps$')
-ax.set_ylabel(r'$Absolute Error$')
-plt.show()
 #-------------------------------------------------------------------------------------------
 #Visualizing Density-----------------------------------------------------------------------
-# def density(c,predict):
+def density(c,predict):
+    c = np.swapaxes(c,0,1)
+    predict = np.swapaxes(predict,0,1)
 
-#     rho_predict = np.zeros([25,200])
-#     rho_samples = np.zeros([25,200])
-#     n=0
+    rho_predict = np.zeros([25,200])
+    rho_samples = np.zeros([25,200])
+    n=0
 
-#     for k in range(25):
-#         for i in range(200):
-#             rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
-#             rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128  
-#         n += 200
-#     return rho_samples, rho_predict
+    for k in range(25):
+        for i in range(200):
+            rho_samples[k,i] = np.sum(c[k,:,i]) * 0.5128
+            rho_predict[k,i] = np.sum(predict[k,:,i]) * 0.5128  
+    return rho_samples, rho_predict
 
-# rho_s, rho_p = density(c,predict)
 
-# visualize(rho_s,rho_p)
 
-# print('Verage Density Error', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
-# print('Average Test Error', np.sum(np.abs(c - predict))/len(c))
+rho_s, rho_p = density(c,predict)
 
-# plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''k',label='$Original$')
-# plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
-# plt.legend()
-# plt.xlabel('$Space$')
-# plt.ylabel('$Density$')
-# plt.show()
-# -------------------------------------------------------------------------------------------
-test_error = np.sum(np.abs(c - predict),axis=None)
-mean = np.sum(test_error)/(200*25*40)
-print('Mean Test Error', mean)
-print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
-print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
-print('Highest Sample Error',np.max(test_error))
-print('Lowest Sample Error', np.min(test_error))
+#visualize(rho_s,rho_p)
 
+print('Verage Density Error', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
+print('Average Test Error', np.sum(np.abs(c - predict))/len(c))
+
+plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''k',label='$Original$')
+plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
+plt.legend()
+plt.xlabel('$Space$')
+plt.ylabel('$Density$')
+plt.show()
+# # -------------------------------------------------------------------------------------------
+test_error = norm((c[:] - predict[:]).flatten())/norm(c[:].flatten())
+print(test_error)
+#test_error = np.sum(np.abs(c - predict),axis=None)
+#mean = np.sum(test_error)/(200*25*40)
+#print('Mean Test Error', mean)
+#print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+# print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+# print('Highest Sample Error',np.max(test_error))
+# print('Lowest Sample Error', np.min(test_error))
+plt.show()
 
 
 
