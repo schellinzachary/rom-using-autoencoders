@@ -102,9 +102,10 @@ def net(c):
     return predict, W, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
 c = c
 c = c.T
+print(c.shape)
 
 
 #Inference-----------------------------------------------------------------------------------

@@ -4,19 +4,20 @@ SVD PLOTS for BA
 
 import scipy.io as sio
 import numpy as np
+from numpy.linalg import norm as norm
 import matplotlib.pyplot as plt
 from matplotlib import rc
 
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
 
 # ## for Palatino and other serif fonts use:
 # #rc('font',**{'family':'serif','serif':['Palatino']})
-rc('text', usetex=True)
+# rc('text', usetex=True)
 
 
 #Load Data
 
-c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
+c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
 
 
 plt.plot(np.arange(-20,20),c[:,900])
@@ -30,7 +31,7 @@ plt.show()
 u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
 
 S = np.diagflat(s)
-xx = u[:,:5]@S[:5,:5]@vh[:5,:]
+xx = u[:,:3]@S[:3,:3]@vh[:3,:]
 def plot_cumu():
 
 
@@ -128,10 +129,12 @@ zip(mistake_list)
 # plt.xlabel('v', fontsize=17)
 
 predict = xx
-test_error = np.sum(np.abs(c - predict),axis=0)
-mean = np.sum(test_error)/len(test_error)
-print('Mean Test Error', mean)
-print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
-print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
-print('Highest Sample Error',np.max(test_error))
-print('Lowest Sample Error', np.min(test_error))
+test_error = norm((c[:] - predict[:]).flatten())/norm(c[:].flatten())
+print(test_error)
+#test_error = np.sum(np.abs(c - predict),axis=0)
+# mean = np.sum(test_error)/len(test_error)
+# print('Mean Test Error', mean)
+# print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
+# print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
+# print('Highest Sample Error',np.max(test_error))
+# print('Lowest Sample Error', np.min(test_error))
