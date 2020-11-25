@@ -1,148 +1,267 @@
 '''
-Convolution Autoencoder v1.1
+Convolutional Autoencoder v1.0
 '''
 
-
+import os
+import sys
 import numpy as np
 import torch
 import torch.nn as nn
 from torch.optim import Adam, SGD, Adadelta, Adagrad
+from torch.optim.lr_scheduler import ReduceLROnPlateau, MultiStepLR
 import torch.tensor as tensor
 import matplotlib.pyplot as plt
 import scipy.io as sio
+from torch.utils.data import DataLoader
+
+def progressBar(value, endvalue, train_loss, test_loss, bar_length=20, ):
+
+        percent = float(value) / endvalue
+        arrow = '-' * int(round(percent * bar_length)-1) + '>'
+        spaces = ' ' * (bar_length - len(arrow))
+        train_loss = train_loss
+        sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
+        #sys.stdout.write("\rEpoch {0}, Train Loss: {2.10f}, Test Loss: {3.10f}")
+        sys.stdout.flush()
+
+torch.cuda.empty_cache()
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-#load data
-f1 = sio.loadmat('/home/zachary/Desktop/BA/data_sod/sod25Kn0p01/f.mat')
-f1 = f1['f']
-NUM_SAMPLES     = f1.shape[0] 
-NUM_VELOCITY    = f1.shape[1] 
-NUM_SPACE       = f1.shape[2]
+print(torch.cuda.is_available())
+code_list = (64,32,16,8,5,2,1)
+for i in code_list:
+
+    N_EPOCHS = 6000
+    BATCH_SIZE = 4
+    lr = 1e-4
 
 
-rho = np.zeros([NUM_SAMPLES,NUM_SPACE])
-for i in range(NUM_SAMPLES):
-    for k in range(NUM_SPACE):
-        f1[i,:,k] = (f1[i,:,k] - np.amin(f1[i,:,k])) / (np.amax(f1[i,:,k])-np.amin(f1[i,:,k]))
+    device = 'cpu'
 
-f1 = np.expand_dims(f1, axis=1)
-f2 = np.copy(f1)
-np.random.shuffle(f1)
-samples = f1
-train_list  = np.split(samples[0:NUM_SAMPLES,:,:,:],5,axis=0)
-train_list = tensor(train_list,dtype=torch.float).to(device)
-batch_size=5
-
-N_TRAIN_STEPS = 1000
+    #load data
+    f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_conv.npy')
 
 
-class classify(nn.Module):
-    def __init__(self):
-        # initialize as nn.Module
-        super(classify, self).__init__()
+    #shuffe or not to shuffle ----> k-means???
+    #np.random.shuffle(f)
+    f = tensor(f, dtype=torch.float).to(device)
 
-        
-        self.conv1 = nn.Conv2d(1,8,(2,6),stride=2)
-        self.conv2 = nn.Conv2d(8,16,(2,6),stride=2)
-        self.conv3 = nn.Conv2d(16,32,(2,6),stride=2)
-        self.linear1 = nn.Linear(in_features=3360,out_features=5)
-        self.linear2 = nn.Linear(in_features=5, out_features=3360)
-        self.conv4 = nn.ConvTranspose2d(32,16,(2,6),stride=2)
-        self.conv5 = nn.ConvTranspose2d(16,8,(2,8),stride=2)
-        self.conv6 = nn.ConvTranspose2d(8,1,(2,6),stride=2)
-        self.activation_out = nn.LeakyReLU(negative_slope=0.01)
+    train_in = f[0:32]
+    val_in = f[32:40]
 
-    def forward(self, x):
-        x = self.activation_out(self.conv1(x))
-        x = self.activation_out(self.conv2(x))
-        x = self.activation_out(self.conv3(x))
-        x = torch.reshape(x,[batch_size,3360])
-        x = self.activation_out(self.linear1(x))
-        x = self.activation_out(self.linear2(x))
-        x = torch.reshape(x,[batch_size,32,5,21])
-        x = self.activation_out(self.conv4(x))
-        x = self.activation_out(self.conv5(x))
-        x = self.activation_out(self.conv6(x))
-        output1 = torch.reshape(x,[batch_size,1,NUM_VELOCITY,NUM_SPACE])
-        return output1
+    # plt.imshow(val_in[4].squeeze())
+    # plt.show()
+    # fig, axs = plt.subplots(nrows=4,ncols=2)
+    # axs[0,0].imshow(val_in[0].squeeze())
+    # axs[0,1].imshow(val_in[1].squeeze())
+    # axs[1,0].imshow(val_in[2].squeeze())
+    # axs[1,1].imshow(val_in[3].squeeze())
+    # axs[2,0].imshow(val_in[4].squeeze())
+    # axs[2,1].imshow(val_in[5].squeeze())
+    # axs[3,0].imshow(val_in[6].squeeze())
+    # axs[3,1].imshow(val_in[7].squeeze())
+    # plt.show()
 
 
-if __name__ == '__main__':
 
-    classify = classify().to(device)
-    
-    optimizer = Adam(params=classify.parameters(), lr=0.001)
 
-    loss_crit = nn.L1Loss()
+    train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
+    test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
+
+
+
+    class Encoder(nn.Module):
+        def __init__(self):
+            super(Encoder, self).__init__()
+            self.convE1 = nn.Conv2d(1,8,(5,4),stride=(2,4))
+            self.convE2 = nn.Conv2d(8,16,(5,5),stride=(2,3))
+            self.convE3 = nn.Conv2d(16,32,(2,4),stride=2)
+            self.linearE1 = nn.Linear(in_features=448,out_features=i)
+            self.act = nn.Tanh()
+            #self.act_c = nn.Tanh()
+
+        def forward(self, x):
+            x = self.act(self.convE1(x))
+            x = self.act(self.convE2(x))
+            x = self.act(self.convE3(x))
+            original_size = x.size()
+            x = x.view(original_size[0],-1)
+            #x = self.act_c(self.linearE1(x))
+            x = self.linearE1(x)
+            return x
+
+
+    class Decoder(nn.Module):
+        def __init__(self):
+            super(Decoder, self).__init__()
+            self.linearD1 = nn.Linear(in_features=i, out_features=448)
+            self.convD1 = nn.ConvTranspose2d(32,16,(2,4),stride=2)
+            self.convD2 = nn.ConvTranspose2d(16,8,(5,5),stride=(2,3))
+            self.convD3 = nn.ConvTranspose2d(8,1,(5,4),stride=(2,4))
+            self.act = nn.Tanh()
+            #self.act_c = nn.Tanh()
+
+        def forward(self, x):
+            x = self.linearD1(x)
+            #x = self.act_c(self.linearD1(x))
+            dim = x.shape[0]
+            x = torch.reshape(x,[dim,32,2,7])
+            x = self.act(self.convD1(x))
+            x = self.act(self.convD2(x))
+            x = self.act(self.convD3(x))
+            return x
+
+    class Autoencoder(nn.Module):
+        def __init__(self, enc, dec):
+            super(Autoencoder, self).__init__()
+            self.encoder = Encoder()
+            self.decoder = Decoder()
+
+        def forward(self, x):
+            x = self.encoder(x)
+            x = self.decoder(x)
+            return x
+
+
+    #encoder
+    encoder = Encoder()
+
+    #decoder
+    decoder = Decoder()
+
+    #Autoencoder
+    model = Autoencoder(encoder, decoder).to(device)
+
+    optimizer = Adam(params=model.parameters(), lr=lr)
+    scheduler = MultiStepLR(optimizer,milestones=[3000,5000],verbose=False)
+
+    loss_crit = nn.MSELoss(reduction='mean')
     train_losses = []
+    val_losses = []
 
 
-    for step in range(N_TRAIN_STEPS):
-        
-        for p in range(5):
+    def train():
 
-            train_in = train_list[p]
+        model.train()
 
-            cl_out = classify(train_in)
+        train_loss = 0.0
 
-            train_loss = loss_crit(cl_out, train_in)
-            
-            train_losses.append(train_loss.item())
+        for batch_ndx, x in enumerate(train_iterator):
+
+            x = x.to(device)
 
             optimizer.zero_grad()
 
-            train_loss.backward()
+            predicted = model(x)
+
+            loss = loss_crit(x,predicted)
+
+            loss.backward()
+            train_loss += loss.item()
 
             optimizer.step()
 
-        print('Epoch :',step, 'train_loss:',train_loss,':)')
+        return train_loss
 
-        if train_loss <= 0.0008:
-                break
+    def test():
 
+        model.eval()
 
-plt.semilogy(np.arange(5*step+5), train_losses, label='Training loss')
-plt.legend(loc='upper right')
-plt.xlabel('trainstep')
-plt.ylabel('loss')
-plt.show()
+        test_loss = 0
 
+        with torch.no_grad():
+            for i, x in enumerate(test_iterator):
 
+                x = x.to(device)
 
+                predicted = model(x)
 
-samples = tensor(f2, dtype=torch.float).to(device)
-batch_size=25
+                loss = loss_crit(x,predicted)
+                test_loss += loss.item()
 
-predict = classify(samples).to(device)
+                #scheduler.step(loss)
 
-samples = samples.to('cpu')
-predict = predict.to('cpu')
-samples = samples.squeeze()
-predict = predict.squeeze()
-
-samples  = samples.detach().numpy()
-
-predict = predict.detach().numpy()
+            return test_loss
 
 
-rho_predict = np.zeros([NUM_SAMPLES,NUM_SPACE])
-rho_samples = np.zeros([NUM_SAMPLES,NUM_SPACE])
-for i in range(NUM_SAMPLES):
-    for k in range(NUM_SPACE):
-        rho_samples[i,k] = np.sum(samples[i,:,k]) * 0.5128
-        rho_predict[i,k] = np.sum(predict[i,:,k]) * 0.5128
+    train_losses = []
+    test_losses = []
+
+    #checkpoint Load
+    # checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_1_0_1c_2_1.pt')
+    # model.load_state_dict(checkpoint['model_state_dict'])
+    # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    # epoch_o = checkpoint['epoch']
+    # train_loss = checkpoint['train_loss']
+    # test_loss = checkpoint['test_loss']
+    # train_losses = checkpoint['train_losses']
+    # test_losses = checkpoint['test_losses']
+
+
+    for epoch in range(N_EPOCHS):
+        
+        train_loss = train()
+        test_loss = test()
+
+       
+
+        #save and print the loss
+        train_loss /= len(train_iterator)
+        test_loss /= len(test_iterator)
+        
+        train_losses.append(train_loss)
+        test_losses.append(test_loss)
+
+        progressBar(epoch,N_EPOCHS, train_loss, test_loss)
+
         
 
 
-plt.ion()
-plt.figure()
-for i in range(NUM_SAMPLES):   
-    plt.plot(rho_predict[i,:])
-    plt.plot(rho_samples[i,:])
-    plt.legend(loc='upper right')
-    plt.xlabel('x')
-    plt.ylabel('A * sin(g*x + t)')
-    plt.draw()
-    plt.pause(0.001)
-    plt.clf()
+        # if epoch % 1000 == 0:
+
+        #     #i = randint(0,7)
+        #     #i=3
+        #     x = val_in[0]
+        #     x = x.unsqueeze(0)
+        #     predicted = model(x)
+        #     x = x.to('cpu')
+        #     predicted = predicted.to('cpu')
+        #     data = x.detach().numpy()
+        #     predict = predicted.detach().numpy()
+            
+        #     fig, axs = plt.subplots(nrows=2)
+        #     org = axs[0].imshow(data.squeeze(),vmin=0, vmax=np.max(data))
+        #     pred = axs[1].imshow(predict.squeeze(),vmin=0,vmax=np.max(data))
+        #     fig.colorbar(org, ax = axs[0])
+        #     fig.colorbar(pred, ax = axs[1])
+        #     plt.show()
+
+
+    # plt.figure()
+    # plt.semilogy(np.arange(N_EPOCHS), train_losses, label='Training loss')
+    # plt.semilogy(np.arange(N_EPOCHS), test_losses, label='Test loss')
+    # plt.legend(loc='upper right')
+    # plt.xlabel('trainstep')
+    # plt.ylabel('loss')
+    # plt.show()
+
+
+    
+
+
+    #save the models state dictionary for inference
+    torch.save({
+        'epoch': epoch,
+        'model_state_dict':model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'train_loss': train_loss,
+        'test_loss': test_loss,
+        'train_losses':train_losses,
+        'test_losses': test_losses
+        },f'/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Code/1_1/CoAE_SD_1_%s.pt'%i)
+        
+    print(f'FINISHED Training DUDE %s'%i)
+
+
+

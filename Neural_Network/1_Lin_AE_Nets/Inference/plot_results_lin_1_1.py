@@ -19,7 +19,7 @@ def net(c):
 
     INPUT_DIM = 40
     HIDDEN_DIM = 20
-    LATENT_DIM = 5
+    LATENT_DIM = 3
 
 
     class Encoder(nn.Module):
@@ -32,9 +32,9 @@ def net(c):
                                         out_features=hidden_dim)
             self.linear3 = nn.Linear(in_features=hidden_dim, 
                                         out_features=lat_dim)
-            self.activation_out = nn.LeakyReLU()
-            #self.activation_out1 = nn.Tanh()
-            self.activation_out1 = nn.LeakyReLU()
+            self.activation_out = nn.Tanh()
+            self.activation_out1 = nn.Tanh()
+            #self.activation_out1 = nn.LeakyReLU()
             #self.activation_out1 = nn.Sigmoid()
         def forward(self, x):
             x = self.activation_out(self.linear1(x))
@@ -54,7 +54,7 @@ def net(c):
                                         out_features=hidden_dim)
             self.linear6 = nn.Linear(in_features=hidden_dim, 
                                         out_features=input_dim)
-            self.activation_out = nn.LeakyReLU()
+            self.activation_out = nn.Tanh()
 
         def forward(self,x):
             x = self.activation_out(self.linear4(x))
@@ -89,8 +89,12 @@ def net(c):
     model = Autoencoder(encoder, decoder)
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_1_v2.pt',map_location='cpu'))
-    model.eval()
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/LIN_AE_State_Dicts/1_1/AE_SD_1.pt')
+
+    model.load_state_dict(checkpoint['model_state_dict'])
+    train_losses = checkpoint['train_losses']
+    test_losses = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
 
     W = encoder.state_dict()['linear3.weight']
     #-------------------------------------------------------------------------------------------
@@ -106,8 +110,8 @@ def net(c):
 
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/fusilly/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
-c = c.T
+c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_lin.npy')
+#c = c.T
 #Inference-----------------------------------------------------------------------------------
 predict, W, z = net(c)
 #-------------------------------------------------------------------------------------------
@@ -122,13 +126,13 @@ predict, W, z = net(c)
 # plt.show()
 #------------------------------------------------------------------------------------------
 # plot code-------------------------------------------------------------------------------
-# fig, axs = plt.subplots(5)
-# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
-# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
-# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+fig, axs = plt.subplots(5)
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
 # axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
 # axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
-# plt.show()
+plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 

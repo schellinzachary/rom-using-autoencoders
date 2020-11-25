@@ -16,23 +16,25 @@ from random import randint
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 1000
+N_EPOCHS = 6000
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
-LATENT_DIM = 5
+LATENT_DIM = 3
 lr = 1e-3
 
 
 
 #load data
-f = np.load('preprocessed_samples_lin.npy')
-f = f[::2]
+f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_lin.npy')
+#f = f[::2]
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
-train_in = f[0:1999]
-val_in = f[2000:2499]
+train_in = f[0:4000]
+val_in = f[4000:5000]
+
+
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -45,7 +47,7 @@ class Encoder(nn.Module):
                                     out_features=hidden_dim)
         self.linear2 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
-        self.activation_out = nn.LeakyReLU()
+        self.activation_out = nn.Tanh()
         self.activation_out1 = nn.Tanh()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
@@ -60,7 +62,7 @@ class Decoder(nn.Module):
                                 out_features=hidden_dim)
         self.linear4 = nn.Linear(in_features=hidden_dim, 
                                 out_features=input_dim)
-        self.activation_out = nn.LeakyReLU()
+        self.activation_out = nn.Tanh()
 
     def forward(self,x):
         x = self.activation_out(self.linear3(x))

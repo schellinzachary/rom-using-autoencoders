@@ -15,22 +15,23 @@ import scipy.io as sio
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-N_EPOCHS = 1000
+N_EPOCHS = 300
 BATCH_SIZE = 16
 INPUT_DIM = 40
 HIDDEN_DIM = 20
-LATENT_DIM = 5
+HIDDEN_DIM2 = 10
+LATENT_DIM = 3
 lr = 1e-3
 
 
 
 #load data
-f = np.load('preprocessed_samples_lin_substract50.npy')
+f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_lin.npy')
 np.random.shuffle(f)
 f = tensor(f, dtype=torch.float).to(device)
 
-train_in = f[0:2999]
-val_in = f[3000:3749]
+train_in = f[0:4000]
+val_in = f[4000:5000]
 
 
 train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
@@ -47,8 +48,8 @@ class Encoder(nn.Module):
                                     out_features=hidden_dim)
         self.linear3 = nn.Linear(in_features=hidden_dim, 
                                     out_features=lat_dim)
-        self.activation_out = nn.LeakyReLU()
-        self.activation_out1 = nn.LeakyReLU()
+        self.activation_out = nn.Tanh()
+        self.activation_out1 = nn.Tanh()
     def forward(self, x):
         x = self.activation_out(self.linear1(x))
         x = self.activation_out(self.linear2(x))
@@ -67,7 +68,7 @@ class Decoder(nn.Module):
                                     out_features=hidden_dim)
         self.linear6 = nn.Linear(in_features=hidden_dim, 
                                     out_features=input_dim)
-        self.activation_out = nn.LeakyReLU()
+        self.activation_out = nn.Tanh()
 
     def forward(self,x):
         x = self.activation_out(self.linear4(x))
@@ -104,7 +105,7 @@ model = Autoencoder(encoder, decoder).to(device)
     
 optimizer = Adam(params=model.parameters(), lr=lr)
 
-loss_crit = nn.L1Loss()
+loss_crit = nn.MSELoss()
 train_losses = []
 val_losses = []
 
@@ -159,7 +160,7 @@ def test():
 test_losses = []
 val_losses = []
 
-for n_iter in range(N_EPOCHS):
+for epoch in range(N_EPOCHS):
 
     train_loss, x, predicted = train()
     test_loss = test()
@@ -170,7 +171,7 @@ for n_iter in range(N_EPOCHS):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-    print(f'Epoch {n_iter}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
+    print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
 
 
     # if n_iter % 1000 == 0:
@@ -197,4 +198,14 @@ plt.show()
 
 
 #save the models state dictionary for inference
-torch.save(model.state_dict(),'Lin_AE_STATE_DICT_1_1_L5_16_subtr50_LR.pt')
+torch.save({
+    'epoch': epoch,
+    'model_state_dict':model.state_dict(),
+    'optimizer_state_dict': optimizer.state_dict(),
+    'train_loss': train_loss,
+    'test_loss': test_loss,
+    'train_losses':train_losses,
+    'test_losses': test_losses
+    },f'/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/LIN_AE_State_Dicts/1_1/AE_SD_1.pt')
+    
+print(f'FINISHED Training DUDE')

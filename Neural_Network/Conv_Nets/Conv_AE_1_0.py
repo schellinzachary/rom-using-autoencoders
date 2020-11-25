@@ -3,6 +3,7 @@ Convolutional Autoencoder v1.0
 '''
 
 import os
+import sys
 import numpy as np
 import torch
 import torch.nn as nn
@@ -19,12 +20,12 @@ torch.cuda.empty_cache()
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 print(torch.cuda.is_available())
+code_list = (64,32,16,8,5,2,1)
+for i in code_list:
 
-for i in range(1):
-
-    N_EPOCHS = 2000
+    N_EPOCHS = 6000
     BATCH_SIZE = 4
-    lr = 1e-6
+    lr = 1e-4
 
 
     device = 'cpu'
@@ -68,7 +69,7 @@ for i in range(1):
             self.convE2 = nn.Conv2d(8,16,(2,2),stride=2)
             self.convE3 = nn.Conv2d(16,32,(2,2),stride=2)
             self.convE4 = nn.Conv2d(32,64,(3,3),stride=(1,2))
-            self.linearE1 = nn.Linear(in_features=768,out_features=3)
+            self.linearE1 = nn.Linear(in_features=768,out_features=i)
             self.act = nn.Tanh()
             #self.act_c = nn.Tanh()
 
@@ -87,7 +88,7 @@ for i in range(1):
     class Decoder(nn.Module):
         def __init__(self):
             super(Decoder, self).__init__()
-            self.linearD1 = nn.Linear(in_features=3, out_features=768)
+            self.linearD1 = nn.Linear(in_features=i, out_features=768)
             self.convD1 = nn.ConvTranspose2d(64,32,(3,3),stride=(1,2))
             self.convD2 = nn.ConvTranspose2d(32,16,(2,2),stride=2)
             self.convD3 = nn.ConvTranspose2d(16,8,(2,2),stride=2)
@@ -127,7 +128,7 @@ for i in range(1):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    optimizer = Adam(params=model.parameters(), lr=lr)
+    optimizer = Adam(params=model.parameters(), lr=lr,weight_decay = 1e-2)
     scheduler = MultiStepLR(optimizer,milestones=[3000,5000],verbose=False)
 
     loss_crit = nn.MSELoss(reduction='mean')
@@ -174,7 +175,7 @@ for i in range(1):
                 loss = loss_crit(x,predicted)
                 test_loss += loss.item()
 
-                scheduler.step(loss)
+                #scheduler.step(loss)
 
             return test_loss
 
@@ -183,14 +184,14 @@ for i in range(1):
     test_losses = []
 
     #checkpoint Load
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_1_0_1c_2_1.pt')
-    model.load_state_dict(checkpoint['model_state_dict'])
-    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
-    epoch_o = checkpoint['epoch']
-    train_loss = checkpoint['train_loss']
-    test_loss = checkpoint['test_loss']
-    train_losses = checkpoint['train_losses']
-    test_losses = checkpoint['test_losses']
+    # checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_1_0_1c_2_1.pt')
+    # model.load_state_dict(checkpoint['model_state_dict'])
+    # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    # epoch_o = checkpoint['epoch']
+    # train_loss = checkpoint['train_loss']
+    # test_loss = checkpoint['test_loss']
+    # train_losses = checkpoint['train_losses']
+    # test_losses = checkpoint['test_losses']
 
 
     for epoch in range(N_EPOCHS):
@@ -206,7 +207,9 @@ for i in range(1):
         train_losses.append(train_loss)
         test_losses.append(test_loss)
 
-        print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
+        if epoch % 500 == 0:
+
+            print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
 
 
         # if epoch % 1000 == 0:
@@ -240,8 +243,8 @@ for i in range(1):
     # plt.show()
 
 
+    
 
-    a = ('c_2_1','b','c','d','e')
 
     #save the models state dictionary for inference
     torch.save({
@@ -252,7 +255,9 @@ for i in range(1):
         'test_loss': test_loss,
         'train_losses':train_losses,
         'test_losses': test_losses
-        },f'/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Conv_State_Dicts/Conv_AE_STATE_DICT_1_0_1%s.pt'%a[i])
-    print(f'FINISHED Training DUDE %s'%a[i])
+        },f'/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Code/Conv_AE_STATE_DICT_1_0_1_WD_%s.pt'%i)
+    
+    print(f'FINISHED Training DUDE %s'%i)
+
 
 

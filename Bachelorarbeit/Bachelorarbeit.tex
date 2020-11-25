@@ -66,55 +66,17 @@ f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
 During training every 1000 epochs a sample against its prediction was printed in order to link the value of the L1-Loss to a prediction. Using this method a first verification of the model was achieved. Continuing the search for any possible shortage of the models performance, that this method could not cover, eg. samples lying between every 1000 sample, that the model was not able to reconstruct correctly, a second verification process is conducted. 
 \section{Results and Latent Manifold Properties}
 \subsection{Evaluation Methods}
-In oder to evaluate the proposed dimensionality reduction algorithms, two methods are being introduced. The first one constitutes a qualitative analysis using \cref{Eq:sample_dist} which measures the eucledian distance of every reconstructed sample $\tilde{X}_i$ against it`s corresponding original sample $X$.
-\begin{equation}
-	|X_i-\tilde{X_i}| = \delta_i \qquad\textrm{with i being the i\textsuperscript{th} sample}
-	\label{Eq:sample_dist}
-\end{equation}
-\begin{equation}
-	\sum|\rho_i-\tilde{\rho_i}|=\delta_\rho \qquad\textrm{with i being the i\textsuperscript{th} sample}
-	\label{Eq:error_rho}
-\end{equation}
-As a second quantitative approach a comparison of the density over space in time of the BGK model in \cref{Eq:dense} is utilized. The sum over all euclidian distances from the original samples $\rho_i$ to their reconstruction $\tilde{\rho_i}$ is evaluated in \cref{Eq:error_rho}. 
-\begin{equation}
-\int_{\Re^3}f(\textbf{x},\xi,t)\colvec{1\\\xi\\\frac{||\xi||^2}{2}}d\xi= \colvec{\rho(\textbf{x},t)\\\rho(\textbf{x},t)U(\textbf{x},t)\\E(\textbf{x},t)}
-\label{Eq:dense}
-\end{equation}
-In order to evaluate the performance of the proposed dimensionality reduction algorithms, qualitative and quantitative methods are being introduced. The qualitative analysis comprises a comparision of the sample wise test error following \cref{Eq:sample_dist} on the microscopic data. The Jacobian of the latent code is strongly linked to this measure, as it measures the contraction of the latent manifold. A quantitative measure is taken on the average test error over all over all samples of the microscopic data as well as on the macroscopic data. Both can lead to different conclusions and will be discussed in Section 4.3.
+
 \subsection{Results}
-A quantitative measure shows, that the linear Autoencoder performs slightly better than the POD on the input data comparing the density of the original data against the reconstruction. In contrast to this measure, the comparison of the original data to the reconstruction yields the opposite conclusion. 
+In a first attempt to construct the autoencoder, the architecture from \cite{Carlberg} is adopted. The architecture can be observed in:
 \begin{center}
-\begin{tabular}{ |c|c|c|c| } 
-	\hline
-	Algorithm & Euclidian distance in Density & Euclidian Distance & Jacobian \\ \hline
-	POD & 0.151 & 0.0101 &\\ 
-	AE & 0.051 & 0.0102 &\\ 
-	CAE 1 & 0.205 & 0.0106 & \\
-	CAE 2 & 0.669 & 0.001 & \\
-	CAE 2 + tw & 0.385 & 0.0117 & \\
-	\hline
-\end{tabular}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		Layer & Filter & Stride & Input Dim & Output Dim\\
+		1	&	8	& 2x2	& 
+	\end{tabular}
 \end{center}
 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=\textwidth]{Figures/Error_samples_SVD.png}
-	\caption{Absolute error for every sample in euklidian distance for the POD}
-	\label{Fig:Error_samples_svd}
-\end{figure}
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=\textwidth]{Figures/Error_samples_v1_1.png}
-	\caption{Absolute error for every sample in euklidian distance for the linear autoencoder}
-	\label{Fig:error_sample}
-\end{figure} 
-\begin{figure}[htb!]
-	\centering
-	\includegraphics[width=.49\textwidth]{Figures/Sample500_v1_1.png}
-	\includegraphics[width=.49\textwidth]{Figures/Density_last_v1_1.png}
-	\caption{Error of each sample}
-	\label{Fig:Errormore}
-\end{figure}
 \subsection{Discussion and Outlook}
 \bibliography{Bibliography}{}
 \bibliographystyle{unsrt}
