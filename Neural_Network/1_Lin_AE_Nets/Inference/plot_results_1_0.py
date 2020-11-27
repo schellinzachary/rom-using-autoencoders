@@ -2,6 +2,7 @@
 Plot results Linear 1.0
 '''
 import numpy as np
+from numpy import linalg as LA
 import matplotlib.pyplot as plt
 from matplotlib import rc
 import torch
@@ -22,7 +23,7 @@ def net(c):
 
     INPUT_DIM = 40
     HIDDEN_DIM = 20
-    LATENT_DIM = 5
+    LATENT_DIM = 3
 
 
     class Encoder(nn.Module):
@@ -33,13 +34,12 @@ def net(c):
                                         out_features=hidden_dim)
             self.linear2 = nn.Linear(in_features=hidden_dim, 
                                         out_features=lat_dim)
-            self.activation_out = nn.LeakyReLU()
-            self.activation_out1 = nn.Tanh()
-            #self.activation_out1 = nn.LeakyReLU()
-            #self.activation_out1 = nn.Sigmoid()
+            self.act = nn.LeakyReLU()
+            self.actc = nn.Tanh()
+
         def forward(self, x):
-            x = self.activation_out(self.linear1(x))
-            x = self.activation_out1(self.linear2(x))
+            x = self.act(self.linear1(x))
+            x = self.actc(self.linear2(x))
             return x
 
 
@@ -50,11 +50,12 @@ def net(c):
                                     out_features=hidden_dim)
             self.linear4 = nn.Linear(in_features=hidden_dim, 
                                     out_features=input_dim)
-            self.activation_out = nn.LeakyReLU()
+            self.act= nn.LeakyReLU()
+            self.actc = nn.Tanh()
 
         def forward(self,x):
-            x = self.activation_out(self.linear3(x))
-            x = self.activation_out(self.linear4(x))
+            x = self.actc(self.linear3(x))
+            x = self.act(self.linear4(x))
             return x
 
 
@@ -69,9 +70,7 @@ def net(c):
             predicted = self.dec(z)
             return predicted, z
 
-    class Swish(nn.Module):
-        def forward(self, x):
-            return x * torch.sigmoid(x)
+
 
 
     #encoder
@@ -86,8 +85,13 @@ def net(c):
 
 
 
-    model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_16_lr-3_TH.pt',map_location='cpu'))
-    model.eval()
+ 
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD/AE_SD_0.pt')
+
+    model.load_state_dict(checkpoint['model_state_dict'])
+    train_losses = checkpoint['train_losses']
+    test_losses = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
 
     W = encoder.state_dict()['linear2.weight']
 
@@ -102,48 +106,35 @@ def net(c):
     return predict, W, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/original_data_in_format.npy')
-c = c
-c = c.T
-print(c.shape)
+c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+
+
+plt.show()
 
 
 #Inference-----------------------------------------------------------------------------------
 predict, W, z = net(c)
-#-------------------------------------------------------------------------------------------
-# Jacobian---------------------------------------------------------------------------------
-#LeakyReLU
-#dh = torch.where(W >= 0 , torch.ones(1), torch.ones(1)*1e-2)
-# dh = 1 - z**2 
-# j = torch.mm(dh,W)
 
-# #Tanh
-dh = (1 - z**2)
-j = torch.mm(dh,W)
-
-u, s, vh = np.linalg.svd(j.detach().numpy(),full_matrices=False) #s Singularvalues
-
-plt.plot(np.linspace(1,20,num=20,endpoint=True),s,'-*''k')
-plt.ylabel(r'#',fontsize=25)
-plt.xlabel(r'Singular Value',fontsize=25)
-plt.xticks(fontsize=25)
-plt.yticks(fontsize=25)
-plt.show()
 #------------------------------------------------------------------------------------------
 # plot code-------------------------------------------------------------------------------
-# fig, axs = plt.subplots(5)
 
-# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
-# axs[0].set_ylabel('#')
-# axs[0].set_xlabel('x')
+plt.imshow(c)
+plt.show()
 
-# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
-# axs[1].set_ylabel('#')
-# axs[1].set_xlabel('x')
 
-# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
-# axs[2].set_ylabel('#')
-# axs[2].set_xlabel('x')
+fig, axs = plt.subplots(3)
+
+axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+axs[0].set_ylabel('#')
+axs[0].set_xlabel('x')
+
+axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+axs[1].set_ylabel('#')
+axs[1].set_xlabel('x')
+
+axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+axs[2].set_ylabel('#')
+axs[2].set_xlabel('x')
 
 # axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
 # axs[3].set_ylabel('#')
@@ -153,7 +144,7 @@ plt.show()
 # axs[4].set_ylabel('#')
 # axs[4].set_xlabel('x')
 
-# plt.show()
+plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
@@ -249,14 +240,11 @@ zip(mistake_list)
 # plt.ylabel('$Density$')
 # plt.show()
 # -------------------------------------------------------------------------------------------
-test_error = np.sum(np.abs(c - predict),axis=1)
-mean = np.sum(test_error)/len(test_error)
-print('Mean Test Error', mean)
-print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
-print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
-print('Highest Sample Error',np.max(test_error))
-print('Lowest Sample Error', np.min(test_error))
+f = c
+rec = predict
+ph_error = LA.norm((f - rec).flatten())/LA.norm(f.flatten())
 
+print(ph_error)
 
 
 

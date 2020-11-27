@@ -7,27 +7,45 @@ import scipy.io as sio
 import numpy as np
 import sys
 
-np.set_printoptions(threshold=sys.maxsize)
 
 
-f = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
+
+f = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/f.mat')
 f  = f['f']
 
+def crazyD(f):
+  shape = f.shape
+  t = shape[0] 
+  v = shape[1] 
+  x = shape[2] 
+  #Submatrix
+  c = np.zeros((v,t*x))
+  n = 0
+  
+  #Build 2D-Version
+  for i in range(t):                                             # T (zeilen)
+      for j in range(v):                                         # V (spalten)
+          c[j,n:n+x]=f[i,j,:]
+  
+      n = n + x
+  return(c)
+def twoD(f):
+  x=200
+  t=25
+  v=40
 
-x=200
-t=25
-v=40
+  #Submatrix
+  c = np.empty((t*x,v))
+  n = 0
 
-#Submatrix
-c = np.zeros((t*x,v))
-n = 0
+  #Build 2D-Version
+  for i in range(t):                                             
+    for j in range(x):
+      c[j+n,:]=f[i,:,j]
+    n +=200
+        
 
-#Build 2D-Version
-for i in range(t):                                             # T (zeilen)
-    for j in range(v):                                         # V (spalten)
-            c[n:n+x,j]=f[i,j,:]
-
-    n = n + x
+  return(c)
 
 def meaned(c):
   row_mean = np.mean(c,axis=1)
@@ -49,53 +67,9 @@ def delete(c):
     p += 50
   return np.delete(c,g,0)
 
-g = delete(c)
-
 def normalize(a):
   return (a - np.min(a)) / (np.max(a) - np.min(a))
 
-
-
-
-g = normalize(g)
-
-
-#np.save('preprocessed_samples_lin_substract50_normalized',g)
-
-a = np.load('preprocessed_samples_lin_substract50.npy')
-
-print(np.sum(np.abs(a - g)))
-
-
-
-# # First set up the figure, the axis, and the plot element we want to animate
-# fig = plt.figure()
-# ax = plt.axes(xlim=(-10,40),ylim=(0,1))
-
-# line, = ax.plot([],[],label='i =')
-
-# def init():
-# 	line.set_data([],[])
-# 	return line,
-
-
-# def animate(i):
-# 	a = np.arange(40)
-# 	line.set_data(a,c[i+2000])
-# 	line.set_label('i = {}'.format(i))
-# 	return line,
-
-# anim = animation.FuncAnimation(
-#                                fig, 
-#                                animate, 
-#                                init_func = init,
-#                                frames = 200,
-#                                interval = 20,
-#                                blit = True
-#                                )
-
-# ax.legend()
-# plt.show()
 
 def visualize(c,predict):
     fig = plt.figure()
@@ -139,6 +113,46 @@ def density(x):
       n += 150
   return rho_samples
 
+c = twoD(f)
 
-rho = density(g)
-visualize(rho,rho)
+o = crazyD(f)
+
+plt.plot(c[4998])
+plt.plot(o[:,4999])
+plt.show()
+
+np.random.shuffle(c)
+
+np.save('Data/sod25Kn0p00001_2D.npy',c)
+
+
+
+
+# # First set up the figure, the axis, and the plot element we want to animate
+# fig = plt.figure()
+# ax = plt.axes(xlim=(-10,40),ylim=(0,1))
+
+# line, = ax.plot([],[],label='i =')
+
+# def init():
+#   line.set_data([],[])
+#   return line,
+
+
+# def animate(i):
+#   a = np.arange(40)
+#   line.set_data(a,c[i+2000])
+#   line.set_label('i = {}'.format(i))
+#   return line,
+
+# anim = animation.FuncAnimation(
+#                                fig, 
+#                                animate, 
+#                                init_func = init,
+#                                frames = 200,
+#                                interval = 20,
+#                                blit = True
+#                                )
+
+# ax.legend()
+# plt.show()

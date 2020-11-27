@@ -5,10 +5,10 @@ SVD
 import scipy.io as sio
 import numpy as np
 import matplotlib.pyplot as plt
-plt.rc('text', usetex=True)
-plt.rc('font', family='serif')
-plt.rc('xtick', labelsize=17) 
-plt.rc('ytick', labelsize=17) 
+# plt.rc('text', usetex=True)
+# plt.rc('font', family='serif')
+# plt.rc('xtick', labelsize=17) 
+# plt.rc('ytick', labelsize=17) 
 
 datalocation = ['sod25Kn0p01/f.mat','sod25Kn0p00001/f.mat','sod241Kn0p00001/f.mat']
 q = 1 #Plot variable
@@ -32,10 +32,13 @@ for i in datalocation:
     #Build 2D-Version
     for i in range(t):                                             # T (zeilen)
         for j in range(v):                                         # V (spalten)
-                c[j,n:n+x]=f[i,j,:]
+            c[j,n:n+x]=f[i,j,:]
     
         n = n + x
     #SVD
+
+    plt.plot(c[:,4999])
+    plt.show()
   
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
     
