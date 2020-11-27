@@ -86,7 +86,7 @@ def net(c):
 
 
  
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD/AE_SD_0.pt')
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD/AE_SD_4.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -116,25 +116,67 @@ plt.show()
 predict, W, z = net(c)
 
 #------------------------------------------------------------------------------------------
-# plot code-------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------
+#Energy
+def shapeback(z):
+    c = np.empty((25,200,3))
+    n=0
+    for i in range(25):
+        for p in range(200):
+          c[i,p,:] = z[p+n,:].detach().numpy()
+          print(p+n)
+        n += 200
+    return(c)
 
-plt.imshow(c)
+g = shapeback(z)
+
+print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
+plt.pcolor(g[:,:,2])
+plt.xlabel('x')
+plt.ylabel('t')
+plt.colorbar()
 plt.show()
 
+def energy(g):
+    a = 2
+    E_1=0
+    E_2=0
+    for i in range(200):
+        E_1 += np.sum(g[:,i,0]*a + g[:,i,1]*.5 * g[:,i,2]**2)
+        print(E_1)
+    for p in range(25):
+        E_2 +=np.sum(g[p,:,2] * (a * g[p,:,0] + g[p,:,1] * .5 * g[p,:,2]**2 + g[p,:,0]))
 
-fig, axs = plt.subplots(3)
+    return(E_1 + E_2)
 
-axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
-axs[0].set_ylabel('#')
-axs[0].set_xlabel('x')
+resi = energy(g)
+print('resi',resi)
 
-axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
-axs[1].set_ylabel('#')
-axs[1].set_xlabel('x')
 
-axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
-axs[2].set_ylabel('#')
-axs[2].set_xlabel('x')
+
+
+# plot code-------------------------------------------------------------------------------
+
+# plt.pcolor(z.detach().numpy(),cmap='inferno')
+# plt.xlabel('x')
+# plt.ylabel('t')
+# plt.colorbar()
+# plt.show()
+
+
+# fig, axs = plt.subplots(3)
+
+# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+# axs[0].set_ylabel('#')
+# axs[0].set_xlabel('x')
+
+# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+# axs[1].set_ylabel('#')
+# axs[1].set_xlabel('x')
+
+# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+# axs[2].set_ylabel('#')
+# axs[2].set_xlabel('x')
 
 # axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
 # axs[3].set_ylabel('#')

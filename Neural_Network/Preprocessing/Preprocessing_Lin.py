@@ -39,7 +39,8 @@ def twoD(f):
   n = 0
 
   #Build 2D-Version
-  for i in range(t):                                             
+  for i in range(t): 
+    print(n)                                            
     for j in range(x):
       c[j+n,:]=f[i,:,j]
     n +=200
@@ -121,9 +122,11 @@ plt.plot(c[4998])
 plt.plot(o[:,4999])
 plt.show()
 
-np.random.shuffle(c)
+print(np.sum(np.abs(c))-np.sum(np.abs(f)))
 
-np.save('Data/sod25Kn0p00001_2D.npy',c)
+#np.random.shuffle(c)
+#
+#np.save('Data/sod25Kn0p00001_2D.npy',c)
 
 
 
