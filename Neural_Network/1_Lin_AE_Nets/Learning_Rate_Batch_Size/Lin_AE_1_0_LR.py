@@ -46,7 +46,7 @@ for i in range(6):
 
 
     #load data
-    f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+    f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D.npy')
 
     f = tensor(f, dtype=torch.float).to(device)
 
@@ -209,6 +209,7 @@ for i in range(6):
 
     ph_error = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
     print('Batch_Size:', BATCH_SIZE)
+    print('ph_error:', ph_error)
 
 
 
@@ -224,5 +225,5 @@ for i in range(6):
         'ph_error' : ph_error,
         'batch_size' : BATCH_SIZE,
         'learning-rate' : lr
-        },f'SD/AE_SD_%s.pt'%i)
+        },f'SD_kn_0p01/AE_SD_%s.pt'%i)
 

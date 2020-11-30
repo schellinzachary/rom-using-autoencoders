@@ -10,8 +10,13 @@ import sys
 
 
 
-f = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/f.mat')
+f = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f  = f['f']
+
+
+
+
+
 
 def crazyD(f):
   shape = f.shape
@@ -39,8 +44,7 @@ def twoD(f):
   n = 0
 
   #Build 2D-Version
-  for i in range(t): 
-    print(n)                                            
+  for i in range(t):                                         
     for j in range(x):
       c[j+n,:]=f[i,:,j]
     n +=200
@@ -125,8 +129,8 @@ plt.show()
 print(np.sum(np.abs(c))-np.sum(np.abs(f)))
 
 #np.random.shuffle(c)
-#
-#np.save('Data/sod25Kn0p00001_2D.npy',c)
+
+np.save('Data/sod25Kn0p01_2D_unshuffled.npy',c)
 
 
 

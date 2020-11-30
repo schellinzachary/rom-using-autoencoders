@@ -107,18 +107,18 @@ def net(c):
 
 # load original data-----------------------------------------------------------------------
 c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+v = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
+v = v['v']
 
-
-plt.show()
 
 
 #Inference-----------------------------------------------------------------------------------
 predict, W, z = net(c)
 
 #------------------------------------------------------------------------------------------
-#------------------------------------------------------------------------------------------
-#Energy
-def shapeback(z):
+#Conservation Properties
+
+def shapeback_code(z):
     c = np.empty((25,200,3))
     n=0
     for i in range(25):
@@ -128,31 +128,57 @@ def shapeback(z):
         n += 200
     return(c)
 
-g = shapeback(z)
+def shapeback_field(predict):
+    f = np.empty([25,40,200])
+    n = 0
+    for i in range(25):
+        for j in range(200):
+            f[i,:,j] = predict[j+n,:]
+        n += 200
+    return(f)
 
-print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
-plt.pcolor(g[:,:,2])
-plt.xlabel('x')
-plt.ylabel('t')
-plt.colorbar()
-plt.show()
+def macro(f,v):
+    dv = v[1]- v[0]
+    rho = np.sum(f,axis =1) * dv
+
+    m = f * v
+    m = np.sum(m,axis = 1) * dv
+    u = m / rho
+
+    E = f * ((v**2) * .5)
+    E = np.sum(E, axis = 1)
+
+    T = ((2* E) / (3 * rho)) - (u**2 / 3)
+    p = rho * T
+    return(rho,p,u,E,T,m)
 
 def energy(g):
-    a = 2
-    E_1=0
-    E_2=0
-    for i in range(200):
-        E_1 += np.sum(g[:,i,0]*a + g[:,i,1]*.5 * g[:,i,2]**2)
-        print(E_1)
-    for p in range(25):
-        E_2 +=np.sum(g[p,:,2] * (a * g[p,:,0] + g[p,:,1] * .5 * g[p,:,2]**2 + g[p,:,0]))
+    a=2
+    E = np.sum(g[:,:,0],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,2]**2,axis=1)
 
-    return(E_1 + E_2)
+    return(E)
 
-resi = energy(g)
-print('resi',resi)
+f = shapeback_field(c)
+
+rho, p, u, E, T, m = macro(f,v)
+
+g = shapeback_code(z)
+
+E_code = energy(g)
+
+plt.plot(np.sum(rho,axis=1))
+plt.xlabel('t')
+plt.ylabel('Rho')
+plt.show()
 
 
+
+# print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
+# plt.pcolor(g[:,:,2])
+# plt.xlabel('x')
+# plt.ylabel('t')
+# plt.colorbar()
+# plt.show()
 
 
 # plot code-------------------------------------------------------------------------------
@@ -186,40 +212,40 @@ print('resi',resi)
 # axs[4].set_ylabel('#')
 # axs[4].set_xlabel('x')
 
-plt.show()
+# plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
-def visualize(c,predict):
-    fig = plt.figure()
-    ax = plt.axes(ylim=(0,1),xlim=(0,200))
+# def visualize(c,predict):
+#     fig = plt.figure()
+#     ax = plt.axes(ylim=(0,1),xlim=(0,200))
 
-    line1, = ax.plot([],[],label='original')
-    line2, = ax.plot([],[],label='prediction')
+#     line1, = ax.plot([],[],label='original')
+#     line2, = ax.plot([],[],label='prediction')
 
-    def init():
-        line1.set_data([],[])
-        line2.set_data([],[])
-        return line1, line2
+#     def init():
+#         line1.set_data([],[])
+#         line2.set_data([],[])
+#         return line1, line2
 
 
-    def animate(i):
-        print(i)
-        line1.set_data(np.arange(200),c[i])
-        line2.set_data(np.arange(200),predict[i])
-        return line1, line2
+#     def animate(i):
+#         print(i)
+#         line1.set_data(np.arange(200),c[i])
+#         line2.set_data(np.arange(200),predict[i])
+#         return line1, line2
 
-    anim = animation.FuncAnimation(
-                                   fig, 
-                                   animate, 
-                                   init_func = init,
-                                   frames = 200,
-                                   interval = 200,
-                                   blit = True
-                                   )
+#     anim = animation.FuncAnimation(
+#                                    fig, 
+#                                    animate, 
+#                                    init_func = init,
+#                                    frames = 200,
+#                                    interval = 200,
+#                                    blit = True
+#                                    )
 
-    ax.legend()
-    plt.show()
+#     ax.legend()
+#     plt.show()
 #-----------------------------------------------------------------------------------------
 #Bad Mistakes----------------------------------------------------------------------------
 mistake_list = []
