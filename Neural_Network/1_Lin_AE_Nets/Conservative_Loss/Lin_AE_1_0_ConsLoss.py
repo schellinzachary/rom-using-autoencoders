@@ -34,8 +34,8 @@ for i in range(6):
 
     a = (64, 32, 16, 8, 4, 2)
 
-    N_EPOCHS = 10
-    BATCH_SIZE = a[i] 
+    N_EPOCHS = 1000
+    BATCH_SIZE = a[i]
     INPUT_DIM = 40
     HIDDEN_DIM = 20
     LATENT_DIM = 3
@@ -46,8 +46,10 @@ for i in range(6):
 
 
     #load data
-    f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D.npy')
+    f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+    c_unshuffled = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 
+    c_unshuffled = tensor(c_unshuffled,dtype=torch.float).to(device)
     f = tensor(f, dtype=torch.float).to(device)
 
     train_in = f[0:4000]
@@ -96,7 +98,7 @@ for i in range(6):
         def forward(self, x):
             z = self.enc(x)
             predicted = self.dec(z)
-            return predicted
+            return predicted, z
 
 
     #encoder
@@ -111,6 +113,39 @@ for i in range(6):
     #model.load_state_dict(torch.load('Lin_AE_STATE_DICT_1_0_L5_sigmoid.pt'))
        
     optimizer = Adam(params=model.parameters(), lr=lr)
+
+
+    def diff(r):
+        dt = torch.empty(24)
+        for i in range(24):
+            dt[i]= r[i+1] - r[i]
+
+        return(dt)
+
+    def shapeback_code(z):
+        c = torch.empty((25,200,3))
+        n=0
+        for i in range(25):
+            for p in range(200):
+                c[i,p,:] = z[p+n,:]
+            n += 200
+        return(c) # shaping back the code
+
+
+    def conservative_loss(c_unshuffled):
+        predict, z = model(c_unshuffled)
+        g = shapeback_code(z)
+        #g[:,0] = p, g[:,1] = rho, g[:,2] = u
+        g = torch.sum(g,dim=1)
+        a = 1
+        E = g[:,0] * a + g[:,1] * .5 * g[:,2]**2
+        rho_u = g[:,1] * g[:,2] 
+        rho = g[:,1]
+
+        dt_E = diff(E)
+        dt_rho_u = diff(rho_u)
+        dt_rho = diff(rho)
+        return(torch.sum(dt_E + dt_rho + dt_rho_u))
 
     loss_crit = nn.MSELoss()
     train_losses = []
@@ -129,16 +164,20 @@ for i in range(6):
 
             optimizer.zero_grad()
 
-            predicted = model(x)
+            predicted, z = model(x)
 
-            loss = loss_crit(x,predicted)
+            con_loss = conservative_loss(c_unshuffled)
+
+            MSE_loss = loss_crit(x,predicted)
+
+            loss = MSE_loss + torch.abs(con_loss)
 
             loss.backward()
             train_loss += loss.item()
 
             optimizer.step()
 
-        return train_loss
+        return train_loss, con_loss, MSE_loss
 
     def test():
 
@@ -151,9 +190,14 @@ for i in range(6):
 
                 x = x.to(device)
 
-                predicted = model(x)
+                predicted, z = model(x)
 
-                loss = loss_crit(x,predicted)
+                con_loss = conservative_loss(c_unshuffled)
+
+                MSE_loss = loss_crit(x,predicted)
+
+                loss = MSE_loss + torch.abs(con_loss)
+
                 test_loss += loss.item()
 
             return test_loss
@@ -163,7 +207,7 @@ for i in range(6):
 
     for epoch in range(N_EPOCHS):
 
-        train_loss = train()
+        train_loss, con_loss, MSE_loss = train()
         test_loss  = test()
 
         #save and print the loss
@@ -173,9 +217,9 @@ for i in range(6):
         train_losses.append(train_loss)
         test_losses.append(test_loss)
 
-        progressBar(epoch,N_EPOCHS)
+        #progressBar(epoch,N_EPOCHS)
 
-        #print(f'Epoch {n_iter}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}')
+        print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}, CON Loss: {con_loss:.10f}, MSE Loss: {MSE_loss:.10f}')
 
 
         # if n_iter % 300 == 0:
@@ -204,8 +248,7 @@ for i in range(6):
 
     #Inference
 
-    rec = model(f)
-
+    rec, z = model(f)
 
     ph_error = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
     print('Batch_Size:', BATCH_SIZE)
@@ -214,16 +257,16 @@ for i in range(6):
 
 
     #save the models state dictionary for inference
-    # torch.save({
-    #     'epoch': epoch,
-    #     'model_state_dict':model.state_dict(),
-    #     'optimizer_state_dict': optimizer.state_dict(),
-    #     'train_loss': train_loss,
-    #     'test_loss': test_loss,
-    #     'train_losses':train_losses,
-    #     'test_losses': test_losses,
-    #     'ph_error' : ph_error,
-    #     'batch_size' : BATCH_SIZE,
-    #     'learning-rate' : lr
-    #     },f'SD_kn_0p01/AE_SD_%s.pt'%i)
+    torch.save({
+        'epoch': epoch,
+        'model_state_dict':model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'train_loss': train_loss,
+        'test_loss': test_loss,
+        'train_losses':train_losses,
+        'test_losses': test_losses,
+        'ph_error' : ph_error,
+        'batch_size' : BATCH_SIZE,
+        'learning-rate' : lr
+        },f'SD_kn_0p00001/AE_SD_%s.pt'%i)
 

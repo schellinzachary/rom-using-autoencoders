@@ -86,7 +86,7 @@ def net(c):
 
 
  
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD/AE_SD_4.pt')
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Conservative_Loss/SD_kn_0p00001/AE_SD_1.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -108,10 +108,11 @@ def net(c):
 # load original data-----------------------------------------------------------------------
 c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 v = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
+t = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
+t  = t['treport']
 v = v['v']
-
-
-
+t.squeeze()
+t=t.T
 #Inference-----------------------------------------------------------------------------------
 predict, W, z = net(c)
 
@@ -126,7 +127,7 @@ def shapeback_code(z):
           c[i,p,:] = z[p+n,:].detach().numpy()
           print(p+n)
         n += 200
-    return(c)
+    return(c) # shaping back the code
 
 def shapeback_field(predict):
     f = np.empty([25,40,200])
@@ -135,50 +136,71 @@ def shapeback_field(predict):
         for j in range(200):
             f[i,:,j] = predict[j+n,:]
         n += 200
-    return(f)
+    return(f) # shaping back the field
 
 def macro(f,v):
     dv = v[1]- v[0]
     rho = np.sum(f,axis =1) * dv
 
-    m = f * v
-    m = np.sum(m,axis = 1) * dv
-    u = m / rho
+    rho_u = f * v
+    rho_u = np.sum(rho_u,axis = 1) * dv
+    u = rho_u / rho
 
     E = f * ((v**2) * .5)
     E = np.sum(E, axis = 1)
 
     T = ((2* E) / (3 * rho)) - (u**2 / 3)
     p = rho * T
-    return(rho,p,u,E,T,m)
+    return(rho, E, rho_u) # calculate the macroscopic quantities of field
+
+def conservativ(z):
+    #g[:,0] = p, g[:,1] = rho, g[:,2] = u
+    a = 1
+    E = g[:,0] * a + g[:,1] * .5 * g[:,2]**2
+    rho_u = g[:,1] * g[:,2] 
+    rho = g[:,1]
+
+    dt_E = diff(E)
+    dt_rho_u = diff(rho_u)
+    dt_rho = diff(rho)
+    return(dt_E, dt_rho_u, dt_rho)
+
+def diff(r):
+        dt = torch.empty(25)
+        for i in range(25):
+            dt[i]= r[i+1] - r[i] / 0.005
+        return(dt)
 
 def energy(g):
     a=2
     E = np.sum(g[:,:,0],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,2]**2,axis=1)
 
-    return(E)
+    return(E) # cal # calculate Energy of code
 
 f = shapeback_field(c)
 
-rho, p, u, E, T, m = macro(f,v)
-
 g = shapeback_code(z)
+
+rho, E, rho_u = macro(f,v)
+
+d_dt = np.diff(np.sum(E,axis=1))/(t[1] - t[0])
+
 
 E_code = energy(g)
 
-plt.plot(np.sum(rho,axis=1))
-plt.xlabel('t')
-plt.ylabel('Rho')
+plt.plot(E_code,'-+''k')
+plt.xlabel('t',fontsize=20)
+plt.ylabel('(dE/dt)/t_mean',fontsize=20)
 plt.show()
 
 
 
-# print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
-# plt.pcolor(g[:,:,2])
-# plt.xlabel('x')
-# plt.ylabel('t')
-# plt.colorbar()
-# plt.show()
+print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
+plt.pcolor(g[:,:,2])
+plt.xlabel('x')
+plt.ylabel('t')
+plt.colorbar()
+plt.show()
 
 
 # plot code-------------------------------------------------------------------------------
