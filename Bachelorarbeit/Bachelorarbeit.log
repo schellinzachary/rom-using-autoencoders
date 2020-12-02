@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  25 NOV 2020 18:27
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  2 DEC 2020 20:57
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -817,36 +817,75 @@ File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
 input line 52.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-[4] (./Bachelorarbeit.bbl [5<./Figures/Cumultative_Singular_Values_kn001.png>]
+[4]
+</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
+0p00001Conservative_Quantities/together/d_dt_E.png, id=146, 867.24pt x 632.3625p
+t>
+File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
+20/kn0p00001Conservative_Quantities/together/d_dt_E.png Graphic file (type png)
+<use /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
+0/kn0p00001Conservative_Quantities/together/d_dt_E.png>
+Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
+beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_E.png  used
+ on input line 93.
+(luatex.def)             Requested size: 144.95303pt x 105.68617pt.
+</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
+0p00001Conservative_Quantities/together/d_dt_rho.png, id=147, 867.24pt x 632.362
+5pt>
+File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
+20/kn0p00001Conservative_Quantities/together/d_dt_rho.png Graphic file (type png
+)
+<use /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
+0/kn0p00001Conservative_Quantities/together/d_dt_rho.png>
+Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
+beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_rho.png  us
+ed on input line 97.
+(luatex.def)             Requested size: 144.95303pt x 105.68617pt.
+</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
+0p00001Conservative_Quantities/together/d_dt_p.png, id=148, 867.24pt x 632.3625p
+t>
+File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
+20/kn0p00001Conservative_Quantities/together/d_dt_p.png Graphic file (type png)
+<use /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
+0/kn0p00001Conservative_Quantities/together/d_dt_p.png>
+Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
+beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png  used
+ on input line 101.
+(luatex.def)             Requested size: 144.95303pt x 105.68617pt.
+ [5<./Figures/Cumultative_Singular_Values_kn001.png>] (./Bachelorarbeit.bbl
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 3
 5.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 83.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 83.
+) [6</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
+0/kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/RO
+M_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quant
+ities/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bachel
+orarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>]) [7]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 83.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 83.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: CDF197ED5D7BE73885D939ED943A7BB8;2021.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 83.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32720 strings out of 481365
+ 32777 strings out of 481365
  100000,1144653 words of node,token memory allocated
- 461 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 56 glue_spec, 2 write nodes
-   avail lists: 1:1,2:33,3:111,4:41,5:203,6:31,7:4518,8:48,9:232,10:26,11:379
- 48768 multiletter control sequences out of 65536+600000
+ 470 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 56 glue_spec, 2 write nodes
+   avail lists: 1:1,2:33,3:144,4:41,5:203,6:31,7:4518,8:49,9:320,10:26,11:379
+ 48798 multiletter control sequences out of 65536+600000
  59 fonts using 4573767 bytes
- 68i,9n,98p,2387b,477s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 68i,10n,98p,2387b,473s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvi
 ps/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
@@ -858,10 +897,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 m/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Bachelorarbeit.pdf (6 pages, 235433 bytes).
+Output written on Bachelorarbeit.pdf (7 pages, 358319 bytes).
 
-PDF statistics: 204 PDF objects out of 1000 (max. 8388607)
- 180 compressed objects within 2 object streams
- 37 named destinations out of 1000 (max. 131072)
+PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
+ 46 named destinations out of 1000 (max. 131072)
  136 words of extra memory for PDF output out of 10000 (max. 100000000)
 

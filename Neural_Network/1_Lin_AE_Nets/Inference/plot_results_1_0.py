@@ -17,7 +17,6 @@ from scipy.interpolate import interp1d, Akima1DInterpolator, BarycentricInterpol
 # #rc('font',**{'family':'serif','serif':['Palatino']})
 #rc('text', usetex=True)
 plt.rcParams['xtick.labelsize']=15
-plt.rcParams['ytick.labelsize']=15
 
 def net(c):
 
@@ -86,7 +85,7 @@ def net(c):
 
 
  
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Conservative_Loss/SD_kn_0p00001/AE_SD_1.pt')
+    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -125,7 +124,6 @@ def shapeback_code(z):
     for i in range(25):
         for p in range(200):
           c[i,p,:] = z[p+n,:].detach().numpy()
-          print(p+n)
         n += 200
     return(c) # shaping back the code
 
@@ -140,7 +138,7 @@ def shapeback_field(predict):
 
 def macro(f,v):
     dv = v[1]- v[0]
-    rho = np.sum(f,axis =1) * dv
+    rho = np.sum(f,axis = 1) * dv
 
     rho_u = f * v
     rho_u = np.sum(rho_u,axis = 1) * dv
@@ -168,29 +166,38 @@ def conservativ(z):
 def diff(r):
         dt = torch.empty(25)
         for i in range(25):
-            dt[i]= r[i+1] - r[i] / 0.005
+            dt[i]= r[i+1] - r[i] 
+        #dt = dt / torch.mean(r)
         return(dt)
 
 def energy(g):
     a=2
-    E = np.sum(g[:,:,0],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,2]**2,axis=1)
+    E = np.sum(g[:,:,2],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,0]**2,axis=1)
 
     return(E) # cal # calculate Energy of code
 
-f = shapeback_field(c)
+predict_org_shape = shapeback_field(predict)
+original_org_shape = shapeback_field(c)
 
 g = shapeback_code(z)
 
-rho, E, rho_u = macro(f,v)
+rho_p, E_p, rho_u_p = macro(predict_org_shape,v)
+rho_o, E_o, rho_u_o = macro(original_org_shape,v)
 
-d_dt = np.diff(np.sum(E,axis=1))/(t[1] - t[0])
+d_dt_p = np.diff(np.sum(rho_u_p,axis=1))/ np.mean(np.sum(rho_u_p,axis=(0,1)))
+d_dt_o = np.diff(np.sum(rho_u_o,axis=1))/ np.mean(np.sum(rho_u_o,axis=(0,1)))
 
+dt_E_code, dt_rho_u_code, dt_rho_code = conservativ(z)
 
 E_code = energy(g)
 
-plt.plot(E_code,'-+''k')
-plt.xlabel('t',fontsize=20)
-plt.ylabel('(dE/dt)/t_mean',fontsize=20)
+plt.plot(dt_rho_code,'-+''k')
+#plt.plot(d_dt_o,'-v''k')
+plt.xlabel('t',fontsize=25)
+plt.ylabel('(dp/dt)',fontsize=25)
+plt.xticks(fontsize=25)
+plt.yticks(fontsize=25)
+plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
 plt.show()
 
 

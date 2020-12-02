@@ -24,8 +24,7 @@ def macro(f,v):
 	dv = v[1]- v[0]
 	rho = np.sum(f,axis =1) * dv
 
-	m = f * v
-	rho_u = np.sum(m,axis = 1) * dv
+	rho_u = np.sum(f * (v) ,axis = 1) * dv
 	u = rho_u / rho
 
 	E = f * ((v**2) * .5)
@@ -34,16 +33,17 @@ def macro(f,v):
 
 	T = ((2* E) / (3 * rho)) - (u**2 / 3)
 	p = rho * T
-	return(rho,p,u,E,T,m,rho_u)
+	return(rho,p,u,E,T,rho_u)
 
-rho, p, u, E, T, m, rho_u = macro(f,v)
+rho, p, u, E, T, rho_u = macro(f,v)
 
 
-E = np.sum(E, axis = 1)
-d_dt = np.diff(E)/ np.mean(E)
+
+d_dt = np.diff(np.sum(rho_u, axis =1))/ (np.sum(rho_u, axis = (0,1)))
 
 
 plt.plot(d_dt,'-+''k')
 plt.xlabel('t',fontsize=20)
-plt.ylabel('(drho_u/dt)/t_mean',fontsize=20)
+plt.ylabel('(dp/dt)/t_mean',fontsize=20)
+# plt.ylim(0,1e-2)
 plt.show()

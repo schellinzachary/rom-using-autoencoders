@@ -174,6 +174,7 @@ for i in range(6):
 
             loss.backward()
             train_loss += loss.item()
+            
 
             optimizer.step()
 
@@ -217,9 +218,9 @@ for i in range(6):
         train_losses.append(train_loss)
         test_losses.append(test_loss)
 
-        #progressBar(epoch,N_EPOCHS)
+        progressBar(epoch,N_EPOCHS)
 
-        print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}, CON Loss: {con_loss:.10f}, MSE Loss: {MSE_loss:.10f}')
+        #print(f'Epoch {epoch}, Train Loss: {train_loss:.10f}, Test Loss: {test_loss:.10f}, CON Loss: {con_loss:.10f}, MSE Loss: {MSE_loss:.10f}')
 
 
         # if n_iter % 300 == 0:
