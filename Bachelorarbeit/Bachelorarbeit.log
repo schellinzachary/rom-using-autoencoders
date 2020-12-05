@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  2 DEC 2020 20:57
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  5 DEC 2020 15:47
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -237,6 +237,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -711,33 +719,33 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 (./Bachelorarbeit.aux)
 \openout1 = Bachelorarbeit.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 16.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 16
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 17
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
+LaTeX Font Info:    ... okay on input line 17.
 \AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring OFF on input line 16.
+Package hyperref Info: Link coloring OFF on input line 17.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -749,9 +757,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count288
 )
-LaTeX Info: Redefining \ref on input line 16.
-LaTeX Info: Redefining \pageref on input line 16.
-LaTeX Info: Redefining \nameref on input line 16.
+LaTeX Info: Redefining \ref on input line 17.
+LaTeX Info: Redefining \pageref on input line 17.
+LaTeX Info: Redefining \nameref on input line 17.
 
 (./Bachelorarbeit.out) (./Bachelorarbeit.out)
 \@outlinefile=\write4
@@ -784,42 +792,52 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might be
 nefit from \pgfplotsset{compat=1.16} (current compat level: 1.8).
 
-[1
+LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Bachelorarbeit.toc)
 \tf@toc=\write5
 
 \openout5 = Bachelorarbeit.toc
-
-[2]
-Overfull \hbox (0.7778pt too wide) in paragraph at lines 30--32
+ [2]
+Overfull \hbox (0.7778pt too wide) in paragraph at lines 31--33
 \OT1/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-t
 ion of their snap-shot database
  []
 
 [3]
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
 
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
 
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 33.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
 
+Missing character: There is no · (U+00B7) in font cmr12!
+Missing character: There is no · (U+00B7) in font cmr8!
+[4]
 
-LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 49.
+LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 71.
 
-<Figures/Cumultative_Singular_Values_kn001.png, id=129, 984.3174pt x 456.7464pt>
+<Figures/Cumultative_Singular_Values_kn001.png, id=158, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 52.
+input line 74.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-[4]
+[5<./Figures/Cumultative_Singular_Values_kn001.png>]
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_E.png, id=146, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_E.png, id=173, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_E.png Graphic file (type png)
@@ -827,10 +845,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_E.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_E.png  used
- on input line 93.
+ on input line 115.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_rho.png, id=147, 867.24pt x 632.362
+0p00001Conservative_Quantities/together/d_dt_rho.png, id=174, 867.24pt x 632.362
 5pt>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_rho.png Graphic file (type png
@@ -839,10 +857,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_rho.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_rho.png  us
-ed on input line 97.
+ed on input line 119.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_p.png, id=148, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_p.png, id=175, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_p.png Graphic file (type png)
@@ -850,57 +868,59 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_p.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png  used
- on input line 101.
+ on input line 123.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
- [5<./Figures/Cumultative_Singular_Values_kn001.png>] (./Bachelorarbeit.bbl
+ [6] (./Bachelorarbeit.bbl
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 3
 5.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [6</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
+) [7</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
 0/kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/RO
 M_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quant
 ities/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bachel
-orarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>]) [7]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 117.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 117.
+orarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>]) [8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 117.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 117.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: CDF197ED5D7BE73885D939ED943A7BB8;2021.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 117.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32777 strings out of 481365
+ 32916 strings out of 481365
  100000,1144653 words of node,token memory allocated
  470 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 56 glue_spec, 2 write nodes
-   avail lists: 1:1,2:33,3:144,4:41,5:203,6:31,7:4518,8:49,9:320,10:26,11:379
- 48798 multiletter control sequences out of 65536+600000
- 59 fonts using 4573767 bytes
- 68i,10n,98p,2387b,473s stack positions out of 5000i,500n,10000p,200000b,100000s
+   avail lists: 1:1,2:33,3:152,4:41,5:225,6:31,7:4518,8:86,9:464,10:26,11:379
+ 48895 multiletter control sequences out of 65536+600000
+ 73 fonts using 5152815 bytes
+ 68i,11n,98p,2387b,477s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvi
 ps/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Bachelorarbeit.pdf (7 pages, 358319 bytes).
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on Bachelorarbeit.pdf (8 pages, 378758 bytes).
 
-PDF statistics: 224 PDF objects out of 1000 (max. 8388607)
- 193 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 131072)
+PDF statistics: 256 PDF objects out of 1000 (max. 8388607)
+ 221 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 131072)
  136 words of extra memory for PDF output out of 10000 (max. 100000000)
 
