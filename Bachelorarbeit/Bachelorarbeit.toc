@@ -8,8 +8,16 @@
 \contentsline {subsection}{\numberline {3.1}Data Sampling}{5}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}POD}{5}{subsection.3.2}%
 \contentsline {subsection}{\numberline {3.3}Autoencoders}{6}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Architectures}{6}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Fully Connected}{6}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Convolutional}{6}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Training}{6}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Reducd Order Model}{6}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Results and Latent Manifold Properties}{6}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Evaluation Methods}{6}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results}{6}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{7}{subsection.4.3}%
-\contentsline {section}{References}{7}{section*.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}POD}{6}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Fully-Connected Autoencoder}{7}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Convolutional Autoncoder}{8}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{8}{subsection.4.3}%
+\contentsline {section}{References}{8}{section*.2}%

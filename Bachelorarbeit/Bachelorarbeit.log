@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  5 DEC 2020 15:47
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  6 DEC 2020 22:17
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -238,6 +238,76 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count193
+\mult@box=\box48
+\multicol@leftmargin=\dimen149
+\c@unbalance=\count194
+\c@collectmore=\count195
+\doublecol@number=\count196
+\multicoltolerance=\count197
+\multicolpretolerance=\count198
+\full@width=\dimen150
+\page@free=\dimen151
+\premulticols=\dimen152
+\postmulticols=\dimen153
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box49
+\last@line=\box50
+\maxbalancingoverflow=\dimen154
+\mult@rightbox=\box51
+\mult@grightbox=\box52
+\mult@gfirstbox=\box53
+\mult@firstbox=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\c@minrows=\count199
+\c@columnbadness=\count266
+\c@finalcolumnbadness=\count267
+\last@try=\dimen155
+\multicolovershoot=\dimen156
+\multicolundershoot=\dimen157
+\mult@nat@firstbox=\box92
+\colbreak@box=\box93
+\mc@col@check@num=\count268
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -267,20 +337,20 @@ Package graphics Info: Driver file: luatex.def on input line 105.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen149
-\Gin@req@width=\dimen150
+\Gin@req@height=\dimen158
+\Gin@req@width=\dimen159
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks23
-\pgfutil@tempdima=\dimen151
-\pgfutil@tempdimb=\dimen152
+\pgfutil@tempdima=\dimen160
+\pgfutil@tempdimb=\dimen161
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box48
+\pgfutil@abb=\box94
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -303,26 +373,26 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 ex
 \pgfkeys@tmptoks=\toks26
 ))
-\pgf@x=\dimen153
-\pgf@y=\dimen154
-\pgf@xa=\dimen155
-\pgf@ya=\dimen156
-\pgf@xb=\dimen157
-\pgf@yb=\dimen158
-\pgf@xc=\dimen159
-\pgf@yc=\dimen160
-\pgf@xd=\dimen161
-\pgf@yd=\dimen162
+\pgf@x=\dimen162
+\pgf@y=\dimen163
+\pgf@xa=\dimen164
+\pgf@ya=\dimen165
+\pgf@xb=\dimen166
+\pgf@yb=\dimen167
+\pgf@xc=\dimen168
+\pgf@yc=\dimen169
+\pgf@xd=\dimen170
+\pgf@yd=\dimen171
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count193
-\c@pgf@countb=\count194
-\c@pgf@countc=\count195
-\c@pgf@countd=\count196
+\c@pgf@counta=\count269
+\c@pgf@countb=\count270
+\c@pgf@countc=\count271
+\c@pgf@countd=\count272
 \t@pgf@toka=\toks27
 \t@pgf@tokb=\toks28
 \t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count197
+\pgf@sys@id@count=\count273
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -338,8 +408,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count198
-\pgfsyssoftpath@bigbuffer@items=\count199
+\pgfsyssoftpath@smallbuffer@items=\count274
+\pgfsyssoftpath@bigbuffer@items=\count275
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -368,9 +438,9 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen163
-\pgfmath@count=\count266
-\pgfmath@box=\box49
+\pgfmath@dimen=\dimen172
+\pgfmath@count=\count276
+\pgfmath@box=\box95
 \pgfmath@toks=\toks30
 \pgfmath@stack@operand=\toks31
 \pgfmath@stack@operation=\toks32
@@ -393,58 +463,58 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count267
+\c@pgfmathroundto@lastzeros=\count277
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen164
-\pgf@picmaxx=\dimen165
-\pgf@picminy=\dimen166
-\pgf@picmaxy=\dimen167
-\pgf@pathminx=\dimen168
-\pgf@pathmaxx=\dimen169
-\pgf@pathminy=\dimen170
-\pgf@pathmaxy=\dimen171
-\pgf@xx=\dimen172
-\pgf@xy=\dimen173
-\pgf@yx=\dimen174
-\pgf@yy=\dimen175
-\pgf@zx=\dimen176
-\pgf@zy=\dimen177
+\pgf@picminx=\dimen173
+\pgf@picmaxx=\dimen174
+\pgf@picminy=\dimen175
+\pgf@picmaxy=\dimen176
+\pgf@pathminx=\dimen177
+\pgf@pathmaxx=\dimen178
+\pgf@pathminy=\dimen179
+\pgf@pathmaxy=\dimen180
+\pgf@xx=\dimen181
+\pgf@xy=\dimen182
+\pgf@yx=\dimen183
+\pgf@yy=\dimen184
+\pgf@zx=\dimen185
+\pgf@zy=\dimen186
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen178
-\pgf@path@lasty=\dimen179
+\pgf@path@lastx=\dimen187
+\pgf@path@lasty=\dimen188
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen180
-\pgf@shorten@start@additional=\dimen181
+\pgf@shorten@end@additional=\dimen189
+\pgf@shorten@start@additional=\dimen190
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box50
-\pgf@hbox=\box51
-\pgf@layerbox@main=\box52
-\pgf@picture@serial@count=\count268
+\pgfpic=\box96
+\pgf@hbox=\box97
+\pgf@layerbox@main=\box98
+\pgf@picture@serial@count=\count278
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen182
+\pgflinewidth=\dimen191
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen183
-\pgf@pt@y=\dimen184
-\pgf@pt@temp=\dimen185
+\pgf@pt@x=\dimen192
+\pgf@pt@y=\dimen193
+\pgf@pt@temp=\dimen194
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -460,13 +530,13 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen186
+\pgfarrowsep=\dimen195
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen187
-\pgf@sys@shading@range@num=\count269
-\pgf@shadingcount=\count270
+\pgf@max=\dimen196
+\pgf@sys@shading@range@num=\count279
+\pgf@shadingcount=\count280
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -474,7 +544,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box53
+\pgfexternal@startupbox=\box99
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -493,15 +563,15 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box54
+\pgfnodeparttextbox=\box100
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen188
-\pgf@nodesepend=\dimen189
+\pgf@nodesepstart=\dimen197
+\pgf@nodesepend=\dimen198
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -515,8 +585,8 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen190
-\pgffor@skip=\dimen191
+\pgffor@iter=\dimen199
+\pgffor@skip=\dimen256
 \pgffor@stack=\toks33
 \pgffor@toks=\toks34
 ))
@@ -526,33 +596,33 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count271
-\pgfplotmarksize=\dimen192
+\pgf@plot@mark@count=\count281
+\pgfplotmarksize=\dimen257
 )
-\tikz@lastx=\dimen193
-\tikz@lasty=\dimen194
-\tikz@lastxsaved=\dimen195
-\tikz@lastysaved=\dimen196
-\tikz@lastmovetox=\dimen197
-\tikz@lastmovetoy=\dimen198
-\tikzleveldistance=\dimen199
-\tikzsiblingdistance=\dimen256
-\tikz@figbox=\box55
-\tikz@figbox@bg=\box56
-\tikz@tempbox=\box57
-\tikz@tempbox@bg=\box58
-\tikztreelevel=\count272
-\tikznumberofchildren=\count273
-\tikznumberofcurrentchild=\count274
-\tikz@fig@count=\count275
+\tikz@lastx=\dimen258
+\tikz@lasty=\dimen259
+\tikz@lastxsaved=\dimen260
+\tikz@lastysaved=\dimen261
+\tikz@lastmovetox=\dimen262
+\tikz@lastmovetoy=\dimen263
+\tikzleveldistance=\dimen264
+\tikzsiblingdistance=\dimen265
+\tikz@figbox=\box101
+\tikz@figbox@bg=\box102
+\tikz@tempbox=\box103
+\tikz@tempbox@bg=\box104
+\tikztreelevel=\count282
+\tikznumberofchildren=\count283
+\tikznumberofcurrentchild=\count284
+\tikz@fig@count=\count285
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count276
-\pgfmatrixcurrentcolumn=\count277
-\pgf@matrix@numberofcolumns=\count278
+\pgfmatrixcurrentrow=\count286
+\pgfmatrixcurrentcolumn=\count287
+\pgf@matrix@numberofcolumns=\count288
 )
-\tikz@expandcount=\count279
+\tikz@expandcount=\count289
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -565,9 +635,9 @@ Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \t@pgfplots@toka=\toks35
 \t@pgfplots@tokb=\toks36
 \t@pgfplots@tokc=\toks37
-\pgfplots@tmpa=\dimen257
-\c@pgfplots@coordindex=\count280
-\c@pgfplots@scanlineindex=\count281
+\pgfplots@tmpa=\dimen266
+\c@pgfplots@coordindex=\count290
+\c@pgfplots@scanlineindex=\count291
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -592,13 +662,13 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count282
+\c@pgfplotsarray@tmp=\count292
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count283
+\c@pgfplotstable@counta=\count293
 \t@pgfplotstable@a=\toks38
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
@@ -611,7 +681,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count284
+\c@pgfplotslibrarysurf@no=\count294
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-luatex.def)))
@@ -638,16 +708,16 @@ e.tex)
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen258
-\pgfdecoratedremainingdistance=\dimen259
-\pgfdecoratedinputsegmentcompleteddistance=\dimen260
-\pgfdecoratedinputsegmentremainingdistance=\dimen261
-\pgf@decorate@distancetomove=\dimen262
-\pgf@decorate@repeatstate=\count285
-\pgfdecorationsegmentamplitude=\dimen263
-\pgfdecorationsegmentlength=\dimen264
+\pgfdecoratedcompleteddistance=\dimen267
+\pgfdecoratedremainingdistance=\dimen268
+\pgfdecoratedinputsegmentcompleteddistance=\dimen269
+\pgfdecoratedinputsegmentremainingdistance=\dimen270
+\pgf@decorate@distancetomove=\dimen271
+\pgf@decorate@repeatstate=\count295
+\pgfdecorationsegmentamplitude=\dimen272
+\pgfdecorationsegmentlength=\dimen273
 )
-\tikz@lib@dec@box=\box59
+\tikz@lib@dec@box=\box105
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -657,13 +727,13 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count286
-\pgfplots@xmin@reg=\dimen265
-\pgfplots@xmax@reg=\dimen266
-\pgfplots@ymin@reg=\dimen267
-\pgfplots@ymax@reg=\dimen268
-\pgfplots@zmin@reg=\dimen269
-\pgfplots@zmax@reg=\dimen270
+\pgfplots@numplots=\count296
+\pgfplots@xmin@reg=\dimen274
+\pgfplots@xmax@reg=\dimen275
+\pgfplots@ymin@reg=\dimen276
+\pgfplots@ymax@reg=\dimen277
+\pgfplots@zmin@reg=\dimen278
+\pgfplots@zmax@reg=\dimen279
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryplotmarks.code.tex
@@ -682,13 +752,13 @@ Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.colt
 ype.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen271
-\ar@mcellbox=\box60
-\extrarowheight=\dimen272
+\col@sep=\dimen280
+\ar@mcellbox=\box106
+\extrarowheight=\dimen281
 \NC@list=\toks39
-\extratabsurround=\skip54
-\backup@length=\skip55
-\ar@cellbox=\box61
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box107
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -713,39 +783,39 @@ Package tocbibind Note: Using section or other style headings.
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count287
-\l__pdf_internal_box=\box62
+\l__kernel_color_stack_int=\count297
+\l__pdf_internal_box=\box108
 )
 (./Bachelorarbeit.aux)
 \openout1 = Bachelorarbeit.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 17
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 18
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-\AtBeginShipoutBox=\box63
-Package hyperref Info: Link coloring OFF on input line 17.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+\AtBeginShipoutBox=\box109
+Package hyperref Info: Link coloring OFF on input line 18.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
@@ -755,11 +825,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count288
+\c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 
 (./Bachelorarbeit.out) (./Bachelorarbeit.out)
 \@outlinefile=\write4
@@ -768,16 +838,16 @@ LaTeX Info: Redefining \nameref on input line 17.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count289
-\scratchdimen=\dimen273
-\scratchbox=\box64
-\nofMPsegments=\count290
-\nofMParguments=\count291
+\scratchcounter=\count299
+\scratchdimen=\dimen282
+\scratchbox=\box110
+\nofMPsegments=\count300
+\nofMParguments=\count301
 \everyMPshowfont=\toks40
-\MPscratchCnt=\count292
-\MPscratchDim=\dimen274
-\MPnumerator=\count293
-\makeMPintoPDFobject=\count294
+\MPscratchCnt=\count302
+\MPscratchDim=\dimen283
+\MPnumerator=\count303
+\makeMPintoPDFobject=\count304
 \everyMPtoPDFconversion=\toks41
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -792,11 +862,11 @@ ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': you might be
 nefit from \pgfplotsset{compat=1.16} (current compat level: 1.8).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 22.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -807,37 +877,41 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout5 = Bachelorarbeit.toc
  [2]
-Overfull \hbox (0.7778pt too wide) in paragraph at lines 31--33
+Overfull \hbox (0.7778pt too wide) in paragraph at lines 32--34
 \OT1/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-t
 ion of their snap-shot database
  []
 
 [3]
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 35.
 
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 35.
 
 
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 34.
+LaTeX Warning: Citation `bibid' on page 4 undefined on input line 35.
 
 Missing character: There is no · (U+00B7) in font cmr12!
 Missing character: There is no · (U+00B7) in font cmr8!
 [4]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
-LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 71.
+ []
 
-<Figures/Cumultative_Singular_Values_kn001.png, id=158, 984.3174pt x 456.7464pt>
+[5]
+
+LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 123.
+
+<Figures/Cumultative_Singular_Values_kn001.png, id=216, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 74.
+input line 126.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-[5<./Figures/Cumultative_Singular_Values_kn001.png>]
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_E.png, id=173, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_E.png, id=220, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_E.png Graphic file (type png)
@@ -845,10 +919,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_E.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_E.png  used
- on input line 115.
+ on input line 154.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_rho.png, id=174, 867.24pt x 632.362
+0p00001Conservative_Quantities/together/d_dt_rho.png, id=221, 867.24pt x 632.362
 5pt>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_rho.png Graphic file (type png
@@ -857,10 +931,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_rho.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_rho.png  us
-ed on input line 119.
+ed on input line 158.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_p.png, id=175, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_p.png, id=222, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_p.png Graphic file (type png)
@@ -868,40 +942,41 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_p.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png  used
- on input line 123.
+ on input line 162.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
- [6] (./Bachelorarbeit.bbl
+[6] (./Bachelorarbeit.bbl [7<./Figures/Cumultative_Singular_Values_kn001.png>]
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 3
 5.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [7</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_2
-0/kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/RO
-M_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quant
-ities/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bachel
-orarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>]) [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 139.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 139.
+)) [8</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
+20/kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/R
+OM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quan
+tities/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bache
+lorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 139.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 139.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: CDF197ED5D7BE73885D939ED943A7BB8;2021.
+(rerunfilecheck)             Checksum: 4F93416C0334EDB325FAFE99B88CA0B3;3165.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 139.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
 )
 
 Here is how much of LuaTeX's memory you used:
- 32916 strings out of 481365
+ 33075 strings out of 481365
  100000,1144653 words of node,token memory allocated
- 470 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 56 glue_spec, 2 write nodes
-   avail lists: 1:1,2:33,3:152,4:41,5:225,6:31,7:4518,8:86,9:464,10:26,11:379
- 48895 multiletter control sequences out of 65536+600000
+ 494 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 59 glue_spec, 2 write nodes
+   avail lists: 2:33,3:206,4:41,5:236,6:47,7:4518,8:86,9:600,10:26,11:379
+ 49034 multiletter control sequences out of 65536+600000
  73 fonts using 5152815 bytes
  68i,11n,98p,2387b,477s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvi
@@ -917,10 +992,10 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (8 pages, 378758 bytes).
+Output written on Bachelorarbeit.pdf (8 pages, 388655 bytes).
 
-PDF statistics: 256 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
- 53 named destinations out of 1000 (max. 131072)
- 136 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 309 PDF objects out of 1000 (max. 8388607)
+ 274 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 131072)
+ 200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
