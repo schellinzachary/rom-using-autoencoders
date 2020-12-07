@@ -1,23 +1,73 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.11.25)  6 DEC 2020 22:17
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 DEC 2020 15:50
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
 LaTeX2e <2020-02-02> patch level 2
-[\directlua]:1: module 'luaotfload-main' not found:
-	no field package.preload['luaotfload-main']
-	[kpse lua searcher] file not found: 'luaotfload-main'
-	[kpse C searcher] file not found: 'luaotfload-main'
-Error in luaotfload: reverting to OT1 L3 programming layer <2020-02-14>
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initializatio
+n
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended c
+ollection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / conf
+ig file reader
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse
+-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader
+-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback h
+andling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode he
+lpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolver
+s
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliar
+y functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multis
+cript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script help
+ers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicod
+e
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 54
-.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+luaotfload | db : Font names database loaded from /home/zachi/.texlive2019/texmf
+-var/luatex-cache/generic-dev/names/luaotfload-names.luc)
 \c@part=\count163
 \c@section=\count164
 \c@subsection=\count165
@@ -877,9 +927,9 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout5 = Bachelorarbeit.toc
  [2]
-Overfull \hbox (0.7778pt too wide) in paragraph at lines 32--34
-\OT1/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-t
-ion of their snap-shot database
+Overfull \hbox (0.8137pt too wide) in paragraph at lines 32--34
+\TU/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-ti
+on of their snap-shot database
  []
 
 [3]
@@ -895,23 +945,30 @@ LaTeX Warning: Citation `bibid' on page 4 undefined on input line 35.
 Missing character: There is no · (U+00B7) in font cmr12!
 Missing character: There is no · (U+00B7) in font cmr8!
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+<Figures/Macroscopic_Quantities_Original.png, id=206, 1214.136pt x 668.4975pt>
+File: Figures/Macroscopic_Quantities_Original.png Graphic file (type png)
+<use Figures/Macroscopic_Quantities_Original.png>
+Package luatex.def Info: Figures/Macroscopic_Quantities_Original.png  used on in
+put line 74.
+(luatex.def)             Requested size: 452.9679pt x 249.40068pt.
+ [5<./Figures/Macroscopic_Quantities_Original.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-[5]
+[6]
 
-LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 123.
+LaTeX Warning: Reference `Eq:dense' on page 1 undefined on input line 140.
 
-<Figures/Cumultative_Singular_Values_kn001.png, id=216, 984.3174pt x 456.7464pt>
+<Figures/Cumultative_Singular_Values_kn001.png, id=238, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 126.
+input line 143.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_E.png, id=220, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_E.png, id=242, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_E.png Graphic file (type png)
@@ -919,10 +976,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_E.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_E.png  used
- on input line 154.
+ on input line 171.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_rho.png, id=221, 867.24pt x 632.362
+0p00001Conservative_Quantities/together/d_dt_rho.png, id=243, 867.24pt x 632.362
 5pt>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_rho.png Graphic file (type png
@@ -931,10 +988,10 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_rho.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_rho.png  us
-ed on input line 158.
+ed on input line 175.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
 </home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn
-0p00001Conservative_Quantities/together/d_dt_p.png, id=222, 867.24pt x 632.3625p
+0p00001Conservative_Quantities/together/d_dt_p.png, id=244, 867.24pt x 632.3625p
 t>
 File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 20/kn0p00001Conservative_Quantities/together/d_dt_p.png Graphic file (type png)
@@ -942,60 +999,55 @@ File: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
 0/kn0p00001Conservative_Quantities/together/d_dt_p.png>
 Package luatex.def Info: /home/zachi/Documents/ROM_using_Autoencoders/Bachelorar
 beit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png  used
- on input line 162.
+ on input line 179.
 (luatex.def)             Requested size: 144.95303pt x 105.68617pt.
-[6] (./Bachelorarbeit.bbl [7<./Figures/Cumultative_Singular_Values_kn001.png>]
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 3
-5.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) [8</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_
-20/kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/R
-OM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quan
-tities/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bache
-lorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+[7<./Figures/Cumultative_Singular_Values_kn001.png>] (./Bachelorarbeit.bbl
+[8</home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/
+kn0p00001Conservative_Quantities/together/d_dt_E.png></home/zachi/Documents/ROM_
+using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantit
+ies/together/d_dt_rho.png></home/zachi/Documents/ROM_using_Autoencoders/Bachelor
+arbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png>]) [9]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 197.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 197.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 197.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 197.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 4F93416C0334EDB325FAFE99B88CA0B3;3165.
+(rerunfilecheck)             Checksum: 1682CA1AE90D2451465DF3213AB79DC3;3661.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33075 strings out of 481365
+ 33031 strings out of 481365
  100000,1144653 words of node,token memory allocated
- 494 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 59 glue_spec, 2 write nodes
-   avail lists: 2:33,3:206,4:41,5:236,6:47,7:4518,8:86,9:600,10:26,11:379
- 49034 multiletter control sequences out of 65536+600000
- 73 fonts using 5152815 bytes
- 68i,11n,98p,2387b,477s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf/fonts/enc/dvi
-ps/lm/lm-rm.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx12.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (8 pages, 388655 bytes).
+ 674 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 38 attribute, 59 glue_spec
+, 38 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 2:698,3:175,4:42,5:258,6:48,7:4537,8:86,9:569,10:26,11:379
+ 48992 multiletter control sequences out of 65536+600000
+ 73 fonts using 7067347 bytes
+ 68i,11n,98p,2387b,473s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share/texm
+f/fonts/opentype/public/lm/lmroman12-italic.otf></usr/share/texmf/fonts/opentype
+/public/lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman
+12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msbm10.pfb>
+Output written on Bachelorarbeit.pdf (9 pages, 376793 bytes).
 
-PDF statistics: 309 PDF objects out of 1000 (max. 8388607)
- 274 compressed objects within 3 object streams
- 66 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 342 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 131072)
+ 208 words of extra memory for PDF output out of 10000 (max. 100000000)
 
