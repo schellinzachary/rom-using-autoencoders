@@ -17,15 +17,9 @@ from matplotlib import rc
 
 #Load Data
 
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
 c=c.T
 
-
-plt.plot(np.arange(-20,20),c[:,900])
-plt.plot(np.arange(-20,20),c[:,700])
-plt.plot(np.arange(-20,20),c[:,500])
-plt.plot(np.arange(-20,20), c[:,4501])
-plt.show()
 
 #SVD
 
@@ -70,8 +64,8 @@ def density_svd(c):
 rho_svd = density_svd(xx)
 rho = density_svd(c)
 
-plt.plot(rho_svd[20],'-.''k')
-plt.plot(rho[20],'-*''k')
+plt.plot(rho_svd[-1],'-.''k')
+plt.plot(rho[-1],'-*''k')
 plt.ylabel(r'$Density \quad \rho$',fontsize=25)
 plt.xlabel(r'$x$',fontsize=25)
 plt.show()

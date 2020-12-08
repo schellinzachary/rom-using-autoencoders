@@ -17,7 +17,7 @@ from scipy.interpolate import interp1d, Akima1DInterpolator, BarycentricInterpol
 #rc('text', usetex=True)
 plt.rcParams['xtick.labelsize']=15
 plt.rcParams['ytick.labelsize']=15
-code = 32
+code = 3
 
 def net(c):
     
@@ -85,7 +85,7 @@ def net(c):
     #Autoencoder
     model = Autoencoder(encoder, decoder)
 
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Code/1_1/CoAE_SD_1_32.pt')
+    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Code/1_1/CoAE_SD_1_32.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -107,7 +107,7 @@ def net(c):
     return predict, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_conv_unshuffled.npy')
+c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/preprocessed_samples_conv_unshuffled.npy')
 
 
 #Inference-----------------------------------------------------------------------------------

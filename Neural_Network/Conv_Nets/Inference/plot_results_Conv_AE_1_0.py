@@ -17,7 +17,7 @@ from scipy.interpolate import interp1d, Akima1DInterpolator, BarycentricInterpol
 #rc('text', usetex=True)
 plt.rcParams['xtick.labelsize']=15
 plt.rcParams['ytick.labelsize']=15
-code = 2
+code = 3
 
 def net(c):
     
@@ -93,7 +93,7 @@ def net(c):
 
 
 
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Code/Conv_AE_STATE_DICT_1_0_1_2.pt')
+    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Conv_Nets/Activations_and_Misc/Conv_AE_STATE_DICT_1_0_1c_2_1.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -115,7 +115,7 @@ def net(c):
     return predict, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/preprocessed_samples_conv_unshuffled.npy')
+c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/preprocessed_samples_conv_unshuffled.npy')
 
 
 #Inference-----------------------------------------------------------------------------------
@@ -233,7 +233,7 @@ plt.xlabel('$Space$')
 plt.ylabel('$Density$')
 plt.show()
 # # -------------------------------------------------------------------------------------------
-test_error = norm((c[:] - predict[:]).flatten())/norm(c[:].flatten())
+test_error = norm((c - predict).flatten())/norm(c.flatten())
 print(test_error)
 #test_error = np.sum(np.abs(c - predict),axis=None)
 #mean = np.sum(test_error)/(200*25*40)

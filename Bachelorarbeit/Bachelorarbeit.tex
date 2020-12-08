@@ -101,11 +101,7 @@ For the autencoder using fully connected layers, the input vectors $y_o \in \mat
 \end{multicols}\noindent
 Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to their two dimensional capability resulting in $n_S = 40$ available samples \cref{Conv_matrix}.$N_{Filters}$ varies over the succeeding layers, growing with the shrinkage of $(\textbf{t},\textbf{x})$.
 \subsection{POD}
-The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young]. \Cref{Fig:cumu_sing} shows the singular values (left) and the cumulative energy (right) derived from \cref{Eq:cumsum}:
-\begin{equation}
-S_N = \sum_{k=1}^{N}a_k \qquad\textrm{with a sequence} \qquad\{a_k\}_{k=1}^{n} 
-\label{Eq:cumsum}
-\end{equation}
+The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young]. 
 \begin{equation}
 \underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
 \label{Eg:eckard-young}
@@ -152,20 +148,37 @@ Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:B
 \subsection{Reducd Order Model}\label{Reduced Order Model}
 
 \section{Results}
-\subsection{Results}
-\subsubsection{SVD}\label{Sec:SVD}
-The first five singular values give an accurate approximation $\tilde{X}$ of $X$.  
-As a means to evaluate the low-rank approximation of $X$ we will compare the density derived from \cref{Eq:dense}, computed from $X$ and $\tilde{X}$.
+\subsection{Hydrodynamic Regime}
+In search for a reduced model of the BGK equation, a first reduction and analysis of the provided data in the hydrodynamic regime is conducted. The error over the $L_2$-Norm derived from \cref{L2-Norm} assigns a value to each reduction algorithm enabling a evaluation.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c c| }
+		\hline
+		Algorithm & $L_2$ \\[.5ex]
+		\hline
+		SVD & 0.03  \\ 
+		Fully Connected Autoencoder & 0.002 \\ 
+		Convolutional Autoencoder & 0.02 \\ \hline
+
+		\hline
+	\end{tabular}
+	\caption{L2-Error over Batch-Size}
+	\label{Tab:Batch}
+\end{table}
+Furthermore the conservation quantities given in \cref{moment1} to \cref{moment3} of the prediction are analysed over the time average of each quantity. This normalization is given in \cref{Eq:Norm_Con_quantity}, where $\hat{\sigma}$ represents the given quantity.  
+With more than $99\%$ of the total cumultative energy $S_N$ of the first five singular values calculated with \cref{Eq:cumsum} the SVD provides an upper bound to the number of intrinsic features the autoencoder should extract. \Cref{Fig:cumu_sing} shows the singular values (left) and the cumulative energy (right).
+\begin{equation}
+S_N = \sum_{k=1}^{N}a_k \qquad\textrm{with a sequence} \qquad\{a_k\}_{k=1}^{n} 
+\label{Eq:cumsum}
+\end{equation}  
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/Cumultative_Singular_Values_kn001.png}
 	\caption{Singular Values (left) and cumultative enrgy (right) over the number of singular values}
 	\label{Fig:cumu_sing}
 \end{figure}
-\subsubsection{Fully-Connected Autoencoder}
-The search for a reduced model of the BGK equation yields a first reduction and analysis of the provided data in the hydrodynamic regime. The error over the $L_2$-Norm derived from \cref{L2-Norm}, gives $L_2 = 0.002$. Furthermore the conservation quantities given in \cref{moment1} to \cref{moment3} of the prediction are analysed over the time average of each quantity. This normalization is given in \cref{Eq:Norm_Con_quantity}, where $\hat{\sigma}$ represents the given quantity. 
+
 \begin{figure}[!htbp]
-	\includegraphics[width=\linewidth,height=6cm]{Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png}
+	\includegraphics[width=\linewidth]{Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png}
 	\caption{Normalized conservative quantities $\hat{\rho}$, $\hat{\rho u}$ and $\hat{E}$ as in \cref{Eq:Norm_Con_quantity} for $y_o$ and $y_p$.}
 \end{figure}
 \begin{multicols}{2}	
@@ -180,7 +193,7 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 \begin{figure}
 	\includegraphics[width=\linewidth]{Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png}
 \end{figure}
-\subsubsection{Convolutional Autoncoder}
+
 
 
 
