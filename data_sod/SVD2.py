@@ -26,7 +26,9 @@ for i in datalocation:
     x = shape[2] 
     #Submatrix
 
-    c = np.reshape(f,(v,t*x), order='F')
+    c = np.reshape(f,(v,t*x), order='C')
+
+#FAAAAAALSch
 
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
     
