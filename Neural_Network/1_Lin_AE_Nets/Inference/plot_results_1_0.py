@@ -11,12 +11,10 @@ import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
 from scipy.interpolate import interp1d, Akima1DInterpolator, BarycentricInterpolator, PPoly, PchipInterpolator, KroghInterpolator
-#rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
-
-# ## for Palatino and other serif fonts use:
-# #rc('font',**{'family':'serif','serif':['Palatino']})
-#rc('text', usetex=True)
-plt.rcParams['xtick.labelsize']=15
+rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':17})
+rc('text', usetex=True)
+#plt.rcParams['xtick.labelsize']=17
+fonsize = 17
 
 def net(c):
 
@@ -85,7 +83,7 @@ def net(c):
 
 
  
-    checkpoint = torch.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
+    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -105,9 +103,9 @@ def net(c):
     return predict, W, z
 
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-v = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
-t = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
+c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+v = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
+t = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
 t  = t['treport']
 v = v['v']
 t.squeeze()
@@ -119,11 +117,11 @@ predict, W, z = net(c)
 #Conservation Properties
 
 def shapeback_code(z):
-    c = np.empty((25,200,3))
+    c = np.empty((25,3,200))
     n=0
     for i in range(25):
         for p in range(200):
-          c[i,p,:] = z[p+n,:].detach().numpy()
+          c[i,:,p] = z[p+n,:].detach().numpy()
         n += 200
     return(c) # shaping back the code
 
@@ -164,8 +162,8 @@ def conservativ(z):
     return(dt_E, dt_rho_u, dt_rho)
 
 def diff(r):
-        dt = torch.empty(25)
-        for i in range(25):
+        dt = torch.empty(24)
+        for i in range(24):
             dt[i]= r[i+1] - r[i] 
         #dt = dt / torch.mean(r)
         return(dt)
@@ -176,38 +174,88 @@ def energy(g):
 
     return(E) # cal # calculate Energy of code
 
-predict_org_shape = shapeback_field(predict)
-original_org_shape = shapeback_field(c)
-
-g = shapeback_code(z)
-
-rho_p, E_p, rho_u_p = macro(predict_org_shape,v)
-rho_o, E_o, rho_u_o = macro(original_org_shape,v)
-
-d_dt_p = np.diff(np.sum(rho_u_p,axis=1))/ np.mean(np.sum(rho_u_p,axis=(0,1)))
-d_dt_o = np.diff(np.sum(rho_u_o,axis=1))/ np.mean(np.sum(rho_u_o,axis=(0,1)))
-
-dt_E_code, dt_rho_u_code, dt_rho_code = conservativ(z)
-
-E_code = energy(g)
-
-plt.plot(dt_rho_code,'-+''k')
-#plt.plot(d_dt_o,'-v''k')
-plt.xlabel('t',fontsize=25)
-plt.ylabel('(dp/dt)',fontsize=25)
-plt.xticks(fontsize=25)
-plt.yticks(fontsize=25)
-plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
-plt.show()
 
 
 
-print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
-plt.pcolor(g[:,:,2])
-plt.xlabel('x')
-plt.ylabel('t')
-plt.colorbar()
-plt.show()
+
+#Conservation of Prediction vs. Original
+
+def plot_conservative_o_vs_p():
+    predict_org_shape = shapeback_field(predict)
+    original_org_shape = shapeback_field(c)
+
+    rho_p, E_p, rho_u_p = macro(predict_org_shape,v)
+    rho_o, E_o, rho_u_o = macro(original_org_shape,v)
+
+
+    dt_rho_o = np.diff(np.sum(rho_o,axis=1))/ np.mean(np.sum(rho_o,axis=(0,1)))
+    dt_rho_p = np.diff(np.sum(rho_p,axis=1))/ np.mean(np.sum(rho_p,axis=(0,1)))
+
+    dt_rho_u_p = np.diff(np.sum(rho_u_p,axis=1))/ np.mean(np.sum(rho_u_p,axis=(0,1)))
+    dt_rho_u_o = np.diff(np.sum(rho_u_o,axis=1))/ np.mean(np.sum(rho_u_o,axis=(0,1)))
+
+    dt_E_p = np.diff(np.sum(E_p,axis=1))/ np.mean(np.sum(E_p,axis=(0,1)))
+    dt_E_o = np.diff(np.sum(E_o,axis=1))/ np.mean(np.sum(E_o,axis=(0,1)))
+
+
+    fig, ax = plt.subplots(1,3)
+    ax[0].plot(dt_rho_p,'-+''k',label=r'$y_p$')
+    ax[0].plot(dt_rho_o,'-v''k',label=r'$y_o$')
+    ax[0].set_xlabel(r'$t$',fontsize=fonsize)
+    ax[0].set_ylabel(r'$\hat{\rho}$',fontsize=fonsize)
+    ax[0].tick_params(axis='both', labelsize=fonsize)
+    ax[0].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    ax[0].legend()
+    ax[1].plot(dt_rho_u_p,'-+''k',label=r'$y_p$')
+    ax[1].plot(dt_rho_u_o,'-v''k',label=r'$y_o$')
+    ax[1].set_xlabel(r'$t$',fontsize=fonsize)
+    ax[1].set_ylabel(r'$\hat{\rho u}$',fontsize=fonsize)
+    ax[1].tick_params(axis='both', labelsize=fonsize)
+    ax[1].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    ax[1].legend()
+    ax[2].plot(dt_E_p,'-+''k',label=r'$y_p$')
+    ax[2].plot(dt_E_o,'-v''k',label=r'$y_o$')
+    ax[2].set_xlabel(r'$t$',fontsize=fonsize)
+    ax[2].set_ylabel('$\hat{E}$',fontsize=fonsize)
+    ax[2].tick_params(axis='both', labelsize=fonsize)
+    ax[2].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    ax[2].legend()
+    plt.show()
+
+#Conservation of Code
+def plot_conservation_code_rho(z):
+    g = shapeback_code(z)
+    rho_1 = g[:,0,:]
+    rho_2 = g[:,1,:]
+    rho_3 = g[:,2,:]
+    
+    rho_1 = np.diff(np.sum(rho_1,axis=1))/ np.mean(np.sum(rho_1,axis=(0,1)))
+    rho_2 = np.diff(np.sum(rho_2,axis=1))/ np.mean(np.sum(rho_2,axis=(0,1)))
+    rho_3 = np.diff(np.sum(rho_3,axis=1))/ np.mean(np.sum(rho_3,axis=(0,1)))
+
+
+    plt.plot(rho_1,'--''k',label=r'$var 1$')
+    plt.plot(rho_2,'-v''k',label=r'$var 2$')
+    plt.plot(rho_3,'-+''k',label=r'$var 3$')
+    plt.xlabel(r'$t$',fontsize=fonsize)
+    plt.ylabel(r'$\hat{\rho}$',fontsize=fonsize)
+    plt.tick_params(axis='both', labelsize=fonsize)
+    plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    plt.legend()
+    plt.show()
+
+
+#plot_conservative_o_vs_p()  
+plot_conservation_code_rho(z)
+
+#E_code = energy(g)
+
+#print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
+# plt.pcolor(g[:,:,2])
+# plt.xlabel('x')
+# plt.ylabel('t')
+# plt.colorbar()
+# plt.show()
 
 
 # plot code-------------------------------------------------------------------------------
@@ -245,36 +293,37 @@ plt.show()
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
-# def visualize(c,predict):
-#     fig = plt.figure()
-#     ax = plt.axes(ylim=(0,1),xlim=(0,200))
+def visualize(c,predict):
+    fig = plt.figure()
+    ax = plt.axes(ylim=(0,1),xlim=(0,200))
 
-#     line1, = ax.plot([],[],label='original')
-#     line2, = ax.plot([],[],label='prediction')
+    line1, = ax.plot([],[],label='original')
+    line2, = ax.plot([],[],label='prediction')
 
-#     def init():
-#         line1.set_data([],[])
-#         line2.set_data([],[])
-#         return line1, line2
+    def init():
+        line1.set_data([],[])
+        line2.set_data([],[])
+        return line1, line2
 
 
-#     def animate(i):
-#         print(i)
-#         line1.set_data(np.arange(200),c[i])
-#         line2.set_data(np.arange(200),predict[i])
-#         return line1, line2
+    def animate(i):
+        print(i)
+        line1.set_data(np.arange(200),c[i])
+        line2.set_data(np.arange(200),predict[i])
+        return line1, line2
 
-#     anim = animation.FuncAnimation(
-#                                    fig, 
-#                                    animate, 
-#                                    init_func = init,
-#                                    frames = 200,
-#                                    interval = 200,
-#                                    blit = True
-#                                    )
+    anim = animation.FuncAnimation(
+                                   fig, 
+                                   animate, 
+                                   init_func = init,
+                                   frames = 200,
+                                   interval = 200,
+                                   blit = True
+                                   )
 
-#     ax.legend()
-#     plt.show()
+    ax.legend()
+    plt.show()
+#visualize(c,predict)
 #-----------------------------------------------------------------------------------------
 #Bad Mistakes----------------------------------------------------------------------------
 mistake_list = []
@@ -296,18 +345,18 @@ zip(mistake_list)
 # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
 #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
 #width = (2*np.pi) / 5000
-# ax = plt.subplot(111, polar=False)
-# bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
-# axr = ax.twiny()    
-# axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
-# axr.set_xlim((0,25))
-# ax.set_xlim((0,2499))
-# ax.yaxis.grid(True)
-# axr.xaxis.grid(True)
-# ax.set_xlabel(r'$Samples$')
-# axr.set_xlabel(r'$Timesteps$')
-# ax.set_ylabel(r'$Absolute Error$')
-# plt.show()
+ax = plt.subplot(111, polar=False)
+bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+axr = ax.twiny()    
+axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
+axr.set_xlim((0,25))
+ax.set_xlim((0,2499))
+ax.yaxis.grid(True)
+axr.xaxis.grid(True)
+ax.set_xlabel(r'$Samples$')
+axr.set_xlabel(r'$Timesteps$')
+ax.set_ylabel(r'$Absolute Error$')
+plt.show()
 #-------------------------------------------------------------------------------------------
 #Visualizing Density-----------------------------------------------------------------------
 # def density(c,predict):

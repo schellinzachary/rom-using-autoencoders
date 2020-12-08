@@ -131,62 +131,55 @@ y_p = f_{C}^9(f_{C}^8(f_{C}^7(f_{F}^6(f_{F}^5(f_{F}^4(f_{C}^3(f_{C}^2(f_{C}^1(y_
 \end{equation}
 \subsubsection{Training}
 During training every 1000 epochs a sample against its prediction was printed in order to link the value of the L1-Loss to a prediction. Using this method a first verification of the model was achieved. Continuing the search for any possible shortage of the models performance, that this method could not cover, eg. samples lying between every 1000 sample, that the model was not able to reconstruct correctly, a second verification process is conducted.
-\subsection{Reducd Order Model} 
-\section{Results and Latent Manifold Properties}
-\subsection{Evaluation Methods}
+Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:Batch} can be produced.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c c|c c| }
+		\hline
+		Kn & 0.00001& Kn &0.01  \\ [.5ex]
+		\hline
+		Batch Size & L2-Error && \\ \hline
+		64 & 0.008  &&\\ 
+		32 & 0.0049 &&\\ \hline
+		16 & 0.0038 &&\\ \hline
+		8 & 0.0037&&\\ \hline
+		4 & 0.0026&&\\ \hline
+		2 & 0.0021&&\\
+		\hline
+	\end{tabular}
+	\caption{L2-Error over Batch-Size}
+	\label{Tab:Batch}
+\end{table}
+\subsection{Reducd Order Model}\label{Reduced Order Model}
+
+\section{Results}
 \subsection{Results}
-\subsubsection{POD}
+\subsubsection{SVD}\label{Sec:SVD}
 The first five singular values give an accurate approximation $\tilde{X}$ of $X$.  
 As a means to evaluate the low-rank approximation of $X$ we will compare the density derived from \cref{Eq:dense}, computed from $X$ and $\tilde{X}$.
-\begin{figure}[htbp!]
+\begin{figure}[!htbp]
 	\centering
 	\includegraphics[width=\textwidth]{Figures/Cumultative_Singular_Values_kn001.png}
 	\caption{Singular Values (left) and cumultative enrgy (right) over the number of singular values}
 	\label{Fig:cumu_sing}
 \end{figure}
 \subsubsection{Fully-Connected Autoencoder}
-
-The search for a reduced model of the BGK equation yields a first reduction and analysis of the provided data with a low Knudsen number of $Kn = 0.00001$. For this flow field the Navier Stokes equations are still valid.
-Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:Batch} can be produced.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c c| }
-		\hline
-		Architecture & 1.0  \\ [.5ex]
-		\hline
-		Batch Size & L2-Error \\ \hline
-		64 & 0.008  \\ 
-		32 & 0.0049\\ \hline
-		16 & 0.0038\\ \hline
-		8 & 0.0037\\ \hline
-		4 & 0.0026\\ \hline
-		2 & 0.0021\\
-		\hline
-	\end{tabular}
-	\caption{L2-Error over Batch-Size}
-	\label{Tab:Batch}
-\end{table}
-For the evaluation of the prediction the Autoencoder produces normalized conservative quantities are analysed. The conservative quantities are the total energy E, the density $\rho$ and the impulse $\rho u$. Normalization is done over the temporal mean as seen in \cref{Eq:Con1} to \cref{Eq:Con3}.
+The search for a reduced model of the BGK equation yields a first reduction and analysis of the provided data in the hydrodynamic regime. The error over the $L_2$-Norm derived from \cref{L2-Norm}, gives $L_2 = 0.002$. Furthermore the conservation quantities given in \cref{moment1} to \cref{moment3} of the prediction are analysed over the time average of each quantity. This normalization is given in \cref{Eq:Norm_Con_quantity}, where $\hat{\sigma}$ represents the given quantity. 
 \begin{figure}[!htbp]
-	\minipage{0.32\textwidth}
-	\includegraphics[width=\linewidth]{/home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_E.png}
-	\caption{Normalized total change in Energy $\hat{E}$ over time }\label{fig:awesome_image1}
-	\endminipage\hfill
-	\minipage{0.32\textwidth}
-	\includegraphics[width=\linewidth]{/home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_rho.png}
-	\caption{ormalized total change in Energy $\hat{\rho}$ over time}\label{fig:awesome_image2}
-	\endminipage\hfill
-	\minipage{0.32\textwidth}%
-	\includegraphics[width=\linewidth]{/home/zachi/Documents/ROM_using_Autoencoders/Bachelorarbeit/Figures/02_12_20/kn0p00001Conservative_Quantities/together/d_dt_p.png}
-	\caption{ormalized total change in Energy $\hat{p}$ over time}\label{fig:awesome_image3}
-	\endminipage
+	\includegraphics[width=\linewidth,height=6cm]{Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png}
+	\caption{Normalized conservative quantities $\hat{\rho}$, $\hat{\rho u}$ and $\hat{E}$ as in \cref{Eq:Norm_Con_quantity} for $y_o$ and $y_p$.}
 \end{figure}
-\begin{subequations}	
-	\begin{align}
-	\frac{\frac{d}{dt} \int E \,dx}{\bar{E}} = 0 && &\textrm{with}\quad \bar{E} = \frac{\iint E \,dtdx}{\Delta t}\label{Eq:Con1}\\
-	\frac{\frac{d}{dt} \int \rho \,dx}{\bar{\rho}} = 0 && &\textrm{with}\quad \bar{\rho} = \frac{\iint \rho \,dtdx}{\Delta t}\label{Eq:Con2}\\
-	\frac{\frac{d}{dt} \int \rho u \,dx}{\bar{\rho u}} = 0 && &\textrm{with}\quad \bar{\rho u} = \frac{\iint \rho u \,dtdx}{\Delta t}\label{Eq:Con3}
-	\end{align}
-\end{subequations}
+\begin{multicols}{2}	
+	\begin{equation}
+	\hat{\sigma} = \frac{\frac{d}{dt} \int \sigma \,dx}{\bar{\sigma}} = 0 \quad\textrm{and}\quad \bar{\sigma} = \frac{\iint \sigma \,dtdx}{\Delta t}\label{Eq:Norm_Con_quantity}\\
+	\end{equation}\break
+	\begin{equation}
+		L_2 = \frac{||y_o - y_p||}{|||y_o|} \label{L2-Norm}
+	\end{equation}
+\end{multicols}
+Given, that the autoencoder is able to achieve a reconstruction that is equal or below the threshold of the $L_2$-Norm form existing methods like SVD \cref{Sec:SVD} and that conservation is preserved, a reduced order model can not be derived as described in \cref{Sec:Reduced Order Model}. Solely the the reconstuction can be validated. In addition the code needs to be a conservative system hence fulfilling \cref{moment1} to \cref{moment3}.
+\begin{figure}
+	\includegraphics[width=\linewidth]{Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png}
+\end{figure}
 \subsubsection{Convolutional Autoncoder}
 
 
