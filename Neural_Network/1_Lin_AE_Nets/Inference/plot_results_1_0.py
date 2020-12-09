@@ -134,7 +134,7 @@ def shapeback_field(predict):
         n += 200
     return(f) # shaping back the field
 
-def macro(f,v):
+def macro( f,v):
     dv = v[1]- v[0]
     rho = np.sum(f,axis = 1) * dv
 
@@ -161,22 +161,30 @@ def conservativ(z):
     dt_rho = diff(rho)
     return(dt_E, dt_rho_u, dt_rho)
 
-def diff(r):
-        dt = torch.empty(24)
-        for i in range(24):
-            dt[i]= r[i+1] - r[i] 
-        #dt = dt / torch.mean(r)
-        return(dt)
-
 def energy(g):
     a=2
     E = np.sum(g[:,:,2],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,0]**2,axis=1)
 
     return(E) # cal # calculate Energy of code
 
+#Calculate Characteristic
+
+def characteritics(z,t):
+    g = shapeback_code(z)
+    u_x = np.sum(g,axis=2)
+    f1 = np.gradient(u_x[:,0],0.005)
+    f2 = np.gradient(u_x[:,1],0.005)
+    f3 = np.gradient(u_x[:,2],0.005)
+    s1 = f1  / (g[:,0,0] - g[:,0,-1])
+    s2 = f2 / (g[:,1,0] - g[:,1,-1])
+    s3 = f3 / (g[:,2,0] - g[:,2,-1])
+    plt.plot(s1)
+    plt.plot(s2)
+    plt.plot(s3)
+    plt.show()
 
 
-
+characteritics(z,t)
 
 #Conservation of Prediction vs. Original
 
@@ -221,6 +229,7 @@ def plot_conservative_o_vs_p():
     ax[2].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     ax[2].legend()
     plt.show()
+#plot_conservative_o_vs_p()  
 
 #Conservation of Code
 def plot_conservation_code_rho(z):
@@ -243,10 +252,9 @@ def plot_conservation_code_rho(z):
     plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     plt.legend()
     plt.show()
+#plot_conservation_code_rho(z)
 
 
-#plot_conservative_o_vs_p()  
-plot_conservation_code_rho(z)
 
 #E_code = energy(g)
 
@@ -259,37 +267,44 @@ plot_conservation_code_rho(z)
 
 
 # plot code-------------------------------------------------------------------------------
+def plot_code(z):
+    g = shapeback_code(z)
+    #g = LA.norm(g)
+    fig, ax = plt.subplots(3,1)
+    for i in range(3):
+        im = ax[i].imshow(g[:,i,:],label='g',cmap='Greys')
+        ax[i].set_xlabel(r'$x$',fontsize=fonsize)
+        ax[i].set_ylabel(r'$t$',fontsize=fonsize)
+        colorbar = fig.colorbar(im, ax=ax[i],orientation='vertical')
+        colorbar.set_ticks(np.linspace(np.min(g[:,i,:]), np.max(g[:,i,:]), 3))
+        ax[i].text(7, 7, r'$c_{}$'.format(i), bbox={'facecolor': 'white', 'pad': 2})
+    plt.show()
 
-# plt.pcolor(z.detach().numpy(),cmap='inferno')
-# plt.xlabel('x')
-# plt.ylabel('t')
-# plt.colorbar()
-# plt.show()
 
+    fig, axs = plt.subplots(3)
 
-# fig, axs = plt.subplots(3)
+    axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
+    axs[0].set_ylabel('#')
+    axs[0].set_xlabel('x')
 
-# axs[0].plot(np.arange(5000),z[:,0].detach().numpy(),'k')
-# axs[0].set_ylabel('#')
-# axs[0].set_xlabel('x')
+    axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
+    axs[1].set_ylabel('#')
+    axs[1].set_xlabel('x')
 
-# axs[1].plot(np.arange(5000),z[:,1].detach().numpy(),'k')
-# axs[1].set_ylabel('#')
-# axs[1].set_xlabel('x')
+    axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
+    axs[2].set_ylabel('#')
+    axs[2].set_xlabel('x')
 
-# axs[2].plot(np.arange(5000),z[:,2].detach().numpy(),'k')
-# axs[2].set_ylabel('#')
-# axs[2].set_xlabel('x')
+    # axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
+    # axs[3].set_ylabel('#')
+    # axs[3].set_xlabel('x')
 
-# axs[3].plot(np.arange(5000),z[:,3].detach().numpy(),'k')
-# axs[3].set_ylabel('#')
-# axs[3].set_xlabel('x')
+    # axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
+    # axs[4].set_ylabel('#')
+    # axs[4].set_xlabel('x')
 
-# axs[4].plot(np.arange(5000),z[:,4].detach().numpy(),'k')
-# axs[4].set_ylabel('#')
-# axs[4].set_xlabel('x')
-
-# plt.show()
+    plt.show()
+#plot_code(z)
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
@@ -326,37 +341,38 @@ def visualize(c,predict):
 #visualize(c,predict)
 #-----------------------------------------------------------------------------------------
 #Bad Mistakes----------------------------------------------------------------------------
-mistake_list = []
-for i in range(5000):
-    mistake = np.sum(np.abs(c[i] - predict[i]))
-    mistake_list.append((i,mistake))
+def bad_mistakes(c,predict):
+    mistake_list = []
+    for i in range(5000):
+        mistake = np.sum(np.abs(c[i] - predict[i]))
+        mistake_list.append((i,mistake))
 
-zip(mistake_list)
+    zip(mistake_list)
 
-# plt.plot(c[900],'-o''m',label='$Original$')
-# plt.plot(predict[900],'-v''k',label='$Prediction$')
-# plt.xlabel('$Velocity$')
-# plt.ylabel('$Probability$')
-# plt.legend()
-# plt.show()
+    # plt.plot(c[900],'-o''m',label='$Original$')
+    # plt.plot(predict[900],'-v''k',label='$Prediction$')
+    # plt.xlabel('$Velocity$')
+    # plt.ylabel('$Probability$')
+    # plt.legend()
+    # plt.show()
 
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_c.txt',c[500])
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
-# np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
-#theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
-#width = (2*np.pi) / 5000
-ax = plt.subplot(111, polar=False)
-bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
-axr = ax.twiny()    
-axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
-axr.set_xlim((0,25))
-ax.set_xlim((0,2499))
-ax.yaxis.grid(True)
-axr.xaxis.grid(True)
-ax.set_xlabel(r'$Samples$')
-axr.set_xlabel(r'$Timesteps$')
-ax.set_ylabel(r'$Absolute Error$')
-plt.show()
+    # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_c.txt',c[500])
+    # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_500_p.txt',predict[500])
+    # np.savetxt('/home/zachary/Desktop/BA/Plotting_Data/Mistakes_Samples_1_1_lin.txt',mistake_list)
+    #theta = np.linspace(0.0,2*np.pi,5000,endpoint=False)
+    #width = (2*np.pi) / 5000
+    ax = plt.subplot(111, polar=False)
+    bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
+    axr = ax.twiny()    
+    axr.xaxis.set_major_locator(plt.FixedLocator(np.arange(0,25)))
+    axr.set_xlim((0,25))
+    ax.set_xlim((0,2499))
+    ax.yaxis.grid(True)
+    axr.xaxis.grid(True)
+    ax.set_xlabel(r'$Samples$')
+    axr.set_xlabel(r'$Timesteps$')
+    ax.set_ylabel(r'$Absolute Error$')
+    plt.show()
 #-------------------------------------------------------------------------------------------
 #Visualizing Density-----------------------------------------------------------------------
 # def density(c,predict):
