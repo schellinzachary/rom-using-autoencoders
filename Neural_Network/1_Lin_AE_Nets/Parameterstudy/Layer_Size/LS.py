@@ -1,7 +1,7 @@
 '''
 Parameterstudy_01_Layer_Size
 '''
-
+import sys
 import numpy as np
 import torch
 import torch.nn as nn
@@ -13,10 +13,23 @@ import scipy.io as sio
 from random import randint
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+def progressBar(value, endvalue, bar_length=20):
+
+        percent = float(value) / endvalue
+        arrow = '-' * int(round(percent * bar_length)-1) + '>'
+        spaces = ' ' * (bar_length - len(arrow))
+        sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
+        sys.stdout.flush()
+
 for g in range(5):
 
     class params():
+<<<<<<< HEAD
         N_EPOCHS = 30000
+=======
+        N_EPOCHS = 2000
+>>>>>>> 22eaad4118e729f7715970d4b77b242b3f70c1dc
         BATCH_SIZE = 16
         INPUT_DIM = 40
         H_SIZES = [[40,20,10,5],[40,20,10],[40,20],[40],[]]
@@ -27,7 +40,7 @@ for g in range(5):
 
     class data():
         #load data
-        f = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+        f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
@@ -152,7 +165,7 @@ for g in range(5):
 
 
     for epoch in range(params.N_EPOCHS):
-        print('epoch',epoch)
+
         train_loss = train()
         test_loss = test()
 
@@ -162,7 +175,7 @@ for g in range(5):
         train_losses.append(train_loss)
         test_losses.append(test_loss)
 
-
+        progressBar(epoch,params.N_EPOCHS)
     #save the models state dictionary for inference
     torch.save({
         'epoch': epoch,
