@@ -16,7 +16,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 for g in range(5):
 
     class params():
-        N_EPOCHS = 3
+        N_EPOCHS = 30000
         BATCH_SIZE = 16
         INPUT_DIM = 40
         H_SIZES = [[40,20,10,5],[40,20,10],[40,20],[40],[]]
