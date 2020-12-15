@@ -1,18 +1,15 @@
 '''
 Parameterstudy_01_Layer_Size
 '''
-import sys
+
 import numpy as np
 import torch
 import torch.nn as nn
 from torch.optim import Adam
 import torch.tensor as tensor
 from torch.utils.data import DataLoader
-import matplotlib.pyplot as plt
 import scipy.io as sio
-from random import randint
-
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+import sys
 
 def progressBar(value, endvalue, bar_length=20):
 
@@ -22,14 +19,12 @@ def progressBar(value, endvalue, bar_length=20):
         sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
         sys.stdout.flush()
 
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
 for g in range(5):
 
     class params():
-<<<<<<< HEAD
-        N_EPOCHS = 30000
-=======
         N_EPOCHS = 2000
->>>>>>> 22eaad4118e729f7715970d4b77b242b3f70c1dc
         BATCH_SIZE = 16
         INPUT_DIM = 40
         H_SIZES = [[40,20,10,5],[40,20,10],[40,20],[40],[]]
@@ -40,12 +35,13 @@ for g in range(5):
 
     class data():
         #load data
-        f = np.load('/home/zachi/Documents/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+        f = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
         val_in = f[4000:5999]
         train_iterator = DataLoader(train_in, batch_size = params.BATCH_SIZE)
+        print(len(train_iterator))
         test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 
     class Encoder(nn.Module):
@@ -54,6 +50,7 @@ for g in range(5):
             sizes = [y for x in [[params.INPUT_DIM], params.H_SIZE] for y in x]
             for l in range(params.h_layers):
                 self.add_module('layer_' + str(l), torch.nn.Linear(in_features=sizes[l],out_features=sizes[l+1]))
+                # if sizes[l] != 40:
                 self.add_module('activ_' + str(l), nn.LeakyReLU())
             self.add_module('layer_c',nn.Linear(in_features=sizes[-1], out_features=params.LATENT_DIM))
             self.add_module('activ_c', nn.Tanh())
@@ -165,13 +162,12 @@ for g in range(5):
 
 
     for epoch in range(params.N_EPOCHS):
-
         train_loss = train()
         test_loss = test()
 
         #save and print the loss
         train_loss /= len(data.train_iterator)
-        
+
         train_losses.append(train_loss)
         test_losses.append(test_loss)
 
@@ -183,4 +179,4 @@ for g in range(5):
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/LS_{}.pt'.format(g))
+        },'Results/LS_3,5.pt')

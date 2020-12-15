@@ -10,11 +10,7 @@ import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
-from scipy.interpolate import interp1d, Akima1DInterpolator, BarycentricInterpolator, PPoly, PchipInterpolator, KroghInterpolator
-rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':17})
-rc('text', usetex=True)
-#plt.rcParams['xtick.labelsize']=17
-fonsize = 17
+
 
 def net(c):
 
@@ -83,7 +79,7 @@ def net(c):
 
 
  
-    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
+    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_losses = checkpoint['train_losses']
@@ -134,7 +130,7 @@ def shapeback_field(predict):
         n += 200
     return(f) # shaping back the field
 
-def macro( f,v):
+def macro(f,v):
     dv = v[1]- v[0]
     rho = np.sum(f,axis = 1) * dv
 

@@ -107,6 +107,12 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 \label{Eg:eckard-young}
 \end{equation}
 \subsection{Autoencoders}
+Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{number of layers}, \textit{size of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section.\\
+Originally the number of layers is determined, as they set the representational capacity of the model hence initiate over- and underfitting at an early stage. \Cref{Fig:layer_size} in \cref{AppendixA} shows the training and validation error calculated by:
+\begin{equation}
+	Error = MSE / N_{Batches}
+\end{equation}
+
 \subsection{Architectures}
 \subsubsection{Fully Connected}\label{Fully Connected}
 The autoencoder architecture 1.0 is a composition of five fully connected layers, \cref{f_AE}. The subscript F denotes fully connected layers opposed to the subscript C which denotes convolutional layers in \cref{Convolutional}.
@@ -202,4 +208,17 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 \subsection{Discussion and Outlook}
 \bibliography{Bibliography}{}
 \bibliographystyle{unsrt}
+\newpage
+\subsection{Appendix A}\label{AppendixA}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Layer_Sizes/0.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/1.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/2.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/3.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/4.tex}}
+		\caption{Analysis of layer size for five different architectures, showing the error for training and testing.}
+		\label{Fig:layer_size}
+	\end{figure}
+\end{center}
 \end{document}

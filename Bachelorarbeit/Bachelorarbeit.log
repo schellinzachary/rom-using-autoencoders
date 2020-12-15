@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.8)  15 DEC 2020 12:33
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.8)  15 DEC 2020 18:41
  restricted system commands enabled.
 **Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -953,7 +953,7 @@ LaTeX Warning: Citation `bibid' on page 4 undefined on input line 35.
 Missing character: There is no · (U+00B7) in font cmr12!
 Missing character: There is no · (U+00B7) in font cmr8!
 [4]
-<Figures/Macroscopic_Quantities_Original.png, id=191, 1214.136pt x 668.4975pt>
+<Figures/Macroscopic_Quantities_Original.png, id=196, 1214.136pt x 668.4975pt>
 File: Figures/Macroscopic_Quantities_Original.png Graphic file (type png)
 <use Figures/Macroscopic_Quantities_Original.png>
 Package luatex.def Info: Figures/Macroscopic_Quantities_Original.png  used on in
@@ -964,59 +964,72 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
-[6]
-<Figures/Cumultative_Singular_Values_kn001.png, id=227, 984.3174pt x 456.7464pt>
+[6] [7]
+<Figures/Cumultative_Singular_Values_kn001.png, id=247, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 175.
+input line 181.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
 <Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png, id
-=228, 984.3174pt x 456.7464pt>
+=248, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
 g Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png
 >
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/toget
-her/all_together.png  used on input line 181.
+her/all_together.png  used on input line 187.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
- [7] [8<./Figures/Cumultative_Singular_Values_kn001.png><./Figures/02_12_20/kn0p
-00001Conservative_Quantities/together/all_together.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 187--188
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 
-LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 192.
+LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 198.
 
 
 LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input 
-line 192.
+line 198.
 
 <Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png
-, id=251, 984.3174pt x 456.7464pt>
+, id=252, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
 e.png Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
 .png>
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/code/
-Consrvative_Rho_Code.png  used on input line 194.
+Consrvative_Rho_Code.png  used on input line 200.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Code.png, id=252, 987.2082pt x 464.6961pt>
+<Figures/Code.png, id=253, 987.2082pt x 464.6961pt>
 File: Figures/Code.png Graphic file (type png)
 <use Figures/Code.png>
-Package luatex.def Info: Figures/Code.png  used on input line 197.
+Package luatex.def Info: Figures/Code.png  used on input line 203.
 (luatex.def)             Requested size: 452.9679pt x 213.21681pt.
-(./Bachelorarbeit.bbl [9<./Figures/02_12_20/kn0p00001Conservative_Quantities/cod
-e/Consrvative_Rho_Code.png><./Figures/Code.png>]) [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 205.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 205.
+(./Bachelorarbeit.bbl [8<./Figures/Cumultative_Singular_Values_kn001.png>]
+[9<./Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png
+><./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.
+png>] [10<./Figures/Code.png>]) [11] (./Figures/Layer_Sizes/0.tex)
+(./Figures/Layer_Sizes/1.tex) (./Figures/Layer_Sizes/2.tex)
+(./Figures/Layer_Sizes/3.tex) (./Figures/Layer_Sizes/4.tex)
+Overfull \hbox (17.62439pt too wide) in paragraph at lines 215--220
+[][] []
+ []
+
+
+Overfull \hbox (17.62439pt too wide) in paragraph at lines 215--220
+[] []
+ []
+
+[12] [13]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 205.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 205.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: C73FE678B614B889E9CF27FB60C84453;3062.
+(rerunfilecheck)             Checksum: 0AF6C414FFD720A049CD70FBAD179AE2;3174.
 
 
 LaTeX Warning: There were undefined references.
@@ -1024,19 +1037,22 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
 )
 
 Here is how much of LuaTeX's memory you used:
- 33020 strings out of 481365
- 100000,1144653 words of node,token memory allocated
- 690 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 42 attribute, 59 glue_spec
-, 42 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:847,3:163,4:41,5:258,6:42,7:4537,8:86,9:569,10:26,11:379
- 48985 multiletter control sequences out of 65536+600000
+ 33601 strings out of 481365
+ 244155,2848258 words of node,token memory allocated
+ 698 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 44 attribute, 59 glue_spec
+, 44 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:3,2:47265,3:26502,4:91,5:258,6:44,7:4537,8:86,9:945,10:26,11:3
+79
+ 49514 multiletter control sequences out of 65536+600000
  73 fonts using 7067347 bytes
- 68i,11n,98p,2387b,477s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 68i,21n,105p,2387b,2318s stack positions out of 5000i,500n,10000p,200000b,100000s
+
+warning  (pdf backend): unreferenced destination with name 'equation.4.17'
 </usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share/texm
 f/fonts/opentype/public/lm/lmroman12-italic.otf></usr/share/texmf/fonts/opentype
 /public/lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman
@@ -1050,10 +1066,10 @@ pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
 ols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (10 pages, 368794 bytes).
+Output written on Bachelorarbeit.pdf (13 pages, 545935 bytes).
 
-PDF statistics: 335 PDF objects out of 1000 (max. 8388607)
- 286 compressed objects within 3 object streams
- 67 named destinations out of 1000 (max. 131072)
- 184 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 360 PDF objects out of 1000 (max. 8388607)
+ 307 compressed objects within 4 object streams
+ 74 named destinations out of 1000 (max. 131072)
+ 192 words of extra memory for PDF output out of 10000 (max. 100000000)
 

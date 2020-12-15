@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.tensor as tensor
 import matplotlib.pyplot as plt
 import scipy.io as sio
-#import torch.linalg as LA
+import tikzplotlib
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -21,9 +21,9 @@ class data():
     f = tensor(f, dtype=torch.float).to(device)
 
 for g in range(5):
-
+    #g=4
     class params():
-        N_EPOCHS = 30000
+        N_EPOCHS = 2000
         BATCH_SIZE = 16
         INPUT_DIM = 40
         H_SIZES = [[40,20,10,5],[40,20,10],[40,20],[40],[]]
@@ -37,6 +37,7 @@ for g in range(5):
             sizes = [y for x in [[params.INPUT_DIM], params.H_SIZE] for y in x]
             for l in range(params.h_layers):
                 self.add_module('layer_' + str(l), torch.nn.Linear(in_features=sizes[l],out_features=sizes[l+1]))
+                # if sizes[l] != 40:
                 self.add_module('activ_' + str(l), nn.LeakyReLU())
             self.add_module('layer_c',nn.Linear(in_features=sizes[-1], out_features=params.LATENT_DIM))
             self.add_module('activ_c', nn.Tanh())
@@ -98,7 +99,15 @@ for g in range(5):
     print(l2_error)
     print(len(test_losses))
     print(N_EPOCHS)
-    plt.semilogy(train_losses)
-    plt.semilogy(test_losses)
+
+    plt.semilogy(train_losses,'k''--',label='Train')
+    plt.semilogy(test_losses,'k''-',label='Test')
+    plt.xlabel('Epoch')
+    plt.ylabel('MSE Loss')
+    ax = plt.gca()
+    i = [10,8,6,4,2]
+    plt.title('{} Layer'.format(i[g]))
+    plt.legend()
+    tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
     plt.show()
 
