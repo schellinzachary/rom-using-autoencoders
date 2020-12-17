@@ -4,15 +4,16 @@ Plot results Linear 1.0
 import numpy as np
 from numpy import linalg as LA
 import matplotlib.pyplot as plt
-from matplotlib import rc
+import tikzplotlib
 import torch
 import torch.nn as nn
 import scipy.io as sio
 import torch.tensor as tensor
 import matplotlib.animation as animation
+from scipy.interpolate import interp1d
 
 
-def net(c):
+class net:
 
     INPUT_DIM = 40
     HIDDEN_DIM = 20
@@ -21,7 +22,7 @@ def net(c):
 
     class Encoder(nn.Module):
         def __init__(self, input_dim, hidden_dim, lat_dim):
-            super(Encoder, self).__init__()
+            super(net.Encoder, self).__init__()
 
             self.linear1 = nn.Linear(in_features=input_dim, 
                                         out_features=hidden_dim)
@@ -38,7 +39,7 @@ def net(c):
 
     class Decoder(nn.Module):
         def __init__(self, input_dim, hidden_dim, lat_dim):
-            super(Decoder, self).__init__()
+            super(net.Decoder, self).__init__()
             self.linear3 = nn.Linear(in_features=lat_dim, 
                                     out_features=hidden_dim)
             self.linear4 = nn.Linear(in_features=hidden_dim, 
@@ -50,6 +51,10 @@ def net(c):
             x = self.actc(self.linear3(x))
             x = self.act(self.linear4(x))
             return x
+        def predict(self, dat_obj):
+            y_predict = self.forward(x_predict)
+            return(y_predict)
+        
 
 
     class Autoencoder(nn.Module):
@@ -65,49 +70,37 @@ def net(c):
 
 
 
-
-    #encoder
-    encoder = Encoder(INPUT_DIM,HIDDEN_DIM, LATENT_DIM)
-
-    #decoder
-    decoder = Decoder(INPUT_DIM, HIDDEN_DIM, LATENT_DIM)
-
-    #Autoencoder
-    model = Autoencoder(encoder, decoder)
-
-
-
-
- 
-    checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
-
-    model.load_state_dict(checkpoint['model_state_dict'])
-    train_losses = checkpoint['train_losses']
-    test_losses = checkpoint['test_losses']
-    N_EPOCHS = checkpoint['epoch']
-
-    W = encoder.state_dict()['linear2.weight']
-
-    #-------------------------------------------------------------------------------------------
-    #Inference---------------------------------------------------------------------------------
-    c = tensor(c, dtype=torch.float)
-
-    predict,z = model(c)
-    c = c.detach().numpy()
-    predict = predict.detach().numpy()
-
-    return predict, W, z
-
+#INIT Model, Decoder and Encoder
+#encoder
+encoder = net.Encoder(net.INPUT_DIM,net.HIDDEN_DIM, net.LATENT_DIM)
+#decoder
+decoder = net.Decoder(net.INPUT_DIM, net.HIDDEN_DIM, net.LATENT_DIM)
+#Autoencoder
+model = net.Autoencoder(encoder, decoder)
+#Load Model params
+checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
+model.load_state_dict(checkpoint['model_state_dict'])
+train_losses = checkpoint['train_losses']
+test_losses = checkpoint['test_losses']
+N_EPOCHS = checkpoint['epoch']
 # load original data-----------------------------------------------------------------------
 c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 v = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
 t = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
+x = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
+x = x['x']
 t  = t['treport']
 v = v['v']
 t.squeeze()
 t=t.T
-#Inference-----------------------------------------------------------------------------------
-predict, W, z = net(c)
+
+#Inference---------------------------------------------------------------------------------
+c = tensor(c, dtype=torch.float)
+predict,z = model(c)
+c = c.detach().numpy()
+predict = predict.detach().numpy()
+
+
 
 #------------------------------------------------------------------------------------------
 #Conservation Properties
@@ -120,6 +113,18 @@ def shapeback_code(z):
           c[i,:,p] = z[p+n,:].detach().numpy()
         n += 200
     return(c) # shaping back the code
+
+def shape_AE_code(g):
+    
+    c = np.empty((5000,3))
+    for i in range(3):
+        n = 0
+        for t in range(25):
+          print(n)
+          c[n:n+200,i] = g[i][t,:]
+          n += 200
+    return(c)
+
 
 def shapeback_field(predict):
     f = np.empty([25,40,200])
@@ -168,19 +173,20 @@ def energy(g):
 def characteritics(z,t):
     g = shapeback_code(z)
     u_x = np.sum(g,axis=2)
-    f1 = np.gradient(u_x[:,0],0.005)
-    f2 = np.gradient(u_x[:,1],0.005)
-    f3 = np.gradient(u_x[:,2],0.005)
-    s1 = f1  / (g[:,0,0] - g[:,0,-1])
-    s2 = f2 / (g[:,1,0] - g[:,1,-1])
-    s3 = f3 / (g[:,2,0] - g[:,2,-1])
-    plt.plot(s1)
-    plt.plot(s2)
-    plt.plot(s3)
-    plt.show()
-
-
-characteritics(z,t)
+    s =[]
+    for i in range(3):
+        f = np.gradient(u_x[:,i],0.005)
+        s.append(f / (g[:,i,0] - g[:,i,-1]))
+    # fig, ax = plt.subplots(3,1)
+    # for i in range(3):
+    #     ax[i].plot(s[i],'k''-*')
+    #     ax[i].set_ylabel('u{}'.format(i))
+    #     ax[i].set_xlabel('t')
+    #     ax[i].yaxis.set_ticks(np.linspace(np.min(s[i]), np.max(s[i]+1), 3))
+    # #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Characteristics.tex')
+    # plt.show()
+    return(s)
+#characteritics(z,t)
 
 #Conservation of Prediction vs. Original
 
@@ -188,43 +194,55 @@ def plot_conservative_o_vs_p():
     predict_org_shape = shapeback_field(predict)
     original_org_shape = shapeback_field(c)
 
-    rho_p, E_p, rho_u_p = macro(predict_org_shape,v)
-    rho_o, E_o, rho_u_o = macro(original_org_shape,v)
+    macro_predict = macro(predict_org_shape,v) #macro_predict[0]=rho,macro_predict[1]=E,macro_predict[2]=rho_u
+    macro_original = macro(original_org_shape,v) # " " "
 
 
-    dt_rho_o = np.diff(np.sum(rho_o,axis=1))/ np.mean(np.sum(rho_o,axis=(0,1)))
-    dt_rho_p = np.diff(np.sum(rho_p,axis=1))/ np.mean(np.sum(rho_p,axis=(0,1)))
+    # dt_rho_o = np.diff(np.sum(rho_o,axis=1))/ np.mean(np.sum(rho_o,axis=(0,1)))
+    # dt_rho_p = np.diff(np.sum(rho_p,axis=1))/ np.mean(np.sum(rho_p,axis=(0,1)))
 
-    dt_rho_u_p = np.diff(np.sum(rho_u_p,axis=1))/ np.mean(np.sum(rho_u_p,axis=(0,1)))
-    dt_rho_u_o = np.diff(np.sum(rho_u_o,axis=1))/ np.mean(np.sum(rho_u_o,axis=(0,1)))
+    # dt_rho_u_p = np.diff(np.sum(rho_u_p,axis=1))/ np.mean(np.sum(rho_u_p,axis=(0,1)))
+    # dt_rho_u_o = np.diff(np.sum(rho_u_o,axis=1))/ np.mean(np.sum(rho_u_o,axis=(0,1)))
 
-    dt_E_p = np.diff(np.sum(E_p,axis=1))/ np.mean(np.sum(E_p,axis=(0,1)))
-    dt_E_o = np.diff(np.sum(E_o,axis=1))/ np.mean(np.sum(E_o,axis=(0,1)))
+    # dt_E_p = np.diff(np.sum(E_p,axis=1))/ np.mean(np.sum(E_p,axis=(0,1)))
+    # dt_E_o = np.diff(np.sum(E_o,axis=1))/ np.mean(np.sum(E_o,axis=(0,1)))
 
-
-    fig, ax = plt.subplots(1,3)
-    ax[0].plot(dt_rho_p,'-+''k',label=r'$y_p$')
-    ax[0].plot(dt_rho_o,'-v''k',label=r'$y_o$')
-    ax[0].set_xlabel(r'$t$',fontsize=fonsize)
-    ax[0].set_ylabel(r'$\hat{\rho}$',fontsize=fonsize)
-    ax[0].tick_params(axis='both', labelsize=fonsize)
-    ax[0].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
-    ax[0].legend()
-    ax[1].plot(dt_rho_u_p,'-+''k',label=r'$y_p$')
-    ax[1].plot(dt_rho_u_o,'-v''k',label=r'$y_o$')
-    ax[1].set_xlabel(r'$t$',fontsize=fonsize)
-    ax[1].set_ylabel(r'$\hat{\rho u}$',fontsize=fonsize)
-    ax[1].tick_params(axis='both', labelsize=fonsize)
-    ax[1].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
-    ax[1].legend()
-    ax[2].plot(dt_E_p,'-+''k',label=r'$y_p$')
-    ax[2].plot(dt_E_o,'-v''k',label=r'$y_o$')
-    ax[2].set_xlabel(r'$t$',fontsize=fonsize)
-    ax[2].set_ylabel('$\hat{E}$',fontsize=fonsize)
-    ax[2].tick_params(axis='both', labelsize=fonsize)
-    ax[2].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
-    ax[2].legend()
-    plt.show()
+    #derivative of conservatives in t mean
+    # fig, ax = plt.subplots(1,3)
+    # ax[0].plot(dt_rho_p,'-+''k',label=r'$y_p$')
+    # ax[0].plot(dt_rho_o,'-v''k',label=r'$y_o$')
+    # ax[0].set_xlabel(r'$t$')
+    # ax[0].set_ylabel(r'$\hat{\rho}$')
+    # ax[0].tick_params(axis='both')
+    # ax[0].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    # ax[0].legend()
+    # ax[1].plot(dt_rho_u_p,'-+''k',label=r'$y_p$')
+    # ax[1].plot(dt_rho_u_o,'-v''k',label=r'$y_o$')
+    # ax[1].set_xlabel(r'$t$')
+    # ax[1].set_ylabel(r'$\hat{\rho u}$')
+    # ax[1].tick_params(axis='both')
+    # ax[1].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    # ax[1].legend()
+    # ax[2].plot(dt_E_p,'-+''k',label=r'$y_p$')
+    # ax[2].plot(dt_E_o,'-v''k',label=r'$y_o$')
+    # ax[2].set_xlabel(r'$t$')
+    # ax[2].set_ylabel('$\hat{E}$')
+    # ax[2].tick_params(axis='both')
+    # ax[2].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
+    # ax[2].legend()
+    # plt.show()
+    #macroscopic pcolor
+    # fig, ax = plt.subplots(3,1)
+    # for i in range(3):
+    #     im = ax[i].imshow(macro_original[i],cmap='Greys',origin='lower')
+    #     ax[i].set_xlabel('x')
+    #     ax[i].set_ylabel('t')
+    #     ax[i].set_title('bla')
+    #     colorbar = fig.colorbar(im, ax=ax[i])#,orientation='vertical')
+    #     colorbar.set_ticks(np.linspace(np.min(macro_original[i]), np.max(macro_original[i]), 3))
+    #     #plt.tight_layout()
+    # tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')
+    # plt.show()
 #plot_conservative_o_vs_p()  
 
 #Conservation of Code
@@ -242,17 +260,81 @@ def plot_conservation_code_rho(z):
     plt.plot(rho_1,'--''k',label=r'$var 1$')
     plt.plot(rho_2,'-v''k',label=r'$var 2$')
     plt.plot(rho_3,'-+''k',label=r'$var 3$')
-    plt.xlabel(r'$t$',fontsize=fonsize)
-    plt.ylabel(r'$\hat{\rho}$',fontsize=fonsize)
-    plt.tick_params(axis='both', labelsize=fonsize)
+    plt.xlabel(r'$t$')
+    plt.ylabel(r'$\hat{\rho}$')
+    plt.tick_params(axis='both')
     plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     plt.legend()
     plt.show()
 #plot_conservation_code_rho(z)
 
+def plot_macro_vs_code(z,predict):
+    g = shapeback_code(z)
+    f = shapeback_field(predict)
+    mac = macro(f,v)
+    names = ['rho','E','rho u']
+    timespots = [0,10,20]
+    fig , ax = plt.subplots(1,3)
+    t=0
+    for i in timespots:
+        for j in range(3):
+                ax[t].plot(g[i,j,:],'k''--',label='var_{}'.format(j))
+                ax[t].plot(mac[j][i,:],'k''-',label=names[j])
+                ax[t].set_title('t={}'.format(i))
+                ax[t].set_xlabel('x')
+                handles, labels = ax[t].get_legend_handles_labels()
+        t +=1
+
+        fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.005),ncol=3)
+        #   )
+        # plt.legend()
+    tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
+    plt.show()
+#plot_macro_vs_code(z,predict)
+
+def lin_code(z):
+    g = shapeback_code(z)
+    char = characteritics(z,t)
+    g_new = []
+    for i in range(3):
+        CHAR = np.diag(char[i])
+        x = LA.solve(CHAR,g[:,i,:])
+        fcub = interp1d(np.linspace(0,25,25,endpoint=True),char[i] , kind='cubic')
+        CHAR_new = (np.diag(fcub(np.linspace(0.5,24.5,25))))
+        g_new.append(np.matmul(CHAR_new,x))
+    return(g_new)
+
+#Interpolate
+g_new = lin_code(z)
+
+g_new = shape_AE_code(g_new)
+
+g_new = tensor(g_new,dtype=torch.float)
+
+new_data = decoder(g_new)
+
+#check inference
+f_new = shapeback_field(new_data.detach().numpy())
+f_old = shapeback_field(c)
+new_macro = macro(f_new,v)
+old_macro = macro(f_old,v)
+print(new_macro[0].shape)
+
+def plot_interpolation(new_macro,old_macro):
+    fig, ax = plt.subplots(1,3)
+    names = ['rho','E','rho u']
+    for i in range(3):
+        ax[i].plot(new_macro[i][-1,:],'k''--',label='New Points')
+        ax[i].plot(old_macro[i][-1,:],'k',label='Old Points')
+        ax[i].set_ylabel(names[i])
+        ax[i].set_xlabel('t')
+        ax[i].legend(loc='upper right')
+        tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')
+    plt.show()
+plot_interpolation(new_macro,old_macro)
 
 
-#E_code = energy(g)
+
 
 #print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
 # plt.pcolor(g[:,:,2])
@@ -269,7 +351,7 @@ def plot_code(z):
     fig, ax = plt.subplots(3,1)
     for i in range(3):
         im = ax[i].imshow(g[:,i,:],label='g',cmap='Greys')
-        ax[i].set_xlabel(r'$x$',fontsize=fonsize)
+        ax[i].set_xlabel(r'$x$')
         ax[i].set_ylabel(r'$t$',fontsize=fonsize)
         colorbar = fig.colorbar(im, ax=ax[i],orientation='vertical')
         colorbar.set_ticks(np.linspace(np.min(g[:,i,:]), np.max(g[:,i,:]), 3))

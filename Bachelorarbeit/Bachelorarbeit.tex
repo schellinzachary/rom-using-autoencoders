@@ -8,7 +8,9 @@
 \usepackage{amsfonts}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
-\pgfplotsset{compat=1.8}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepackage{tikzscale}
 \usepackage{cleveref}
 \usepackage{graphicx}
 \usepackage{tocbibind}
@@ -46,7 +48,7 @@ The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen 
 		\label{lambda}
 	\end{equation}
 \end{multicols}\noindent
-For Kndusen numbers $Kn > 10^·{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $\textbf{x} \in \mathbb{R}^3$ with velocity $\xi \in \mathbb{R}^3$ at time $t \in \mathbb{R}$. 
+For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $\textbf{x} \in \mathbb{R}^3$ with velocity $\xi \in \mathbb{R}^3$ at time $t \in \mathbb{R}$. 
 \begin{equation}
 	\partial_t f(\textbf{x}, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = Q(f,f)
 	\label{Boltzmann}
@@ -204,8 +206,25 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 	\caption{Code variable $c_1$,$c_2$ and $c_3$ over space $x$ and time $t$ of the fully connected autoencoder}
 	\label{Fig:Code_Fully}
 \end{figure}
+\begin{figure}
+	\input{Figures/Results/Macrooriginal.tex}
+	\caption{Macroscopic quantities $\rho$, E and $\rho$ u of the original data.}
+\end{figure}
+\begin{figure}[!htbp]
+	\input{Figures/Results/Characteristics.tex}
+	\caption{Characteristic velocities u0, u1, u2 of the code variables var0, var1, var2 respectively calculated as described in \Cref{Reduced Order Model}.}
+\end{figure}
+\begin{figure}[!htbp]
+	\input{Figures/Results/MacroCode.tex}
+	\caption{Code variables var0, var1, var3 (dashed lines - -) and macroscopic quantities $\rho$, E, $\rho$u (full lines --) for three timestamps $t_0$, $t_{10}$, $t_{20}$.}
+\end{figure}
+\begin{figure}[!htbp]
+	\input{Figures/Results/New_Points_Macro.tex}
+	\caption{Resulting macroscopic quantities $\rho$, E, $\rho$u after interpolating in time using the interpolation method described in \ref{Reduced Order Model}. The interpolated quantity lies at timestamp t=24,5, while the original quantity lies at timestamp t=25.}
+\end{figure}
 \subsection{Rarefied Regime}
 \subsection{Discussion and Outlook}
+\newpage
 \bibliography{Bibliography}{}
 \bibliographystyle{unsrt}
 \newpage

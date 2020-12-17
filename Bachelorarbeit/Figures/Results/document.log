@@ -1,7 +1,7 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.8)  17 DEC 2020 02:09
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.8)  16 DEC 2020 22:35
  restricted system commands enabled.
-**Bachelorarbeit.tex
-(./Bachelorarbeit.tex
+**document.tex
+(./document.tex
 LaTeX2e <2020-02-02> patch level 2
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
 Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initializatio
@@ -874,43 +874,37 @@ Package tocbibind Note: Using section or other style headings.
 
 )
 \tikzscale@accuracy=\skip58
- (./Bachelorarbeit.aux
 
-LaTeX Warning: Label `Tab:Batch' multiply defined.
+No file document.aux.
 
-
-LaTeX Warning: Label `Tab:Batch@cref' multiply defined.
-
-)
-\openout1 = Bachelorarbeit.aux
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 20
+\openout1 = document.aux
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 18
 .
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
-LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 \AtBeginShipoutBox=\box110
-Package hyperref Info: Link coloring OFF on input line 20.
+Package hyperref Info: Link coloring OFF on input line 18.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -923,14 +917,12 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count308
 )
-LaTeX Info: Redefining \ref on input line 20.
-LaTeX Info: Redefining \pageref on input line 20.
-LaTeX Info: Redefining \nameref on input line 20.
-
-(./Bachelorarbeit.out) (./Bachelorarbeit.out)
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
 \@outlinefile=\write4
 
-\openout4 = Bachelorarbeit.out
+\openout4 = document.out
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -955,209 +947,1025 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
 ABD: EveryShipout initializing macros
-Package pgfplots notification 'compat/show suggested version=true': document has
- been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
+Package pgfplots notification 'compat/show suggested version=true': you might be
+nefit from \pgfplotsset{compat=1.16} (current compat level: 1.10).
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1273
+.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 25.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1273
+.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Bachelorarbeit.toc)
-\tf@toc=\write5
-
-\openout5 = Bachelorarbeit.toc
- [2]
-Overfull \hbox (0.8137pt too wide) in paragraph at lines 34--36
-\TU/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-ti
-on of their snap-shot database
- []
-
-[3]
-
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 37.
-
-
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 37.
-
-
-LaTeX Warning: Citation `bibid' on page 4 undefined on input line 37.
-
-[4]
-<Figures/Macroscopic_Quantities_Original.png, id=196, 1214.136pt x 668.4975pt>
-File: Figures/Macroscopic_Quantities_Original.png Graphic file (type png)
-<use Figures/Macroscopic_Quantities_Original.png>
-Package luatex.def Info: Figures/Macroscopic_Quantities_Original.png  used on in
-put line 76.
-(luatex.def)             Requested size: 452.9679pt x 249.40068pt.
- [5<./Figures/Macroscopic_Quantities_Original.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-[6] [7]
-<Figures/Cumultative_Singular_Values_kn001.png, id=247, 984.3174pt x 456.7464pt>
-
-File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
-<use Figures/Cumultative_Singular_Values_kn001.png>
-Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 183.
-(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png, id
-=248, 984.3174pt x 456.7464pt>
-File: Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
-g Graphic file (type png)
-<use Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png
->
-Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/toget
-her/all_together.png  used on input line 189.
-(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 200.
-
-
-LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input 
-line 200.
-
-<Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png
-, id=252, 984.3174pt x 456.7464pt>
-File: Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
-e.png Graphic file (type png)
-<use Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
-.png>
-Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/code/
-Consrvative_Rho_Code.png  used on input line 202.
-(luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Code.png, id=253, 987.2082pt x 464.6961pt>
-File: Figures/Code.png Graphic file (type png)
-<use Figures/Code.png>
-Package luatex.def Info: Figures/Code.png  used on input line 205.
-(luatex.def)             Requested size: 452.9679pt x 213.21681pt.
-(./Figures/Results/Macrooriginal.tex
-Package pgfplots info on input line 25: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 46: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 47: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 68: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 69: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 70: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
 )
-Overfull \hbox (41.08763pt too wide) in paragraph at lines 72--211
-[][]
- []
+! Missing $ inserted.
+<inserted text> 
+$
+l.1273 		]
+        
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
+! Extra }, or forgotten $.
+\pgfplots@already@computed@legend@node ...]{var_0}
+                                                  ;\\\pgfplots@show@small@le...
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--211
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
- []
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-(./Figures/Results/Characteristics.tex) (./Figures/Results/MacroCode.tex)
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: Float too large for page by 17.8177pt on input line 220.
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-(./Figures/Results/New_Points_Macro.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1281--223
-[][]
- []
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1281--223
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
- []
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-[8<./Figures/Cumultative_Singular_Values_kn001.png>] [9<./Figures/02_12_20/kn0p0
-0001Conservative_Quantities/together/all_together.png><./Figures/02_12_20/kn0p00
-001Conservative_Quantities/code/Consrvative_Rho_Code.png>]
-(./Bachelorarbeit.bbl) [10<./Figures/Code.png>] [11<./Figures/Results/Macroorigi
-nal-000.png><./Figures/Results/Macrooriginal-001.png><./Figures/Results/Macroori
-ginal-002.png>] [12] [13] (./Figures/Layer_Sizes/0.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Layer_Sizes/1.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-) (./Figures/Layer_Sizes/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Layer_Sizes/3.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-) (./Figures/Layer_Sizes/4.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 234--239
-[][] []
- []
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 234--239
-[] []
- []
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-[14] [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
- (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 243.
-Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 0AF6C414FFD720A049CD70FBAD179AE2;3174.
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: There were undefined references.
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
 
-LaTeX Warning: There were multiply-defined labels.
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
-)
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.1273 		]
+        
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
+! Extra }, or forgotten $.
+<inserted text> }
+ 
+l.1273 		]
+        
+(That makes 100 errors; please try again.)
 
 Here is how much of LuaTeX's memory you used:
- 35255 strings out of 481365
- 305212,2848258 words of node,token memory allocated
- 703 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 44 attribute, 60 glue_spec
-, 44 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:4,2:47135,3:26430,4:200,5:261,6:45,7:7723,8:86,9:1940,10:26,11
-:379
- 51013 multiletter control sequences out of 65536+600000
- 73 fonts using 7067347 bytes
- 78i,21n,136p,2387b,3015s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texmf/fonts/opentype/public/lm/lmmono12-regular.otf></usr/share/texm
-f/fonts/opentype/public/lm/lmroman12-italic.otf></usr/share/texmf/fonts/opentype
-/public/lm/lmroman12-bold.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman
-12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman17-regular.otf>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (15 pages, 591349 bytes).
-
-PDF statistics: 389 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 131072)
- 222 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+ 34548 strings out of 481365
+ 100000,1373583 words of node,token memory allocated
+ 14778 words of node memory still in use:
+   86 hlist, 1 vlist, 2 rule, 13 dir, 18 math, 279 glue, 4 kern, 2 unset, 2 noad
+, 2 math_char, 1 sub_mlist, 29 glyph, 4 align_record, 1676 attribute, 67 glue_sp
+ec, 1676 attribute_list, 17 temp, 1 align_stack, 3 if_stack, 1 write, 1431 pdf_l
+iteral, 1 pdf_dest, 19 pdf_colorstack nodes
+   avail lists: 1:3,2:17,8:2
+ 50622 multiletter control sequences out of 65536+600000
+ 43 fonts using 4375691 bytes
+ 68i,14n,100p,934b,2382s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!
