@@ -91,8 +91,12 @@ x = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.
 x = x['x']
 t  = t['treport']
 v = v['v']
-t.squeeze()
+
+t=t.squeeze()
 t=t.T
+print(t.shape)
+
+
 
 #Inference---------------------------------------------------------------------------------
 c = tensor(c, dtype=torch.float)
@@ -162,11 +166,6 @@ def conservativ(z):
     dt_rho = diff(rho)
     return(dt_E, dt_rho_u, dt_rho)
 
-def energy(g):
-    a=2
-    E = np.sum(g[:,:,2],axis=1) * a + np.sum(g[:,:,1],axis=1) * .5 * np.sum(g[:,:,0]**2,axis=1)
-
-    return(E) # cal # calculate Energy of code
 
 #Calculate Characteristic
 
@@ -175,16 +174,20 @@ def characteritics(z,t):
     u_x = np.sum(g,axis=2)
     s =[]
     for i in range(3):
-        f = np.gradient(u_x[:,i],0.005)
+        f = np.gradient(u_x[:,i],t)
         s.append(f / (g[:,i,0] - g[:,i,-1]))
-    # fig, ax = plt.subplots(3,1)
-    # for i in range(3):
-    #     ax[i].plot(s[i],'k''-*')
-    #     ax[i].set_ylabel('u{}'.format(i))
-    #     ax[i].set_xlabel('t')
-    #     ax[i].yaxis.set_ticks(np.linspace(np.min(s[i]), np.max(s[i]+1), 3))
+        plt.plot(f,label='gradient')
+        plt.plot(u_x[:,i],label='u_x')
+        plt.legend()
+        plt.show()
+    fig, ax = plt.subplots(3,1)
+    for i in range(3):
+        ax[i].plot(s[i],'k''-*')
+        ax[i].set_ylabel('u{}'.format(i))
+        ax[i].set_xlabel('t')
+        ax[i].yaxis.set_ticks(np.linspace(np.min(s[i]), np.max(s[i]+1), 3))
     # #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Characteristics.tex')
-    # plt.show()
+    plt.show()
     return(s)
 #characteritics(z,t)
 
@@ -246,27 +249,17 @@ def plot_conservative_o_vs_p():
 #plot_conservative_o_vs_p()  
 
 #Conservation of Code
-def plot_conservation_code_rho(z):
+def plot_conservation_code_rho(z,t):
     g = shapeback_code(z)
-    rho_1 = g[:,0,:]
-    rho_2 = g[:,1,:]
-    rho_3 = g[:,2,:]
-    
-    rho_1 = np.diff(np.sum(rho_1,axis=1))/ np.mean(np.sum(rho_1,axis=(0,1)))
-    rho_2 = np.diff(np.sum(rho_2,axis=1))/ np.mean(np.sum(rho_2,axis=(0,1)))
-    rho_3 = np.diff(np.sum(rho_3,axis=1))/ np.mean(np.sum(rho_3,axis=(0,1)))
-
-
-    plt.plot(rho_1,'--''k',label=r'$var 1$')
-    plt.plot(rho_2,'-v''k',label=r'$var 2$')
-    plt.plot(rho_3,'-+''k',label=r'$var 3$')
-    plt.xlabel(r'$t$')
-    plt.ylabel(r'$\hat{\rho}$')
-    plt.tick_params(axis='both')
-    plt.ticklabel_format(style='sci', axis='y',scilimits=(0,0))
-    plt.legend()
-    plt.show()
-#plot_conservation_code_rho(z)
+    for i in range(3):
+        f_u = np.sum(g[:,i,:],axis=1)
+        dt_f = np.gradient(f_u)
+        plt.plot(f_u)
+        plt.plot(dt_f)
+        plt.xlabel('t')
+        plt.ylabel('rho')
+        plt.show()
+#plot_conservation_code_rho(z,t)
 
 def plot_macro_vs_code(z,predict):
     g = shapeback_code(z)
@@ -288,7 +281,7 @@ def plot_macro_vs_code(z,predict):
         fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.005),ncol=3)
         #   )
         # plt.legend()
-    tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
+    #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
     plt.show()
 #plot_macro_vs_code(z,predict)
 
@@ -306,19 +299,20 @@ def lin_code(z):
 
 #Interpolate
 g_new = lin_code(z)
+plt.imshow(g_new[0])
+plt.show()
+#g_new = shape_AE_code(g_new)
 
-g_new = shape_AE_code(g_new)
+#g_new = tensor(g_new,dtype=torch.float)
 
-g_new = tensor(g_new,dtype=torch.float)
-
-new_data = decoder(g_new)
+#new_data = decoder(g_new)
 
 #check inference
-f_new = shapeback_field(new_data.detach().numpy())
-f_old = shapeback_field(c)
-new_macro = macro(f_new,v)
-old_macro = macro(f_old,v)
-print(new_macro[0].shape)
+# f_new = shapeback_field(new_data.detach().numpy())
+# f_old = shapeback_field(c)
+# new_macro = macro(f_new,v)
+# old_macro = macro(f_old,v)
+# print(new_macro[0].shape)
 
 def plot_interpolation(new_macro,old_macro):
     fig, ax = plt.subplots(1,3)
@@ -331,18 +325,7 @@ def plot_interpolation(new_macro,old_macro):
         ax[i].legend(loc='upper right')
         tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')
     plt.show()
-plot_interpolation(new_macro,old_macro)
-
-
-
-
-#print('ggg',np.sum(np.abs(g))-np.sum(np.abs(z.detach().numpy())))
-# plt.pcolor(g[:,:,2])
-# plt.xlabel('x')
-# plt.ylabel('t')
-# plt.colorbar()
-# plt.show()
-
+#plot_interpolation(new_macro,old_macro)
 
 # plot code-------------------------------------------------------------------------------
 def plot_code(z):
@@ -351,8 +334,8 @@ def plot_code(z):
     fig, ax = plt.subplots(3,1)
     for i in range(3):
         im = ax[i].imshow(g[:,i,:],label='g',cmap='Greys')
-        ax[i].set_xlabel(r'$x$')
-        ax[i].set_ylabel(r'$t$',fontsize=fonsize)
+        ax[i].set_xlabel('x')
+        ax[i].set_ylabel('t')
         colorbar = fig.colorbar(im, ax=ax[i],orientation='vertical')
         colorbar.set_ticks(np.linspace(np.min(g[:,i,:]), np.max(g[:,i,:]), 3))
         ax[i].text(7, 7, r'$c_{}$'.format(i), bbox={'facecolor': 'white', 'pad': 2})

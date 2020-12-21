@@ -153,8 +153,18 @@ Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:B
 	\caption{L2-Error over Batch-Size}
 	\label{Tab:Batch}
 \end{table}
-\subsection{Reducd Order Model}\label{Reduced Order Model}
-
+\subsection{Reduced Order Model}\label{Reduced Order Model}
+The compression of the input data $I$ yields a code $C \in \mathbb{R}^{3x5000}$, composed  of the three instrinsic variables $c_0(x,t)$, $c_1(x,t)$ and $c_2(x,t)$. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. The method of characteristics \Cref{labellist} provides a means to bypass this shortage. $c_i(x,t)$ must satisfy the conservative condition \cref{Eq. Mass_Const} and the transport \cref{hh}.
+\noindent\begin{minipage}{.5\linewidth}
+	\begin{equation}
+	\frac{d}{dt}\int c_i\ dx = const.
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{.5\linewidth}
+	\begin{equation}
+	\frac{\partial}{\partial t}c_i + \frac{\partial}{\partial x}f_i = 0
+	\end{equation}
+\end{minipage}
 \section{Results}
 \subsection{Hydrodynamic Regime}
 In search for a reduced model of the BGK equation, a first reduction and analysis of the provided data in the hydrodynamic regime is conducted. The error over the $L_2$-Norm derived from \cref{L2-Norm} assigns a value to each reduction algorithm enabling a evaluation.
@@ -166,7 +176,6 @@ In search for a reduced model of the BGK equation, a first reduction and analysi
 		SVD & 0.03  \\ 
 		Fully Connected Autoencoder & 0.002 \\ 
 		Convolutional Autoencoder & 0.02 \\ \hline
-
 		\hline
 	\end{tabular}
 	\caption{L2-Error over Batch-Size}

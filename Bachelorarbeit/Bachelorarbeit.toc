@@ -13,10 +13,10 @@
 \contentsline {subsubsection}{\numberline {3.4.1}Fully Connected}{6}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Convolutional}{7}{subsubsection.3.4.2}%
 \contentsline {subsubsection}{\numberline {3.4.3}Training}{7}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Reducd Order Model}{7}{subsection.3.5}%
-\contentsline {section}{\numberline {4}Results}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Hydrodynamic Regime}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Rarefied Regime}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{8}{subsection.4.3}%
-\contentsline {section}{References}{10}{section*.2}%
-\contentsline {subsection}{\numberline {4.4}Appendix A}{14}{subsection.4.4}%
+\contentsline {subsection}{\numberline {3.5}Reduced Order Model}{7}{subsection.3.5}%
+\contentsline {section}{\numberline {4}Results}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Hydrodynamic Regime}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Rarefied Regime}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{10}{subsection.4.3}%
+\contentsline {section}{References}{14}{section*.2}%
+\contentsline {subsection}{\numberline {4.4}Appendix A}{15}{subsection.4.4}%
