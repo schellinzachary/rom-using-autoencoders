@@ -8,6 +8,8 @@
 \usepackage{amsfonts}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
 \usepackage{tikzscale}
@@ -16,6 +18,8 @@
 \usepackage{tocbibind}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\tikzstyle{block} = [rectangle, draw, 
+text width=5em, text centered, rounded corners, minimum height=4em]
 
 \begin{document}
 \title{Bachelorarbeit\\ zur Erlangung des akademischen Grades\\ Bachelor of Science}
@@ -154,17 +158,26 @@ Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:B
 	\label{Tab:Batch}
 \end{table}
 \subsection{Reduced Order Model}\label{Reduced Order Model}
-The compression of the input data $I$ yields a code $C \in \mathbb{R}^{3x5000}$, composed  of the three instrinsic variables $c_0(x,t)$, $c_1(x,t)$ and $c_2(x,t)$. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. The method of characteristics \Cref{labellist} provides a means to bypass this shortage. $c_i(x,t)$ must satisfy the conservative condition \cref{Eq. Mass_Const} and the transport \cref{hh}.
+The compression of the input data $I$ yields a code $C \in \mathbb{R}^{3x5000}$, composed  of the three instrinsic variables $c_0(x,t)$, $c_1(x,t)$ and $c_2(x,t)$. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. The method of characteristics \Cref{labellist} provides a means to bypass this shortage. Intrinsic variable $c_i(x,t)$ must satisfy the conservative condition \cref{Eq. Mass_Const} and the transport equation \cref{Eq. Transport} with $i = 0,1,2$. \\
 \noindent\begin{minipage}{.5\linewidth}
 	\begin{equation}
-	\frac{d}{dt}\int c_i\ dx = const.
+	\frac{d}{dt}\int c_i\ dx = \frac{d}{dt}f_i = const. \label{Eq. Mass_Const}
 	\end{equation}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
 	\begin{equation}
-	\frac{\partial}{\partial t}c_i + \frac{\partial}{\partial x}f_i = 0
+	\frac{\partial}{\partial t}c_i + \frac{\partial}{\partial x}f_i = 0 \label{Eq. Transport}
 	\end{equation}
 \end{minipage}
+The characteristics $u_i$ describe the constant transport velocities for each variable $c_i$ calculated using \cref{Eq. Characteristics}. Susequently enabling the usage of a simple plynomial interpoaltion of any degree. Furthermore a linear mapping \(A_ix_i=c_i\) can be applied for the construction of interpolated code variables.\\
+\begin{equation}
+	u_i = \frac{f_i(c^-_i) - f_i(c^+_i)}{c^-_i - c^+_i}
+	\label{Eq. Characteristics}
+\end{equation}
+\begin{figure}
+	\centering
+	\input{Charts/ROM.tex}
+\end{figure}
 \section{Results}
 \subsection{Hydrodynamic Regime}
 In search for a reduced model of the BGK equation, a first reduction and analysis of the provided data in the hydrodynamic regime is conducted. The error over the $L_2$-Norm derived from \cref{L2-Norm} assigns a value to each reduction algorithm enabling a evaluation.

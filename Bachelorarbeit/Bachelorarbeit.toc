@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {3.5}Reduced Order Model}{7}{subsection.3.5}%
 \contentsline {section}{\numberline {4}Results}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Hydrodynamic Regime}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Rarefied Regime}{10}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{10}{subsection.4.3}%
-\contentsline {section}{References}{14}{section*.2}%
-\contentsline {subsection}{\numberline {4.4}Appendix A}{15}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.2}Rarefied Regime}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Discussion and Outlook}{14}{subsection.4.3}%
+\contentsline {section}{References}{15}{section*.2}%
+\contentsline {subsection}{\numberline {4.4}Appendix A}{16}{subsection.4.4}%
