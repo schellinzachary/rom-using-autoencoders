@@ -59,4 +59,10 @@ Salah Rifai, Yann~N Dauphin, Pascal Vincent, Yoshua Bengio, and Xavier Muller.
 Salah Rifai, Yoshua Bengio, Yann Dauphin, and Pascal Vincent.
 \newblock A generative process for sampling contractive auto-encoders, 2012.
 
+\bibitem{Dret2016}
+Hervé~Le Dret and Brigitte Lucquin.
+\newblock {\em Partial Differential Equations: Modeling, Analysis and Numerical
+  Approximation -}.
+\newblock Birkhäuser, Basel, 2016.
+
 \end{thebibliography}

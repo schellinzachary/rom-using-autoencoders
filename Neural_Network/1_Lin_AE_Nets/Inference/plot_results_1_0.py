@@ -78,23 +78,22 @@ decoder = net.Decoder(net.INPUT_DIM, net.HIDDEN_DIM, net.LATENT_DIM)
 #Autoencoder
 model = net.Autoencoder(encoder, decoder)
 #Load Model params
-checkpoint = torch.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
+checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
 test_losses = checkpoint['test_losses']
 N_EPOCHS = checkpoint['epoch']
 # load original data-----------------------------------------------------------------------
-c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-v = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
-t = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
-x = sio.loadmat('/home/fusilly/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
+c = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
+t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
+x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
 x = x['x']
 t  = t['treport']
 v = v['v']
-
 t=t.squeeze()
 t=t.T
-print(t.shape)
+
 
 
 
@@ -170,26 +169,32 @@ def conservativ(z):
 #Calculate Characteristic
 
 def characteritics(z,t):
-    g = shapeback_code(z)
-    u_x = np.sum(g,axis=2)
+    #g = shapeback_code(z)
+    g = shapeback_field(z)
+    g ,a ,b = macro(g,t)
+    #u_x = np.sum(g,axis=2)
+    u_x = np.sum(g,axis=1)
+    print(u_x.shape)
     s =[]
     for i in range(3):
-        f = np.gradient(u_x[:,i],t)
-        s.append(f / (g[:,i,0] - g[:,i,-1]))
+        f = np.gradient(u_x,0.005)
+        s.append(f / (g[:,0] - g[:,-1]))
         plt.plot(f,label='gradient')
-        plt.plot(u_x[:,i],label='u_x')
+        plt.plot(u_x,label='u_x')
         plt.legend()
         plt.show()
-    fig, ax = plt.subplots(3,1)
-    for i in range(3):
-        ax[i].plot(s[i],'k''-*')
-        ax[i].set_ylabel('u{}'.format(i))
-        ax[i].set_xlabel('t')
-        ax[i].yaxis.set_ticks(np.linspace(np.min(s[i]), np.max(s[i]+1), 3))
-    # #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Characteristics.tex')
+    # fig, ax = plt.subplots(1,3)
+    # for i in range(3):
+    #     ax[i].plot(s[i],'k''-*')
+    #     ax[i].set_ylabel('u{}'.format(i))
+    #     ax[i].set_xlabel('t')
+    #     ax[i].yaxis.set_ticks(np.linspace(np.min(s[i]), np.max(s[i]+1), 3))
+    # # #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Characteristics.tex')
+    plt.imshow(g)
+    plt.plot(s[0]*np.linspace(0,25,25)+100,np.linspace(0,25,25))
     plt.show()
     return(s)
-#characteritics(z,t)
+s = characteritics(c,v)
 
 #Conservation of Prediction vs. Original
 
@@ -234,19 +239,25 @@ def plot_conservative_o_vs_p():
     # ax[2].ticklabel_format(style='sci', axis='y',scilimits=(0,0))
     # ax[2].legend()
     # plt.show()
-    #macroscopic pcolor
-    # fig, ax = plt.subplots(3,1)
-    # for i in range(3):
-    #     im = ax[i].imshow(macro_original[i],cmap='Greys',origin='lower')
-    #     ax[i].set_xlabel('x')
-    #     ax[i].set_ylabel('t')
-    #     ax[i].set_title('bla')
-    #     colorbar = fig.colorbar(im, ax=ax[i])#,orientation='vertical')
-    #     colorbar.set_ticks(np.linspace(np.min(macro_original[i]), np.max(macro_original[i]), 3))
-    #     #plt.tight_layout()
-    # tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')
-    # plt.show()
+
 #plot_conservative_o_vs_p()  
+
+def plot_macro():
+    original_org_shape = shapeback_field(c)
+    macro_original = macro(original_org_shape,v) 
+        #macroscopic pcolor
+    fig, ax = plt.subplots(3,1)
+    for i in range(3):
+        im = ax[i].imshow(macro_original[i],cmap='Greys',origin='lower')
+        ax[i].set_xlabel('x')
+        ax[i].set_ylabel('t')
+        ax[i].set_title('bla')
+        colorbar = fig.colorbar(im, ax=ax[i])#,orientation='vertical')
+        colorbar.set_ticks(np.linspace(np.min(macro_original[i]), np.max(macro_original[i]), 3))
+        plt.tight_layout()
+    # tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')
+    plt.show()
+#plot_macro()
 
 #Conservation of Code
 def plot_conservation_code_rho(z,t):
@@ -281,7 +292,7 @@ def plot_macro_vs_code(z,predict):
         fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.005),ncol=3)
         #   )
         # plt.legend()
-    #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
+    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
     plt.show()
 #plot_macro_vs_code(z,predict)
 
@@ -298,9 +309,8 @@ def lin_code(z):
     return(g_new)
 
 #Interpolate
-g_new = lin_code(z)
-plt.imshow(g_new[0])
-plt.show()
+#g_new = lin_code(z)
+
 #g_new = shape_AE_code(g_new)
 
 #g_new = tensor(g_new,dtype=torch.float)
@@ -323,17 +333,18 @@ def plot_interpolation(new_macro,old_macro):
         ax[i].set_ylabel(names[i])
         ax[i].set_xlabel('t')
         ax[i].legend(loc='upper right')
-        tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')
+        tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')
     plt.show()
 #plot_interpolation(new_macro,old_macro)
 
 # plot code-------------------------------------------------------------------------------
-def plot_code(z):
+def plot_code(z,s,t):
     g = shapeback_code(z)
     #g = LA.norm(g)
     fig, ax = plt.subplots(3,1)
     for i in range(3):
-        im = ax[i].imshow(g[:,i,:],label='g',cmap='Greys')
+        im = ax[i].imshow(g[:,i,:],label='g',cmap='Greys',origin='lower')
+        ax[i].plot(s[i]*t+100,np.linspace(0,25,25))
         ax[i].set_xlabel('x')
         ax[i].set_ylabel('t')
         colorbar = fig.colorbar(im, ax=ax[i],orientation='vertical')
@@ -365,7 +376,7 @@ def plot_code(z):
     # axs[4].set_xlabel('x')
 
     plt.show()
-#plot_code(z)
+#plot_code(z,s,t)
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
@@ -400,6 +411,8 @@ def visualize(c,predict):
     ax.legend()
     plt.show()
 #visualize(c,predict)
+#visualize(rho_s,rho_p)
+
 #-----------------------------------------------------------------------------------------
 #Bad Mistakes----------------------------------------------------------------------------
 def bad_mistakes(c,predict):
@@ -436,32 +449,21 @@ def bad_mistakes(c,predict):
     plt.show()
 #-------------------------------------------------------------------------------------------
 #Visualizing Density-----------------------------------------------------------------------
-# def density(c,predict):
+def density(c,predict):
 
-#     rho_predict = np.zeros([25,200])
-#     rho_samples = np.zeros([25,200])
-#     n=0
+    rho_predict = np.zeros([25,200])
+    rho_samples = np.zeros([25,200])
+    n=0
 
-#     for k in range(25):
-#         for i in range(200):
-#             rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
-#             rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128  
-#         n += 200
-#     return rho_samples, rho_predict
+    for k in range(25):
+        for i in range(200):
+            rho_samples[k,i] = np.sum(c[i+n]) * 0.5128
+            rho_predict[k,i] = np.sum(predict[i+n]) * 0.5128  
+        n += 200
+    return rho_samples, rho_predict
+#rho_s, rho_p = density(c,predict)
 
-# rho_s, rho_p = density(c,predict)
 
-# visualize(rho_s,rho_p)
-
-# print('Verage Density Error', np.sum(np.abs(rho_s - rho_p))/len(rho_s))
-# print('Average Test Error', np.sum(np.abs(c - predict))/len(c))
-
-# plt.plot(np.linspace(0,1,200),rho_s[-1],'-o''k',label='$Original$')
-# plt.plot(np.linspace(0,1,200),rho_p[-1],'-v''k',label='$Prediction$')
-# plt.legend()
-# plt.xlabel('$Space$')
-# plt.ylabel('$Density$')
-# plt.show()
 # -------------------------------------------------------------------------------------------
 f = c
 rec = predict

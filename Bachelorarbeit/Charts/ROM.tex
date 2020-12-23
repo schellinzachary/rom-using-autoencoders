@@ -3,21 +3,31 @@
 	\tikzstyle{rec} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black]
 	\tikzstyle{circ} = [circle,minimum size =1.5cm,text centered, draw=black]
 	\tikzstyle{arrow} = [thick,->,>=stealth]
-		\begin{tikzpicture}[>=latex,text height=1.5ex,text depth=0.25ex,scale=.5,every node/.style={scale=0.75}]
+		\begin{tikzpicture}[>=latex,text height=1.5ex,text depth=0.25ex,scale=.5,every node/.style={scale=0.77}]
 		\matrix[matrix of nodes,column sep= 1em,row sep= 3ex]{
+			Step:
 			&
-			\node[circ] (1) {Input};&
+			1&
+			&2&
+			&3&
+			&4&
+			&5&
+			&6&\\
+			Input:
 			&
-			\node[circ] (4) {Code};&
+			\node[circ] (1) {$y_o$};&
 			&
-			\node[circ] (7) {us};&
+			\node[circ] (4) {$c_i$};&
 			&
-			\node[circ] (10) {us};&
+			\node[circ] (7) {$u_i$};&
 			&
-			\node[circ] (13) {x,us};&
+			\node[circ] (10) {$u_i$};&
 			&
-			\node[circ] (16) {Code};&
+			\node[circ] (13) {$\hat{u}_i,x_i$};&
+			&
+			\node[circ] (16) {$\hat{c}_i$};&
 			\\
+			Method:
 			&
 			\node[rec] (2) {Encoder};&
 			&
@@ -31,18 +41,19 @@
 			&
 			\node[rec] (17) {Decoder};&
 			\\
+			Output:
 			&
-			\node[circ] (3) {Code};&
+			\node[circ] (3) {$C$};&
 			&
-			\node[circ] (6) {us};&
+			\node[circ] (6) {$u_i$};&
 			&
-			\node[circ] (9) {us};&
+			\node[circ] (9) {$x_i$};&
 			&
-			\node[circ] (12) {x};&
+			\node[circ] (12) {$\hat{u}_i$};&
 			&
-			\node[circ] (15) {Code};&
+			\node[circ] (15) {$\hat{c}_i$};&
 			&
-			\node[circ] (18) {Output};&
+			\node[circ] (18) {$\hat{y}_p$};&
 			\\
 		};
 	\path[->]
