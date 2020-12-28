@@ -79,32 +79,33 @@ For many kinetic gas problems it is sufficient to replace the complexity of the 
 \begin{figure}[!htbp]
 	\includegraphics[width=\textwidth]{Figures/Macroscopic_Quantities_Original.png}
 \end{figure}
+\section{Deep learning}
 \section{Reduced Order Algorithms}
 \subsection{Data Sampling}
 DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
 For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{input} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{5000x40}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input.
 \begin{multicols}{2}
-		\begin{equation}
-		S_{AE} = \begin{bmatrix}
-		f(\xi_1,t_1,x_1)&\cdots &f(\xi_n,t_1,x_1) \\
-		f(\xi_1,t_1,x_2)&\cdots &f(\xi_n,t_1,x_2) \\
-		\vdots& \vdots & \vdots\\
-		f(\xi_1,t_1,x_n)&\cdots &f(\xi_n,t_1,x_n)\\
-		f(\xi_1,t_2,x_1)&\cdots &f(\xi_n,t_2,x_1)\\
-		\vdots & \vdots & \vdots\\
-		f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
-		\end{bmatrix}
-		\label{AE_matrix}
-		\end{equation}\break
-		\begin{equation}
-		S_{Conv}= \begin{bmatrix}
-		n_{Filters}&f(\xi_1,\textbf{t},\textbf{x})\\
-		n_{Filters}&f(\xi_2,\textbf{t},\textbf{x})\\
-		\vdots\\
-		n_{Filters}&f(\xi_n,\textbf{t},\textbf{x})
-		\end{bmatrix}
-		\label{Conv_matrix}
-		\end{equation}
+	\begin{equation}
+	S_{AE} = \begin{bmatrix}
+	f(\xi_1,t_1,x_1)&\cdots &f(\xi_n,t_1,x_1) \\
+	f(\xi_1,t_1,x_2)&\cdots &f(\xi_n,t_1,x_2) \\
+	\vdots& \vdots & \vdots\\
+	f(\xi_1,t_1,x_n)&\cdots &f(\xi_n,t_1,x_n)\\
+	f(\xi_1,t_2,x_1)&\cdots &f(\xi_n,t_2,x_1)\\
+	\vdots & \vdots & \vdots\\
+	f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
+	\end{bmatrix}
+	\label{AE_matrix}
+	\end{equation}\break
+	\begin{equation}
+	S_{Conv}= \begin{bmatrix}
+	n_{Filters}&f(\xi_1,\textbf{t},\textbf{x})\\
+	n_{Filters}&f(\xi_2,\textbf{t},\textbf{x})\\
+	\vdots\\
+	n_{Filters}&f(\xi_n,\textbf{t},\textbf{x})
+	\end{bmatrix}
+	\label{Conv_matrix}
+	\end{equation}
 \end{multicols}\noindent
 Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to their two dimensional capability resulting in $n_S = 40$ available samples \cref{Conv_matrix}.$N_{Filters}$ varies over the succeeding layers, growing with the shrinkage of $(\textbf{t},\textbf{x})$.
 \subsection{POD}
