@@ -6,18 +6,18 @@
 \contentsline {section}{\numberline {2}The BGK Equation}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Macroscopic features of Hydrodynamic and Rarefied Gas Flows in the SOD-Shock Tube}{5}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Deep learning}{5}{section.3}%
-\contentsline {section}{\numberline {4}Reduced Order Algorithms}{6}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Data Sampling}{6}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}POD}{7}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Autoencoders}{7}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Architectures}{7}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}Fully Connected}{7}{subsubsection.4.4.1}%
+\contentsline {section}{\numberline {4}Reduced Order Algorithms}{7}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Data Sampling}{7}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}POD}{8}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Autoencoders}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Architectures}{8}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Fully Connected}{8}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Convolutional}{8}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}Training}{8}{subsubsection.4.4.3}%
-\contentsline {subsection}{\numberline {4.5}Reduced Order Model}{8}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.5}Reduced Order Model}{9}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Results}{9}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{9}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{15}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{15}{subsection.5.3}%
-\contentsline {section}{References}{16}{section*.2}%
-\contentsline {subsection}{\numberline {5.4}Appendix A}{17}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{11}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{11}{subsection.5.3}%
+\contentsline {section}{References}{13}{section*.2}%
+\contentsline {subsection}{\numberline {5.4}Appendix A}{18}{subsection.5.4}%
