@@ -59,6 +59,11 @@ Salah Rifai, Yann~N Dauphin, Pascal Vincent, Yoshua Bengio, and Xavier Muller.
 Salah Rifai, Yoshua Bengio, Yann Dauphin, and Pascal Vincent.
 \newblock A generative process for sampling contractive auto-encoders, 2012.
 
+\bibitem{Hornik1989}
+Kurt Hornik, Maxwell Stinchcombe, and Halbert White.
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural Networks}, 2(5):359--366, January 1989.
+
 \bibitem{Dret2016}
 Hervé~Le Dret and Brigitte Lucquin.
 \newblock {\em Partial Differential Equations: Modeling, Analysis and Numerical
