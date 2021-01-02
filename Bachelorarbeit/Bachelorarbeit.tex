@@ -106,7 +106,7 @@ One drawback in implementing the discrete convolution \cref{Eq. Discrete Convolu
 	S(i,j) &= (I * K)(i,j) = \sum_{m}\sum_{n}I(i+m,j+n)K(m,n) 
 	\label{Eq. Discrete Cross Correlation}
 \end{align}
-The given equations illustrate the movement of the kernel over a two dimensional input, but leaving out two basic accompanying designs. One is the so called stride of the kernel, which results in a increased down sampling with increased stride size.
+The given equations illustrate the movement of the kernel over a two dimensional input, but leaving out two basic accompanying designs. One is the so called stride of the kernel, which results in a increased down sampling with increased stride size. 
 \\
 \noindent
 Forward-propagation is then referred to as the compositional evaluation of each layer. For the example in \cref{Eq. Composition} the outputs of each layer would then be:  \(f^1(\mathbf{x},\mathbf{\Theta}^1) = \mathbf{p}\), \(f^2(\mathbf{p},\mathbf{\Theta}^2) = \mathbf{q}\) and \(f^3(\mathbf{q},\mathbf{\Theta}^3) = \mathbf{\hat{y}}\).\\
