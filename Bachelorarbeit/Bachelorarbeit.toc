@@ -8,16 +8,16 @@
 \contentsline {section}{\numberline {3}Deep learning}{5}{section.3}%
 \contentsline {section}{\numberline {4}Reduced Order Algorithms}{8}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Data Sampling}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}POD}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Autoencoders}{8}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.2}POD}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Autoencoders}{9}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Architectures}{9}{subsection.4.4}%
 \contentsline {subsubsection}{\numberline {4.4.1}Fully Connected}{9}{subsubsection.4.4.1}%
 \contentsline {subsubsection}{\numberline {4.4.2}Convolutional}{9}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}Training}{9}{subsubsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.5}Reduced Order Model}{10}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Results}{11}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{11}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{13}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{13}{subsection.5.3}%
-\contentsline {section}{References}{17}{section*.2}%
-\contentsline {subsection}{\numberline {5.4}Appendix A}{18}{subsection.5.4}%
+\contentsline {section}{\numberline {5}Results}{10}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{10}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{12}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{12}{subsection.5.3}%
+\contentsline {section}{References}{14}{section*.2}%
+\contentsline {subsection}{\numberline {5.4}Appendix A}{19}{subsection.5.4}%
