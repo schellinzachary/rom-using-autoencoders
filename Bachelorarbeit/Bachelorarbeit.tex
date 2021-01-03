@@ -112,10 +112,19 @@ The given equations illustrate the movement of the kernel over a two dimensional
 \end{equation} 
 Here \(o\), \(i\), \(s\) and \(k\) are the output, input, stride and kernel size of one dimension respectively \cite{dumoulin2018guide}. Second are the so called channels, which allow convolutional layers to extract a different feature for every channel from the same input. For a two dimensional input like images this could be different features for the same location on the image, like edges and color in the RGB color space \cite{Goodfellow}. Adding strides and kernel to \cref{Eq. Discrete Cross Correlation} yields
 \begin{equation}
-	\mathsf{S}_{i,j,k} = \sum_{l,m,n}\left[\mathsf{I}_{l,(j-1)\times s+m,(k -1)\times s+n}\mathsf{K}_{i,l,m,n}\right]. \label{Eq. Cross correlation stride channel}
+	\mathsf{S}_{i,j,k} = c(\mathsf{K},\mathsf{I},s)_{i,j,k}\sum_{l,m,n}\left[\mathsf{I}_{l,(j-1)\times s+m,(k -1)\times s+n}\mathsf{K}_{i,l,m,n}\right]. \label{Eq. Cross correlation stride channel}
 \end{equation}
-The kernel \(\mathsf{K}\) is a four dimensional tensor with \(i\) indexing into the output channels of \(S\), \(l\) indexing into the input channels of \(I\), \(l\) and \(m\) and \(n\) indexing into the rows and colums. The input \(\mathsf{I}\) and output \(S\) are three dimensional tensors with \(j\) and \(k\) indexing into the rows and columns. Note that in \texttt{PyTorch} \cref{Eq. Cross correlation stride channel} is a so called valid cross correlation (valid convolution) \cite{bibid} meaning the kernel will only move over input units for which  all \(m\) and \(n\) are inside the rows and columns of the input. Zero padding the input can prevent the kernel from omitting corners in that case.
+The kernel \(\mathsf{K}\) is a four dimensional tensor with \(i\) indexing into the output channels of \(S\), \(l\) indexing into the input channels of \(I\), \(m\) and \(n\) indexing into the rows and colums. The input \(\mathsf{I}\) and output \(S\) are three dimensional tensors with \(j\) and \(k\) indexing into the rows and columns. Note that in \texttt{PyTorch} \cref{Eq. Cross correlation stride channel} is a so called valid cross correlation (valid convolution) \cite{bibid} meaning the kernel will only move over input units for which  all \(m\) and \(n\) are inside the rows and columns of the input. Zero padding the input can prevent the kernel from omitting corners in that case.
 \\
+For autoencoders the necessity to perform a transposition of the applied layers arises, which is straight forward for fully connected layers. Convolutional layers with strides greater than unity on the other hand  the transposition needs the calculation of the gradient w.r.t. the kernel as shown in \cref{labellist} \cite{Goodfellow}.
+\begin{align}
+	\mathsf{G}_{i,j,k} &= \frac{\partial}{\partial \mathsf{S}_{i,j,k}}J(\mathsf{S,K})\\
+	g(\mathsf{G,I,s})_{i,j,k,l} &= \frac{\partial}{\partial \mathsf{K}_{i,j,k,l}}J(\mathsf{I},\mathsf{K}) = \sum_{m,n} \mathsf{G}_{i,m,n}\mathsf{I}_{j,(m-1)\times s+k,(n-1)\times s+l}\\
+	h(\mathsf{K},\mathsf{G},s)_{i,j,k} &= \frac{\partial}{\partial \mathsf{I}_{i,j,k}}J(\mathsf{I},\mathsf{K}) = \sum_{\substack{l,m\\s.t\\(l-1)\times s+m=j}}\quad
+												  \sum_{\substack{n,p\\s.t\\(n-1)\times s+p=k}}
+												  \sum_q \mathsf{K}_{q,i,m,p}\mathsf{G}_{q,l,n} 
+\end{align}
+
 \noindent
 Forward-propagation is then referred to as the compositional evaluation of each layer. For the example in \cref{Eq. Composition} the outputs of each layer would then be:  \(f^1(\mathbf{x},\mathbf{\Theta}^1) = \mathbf{p}\), \(f^2(\mathbf{p},\mathbf{\Theta}^2) = \mathbf{q}\) and \(f^3(\mathbf{q},\mathbf{\Theta}^3) = \mathbf{\hat{y}}\).\\
 Subsequently the cost function \(J(\Theta)\), which will be discussed later on, can be computed. Afterwards back-propagation returns the gradients w.r.t. the layer parameters \(\Theta\) to finally compute updated parameters \(\mathbf{\Theta}\).  The name back-propagation refers to the use of the chain rule of calculus to obtain the gradients of each layer. Assuming again the example in \cref{Eq. Composition} back-propagation would be equations \cref{Eq. Backpropagation1} to \cref{Eq. Backpropagation3}:
