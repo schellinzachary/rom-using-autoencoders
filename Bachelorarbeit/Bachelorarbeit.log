@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.7)  3 JAN 2021 21:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.12.7)  5 JAN 2021 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -878,10 +878,22 @@ Package tocbibind Note: Using section or other style headings.
 \tikzscale@accuracy=\skip58
  (./Bachelorarbeit.aux
 
+LaTeX Warning: Label `Tab:First Guess' multiply defined.
+
+
+LaTeX Warning: Label `Tab:First Guess@cref' multiply defined.
+
+
 LaTeX Warning: Label `Tab:Batch' multiply defined.
 
 
 LaTeX Warning: Label `Tab:Batch@cref' multiply defined.
+
+
+LaTeX Warning: Label `Fig:layer_size' multiply defined.
+
+
+LaTeX Warning: Label `Fig:layer_size@cref' multiply defined.
 
 )
 \openout1 = `Bachelorarbeit.aux'.
@@ -1019,6 +1031,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--157
 
  []
 
+
+LaTeX Warning: Reference `Tab: First Guess' on page 1 undefined on input line 1
+76.
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 187.
+
 [9] [10] (./Charts/ROM.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
@@ -1037,7 +1056,7 @@ Package pgf Warning: Snakes have been superseded by decorations. Please use the
 zlibrarydecorations.shapes.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.shapes.code.tex))))
-Overfull \hbox (2.57764pt too wide) in paragraph at lines 73--240
+Overfull \hbox (2.57764pt too wide) in paragraph at lines 73--261
  [][] 
  []
 
@@ -1047,7 +1066,7 @@ Overfull \hbox (2.57764pt too wide) in paragraph at lines 73--240
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package pdftex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on
- input line 267.
+ input line 288.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
 <Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png, i
 d=319, 984.3174pt x 456.7464pt>
@@ -1056,95 +1075,123 @@ ng Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
 g>
 Package pdftex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/toge
-ther/all_together.png  used on input line 273.
+ther/all_together.png  used on input line 294.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
- [12 <./Figures/Cumultative_Singular_Values_kn001.png> <./Figures/02_12_20/kn0p
-00001Conservative_Quantities/together/all_together.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 279--280
+ [12 <./Figures/Cumultative_Singular_Values_kn001.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 300--301
 
  []
 
 
-LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 284.
+LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 305.
 
 
 LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input
- line 284.
+ line 305.
 
 <Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.pn
-g, id=333, 984.3174pt x 456.7464pt>
+g, id=332, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Co
 de.png Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
 e.png>
 Package pdftex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/code
-/Consrvative_Rho_Code.png  used on input line 286.
+/Consrvative_Rho_Code.png  used on input line 307.
 (pdftex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Code.png, id=334, 987.2082pt x 464.6961pt>
+<Figures/Code.png, id=333, 987.2082pt x 464.6961pt>
 File: Figures/Code.png Graphic file (type png)
 <use Figures/Code.png>
-Package pdftex.def Info: Figures/Code.png  used on input line 289.
+Package pdftex.def Info: Figures/Code.png  used on input line 310.
 (pdftex.def)             Requested size: 452.9679pt x 213.21681pt.
 (./Figures/Results/Macrooriginal.tex)
-Overfull \hbox (40.46834pt too wide) in paragraph at lines 72--295
+Overfull \hbox (40.46834pt too wide) in paragraph at lines 72--316
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--295
+Underfull \hbox (badness 10000) in paragraph at lines 72--316
 
  []
 
 (./Figures/Results/Characteristics.tex) (./Figures/Results/MacroCode.tex)
 
-LaTeX Warning: Float too large for page by 16.80144pt on input line 304.
+LaTeX Warning: Float too large for page by 16.80144pt on input line 325.
 
 (./Figures/Results/New_Points_Macro.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1281--307
+Underfull \hbox (badness 10000) in paragraph at lines 1281--328
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1281--307
+Underfull \hbox (badness 10000) in paragraph at lines 1281--328
 
  []
 
-[13 <./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_C
-ode.png> <./Figures/Code.png>] [14 <./Figures/Results/Macrooriginal-000.png> <.
-/Figures/Results/Macrooriginal-001.png> <./Figures/Results/Macrooriginal-002.pn
-g>] [15] [16] [17] (./Bachelorarbeit.bbl) [18] (./Figures/Layer_Sizes/0.tex
+[13 <./Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.
+png> <./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_
+Code.png>] [14 <./Figures/Code.png>] [15 <./Figures/Results/Macrooriginal-000.p
+ng> <./Figures/Results/Macrooriginal-001.png> <./Figures/Results/Macrooriginal-
+002.png>] [16] [17] (./Bachelorarbeit.bbl) [18]
+(./Figures/Layer_Sizes/Hydro/0.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+) (./Figures/Layer_Sizes/Hydro/1.tex
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
 )
-(./Figures/Layer_Sizes/1.tex
+(./Figures/Layer_Sizes/Hydro/2.tex
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
-) (./Figures/Layer_Sizes/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
-de=log unsupported (yet).
-)
-(./Figures/Layer_Sizes/3.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
-de=log unsupported (yet).
-) (./Figures/Layer_Sizes/4.tex
+) (./Figures/Layer_Sizes/Hydro/3.tex
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
 )
-Overfull \hbox (15.98544pt too wide) in paragraph at lines 318--323
+(./Figures/Layer_Sizes/Hydro/4.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+)
+Overfull \hbox (15.98544pt too wide) in paragraph at lines 339--344
 [][] []
  []
 
 
-Overfull \hbox (15.98544pt too wide) in paragraph at lines 318--323
+Overfull \hbox (15.98544pt too wide) in paragraph at lines 339--344
 [] []
  []
 
-[19] [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 327.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 327.
+(./Figures/Layer_Sizes/Rare/0.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+) (./Figures/Layer_Sizes/Rare/1.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+)
+(./Figures/Layer_Sizes/Rare/2.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+) (./Figures/Layer_Sizes/Rare/3.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+)
+(./Figures/Layer_Sizes/Rare/4.tex
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+)
+Overfull \hbox (15.98544pt too wide) in paragraph at lines 350--355
+[][] []
+ []
+
+
+Overfull \hbox (15.98544pt too wide) in paragraph at lines 350--355
+[] []
+ []
+
+[19] [20] [21]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 359.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 359.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 327.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 327.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 359.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 359.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: 7A5611A9950EBA58489220234FBCC48D;1463.
 
@@ -1154,13 +1201,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 327.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 359.
  ) 
 Here is how much of TeX's memory you used:
- 33635 strings out of 481239
- 836149 string characters out of 5920377
- 2556469 words of memory out of 5000000
- 48169 multiletter control sequences out of 15000+600000
+ 33722 strings out of 481239
+ 838052 string characters out of 5920377
+ 3100925 words of memory out of 5000000
+ 48242 multiletter control sequences out of 15000+600000
  543145 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,21n,136p,2386b,2964s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1177,10 +1224,10 @@ cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (20 pages, 649299 bytes).
+Output written on Bachelorarbeit.pdf (21 pages, 820675 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 401 compressed objects within 5 object streams
- 106 named destinations out of 1000 (max. 500000)
+ 471 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
  255 words of extra memory for PDF output out of 10000 (max. 10000000)
 

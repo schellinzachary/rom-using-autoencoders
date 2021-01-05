@@ -173,11 +173,32 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 \end{equation}
 \subsection{Autoencoders}
 Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{number of layers}, \textit{size of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section.\\
-Originally the number of layers is determined, as they set the representational capacity of the model hence initiate over- and underfitting at an early stage. \Cref{Fig:layer_size} in \cref{AppendixA} shows the training and validation error calculated by:
-\begin{equation}
-	Error = MSE / N_{Batches}
-\end{equation}
-
+To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c| }
+		\hline
+		Mini batch size & Intrinsic dimensions& Epochs & Learing rate & activation code/rest\\ [.5ex]
+		\hline
+		16 & 3 & 2000& 1e-4 & Tanh/leakyreLU\\ \hline
+	\end{tabular}
+	\caption{Initial hyperparameter selection}
+	\label{Tab:First Guess}
+\end{table}
+Originally the number of layers is determined, as they set a big part of the representational capacity of the model hence can initiate over- and underfitting at an early stage. \Cref{Fig:layer_size} in \cref{AppendixA} shows the training and validation error for five designs shown in \cref{labellist}.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c| }
+		\hline
+		Number of layers & Reduction per layer \\ [.5ex]
+		\hline
+		10 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 5 \(\rightarrow\) 3\\ \hline
+		8 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 3\\ \hline
+		6 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 3\\ \hline
+		4 & 40 \(\rightarrow\) 40 \(\rightarrow\) 3\\ \hline
+		2 & 40 \(\rightarrow\) 3\\ \hline
+	\end{tabular}
+	\caption{Initial hyperparameter selection}
+	\label{Tab:First Guess}
+\end{table}
 \subsection{Architectures}
 \subsubsection{Fully Connected}\label{Fully Connected}
 The autoencoder architecture 1.0 is a composition of five fully connected layers, \cref{f_AE}. The subscript F denotes fully connected layers opposed to the subscript C which denotes convolutional layers in \cref{Convolutional}.
@@ -315,12 +336,23 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 \subsection{Appendix A}\label{AppendixA}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Layer_Sizes/0.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/1.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/2.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/3.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/4.tex}}
-		\caption{Analysis of layer size for five different architectures, showing the error for training and testing.}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/0.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/1.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/3.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/4.tex}}
+		\caption{Analysis of layer size for five different architectures, showing the error for training and testing on the data in the hydrodynamic regime.}
+		\label{Fig:layer_size}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/0.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/1.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/3.tex}}
+		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/4.tex}}
+		\caption{Analysis of layer size for five different architectures, showing the error for training and testingon the data on the rarefied regime.}
 		\label{Fig:layer_size}
 	\end{figure}
 \end{center}

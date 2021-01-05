@@ -24,7 +24,7 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 for g in range(5):
 
     class params():
-        N_EPOCHS = 2000
+        N_EPOCHS = 2
         BATCH_SIZE = 16
         INPUT_DIM = 40
         H_SIZES = [[40,20,10,5],[40,20,10],[40,20],[40],[]]
@@ -35,13 +35,12 @@ for g in range(5):
 
     class data():
         #load data
-        f = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
         val_in = f[4000:5999]
         train_iterator = DataLoader(train_in, batch_size = params.BATCH_SIZE)
-        print(len(train_iterator))
         test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 
     class Encoder(nn.Module):
@@ -173,10 +172,10 @@ for g in range(5):
 
         progressBar(epoch,params.N_EPOCHS)
     #save the models state dictionary for inference
-    torch.save({
-        'epoch': epoch,
-        'model_state_dict':model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict(),
-        'train_losses':train_losses,
-        'test_losses': test_losses
-        },'Results/LS_3,5.pt')
+    # torch.save({
+    #     'epoch': epoch,
+    #     'model_state_dict':model.state_dict(),
+    #     'optimizer_state_dict': optimizer.state_dict(),
+    #     'train_losses':train_losses,
+    #     'test_losses': test_losses
+    #     },'Results/LS_3,5.pt')
