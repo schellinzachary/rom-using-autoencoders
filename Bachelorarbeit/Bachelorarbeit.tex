@@ -137,10 +137,12 @@ Subsequently the cost function \(J(\Theta)\), which will be discussed later on, 
 \label{Eq. Backpropagation1}
 \end{align}
 While the term back-propagation is solely used for the method to compute the gradients for each layer in a backward fashion, meaning form the last layer to the first, the update of the parameters is done in an optimization step.
+-L2-error as perfomance metrics
 \section{Reduced Order Algorithms}
-\subsection{Data Sampling}
+\subsection{Data Sampling}\label{Sec: Data Sampling}
 DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
-For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{input} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{5000x40}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input.
+For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{input} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{5000x40}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input. In the following hydrodynamic regime will reffer for the input data for knudsen number 10e-4 and rarefied regime will refer to the input data for knudsen numbers 10e2.
+- insert unshuffled set pls
 \begin{multicols}{2}
 	\begin{equation}
 	S_{AE} = \begin{bmatrix}
@@ -172,7 +174,8 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 \label{Eg:eckard-young}
 \end{equation}
 \subsection{Autoencoders}
-Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{number of layers}, \textit{size of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section.\\
+Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{number of layers}, \textit{size of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
+\subsubsection{Fully Connected}\label{Fully Connected}
 To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c| }
@@ -184,7 +187,7 @@ To start with a working model an educated guess is made about the initial design
 	\caption{Initial hyperparameter selection}
 	\label{Tab:First Guess}
 \end{table}
-Originally the number of layers is determined, as they set a big part of the representational capacity of the model hence can initiate over- and underfitting at an early stage. \Cref{Fig:layer_size} in \cref{AppendixA} shows the training and validation error for five designs shown in \cref{labellist}.
+Originally the number of layers is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c| }
 		\hline
@@ -197,20 +200,25 @@ Originally the number of layers is determined, as they set a big part of the rep
 		2 & 40 \(\rightarrow\) 3\\ \hline
 	\end{tabular}
 	\caption{Initial hyperparameter selection}
-	\label{Tab:First Guess}
+	\label{Tab:Layer Size}
 \end{table}
-\subsection{Architectures}
-\subsubsection{Fully Connected}\label{Fully Connected}
-The autoencoder architecture 1.0 is a composition of five fully connected layers, \cref{f_AE}. The subscript F denotes fully connected layers opposed to the subscript C which denotes convolutional layers in \cref{Convolutional}.
-\begin{equation}
-	y_p = f_{F}^5(f_{F}^4(f_{F}^3(f_{F}^2(f_{F}^1(y_o)))))
-	\label{f_AE}
-\end{equation}
-Two input/output layers of size $n_{input}=40$, two hidden layers of size $n_{hidden} = 20$ and one "bottleneck" layer of size $n_{code} = 3$. The trainingloss is the mean-squared error (MSE) between the input and output of the autoencoder, where $y_0$ is the original inpput vector and $y_p$ is the reconstructed output vector \cref{MSE}.
-\begin{equation}
-	MSE = \frac{(y_p - y_o)^2}{n_{batch}}
-	\label{MSE}
-\end{equation}
+For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless differences between train and test loss solely give assumptions to over-/underfitting. In Addition four layers and lower show a stable training in relation to the rest.\\
+The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
+In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
+Subsequently the activations in the layers will be studied. First, five activations which will be applied to all the four layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. results can be onserved in \cref{Tab:Activations}.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
+		\hline
+		Error & 0.0028 & 0.0019 & 0.0036 & 0.002 & 0.0039\\ \hline
+		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
+		\hline
+		Error & 0.0019 & 0.0017 &  &  & \\ \hline
+	\end{tabular}
+	\caption{Initial hyperparameter selection}
+	\label{Tab:Activations}
+\end{table}
 \subsubsection{Convolutional}\label{Convolutional}
 The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
 \begin{equation}
@@ -342,7 +350,7 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/3.tex}}
 		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/4.tex}}
 		\caption{Analysis of layer size for five different architectures, showing the error for training and testing on the data in the hydrodynamic regime.}
-		\label{Fig:layer_size}
+		\label{Fig:Layer Size Hydro}
 	\end{figure}
 \end{center}
 \begin{center}
@@ -353,7 +361,7 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/3.tex}}
 		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/4.tex}}
 		\caption{Analysis of layer size for five different architectures, showing the error for training and testingon the data on the rarefied regime.}
-		\label{Fig:layer_size}
+		\label{Fig:Layer Size Rare}
 	\end{figure}
 \end{center}
 \end{document}

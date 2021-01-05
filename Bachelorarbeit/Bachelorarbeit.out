@@ -10,14 +10,13 @@
 \BOOKMARK [2][-]{subsection.4.1}{Data Sampling}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.2}{POD}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.3}{Autoencoders}{section.4}% 12
-\BOOKMARK [2][-]{subsection.4.4}{Architectures}{section.4}% 13
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Fully Connected}{subsection.4.4}% 14
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Convolutional}{subsection.4.4}% 15
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Training}{subsection.4.4}% 16
-\BOOKMARK [2][-]{subsection.4.5}{Reduced Order Model}{section.4}% 17
-\BOOKMARK [1][-]{section.5}{Results}{}% 18
-\BOOKMARK [2][-]{subsection.5.1}{Hydrodynamic Regime}{section.5}% 19
-\BOOKMARK [2][-]{subsection.5.2}{Rarefied Regime}{section.5}% 20
-\BOOKMARK [2][-]{subsection.5.3}{Discussion and Outlook}{section.5}% 21
-\BOOKMARK [1][-]{section*.2}{References}{}% 22
-\BOOKMARK [2][-]{subsection.5.4}{Appendix A}{section*.2}% 23
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Fully Connected}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Convolutional}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.3}{Training}{subsection.4.3}% 15
+\BOOKMARK [2][-]{subsection.4.4}{Reduced Order Model}{section.4}% 16
+\BOOKMARK [1][-]{section.5}{Results}{}% 17
+\BOOKMARK [2][-]{subsection.5.1}{Hydrodynamic Regime}{section.5}% 18
+\BOOKMARK [2][-]{subsection.5.2}{Rarefied Regime}{section.5}% 19
+\BOOKMARK [2][-]{subsection.5.3}{Discussion and Outlook}{section.5}% 20
+\BOOKMARK [1][-]{section*.2}{References}{}% 21
+\BOOKMARK [2][-]{subsection.5.4}{Appendix A}{section*.2}% 22
