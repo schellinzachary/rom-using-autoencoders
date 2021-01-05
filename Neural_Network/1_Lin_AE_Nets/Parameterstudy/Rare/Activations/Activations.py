@@ -47,7 +47,7 @@ class Encoder(nn.Module):
         self.add_module('layer_1', torch.nn.Linear(in_features=params.INPUT_DIM,out_features=params.H_SIZES))
         self.add_module('activ_1', nn.LeakyReLU())
         self.add_module('layer_c',nn.Linear(in_features=params.H_SIZES, out_features=params.LATENT_DIM))
-        self.add_module('activ_c', nn.LeakyReLU())
+        self.add_module('activ_c', nn.Tanh())
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
@@ -168,4 +168,4 @@ torch.save({
     'optimizer_state_dict': optimizer.state_dict(),
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'Results/LeakyReLU.pt')
+    },'Results/LeakyReLU_Tanh.pt')

@@ -205,7 +205,8 @@ Originally the number of layers is determined, as they set a consequential part 
 For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless differences between train and test loss solely give assumptions to over-/underfitting. In Addition four layers and lower show a stable training in relation to the rest.\\
 The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
 In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
-Subsequently the activations in the layers will be studied. First, five activations which will be applied to all the four layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. results can be onserved in \cref{Tab:Activations}.
+In the following the width of the layers will be analyzed, by varying two parameters. The hidden dimension and the intrinsic dimension. There are two available layers for the encoder(the architecture of the decoder mirrors that of the encoder) from which the input layer shrinks the input dimension to the hidden dimension and subsequently the bottleneck layer shrinks the hidden dimension to the intrinsic dimension.
+Subsequently the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
 		\hline
@@ -214,11 +215,25 @@ Subsequently the activations in the layers will be studied. First, five activati
 		Error & 0.0028 & 0.0019 & 0.0036 & 0.002 & 0.0039\\ \hline
 		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
 		\hline
-		Error & 0.0019 & 0.0017 &  &  & \\ \hline
+		Error & 0.0019 & 0.0017 & 0.0019 &  & \\ \hline
 	\end{tabular}
-	\caption{Initial hyperparameter selection}
+	\caption{L2-Error different activation functions and combinations for the hydrodynamic regime.}
 	\label{Tab:Activations}
 \end{table}
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
+		\hline
+		Error & 0.0328 & 0.0178 & 0.0125 & 0.0134 & 0.0183\\ \hline
+		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
+		\hline
+		Error & 0.0019 & 0.0017 &  &  & \\ \hline
+	\end{tabular}
+	\caption{L2-Error different activation functions and combinations for the rarefied regime.}
+	\label{Tab:Activations}
+\end{table}
+ELU and SiLU stand out with the lowest loss.  
 \subsubsection{Convolutional}\label{Convolutional}
 The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
 \begin{equation}

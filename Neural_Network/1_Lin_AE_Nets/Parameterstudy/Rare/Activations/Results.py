@@ -26,7 +26,7 @@ class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
         self.add_module('layer_1', torch.nn.Linear(in_features=params.INPUT_DIM,out_features=params.H_SIZES))
-        self.add_module('activ_1', nn.Tanh())
+        self.add_module('activ_1', nn.LeakyReLU())
         self.add_module('layer_c',nn.Linear(in_features=params.H_SIZES, out_features=params.LATENT_DIM))
         self.add_module('activ_c', nn.Tanh())
     def forward(self, x):
@@ -40,7 +40,7 @@ class Decoder(nn.Module):
     def __init__(self):
         super(Decoder, self).__init__()
         self.add_module('layer_c',nn.Linear(in_features=params.LATENT_DIM, out_features=params.H_SIZES))
-        self.add_module('activ_c', nn.Tanh())
+        self.add_module('activ_c', nn.LeakyReLU())
         self.add_module('layer_4', nn.Linear(in_features=params.H_SIZES,out_features=params.INPUT_DIM))
     def forward(self, x):
         for _, method in self.named_children():
@@ -69,7 +69,7 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/TanH.pt')
+checkpoint = torch.load('Results/LeakyReLU_Tanh.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']

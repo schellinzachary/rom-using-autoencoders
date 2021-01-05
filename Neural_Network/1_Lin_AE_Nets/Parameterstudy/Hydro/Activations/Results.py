@@ -28,7 +28,7 @@ class Encoder(nn.Module):
         self.add_module('layer_1', torch.nn.Linear(in_features=params.INPUT_DIM,out_features=params.H_SIZES))
         self.add_module('activ_1', nn.ELU())
         self.add_module('layer_c',nn.Linear(in_features=params.H_SIZES, out_features=params.LATENT_DIM))
-        self.add_module('activ_c', nn.Tanh())
+        self.add_module('activ_c', nn.SiLU())
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
@@ -69,7 +69,7 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/ELU_Tanh.pt')
+checkpoint = torch.load('Results/ELU_SiLU.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
