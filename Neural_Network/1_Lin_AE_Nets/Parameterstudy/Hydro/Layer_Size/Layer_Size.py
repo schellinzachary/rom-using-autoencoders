@@ -22,7 +22,7 @@ def progressBar(value, endvalue, bar_length=20):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-for i in [10,20,30,50]:
+for i in [10]:
 
     class params():
         N_EPOCHS = 2000

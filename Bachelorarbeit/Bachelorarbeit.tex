@@ -40,7 +40,7 @@ Bernard et al. use POD-Galerkin with an additional population of their snapshot 
 \subsection{Objective of this thesis}
 Due to the non-linearity of transport problems in particular shock fronts, the construction of a robust ROM for those cases poses several challenges. Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......
 \subsection{Thesis outline}
-\section{The BGK Equation}
+\section{The BGK Equation}\label{Sec: BGK}
 The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen is a measure for the rarefaction of gases. In \cref{knudsen} $\lambda$ represents the mean free path and L the characteristic length \cite{Bernard} of a particle. The mean free path  describes the average distance a particle may travel between successive impacts [\textbf{WIKI}]. For idealized gases the mean free path can be calculated via \cref{lambda}. In \cref{lambda} $k_b$ is the Boltzman constant, p is the total pressure, T is the thermodynamic temperature and d is the hard shell diameter [\textbf{WIKI}]. 
 \begin{multicols}{2}
 	\begin{equation}
@@ -79,6 +79,7 @@ For many kinetic gas problems it is sufficient to replace the complexity of the 
 \begin{figure}[!htbp]
 	\includegraphics[width=\textwidth]{Figures/Macroscopic_Quantities_Original.png}
 \end{figure}
+- intrinsic code variables for hydro an rare add pls
 \section{Deep learning}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 
 The term deep learning situated around the much broader field of artificial intelligence stems from the use of deep feed forward networks also called multi layer perceptrons (MLP) or feed forward neural networks. Deep recurrent neural networks (RNN) are also used in this field but won't be covered in this thesis. In contrast to RNNs, information flows forward through these networks, which explains the name feed foward. In the following I will use the abbreviation MLP when talking about the aforementioned algorithm. Network refers to the typical composition of many different functions.\\The task of any MLP is to approximate a function \(f^\star(\mathbf{x};\mathbf{\Theta}) \approx f(\mathbf{x})\) through learning the values of the parameters \(\mathbf{\Theta}\). As mentioned before  \(f^\star\) is a composition of functions eg. \cref{Eq. Composition}.
@@ -107,7 +108,7 @@ One drawback in implementing the discrete convolution \cref{Eq. Discrete Convolu
 	\label{Eq. Discrete Cross Correlation}
 \end{align}
 The given equations illustrate the movement of the kernel over a two dimensional input, but leaving out two basic accompanying designs. First is the so called stride of the kernel, which results in a increased down sampling with increased stride size. Considering strides of the kernel along one dimension of the input results in a shrinkage of that dimension by 
-\begin{equation}
+\begin{equation}\label{Eq:Downsampling}
 	o = \frac{i -k}{s} + 1.
 \end{equation} 
 Here \(o\), \(i\), \(s\) and \(k\) are the output, input, stride and kernel size of one dimension respectively \cite{dumoulin2018guide}. Second are the so called channels, which allow convolutional layers to extract a different feature for every channel from the same input. For a two dimensional input like images this could be different features for the same location on the image, like edges and color in the RGB color space \cite{Goodfellow}. Adding strides and kernel to \cref{Eq. Discrete Cross Correlation} yields
@@ -116,15 +117,12 @@ Here \(o\), \(i\), \(s\) and \(k\) are the output, input, stride and kernel size
 \end{equation}
 The kernel \(\mathsf{K}\) is a four dimensional tensor with \(i\) indexing into the output channels of \(S\), \(l\) indexing into the input channels of \(I\), \(m\) and \(n\) indexing into the rows and colums. The input \(\mathsf{I}\) and output \(S\) are three dimensional tensors with \(j\) and \(k\) indexing into the rows and columns. Note that in \texttt{PyTorch} \cref{Eq. Cross correlation stride channel} is a so called valid cross correlation (valid convolution) \cite{bibid} meaning the kernel will only move over input units for which  all \(m\) and \(n\) are inside the rows and columns of the input. Zero padding the input can prevent the kernel from omitting corners in that case.
 \\
-For autoencoders the necessity to perform a transposition of the applied layers arises, which is straight forward for fully connected layers. Convolutional layers with strides greater than unity on the other hand  the transposition needs the calculation of the gradient w.r.t. the kernel as shown in \cref{labellist} \cite{Goodfellow}.
-\begin{align}
-	\mathsf{G}_{i,j,k} &= \frac{\partial}{\partial \mathsf{S}_{i,j,k}}J(\mathsf{S,K})\\
-	g(\mathsf{G,I,s})_{i,j,k,l} &= \frac{\partial}{\partial \mathsf{K}_{i,j,k,l}}J(\mathsf{I},\mathsf{K}) = \sum_{m,n} \mathsf{G}_{i,m,n}\mathsf{I}_{j,(m-1)\times s+k,(n-1)\times s+l}\\
-	h(\mathsf{K},\mathsf{G},s)_{i,j,k} &= \frac{\partial}{\partial \mathsf{I}_{i,j,k}}J(\mathsf{I},\mathsf{K}) = \sum_{\substack{l,m\\s.t\\(l-1)\times s+m=j}}\quad
+For autoencoders the necessity to perform a transposition of the applied layers arises, which is straight forward for fully connected layers. Convolutional layers with strides greater than unity on the other hand  the transposition needs the kernel to be padded with zeros to realize an upsampling of the input data \cite{dumoulin2018guide}. Note that the padding of the kernel with zeros is only used to illustrate how the upsampling works. In \cref{Eq: Transposed convolution} taken from \cite{Goodfellow} multiplications with zero are omitted. The size of one dimension during upsampling can be calculated with the transposition of \cref{Eq:Downsampling}.
+\begin{equation}\label{Eq: Transposed convolution}
+	t(\mathsf{K},\mathsf{H},s)_{i,j,k} = \sum_{\substack{l,m\\s.t\\(l-1)\times s+m=j}}
 												  \sum_{\substack{n,p\\s.t\\(n-1)\times s+p=k}}
-												  \sum_q \mathsf{K}_{q,i,m,p}\mathsf{G}_{q,l,n} 
-\end{align}
-
+												  \sum_q \mathsf{K}_{q,i,m,p}\mathsf{H}_{q,l,n} 
+\end{equation}
 \noindent
 Forward-propagation is then referred to as the compositional evaluation of each layer. For the example in \cref{Eq. Composition} the outputs of each layer would then be:  \(f^1(\mathbf{x},\mathbf{\Theta}^1) = \mathbf{p}\), \(f^2(\mathbf{p},\mathbf{\Theta}^2) = \mathbf{q}\) and \(f^3(\mathbf{q},\mathbf{\Theta}^3) = \mathbf{\hat{y}}\).\\
 Subsequently the cost function \(J(\Theta)\), which will be discussed later on, can be computed. Afterwards back-propagation returns the gradients w.r.t. the layer parameters \(\Theta\) to finally compute updated parameters \(\mathbf{\Theta}\).  The name back-propagation refers to the use of the chain rule of calculus to obtain the gradients of each layer. Assuming again the example in \cref{Eq. Composition} back-propagation would be equations \cref{Eq. Backpropagation1} to \cref{Eq. Backpropagation3}:
@@ -174,8 +172,8 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 \label{Eg:eckard-young}
 \end{equation}
 \subsection{Autoencoders}
-Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{number of layers}, \textit{size of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
-\subsubsection{Fully Connected}\label{Fully Connected}
+Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
+\subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
 To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c| }
@@ -202,11 +200,33 @@ Originally the number of layers is determined, as they set a consequential part 
 	\caption{Initial hyperparameter selection}
 	\label{Tab:Layer Size}
 \end{table}
-For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless differences between train and test loss solely give assumptions to over-/underfitting. In Addition four layers and lower show a stable training in relation to the rest.\\
+For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
 The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
 In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
 In the following the width of the layers will be analyzed, by varying two parameters. The hidden dimension and the intrinsic dimension. There are two available layers for the encoder(the architecture of the decoder mirrors that of the encoder) from which the input layer shrinks the input dimension to the hidden dimension and subsequently the bottleneck layer shrinks the hidden dimension to the intrinsic dimension.
-Subsequently the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
+For the hydrodynamic regime the size of the intrinsic dimension is set, as described in \cref{Sec: BGK} to three. Therefore only the hidden dimension has to be found. The results of five experiments are shown in \cref{Tab:Hidden Units Hydro}, setting the size to 40 hidden units.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Hidden units & 10 & 20 & 30 & 40 & 50 \\ [.5ex]
+		\hline
+		Error & 0.0054 & 0.0027 & 0.0036 & 0.0017 & 0.0032\\ \hline
+	\end{tabular}
+	\caption{L2-Error for different number of hidden units for the hydrodynamic regime.}
+	\label{Tab:Hidden Units Hydro}
+\end{table}\\
+The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the the number of intrinsic variables from two to ten are performed. 
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+		\hline
+		Intrinsic variables & 2 & 3 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
+		\hline
+		Error & 0.0059 & 0.0049 & 0.0026 & 0.0027 & 0.0017 & 0.0022 & 0.0017 & 0.0015\\ \hline
+	\end{tabular}
+	\caption{L2-Error for different numbers of intrinsic variables.}
+	\label{Tab:Intrinsic units}
+\end{table}\\
+Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
 		\hline
@@ -234,7 +254,7 @@ Subsequently the activations in the layers will be studied. First five activatio
 	\label{Tab:Activations}
 \end{table}
 ELU and SiLU stand out with the lowest loss.  
-\subsubsection{Convolutional}\label{Convolutional}
+\subsubsection{Hyperparameters for the Convolutional Autoencoder}\label{Convolutional}
 The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
 \begin{equation}
 y_p = f_{C}^9(f_{C}^8(f_{C}^7(f_{F}^6(f_{F}^5(f_{F}^4(f_{C}^3(f_{C}^2(f_{C}^1(y_0)))))))))

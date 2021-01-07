@@ -22,19 +22,19 @@ def progressBar(value, endvalue, bar_length=20):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-for g in [5,6]:
+batch_s = []
+for i in [2,4,8,16,32]:
 
     class params():
-        N_EPOCHS = 4000
-        BATCH_SIZE = 16
+        N_EPOCHS = 5000
+        BATCH_SIZE = i
         INPUT_DIM = 40
         H_SIZES = 40
-        LATENT_DIM = g
+        LATENT_DIM = 3
         lr = 1e-4
-
     class data():
         #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D.npy')
+        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
@@ -141,10 +141,12 @@ for g in [5,6]:
     val_losses = []
 
     #checkpoint Load
-    # checkpoint = torch.load('Results/intrinsic_%s.pt'%g)
+    # checkpoint = torch.load('Lin_AE_STATE_DICT_0_9_L5_substr50_test.pt')
     # model.load_state_dict(checkpoint['model_state_dict'])
-    # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+    # #optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
     # epoch_o = checkpoint['epoch']
+    # train_loss = checkpoint['train_loss']
+    # test_loss = checkpoint['test_loss']
     # train_losses = checkpoint['train_losses']
     # test_losses = checkpoint['test_losses']
 
@@ -166,6 +168,19 @@ for g in [5,6]:
         'model_state_dict':model.state_dict(),
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
-        'test_losses': test_losses
-        },'Results/intrinsic_%s_2.pt'%g)
+        'test_losses': test_losses,
+        'batch_size': params.BATCH_SIZE,
+        'learning_rate': params.lr
+        },'Results/%s.pt'%i)
 
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = tensor(f, dtype=torch.float).to(device)
+    rec = model(f)
+    l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+    listing.append(l2_error.detach().numpy())
+    batch_s.append(params.BATCH_SIZE)
+
+
+a = np.array(batch_s)
+
+np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Batch Size')

@@ -12,13 +12,12 @@ class params():
     BATCH_SIZE = 16
     INPUT_DIM = 40
     H_SIZES = 40
-    LATENT_DIM = 3
-
+    LATENT_DIM = 10
 
 
 class data():
     #load data
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
     f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):
@@ -68,7 +67,7 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/10.pt')
+checkpoint = torch.load('Results/intrinsic_10_2.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']

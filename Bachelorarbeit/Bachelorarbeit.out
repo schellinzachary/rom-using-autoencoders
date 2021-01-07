@@ -10,8 +10,8 @@
 \BOOKMARK [2][-]{subsection.4.1}{Data Sampling}{section.4}% 10
 \BOOKMARK [2][-]{subsection.4.2}{POD}{section.4}% 11
 \BOOKMARK [2][-]{subsection.4.3}{Autoencoders}{section.4}% 12
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Fully Connected}{subsection.4.3}% 13
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Convolutional}{subsection.4.3}% 14
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Hyperparameters for the Fully Connected Autoencoder}{subsection.4.3}% 13
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Hyperparameters for the Convolutional Autoencoder}{subsection.4.3}% 14
 \BOOKMARK [3][-]{subsubsection.4.3.3}{Training}{subsection.4.3}% 15
 \BOOKMARK [2][-]{subsection.4.4}{Reduced Order Model}{section.4}% 16
 \BOOKMARK [1][-]{section.5}{Results}{}% 17
