@@ -1,7 +1,7 @@
 This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: Bachelorarbeit.aux
-White space in argument---line 76 of file Bachelorarbeit.aux
+White space in argument---line 78 of file Bachelorarbeit.aux
  : \citation{Pytorch
  :                   website}
 I'm skipping whatever remains of this command
@@ -20,36 +20,37 @@ Warning--empty journal in Rifai2011
 Warning--can't use both author and editor fields in Rifai_2011a
 Warning--empty journal in rifai2012generative
 Warning--empty journal in dumoulin2018guide
-You've used 14 entries,
+Warning--empty journal in CFD1
+You've used 15 entries,
             1791 wiz_defined-function locations,
-            525 strings with 5586 characters,
-and the built_in function-call counts, 2409 in all, are:
-= -- 177
-> -- 143
+            529 strings with 5621 characters,
+and the built_in function-call counts, 2537 in all, are:
+= -- 187
+> -- 147
 < -- 0
-+ -- 53
-- -- 39
-* -- 127
-:= -- 421
-add.period$ -- 43
-call.type$ -- 14
-change.case$ -- 9
++ -- 55
+- -- 40
+* -- 130
+:= -- 444
+add.period$ -- 46
+call.type$ -- 15
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 123
-empty$ -- 232
-format.name$ -- 39
-if$ -- 516
+cite$ -- 27
+duplicate$ -- 131
+empty$ -- 246
+format.name$ -- 40
+if$ -- 543
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 19
-newline$ -- 74
-num.names$ -- 14
-pop$ -- 74
+int.to.str$ -- 15
+missing$ -- 20
+newline$ -- 79
+num.names$ -- 15
+pop$ -- 79
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 40
+skip$ -- 43
 stack$ -- 0
 substring$ -- 25
 swap$ -- 7
@@ -57,8 +58,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 11
-while$ -- 16
-width$ -- 16
-write$ -- 137
+warning$ -- 12
+while$ -- 17
+width$ -- 17
+write$ -- 146
 (There was 1 error message)

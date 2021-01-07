@@ -22,7 +22,7 @@ def progressBar(value, endvalue, bar_length=20):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-for g in [5,6]:
+for g in [2,3,4]:
 
     class params():
         N_EPOCHS = 4000
@@ -167,5 +167,5 @@ for g in [5,6]:
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/intrinsic_%s_2.pt'%g)
+        },'Results/intrinsic_%s.pt'%g)
 

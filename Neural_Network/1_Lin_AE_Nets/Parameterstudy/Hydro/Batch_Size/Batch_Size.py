@@ -21,9 +21,11 @@ def progressBar(value, endvalue, bar_length=20):
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(device)
 
 batch_s = []
-for i in [2,4,8,16,32]:
+listing = []
+for i in [4,8,16,32]:
 
     class params():
         N_EPOCHS = 5000

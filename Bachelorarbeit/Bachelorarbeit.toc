@@ -7,16 +7,16 @@
 \contentsline {subsection}{\numberline {2.1}Macroscopic features of Hydrodynamic and Rarefied Gas Flows in the SOD-Shock Tube}{5}{subsection.2.1}%
 \contentsline {section}{\numberline {3}Deep learning}{5}{section.3}%
 \contentsline {section}{\numberline {4}Reduced Order Algorithms}{8}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Data Sampling}{8}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}POD}{9}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Autoencoders}{9}{subsection.4.3}%
-\contentsline {subsubsection}{\numberline {4.3.1}Hyperparameters for the Fully Connected Autoencoder}{9}{subsubsection.4.3.1}%
-\contentsline {subsubsection}{\numberline {4.3.2}Hyperparameters for the Convolutional Autoencoder}{11}{subsubsection.4.3.2}%
-\contentsline {subsubsection}{\numberline {4.3.3}Training}{11}{subsubsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.4}Reduced Order Model}{11}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.1}Data Sampling}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}POD}{10}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Autoencoders}{10}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Hyperparameters for the Fully Connected Autoencoder}{10}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Hyperparameters for the Convolutional Autoencoder}{12}{subsubsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.3}Training}{12}{subsubsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.4}Reduced Order Model}{12}{subsection.4.4}%
 \contentsline {section}{\numberline {5}Results}{13}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{13}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{15}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{15}{subsection.5.3}%
-\contentsline {section}{References}{19}{section*.2}%
-\contentsline {subsection}{\numberline {5.4}Appendix A}{20}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.2}Rarefied Regime}{14}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{14}{subsection.5.3}%
+\contentsline {section}{References}{16}{section*.2}%
+\contentsline {subsection}{\numberline {5.4}Appendix A}{21}{subsection.5.4}%

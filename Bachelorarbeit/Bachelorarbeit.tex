@@ -137,6 +137,19 @@ Subsequently the cost function \(J(\Theta)\), which will be discussed later on, 
 While the term back-propagation is solely used for the method to compute the gradients for each layer in a backward fashion, meaning form the last layer to the first, the update of the parameters is done in an optimization step.
 -L2-error as perfomance metrics
 \section{Reduced Order Algorithms}
+In this section model order reduction (ROM) will be introduced and two algorithms for obtaining a reduced basis (RB) are discussed. The singular value decomposition (SVD) and autoencoders. In addition a reduced order model (ROM) based on the method of characteristics\cite{CFD1} is evaluated.\\
+Model order reduction is a technique used for reducing the cost, which is computational resources as memory and computation power, and the time needed to compute a solution. Model order reduction exploits the idea that every high dimensional dynamical-state space\(f(\mathbf{x},\mathbf{\mu}) \in \mathcal{D}\)  can be described by a state-space or manifold of lower rank \(\tilde{f}(\mathbf{\mu}) \in \mathcal{E}\)
+\begin{equation}
+	f \approx \tilde{f} \qquad\textrm{with}\qquad \mathcal{D} \ll \mathcal{E}.
+\end{equation}
+Reduced order modeling is partitioned into two successive 
+First the \textit{intrinsic solution manifold dimensionality} is defined by \textit{Carlberg et al.} \cite{Carlberg}: Assuming the initial value problem
+\begin{equation}
+	\mathbf{r}^n(\mathbf{x}^n;\mathbf{\mu}) = 0, \qquad n=1,...,N_t
+\end{equation} 
+has a unique solution for each parameter instance \(\mathbf{\mu} \in \mathcal{D}\), the intrinsic dimensionality of the solution manifold \(\{\mathbf{x}(t,\mathbf{\mu})|t \in [0,T],\mathbf
+\mu \in \mathcal{D}\}\) is (at most) \(p^{\star} = n_{\mu} + 1\), as a mapping \((t,\mathbf{\mu})\mapsto \mathbf{x}\) is unique in this case. This provides a practical lower bound on the dimension of a nonlinear trial manifold for exactly representing the dynamical-system state. In summary the intrinsic solution manifold dimensionality, in the following referred to as the number of intrinsic variables, are in number as much as there are parameters that can describe the whole dynamical-system state plus one, the time \(t\). As for the full order BGK equation \cref{Sec: BGK} the intrinsic variables could be six for the macroscopic velocity \(U(\mathbf{x},t)\), six for the microscopic velocities \(\xi\)of the collision operator \(Q(f,f)\), three for \(T\),\(\rho\) and \(\nu\) plus one equaling to a total of ten intrinsic variables for the 3D case. In the following subsection the available data for this thesis is introduced along with a proposal for the number of intrinsinc variables.\\
+The BGK equation is valid for gases in the hydrodynamic regime as well as for rarefied gases. As described in \cref{Sec: BGK} depending on the quilibirum of the BGK equation, the solution transitions between a pure Boltzmann - and a Maxwellian distribution. The former is known to be well approximated by linear methods as the SVD, while the latter poses problems due to the non-linear behavior. 
 \subsection{Data Sampling}\label{Sec: Data Sampling}
 DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
 For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{input} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{5000x40}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input. In the following hydrodynamic regime will reffer for the input data for knudsen number 10e-4 and rarefied regime will refer to the input data for knudsen numbers 10e2.
@@ -172,9 +185,10 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 \label{Eg:eckard-young}
 \end{equation}
 \subsection{Autoencoders}
+
 Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
 \subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
-To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used.
+To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c| }
 		\hline
