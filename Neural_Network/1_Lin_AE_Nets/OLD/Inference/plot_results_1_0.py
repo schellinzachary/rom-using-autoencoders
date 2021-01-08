@@ -78,14 +78,13 @@ decoder = net.Decoder(net.INPUT_DIM, net.HIDDEN_DIM, net.LATENT_DIM)
 #Autoencoder
 model = net.Autoencoder(encoder, decoder)
 #Load Model params
-# checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
-# model.load_state_dict(checkpoint['model_state_dict'])
-# train_losses = checkpoint['train_losses']
-# test_losses = checkpoint['test_losses']
-# N_EPOCHS = checkpoint['epoch']
+checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/1_Lin_AE_Nets/Parameterstudy/Learning_Rate_Batch_Size/SD_kn_0p00001/AE_SD_5.pt')
+model.load_state_dict(checkpoint['model_state_dict'])
+train_losses = checkpoint['train_losses']
+test_losses = checkpoint['test_losses']
+N_EPOCHS = checkpoint['epoch']
 # load original data-----------------------------------------------------------------------
-c_hy = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-c_rare = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+c = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
 t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
 x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
@@ -99,10 +98,10 @@ t=t.T
 
 
 #Inference---------------------------------------------------------------------------------
-# c = tensor(c, dtype=torch.float)
-# predict,z = model(c)
-# c = c.detach().numpy()
-# predict = predict.detach().numpy()
+c = tensor(c, dtype=torch.float)
+predict,z = model(c)
+c = c.detach().numpy()
+predict = predict.detach().numpy()
 
 
 
@@ -195,7 +194,7 @@ def characteritics(z,t):
     plt.plot(s[0]*np.linspace(0,25,25)+100,np.linspace(0,25,25))
     plt.show()
     return(s)
-# s = characteritics(c,v)
+s = characteritics(c,v)
 
 #Conservation of Prediction vs. Original
 
@@ -243,7 +242,7 @@ def plot_conservative_o_vs_p():
 
 #plot_conservative_o_vs_p()  
 
-def plot_macro_2D():
+def plot_macro():
     original_org_shape = shapeback_field(c)
     macro_original = macro(original_org_shape,v) 
         #macroscopic pcolor
@@ -258,27 +257,7 @@ def plot_macro_2D():
         plt.tight_layout()
     # tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')
     plt.show()
-#plot_macro_2D()
-
-def plot_macro_1D():
-    original_org_shape = shapeback_field(c_hy)
-    macro_original_hy = macro(original_org_shape,v)
-    original_org_shape = shapeback_field(c_rare)
-    macro_original_rare = macro(original_org_shape,v)
-     
-        #macroscopic pcolor
-    fig, ax = plt.subplots(1,3)
-    names = ['rho','rhu u','E']
-    for i in range(3):
-        ax[i].plot(macro_original_hy[i][-1],'k''-',label='Kn = 0.00001')
-        ax[i].plot(macro_original_rare[i][-1],'k''--',label='Kn=0.01')
-        ax[i].set_xlabel('x')
-        ax[i].set_ylabel(names[i])
-        ax[i].legend()
-    plt.tight_layout()
-    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal_Hy_vs_Rare.tex')
-    plt.show()
-plot_macro_1D()
+#plot_macro()
 
 #Conservation of Code
 def plot_conservation_code_rho(z,t):
@@ -486,11 +465,11 @@ def density(c,predict):
 
 
 # -------------------------------------------------------------------------------------------
-# f = c
-# rec = predict
-# ph_error = LA.norm((f - rec).flatten())/LA.norm(f.flatten())
+f = c
+rec = predict
+ph_error = LA.norm((f - rec).flatten())/LA.norm(f.flatten())
 
-# print(ph_error)
+print(ph_error)
 
 
 

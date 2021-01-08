@@ -21,6 +21,7 @@ def progressBar(value, endvalue, bar_length=20):
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+print(device)
 
 for g in [2,3,4]:
 

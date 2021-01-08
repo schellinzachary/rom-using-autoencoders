@@ -179,10 +179,11 @@ for i in [4,8,16,32]:
     f = tensor(f, dtype=torch.float).to(device)
     rec = model(f)
     l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-    listing.append(l2_error.detach().numpy())
+    listing.append(l2_error.cpu().detach().numpy())
     batch_s.append(params.BATCH_SIZE)
+    a = list(zip(batch_s,listing))
 
 
-a = np.array(batch_s)
+a = np.array(a)
 
 np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Batch Size')

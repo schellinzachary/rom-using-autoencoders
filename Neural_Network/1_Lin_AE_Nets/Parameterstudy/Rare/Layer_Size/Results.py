@@ -12,7 +12,7 @@ class params():
     BATCH_SIZE = 16
     INPUT_DIM = 40
     H_SIZES = 40
-    LATENT_DIM = 6
+    LATENT_DIM = 2
 
 
 class data():
@@ -67,7 +67,7 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/intrinsic_6_2.pt')
+checkpoint = torch.load('Results/intrinsic_2_2.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
