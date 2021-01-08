@@ -22,15 +22,16 @@ def progressBar(value, endvalue, bar_length=20):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(device)
-
-for g in [2,3,4]:
+list_a = []
+list_b = []
+for g in [10,20,30,40,50]:
 
     class params():
         N_EPOCHS = 4000
         BATCH_SIZE = 16
         INPUT_DIM = 40
-        H_SIZES = 40
-        LATENT_DIM = g
+        H_SIZES = g
+        LATENT_DIM = 5
         lr = 1e-4
 
     class data():
@@ -168,5 +169,17 @@ for g in [2,3,4]:
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/intrinsic_%s.pt'%g)
+        },'Results/hidden_%s.pt'%g)
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+    f = tensor(f, dtype=torch.float).to(device)
+    rec = model(f)
+    l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+    list_a.append(l2_error.cpu().detach().numpy())
+    list_b.append(params.H_SIZES)
+    a = list(zip(list_a,list_b))
+
+
+a = np.array(a)
+
+np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Hidden Units')
 

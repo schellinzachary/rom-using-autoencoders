@@ -21,15 +21,16 @@ def progressBar(value, endvalue, bar_length=20):
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
-for i in [10]:
+list_a = []
+list_b = []
+for i in [2,3,4,5,6,7,8,9,10]:
 
     class params():
-        N_EPOCHS = 2000
+        N_EPOCHS = 4000
         BATCH_SIZE = 16
         INPUT_DIM = 40
-        H_SIZES = i
-        LATENT_DIM = 3
+        H_SIZES = 40
+        LATENT_DIM = i
         lr = 1e-4
 
     class data():
@@ -169,4 +170,16 @@ for i in [10]:
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/%s.pt'%i)
+        },'Results/intrinsic_%s.pt'%i)
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = tensor(f, dtype=torch.float).to(device)
+    rec = model(f)
+    l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+    list_a.append(l2_error.cpu().detach().numpy())
+    list_b.append(params.LATENT_DIM)
+    a = list(zip(list_a,list_b))
+
+
+a = np.array(a)
+
+np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Intrinsic Variables')

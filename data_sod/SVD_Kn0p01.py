@@ -6,18 +6,14 @@ import scipy.io as sio
 import numpy as np
 from numpy.linalg import norm as norm
 import matplotlib.pyplot as plt
-from matplotlib import rc
 
-# rc('font',**{'family':'sans-serif','sans-serif':['Helvetica'],'size':15})
+import tikzplotlib
 
-# ## for Palatino and other serif fonts use:
-# #rc('font',**{'family':'serif','serif':['Palatino']})
-# rc('text', usetex=True)
 
 
 #Load Data
 
-c = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+c = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 c=c.T
 
 
@@ -26,7 +22,7 @@ c=c.T
 u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
 
 S = np.diagflat(s)
-xx = u[:,:3]@S[:3,:3]@vh[:3,:]
+xx = u[:,:10]@S[:10,:10]@vh[:10,:]
 def plot_cumu():
 
 
@@ -35,16 +31,17 @@ def plot_cumu():
 	plt.figure(1)
 	plt.subplot(1,2,1)
 	plt.semilogy(k,s,'.-''k')
-	plt.ylabel(r'$\sigma$',fontsize=fontsize)
-	plt.xlabel(r'k',fontsize=fontsize)
+	plt.ylabel('sigma')
+	plt.xlabel('k')
 	plt.subplot(1,2,2)
 	plt.plot(k,np.cumsum(s)/np.sum(s),'.-''k')
-	plt.ylabel('Cumultative Energy', fontsize=fontsize)
-	plt.xlabel(r'k',fontsize=fontsize)
+	plt.ylabel('Cumultative Energy')
+	plt.xlabel('k')
+	tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/SVD/CumSum_Hydro.tex')
 	plt.show()
 
 	return
-
+#plot_cumu()
 
 
 # Plot the Density
@@ -61,27 +58,27 @@ def density_svd(c):
     return rho_svd
 
 
-rho_svd = density_svd(xx)
-rho = density_svd(c)
+#rho_svd = density_svd(xx)
+#rho = density_svd(c)
 
-plt.plot(rho_svd[-1],'-.''k')
-plt.plot(rho[-1],'-*''k')
-plt.ylabel(r'$Density \quad \rho$',fontsize=25)
-plt.xlabel(r'$x$',fontsize=25)
-plt.show()
+# plt.plot(rho_svd[-1],'-.''k')
+# plt.plot(rho[-1],'-*''k')
+# plt.ylabel(r'$Density \quad \rho$',fontsize=25)
+# plt.xlabel(r'$x$',fontsize=25)
+# plt.show()
 
-print('Density Error:',np.sum(np.abs(rho_svd - rho))/25)
-print('Summed Eucledian Distances:',np.sum(np.abs(c - xx))/5000)
-print(c.shape)
-print(xx.shape)
+# print('Density Error:',np.sum(np.abs(rho_svd - rho))/25)
+# print('Summed Eucledian Distances:',np.sum(np.abs(c - xx))/5000)
+# print(c.shape)
+# print(xx.shape)
 ### Overall mistakes sample-wise
 
-mistake_list = []
-for i in range(4999):
-    mistake = np.sum(np.abs(xx[:,i] - c[:,i]))
-    mistake_list.append((i,mistake))
+# mistake_list = []
+# for i in range(4999):
+#     mistake = np.sum(np.abs(xx[:,i] - c[:,i]))
+#     mistake_list.append((i,mistake))
 
-zip(mistake_list)
+# zip(mistake_list)
 
 # ax = plt.subplot(111, polar=False)
 # bars = ax.bar(range(len(mistake_list)),[val[1]for val in mistake_list],color='k',width=1)
@@ -126,10 +123,3 @@ zip(mistake_list)
 predict = xx
 test_error = norm((c[:] - predict[:]).flatten())/norm(c[:].flatten())
 print(test_error)
-#test_error = np.sum(np.abs(c - predict),axis=0)
-# mean = np.sum(test_error)/len(test_error)
-# print('Mean Test Error', mean)
-# print('STD Test Error', ((1/(len(test_error)-1)) * np.sum((test_error - mean)**2 )))
-# print('Abweichung vom Mean',np.sum(np.abs(test_error - mean)) / len(test_error))
-# print('Highest Sample Error',np.max(test_error))
-# print('Lowest Sample Error', np.min(test_error))

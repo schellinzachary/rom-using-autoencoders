@@ -42,8 +42,8 @@ Bernard et al. use POD-Galerkin with an additional population of their snapshot 
 Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......
 \subsection{Thesis outline}
 \section{The BGK Equation}\label{Sec: BGK}
-The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen is a measure for the rarefaction of gases. In \cref{knudsen} $\lambda$ represents the mean free path and\(L\) the characteristic length \cite{Bernard} of a particle. The mean free path  describes the average distance a particle may travel between successive impacts [\textbf{WIKI}](nur ein reminder). For idealized gases the mean free path can be calculated via \cref{lambda}. In \cref{lambda} $k_b$ is the Boltzman constant, \(p\) is the total pressure, \(T\) is the thermodynamic temperature and \(d\) is the hard shell diameter [\textbf{WIKI}](auch nur ein reminder). 
-\begin{minipage}{.5\linewidth}
+The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen is a measure for the rarefaction of gases. In \cref{knudsen} $\lambda$ represents the mean free path and\(L\) the characteristic length \cite{Bernard} of a particle. The mean free path  describes the average distance a particle may travel between successive impacts [\textbf{WIKI}](nur ein reminder). For idealized gases the mean free path can be calculated via \cref{lambda}. In \cref{lambda} $k_b$ is the Boltzman constant, \(p\) is the total pressure, \(T\) is the thermodynamic temperature and \(d\) is the hard shell diameter [\textbf{WIKI}](auch nur ein reminder).\\
+\noindent\begin{minipage}{.5\linewidth}
 	\begin{equation}
 		Kn = \frac{\lambda}{L}
 		\label{knudsen}
@@ -66,25 +66,29 @@ Q(f,f) &= \frac{M_f(\textbf{x},\xi,t) - f(\textbf{x},\xi,t)}{\tau(\textbf{x},t)}
 M_f(\textbf{x},\xi,t) &= \frac{\rho(\textbf{x},t)}{(2\pi T(\textbf{x},t))^{\frac{3}{2}}}\exp(-\frac{||\xi -U(\textbf{x},t)||^2}{2T(\textbf{x},t)})  \label{Maxwellian}\\
 \tau(\textbf{x,t}) &= \frac{Kn}{\rho(\textbf{x},t)T^{1-\nu}(\textbf{x},t)} \label{Relaxation}
 \end{align}
-For many kinetic gas problems it is sufficient to replace the complexity of the Boltzmann collision term by a mean-free-path approach. The relaxation time is$\tau$ , which considers that collisions tend to relax the distribution function to an equilibrium state $f_0$, where $f_0 = M_f$ the equilibrium state is approximated by a Maxwellian distribution function\cite{BGK}. In \cref{Maxwellian} $U(\textbf{x},t) = (u(\textbf{x},t),v(\textbf{x},t),w(\textbf{x},t))^T$ is the macroscopic velovity, $T(\textbf{x},t) \in \mathbb{R}$ and $\rho(\textbf{x},t)\in \mathbb{R}$is the temperature and density of the gas respectively. In \cref{Relaxation} $\nu\in\mathbb{R}$ is the exponent of the viscosity law of the gas. As a result one obtains th BGK equation which can be utilized for both hydrodynamic and rarefied regimes and meets global conservation as discussed in \cref{FeaturesSOD}. By multiplying the BGK equation with the collision invariants $\Phi(v) = (1,\xi,\frac{1}{2}\xi^2)^T$ and integrating over velocity space d$\xi$, one obtains the corresponding moments, \cref{moment1} to \cref{moment3}.
-\begin{multicols}{3}
+For many kinetic gas problems it is sufficient to replace the complexity of the Boltzmann collision term by a mean-free-path approach. The relaxation time is$\tau$ , which considers that collisions tend to relax the distribution function to an equilibrium state $f_0$, where $f_0 = M_f$ the equilibrium state is approximated by a Maxwellian distribution function\cite{BGK}. In \cref{Maxwellian} $U(\textbf{x},t) = (u(\textbf{x},t),v(\textbf{x},t),w(\textbf{x},t))^T$ is the macroscopic velovity, $T(\textbf{x},t) \in \mathbb{R}$ and $\rho(\textbf{x},t)\in \mathbb{R}$is the temperature and density of the gas respectively. In \cref{Relaxation} $\nu\in\mathbb{R}$ is the exponent of the viscosity law of the gas. As a result one obtains th BGK equation which can be utilized for both hydrodynamic and rarefied regimes and meets global conservation as discussed in \cref{FeaturesSOD}. By multiplying the BGK equation with the collision invariants $\Phi(v) = (1,\xi,\frac{1}{2}\xi^2)^T$ and integrating over velocity space d$\xi$, one obtains the corresponding moments, \cref{moment1} to \cref{moment3}.\\
+\noindent\begin{minipage}{.3\linewidth}
 	\begin{equation}
 		\rho(x,t) = \int f \,\text{d}\xi \label{moment1}
 	\end{equation}
+\end{minipage}%
+\begin{minipage}{.3\linewidth}
 	\begin{equation}
 		\rho u(x,t) = \int \xi f \,\text{d}\xi \label{moment2}
 	\end{equation}
+\end{minipage}%
+\begin{minipage}{.31\linewidth}
 	\begin{equation}
 		E(x,t) = \int \frac{1}{2}\xi^2 f  \,\text{d}\xi \label{moment3}
 	\end{equation}
-\end{multicols}
+\end{minipage}
 \subsection{Macroscopic features of Hydrodynamic and Rarefied Gas Flows in the SOD-Shock Tube} \label{FeaturesSOD}
 \begin{figure}[!htbp]
-	\input{Figures/Results/Macrooriginal_Hy_vs_Rare.tex}
+	\input{Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex}
 	\caption{Macroscopic quantities \(rho\), \(\rho u\) and \(E\) in the SOD schock tube at the last time stamp. The quantites are displayed for the hydrodynamic regime in - - lines and for the rarefied regime in - lines.}
 \end{figure}
 - intrinsic code variables for hydro an rare add pls
-\section{Deep learning}
+\section{Deep learning}\label{Sec:Deep Learning}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 
 The term deep learning situated around the much broader field of artificial intelligence stems from the use of deep feed forward networks also called multi layer perceptrons (MLP) or feed forward neural networks. Deep recurrent neural networks (RNN) are also used in this field but won't be covered in this thesis. In contrast to RNNs, information flows forward through these networks, which explains the name feed foward. In the following I will use the abbreviation MLP when talking about the aforementioned algorithm. Network refers to the typical composition of many different functions.\\The task of any MLP is to approximate a function \(f^\star(\mathbf{x};\mathbf{\Theta}) \approx f(\mathbf{x})\) through learning the values of the parameters \(\mathbf{\Theta}\). As mentioned before  \(f^\star\) is a composition of functions eg. \cref{Eq. Composition}.
 \begin{equation}
@@ -152,9 +156,10 @@ To continue the definition of the \textit{intrinsic solution manifold dimensiona
 	\mathbf{r}^n(\mathbf{x}^n;\mathbf{\mu}) = 0, \qquad n=1,...,N_t
 \end{equation} 
 has a unique solution for each parameter instance \(\mathbf{\mu} \in \mathcal{D}\), the intrinsic dimensionality of the solution manifold \(\{\mathbf{x}(t,\mathbf{\mu})|t \in [0,T],\mathbf
-\mu \in \mathcal{D}\}\) is (at most) \(p^{\star} = n_{\mu} + 1\), as a mapping \((t,\mathbf{\mu})\mapsto \mathbf{x}\) is unique in this case. This provides a practical lower bound on the dimension of a nonlinear trial manifold for exactly representing the dynamical-system state. In summary the intrinsic solution manifold dimensionality, in the following referred to as the number of intrinsic variables, are in number as much as there are parameters that can describe the whole dynamical-system state plus one, the time \(t\). As for the full order BGK equation \cref{Sec: BGK} the intrinsic variables could be six for the macroscopic velocity \(U(\mathbf{x},t)\), six for the microscopic velocities \(\xi\)of the collision operator \(Q(f,f)\), three for \(T\),\(\rho\) and \(\nu\) plus one equaling to a total of ten intrinsic variables for the 3D case. In the following subsection the available data for this thesis is introduced along with a proposal for the number of intrinsinc variables.\\
+\mu \in \mathcal{D}\}\) is (at most) \(p^{\star} = n_{\mu} + 1\), as a mapping \((t,\mathbf{\mu})\mapsto \mathbf{x}\) is unique in this case. This provides a practical lower bound on the dimension of a nonlinear trial manifold for exactly representing the dynamical-system state. In summary the intrinsic solution manifold dimensionality, in the following referred to as the number of intrinsic variables, are in number as much as there are parameters that can describe the whole dynamical-system state plus one, the time \(t\). As for the full order BGK equation \cref{Sec: BGK} the intrinsic variables could be three for the macroscopic velocity \(U(\mathbf{x},t)\), three for the microscopic velocities \(\xi\)of the collision operator \(Q(f,f)\), three for \(T\),\(\rho\) and \(\nu\) plus one equaling to a total of ten intrinsic variables for the 3D case. In the following subsection the available data for this thesis is introduced along with a proposal for the number of intrinsinc variables.\\
 The BGK equation is valid for gases in the hydrodynamic regime as well as for rarefied gases. As described in \cref{Sec: BGK} depending on the equilibrium of the BGK equation, the solution transitions between a pure Boltzmann - and a Maxwellian distribution. The former is known to be well approximated by linear methods as the SVD, while the latter poses problems due to the non-linear behavior. 
 \subsection{Data Sampling}\label{Sec: Data Sampling}
+The number of intrinsic variables can therefore be determined for the 1D case of the BGK equation. The parameters \(\mathbf{\mu}\)describing the gas flow in the hydrodynamic regime has therefore one macroscopic velocity \(U(x)\), and th
 DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
 For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{\text{input}} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{n_{\mathrm{S}\times n_\xi}}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input. In the following hydrodynamic regime will reffer for the input data for knudsen number 10e-4 and rarefied regime will refer to the input data for knudsen numbers 10e2.
 - insert unshuffled set pls
@@ -183,27 +188,57 @@ For the autencoder using fully connected layers, the input vectors $y_o \in \mat
 \end{multicols}\noindent
 Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to their two dimensional capability resulting in $n_S = 40$ available samples \cref{Conv_matrix}.$N_{Filters}$ varies over the succeeding layers, growing with the shrinkage of $(\textbf{t},\textbf{x})$.
 \subsection{POD}
-The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young]. 
-\begin{equation}
+The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young].
+\begin{equation}[!htbp]
 \underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
 \label{Eg:eckard-young}
-\end{equation}
+\end{equation} 
+\begin{figure}[!htbp]
+	\input{Figures/SVD/CumSum_Rare.tex}
+	\label{Fig:CumSum_Rare}
+	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}
+\end{figure}
+\begin{figure}[!htbp]
+	\input{Figures/SVD/CumSum_Hydro.tex}
+	\label{Fig:CumSum_Hydro}
+	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the hydrodynamic regime.}
+\end{figure}
+\begin{table}[!htbp]\centering
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+	\hline
+	Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ %[.5ex]
+	\hline
+	Error & 0.0327 & 0.0153 & 0.0087 & 0.0046 & 0.0021 & 0.0014 & 0.0005 & 0.0003\\ \hline
+\end{tabular}
+\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
+\label{Tab:Intrinsic units svd rare}
+\end{table}
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+		\hline
+		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ %[.5ex]
+		\hline
+		Error & 0.0205 & 0.0081 & 0.0030 & 0.0013 & 0.0006 & 0.0002 & 6.2\(e^{-5}\) & 2.7\(e^{-5}\)\\ \hline
+	\end{tabular}
+	\caption{L2-Error for different numbers of intrinsic variables for the hydrodynamic gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
+	\label{Tab:Intrinsic units svd hydro}
+\end{table}
 \subsection{Autoencoders}
 
 Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
 \subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
-To start with a working model an educated guess is made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
+To start with a working model a guess is needed to be made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c| }
 		\hline
 		Mini batch size & Intrinsic dimensions& Epochs & Learing rate & activation code/rest\\ [.5ex]
 		\hline
-		16 & 3 & 2000& 1e-4 & Tanh/leakyreLU\\ \hline
+		16 & 3 & 2000& 1e-4 & Tanh/LeakyreLU\\ \hline
 	\end{tabular}
 	\caption{Initial hyperparameter selection}
 	\label{Tab:First Guess}
 \end{table}
-Originally the number of layers is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
+Originally the number of layers or depth as described in \cref{Sec:Deep Learning}is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c| }
 		\hline
@@ -233,17 +268,19 @@ For the hydrodynamic regime the size of the intrinsic dimension is set, as descr
 	\caption{L2-Error for different number of hidden units for the hydrodynamic regime.}
 	\label{Tab:Hidden Units Hydro}
 \end{table}\\
-The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the the number of intrinsic variables from two to ten are performed. 
+The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
 		\hline
-		Intrinsic variables & 2 & 3 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
+		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
 		\hline
-		Error & 0.0059 & 0.0049 & 0.0026 & 0.0027 & 0.0017 & 0.0022 & 0.0017 & 0.0015\\ \hline
+		Error 1st run & 0.0048 & 0.0025 & 0.0026 & 0.0027 & 0.0013 & 0.0014 & 0.0013 & 0.0009\\ \hline
+		Error 2nd run & 0.0038 & 0.0024 & 0.0016 & 0.0015 & 0.0011 & 0.0010 & 0.0012 & 0.0010\\\hline
 	\end{tabular}
-	\caption{L2-Error for different numbers of intrinsic variables.}
+	\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Experiments with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
 	\label{Tab:Intrinsic units}
-\end{table}\\
+\end{table}
+
 Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
@@ -373,19 +410,19 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 	\label{Fig:Code_Fully}
 \end{figure}
 \begin{figure}
-	\input{Figures/Results/Macrooriginal.tex}
+	\input{Figures/Results_Rom/Macrooriginal.tex}
 	\caption{Macroscopic quantities $\rho$, E and $\rho$ u of the original data.}
 \end{figure}
 \begin{figure}[!htbp]
-	\input{Figures/Results/Characteristics.tex}
+	\input{Figures/Results_Rom/Characteristics.tex}
 	\caption{Characteristic velocities u0, u1, u2 of the code variables var0, var1, var2 respectively calculated as described in \Cref{Reduced Order Model}.}
 \end{figure}
 \begin{figure}[!htbp]
-	\input{Figures/Results/MacroCode.tex}
+	\input{Figures/Results_Rom/MacroCode.tex}
 	\caption{Code variables var0, var1, var3 (dashed lines - -) and macroscopic quantities $\rho$, E, $\rho$u (full lines --) for three timestamps $t_0$, $t_{10}$, $t_{20}$.}
 \end{figure}
 \begin{figure}[!htbp]
-	\input{Figures/Results/New_Points_Macro.tex}
+	\input{Figures/Results_Rom/New_Points_Macro.tex}
 	\caption{Resulting macroscopic quantities $\rho$, E, $\rho$u after interpolating in time using the interpolation method described in \ref{Reduced Order Model}. The interpolated quantity lies at timestamp t=24,5, while the original quantity lies at timestamp t=25.}
 \end{figure}
 \subsection{Rarefied Regime}
@@ -397,22 +434,22 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 \subsection{Appendix A}\label{AppendixA}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/0.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/1.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/3.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Hydro/4.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Hydro/0.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Hydro/1.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Hydro/3.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Hydro/4.tex}}
 		\caption{Analysis of layer size for five different architectures, showing the error for training and testing on the data in the hydrodynamic regime.}
 		\label{Fig:Layer Size Hydro}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/0.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/1.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/3.tex}}
-		\scalebox{.9}{\input{Figures/Layer_Sizes/Rare/4.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Rare/0.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Rare/1.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Rare/3.tex}}
+		\scalebox{.9}{\input{Figures/Depth/Rare/4.tex}}
 		\caption{Analysis of layer size for five different architectures, showing the error for training and testingon the data on the rarefied regime.}
 		\label{Fig:Layer Size Rare}
 	\end{figure}

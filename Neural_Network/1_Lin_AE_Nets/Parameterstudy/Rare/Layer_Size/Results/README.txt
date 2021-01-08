@@ -1,9 +1,6 @@
-intrinsic 2 - 2 intrinsic variables
-intrinsic 3 - 3 intrinsic variables
-intrinsic 5 - 5 intrinsic variables
-intrinsic 6 - 6 intrinsic variables
-intrinsic 7 - 7 intrinsic variables
-intrinsic 8 - 8 intrinsic variables
-intrinsic 9 - 9 intrinsic variables
-intrinsic 10 - 10 intrinsic variables
-
+# Error  Hidden Units
+2.155866623 10.000000000
+2.037047625 20.000000000
+1.094081521 30.000000000
+0.850790560 40.000000000
+0.860906899 50.000000000
