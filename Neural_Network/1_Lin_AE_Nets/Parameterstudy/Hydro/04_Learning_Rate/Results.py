@@ -64,13 +64,15 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/test2.pt')
+checkpoint = torch.load('Results/test.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
 test_losses = checkpoint['test_losses']
 N_EPOCHS = checkpoint['epoch']
 batch_size = checkpoint['batch_size']
+learning_rate = checkpoint['learning_rate']
+print(learning_rate)
 print(batch_size)
 
 rec = model(data.f)

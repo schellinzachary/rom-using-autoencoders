@@ -30,8 +30,8 @@ list_b = []
 
 
 class params():
-    N_EPOCHS = 2000
-    BATCH_SIZE = 16
+    N_EPOCHS = 3000
+    BATCH_SIZE = 8
     INPUT_DIM = 40
     H_SIZES = 40
     LATENT_DIM = 3
@@ -95,7 +95,7 @@ model = Autoencoder(encoder, decoder).to(device)
 print(model)
 
 optimizer = Adam(params=model.parameters(), lr=params.lr)
-scheduler = ReduceLROnPlateau(optimizer, 'min',threshold=1e-4, patience=10,verbose=True)
+scheduler = ReduceLROnPlateau(optimizer, 'min',threshold=1e-9, patience=10,verbose=True)
 
 loss_crit = nn.MSELoss()
 train_losses = []
@@ -175,11 +175,12 @@ torch.save({
     'epoch': epoch,
     'model_state_dict':model.state_dict(),
     'optimizer_state_dict': optimizer.state_dict(),
+    'scheduler_state_dict': scheduler.state_dict(),
     'train_losses':train_losses,
     'test_losses': test_losses,
     'batch_size': params.BATCH_SIZE,
     'learning_rate': params.lr
-    },'Results/test2.pt')
+    },'Results/test4.pt')
 
 # f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 # f = tensor(f, dtype=torch.float).to(device)

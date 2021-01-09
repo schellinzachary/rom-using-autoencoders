@@ -74,16 +74,15 @@ The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen 
 		\label{lambda}
 \end{equation}
 \end{minipage}
-For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $x \in \mathbb{R}$ with velocity $\xi \in \mathbb{R}$ at time $t \in \mathbb{R}$. 
-\begin{equation}
-	\partial_t f(x, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = Q(f,f)
+For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $x \in \mathbb{R}$ with velocity $\xi \in \mathbb{R}$ at time $t \in \mathbb{R}$
+\begin{equation}	\partial_t f(x, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = \nu n (M_f - f)
 	\label{Boltzmann}
 \end{equation}
-Originally Q is often the binary Boltzmann collision term, which can be intractable in pratice \cite{BGK}. Thus the BGK equation utilizes the BGK-Operator for the collision term Q(f,f) \cref{Collision}\cite{Bernard}.
+Originally the r.h.s, the collision term, is often the binary Boltzmann collision term, which can be intractable in pratice \cite{BGK}. Thus the BGK equation utilizes the BGK-Operator as the collision term \cref{Collision}\cite{Bernard}.
 \begin{align}
 Q(f,f) &= \frac{M_f(\textbf{x},\xi,t) - f(\textbf{x},\xi,t)}{\tau(\textbf{x},t)} \label{Collision}\\
-M_f(\textbf{x},\xi,t) &= \frac{\rho(\textbf{x},t)}{(2\pi T(\textbf{x},t))^{\frac{3}{2}}}\exp(-\frac{||\xi -U(\textbf{x},t)||^2}{2T(\textbf{x},t)})  \label{Maxwellian}\\
-\tau(\textbf{x,t}) &= \frac{Kn}{\rho(\textbf{x},t)T^{1-\nu}(\textbf{x},t)} \label{Relaxation}
+M_f(x,\xi,t) &= \frac{\rho(\textbf{x},t)}{(2\pi T(\textbf{x},t))^{\frac{3}{2}}}\exp(-\frac{||\xi -U(\textbf{x},t)||^2}{2T(\textbf{x},t)})  \label{Maxwellian}\\
+\tau \label{Relaxation}
 \end{align}
 For many kinetic gas problems it is sufficient to replace the complexity of the Boltzmann collision term by a mean-free-path approach. The relaxation time is$\tau$ , which considers that collisions tend to relax the distribution function to an equilibrium state $f_0$, where $f_0 = M_f$ the equilibrium state is approximated by a Maxwellian distribution function\cite{BGK}. In \cref{Maxwellian} $U(\textbf{x},t) = (u(\textbf{x},t),v(\textbf{x},t),w(\textbf{x},t))^T$ is the macroscopic velovity, $T(\textbf{x},t) \in \mathbb{R}$ and $\rho(\textbf{x},t)\in \mathbb{R}$is the temperature and density of the gas respectively. In \cref{Relaxation} $\nu\in\mathbb{R}$ is the exponent of the viscosity law of the gas. As a result one obtains th BGK equation which can be utilized for both hydrodynamic and rarefied regimes and meets global conservation as discussed in \cref{FeaturesSOD}. By multiplying the BGK equation with the collision invariants $\Phi(v) = (1,\xi,\frac{1}{2}\xi^2)^T$ and integrating over velocity space d$\xi$, one obtains the corresponding moments, \cref{moment1} to \cref{moment3}.\\
 \noindent\begin{minipage}{.3\linewidth}
@@ -214,18 +213,21 @@ In the following the width of the hidden layer will be analysed. There are two a
 	\label{Tab:Hidden Units}
 \end{table}
 For \hy and \rare forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for \hy and \(0.0125\) for \rare. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
-Next the mini-batch size is analysed 
+Next the mini-batch size is analysed and results displayed in \cref{Tab:Batch Size}. For \hy a largest mini-batch size of eight performs best. 
 \begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c| }
+	\begin{tabular}{ |c|c|c|c|c|c|c|c| }
 		\hline
-		Batch Size & 2 & 4 & 8 & 16 & 32 \\ [.5ex]
+		Batch Size & 2 & 4 & 8 & 10 & 12 & 14 16 & 32 \\ [.5ex]
 		\hline
-		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0013 & 0.0030\\ \hline
+		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0029 & 0.0018 0.0018 & 0.0013 & 0.0030\\ \hline
 		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
 	\end{tabular}
 	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
 	\label{Tab:Batch Size}
 \end{table}
+From this point on the learning rate will be adaptive using the in-build \texttt{pytorch} learning rate scheduler \textit{ReducelrOnPlateau}. This algorithm for in-training adjustment of the learning rate reduces the learning rate by a constant factor of \(10e^{-1}\), when a perfomance metric, in this case the validation error, doesn't show any improvement. Only the threshold is defined, while the rest is left on default. Threshold outlines a dynamic threshold, calculated by \(best \times (1-threshold)\), for which the scheduler should be activated. A threshold of 10\(e^{-9}\) is chosen. The latter outlines the number of epochs to wait before the scheduler changes the learning rate which is left on default.
+According to the \texttt{pytorch} documentation \cite{bibid}, this method can improve the perfomance of a neural network by a fcor of two to ten. The results of applying this adaptive learning rate are shown in \cref{Fig:Adaptive learning rate}.
+
 Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
