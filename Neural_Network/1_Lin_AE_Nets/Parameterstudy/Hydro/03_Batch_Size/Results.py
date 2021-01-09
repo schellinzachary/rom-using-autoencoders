@@ -9,13 +9,12 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 class params():
-    BATCH_SIZE = 16
     INPUT_DIM = 40
-    H_SIZES = 50
-    LATENT_DIM = 5
+    H_SIZES = 40
+    LATENT_DIM = 3
 class data():
     #load data
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
     f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):
@@ -65,12 +64,14 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/hidden_50.pt')
+checkpoint = torch.load('Results/8.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
 test_losses = checkpoint['test_losses']
 N_EPOCHS = checkpoint['epoch']
+batch_size = checkpoint['batch_size']
+print(batch_size)
 
 rec = model(data.f)
 

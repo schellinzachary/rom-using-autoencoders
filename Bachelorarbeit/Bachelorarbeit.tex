@@ -18,6 +18,8 @@
 \usepackage{tocbibind}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\hy}{\(\Pi_h\)}
+\newcommand{\rare}{\(\Pi_r\)}
 \tikzstyle{block} = [rectangle, draw, 
 text width=5em, text centered, rounded corners, minimum height=4em]
 
@@ -33,6 +35,22 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 The Bhatnagar-Gross-Krook equation (BGK) is a kinetic collision model of ionized and neutral gases valid for rarefied as well as other pressure regimes \cite{BGK}. Generating data of such a flow field is essential for various industry and scientific applications[\textbf{REF}]. With the intention to reduce time and cost during the data generating process, experiments were substituted with computational fluid dynamics (CFD) computations. Consequently reduced-order models (ROMs) coupled to aforementioned computations were introduced to further the reduction of time and cost. The thriving field of artificial intelligence operates in model order reduction for data visualization/analysis since the 80's (Quelle?)  and has now surfaced in fluid mechanics. This thesis will cover the use of artificial intelligence for model order reduction in fluid mechanics.
 \subsection{Objective of this thesis}
 Due to the non-linearity of transport problems in particular shock fronts, the construction of a robust ROM for those cases poses several challenges. 
+\subsection{Thesis outline}
+- What is the BGK Model\\
+- What is the SOD and BGK in SOD\\
+-What is deep learning what are autoencoders\\
+-hyperparameters for autoencoders\\
+-What is a reduced order model \\
+-offline phase \\
+-> my data in 1d bgk in sod shock tube FOM Data\\
+-> what is pod and Rb by POD \\
+-> RB by autoencoder \\
+-online phase\\
+-> what is my ROM \\
+-> results - results by ROM for FC and for CONV \\
+- variation of intrinsic variables \\
+- Comparion to POD intrinsic variables number and quality \\
+
 \subsection{State of the art}
 State of the art model reduction of dynamical systems can be done via proper orthogonal decomposition (POD) which is an algorithm feeding on the idea of singular value decomposition (SVD)\cite{Franz}\cite{Kutz}. POD captures a low-rank representation on a linear manifold. So called POD modes, derived from SVD, describe the principle components of a problem which can be coupled within a Galerkin framework to produce an approximation of a lower dimension \(r\). 
 \begin{equation}
@@ -40,7 +58,8 @@ State of the art model reduction of dynamical systems can be done via proper ort
 \end{equation}
 Bernard et al. use POD-Galerkin with an additional population of their snapshot database via optimal transport for the proposed BGK equation, bisecting computational run time (cost) in conjunction with an approximation error of \(\sim\) 1 \% in \cite{Bernard}. Artificial intelligence in the form of autoencoders replacing the POD within a Galerkin framework is evaluated against the POD performance by Kookjin et al. for advection-dominated problems\cite{Carlberg} resulting in sub 0.1\% errors. An additional time inter- and extrapolation is evaluated. Using machine learning/ deep learning for reduced order modeling in CFD is a novel approach although "the idea of autoencoders has been part of the historical landscape of neural networks for decades"\cite[p.493]{Goodfellow}. Autoencoders, or more precisely learning internal representations by the delta rule (backpropagation) and the use of hidden units in a feed forward neural network architecture, premiered by Rumelhart et al. (1986) \cite{Rumelhart}.  Through so called hierarchical training Ballard et al.(1987) introduce a strategy to train auto autoassociative networks (nowadays referred to as autoencoders), in a reasonable time promoting further development despite computational limitations \cite{Ballard}. The so called bottleneck of autoencoders yields a non-smooth and entangled representation thus beeing uninterpretable by practitioners\cite{Rifai2011} leading to developements in this field. Rifai et al. introduce the contractive autoencoder (CAE) for classification tasks (2011), with the aim to extract robust features which are insensitive to input variations orthogonal to the low-dimensional non-linear manifold by adding a penalty on the frobenius norm of the instrinsic variables with respect to the input, surpassing other classification algorithms \cite{Rifai2011}. Subsequent development emerges with the manifold tangent classifier (MTC) \cite{Rifai_2011a}. A local chart for each datapoint is obtained hence characterizing the manifold  which in turn improves classification performance. On that basis a generative process for the CAE is developed. Through movements along the manifold with directions defined by the Jacobian of the bottleneck layer with respect to the input \begin{math}	\vec{x}_m=JJ^T \end{math}, sampling is realized \cite{rifai2012generative}....
 Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......
-\subsection{Thesis outline}
+
+	
 \section{The BGK Equation}\label{Sec: BGK}
 The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen is a measure for the rarefaction of gases. In \cref{knudsen} $\lambda$ represents the mean free path and\(L\) the characteristic length \cite{Bernard} of a particle. The mean free path  describes the average distance a particle may travel between successive impacts [\textbf{WIKI}](nur ein reminder). For idealized gases the mean free path can be calculated via \cref{lambda}. In \cref{lambda} $k_b$ is the Boltzman constant, \(p\) is the total pressure, \(T\) is the thermodynamic temperature and \(d\) is the hard shell diameter [\textbf{WIKI}](auch nur ein reminder).\\
 \noindent\begin{minipage}{.5\linewidth}
@@ -55,9 +74,9 @@ The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen 
 		\label{lambda}
 \end{equation}
 \end{minipage}
-For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $\textbf{x} \in \mathbb{R}^3$ with velocity $\xi \in \mathbb{R}^3$ at time $t \in \mathbb{R}$. 
+For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $x \in \mathbb{R}$ with velocity $\xi \in \mathbb{R}$ at time $t \in \mathbb{R}$. 
 \begin{equation}
-	\partial_t f(\textbf{x}, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = Q(f,f)
+	\partial_t f(x, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = Q(f,f)
 	\label{Boltzmann}
 \end{equation}
 Originally Q is often the binary Boltzmann collision term, which can be intractable in pratice \cite{BGK}. Thus the BGK equation utilizes the BGK-Operator for the collision term Q(f,f) \cref{Collision}\cite{Bernard}.
@@ -144,9 +163,106 @@ Subsequently the cost function \(J(\Theta)\), which will be discussed later on, 
 \end{align}
 While the term back-propagation is solely used for the method to compute the gradients for each layer in a backward fashion, meaning form the last layer to the first, the update of the parameters is done in an optimization step.
 -L2-error as perfomance metrics
-\section{Reduced Order Algorithms}
-In this section model order reduction (ROM) will be introduced and two algorithms for obtaining a reduced basis (RB) are discussed. The singular value decomposition (SVD) and autoencoders. In addition a reduced order model (ROM) based on the method of characteristics\cite{CFD1} is evaluated.\\
-Model order reduction is a technique used for reducing a computational cost, which is computational resources as memory and computation power, and the time needed to compute a solution. Model order reduction exploits the idea that every high dimensional dynamical-state space\(f(\mathbf{x},\mathbf{\mu}) \in \mathcal{D}\)  can be described by a state-space or manifold of lower rank \(\tilde{f}(\mathbf{\mu}) \in \mathcal{E}\)
+\subsection{Autoencoders}
+Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both \hy and \rare.\\
+For the fully connected autoencoder the order of determining the hyperparameters is as follows:
+Depth $\rightarrow$ Hidden Units $\rightarrow$ Batch Size $\rightarrow$ Learning Rate $\rightarrow$ Activation Fuctions.
+For the convolutional autoencoder the order of determining the hyperparameters is as follows:
+Depth $\rightarrow$ Channels $\rightarrow$ Batch Size $\rightarrow$ Learning Rate$\rightarrow$ Activation Functions
+\subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
+To start with a working model a guess is needed to be made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c| }
+		\hline
+		Mini batch size & Intrinsic dimensions& Epochs & Learing rate & activation code/rest\\ [.5ex]
+		\hline
+		16 & 3 & 2000& 1e-4 & Tanh/LeakyreLU\\ \hline
+	\end{tabular}
+	\caption{Initial hyperparameter selection}
+	\label{Tab:First Guess}
+\end{table}
+Originally the number of layers or depth as described in \cref{Sec:Deep Learning}is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c| }
+		\hline
+		Number of layers & Reduction per layer \\ [.5ex]
+		\hline
+		10 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 5 \(\rightarrow\) 3\\ \hline
+		8 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 3\\ \hline
+		6 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 3\\ \hline
+		4 & 40 \(\rightarrow\) 40 \(\rightarrow\) 3\\ \hline
+		2 & 40 \(\rightarrow\) 3\\ \hline
+	\end{tabular}
+	\caption{Initial hyperparameter selection}
+	\label{Tab:Layer Size}
+\end{table}
+For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
+The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
+In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
+In the following the width of the hidden layer will be analysed. There are two available hidden layers for the autoencoder. But as the architecture of the decoder mirrors that of the encoder only one parameter needs to be varied. For both the hydrodynamic and the rarefied regime five experiments are conducted, varying the hidden units from ten to fifty. Results for \(\Pi_h\) and \(\Pi_r\) are shown in \cref{Tab:Hidden Units}.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Hidden units & 10 & 20 & 30  & 40 & 50 \\ [.5ex]
+		\hline
+		Error for \(\Pi_h\) & 0.0054 & 0.0027 & 0.0036 & 0.0017 & 0.0032\\ \hline
+		Shrinkage factor for \hy & 0.3 & 0.1 & 0.015 & 0.075 & 0.06\\ \hline
+		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
+		Shrinkage factor for \rare & 0.5 & 0.25 & 0.01$\overline{6}$\ & 0.0125 & 0.01\\ \hline
+	\end{tabular}
+	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
+	\label{Tab:Hidden Units}
+\end{table}
+For \hy and \rare forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for \hy and \(0.0125\) for \rare. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
+Next the mini-batch size is analysed 
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Batch Size & 2 & 4 & 8 & 16 & 32 \\ [.5ex]
+		\hline
+		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0013 & 0.0030\\ \hline
+		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
+	\end{tabular}
+	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
+	\label{Tab:Batch Size}
+\end{table}
+Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
+		\hline
+		Error & 0.0028 & 0.0019 & 0.0036 & 0.002 & 0.0039\\ \hline
+		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
+		\hline
+		Error & 0.0019 & 0.0017 & 0.0019 &  & \\ \hline
+	\end{tabular}
+	\caption{L2-Error different activation functions and combinations for the hydrodynamic regime.}
+	\label{Tab:Activations}
+\end{table}
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c| }
+		\hline
+		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
+		\hline
+		Error & 0.0328 & 0.0178 & 0.0125 & 0.0134 & 0.0183\\ \hline
+		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
+		\hline
+		Error & 0.0019 & 0.0017 &  &  & \\ \hline
+	\end{tabular}
+	\caption{L2-Error different activation functions and combinations for the rarefied regime.}
+	\label{Tab:Activations}
+\end{table}
+ELU and SiLU stand out with the lowest loss.  
+\subsubsection{Hyperparameters for the Convolutional Autoencoder}\label{Convolutional}
+The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
+\begin{equation}
+y_p = f_{C}^9(f_{C}^8(f_{C}^7(f_{F}^6(f_{F}^5(f_{F}^4(f_{C}^3(f_{C}^2(f_{C}^1(y_0)))))))))
+\label{f_Conv}
+\end{equation}
+\section{Reduced Order Model}
+In this section model order reduction (ROM) will be introduced and two algorithms for obtaining a reduced basis (RB) are discussed. The proper orthogonal decomposition (POD) and autoencoders. In addition a reduced order model (ROM) based on the method of characteristics\cite{CFD1} is evaluated.\\
+Model order reduction is a technique used for reducing the computational cost, which is computational resources as memory and computation power. Partial differential equations (PDEs) once discretized become a system of high dimensional ordinary differential equations (ODEs) as shown in \cref{Sec: BGK}. Here model order reduction exploits the idea that every high dimensional dynamical-state space\(f(\mathbf{x},\mathbf{\mu}) \in \mathcal{D}\)  can be described by a state-space or manifold of lower dimension \(\tilde{f}(\mathbf{\mu}) \in \mathcal{E}\)
 \begin{equation}
 	f \approx \tilde{f} \qquad\textrm{with}\qquad \mathcal{D} \ll \mathcal{E}.
 \end{equation}
@@ -157,8 +273,9 @@ To continue the definition of the \textit{intrinsic solution manifold dimensiona
 \end{equation} 
 has a unique solution for each parameter instance \(\mathbf{\mu} \in \mathcal{D}\), the intrinsic dimensionality of the solution manifold \(\{\mathbf{x}(t,\mathbf{\mu})|t \in [0,T],\mathbf
 \mu \in \mathcal{D}\}\) is (at most) \(p^{\star} = n_{\mu} + 1\), as a mapping \((t,\mathbf{\mu})\mapsto \mathbf{x}\) is unique in this case. This provides a practical lower bound on the dimension of a nonlinear trial manifold for exactly representing the dynamical-system state. In summary the intrinsic solution manifold dimensionality, in the following referred to as the number of intrinsic variables, are in number as much as there are parameters that can describe the whole dynamical-system state plus one, the time \(t\). As for the full order BGK equation \cref{Sec: BGK} the intrinsic variables could be three for the macroscopic velocity \(U(\mathbf{x},t)\), three for the microscopic velocities \(\xi\)of the collision operator \(Q(f,f)\), three for \(T\),\(\rho\) and \(\nu\) plus one equaling to a total of ten intrinsic variables for the 3D case. In the following subsection the available data for this thesis is introduced along with a proposal for the number of intrinsinc variables.\\
-The BGK equation is valid for gases in the hydrodynamic regime as well as for rarefied gases. As described in \cref{Sec: BGK} depending on the equilibrium of the BGK equation, the solution transitions between a pure Boltzmann - and a Maxwellian distribution. The former is known to be well approximated by linear methods as the SVD, while the latter poses problems due to the non-linear behavior. 
-\subsection{Data Sampling}\label{Sec: Data Sampling}
+The BGK equation is valid for gases in the hydrodynamic regime as well as for rarefied gases. As described in \cref{Sec: BGK} depending on the equilibrium of the BGK equation, the solution transitions between a pure Boltzmann - and a Maxwellian distribution. The former is known to be well approximated by linear methods as the SVD, while the latter poses problems due to the non-linear behavior.
+\subsection{Offline Phase}
+\subsubsection{Full order BGK model}\label{Sec: Data Sampling}
 The number of intrinsic variables can therefore be determined for the 1D case of the BGK equation. The parameters \(\mathbf{\mu}\)describing the gas flow in the hydrodynamic regime has therefore one macroscopic velocity \(U(x)\), and th
 DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
 For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{\text{input}} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{n_{\mathrm{S}\times n_\xi}}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input. In the following hydrodynamic regime will reffer for the input data for knudsen number 10e-4 and rarefied regime will refer to the input data for knudsen numbers 10e2.
@@ -187,7 +304,9 @@ For the autencoder using fully connected layers, the input vectors $y_o \in \mat
 	\end{equation}
 \end{multicols}\noindent
 Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to their two dimensional capability resulting in $n_S = 40$ available samples \cref{Conv_matrix}.$N_{Filters}$ varies over the succeeding layers, growing with the shrinkage of $(\textbf{t},\textbf{x})$.
-\subsection{POD}
+- In the following the data of the BGK full order model with a knudens number of \(Kn = 0.00001\), describing a gasflow in the hyrodynamic regime will be reffere to as \(\Pi_h\). Equally the data of the BGK full order model with a knudsen number of \(Kn = 0.01\) will be refferd to as \(\Pi_r\).
+
+\subsubsection{Reduced Basis by POD and Autoencoder}
 The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young].
 \begin{equation}[!htbp]
 \underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
@@ -223,119 +342,9 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 	\caption{L2-Error for different numbers of intrinsic variables for the hydrodynamic gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
 	\label{Tab:Intrinsic units svd hydro}
 \end{table}
-\subsection{Autoencoders}
-
-Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both hydrodynamic and rarefied input data.\\
-\subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
-To start with a working model a guess is needed to be made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c| }
-		\hline
-		Mini batch size & Intrinsic dimensions& Epochs & Learing rate & activation code/rest\\ [.5ex]
-		\hline
-		16 & 3 & 2000& 1e-4 & Tanh/LeakyreLU\\ \hline
-	\end{tabular}
-	\caption{Initial hyperparameter selection}
-	\label{Tab:First Guess}
-\end{table}
-Originally the number of layers or depth as described in \cref{Sec:Deep Learning}is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c| }
-		\hline
-		Number of layers & Reduction per layer \\ [.5ex]
-		\hline
-		10 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 5 \(\rightarrow\) 3\\ \hline
-		8 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 3\\ \hline
-		6 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 3\\ \hline
-		4 & 40 \(\rightarrow\) 40 \(\rightarrow\) 3\\ \hline
-		2 & 40 \(\rightarrow\) 3\\ \hline
-	\end{tabular}
-	\caption{Initial hyperparameter selection}
-	\label{Tab:Layer Size}
-\end{table}
-For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
-The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
-In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
-In the following the width of the layers will be analyzed, by varying two parameters. The hidden dimension and the intrinsic dimension. There are two available layers for the encoder(the architecture of the decoder mirrors that of the encoder) from which the input layer shrinks the input dimension to the hidden dimension and subsequently the bottleneck layer shrinks the hidden dimension to the intrinsic dimension.
-For the hydrodynamic regime the size of the intrinsic dimension is set, as described in \cref{Sec: BGK} to three. Therefore only the hidden dimension has to be found. The results of five experiments are shown in \cref{Tab:Hidden Units Hydro}, setting the size to 40 hidden units.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c| }
-		\hline
-		Hidden units & 10 & 20 & 30 & 40 & 50 \\ [.5ex]
-		\hline
-		Error & 0.0054 & 0.0027 & 0.0036 & 0.0017 & 0.0032\\ \hline
-	\end{tabular}
-	\caption{L2-Error for different number of hidden units for the hydrodynamic regime.}
-	\label{Tab:Hidden Units Hydro}
-\end{table}\\
-The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
-		\hline
-		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
-		\hline
-		Error 1st run & 0.0048 & 0.0025 & 0.0026 & 0.0027 & 0.0013 & 0.0014 & 0.0013 & 0.0009\\ \hline
-		Error 2nd run & 0.0038 & 0.0024 & 0.0016 & 0.0015 & 0.0011 & 0.0010 & 0.0012 & 0.0010\\\hline
-	\end{tabular}
-	\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Experiments with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
-	\label{Tab:Intrinsic units}
-\end{table}
-
-Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c| }
-		\hline
-		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
-		\hline
-		Error & 0.0028 & 0.0019 & 0.0036 & 0.002 & 0.0039\\ \hline
-		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
-		\hline
-		Error & 0.0019 & 0.0017 & 0.0019 &  & \\ \hline
-	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for the hydrodynamic regime.}
-	\label{Tab:Activations}
-\end{table}
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c| }
-		\hline
-		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
-		\hline
-		Error & 0.0328 & 0.0178 & 0.0125 & 0.0134 & 0.0183\\ \hline
-		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
-		\hline
-		Error & 0.0019 & 0.0017 &  &  & \\ \hline
-	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for the rarefied regime.}
-	\label{Tab:Activations}
-\end{table}
-ELU and SiLU stand out with the lowest loss.  
-\subsubsection{Hyperparameters for the Convolutional Autoencoder}\label{Convolutional}
-The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
-\begin{equation}
-y_p = f_{C}^9(f_{C}^8(f_{C}^7(f_{F}^6(f_{F}^5(f_{F}^4(f_{C}^3(f_{C}^2(f_{C}^1(y_0)))))))))
-\label{f_Conv}
-\end{equation}
-\subsubsection{Training}
-During training every 1000 epochs a sample against its prediction was printed in order to link the value of the L1-Loss to a prediction. Using this method a first verification of the model was achieved. Continuing the search for any possible shortage of the models performance, that this method could not cover, eg. samples lying between every 1000 sample, that the model was not able to reconstruct correctly, a second verification process is conducted.
-Analysing the batch size for the architecture 1.0 the test errors in \cref{Tab:Batch} can be produced.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c c|c c| }
-		\hline
-		Kn & 0.00001& Kn &0.01  \\ [.5ex]
-		\hline
-		Batch Size & L2-Error && \\ \hline
-		64 & 0.008  &&\\ 
-		32 & 0.0049 &&\\ \hline
-		16 & 0.0038 &&\\ \hline
-		8 & 0.0037&&\\ \hline
-		4 & 0.0026&&\\ \hline
-		2 & 0.0021&&\\
-		\hline
-	\end{tabular}
-	\caption{L2-Error over Batch-Size}
-	\label{Tab:Batch}
-\end{table}
-\subsection{Reduced Order Model}\label{Reduced Order Model}
+\subsection{Online Phase}
+loremipsu
+\subsubsection{Reduced Order Model}\label{Reduced Order Model}
 The compression of the input data $y_0$ yields a code $C \in \mathbb{R}^{ix5000}$, composed  of the instrinsic variables \(c_i\). The index \(i\) corresponds to the i-th intrinsic variable whereas their number is given by the input data. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. On that account the method of characteristics \cite{Dret2016} provides a means to bypass this shortage. It is necessary for $c_i(x,t)$ to satisfy the conservative condition \cref{Eq. Mass_Const} and the transport equation \cref{Eq. Transport}.\\
 \noindent\begin{minipage}{.5\linewidth}
 	\begin{equation}
@@ -426,6 +435,18 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 	\caption{Resulting macroscopic quantities $\rho$, E, $\rho$u after interpolating in time using the interpolation method described in \ref{Reduced Order Model}. The interpolated quantity lies at timestamp t=24,5, while the original quantity lies at timestamp t=25.}
 \end{figure}
 \subsection{Rarefied Regime}
+The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+		\hline
+		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
+		\hline
+		Error 1st run & 0.0048 & 0.0025 & 0.0026 & 0.0027 & 0.0013 & 0.0014 & 0.0013 & 0.0009\\ \hline
+		Error 2nd run & 0.0038 & 0.0024 & 0.0016 & 0.0015 & 0.0011 & 0.0010 & 0.0012 & 0.0010\\\hline
+	\end{tabular}
+	\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Experiments with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
+	\label{Tab:Intrinsic units}
+\end{table}
 \subsection{Discussion and Outlook}
 \newpage
 \bibliography{Bibliography}{}

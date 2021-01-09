@@ -25,22 +25,22 @@ print(device)
 
 batch_s = []
 listing = []
-for i in [4,8,16,32]:
+for i in [2,4,8,16,32]:
 
     class params():
         N_EPOCHS = 5000
         BATCH_SIZE = i
         INPUT_DIM = 40
         H_SIZES = 40
-        LATENT_DIM = 3
+        LATENT_DIM = 5
         lr = 1e-4
     class data():
         #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
-        val_in = f[4000:5999]
+        val_in = f[4000:4999]
         train_iterator = DataLoader(train_in, batch_size = params.BATCH_SIZE)
         test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 
@@ -175,7 +175,7 @@ for i in [4,8,16,32]:
         'learning_rate': params.lr
         },'Results/%s.pt'%i)
 
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
     f = tensor(f, dtype=torch.float).to(device)
     rec = model(f)
     l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
@@ -186,4 +186,4 @@ for i in [4,8,16,32]:
 
 a = np.array(a)
 
-np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Batch Size')
+np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Batch Size  Error')

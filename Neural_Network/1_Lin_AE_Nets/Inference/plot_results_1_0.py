@@ -276,7 +276,7 @@ def plot_macro_1D():
         ax[i].set_ylabel(names[i])
         ax[i].legend()
     plt.tight_layout()
-    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal_Hy_vs_Rare.tex')
+    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal_Hy_vs_Rare.tex')
     plt.show()
 plot_macro_1D()
 
