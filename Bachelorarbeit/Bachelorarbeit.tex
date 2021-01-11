@@ -15,11 +15,12 @@
 \usepackage{tikzscale}
 \usepackage{cleveref}
 \usepackage{graphicx}
+\usepackage{caption}
 \usepackage{tocbibind}
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\newcommand{\hy}{\(\Pi_h\)}
-\newcommand{\rare}{\(\Pi_r\)}
+\newcommand{\hy}{\(\textsf{H}\)}
+\newcommand{\rare}{\(\textsf{R}\)}
 \tikzstyle{block} = [rectangle, draw, 
 text width=5em, text centered, rounded corners, minimum height=4em]
 
@@ -165,11 +166,14 @@ While the term back-propagation is solely used for the method to compute the gra
 \subsection{Autoencoders}
 Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both \hy and \rare.\\
 For the fully connected autoencoder the order of determining the hyperparameters is as follows:
-Depth $\rightarrow$ Hidden Units $\rightarrow$ Batch Size $\rightarrow$ Learning Rate $\rightarrow$ Activation Fuctions.
+Depth $\rightarrow$ Hidden Units $\rightarrow$ Batch Size $\rightarrow$  Activation Fuctions.
 For the convolutional autoencoder the order of determining the hyperparameters is as follows:
-Depth $\rightarrow$ Channels $\rightarrow$ Batch Size $\rightarrow$ Learning Rate$\rightarrow$ Activation Functions
+Depth $\rightarrow$ Channels $\rightarrow$ Batch Size $\rightarrow$ Activation Functions.
+Both models are evaluated on the course of the training. Figures showing the training process for all experiments are provided in the appendix. After training the L2-Error\cref{labellist} is evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}.\\
+Important to mention is that the difficulty of finding the right set of hyperparameters for MLPs led to an intensive search prior to the creation of this contribution. The difficulty lies in the fact that there is little systematic knowledge about how the hyperparameters interact in the model and answer to a variety of input data. Goodfellow et al. point out that with a combination of intuition, certain methods and first of all experience practitioners find hyperparameters that work well \cite{Goodfellow}. As for this thesis a list of the prior search is provided in \cref{Sec:AppendixA}. This list does not claim to cover the complete search and can by no means give enough insight to enable reproducability by another person.\\
+For this reason an insight into the methods employed to find the set of hyperparameters used in this contribution are described in the following. 
 \subsubsection{Hyperparameters for the Fully Connected Autoencoder}\label{Fully Connected}
-To start with a working model a guess is needed to be made about the initial design of the architecture. \Cref{Tab: First Guess} shows chosen hyperparameters  which are used initially.
+To start with a working model a guess is needed to be made about the initial design of the architecture. Here the hyperparameters already found are used as a starting point and shown in \Cref{Tab:First Guess}.\\
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c| }
 		\hline
@@ -180,7 +184,7 @@ To start with a working model a guess is needed to be made about the initial des
 	\caption{Initial hyperparameter selection}
 	\label{Tab:First Guess}
 \end{table}
-Originally the number of layers or depth as described in \cref{Sec:Deep Learning}is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \Cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
+To start with the number of layers or depth as described in \cref{Sec:Deep Learning} is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c| }
 		\hline
@@ -198,6 +202,7 @@ Originally the number of layers or depth as described in \cref{Sec:Deep Learning
 For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
 The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
 In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
+Training duration is raised form 2000 epochs to 5000, as training did now converge completely as seen in \cref{Fig:Depth Hy} and \cref{Fig:Depth Rare}.\\
 In the following the width of the hidden layer will be analysed. There are two available hidden layers for the autoencoder. But as the architecture of the decoder mirrors that of the encoder only one parameter needs to be varied. For both the hydrodynamic and the rarefied regime five experiments are conducted, varying the hidden units from ten to fifty. Results for \(\Pi_h\) and \(\Pi_r\) are shown in \cref{Tab:Hidden Units}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
@@ -213,22 +218,28 @@ In the following the width of the hidden layer will be analysed. There are two a
 	\label{Tab:Hidden Units}
 \end{table}
 For \hy and \rare forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for \hy and \(0.0125\) for \rare. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
-Next the mini-batch size is analysed and results displayed in \cref{Tab:Batch Size}. For \hy a largest mini-batch size of eight performs best. 
+Next the mini-batch size is analysed. Results are displayed in \cref{Tab:Batch Size Hydro} for \hy  and in \cref{Tab:Batch Size Rare} for \rare. Additionally \cref{Sec:AppendixA} shows the training for both in put data \hy and \rare. For both input data experiments are first conducted with mini-batch sizes in the range of : \([2,4,8,16,32]\).\\ The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for \hy. Likewise the results of the L2-Error for \rare show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for \hy with mini-batch sizes of: \([10,12,24]\). Two additional experiments for \rare with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for \hy and \rare. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+		\hline
+		Batch Size & 2 & 4 & 8 & 10 & 12 & 14 & 16 & 32 \\ [.5ex]
+		\hline
+		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0029 & 0.0018& 0.0018 & 0.0013 & 0.0030 \\ \hline
+	\end{tabular}
+	\caption{L2-Error for different mini-batch sizes for \(\Pi_h\).}
+	\label{Tab:Batch Size Hydro}
+\end{table}
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c|c|c| }
 		\hline
-		Batch Size & 2 & 4 & 8 & 10 & 12 & 14 16 & 32 \\ [.5ex]
+		Batch Size & 2 & 4 & 6 & 8 & 10 & 16 & 32 \\ [.5ex]
 		\hline
-		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0029 & 0.0018 0.0018 & 0.0013 & 0.0030\\ \hline
-		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
+		Error for \(\Pi_r\)& 0.0014 & 0.0010 & 0.0012 & 0.0012 & 0.0014 & 0.0017 & 0.0017\\ \hline
 	\end{tabular}
-	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
-	\label{Tab:Batch Size}
+	\caption{L2-Error for different mini-batch sizes for \(\Pi_r\).}
+	\label{Tab:Batch Size Rare}
 \end{table}
-From this point on the learning rate will be adaptive using the in-build \texttt{pytorch} learning rate scheduler \textit{ReducelrOnPlateau}. This algorithm for in-training adjustment of the learning rate reduces the learning rate by a constant factor of \(10e^{-1}\), when a perfomance metric, in this case the validation error, doesn't show any improvement. Only the threshold is defined, while the rest is left on default. Threshold outlines a dynamic threshold, calculated by \(best \times (1-threshold)\), for which the scheduler should be activated. A threshold of 10\(e^{-9}\) is chosen. The latter outlines the number of epochs to wait before the scheduler changes the learning rate which is left on default.
-According to the \texttt{pytorch} documentation \cite{bibid}, this method can improve the perfomance of a neural network by a fcor of two to ten. The results of applying this adaptive learning rate are shown in \cref{Fig:Adaptive learning rate}.
-
-Afterwards the activations in the layers will be studied. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables will be activated with a different function than the remaining layers. After training the L2-Error\cref{labellist} will be evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}. Results can be observed in \cref{Tab:Activations}.
+Together with the mini-batch sizes, activations are examined. Hence experiments with different activation functions are performed with the innitially used mini-batch size of 16. Besides the mini-batch size, epochs are as well taken from the inital selection of hyperparameters as 2000 epochs. Unlike the previous two examinations the selection of activation functions shows early in training if a acceptable level of perfomance can be achieved. This is a personal observation made throughout working on this thesis. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables is activated with a different function than the remaining layers. Results can be observed in \cref{Tab:Activations Hydro} and \cref{Tab:Activations Rare}.
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
 		\hline
@@ -239,23 +250,36 @@ Afterwards the activations in the layers will be studied. First five activations
 		\hline
 		Error & 0.0019 & 0.0017 & 0.0019 &  & \\ \hline
 	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for the hydrodynamic regime.}
-	\label{Tab:Activations}
+	\caption{L2-Error different activation functions and combinations for \hy.}
+	\label{Tab:Activations Hydro}
 \end{table}
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c| }
 		\hline
 		Activation function & ReLU & ELU & Tanh & SiLU & LeakyReLU \\ [.5ex]
 		\hline
-		Error & 0.0328 & 0.0178 & 0.0125 & 0.0134 & 0.0183\\ \hline
+		Error & 0.0048 & 0.0029 & 0.0037 & 0.0134 & 0.0.0034\\ \hline
 		Activation function & ELU/Tanh & LeakyReLU/Tanh & ELU/SiLU & & \\ [.5ex]
 		\hline
-		Error & 0.0019 & 0.0017 &  &  & \\ \hline
+		Error & 0.0.0032 & 0.0030 & 0.0036 &  & \\ \hline
 	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for the rarefied regime.}
-	\label{Tab:Activations}
+	\caption{L2-Error different activation functions and combinations for \rare.}
+	\label{Tab:Activations Rare} 
 \end{table}
-ELU and SiLU stand out with the lowest loss.  
+Both input data lead to different results this time. For that reason \hy and \rare are studied separately. Starting with \hy and the values of the L2-Error, it can be observed that,
+while ELU and SiLU stand out with the lowest value of the L2-Error, when applying the same activation function to all layers, all three coupled activations convince in the combination case. Applying different activations to the layers increases the representational capacity of the model since the model can feed on a greater variety of functions as explained in the previous subsection. The need for a great representational capacity reduces for \hy. The reasons are the linearity of that case as described in \cite{BGK}. Hence two activations (ELU and SiLU) from a similar family of functions perform well on \hy without the need of a second actiation. Still adding another activation render as good results concerning the L2-Error. When observing the train -and test loss in \cref{Fig:Activations Hydro 1} one can notice that overfitting clusters the activations into two groups. While they all achieve a similar MSE-Loss for train -and test data only ELU and Tanh are not sowing overfitting. The combination of two activations functions yields an abundance of overfitting only for the combination of LeakyReLU with Tanh. In addition LeakyReLU with Tanh reaches together with ELU in combination with SiLU the lowest train -and test loss. The slight overfitting observed with the combination ELU and SiLU  give rise to choose for the final model LeakyReLU with Tanh.\\
+To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations Rare}, ELU stands out for the single activation. ELU with Tanh and LeakyReLU with Tanh meet the lowest L2-error for the combination of activations. Next observing the training for the three activations in \cref{Fig:Activations Rare} one finds that all three show little to no overfitting, while the combination of LeakyReLU and Tanh deviates from that slightly. From this point no clean decision can be made which activation or combination to take. Therefore another run is conducted for the three. Results are shown in \cref{Tab:Activations Rare 2nd}. Only LeakyReLU with Tanh and ELU alone convince with a lower L2-loss. The train -and test loss does not give any hint which of the two remaining activations/ combination of activations to take concerning overfitting or a profound gradient for the train -and test loss. Hence a third run is performed taking the parameters already produced for the two models and training them for another 2000 epochs. This warm-starting of the models finally gives an answer on which one to take. The results in \cref{Tab:Activations Rare 2nd} show that LeakyReLU with Tanh, just as for \hy, perform well on \rare with the given model. In \cref{Fig:Activations Rare 2nd3rd} the train and test loss during training are provided for teh second and third run. 
+\begin{table}[!htbp]\centering
+	\begin{tabular}{ |c|c|c|c| }
+		\hline
+		Activation function & ELU & ELU/Tanh & LeakyReLU/TanH \\ 
+		\hline
+		Error 2nd run& 0.0034 & 0.0029 & 0.0025\\ \hline
+		Error 3rd run& 		  & 0.0024 & 0.0019 \\ \hline
+	\end{tabular}
+	\caption{L2-Error different activation functions and combinations for \hy.}
+	\label{Tab:Activations Rare 2nd}
+\end{table}
 \subsubsection{Hyperparameters for the Convolutional Autoencoder}\label{Convolutional}
 The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
 \begin{equation}
@@ -454,27 +478,105 @@ The number of intrinsic variables defining the rarefied regime is unknown. There
 \bibliography{Bibliography}{}
 \bibliographystyle{unsrt}
 \newpage
-\subsection{Appendix A}\label{AppendixA}
+\subsection{Appendix A}\label{Sec:AppendixA}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Depth/Hydro/0.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Hydro/1.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Hydro/3.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Hydro/4.tex}}
-		\caption{Analysis of layer size for five different architectures, showing the error for training and testing on the data in the hydrodynamic regime.}
-		\label{Fig:Layer Size Hydro}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/0.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/1.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/3.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/4.tex}}
+		\caption{Experiments with five different depth on \hy. Training and test loss are shown over 2000 epochs.}
+		\label{Fig:Depth Hydro}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Depth/Rare/0.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Rare/1.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Rare/3.tex}}
-		\scalebox{.9}{\input{Figures/Depth/Rare/4.tex}}
-		\caption{Analysis of layer size for five different architectures, showing the error for training and testingon the data on the rarefied regime.}
-		\label{Fig:Layer Size Rare}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/0.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/1.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/3.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/4.tex}}
+		\caption{Experiments with five different depth on \rare. Training and test loss are shown over 2000 epochs.}
+		\label{Fig:Depth Rare}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/8.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/10.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/12.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/14.tex}}
+		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
+		\label{Fig:Batch Hy}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]\ContinuedFloat
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/16.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/32.tex}}
+		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
+		\label{}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/6.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/8.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/10.tex}}
+		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
+		\label{Fig:Batch Rare}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]\ContinuedFloat
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/16.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/32.tex}}
+		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
+		\label{}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/LeakyReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU_Tanh.tex}}
+		\caption{balblabla}
+		\label{Fig:Activations Hydro 1}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]\ContinuedFloat
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/LeakyReLU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU_SiLU.tex}}
+		\caption{}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/LeakyReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_Tanh.tex}}
+		\caption{blablabla}
+		\label{Fig:Activations Rare}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[htbp!]\ContinuedFloat
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_SiLU.tex}}
+		\caption{blablabla}
+		\label{}
 	\end{figure}
 \end{center}
 \end{document}

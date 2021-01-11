@@ -9,14 +9,14 @@ import tikzplotlib
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device='cpu'
 
-for g in range(8):
+for g in range(7):
     class params():
         INPUT_DIM = 40
         H_SIZES = 40
-        LATENT_DIM = 3
+        LATENT_DIM = 5
     class data():
         #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
     class Encoder(nn.Module):
@@ -65,7 +65,9 @@ for g in range(8):
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
-    i = [2,4,8,10,12,14,16,32]
+
+    model = Autoencoder(encoder, decoder).to(device)
+    i = [2,4,6,8,10,16,32]
     checkpoint = torch.load('Results/{}.pt'.format(i[g]), map_location=lambda storage, loc: storage)
 
     model.load_state_dict(checkpoint['model_state_dict'])
@@ -88,5 +90,5 @@ for g in range(8):
     
     plt.title('Mini-Batch Size {}'.format(i[g]))
     plt.legend()
-    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Parameterstudy/Batch_Size/Hydro/{}.tex'.format(i[g]))
+    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Parameterstudy/Batch_Size/Rare/{}.tex'.format(i[g]))
     plt.show()
