@@ -5,10 +5,13 @@
 \usepackage{fullpage}
 \usepackage{amsmath}
 \usepackage{multicol}
+\usepackage{wrapfig}
 \usepackage{amsfonts}
 \usepackage{pgfplots}
 \usepackage{pgfplotstable}
 \usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=Figures/]
 \usetikzlibrary{shapes,arrows}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
@@ -58,49 +61,42 @@ State of the art model reduction of dynamical systems can be done via proper ort
 	f(x)\approx \tilde{f}(x) \quad\textrm{with}\tilde{f}=\sum_{k=1}^r a_k \psi_k(x)  \qquad\ \textrm{where}\qquad \psi_k\quad \textrm{are orthonormal functions.}
 \end{equation}
 Bernard et al. use POD-Galerkin with an additional population of their snapshot database via optimal transport for the proposed BGK equation, bisecting computational run time (cost) in conjunction with an approximation error of \(\sim\) 1 \% in \cite{Bernard}. Artificial intelligence in the form of autoencoders replacing the POD within a Galerkin framework is evaluated against the POD performance by Kookjin et al. for advection-dominated problems\cite{Carlberg} resulting in sub 0.1\% errors. An additional time inter- and extrapolation is evaluated. Using machine learning/ deep learning for reduced order modeling in CFD is a novel approach although "the idea of autoencoders has been part of the historical landscape of neural networks for decades"\cite[p.493]{Goodfellow}. Autoencoders, or more precisely learning internal representations by the delta rule (backpropagation) and the use of hidden units in a feed forward neural network architecture, premiered by Rumelhart et al. (1986) \cite{Rumelhart}.  Through so called hierarchical training Ballard et al.(1987) introduce a strategy to train auto autoassociative networks (nowadays referred to as autoencoders), in a reasonable time promoting further development despite computational limitations \cite{Ballard}. The so called bottleneck of autoencoders yields a non-smooth and entangled representation thus beeing uninterpretable by practitioners\cite{Rifai2011} leading to developements in this field. Rifai et al. introduce the contractive autoencoder (CAE) for classification tasks (2011), with the aim to extract robust features which are insensitive to input variations orthogonal to the low-dimensional non-linear manifold by adding a penalty on the frobenius norm of the instrinsic variables with respect to the input, surpassing other classification algorithms \cite{Rifai2011}. Subsequent development emerges with the manifold tangent classifier (MTC) \cite{Rifai_2011a}. A local chart for each datapoint is obtained hence characterizing the manifold  which in turn improves classification performance. On that basis a generative process for the CAE is developed. Through movements along the manifold with directions defined by the Jacobian of the bottleneck layer with respect to the input \begin{math}	\vec{x}_m=JJ^T \end{math}, sampling is realized \cite{rifai2012generative}....
-Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......
-
-	
-\section{The BGK Equation}\label{Sec: BGK}
-The Knudsen number \cref{knudsen} introduced by Danish physicist Martin Knudsen is a measure for the rarefaction of gases. In \cref{knudsen} $\lambda$ represents the mean free path and\(L\) the characteristic length \cite{Bernard} of a particle. The mean free path  describes the average distance a particle may travel between successive impacts [\textbf{WIKI}](nur ein reminder). For idealized gases the mean free path can be calculated via \cref{lambda}. In \cref{lambda} $k_b$ is the Boltzman constant, \(p\) is the total pressure, \(T\) is the thermodynamic temperature and \(d\) is the hard shell diameter [\textbf{WIKI}](auch nur ein reminder).\\
-\noindent\begin{minipage}{.5\linewidth}
-	\begin{equation}
-		Kn = \frac{\lambda}{L}
-		\label{knudsen}
+Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......	
+\section{The BGK Model}\label{Sec: BGK}
+This section covers the kinetic gas model, the BGK model, on which a model order reduction will be performed in the following. In addition the SOD-shocktube, on which the BGK model will be tested is discussed.\\
+The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann equation. More precisely the r.h.s of the Boltzmann equation is approximated by the BGK operator \cite{puppo2019kinetic}
+\begin{equation}
+\partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f) \text{.}
+\label{Eq:BGK}
 \end{equation}
-\end{minipage}%
-\begin{minipage}{.5\linewidth}
-	\begin{equation}
-		\lambda = \frac{k_bT}{\sqrt{2}\pi d^2p}
-		\label{lambda}
+It consists of the relaxation time \(\tau(x,t)\), the Maxwellian distribution \(M_f\) and \(f(x,v,t)\) the probability of a gas particle having a microscopic velocity \(v\) in phase space \((x,v,t)\). The left side of the BGK model is a transport equation for \(f(x,v,t)\) with transport velocity \(v\). In the maxwellian distribution \(n(x,t)\) is the number of particles in space and time, \(R\) is the specific gas constant, \(T^0(x,t)\) is the temperature and \(u(x,t)\) is the macroscopic velocity
+\begin{equation}
+M_f = \frac{n(x,t)}{\sqrt{2\pi R T^0(x,t)}}\exp(-\frac{(v - u(x,t))^2}{2 R T^0(x,t)}) \text{.}
 \end{equation}
-\end{minipage}
-For Kndusen numbers $Kn > 10^{-2}$ collisions are predominant in comparison to free transport, whereas for $Kn < 10^{-2}$ free transport becomes the predominant behavior compared to collision\cite{Bernard}. This difference in turn characterizes flows where the Bolzmann equation (collisions) or the Navier-Stokes equations (free transport) are valid. Hence the former \cref{Boltzmann} describes the dynamics of a gas flow, where f is the probability density distribution function for a particle at point $x \in \mathbb{R}$ with velocity $\xi \in \mathbb{R}$ at time $t \in \mathbb{R}$
-\begin{equation}	\partial_t f(x, \xi, t) + \xi \Delta_x f(\textbf{x},\xi,t) = \nu n (M_f - f)
-	\label{Boltzmann}
+Note that in this thesis the BGK model is discussed in one dimension. Hence the BGK model needs to be evaluated for three independent variables \(x\), \(v\) and \(t\) as seen above.\\ 
+Now what makes the BGK model especially attractive for model order reduction?
+The fruitfullness of performing a model order reduction on the BGK model becomes clearer when looking at it's space and velocity discretization
+\begin{equation}
+	\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t)) \text{.}
+	\label{Eq:Discrete BGK}
 \end{equation}
-Originally the r.h.s, the collision term, is often the binary Boltzmann collision term, which can be intractable in pratice \cite{BGK}. Thus the BGK equation utilizes the BGK-Operator as the collision term \cref{Collision}\cite{Bernard}.
+Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(x_j,v_K,t)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\) \cite{puppo2019kinetic}. Now the PDE in \cref{Eq:BGK} is broken down into a system of ODE's in time, for which every ODE is a lineaar advection equation with constant scalar speed \(v_k\) and a source term.\\ 
+To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3N^3\) first order differential equations \cref{Eq:Discrete BGK}. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together stimulate the want for a reduced order model.\\
+\begin{wrapfigure}{r}{0.45\textwidth}
+	\begin{center}
+		\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
+	\end{center}
+	\caption{Illustration of the linkge between the macroscopic quantities of the gas flow and f the distribution function}
+\end{wrapfigure}
+In order to evaluate \(M_f\) and therefore \cref{Eq:Discrete BGK} the macroscopic velocity \(u(x,t)\) is required. Other macroscopic quantities of the gas flow, namely  the density \(\rho\), the impulse \(\rho u\) and the energy \(E\) are the expected values or moments of \(f\) in velocity space and can be calculated with 
 \begin{align}
-Q(f,f) &= \frac{M_f(\textbf{x},\xi,t) - f(\textbf{x},\xi,t)}{\tau(\textbf{x},t)} \label{Collision}\\
-M_f(x,\xi,t) &= \frac{\rho(\textbf{x},t)}{(2\pi T(\textbf{x},t))^{\frac{3}{2}}}\exp(-\frac{||\xi -U(\textbf{x},t)||^2}{2T(\textbf{x},t)})  \label{Maxwellian}\\
-\tau \label{Relaxation}
+	\rho(x,t) &= \int\! f \,\mathrm{d}v \mathrm{,} 
+	\\
+	\rho(x,t) u(x,t) &= \int\! v f \,\mathrm{d}v \mathrm{,}
+	\\
+	E(x,t) &= \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \mathrm{.}
 \end{align}
-For many kinetic gas problems it is sufficient to replace the complexity of the Boltzmann collision term by a mean-free-path approach. The relaxation time is$\tau$ , which considers that collisions tend to relax the distribution function to an equilibrium state $f_0$, where $f_0 = M_f$ the equilibrium state is approximated by a Maxwellian distribution function\cite{BGK}. In \cref{Maxwellian} $U(\textbf{x},t) = (u(\textbf{x},t),v(\textbf{x},t),w(\textbf{x},t))^T$ is the macroscopic velovity, $T(\textbf{x},t) \in \mathbb{R}$ and $\rho(\textbf{x},t)\in \mathbb{R}$is the temperature and density of the gas respectively. In \cref{Relaxation} $\nu\in\mathbb{R}$ is the exponent of the viscosity law of the gas. As a result one obtains th BGK equation which can be utilized for both hydrodynamic and rarefied regimes and meets global conservation as discussed in \cref{FeaturesSOD}. By multiplying the BGK equation with the collision invariants $\Phi(v) = (1,\xi,\frac{1}{2}\xi^2)^T$ and integrating over velocity space d$\xi$, one obtains the corresponding moments, \cref{moment1} to \cref{moment3}.\\
-\noindent\begin{minipage}{.3\linewidth}
-	\begin{equation}
-		\rho(x,t) = \int f \,\text{d}\xi \label{moment1}
-	\end{equation}
-\end{minipage}%
-\begin{minipage}{.3\linewidth}
-	\begin{equation}
-		\rho u(x,t) = \int \xi f \,\text{d}\xi \label{moment2}
-	\end{equation}
-\end{minipage}%
-\begin{minipage}{.31\linewidth}
-	\begin{equation}
-		E(x,t) = \int \frac{1}{2}\xi^2 f  \,\text{d}\xi \label{moment3}
-	\end{equation}
-\end{minipage}
+As an illustrative example of the linkage between 
 \subsection{Macroscopic features of Hydrodynamic and Rarefied Gas Flows in the SOD-Shock Tube} \label{FeaturesSOD}
 \begin{figure}[!htbp]
 	\input{Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex}

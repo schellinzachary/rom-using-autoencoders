@@ -60,6 +60,11 @@ Salah Rifai, Yoshua Bengio, Yann Dauphin, and Pascal Vincent.
 \newblock A generative process for sampling contractive auto-encoders.
 \newblock 2012.
 
+\bibitem{puppo2019kinetic}
+Gabriella Puppo.
+\newblock Kinetic models of bgk type and their numerical integration.
+\newblock 2019.
+
 \bibitem{Hornik1989}
 Kurt Hornik, Maxwell Stinchcombe, and Halbert White.
 \newblock Multilayer feedforward networks are universal approximators.

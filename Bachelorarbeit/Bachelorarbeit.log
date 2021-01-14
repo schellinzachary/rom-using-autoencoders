@@ -1,6 +1,6 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  11 JAN 2021 02:21
- restricted system commands enabled.
-**Bachelorarbeit.tex
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  14 JAN 2021 23:06
+ system commands enabled.
+**Bachelorarbeit.tex Bachelorarbeit.tex
 (./Bachelorarbeit.tex
 LaTeX2e <2020-02-02> patch level 2
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -358,6 +358,14 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box93
 \mc@col@check@num=\count268
 )
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen158
+\WF@size=\dimen159
+\c@WF@wrappedlines=\count269
+\WF@box=\box94
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
@@ -387,20 +395,20 @@ Package graphics Info: Driver file: luatex.def on input line 105.
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
 File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 ))
-\Gin@req@height=\dimen158
-\Gin@req@width=\dimen159
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks23
-\pgfutil@tempdima=\dimen160
-\pgfutil@tempdimb=\dimen161
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box94
+\pgfutil@abb=\box95
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -416,33 +424,33 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks24
-\pgfkeys@temptoks=\toks25
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks26
+\pgfkeys@tmptoks=\toks27
 ))
-\pgf@x=\dimen162
-\pgf@y=\dimen163
-\pgf@xa=\dimen164
-\pgf@ya=\dimen165
-\pgf@xb=\dimen166
-\pgf@yb=\dimen167
-\pgf@xc=\dimen168
-\pgf@yc=\dimen169
-\pgf@xd=\dimen170
-\pgf@yd=\dimen171
+\pgf@x=\dimen164
+\pgf@y=\dimen165
+\pgf@xa=\dimen166
+\pgf@ya=\dimen167
+\pgf@xb=\dimen168
+\pgf@yb=\dimen169
+\pgf@xc=\dimen170
+\pgf@yc=\dimen171
+\pgf@xd=\dimen172
+\pgf@yd=\dimen173
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count269
-\c@pgf@countb=\count270
-\c@pgf@countc=\count271
-\c@pgf@countd=\count272
-\t@pgf@toka=\toks27
-\t@pgf@tokb=\toks28
-\t@pgf@tokc=\toks29
-\pgf@sys@id@count=\count273
+\c@pgf@counta=\count270
+\c@pgf@countb=\count271
+\c@pgf@countc=\count272
+\c@pgf@countd=\count273
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count274
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -458,8 +466,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count274
-\pgfsyssoftpath@bigbuffer@items=\count275
+\pgfsyssoftpath@smallbuffer@items=\count275
+\pgfsyssoftpath@bigbuffer@items=\count276
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -488,12 +496,12 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen172
-\pgfmath@count=\count276
-\pgfmath@box=\box95
-\pgfmath@toks=\toks30
-\pgfmath@stack@operand=\toks31
-\pgfmath@stack@operation=\toks32
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count277
+\pgfmath@box=\box96
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -513,58 +521,58 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count277
+\c@pgfmathroundto@lastzeros=\count278
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen173
-\pgf@picmaxx=\dimen174
-\pgf@picminy=\dimen175
-\pgf@picmaxy=\dimen176
-\pgf@pathminx=\dimen177
-\pgf@pathmaxx=\dimen178
-\pgf@pathminy=\dimen179
-\pgf@pathmaxy=\dimen180
-\pgf@xx=\dimen181
-\pgf@xy=\dimen182
-\pgf@yx=\dimen183
-\pgf@yy=\dimen184
-\pgf@zx=\dimen185
-\pgf@zy=\dimen186
+\pgf@picminx=\dimen175
+\pgf@picmaxx=\dimen176
+\pgf@picminy=\dimen177
+\pgf@picmaxy=\dimen178
+\pgf@pathminx=\dimen179
+\pgf@pathmaxx=\dimen180
+\pgf@pathminy=\dimen181
+\pgf@pathmaxy=\dimen182
+\pgf@xx=\dimen183
+\pgf@xy=\dimen184
+\pgf@yx=\dimen185
+\pgf@yy=\dimen186
+\pgf@zx=\dimen187
+\pgf@zy=\dimen188
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen187
-\pgf@path@lasty=\dimen188
+\pgf@path@lastx=\dimen189
+\pgf@path@lasty=\dimen190
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen189
-\pgf@shorten@start@additional=\dimen190
+\pgf@shorten@end@additional=\dimen191
+\pgf@shorten@start@additional=\dimen192
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box96
-\pgf@hbox=\box97
-\pgf@layerbox@main=\box98
-\pgf@picture@serial@count=\count278
+\pgfpic=\box97
+\pgf@hbox=\box98
+\pgf@layerbox@main=\box99
+\pgf@picture@serial@count=\count279
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen191
+\pgflinewidth=\dimen193
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen192
-\pgf@pt@y=\dimen193
-\pgf@pt@temp=\dimen194
+\pgf@pt@x=\dimen194
+\pgf@pt@y=\dimen195
+\pgf@pt@temp=\dimen196
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -580,13 +588,13 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen195
+\pgfarrowsep=\dimen197
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen196
-\pgf@sys@shading@range@num=\count279
-\pgf@shadingcount=\count280
+\pgf@max=\dimen198
+\pgf@sys@shading@range@num=\count280
+\pgf@shadingcount=\count281
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -594,7 +602,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box99
+\pgfexternal@startupbox=\box100
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -613,15 +621,15 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box100
+\pgfnodeparttextbox=\box101
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen197
-\pgf@nodesepend=\dimen198
+\pgf@nodesepstart=\dimen199
+\pgf@nodesepend=\dimen256
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -635,10 +643,10 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen199
-\pgffor@skip=\dimen256
-\pgffor@stack=\toks33
-\pgffor@toks=\toks34
+\pgffor@iter=\dimen257
+\pgffor@skip=\dimen258
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
@@ -646,33 +654,33 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count281
-\pgfplotmarksize=\dimen257
+\pgf@plot@mark@count=\count282
+\pgfplotmarksize=\dimen259
 )
-\tikz@lastx=\dimen258
-\tikz@lasty=\dimen259
-\tikz@lastxsaved=\dimen260
-\tikz@lastysaved=\dimen261
-\tikz@lastmovetox=\dimen262
-\tikz@lastmovetoy=\dimen263
-\tikzleveldistance=\dimen264
-\tikzsiblingdistance=\dimen265
-\tikz@figbox=\box101
-\tikz@figbox@bg=\box102
-\tikz@tempbox=\box103
-\tikz@tempbox@bg=\box104
-\tikztreelevel=\count282
-\tikznumberofchildren=\count283
-\tikznumberofcurrentchild=\count284
-\tikz@fig@count=\count285
+\tikz@lastx=\dimen260
+\tikz@lasty=\dimen261
+\tikz@lastxsaved=\dimen262
+\tikz@lastysaved=\dimen263
+\tikz@lastmovetox=\dimen264
+\tikz@lastmovetoy=\dimen265
+\tikzleveldistance=\dimen266
+\tikzsiblingdistance=\dimen267
+\tikz@figbox=\box102
+\tikz@figbox@bg=\box103
+\tikz@tempbox=\box104
+\tikz@tempbox@bg=\box105
+\tikztreelevel=\count283
+\tikznumberofchildren=\count284
+\tikznumberofcurrentchild=\count285
+\tikz@fig@count=\count286
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count286
-\pgfmatrixcurrentcolumn=\count287
-\pgf@matrix@numberofcolumns=\count288
+\pgfmatrixcurrentrow=\count287
+\pgfmatrixcurrentcolumn=\count288
+\pgf@matrix@numberofcolumns=\count289
 )
-\tikz@expandcount=\count289
+\tikz@expandcount=\count290
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -682,12 +690,12 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \pgfplots@luabackend@table=\catcodetable5
-\t@pgfplots@toka=\toks35
-\t@pgfplots@tokb=\toks36
-\t@pgfplots@tokc=\toks37
-\pgfplots@tmpa=\dimen266
-\c@pgfplots@coordindex=\count290
-\c@pgfplots@scanlineindex=\count291
+\t@pgfplots@toka=\toks36
+\t@pgfplots@tokb=\toks37
+\t@pgfplots@tokc=\toks38
+\pgfplots@tmpa=\dimen268
+\c@pgfplots@coordindex=\count291
+\c@pgfplots@scanlineindex=\count292
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -712,14 +720,14 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count292
+\c@pgfplotsarray@tmp=\count293
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count293
-\t@pgfplotstable@a=\toks38
+\c@pgfplotstable@counta=\count294
+\t@pgfplotstable@a=\toks39
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
 .code.tex)
@@ -731,7 +739,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count294
+\c@pgfplotslibrarysurf@no=\count295
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-luatex.def)))
@@ -758,16 +766,16 @@ e.tex)
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen267
-\pgfdecoratedremainingdistance=\dimen268
-\pgfdecoratedinputsegmentcompleteddistance=\dimen269
-\pgfdecoratedinputsegmentremainingdistance=\dimen270
-\pgf@decorate@distancetomove=\dimen271
-\pgf@decorate@repeatstate=\count295
-\pgfdecorationsegmentamplitude=\dimen272
-\pgfdecorationsegmentlength=\dimen273
+\pgfdecoratedcompleteddistance=\dimen269
+\pgfdecoratedremainingdistance=\dimen270
+\pgfdecoratedinputsegmentcompleteddistance=\dimen271
+\pgfdecoratedinputsegmentremainingdistance=\dimen272
+\pgf@decorate@distancetomove=\dimen273
+\pgf@decorate@repeatstate=\count296
+\pgfdecorationsegmentamplitude=\dimen274
+\pgfdecorationsegmentlength=\dimen275
 )
-\tikz@lib@dec@box=\box105
+\tikz@lib@dec@box=\box106
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -777,13 +785,13 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count296
-\pgfplots@xmin@reg=\dimen274
-\pgfplots@xmax@reg=\dimen275
-\pgfplots@ymin@reg=\dimen276
-\pgfplots@ymax@reg=\dimen277
-\pgfplots@zmin@reg=\dimen278
-\pgfplots@zmax@reg=\dimen279
+\pgfplots@numplots=\count297
+\pgfplots@xmin@reg=\dimen276
+\pgfplots@xmax@reg=\dimen277
+\pgfplots@ymin@reg=\dimen278
+\pgfplots@ymax@reg=\dimen279
+\pgfplots@zmin@reg=\dimen280
+\pgfplots@zmax@reg=\dimen281
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryplotmarks.code.tex
@@ -802,14 +810,20 @@ Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.colt
 ype.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen280
-\ar@mcellbox=\box106
-\extrarowheight=\dimen281
-\NC@list=\toks39
+\col@sep=\dimen282
+\ar@mcellbox=\box107
+\extrarowheight=\dimen283
+\NC@list=\toks40
 \extratabsurround=\skip56
 \backup@length=\skip57
-\ar@cellbox=\box107
+\ar@cellbox=\box108
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
+yexternal.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zexternalshared.code.tex))
+\openout3 = Bachelorarbeit.auxlock
+
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -857,26 +871,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box108
-\pgfnodeparttwobox=\box109
-\pgfnodepartthreebox=\box110
-\pgfnodepartfourbox=\box111
-\pgfnodeparttwentybox=\box112
-\pgfnodepartnineteenbox=\box113
-\pgfnodeparteighteenbox=\box114
-\pgfnodepartseventeenbox=\box115
-\pgfnodepartsixteenbox=\box116
-\pgfnodepartfifteenbox=\box117
-\pgfnodepartfourteenbox=\box118
-\pgfnodepartthirteenbox=\box119
-\pgfnodeparttwelvebox=\box120
-\pgfnodepartelevenbox=\box121
-\pgfnodeparttenbox=\box122
-\pgfnodepartninebox=\box123
-\pgfnodeparteightbox=\box124
-\pgfnodepartsevenbox=\box125
-\pgfnodepartsixbox=\box126
-\pgfnodepartfivebox=\box127
+\pgfnodepartlowerbox=\box109
+\pgfnodeparttwobox=\box110
+\pgfnodepartthreebox=\box111
+\pgfnodepartfourbox=\box112
+\pgfnodeparttwentybox=\box113
+\pgfnodepartnineteenbox=\box114
+\pgfnodeparteighteenbox=\box115
+\pgfnodepartseventeenbox=\box116
+\pgfnodepartsixteenbox=\box117
+\pgfnodepartfifteenbox=\box118
+\pgfnodepartfourteenbox=\box119
+\pgfnodepartthirteenbox=\box120
+\pgfnodeparttwelvebox=\box121
+\pgfnodepartelevenbox=\box122
+\pgfnodeparttenbox=\box123
+\pgfnodepartninebox=\box124
+\pgfnodeparteightbox=\box125
+\pgfnodepartsevenbox=\box126
+\pgfnodepartsixbox=\box127
+\pgfnodepartfivebox=\box128
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -885,13 +899,13 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen282
+\arrowsize=\dimen284
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count297
-\pgfplots@group@current@row=\count298
-\pgfplots@group@current@column=\count299
+\pgfplots@group@current@plot=\count298
+\pgfplots@group@current@row=\count299
+\pgfplots@group@current@column=\count300
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -902,7 +916,7 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count300
+\etb@tempcnta=\count301
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -910,23 +924,23 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count301
-\l__pdf_internal_box=\box128
+\l__kernel_color_stack_int=\count302
+\l__pdf_internal_box=\box129
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count302
-\g__xparse_grabber_int=\count303
-\l__xparse_m_args_int=\count304
-\l__xparse_v_nesting_int=\count305
+\l__xparse_current_arg_int=\count303
+\g__xparse_grabber_int=\count304
+\l__xparse_m_args_int=\count305
+\l__xparse_v_nesting_int=\count306
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count306
-\decimalpart=\count307
+\integerpart=\count307
+\decimalpart=\count308
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box129
+\tikzscale@measuredSize=\box130
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -948,18 +962,19 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen283
-\captionmargin@=\dimen284
-\captionwidth=\dimen285
-\caption@tempdima=\dimen286
-\caption@indent=\dimen287
-\caption@parindent=\dimen288
-\caption@hangindent=\dimen289
+\captionmargin=\dimen285
+\captionmargin@=\dimen286
+\captionwidth=\dimen287
+\caption@tempdima=\dimen288
+\caption@indent=\dimen289
+\caption@parindent=\dimen290
+\caption@hangindent=\dimen291
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count308
-\c@continuedfloat=\count309
+\c@caption@flags=\count309
+\c@continuedfloat=\count310
 Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -986,33 +1001,33 @@ LaTeX Warning: Label `@cref' multiply defined.
 )
 \openout1 = Bachelorarbeit.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 27.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 27
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 30.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 30
 .
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-\AtBeginShipoutBox=\box130
-Package hyperref Info: Link coloring OFF on input line 27.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+\AtBeginShipoutBox=\box131
+Package hyperref Info: Link coloring OFF on input line 30.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1023,11 +1038,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count310
+\c@section@level=\count311
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
 
 (./Bachelorarbeit.out) (./Bachelorarbeit.out)
 \@outlinefile=\write4
@@ -1036,17 +1051,17 @@ LaTeX Info: Redefining \nameref on input line 27.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count311
-\scratchdimen=\dimen290
-\scratchbox=\box131
-\nofMPsegments=\count312
-\nofMParguments=\count313
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count314
-\MPscratchDim=\dimen291
-\MPnumerator=\count315
-\makeMPintoPDFobject=\count316
-\everyMPtoPDFconversion=\toks41
+\scratchcounter=\count312
+\scratchdimen=\dimen292
+\scratchbox=\box132
+\nofMPsegments=\count313
+\nofMParguments=\count314
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count315
+\MPscratchDim=\dimen293
+\MPnumerator=\count316
+\makeMPintoPDFobject=\count317
+\everyMPtoPDFconversion=\toks42
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -1062,11 +1077,11 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 32.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1077,117 +1092,144 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout5 = Bachelorarbeit.toc
  [2]
-Underfull \hbox (badness 10000) in paragraph at lines 40--54
+Underfull \hbox (badness 10000) in paragraph at lines 43--57
 
  []
 
 
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 61.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 64.
 
 
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 61.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 64.
 
 
-LaTeX Warning: Citation `bibid' on page 3 undefined on input line 61.
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 64.
 
 
-Overfull \hbox (0.8137pt too wide) in paragraph at lines 59--62
+Overfull \hbox (0.8137pt too wide) in paragraph at lines 62--65
 \TU/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-ti
 on of their snap-shot database
  []
 
-[3] [4] (./Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1287--107
+[3] [4] (./Figures/BGK/Boltzmann.tex
+\openout3 = Figures/Bachelorarbeit-figure0.md5
+
+\openout3 = Bachelorarbeit.auxlock
+
+===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
+-error -interaction=batchmode -jobname "Figures/Bachelorarbeit-figure0" "\def\ti
+kzexternalrealjob{Bachelorarbeit}\input{Bachelorarbeit}"' ========
+
+\openout3 = Bachelorarbeit.auxlock
+)
+Overfull \hbox (15.08136pt too wide) in paragraph at lines 87--88
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--90
+
+ []
+
+
+Underfull \hbox (badness 3646) in paragraph at lines 100--100
+\TU/lmr/bx/n/14.4 dro-dy-namic and Rar-efied Gas
+ []
+
+(./Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex
+===== Image 'Figures/Bachelorarbeit-figure1' is up-to-date. ======
+)
+Underfull \hbox (badness 10000) in paragraph at lines 2--103
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1287--107
+Underfull \hbox (badness 10000) in paragraph at lines 2--103
 
  []
 
 
-LaTeX Warning: Citation `the' on page 5 undefined on input line 111.
+LaTeX Warning: Citation `the' on page 5 undefined on input line 107.
 
-[5] [6]
+[5<./Figures/Bachelorarbeit-figure0.pdf>] [6<./Figures/Bachelorarbeit-figure1.pd
+f>]
 
-LaTeX Warning: Citation `bibid' on page 7 undefined on input line 120.
-
-
-LaTeX Warning: Citation `bibid' on page 7 undefined on input line 120.
+LaTeX Warning: Citation `bibid' on page 7 undefined on input line 116.
 
 
-LaTeX Warning: Citation `bibid' on page 7 undefined on input line 124.
-
-
-LaTeX Warning: Citation `Pytorch website' on page 7 undefined on input line 124.
-
+LaTeX Warning: Citation `bibid' on page 7 undefined on input line 116.
 
 [7]
 
-LaTeX Warning: Citation `bibid' on page 8 undefined on input line 145.
+LaTeX Warning: Citation `bibid' on page 8 undefined on input line 120.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 8 undefined on input line 120.
+
 
 [8]
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 172.
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 141.
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 168.
 
 [9]
 
-LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 187.
+LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 183.
 
 
 
 LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
- 187.
+ 183.
 
 
-LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 187.
+LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 183.
 
 
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 205.
+LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 201.
 
 
-Overfull \hbox (14.3522pt too wide) in paragraph at lines 244--253
+Overfull \hbox (14.3522pt too wide) in paragraph at lines 240--249
  [][] 
  []
 
 
-Overfull \hbox (20.23221pt too wide) in paragraph at lines 257--266
+Overfull \hbox (20.23221pt too wide) in paragraph at lines 253--262
  [][] 
  []
 
 [10] [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 317--318
 
  []
 
 (./Figures/SVD/CumSum_Rare.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure2' is up-to-date. ======
 )
-Overfull \hbox (25.95091pt too wide) in paragraph at lines 124--344
+Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--340
 [][]
  []
 
 (./Figures/SVD/CumSum_Hydro.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure3' is up-to-date. ======
 )
-Overfull \hbox (25.95091pt too wide) in paragraph at lines 124--349
+Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--345
 [][]
  []
 
 
-Overfull \hbox (11.5445pt too wide) in paragraph at lines 352--358
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 348--354
  [][] 
  []
 
 
-Overfull \hbox (9.87857pt too wide) in paragraph at lines 362--368
+Overfull \hbox (9.87857pt too wide) in paragraph at lines 358--364
  [][] 
  []
 
-[15] [16] (./Charts/ROM.tex
+[15] [16<./Figures/Bachelorarbeit-figure2.pdf><./Figures/Bachelorarbeit-figure3.
+pdf>] (./Charts/ROM.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -1204,376 +1246,328 @@ decoration libraries instead of the snakes library on input line 14.
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.shapes.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
-decorations.shapes.code.tex))))
-Overfull \hbox (6.40982pt too wide) in paragraph at lines 73--394
+decorations.shapes.code.tex)))
+===== Image 'Figures/Bachelorarbeit-figure4' is up-to-date. ======
+)
+Overfull \hbox (2.57802pt too wide) in paragraph at lines 6--390
  [][] 
  []
 
-[17]
-<Figures/Cumultative_Singular_Values_kn001.png, id=392, 984.3174pt x 456.7464pt>
+
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 409.
+
+
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 409.
+
+[17<./Figures/Bachelorarbeit-figure4.pdf>]
+<Figures/Cumultative_Singular_Values_kn001.png, id=478, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 421.
+input line 417.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
 <Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png, id
-=393, 984.3174pt x 456.7464pt>
+=479, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
 g Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png
 >
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/toget
-her/all_together.png  used on input line 427.
+her/all_together.png  used on input line 423.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
  [18<./Figures/Cumultative_Singular_Values_kn001.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 
  []
 
 
-LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 438.
+LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 434.
 
 
 LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input 
-line 438.
+line 434.
+
+
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 434.
+
+
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 434.
 
 <Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png
-, id=410, 984.3174pt x 456.7464pt>
+, id=493, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
 e.png Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
 .png>
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/code/
-Consrvative_Rho_Code.png  used on input line 440.
+Consrvative_Rho_Code.png  used on input line 436.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Code.png, id=411, 987.2082pt x 464.6961pt>
+<Figures/Code.png, id=494, 987.2082pt x 464.6961pt>
 File: Figures/Code.png Graphic file (type png)
 <use Figures/Code.png>
-Package luatex.def Info: Figures/Code.png  used on input line 443.
+Package luatex.def Info: Figures/Code.png  used on input line 439.
 (luatex.def)             Requested size: 452.9679pt x 213.21681pt.
 (./Figures/Results_Rom/Macrooriginal.tex
-Package pgfplots info on input line 25: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 46: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 47: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 68: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 69: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 70: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
+===== Image 'Figures/Bachelorarbeit-figure5' is up-to-date. ======
 )
-Overfull \hbox (40.96858pt too wide) in paragraph at lines 72--449
+Overfull \hbox (40.46858pt too wide) in paragraph at lines 2--445
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--449
+Underfull \hbox (badness 10000) in paragraph at lines 2--445
 
  []
 
-(./Figures/Results_Rom/Characteristics.tex)
-(./Figures/Results_Rom/MacroCode.tex)
+(./Figures/Results_Rom/Characteristics.tex
+===== Image 'Figures/Bachelorarbeit-figure6' is up-to-date. ======
+) (./Figures/Results_Rom/MacroCode.tex
+===== Image 'Figures/Bachelorarbeit-figure7' is up-to-date. ======
+)
 
-LaTeX Warning: Float too large for page by 14.8057pt on input line 458.
+LaTeX Warning: Float too large for page by 13.80098pt on input line 454.
 
-(./Figures/Results_Rom/New_Points_Macro.tex)
-Underfull \hbox (badness 10000) in paragraph at lines 1281--461
+(./Figures/Results_Rom/New_Points_Macro.tex
+===== Image 'Figures/Bachelorarbeit-figure8' is up-to-date. ======
+)
+Underfull \hbox (badness 10000) in paragraph at lines 2--457
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1281--461
+Underfull \hbox (badness 10000) in paragraph at lines 2--457
 
  []
 
 
-Overfull \hbox (11.5445pt too wide) in paragraph at lines 466--473
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 462--469
  [][] 
  []
 
 [19<./Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
 g><./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
-.png>] [20<./Figures/Code.png>] [21<./Figures/Results_Rom/Macrooriginal-000.png>
-<./Figures/Results_Rom/Macrooriginal-001.png><./Figures/Results_Rom/Macroorigina
-l-002.png>] [22] [23] (./Bachelorarbeit.bbl) [24]
+.png>] [20<./Figures/Code.png>] [21<./Figures/Bachelorarbeit-figure5.pdf><./Figu
+res/Bachelorarbeit-figure6.pdf>] [22<./Figures/Bachelorarbeit-figure7.pdf>]
+[23<./Figures/Bachelorarbeit-figure8.pdf>] (./Bachelorarbeit.bbl) [24]
 (./Figures/Parameterstudy/Depth/Hydro/0.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure9' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Hydro/1.tex
+===== Image 'Figures/Bachelorarbeit-figure10' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Hydro/2.tex
+===== Image 'Figures/Bachelorarbeit-figure11' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Hydro/3.tex
+===== Image 'Figures/Bachelorarbeit-figure12' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Hydro/4.tex
+===== Image 'Figures/Bachelorarbeit-figure13' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Depth/Hydro/1.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Hydro/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Hydro/3.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Hydro/4.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 484--489
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 480--485
 [][] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 484--489
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 480--485
 [] []
  []
 
 (./Figures/Parameterstudy/Depth/Rare/0.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure14' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Rare/1.tex
+===== Image 'Figures/Bachelorarbeit-figure15' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Rare/2.tex
+===== Image 'Figures/Bachelorarbeit-figure16' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Rare/3.tex
+===== Image 'Figures/Bachelorarbeit-figure17' is up-to-date. ======
+) (./Figures/Parameterstudy/Depth/Rare/4.tex
+===== Image 'Figures/Bachelorarbeit-figure18' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Depth/Rare/1.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Rare/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Rare/3.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Depth/Rare/4.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 495--500
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 491--496
 [][] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 495--500
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 491--496
 [] []
  []
 
 (./Figures/Parameterstudy/Batch_Size/Hydro/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure19' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/4.tex
+===== Image 'Figures/Bachelorarbeit-figure20' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/8.tex
+===== Image 'Figures/Bachelorarbeit-figure21' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/10.tex
+===== Image 'Figures/Bachelorarbeit-figure22' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/12.tex
+===== Image 'Figures/Bachelorarbeit-figure23' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/14.tex
+===== Image 'Figures/Bachelorarbeit-figure24' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Batch_Size/Hydro/4.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Hydro/8.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Hydro/10.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Hydro/12.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Hydro/14.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.53113pt too wide) in paragraph at lines 506--512
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 502--508
 [][] []
  []
 
 
-Overfull \hbox (17.55458pt too wide) in paragraph at lines 506--512
+Overfull \hbox (15.9038pt too wide) in paragraph at lines 502--508
 [] []
  []
 
 
-Overfull \hbox (17.57803pt too wide) in paragraph at lines 506--512
+Overfull \hbox (15.92728pt too wide) in paragraph at lines 502--508
 [] [] 
  []
 
 (./Figures/Parameterstudy/Batch_Size/Hydro/16.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure25' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Hydro/32.tex
+===== Image 'Figures/Bachelorarbeit-figure26' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Batch_Size/Hydro/32.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.53113pt too wide) in paragraph at lines 518--520
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 514--516
 [][] [] 
  []
 
 (./Figures/Parameterstudy/Batch_Size/Rare/2.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure27' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Rare/4.tex
+===== Image 'Figures/Bachelorarbeit-figure28' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Rare/6.tex
+===== Image 'Figures/Bachelorarbeit-figure29' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Rare/8.tex
+===== Image 'Figures/Bachelorarbeit-figure30' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Rare/10.tex
+===== Image 'Figures/Bachelorarbeit-figure31' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Batch_Size/Rare/4.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Rare/6.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Rare/8.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Batch_Size/Rare/10.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.53113pt too wide) in paragraph at lines 526--531
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 522--527
 [][] []
  []
 
 
-Overfull \hbox (17.53113pt too wide) in paragraph at lines 526--531
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 522--527
 [] []
  []
 
 (./Figures/Parameterstudy/Batch_Size/Rare/16.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure32' is up-to-date. ======
+) (./Figures/Parameterstudy/Batch_Size/Rare/32.tex
+===== Image 'Figures/Bachelorarbeit-figure33' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Batch_Size/Rare/32.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.53113pt too wide) in paragraph at lines 537--539
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 533--535
 [][] [] 
  []
 
 (./Figures/Parameterstudy/Activations/Hydro/ReLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure34' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/ELU.tex
+===== Image 'Figures/Bachelorarbeit-figure35' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/Tanh.tex
+===== Image 'Figures/Bachelorarbeit-figure36' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/SiLU.tex
+===== Image 'Figures/Bachelorarbeit-figure37' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/LeakyReLU.tex
+===== Image 'Figures/Bachelorarbeit-figure38' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/ELU_Tanh.tex
+===== Image 'Figures/Bachelorarbeit-figure39' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Activations/Hydro/ELU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Hydro/Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Hydro/SiLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Hydro/LeakyReLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Hydro/ELU_Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 545--551
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
 [][] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 545--551
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
 [] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 545--551
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
 [] [] 
  []
 
 (./Figures/Parameterstudy/Activations/Hydro/LeakyReLU_Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure40' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Hydro/ELU_SiLU.tex
+===== Image 'Figures/Bachelorarbeit-figure41' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Activations/Hydro/ELU_SiLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 557--559
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 553--555
 [][] [] 
  []
 
 (./Figures/Parameterstudy/Activations/Rare/ReLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure42' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/ELU.tex
+===== Image 'Figures/Bachelorarbeit-figure43' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/Tanh.tex
+===== Image 'Figures/Bachelorarbeit-figure44' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/SiLU.tex
+===== Image 'Figures/Bachelorarbeit-figure45' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/LeakyReLU.tex
+===== Image 'Figures/Bachelorarbeit-figure46' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/ELU_Tanh.tex
+===== Image 'Figures/Bachelorarbeit-figure47' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Activations/Rare/ELU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Rare/Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Rare/SiLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Rare/LeakyReLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Rare/ELU_Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 564--570
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
 [][] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 564--570
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
 [] []
  []
 
 
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 564--570
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
 [] [] 
  []
 
 (./Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure48' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/ELU_SiLU.tex
+===== Image 'Figures/Bachelorarbeit-figure49' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Activations/Rare/ELU_SiLU.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.62439pt too wide) in paragraph at lines 576--578
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 572--574
 [][] [] 
  []
 
 (./Figures/Parameterstudy/Activations/Rare/ELU_test.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
+===== Image 'Figures/Bachelorarbeit-figure50' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh_test.tex
+===== Image 'Figures/Bachelorarbeit-figure51' is up-to-date. ======
+) (./Figures/Parameterstudy/Activations/Rare/ELU_Tanh_test.tex
+===== Image 'Figures/Bachelorarbeit-figure52' is up-to-date. ======
 )
-(./Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh_test.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-(./Figures/Parameterstudy/Activations/Rare/ELU_Tanh_test.tex
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-)
-Overfull \hbox (17.5889pt too wide) in paragraph at lines 584--587
+Overfull \hbox (15.93903pt too wide) in paragraph at lines 580--583
 [][] []
  []
 
-[25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 591.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 591.
-
-(./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 591.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 591.
+[25] [26<./Figures/Bachelorarbeit-figure9.pdf><./Figures/Bachelorarbeit-figure10
+.pdf><./Figures/Bachelorarbeit-figure11.pdf><./Figures/Bachelorarbeit-figure12.p
+df><./Figures/Bachelorarbeit-figure13.pdf>] [27<./Figures/Bachelorarbeit-figure1
+4.pdf><./Figures/Bachelorarbeit-figure15.pdf><./Figures/Bachelorarbeit-figure16.
+pdf><./Figures/Bachelorarbeit-figure17.pdf><./Figures/Bachelorarbeit-figure18.pd
+f>] [28<./Figures/Bachelorarbeit-figure19.pdf><./Figures/Bachelorarbeit-figure20
+.pdf><./Figures/Bachelorarbeit-figure21.pdf><./Figures/Bachelorarbeit-figure22.p
+df><./Figures/Bachelorarbeit-figure23.pdf><./Figures/Bachelorarbeit-figure24.pdf
+>] [29<./Figures/Bachelorarbeit-figure25.pdf><./Figures/Bachelorarbeit-figure26.
+pdf>] [30<./Figures/Bachelorarbeit-figure27.pdf><./Figures/Bachelorarbeit-figure
+28.pdf><./Figures/Bachelorarbeit-figure29.pdf><./Figures/Bachelorarbeit-figure30
+.pdf><./Figures/Bachelorarbeit-figure31.pdf>] [31<./Figures/Bachelorarbeit-figur
+e32.pdf><./Figures/Bachelorarbeit-figure33.pdf>] [32<./Figures/Bachelorarbeit-fi
+gure34.pdf><./Figures/Bachelorarbeit-figure35.pdf><./Figures/Bachelorarbeit-figu
+re36.pdf><./Figures/Bachelorarbeit-figure37.pdf><./Figures/Bachelorarbeit-figure
+38.pdf><./Figures/Bachelorarbeit-figure39.pdf>] [33<./Figures/Bachelorarbeit-fig
+ure40.pdf><./Figures/Bachelorarbeit-figure41.pdf>] [34<./Figures/Bachelorarbeit-
+figure42.pdf><./Figures/Bachelorarbeit-figure43.pdf><./Figures/Bachelorarbeit-fi
+gure44.pdf><./Figures/Bachelorarbeit-figure45.pdf><./Figures/Bachelorarbeit-figu
+re46.pdf><./Figures/Bachelorarbeit-figure47.pdf>] [35<./Figures/Bachelorarbeit-f
+igure48.pdf><./Figures/Bachelorarbeit-figure49.pdf>]
+[36<./Figures/Bachelorarbeit-figure50.pdf><./Figures/Bachelorarbeit-figure51.pdf
+><./Figures/Bachelorarbeit-figure52.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
+ (./Bachelorarbeit.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 587.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
-(rerunfilecheck)             Checksum: 6FCFB244770702FE82D66BCFC9884A76;3919.
+(rerunfilecheck)             Checksum: 7D2DEA3898D0B3E85FA0843FC437962B;3904.
 
 
 LaTeX Warning: There were undefined references.
@@ -1581,20 +1575,19 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 591.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
 )
 
 Here is how much of LuaTeX's memory you used:
- 40431 strings out of 481365
- 2842542,10205817 words of node,token memory allocated
- 766 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 59 attribute,
- 60 glue_spec, 59 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:8,2:589033,3:288961,4:698,5:574,6:46,7:22049,8:78,9:7522,10:26
-,11:789
- 55590 multiletter control sequences out of 65536+600000
+ 39885 strings out of 481365
+ 156265,3417909 words of node,token memory allocated
+ 742 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 53 attribute,
+ 60 glue_spec, 53 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 2:1517,3:356,4:78,5:642,6:47,7:14772,8:83,9:761,10:26,11:906
+ 54415 multiletter control sequences out of 65536+600000
  82 fonts using 7835075 bytes
- 78i,21n,136p,2400b,3026s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 78i,13n,136p,2419b,593s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texm
 f/fonts/opentype/public/lm/lmsans12-regular.otf></usr/share/texmf/fonts/opentype
 /public/lm/lmmono12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmrom
@@ -1613,10 +1606,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (36 pages, 2652489 bytes).
+Output written on Bachelorarbeit.pdf (36 pages, 4376325 bytes).
 
-PDF statistics: 620 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 144 named destinations out of 1000 (max. 131072)
- 230 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 1646 PDF objects out of 1728 (max. 8388607)
+ 1280 compressed objects within 13 object streams
+ 143 named destinations out of 1000 (max. 131072)
+ 200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

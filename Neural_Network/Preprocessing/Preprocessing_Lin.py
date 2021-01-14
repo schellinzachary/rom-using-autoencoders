@@ -10,7 +10,7 @@ import sys
 
 
 
-f = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
 f  = f['f']
 
 
@@ -122,7 +122,7 @@ c = twoD(f)
 
 o = crazyD(f)
 
-plt.plot(c[4998])
+plt.plot(c[4999])
 plt.plot(o[:,4999])
 plt.show()
 
@@ -130,7 +130,7 @@ print(np.sum(np.abs(c))-np.sum(np.abs(f)))
 
 #np.random.shuffle(c)
 
-np.save('Data/sod25Kn0p01_2D_unshuffled.npy',c)
+#np.save('Data/sod25Kn0p01_2D_unshuffled.npy',c)
 
 
 
