@@ -64,7 +64,7 @@ Bernard et al. use POD-Galerkin with an additional population of their snapshot 
 Proper orthogonal decomposition (POD) and it's numerous variants like shifted-POD\cite{bibid}, POD-Galerkin\cite{bibid}, POD+I \cite{bibid} to name only a few of them, try to solve this problem by......	
 \section{The BGK Model}\label{Sec: BGK}
 This section covers the kinetic gas model, the BGK model, on which a model order reduction will be performed in the following. In addition the SOD-shocktube, on which the BGK model will be tested is discussed.\\
-The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann equation. More precisely the r.h.s of the Boltzmann equation is approximated by the BGK operator \cite{puppo2019kinetic}
+The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann transport equation. More precisely the r.h.s of the Boltzmann equation is approximated by the BGK operator \cite{puppo2019kinetic}
 \begin{equation}
 \partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f) \text{.}
 \label{Eq:BGK}
@@ -82,21 +82,35 @@ The fruitfullness of performing a model order reduction on the BGK model becomes
 \end{equation}
 Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(x_j,v_K,t)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\) \cite{puppo2019kinetic}. Now the PDE in \cref{Eq:BGK} is broken down into a system of ODE's in time, for which every ODE is a lineaar advection equation with constant scalar speed \(v_k\) and a source term.\\ 
 To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3N^3\) first order differential equations \cref{Eq:Discrete BGK}. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together stimulate the want for a reduced order model.\\
-\begin{wrapfigure}{r}{0.45\textwidth}
+\begin{wrapfigure}{r}{0.5\textwidth}
 	\begin{center}
 		\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
 	\end{center}
-	\caption{Illustration of the linkge between the macroscopic quantities of the gas flow and f the distribution function}
+	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and f the distribution function \(f\).}
+	\label{Fig:Demo Macro}
 \end{wrapfigure}
-In order to evaluate \(M_f\) and therefore \cref{Eq:Discrete BGK} the macroscopic velocity \(u(x,t)\) is required. Other macroscopic quantities of the gas flow, namely  the density \(\rho\), the impulse \(\rho u\) and the energy \(E\) are the expected values or moments of \(f\) in velocity space and can be calculated with 
+In order to evaluate \(M_f\) and therefore \cref{Eq:Discrete BGK} the macroscopic velocity \(u(x,t)\) is required. Other macroscopic quantities of the gas flow, namely  the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) are the expected values or moments of \(f\) in velocity space and can be calculated with \cite{puppo2019kinetic} 
 \begin{align}
-	\rho(x,t) &= \int\! f \,\mathrm{d}v \mathrm{,} 
+	\rho(x,t) &= m \int\! f \,\mathrm{d}v \mathrm{,} \label{Eq:Mom1}
 	\\
-	\rho(x,t) u(x,t) &= \int\! v f \,\mathrm{d}v \mathrm{,}
+	\rho(x,t) u(x,t) &= m \int\! v f \,\mathrm{d}v \mathrm{,} \label{Eq:Mom2}
 	\\
-	E(x,t) &= \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \mathrm{.}
+	E(x,t) &= m \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \mathrm{.} \label{Eq:Mom:3}
 \end{align}
-As an illustrative example of the linkage between 
+Here \(f\) is integrated over velocity space and multiplied by \(m\Phi\) with \(\Phi = [1,v,\frac{1}{2} v^2]\), the collision invariants and \(m\) the mass of the particles.\\ 
+Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distribution function \(f(v)\) gives the values for the macroscopic quantities. The distribution is centered around the macroscopic velocity \(u\), the mean velocity of the distribution \(f\) is the temperature \(T\), integrating \(f(v)\) over velocity space one obtains the density \(\rho\).\\
+Evidently the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Now multiplying the equilibrium solution of \cref{Eq:BGK} by \(m\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics using the equation of state of the gas \cite{puppo2019kinetic}
+\begin{align}
+	\partial_t&\rho + \partial_x(\rho u) = 0
+	\\
+	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0
+	\\
+	\partial_t&E + \partial_x(u(E+p)) = 0 \textrm{.}
+\end{align} 
+Note that the Boltzmann transport equation the conservative properties of the microscopic collisions lead to a global conservation of mass, momentum and energy. Hence the conservation of mass, momentum and energy is found in the BGk model as well \cite{puppo2019kinetic}.\\
+To continue .....
+rarefaction KN
+SOD
 \subsection{Macroscopic features of Hydrodynamic and Rarefied Gas Flows in the SOD-Shock Tube} \label{FeaturesSOD}
 \begin{figure}[!htbp]
 	\input{Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex}

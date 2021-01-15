@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  14 JAN 2021 23:06
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  15 JAN 2021 02:29
  system commands enabled.
 **Bachelorarbeit.tex Bachelorarbeit.tex
 (./Bachelorarbeit.tex
@@ -1112,124 +1112,104 @@ on of their snap-shot database
  []
 
 [3] [4] (./Figures/BGK/Boltzmann.tex
-\openout3 = Figures/Bachelorarbeit-figure0.md5
-
-\openout3 = Bachelorarbeit.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/Bachelorarbeit-figure0" "\def\ti
-kzexternalrealjob{Bachelorarbeit}\input{Bachelorarbeit}"' ========
-
-\openout3 = Bachelorarbeit.auxlock
+===== Image 'Figures/Bachelorarbeit-figure0' is up-to-date. ======
 )
-Overfull \hbox (15.08136pt too wide) in paragraph at lines 87--88
- [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--90
+Underfull \hbox (badness 10000) in paragraph at lines 82--91
 
  []
 
-
-Underfull \hbox (badness 3646) in paragraph at lines 100--100
-\TU/lmr/bx/n/14.4 dro-dy-namic and Rar-efied Gas
- []
-
+[5<./Figures/Bachelorarbeit-figure0.pdf>]
 (./Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex
 ===== Image 'Figures/Bachelorarbeit-figure1' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--103
+Underfull \hbox (badness 10000) in paragraph at lines 2--117
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--103
+Underfull \hbox (badness 10000) in paragraph at lines 2--117
 
  []
 
 
-LaTeX Warning: Citation `the' on page 5 undefined on input line 107.
-
-[5<./Figures/Bachelorarbeit-figure0.pdf>] [6<./Figures/Bachelorarbeit-figure1.pd
-f>]
-
-LaTeX Warning: Citation `bibid' on page 7 undefined on input line 116.
+LaTeX Warning: Citation `the' on page 6 undefined on input line 121.
 
 
-LaTeX Warning: Citation `bibid' on page 7 undefined on input line 116.
-
-[7]
-
-LaTeX Warning: Citation `bibid' on page 8 undefined on input line 120.
+LaTeX Warning: Citation `bibid' on page 6 undefined on input line 130.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 8 undefined on input line 120.
+LaTeX Warning: Citation `bibid' on page 6 undefined on input line 130.
+
+[6] [7<./Figures/Bachelorarbeit-figure1.pdf>]
+
+LaTeX Warning: Citation `bibid' on page 8 undefined on input line 134.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 8 undefined on input line 134.
 
 
 [8]
 
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 141.
-
-
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 168.
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 155.
 
 [9]
 
-LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 183.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 182.
+
+
+LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 197.
 
 
 
 LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
- 183.
+ 197.
 
 
-LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 183.
+LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 197.
 
 
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 201.
+LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 215.
 
 
-Overfull \hbox (14.3522pt too wide) in paragraph at lines 240--249
+Overfull \hbox (14.3522pt too wide) in paragraph at lines 254--263
  [][] 
  []
 
 
-Overfull \hbox (20.23221pt too wide) in paragraph at lines 253--262
+Overfull \hbox (20.23221pt too wide) in paragraph at lines 267--276
  [][] 
  []
 
 [10] [11] [12] [13] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
+Underfull \hbox (badness 10000) in paragraph at lines 331--332
 
  []
 
-(./Figures/SVD/CumSum_Rare.tex
+[15] (./Figures/SVD/CumSum_Rare.tex
 ===== Image 'Figures/Bachelorarbeit-figure2' is up-to-date. ======
 )
-Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--340
+Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--354
 [][]
  []
 
 (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/Bachelorarbeit-figure3' is up-to-date. ======
 )
-Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--345
+Overfull \hbox (25.53378pt too wide) in paragraph at lines 2--359
 [][]
  []
 
 
-Overfull \hbox (11.5445pt too wide) in paragraph at lines 348--354
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 362--368
  [][] 
  []
 
 
-Overfull \hbox (9.87857pt too wide) in paragraph at lines 358--364
+Overfull \hbox (9.87857pt too wide) in paragraph at lines 372--378
  [][] 
  []
 
-[15] [16<./Figures/Bachelorarbeit-figure2.pdf><./Figures/Bachelorarbeit-figure3.
-pdf>] (./Charts/ROM.tex
+[16<./Figures/Bachelorarbeit-figure2.pdf>] (./Charts/ROM.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarymatrix.code.tex
 File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -1249,74 +1229,76 @@ zlibrarydecorations.shapes.code.tex
 decorations.shapes.code.tex)))
 ===== Image 'Figures/Bachelorarbeit-figure4' is up-to-date. ======
 )
-Overfull \hbox (2.57802pt too wide) in paragraph at lines 6--390
+Overfull \hbox (2.57802pt too wide) in paragraph at lines 6--404
  [][] 
  []
 
 
-LaTeX Warning: Reference `moment1' on page 1 undefined on input line 409.
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 423.
 
 
-LaTeX Warning: Reference `moment3' on page 1 undefined on input line 409.
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 423.
 
-[17<./Figures/Bachelorarbeit-figure4.pdf>]
-<Figures/Cumultative_Singular_Values_kn001.png, id=478, 984.3174pt x 456.7464pt>
+[17<./Figures/Bachelorarbeit-figure3.pdf>]
+<Figures/Cumultative_Singular_Values_kn001.png, id=473, 984.3174pt x 456.7464pt>
 
 File: Figures/Cumultative_Singular_Values_kn001.png Graphic file (type png)
 <use Figures/Cumultative_Singular_Values_kn001.png>
 Package luatex.def Info: Figures/Cumultative_Singular_Values_kn001.png  used on 
-input line 417.
+input line 431.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
 <Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png, id
-=479, 984.3174pt x 456.7464pt>
+=474, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
 g Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png
 >
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/toget
-her/all_together.png  used on input line 423.
+her/all_together.png  used on input line 437.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
- [18<./Figures/Cumultative_Singular_Values_kn001.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
+ [18<./Figures/Bachelorarbeit-figure4.pdf>] [19<./Figures/Cumultative_Singular_V
+alues_kn001.png><./Figures/02_12_20/kn0p00001Conservative_Quantities/together/al
+l_together.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 443--444
 
  []
 
 
-LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 434.
+LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 448.
 
 
 LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input 
-line 434.
+line 448.
 
 
-LaTeX Warning: Reference `moment1' on page 1 undefined on input line 434.
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 448.
 
 
-LaTeX Warning: Reference `moment3' on page 1 undefined on input line 434.
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 448.
 
 <Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png
-, id=493, 984.3174pt x 456.7464pt>
+, id=510, 984.3174pt x 456.7464pt>
 File: Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
 e.png Graphic file (type png)
 <use Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
 .png>
 Package luatex.def Info: Figures/02_12_20/kn0p00001Conservative_Quantities/code/
-Consrvative_Rho_Code.png  used on input line 436.
+Consrvative_Rho_Code.png  used on input line 450.
 (luatex.def)             Requested size: 452.9679pt x 210.18256pt.
-<Figures/Code.png, id=494, 987.2082pt x 464.6961pt>
+<Figures/Code.png, id=511, 987.2082pt x 464.6961pt>
 File: Figures/Code.png Graphic file (type png)
 <use Figures/Code.png>
-Package luatex.def Info: Figures/Code.png  used on input line 439.
+Package luatex.def Info: Figures/Code.png  used on input line 453.
 (luatex.def)             Requested size: 452.9679pt x 213.21681pt.
 (./Figures/Results_Rom/Macrooriginal.tex
 ===== Image 'Figures/Bachelorarbeit-figure5' is up-to-date. ======
 )
-Overfull \hbox (40.46858pt too wide) in paragraph at lines 2--445
+Overfull \hbox (40.46858pt too wide) in paragraph at lines 2--459
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--445
+Underfull \hbox (badness 10000) in paragraph at lines 2--459
 
  []
 
@@ -1326,30 +1308,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--445
 ===== Image 'Figures/Bachelorarbeit-figure7' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 13.80098pt on input line 454.
+LaTeX Warning: Float too large for page by 13.80098pt on input line 468.
 
 (./Figures/Results_Rom/New_Points_Macro.tex
 ===== Image 'Figures/Bachelorarbeit-figure8' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--457
+Underfull \hbox (badness 10000) in paragraph at lines 2--471
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--457
+Underfull \hbox (badness 10000) in paragraph at lines 2--471
 
  []
 
 
-Overfull \hbox (11.5445pt too wide) in paragraph at lines 462--469
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 476--483
  [][] 
  []
 
-[19<./Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.pn
-g><./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code
-.png>] [20<./Figures/Code.png>] [21<./Figures/Bachelorarbeit-figure5.pdf><./Figu
-res/Bachelorarbeit-figure6.pdf>] [22<./Figures/Bachelorarbeit-figure7.pdf>]
-[23<./Figures/Bachelorarbeit-figure8.pdf>] (./Bachelorarbeit.bbl) [24]
+[20<./Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Cod
+e.png><./Figures/Code.png>] [21<./Figures/Bachelorarbeit-figure5.pdf><./Figures/
+Bachelorarbeit-figure6.pdf>] [22<./Figures/Bachelorarbeit-figure7.pdf>]
+[23<./Figures/Bachelorarbeit-figure8.pdf>] [24] (./Bachelorarbeit.bbl) [25]
 (./Figures/Parameterstudy/Depth/Hydro/0.tex
 ===== Image 'Figures/Bachelorarbeit-figure9' is up-to-date. ======
 ) (./Figures/Parameterstudy/Depth/Hydro/1.tex
@@ -1361,12 +1342,12 @@ res/Bachelorarbeit-figure6.pdf>] [22<./Figures/Bachelorarbeit-figure7.pdf>]
 ) (./Figures/Parameterstudy/Depth/Hydro/4.tex
 ===== Image 'Figures/Bachelorarbeit-figure13' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 480--485
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 494--499
 [][] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 480--485
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 494--499
 [] []
  []
 
@@ -1381,12 +1362,12 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 480--485
 ) (./Figures/Parameterstudy/Depth/Rare/4.tex
 ===== Image 'Figures/Bachelorarbeit-figure18' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 491--496
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 505--510
 [][] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 491--496
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 505--510
 [] []
  []
 
@@ -1403,17 +1384,17 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 491--496
 ) (./Figures/Parameterstudy/Batch_Size/Hydro/14.tex
 ===== Image 'Figures/Bachelorarbeit-figure24' is up-to-date. ======
 )
-Overfull \hbox (15.88031pt too wide) in paragraph at lines 502--508
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 516--522
 [][] []
  []
 
 
-Overfull \hbox (15.9038pt too wide) in paragraph at lines 502--508
+Overfull \hbox (15.9038pt too wide) in paragraph at lines 516--522
 [] []
  []
 
 
-Overfull \hbox (15.92728pt too wide) in paragraph at lines 502--508
+Overfull \hbox (15.92728pt too wide) in paragraph at lines 516--522
 [] [] 
  []
 
@@ -1422,7 +1403,7 @@ Overfull \hbox (15.92728pt too wide) in paragraph at lines 502--508
 ) (./Figures/Parameterstudy/Batch_Size/Hydro/32.tex
 ===== Image 'Figures/Bachelorarbeit-figure26' is up-to-date. ======
 )
-Overfull \hbox (15.88031pt too wide) in paragraph at lines 514--516
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 528--530
 [][] [] 
  []
 
@@ -1437,12 +1418,12 @@ Overfull \hbox (15.88031pt too wide) in paragraph at lines 514--516
 ) (./Figures/Parameterstudy/Batch_Size/Rare/10.tex
 ===== Image 'Figures/Bachelorarbeit-figure31' is up-to-date. ======
 )
-Overfull \hbox (15.88031pt too wide) in paragraph at lines 522--527
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 536--541
 [][] []
  []
 
 
-Overfull \hbox (15.88031pt too wide) in paragraph at lines 522--527
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 536--541
 [] []
  []
 
@@ -1451,7 +1432,7 @@ Overfull \hbox (15.88031pt too wide) in paragraph at lines 522--527
 ) (./Figures/Parameterstudy/Batch_Size/Rare/32.tex
 ===== Image 'Figures/Bachelorarbeit-figure33' is up-to-date. ======
 )
-Overfull \hbox (15.88031pt too wide) in paragraph at lines 533--535
+Overfull \hbox (15.88031pt too wide) in paragraph at lines 547--549
 [][] [] 
  []
 
@@ -1468,17 +1449,17 @@ Overfull \hbox (15.88031pt too wide) in paragraph at lines 533--535
 ) (./Figures/Parameterstudy/Activations/Hydro/ELU_Tanh.tex
 ===== Image 'Figures/Bachelorarbeit-figure39' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 555--561
 [][] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 555--561
 [] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 555--561
 [] [] 
  []
 
@@ -1487,7 +1468,7 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 541--547
 ) (./Figures/Parameterstudy/Activations/Hydro/ELU_SiLU.tex
 ===== Image 'Figures/Bachelorarbeit-figure41' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 553--555
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 567--569
 [][] [] 
  []
 
@@ -1504,17 +1485,17 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 553--555
 ) (./Figures/Parameterstudy/Activations/Rare/ELU_Tanh.tex
 ===== Image 'Figures/Bachelorarbeit-figure47' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 574--580
 [][] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 574--580
 [] []
  []
 
 
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 574--580
 [] [] 
  []
 
@@ -1523,7 +1504,7 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 560--566
 ) (./Figures/Parameterstudy/Activations/Rare/ELU_SiLU.tex
 ===== Image 'Figures/Bachelorarbeit-figure49' is up-to-date. ======
 )
-Overfull \hbox (15.97424pt too wide) in paragraph at lines 572--574
+Overfull \hbox (15.97424pt too wide) in paragraph at lines 586--588
 [][] [] 
  []
 
@@ -1534,38 +1515,38 @@ Overfull \hbox (15.97424pt too wide) in paragraph at lines 572--574
 ) (./Figures/Parameterstudy/Activations/Rare/ELU_Tanh_test.tex
 ===== Image 'Figures/Bachelorarbeit-figure52' is up-to-date. ======
 )
-Overfull \hbox (15.93903pt too wide) in paragraph at lines 580--583
+Overfull \hbox (15.93903pt too wide) in paragraph at lines 594--597
 [][] []
  []
 
-[25] [26<./Figures/Bachelorarbeit-figure9.pdf><./Figures/Bachelorarbeit-figure10
+[26] [27<./Figures/Bachelorarbeit-figure9.pdf><./Figures/Bachelorarbeit-figure10
 .pdf><./Figures/Bachelorarbeit-figure11.pdf><./Figures/Bachelorarbeit-figure12.p
-df><./Figures/Bachelorarbeit-figure13.pdf>] [27<./Figures/Bachelorarbeit-figure1
+df><./Figures/Bachelorarbeit-figure13.pdf>] [28<./Figures/Bachelorarbeit-figure1
 4.pdf><./Figures/Bachelorarbeit-figure15.pdf><./Figures/Bachelorarbeit-figure16.
 pdf><./Figures/Bachelorarbeit-figure17.pdf><./Figures/Bachelorarbeit-figure18.pd
-f>] [28<./Figures/Bachelorarbeit-figure19.pdf><./Figures/Bachelorarbeit-figure20
+f>] [29<./Figures/Bachelorarbeit-figure19.pdf><./Figures/Bachelorarbeit-figure20
 .pdf><./Figures/Bachelorarbeit-figure21.pdf><./Figures/Bachelorarbeit-figure22.p
 df><./Figures/Bachelorarbeit-figure23.pdf><./Figures/Bachelorarbeit-figure24.pdf
->] [29<./Figures/Bachelorarbeit-figure25.pdf><./Figures/Bachelorarbeit-figure26.
-pdf>] [30<./Figures/Bachelorarbeit-figure27.pdf><./Figures/Bachelorarbeit-figure
+>] [30<./Figures/Bachelorarbeit-figure25.pdf><./Figures/Bachelorarbeit-figure26.
+pdf>] [31<./Figures/Bachelorarbeit-figure27.pdf><./Figures/Bachelorarbeit-figure
 28.pdf><./Figures/Bachelorarbeit-figure29.pdf><./Figures/Bachelorarbeit-figure30
-.pdf><./Figures/Bachelorarbeit-figure31.pdf>] [31<./Figures/Bachelorarbeit-figur
-e32.pdf><./Figures/Bachelorarbeit-figure33.pdf>] [32<./Figures/Bachelorarbeit-fi
+.pdf><./Figures/Bachelorarbeit-figure31.pdf>] [32<./Figures/Bachelorarbeit-figur
+e32.pdf><./Figures/Bachelorarbeit-figure33.pdf>] [33<./Figures/Bachelorarbeit-fi
 gure34.pdf><./Figures/Bachelorarbeit-figure35.pdf><./Figures/Bachelorarbeit-figu
 re36.pdf><./Figures/Bachelorarbeit-figure37.pdf><./Figures/Bachelorarbeit-figure
-38.pdf><./Figures/Bachelorarbeit-figure39.pdf>] [33<./Figures/Bachelorarbeit-fig
-ure40.pdf><./Figures/Bachelorarbeit-figure41.pdf>] [34<./Figures/Bachelorarbeit-
+38.pdf><./Figures/Bachelorarbeit-figure39.pdf>] [34<./Figures/Bachelorarbeit-fig
+ure40.pdf><./Figures/Bachelorarbeit-figure41.pdf>] [35<./Figures/Bachelorarbeit-
 figure42.pdf><./Figures/Bachelorarbeit-figure43.pdf><./Figures/Bachelorarbeit-fi
 gure44.pdf><./Figures/Bachelorarbeit-figure45.pdf><./Figures/Bachelorarbeit-figu
-re46.pdf><./Figures/Bachelorarbeit-figure47.pdf>] [35<./Figures/Bachelorarbeit-f
+re46.pdf><./Figures/Bachelorarbeit-figure47.pdf>] [36<./Figures/Bachelorarbeit-f
 igure48.pdf><./Figures/Bachelorarbeit-figure49.pdf>]
-[36<./Figures/Bachelorarbeit-figure50.pdf><./Figures/Bachelorarbeit-figure51.pdf
+[37<./Figures/Bachelorarbeit-figure50.pdf><./Figures/Bachelorarbeit-figure51.pdf
 ><./Figures/Bachelorarbeit-figure52.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 587.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 587.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 601.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 601.
  (./Bachelorarbeit.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 587.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 587.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 601.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 601.
 Package rerunfilecheck Info: File `Bachelorarbeit.out' has not changed.
 (rerunfilecheck)             Checksum: 7D2DEA3898D0B3E85FA0843FC437962B;3904.
 
@@ -1575,19 +1556,20 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 587.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 601.
 )
 
 Here is how much of LuaTeX's memory you used:
- 39885 strings out of 481365
- 156265,3417909 words of node,token memory allocated
+ 39890 strings out of 481365
+ 156269,3417909 words of node,token memory allocated
  742 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 53 attribute,
  60 glue_spec, 53 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:1517,3:356,4:78,5:642,6:47,7:14772,8:83,9:761,10:26,11:906
- 54415 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:1759,3:356,4:78,5:771,6:52,7:15902,8:70,9:958,10:26,11:988
+
+ 54423 multiletter control sequences out of 65536+600000
  82 fonts using 7835075 bytes
- 78i,13n,136p,2419b,593s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 78i,13n,136p,2419b,591s stack positions out of 5000i,500n,10000p,200000b,100000s
 </usr/share/texmf/fonts/opentype/public/lm/lmroman8-regular.otf></usr/share/texm
 f/fonts/opentype/public/lm/lmsans12-regular.otf></usr/share/texmf/fonts/opentype
 /public/lm/lmmono12-regular.otf></usr/share/texmf/fonts/opentype/public/lm/lmrom
@@ -1606,10 +1588,10 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb>
-Output written on Bachelorarbeit.pdf (36 pages, 4376325 bytes).
+Output written on Bachelorarbeit.pdf (37 pages, 4379153 bytes).
 
-PDF statistics: 1646 PDF objects out of 1728 (max. 8388607)
- 1280 compressed objects within 13 object streams
- 143 named destinations out of 1000 (max. 131072)
+PDF statistics: 1660 PDF objects out of 1728 (max. 8388607)
+ 1293 compressed objects within 13 object streams
+ 147 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
