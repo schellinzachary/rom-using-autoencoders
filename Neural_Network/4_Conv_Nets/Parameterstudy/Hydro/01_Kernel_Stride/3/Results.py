@@ -24,14 +24,16 @@ class data():
 class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
-        self.convE1 = nn.Conv2d(1,8,(5,4),stride=(2,4))
-        self.convE2 = nn.Conv2d(8,16,(5,5),stride=(2,3))
-        self.convE3 = nn.Conv2d(16,32,(2,4),stride=2)
-        self.linearE1 = nn.Linear(in_features=448,out_features=3)
+        self.m = nn.ZeroPad2d((0,0,1,1))
+        self.convE1 = nn.Conv2d(1,8,(5,10),stride=(2,5))
+        self.convE2 = nn.Conv2d(8,16,(4,6),stride=(2,3))
+        self.convE3 = nn.Conv2d(16,32,(3,8),stride=(2,4))
+        self.linearE1 = nn.Linear(in_features=128,out_features=3)
         self.act = nn.Tanh()
         #self.act_c = nn.Tanh()
 
     def forward(self, x):
+        x = self.m(x)
         x = self.act(self.convE1(x))
         x = self.act(self.convE2(x))
         x = self.act(self.convE3(x))
@@ -45,10 +47,10 @@ class Encoder(nn.Module):
 class Decoder(nn.Module):
     def __init__(self):
         super(Decoder, self).__init__()
-        self.linearD1 = nn.Linear(in_features=3, out_features=448)
-        self.convD1 = nn.ConvTranspose2d(32,16,(2,4),stride=2)
-        self.convD2 = nn.ConvTranspose2d(16,8,(5,5),stride=(2,3))
-        self.convD3 = nn.ConvTranspose2d(8,1,(5,4),stride=(2,4))
+        self.linearD1 = nn.Linear(in_features=3, out_features=128)
+        self.convD1 = nn.ConvTranspose2d(32,16,(3,8),stride=(2,4))
+        self.convD2 = nn.ConvTranspose2d(16,8,(4,6),stride=(2,3))
+        self.convD3 = nn.ConvTranspose2d(8,1,(3,10),stride=(2,5))
         self.act = nn.Tanh()
         #self.act_c = nn.Tanh()
 
@@ -56,7 +58,7 @@ class Decoder(nn.Module):
         x = self.linearD1(x)
         #x = self.act_c(self.linearD1(x))
         dim = x.shape[0]
-        x = torch.reshape(x,[dim,32,2,7])
+        x = torch.reshape(x,[dim,32,2,2])
         x = self.act(self.convD1(x))
         x = self.act(self.convD2(x))
         x = self.act(self.convD3(x))

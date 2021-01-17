@@ -36,8 +36,6 @@ BATCH_SIZE = 4
 lr = 1e-4
 
 
-device = 'cpu'
-
 #load data
 f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_4D.npy')
 f = tensor(f, dtype=torch.float).to(device)
@@ -53,13 +51,15 @@ test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
 class Encoder(nn.Module):
     def __init__(self):
         super(Encoder, self).__init__()
-        self.convE1 = nn.Conv2d(1,8,(5,10),stride=(5,10))
-        self.convE2 = nn.Conv2d(8,16,(4,4),stride=(2,5))
-        self.linearE1 = nn.Linear(in_features=256,out_features=3)
+        self.m = nn.ZeroPad2d((0,0,1,1))
+        self.convE1 = nn.Conv2d(1,8,(6,10),stride=(3,10))
+        self.convE2 = nn.Conv2d(8,16,(4,10),stride=(4,10))
+        self.linearE1 = nn.Linear(in_features=64,out_features=3)
         self.act = nn.Tanh()
         #self.act_c = nn.Tanh()
 
     def forward(self, x):
+        x = self.m(x)
         x = self.act(self.convE1(x))
         x = self.act(self.convE2(x))
         original_size = x.size()
@@ -72,9 +72,9 @@ class Encoder(nn.Module):
 class Decoder(nn.Module):
     def __init__(self):
         super(Decoder, self).__init__()
-        self.linearD1 = nn.Linear(in_features=3, out_features=256)
-        self.convD1 = nn.ConvTranspose2d(16,8,(4,4),stride=(2,5))
-        self.convD2 = nn.ConvTranspose2d(8,1,(5,10),stride=(4,5))
+        self.linearD1 = nn.Linear(in_features=3, out_features=64)
+        self.convD1 = nn.ConvTranspose2d(16,8,(4,10),stride=(4,10))
+        self.convD2 = nn.ConvTranspose2d(8,1,(4,10),stride=(3,10))
         self.act = nn.Tanh()
         #self.act_c = nn.Tanh()
 
@@ -82,10 +82,11 @@ class Decoder(nn.Module):
         x = self.linearD1(x)
         #x = self.act_c(self.linearD1(x))
         dim = x.shape[0]
-        x = torch.reshape(x,[dim,16,2,8])
+        x = torch.reshape(x,[dim,16,2,2])
         x = self.act(self.convD1(x))
         x = self.act(self.convD2(x))
         return x
+
 
 class Autoencoder(nn.Module):
     def __init__(self, enc, dec):

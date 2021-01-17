@@ -3,3 +3,6 @@ No  Kernel&Stride design| adjusted lr to training
 1_1 1                   |   yes
 2   2                   |   no
 2_2 2                   |   yes
+
+mid - early stopping
+full - no early stopping

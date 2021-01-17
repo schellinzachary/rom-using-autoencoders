@@ -190,7 +190,21 @@ for epoch in range(N_EPOCHS):
     train_losses.append(train_loss)
     test_losses.append(test_loss)
 
-    progressBar(epoch,N_EPOCHS)
+
+    # progressBar(epoch,N_EPOCHS)
+    print(np.abs(np.log10(train_loss)-np.log10(test_loss)))
+    if np.abs(np.log10(train_loss)-np.log10(test_loss)) < 1e-3:
+        
+        torch.save({
+        'epoch': epoch,
+        'model_state_dict':model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'train_losses':train_losses,
+        'test_losses': test_losses,
+        'model': model
+        },'Results/test_mid.pt')
+        print('saved at:',epoch)
+
 #save the models state dictionary for inference
 torch.save({
     'epoch': epoch,
@@ -199,6 +213,6 @@ torch.save({
     'train_losses':train_losses,
     'test_losses': test_losses,
     'model': model
-    },'Results/2_2.pt')
+    },'Results/test_full.pt')
 
 

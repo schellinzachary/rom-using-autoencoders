@@ -89,7 +89,7 @@ decoder = Decoder()
 #Autoencoder
 model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/2_2.pt')
+checkpoint = torch.load('Results/test_mid.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
