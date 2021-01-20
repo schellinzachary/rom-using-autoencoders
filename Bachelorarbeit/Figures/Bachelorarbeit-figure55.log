@@ -1,0 +1,1893 @@
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  20 JAN 2021 19:24
+ system commands enabled.
+**\def\tikzexternalrealjob{Bachelorarbeit}\input{Bachelorarbeit}
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initialization
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended collection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / config file reader
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/luatex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback handling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode helpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolvers
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/luatex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliary functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multiscript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script helpers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicode
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'.
+(./Bachelorarbeit.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+luaotfload | db : Font names database loaded from /home/zachi/.texlive2019/texmf
+-var/luatex-cache/generic-dev/names/luaotfload-names.luc)
+\c@part=\count163
+\c@section=\count164
+\c@subsection=\count165
+\c@subsubsection=\count166
+\c@paragraph=\count167
+\c@subparagraph=\count168
+\c@figure=\count169
+\c@table=\count170
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+Package inputenc Warning: inputenc package ignored with utf8 based engines.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
+Package: footnote 1997/01/28 1.13 Save footnotes around boxes
+\fn@notes=\box45
+\fn@width=\dimen135
+) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+) (/usr/share/texlive/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks16
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+)
+\@linkdim=\dimen136
+\Hy@linkcounter=\count171
+\Hy@pagecounter=\count172
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count173
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count174
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen137
+(/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+))
+\Fld@menulength=\count175
+\Field@Width=\dimen138
+\Fld@charsize=\dimen139
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+(/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count176
+\c@Item=\count177
+\c@Hfootnote=\count178
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2020/01/14 v7.00d Hyperref driver for luaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+
+) (/usr/share/texlive/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+)
+\Fld@listcount=\count179
+\c@bookmark@seq@number=\count180
+(/usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+6.
+)
+\Hy@SectionHShift=\skip49
+) (/usr/share/texlive/texmf-dist/tex/latex/preprint/fullpage.sty
+Package: fullpage 1999/02/23 1.1 (PWD)
+\FP@margin=\skip50
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip51
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen140
+)) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen141
+) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count181
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count182
+\leftroot@=\count183
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count184
+\DOTSCASE@=\count185
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box46
+\strutbox@=\box47
+\big@size=\dimen142
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count186
+\c@MaxMatrixCols=\count187
+\dotsspace@=\muskip17
+\c@parentequation=\count188
+\dspbrk@lvl=\count189
+\tag@help=\toks19
+\row@=\count190
+\column@=\count191
+\maxfields@=\count192
+\andhelp@=\toks20
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
+\@envbody=\toks21
+\multlinegap=\skip52
+\multlinetaggap=\skip53
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) (/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
+\c@tracingmulticols=\count193
+\mult@box=\box48
+\multicol@leftmargin=\dimen149
+\c@unbalance=\count194
+\c@collectmore=\count195
+\doublecol@number=\count196
+\multicoltolerance=\count197
+\multicolpretolerance=\count198
+\full@width=\dimen150
+\page@free=\dimen151
+\premulticols=\dimen152
+\postmulticols=\dimen153
+\multicolsep=\skip54
+\multicolbaselineskip=\skip55
+\partial@page=\box49
+\last@line=\box50
+\maxbalancingoverflow=\dimen154
+\mult@rightbox=\box51
+\mult@grightbox=\box52
+\mult@gfirstbox=\box53
+\mult@firstbox=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\c@minrows=\count199
+\c@columnbadness=\count266
+\c@finalcolumnbadness=\count267
+\last@try=\dimen155
+\multicolovershoot=\dimen156
+\multicolundershoot=\dimen157
+\mult@nat@firstbox=\box92
+\colbreak@box=\box93
+\mc@col@check@num=\count268
+) (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen158
+\WF@size=\dimen159
+\c@WF@wrappedlines=\count269
+\WF@box=\box94
+\WF@everypar=\toks23
+Package: wrapfig 2003/01/31  v 3.6
+) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/te
+xlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 105.
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
+))
+\Gin@req@height=\dimen160
+\Gin@req@width=\dimen161
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/sha
+re/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texm
+f-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/ge
+neric/pgf/utilities/pgfutil-common.tex
+\pgfutil@everybye=\toks24
+\pgfutil@tempdima=\dimen162
+\pgfutil@tempdimb=\dimen163
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box95
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/u
+sr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2020/01/08 v3.1.5b (3.1.5b)
+))
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share
+/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/te
+xmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks25
+\pgfkeys@temptoks=\toks26
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex
+\pgfkeys@tmptoks=\toks27
+))
+\pgf@x=\dimen164
+\pgf@y=\dimen165
+\pgf@xa=\dimen166
+\pgf@ya=\dimen167
+\pgf@xb=\dimen168
+\pgf@yb=\dimen169
+\pgf@xc=\dimen170
+\pgf@yc=\dimen171
+\pgf@xd=\dimen172
+\pgf@yd=\dimen173
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count270
+\c@pgf@countb=\count271
+\c@pgf@countc=\count272
+\c@pgf@countd=\count273
+\t@pgf@toka=\toks28
+\t@pgf@tokb=\toks29
+\t@pgf@tokc=\toks30
+\pgf@sys@id@count=\count274
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
+)
+Driver file for pgf: pgfsys-luatex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-luatex.def
+File: pgfsys-luatex.def 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex
+File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfsyssoftpath@smallbuffer@items=\count275
+\pgfsyssoftpath@bigbuffer@items=\count276
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex
+File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/shar
+e/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texl
+ive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/t
+exmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen174
+\pgfmath@count=\count277
+\pgfmath@box=\box96
+\pgfmath@toks=\toks31
+\pgfmath@stack@operand=\toks32
+\pgfmath@stack@operation=\toks33
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmat
+hfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count278
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x
+File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@picminx=\dimen175
+\pgf@picmaxx=\dimen176
+\pgf@picminy=\dimen177
+\pgf@picmaxy=\dimen178
+\pgf@pathminx=\dimen179
+\pgf@pathmaxx=\dimen180
+\pgf@pathminy=\dimen181
+\pgf@pathmaxy=\dimen182
+\pgf@xx=\dimen183
+\pgf@xy=\dimen184
+\pgf@yx=\dimen185
+\pgf@yy=\dimen186
+\pgf@zx=\dimen187
+\pgf@zy=\dimen188
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex
+File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@path@lastx=\dimen189
+\pgf@path@lasty=\dimen190
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex
+File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@shorten@end@additional=\dimen191
+\pgf@shorten@start@additional=\dimen192
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x
+File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfpic=\box97
+\pgf@hbox=\box98
+\pgf@layerbox@main=\box99
+\pgf@picture@serial@count=\count279
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex
+File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgflinewidth=\dimen193
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex
+File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@pt@x=\dimen194
+\pgf@pt@y=\dimen195
+\pgf@pt@temp=\dimen196
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex
+File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex
+File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x
+File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfarrowsep=\dimen197
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@max=\dimen198
+\pgf@sys@shading@range@num=\count280
+\pgf@shadingcount=\count281
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex
+File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfexternal@startupbox=\box100
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x
+File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex
+File: pgfcoretransparency.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex
+File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box101
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen199
+\pgf@nodesepend=\dimen256
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/shar
+e/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/te
+xmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf
+-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic
+/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/uti
+lities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen257
+\pgffor@skip=\dimen258
+\pgffor@stack=\toks34
+\pgffor@toks=\toks35
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count282
+\pgfplotmarksize=\dimen259
+)
+\tikz@lastx=\dimen260
+\tikz@lasty=\dimen261
+\tikz@lastxsaved=\dimen262
+\tikz@lastysaved=\dimen263
+\tikz@lastmovetox=\dimen264
+\tikz@lastmovetoy=\dimen265
+\tikzleveldistance=\dimen266
+\tikzsiblingdistance=\dimen267
+\tikz@figbox=\box102
+\tikz@figbox@bg=\box103
+\tikz@tempbox=\box104
+\tikz@tempbox@bg=\box105
+\tikztreelevel=\count283
+\tikznumberofchildren=\count284
+\tikznumberofcurrentchild=\count285
+\tikz@fig@count=\count286
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count287
+\pgfmatrixcurrentcolumn=\count288
+\pgf@matrix@numberofcolumns=\count289
+)
+\tikz@expandcount=\count290
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr
+/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
+\pgfplots@luabackend@table=\catcodetable5
+\t@pgfplots@toka=\toks36
+\t@pgfplots@tokb=\toks37
+\t@pgfplots@tokc=\toks38
+\pgfplots@tmpa=\dimen268
+\c@pgfplots@coordindex=\count291
+\c@pgfplots@scanlineindex=\count292
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/luamath/pgflibraryluam
+ath.code.tex)
+Package pgfplots info on input line 275: luamath library shipped with pgf 3.1.5b
+ is up-to-date
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.te
+x
+Package pgfplots info on input line 82: Found new luatex: initializing lua comma
+nds instead of write18 (shell-escape)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count293
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count294
+\t@pgfplotstable@a=\toks39
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count295
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-luatex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen269
+\pgfdecoratedremainingdistance=\dimen270
+\pgfdecoratedinputsegmentcompleteddistance=\dimen271
+\pgfdecoratedinputsegmentremainingdistance=\dimen272
+\pgf@decorate@distancetomove=\dimen273
+\pgf@decorate@repeatstate=\count296
+\pgfdecorationsegmentamplitude=\dimen274
+\pgfdecorationsegmentlength=\dimen275
+)
+\tikz@lib@dec@box=\box106
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count297
+\pgfplots@xmin@reg=\dimen276
+\pgfplots@xmax@reg=\dimen277
+\pgfplots@ymin@reg=\dimen278
+\pgfplots@ymax@reg=\dimen279
+\pgfplots@zmin@reg=\dimen280
+\pgfplots@zmax@reg=\dimen281
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/usr/s
+hare/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
+.16)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code
+.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.colt
+ype.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen282
+\ar@mcellbox=\box107
+\extrarowheight=\dimen283
+\NC@list=\toks40
+\extratabsurround=\skip56
+\backup@length=\skip57
+\ar@cellbox=\box108
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
+yexternal.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zexternalshared.code.tex))
+No auxiliary output files.
+
+\w@pgfexternal@auxout=\write4
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodepartlowerbox=\box109
+\pgfnodeparttwobox=\box110
+\pgfnodepartthreebox=\box111
+\pgfnodepartfourbox=\box112
+\pgfnodeparttwentybox=\box113
+\pgfnodepartnineteenbox=\box114
+\pgfnodeparteighteenbox=\box115
+\pgfnodepartseventeenbox=\box116
+\pgfnodepartsixteenbox=\box117
+\pgfnodepartfifteenbox=\box118
+\pgfnodepartfourteenbox=\box119
+\pgfnodepartthirteenbox=\box120
+\pgfnodeparttwelvebox=\box121
+\pgfnodepartelevenbox=\box122
+\pgfnodeparttenbox=\box123
+\pgfnodepartninebox=\box124
+\pgfnodeparteightbox=\box125
+\pgfnodepartsevenbox=\box126
+\pgfnodepartsixbox=\box127
+\pgfnodepartfivebox=\box128
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen284
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the 
+decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.shapes.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.shapes.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
+oupplots.code.tex
+\pgfplots@group@current@plot=\count298
+\pgfplots@group@current@row=\count299
+\pgfplots@group@current@column=\count300
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/tikzscale/tikzscale.sty
+Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count301
+) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/s
+hare/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count302
+\l__pdf_internal_box=\box129
+))
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count303
+\g__xparse_grabber_int=\count304
+\l__xparse_m_args_int=\count305
+\l__xparse_v_nesting_int=\count306
+) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/te
+xlive/texmf-dist/tex/generic/xstring/xstring.tex
+\integerpart=\count307
+\decimalpart=\count308
+)
+Package: xstring 2019/02/06 v1.83 String manipulations (CT)
+)
+\tikzscale@measuredSize=\box130
+) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2370.
+LaTeX Info: Redefining \cref on input line 2370.
+LaTeX Info: Redefining \Cref on input line 2370.
+LaTeX Info: Redefining \crefrange on input line 2370.
+LaTeX Info: Redefining \Crefrange on input line 2370.
+LaTeX Info: Redefining \cpageref on input line 2370.
+LaTeX Info: Redefining \Cpageref on input line 2370.
+LaTeX Info: Redefining \cpagerefrange on input line 2370.
+LaTeX Info: Redefining \Cpagerefrange on input line 2370.
+LaTeX Info: Redefining \labelcref on input line 2370.
+LaTeX Info: Redefining \labelcpageref on input line 2370.
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen285
+\captionmargin@=\dimen286
+\captionwidth=\dimen287
+\caption@tempdima=\dimen288
+\caption@indent=\dimen289
+\caption@parindent=\dimen290
+\caption@hangindent=\dimen291
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count309
+\c@continuedfloat=\count310
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+Package tocbibind Note: Using section or other style headings.
+
+)
+\tikzscale@accuracy=\skip58
+No file Figures/Bachelorarbeit-figure55.aux.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 37
+.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+\AtBeginShipoutBox=\box131
+Package hyperref Info: Link coloring OFF on input line 37.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count311
+)
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count312
+\scratchdimen=\dimen292
+\scratchbox=\box132
+\nofMPsegments=\count313
+\nofMParguments=\count314
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count315
+\MPscratchDim=\dimen293
+\MPnumerator=\count316
+\makeMPintoPDFobject=\count317
+\everyMPtoPDFconversion=\toks42
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
+5.
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+)) ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': document has
+ been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+
+LaTeX Warning: Citation `BGK' on page 3 undefined on input line 46.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--64
+
+ []
+
+
+LaTeX Warning: Citation `Franz' on page 3 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Kutz' on page 3 undefined on input line 66.
+
+
+LaTeX Warning: Citation `Bernard' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Carlberg' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Rumelhart' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Ballard' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Rifai2011' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Rifai2011' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `Rifai_2011a' on page 3 undefined on input line 70.
+
+
+LaTeX Warning: Citation `rifai2012generative' on page 3 undefined on input line 
+70.
+
+
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 71.
+
+
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 71.
+
+
+LaTeX Warning: Citation `bibid' on page 3 undefined on input line 71.
+
+
+Overfull \hbox (0.8137pt too wide) in paragraph at lines 69--72
+\TU/lmr/m/n/12 Bernard et al. use POD-Galerkin with an ad-di-tional pop-u-la-ti
+on of their snap-shot database
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
+
+ []
+
+
+LaTeX Warning: Citation `BGK' on page 4 undefined on input line 75.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 75.
+
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 91.
+
+
+
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 92.
+
+
+(./Figures/BGK/Boltzmann.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (218.6566pt too wide) in paragraph at lines 96--97
+ [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--101
+
+ []
+
+
+LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 102
+.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 102
+.
+
+
+LaTeX Warning: Reference `Fig:Demo Macro' on page 1 undefined on input line 111.
+
+
+
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 112.
+
+
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 112.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 112
+.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 6 undefined on input line 120
+.
+
+(./Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Citation `the' on page 6 undefined on input line 131.
+
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 132
+.
+
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 137
+.
+
+
+LaTeX Warning: Citation `Hornik1989' on page 6 undefined on input line 138.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 6 undefined on input line 138.
+
+
+LaTeX Warning: Citation `bibid' on page 6 undefined on input line 140.
+
+
+LaTeX Warning: Citation `bibid' on page 6 undefined on input line 140.
+
+
+LaTeX Warning: Reference `Eq. Linear Transformation' on page 1 undefined on inpu
+t line 140.
+
+
+LaTeX Warning: Citation `bibid' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 144
+.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 7 undefined on input line 144.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 7 undefined on input line 144.
+
+
+
+LaTeX Warning: Reference `Eq. Convolution' on page 7 undefined on input line 144
+.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
+ line 144.
+
+
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 144
+.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
+ line 144.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
+ line 150.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
+input line 150.
+
+
+LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
+ input line 150.
+
+
+LaTeX Warning: Citation `dumoulin2018guide' on page 8 undefined on input line 16
+1.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 8 undefined on input line 161.
+
+
+LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
+ input line 161.
+
+
+LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
+ned on input line 165.
+
+
+LaTeX Warning: Citation `bibid' on page 8 undefined on input line 165.
+
+
+LaTeX Warning: Citation `dumoulin2018guide' on page 8 undefined on input line 16
+7.
+
+
+LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
+ut line 167.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 8 undefined on input line 167.
+
+
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 167
+.
+
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 174
+.
+
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 175
+.
+
+
+LaTeX Warning: Reference `Eq. Backpropagation1' on page 1 undefined on input lin
+e 175.
+
+
+LaTeX Warning: Reference `Eq. Backpropagation3' on page 1 undefined on input lin
+e 175.
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 192.
+
+
+LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
+192.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 193.
+
+
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 193.
+
+
+LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 196.
+
+
+LaTeX Warning: Citation `CFD1' on page 9 undefined on input line 202.
+
+
+LaTeX Warning: Reference `Sec: BGK' on page 1 undefined on input line 203.
+
+
+LaTeX Warning: Citation `Carlberg' on page 10 undefined on input line 208.
+
+
+LaTeX Warning: Reference `Sec: BGK' on page 1 undefined on input line 213.
+
+
+LaTeX Warning: Reference `Sec: BGK' on page 1 undefined on input line 214.
+
+
+LaTeX Warning: Reference `AE_matrix' on page 1 undefined on input line 219.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+
+LaTeX Warning: Reference `Conv_matrix' on page 1 undefined on input line 244.
+
+
+LaTeX Warning: Reference `Eg:eckard-young' on page 1 undefined on input line 248
+.
+
+(./Figures/SVD/CumSum_Rare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/SVD/CumSum_Hydro.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 264--270
+ [][] 
+ []
+
+
+Overfull \hbox (9.87857pt too wide) in paragraph at lines 274--280
+ [][] 
+ []
+
+
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 286.
+
+
+
+LaTeX Warning: Citation `Dret2016' on page 11 undefined on input line 286.
+
+
+LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 286.
+
+
+
+LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 286.
+
+
+LaTeX Warning: Reference `Eq. Characteristics' on page 1 undefined on input line
+ 297.
+
+
+LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 297.
+
+
+
+LaTeX Warning: Reference `Results' on page 1 undefined on input line 298.
+
+(./Charts/ROM.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `L2-Norm' on page 1 undefined on input line 311.
+
+
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 325.
+
+
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 325.
+
+
+LaTeX Warning: Reference `Eq:Norm_Con_quantity' on page 1 undefined on input lin
+e 325.
+
+
+LaTeX Warning: Reference `Eq:cumsum' on page 1 undefined on input line 326.
+
+
+LaTeX Warning: Reference `Fig:cumu_sing' on page 1 undefined on input line 326.
+
+The command '\includegraphics [width=\textwidth ]{\tikzscale@fileName }' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [width=\linewidth ]{\tikzscale@fileName }' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Reference `Eq:Norm_Con_quantity' on page 1 undefined on input lin
+e 340.
+
+
+LaTeX Warning: Reference `Eq:Norm_Con_quantity' on page 1 undefined on input lin
+e 340.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
+
+ []
+
+
+LaTeX Warning: Reference `Sec:SVD' on page 1 undefined on input line 350.
+
+
+LaTeX Warning: Reference `Sec:Reduced Order Model' on page 1 undefined on input 
+line 350.
+
+
+LaTeX Warning: Reference `moment1' on page 1 undefined on input line 350.
+
+
+LaTeX Warning: Reference `moment3' on page 1 undefined on input line 350.
+
+The command '\includegraphics [width=\linewidth ]{\tikzscale@fileName }' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [width=\linewidth ]{\tikzscale@fileName }' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/Results_Rom/Macrooriginal.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results_Rom/Characteristics.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `Reduced Order Model' on page 1 undefined on input line
+ 365.
+
+
+LaTeX Warning: Reference `Reduced Order Model' on page 1 undefined on input line
+ 365.
+
+(./Figures/Results_Rom/MacroCode.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results_Rom/New_Points_Macro.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `Reduced Order Model' on page 14 undefined on input lin
+e 373.
+
+
+LaTeX Warning: Reference `Reduced Order Model' on page 14 undefined on input lin
+e 373.
+
+(./Figures/Results/Rare/Code.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
+ 381.
+
+
+Overfull \hbox (11.5445pt too wide) in paragraph at lines 383--390
+ [][] 
+ []
+
+No file Figures/Bachelorarbeit-figure55.bbl.
+
+LaTeX Warning: Reference `Tab:First Guess' on page 1 undefined on input line 400
+.
+
+
+LaTeX Warning: Reference `Sec:Deep Learning' on page 1 undefined on input line 4
+11.
+
+
+LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 411.
+
+
+
+LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
+ 411.
+
+
+LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 411.
+
+
+LaTeX Warning: Reference `Tab:Layer Size' on page 1 undefined on input line 411.
+
+
+
+LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 429.
+
+
+LaTeX Warning: Reference `Fig:Depth Rare' on page 1 undefined on input line 429.
+
+
+
+LaTeX Warning: Reference `Tab:Hidden Units' on page 1 undefined on input line 43
+0.
+
+
+LaTeX Warning: Reference `Tab:Batch Size Hydro' on page 1 undefined on input lin
+e 445.
+
+
+LaTeX Warning: Reference `Tab:Batch Size Rare' on page 1 undefined on input line
+ 445.
+
+
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 445.
+
+
+LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
+ne 466.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
+e 466.
+
+
+Overfull \hbox (14.3522pt too wide) in paragraph at lines 468--477
+ [][] 
+ []
+
+
+Overfull \hbox (20.23221pt too wide) in paragraph at lines 481--490
+ [][] 
+ []
+
+
+LaTeX Warning: Citation `BGK' on page 16 undefined on input line 494.
+
+
+LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
+line 494.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
+e 495.
+
+
+LaTeX Warning: Reference `Fig:Activations Rare' on page 1 undefined on input lin
+e 495.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
+ line 495.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
+ line 495.
+
+
+LaTeX Warning: Reference `Fig:Activations Rare 2nd3rd' on page 1 undefined on in
+put line 495.
+
+(./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 513--516
+[]
+ []
+
+(./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 519--522
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--522
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 527--532
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--532
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--532
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 527--532
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 538--543
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--543
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--543
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 538--543
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 549--555
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 561--563
+[][]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 569--574
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--574
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--574
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 569--574
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 580--582
+[][]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 588--594
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--594
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--594
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--594
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 588--594
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 600--602
+[][]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
+\openout4 = Figures/Bachelorarbeit-figure55.dpth
+
+Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
+e=log unsupported (yet).
+[20
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+Underfull \hbox (badness 10000) in paragraph at lines 607--613
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--613
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--613
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--613
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--613
+[]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 619--621
+[][]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
+tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 627--630
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 627--630
+[]
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 634.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 634.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 634.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 634.
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 634.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 39528 strings out of 481365
+ 156266,4101490 words of node,token memory allocated
+ 732 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 52 attribute,
+ 60 glue_spec, 52 attribute_list, 2 write nodes
+   avail lists: 1:5,2:10686,3:4761,4:82,5:550,6:53,7:12979,8:66,9:753,10:26,11:7
+47
+ 54819 multiletter control sequences out of 65536+600000
+ 83 fonts using 7965651 bytes
+ 80i,22n,138p,2444b,2403s stack positions out of 5000i,500n,10000p,200000b,100000s
+</usr/share/texmf/fonts/opentype/public/lm/lmroman12-regular.otf></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy8.pfb>
+Output written on Figures/Bachelorarbeit-figure55.pdf (1 page, 70886 bytes).
+
+PDF statistics: 39 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
+ 2 named destinations out of 1000 (max. 131072)
+ 16 words of extra memory for PDF output out of 10000 (max. 100000000)
+

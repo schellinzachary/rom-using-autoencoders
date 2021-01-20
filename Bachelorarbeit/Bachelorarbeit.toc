@@ -18,8 +18,8 @@
 \contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{15}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Rarefied Regime}{17}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{17}{subsection.5.3}%
-\contentsline {section}{References}{21}{section*.19}%
-\contentsline {subsection}{\numberline {5.4}Abbendix A}{22}{subsection.5.4}%
-\contentsline {subsubsection}{\numberline {5.4.1}Hyperparameters for the Fully Connected Autoencoder}{22}{subsubsection.5.4.1}%
-\contentsline {subsubsection}{\numberline {5.4.2}Hyperparameters for the Convolutional Autoencoder}{25}{subsubsection.5.4.2}%
-\contentsline {subsection}{\numberline {5.5}Appendix B}{25}{subsection.5.5}%
+\contentsline {section}{References}{22}{section*.20}%
+\contentsline {subsection}{\numberline {5.4}Abbendix A}{23}{subsection.5.4}%
+\contentsline {subsubsection}{\numberline {5.4.1}Hyperparameters for the Fully Connected Autoencoder}{23}{subsubsection.5.4.1}%
+\contentsline {subsubsection}{\numberline {5.4.2}Hyperparameters for the Convolutional Autoencoder}{27}{subsubsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.5}Appendix B}{27}{subsection.5.5}%

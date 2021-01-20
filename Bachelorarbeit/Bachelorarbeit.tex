@@ -12,7 +12,8 @@
 \usepackage{tikz}
 \usetikzlibrary{external}
 \tikzexternalize[prefix=Figures/]
-\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{shapes,arrows,snakes}
+\usetikzlibrary{matrix}
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{groupplots}
 \usepackage{tikzscale}
@@ -20,12 +21,18 @@
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{tocbibind}
+%New Commands
 \DeclareMathOperator*{\argmin}{\arg\!\min}
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
 \newcommand{\hy}{\(\textsf{H}\)}
 \newcommand{\rare}{\(\textsf{R}\)}
+%Tikz Styles
 \tikzstyle{block} = [rectangle, draw, 
 text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{cube} = [rectangle, minimum width=1cm, minimum height=1cm, draw=black]
+\tikzstyle{rec} = [rectangle, rounded corners, minimum width=1cm, minimum height=5cm,text centered, draw=black]
+\tikzstyle{circ} = [circle,minimum size =1.5cm,text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
 
 \begin{document}
 \title{Bachelorarbeit\\ zur Erlangung des akademischen Grades\\ Bachelor of Science}
@@ -273,7 +280,7 @@ The singular value decomposition of the input $X$ [REF to Section 1] gives the o
 	\caption{L2-Error for different numbers of intrinsic variables for the hydrodynamic gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
 	\label{Tab:Intrinsic units svd hydro}
 \end{table}
-\subsection{Online Phase}
+\textbf{}\subsection{Online Phase}
 loremipsu
 \subsubsection{Reduced Order Model}\label{Reduced Order Model}
 The compression of the input data $y_0$ yields a code $C \in \mathbb{R}^{ix5000}$, composed  of the instrinsic variables \(c_i\). The index \(i\) corresponds to the i-th intrinsic variable whereas their number is given by the input data. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. On that account the method of characteristics \cite{Dret2016} provides a means to bypass this shortage. It is necessary for $c_i(x,t)$ to satisfy the conservative condition \cref{Eq. Mass_Const} and the transport equation \cref{Eq. Transport}.\\
@@ -366,6 +373,11 @@ Given, that the autoencoder is able to achieve a reconstruction that is equal or
 	\caption{Resulting macroscopic quantities $\rho$, E, $\rho$u after interpolating in time using the interpolation method described in \ref{Reduced Order Model}. The interpolated quantity lies at timestamp t=24,5, while the original quantity lies at timestamp t=25.}
 \end{figure}
 \subsection{Rarefied Regime}
+-The Code Of Rare
+\begin{figure}[!hp]
+	\scalebox{0.9}{\input{Figures/Results/Rare/Code.tex}}
+	\caption{Intrinsic Variables of \rare}
+\end{figure}
 The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
@@ -492,113 +504,129 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 	\caption{L2-Error different activation functions and combinations for \hy.}
 	\label{Tab:Activations Rare 2nd}
 \end{table}
+\newpage
 \subsubsection{Hyperparameters for the Convolutional Autoencoder}\label{Convolutional}
+\begin{figure}[!htp]
+	\input{Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex}
+\end{figure}
+\begin{figure}
+	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/2Layer.tex}}
+	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/3Layer.tex}}
+	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/4Layer.tex}}
+	\caption{Three convolutional networks with differing depth and with identical kernel evolution for \rare.}
+\end{figure}
+\begin{figure}
+	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L2R.tex}}\\
+	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L3R.tex}}\\
+	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L4R.tex}}
+	\caption{Different Channel sizes for three convolutional networks with differing depth for \rare.}
+\end{figure}
 \subsection{Appendix B}\label{Sec:AppendixA}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/0.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/1.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/3.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Hydro/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex}}
 		\caption{Experiments with five different depth on \hy. Training and test loss are shown over 2000 epochs.}
 		\label{Fig:Depth Hydro}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/0.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/1.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/3.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Depth/Rare/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex}}
 		\caption{Experiments with five different depth on \rare. Training and test loss are shown over 2000 epochs.}
 		\label{Fig:Depth Rare}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/4.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/8.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/10.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/12.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/14.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex}}
 		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
 		\label{Fig:Batch Hy}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/16.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Hydro/32.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex}}
 		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/4.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/6.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/8.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/10.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex}}
 		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
 		\label{Fig:Batch Rare}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/16.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Batch_Size/Rare/32.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex}}
 		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ReLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/Tanh.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/SiLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/LeakyReLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex}}
 		\caption{balblabla}
 		\label{Fig:Activations Hydro 1}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/LeakyReLU_Tanh.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Hydro/ELU_SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex}}
 		\caption{}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ReLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/Tanh.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/SiLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/LeakyReLU.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex}}
 		\caption{blablabla}
 		\label{Fig:Activations Rare}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_SiLU.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex}}
 		\caption{blablabla}
 		\label{}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_test.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/LeakyReLU_Tanh_test.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Activations/Rare/ELU_Tanh_test.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.tex}}
+		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex}}
 		\caption{blablabla}
 		\label{Fig:Activations Rare 2nd3rd}
 	\end{figure}
