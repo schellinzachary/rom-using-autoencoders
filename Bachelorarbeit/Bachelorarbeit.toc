@@ -5,7 +5,7 @@
 \contentsline {subsection}{\numberline {1.3}State of the art}{3}{subsection.1.3}%
 \contentsline {section}{\numberline {2}The BGK Model}{4}{section.2}%
 \contentsline {subsection}{\numberline {2.1}Discretization, conservative properties and equilibirum}{4}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}The SOD schock tube as a test case for the BGK model}{6}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Sod's schock tube as a test case for the BGK model}{6}{subsection.2.2}%
 \contentsline {section}{\numberline {3}Deep learning}{6}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Autoencoders}{10}{subsection.3.1}%
 \contentsline {section}{\numberline {4}Reduced Order Model}{11}{section.4}%
@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {5}Results}{15}{section.5}%
 \contentsline {subsection}{\numberline {5.1}Hydrodynamic Regime}{15}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}Rarefied Regime}{15}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.3}Discussion and Outlook}{15}{subsection.5.3}%
 \contentsline {section}{References}{18}{section*.14}%
 \contentsline {subsection}{\numberline {5.4}Abbendix A}{19}{subsection.5.4}%
 \contentsline {subsubsection}{\numberline {5.4.1}Hyperparameters for the Fully Connected Autoencoder}{19}{subsubsection.5.4.1}%

@@ -100,12 +100,12 @@ class Decoder(nn.Module):
 class Autoencoder(nn.Module):
     def __init__(self, enc, dec):
         super(Autoencoder, self).__init__()
-        self.encoder = Encoder()
-        self.decoder = Decoder()
+        self.enc = enc
+        self.dec = dec
 
     def forward(self, x):
-        x = self.encoder(x)
-        x = self.decoder(x)
+        x = self.enc(x)
+        x = self.dec(x)
         return x
 
 
@@ -190,17 +190,17 @@ for epoch in range(N_EPOCHS):
 
 
     progressBar(epoch,N_EPOCHS)
-    if np.abs(np.log10(train_loss)-np.log10(test_loss)) < 1e-3:
+    # if np.abs(np.log10(train_loss)-np.log10(test_loss)) < 1e-3:
     
-        torch.save({
-        'epoch': epoch,
-        'model_state_dict':model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict(),
-        'train_losses':train_losses,
-        'test_losses': test_losses,
-        'model': model
-        },'Results/test_mid.pt')
-        print('saved at:',epoch)
+    #     torch.save({
+    #     'epoch': epoch,
+    #     'model_state_dict':model.state_dict(),
+    #     'optimizer_state_dict': optimizer.state_dict(),
+    #     'train_losses':train_losses,
+    #     'test_losses': test_losses,
+    #     'model': model
+    #     },'Results/test_mid.pt')
+    #     print('saved at:',epoch)
 
 #save the models state dictionary for inference
 torch.save({
@@ -210,7 +210,7 @@ torch.save({
     'train_losses':train_losses,
     'test_losses': test_losses,
     'model': model
-    },'Results/1.pt')
+    },'Results/1_test.pt')
 
 
 

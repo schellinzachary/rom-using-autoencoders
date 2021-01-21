@@ -115,7 +115,7 @@ def plot_code(z,v):
         ax[i].set_xlabel('x')
         ax[i].set_ylabel('c_{}'.format(i))
         ax[i].legend()
-    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/ConvCode.tex')
+    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/ConvCode.tex')
     plt.show()
 
 def plot_results(rec,c):
@@ -136,4 +136,5 @@ def plot_training(train_loss,test_loss):
 
 
 plot_code(z,v)
+plot_training(train_losses,test_losses)
 
