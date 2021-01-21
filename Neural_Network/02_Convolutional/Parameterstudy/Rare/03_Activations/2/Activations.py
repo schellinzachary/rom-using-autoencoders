@@ -65,9 +65,9 @@ for i in range(4):
         def __init__(self):
             super(Encoder, self).__init__()
             self.m = nn.ZeroPad2d((0,0,1,1))
-            self.convE1 = nn.Conv2d(1,6,(6,10),stride=(3,10))
-            self.convE2 = nn.Conv2d(6,12,(4,10),stride=(4,10))
-            self.linearE1 = nn.Linear(in_features=32,out_features=5)
+            self.convE1 = nn.Conv2d(1,32,(6,10),stride=(3,10))
+            self.convE2 = nn.Conv2d(32,64,(4,10),stride=(4,10))
+            self.linearE1 = nn.Linear(in_features=256,out_features=5)
             self.add_module('act',act_list[i])
             # self.add_module('act_c',act_c_list[i])
 
@@ -86,9 +86,9 @@ for i in range(4):
     class Decoder(nn.Module):
         def __init__(self):
             super(Decoder, self).__init__()
-            self.linearD1 = nn.Linear(in_features=5, out_features=32)
-            self.convD1 = nn.ConvTranspose2d(8,4,(4,10),stride=(4,10))
-            self.convD2 = nn.ConvTranspose2d(4,1,(4,10),stride=(3,10))
+            self.linearD1 = nn.Linear(in_features=5, out_features=256)
+            self.convD1 = nn.ConvTranspose2d(64,32,(4,10),stride=(4,10))
+            self.convD2 = nn.ConvTranspose2d(32,1,(4,10),stride=(3,10))
             self.add_module('act',act_list[i])
             # self.add_module('act_c',act_c_list[i])
 
@@ -96,9 +96,9 @@ for i in range(4):
             x = self.linearD1(x)
             # x = self.act_c(self.linearD1(x))
             dim = x.shape[0]
-            x = torch.reshape(x,[dim,8,2,2])
+            x = torch.reshape(x,[dim,64,2,2])
             x = self.act(self.convD1(x))
-            x = self.act(self.convD2(x))
+            x = self.convD2(x)
             return x
 
 
@@ -205,6 +205,6 @@ for i in range(4):
         'test_losses': test_losses,
         'model': model
         # },'Results/{}.pt'.format((act_list[i],act_c_list[i])))
-        },'Results/{}.pt'.format(act_list[i]))
+        },'Results/nll32{}.pt'.format(act_list[i]))
 
 

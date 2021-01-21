@@ -22,7 +22,7 @@ class data():
 
 plt.figure()
 
-ch_list = [12,24,32]
+ch_list = [32]
 
 for i in ch_list:
 

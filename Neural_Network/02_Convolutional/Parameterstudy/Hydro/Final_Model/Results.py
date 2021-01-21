@@ -15,6 +15,7 @@ import tikzplotlib
 device = 'cpu'
 
 
+
 class data():
     #load data
     f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_4D_unshuffled.npy')
@@ -68,9 +69,9 @@ class Autoencoder(nn.Module):
         self.decoder = Decoder()
 
     def forward(self, x):
-        x = self.encoder(x)
-        x = self.decoder(x)
-        return x
+        z = self.encoder(x)
+        x = self.decoder(z)
+        return x, z
 
 #encoder
 encoder = Encoder()
@@ -88,35 +89,51 @@ train_losses = checkpoint['train_losses']
 test_losses = checkpoint['test_losses']
 N_EPOCHS = checkpoint['epoch']
 
-rec = model(data.f)
+
+
+v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
+t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
+x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
+x = x['x']
+x = x.squeeze()
+t  = t['treport']
+v = v['v']
+t=t.squeeze()
+t=t.T
+
+
+
+rec, z = model(data.f)
 
 l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
 print(l2_error)
 
-rec = model(data.f)
-fig,ax = plt.subplots(3,1)
-a = ax[0].imshow(rec[39,0,:,:].detach().numpy())
-b = ax[1].imshow(data.f[39,0,:,:].detach().numpy())
+def plot_code(z,v):
+    fig , ax = plt.subplots(1,3)
+    for i in range(3):
+        ax[i].plot(v,z[:,i].detach().numpy(),'k',label='c_{}'.format(i))
+        ax[i].set_xlabel('x')
+        ax[i].set_ylabel('c_{}'.format(i))
+        ax[i].legend()
+    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/ConvCode.tex')
+    plt.show()
+
+def plot_results(rec,c):
+    fig,ax = plt.subplots(3,1)
+    a = ax[0].imshow(rec[39,0,:,:].detach().numpy())
+    b = ax[1].imshow(data.f[39,0,:,:].detach().numpy())
+
+def plot_training(train_loss,test_loss):
+    plt.figure()
+    plt.semilogy(train_losses,'k''--',label='Train')
+    plt.semilogy(test_losses,'k''-',label='Test')
+    plt.xlabel('Epoch')
+    plt.ylabel('MSE Loss')
+    ax = plt.gca()
+    plt.legend()
+    # tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
+    plt.show()
 
 
-
-# plt.figure(i)
-# plt.semilogy(train_losses,'k''--',label='Train')
-# plt.semilogy(test_losses,'k''-',label='Test')
-# plt.xlabel('Epoch')
-# plt.ylabel('MSE Loss')
-# ax = plt.gca()
-# # plt.title('{}'.format((act_list[i],act_c_list[i])))
-# plt.title('{}'.format(act_list[i]))
-# plt.legend()
-
-plt.figure()
-plt.semilogy(train_losses,'k''--',label='Train')
-plt.semilogy(test_losses,'k''-',label='Test')
-plt.xlabel('Epoch')
-plt.ylabel('MSE Loss')
-ax = plt.gca()
-plt.legend()
-# tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
-plt.show()
+plot_code(z,v)
 

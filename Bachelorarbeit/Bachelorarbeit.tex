@@ -308,69 +308,18 @@ Questions concering the capacity of this ROM, e.g. how many samples \(\hat{n}_t\
 \end{figure}
 \section{Results}\label{Results}
 \subsection{Hydrodynamic Regime}
-In search for a reduced model of the BGK equation, a first reduction and analysis of the provided data in the hydrodynamic regime is conducted. The error over the $L_2$-Norm derived from \cref{L2-Norm} assigns a value to each reduction algorithm enabling a evaluation.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c c| }
-		\hline
-		Algorithm & $L_2$ \\[.5ex]
-		\hline
-		SVD & 0.03  \\ 
-		Fully Connected Autoencoder & 0.002 \\ 
-		Convolutional Autoencoder & 0.02 \\ \hline
-		\hline
-	\end{tabular}
-	\caption{L2-Error over Batch-Size}
-	\label{Tab:Batch}
-\end{table}
-Furthermore the conservation quantities given in \cref{moment1} to \cref{moment3} of the prediction are analysed over the time average of each quantity. This normalization is given in \cref{Eq:Norm_Con_quantity}, where $\hat{\sigma}$ represents the given quantity.  
-With more than $99\%$ of the total cumultative energy $S_N$ of the first five singular values calculated with \cref{Eq:cumsum} the SVD provides an upper bound to the number of intrinsic features the autoencoder should extract. \Cref{Fig:cumu_sing} shows the singular values (left) and the cumulative energy (right).
-\begin{equation}
-S_N = \sum_{k=1}^{N}a_k \qquad\textrm{with a sequence} \qquad\{a_k\}_{k=1}^{n} 
-\label{Eq:cumsum}
-\end{equation}  
-\begin{figure}[!htbp]
-	\centering
-	\includegraphics[width=\textwidth]{Figures/Cumultative_Singular_Values_kn001.png}
-	\caption{Singular Values (left) and cumultative enrgy (right) over the number of singular values}
-	\label{Fig:cumu_sing}
-\end{figure}
 
 \begin{figure}[!htbp]
-	\includegraphics[width=\linewidth]{Figures/02_12_20/kn0p00001Conservative_Quantities/together/all_together.png}
-	\caption{Normalized conservative quantities $\hat{\rho}$, $\hat{\rho u}$ and $\hat{E}$ as in \cref{Eq:Norm_Con_quantity} for $y_o$ and $y_p$.}
-\end{figure}
-\begin{multicols}{2}	
-	\begin{equation}
-	\hat{\sigma} = \frac{\frac{d}{dt} \int \sigma \,dx}{\bar{\sigma}} = 0 \quad\textrm{and}\quad \bar{\sigma} = \frac{\iint \sigma \,dtdx}{\Delta t}\label{Eq:Norm_Con_quantity}\\
-	\end{equation}\break
-	\begin{equation}
-		L_2 = \frac{||y_o - y_p||}{|||y_o|} \label{L2-Norm}
-	\end{equation}
-\end{multicols}
-Given, that the autoencoder is able to achieve a reconstruction that is equal or below the threshold of the $L_2$-Norm form existing methods like SVD \cref{Sec:SVD} and that conservation is preserved, a reduced order model can not be derived as described in \cref{Sec:Reduced Order Model}. Solely the the reconstuction can be validated. In addition the code needs to be a conservative system hence fulfilling \cref{moment1} to \cref{moment3}.
-\begin{figure}
-	\includegraphics[width=\linewidth]{Figures/02_12_20/kn0p00001Conservative_Quantities/code/Consrvative_Rho_Code.png}
+	\scalebox{.6}{\input{Figures/Results/Hydro/MacroCode10.tex}}
+	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.05s\).}
 \end{figure}
 \begin{figure}[!htbp]
-	\includegraphics[width=\linewidth]{Figures/Code.png}
-	\caption{Code variable $c_1$,$c_2$ and $c_3$ over space $x$ and time $t$ of the fully connected autoencoder}
-	\label{Fig:Code_Fully}
-\end{figure}
-\begin{figure}
-	\input{Figures/Results_Rom/Macrooriginal.tex}
-	\caption{Macroscopic quantities $\rho$, E and $\rho$ u of the original data.}
+	\scalebox{.6}{\input{Figures/Results/Hydro/MacroCode20.tex}}
+	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.099s\).}
 \end{figure}
 \begin{figure}[!htbp]
-	\input{Figures/Results_Rom/Characteristics.tex}
-	\caption{Characteristic velocities u0, u1, u2 of the code variables var0, var1, var2 respectively calculated as described in \Cref{Reduced Order Model}.}
-\end{figure}
-\begin{figure}[!htbp]
-	\input{Figures/Results_Rom/MacroCode.tex}
-	\caption{Code variables var0, var1, var3 (dashed lines - -) and macroscopic quantities $\rho$, E, $\rho$u (full lines --) for three timestamps $t_0$, $t_{10}$, $t_{20}$.}
-\end{figure}
-\begin{figure}[!htbp]
-	\input{Figures/Results_Rom/New_Points_Macro.tex}
-	\caption{Resulting macroscopic quantities $\rho$, E, $\rho$u after interpolating in time using the interpolation method described in \ref{Reduced Order Model}. The interpolated quantity lies at timestamp t=24,5, while the original quantity lies at timestamp t=25.}
+	\scalebox{.6}{\input{Figures/Results/Hydro/ConvCode.tex}}
+	\caption{The intrinsic variables \(c_0\), \(c_1\) and \(c_2\).}
 \end{figure}
 \subsection{Rarefied Regime}
 -The Code Of Rare

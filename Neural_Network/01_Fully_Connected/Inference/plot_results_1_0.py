@@ -104,12 +104,13 @@ v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.ma
 t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
 x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
 x = x['x']
+x = x.squeeze()
 t  = t['treport']
 v = v['v']
 t=t.squeeze()
 t=t.T
 
-
+print(x.squeeze())
 
 
 
@@ -149,7 +150,6 @@ def shape_AE_code(g):
           n += 200
     return(c)
 
-
 def shapeback_field(predict):
     f = np.empty([25,40,200])
     n = 0
@@ -172,7 +172,7 @@ def macro(f,v):
 
     T = ((2* E) / (3 * rho)) - (u**2 / 3)
     p = rho * T
-    return(rho, E, rho_u) # calculate the macroscopic quantities of field
+    return(rho, rho_u, E) # calculate the macroscopic quantities of field
 
 def conservativ(z):
     #g[:,0] = p, g[:,1] = rho, g[:,2] = u
@@ -210,7 +210,7 @@ def characteritics(z,t):
     # plt.plot(s[0]*np.linspace(0,25,25)+100,np.linspace(0,25,25))
     plt.show()
     return(s)
-s = characteritics(z,v)
+#s = characteritics(z,v)
 
 
 #Conservation of Prediction vs. Original
@@ -294,7 +294,7 @@ def plot_macro_1D():
     plt.tight_layout()
     #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal_Hy_vs_Rare.tex')
     plt.show()
-#plot_macro_1D()
+# plot_macro_1D()
 
 #Conservation of Code
 def plot_conservation_code_rho(z,t):
@@ -310,29 +310,25 @@ def plot_conservation_code_rho(z,t):
         plt.show()
 #plot_conservation_code_rho(z,t)
 
-def plot_macro_vs_code(z,predict):
+def plot_macro_vs_code(z,predict,x):
     g = shapeback_code(z)
     f = shapeback_field(predict)
     mac = macro(f,v)
-    names = ['rho','E','rho u']
-    timespots = [0,10,20]
-    fig , ax = plt.subplots(1,3)
-    t=0
-    for i in timespots:
-        for j in range(3):
-                ax[t].plot(g[i,j,:],'k''--',label='var_{}'.format(j))
-                ax[t].plot(mac[j][i,:],'k''-',label=names[j])
-                ax[t].set_title('t={}'.format(i))
-                ax[t].set_xlabel('x')
-                handles, labels = ax[t].get_legend_handles_labels()
-        t +=1
+    names = ['rho','rho u','E']
+    timespots = [10,20]
 
-        fig.legend(handles, labels, loc='upper center', bbox_to_anchor=(0.5, 1.005),ncol=3)
-        #   )
-        # plt.legend()
-    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/MacroCode.tex')      
+    for i in timespots:
+        fig , ax = plt.subplots(1,params.LATENT_DIM)
+        for j in range(params.LATENT_DIM):
+                ax[j].plot(x,g[i,j,:],'k''--',label='c{}'.format(j))
+                ax[j].plot(x,mac[j][i,:],'k''-',label=names[j])
+                #fig.suptitle('t={}'.format(t[i]))
+                ax[j].set_xlabel('x')
+                ax[j].set_ylabel('c_{},{}'.format(j,names[j]))
+                ax[j].legend()
+        tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/MacroCode{}.tex'.format(i))      
     plt.show()
-#plot_macro_vs_code(z,predict)
+plot_macro_vs_code(z,predict,x)
 
 # def lin_code(z):
 #     g = shapeback_code(z)
@@ -413,7 +409,7 @@ def plot_code(z,t,x):
     # axs[4].set_xlabel('x')
 
     plt.show()
-plot_code(z,t,x)
+#plot_code(z,t,x)
 #-----------------------------------------------------------------------------------------
 #Visualizing-----------------------------------------------------------------------------
 
