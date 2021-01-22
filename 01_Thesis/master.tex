@@ -1,0 +1,73 @@
+
+\input{other/preamble}
+\include{other/metadata}
+
+
+\begin{document}
+\selectlanguage{english}
+% - - - - -   Titlepage  - - - - - -
+{
+\pagestyle{empty}
+\include{front/title}
+\maketitle
+\cleardoublepage
+%
+}
+
+% - - - - - -  abstract  - - - - - -
+{
+\input{front/abstract}
+\selectlanguage{english}
+}
+% - - - -  toc  - - - - - - - -
+{
+\pagenumbering{roman}
+\pagestyle{plain}
+\tableofcontents
+}
+\newpage
+%  - - - - -   Main part  - - - - -
+
+
+%\listoffigures
+%\newpage
+\pagenumbering{arabic}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% section in order for final thesis
+\include{chapters/introduction}
+\include{chapters/BGK_model}
+\include{chapters/Deep_Learning}
+\include{chapters/Reduced_order_Modeling}
+\include{chapters/Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		APPENDIX
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\appendix
+%\input{appendix/introduction}
+\input{appendix/appendixA}
+\newpage
+%\input{charge}
+
+\bibliography{other/references}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{empty}
+\cleardoublepage
+%
+% - - - - -  Acknowledgemet  - - - - - - - -
+\input{back/acknowledgement}
+\newpage
+%  - - - - -  Selbststaendigkeitserklaerung  - - - - - - -
+\input{back/declaration}
+
+
+
+
+\end{document}

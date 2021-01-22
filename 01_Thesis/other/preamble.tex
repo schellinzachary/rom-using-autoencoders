@@ -1,0 +1,99 @@
+% !TEX root = master.tex
+
+\documentclass[%
+pagesize,oneside,% for thesis use : 
+%twoside,
+%titlepage=false,%
+11pt,
+%toc=listof,%toc=bibliography,%
+%chapterprefix=true,%
+%bibliography=totocnumbered%
+]%{article}
+{book}
+\usepackage[english]{babel}
+
+\usepackage{dsfont} %% for \1
+\usepackage{exscale}
+\usepackage{mathrsfs} %mathscr{}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage{footnote}
+\usepackage{hyperref}
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{tikz}
+\usetikzlibrary{external}
+\tikzexternalize[prefix=Figures/]
+\usetikzlibrary{shapes,arrows,snakes}
+\usetikzlibrary{matrix}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\usepackage{tikzscale}
+\usepackage{cleveref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{tocbibind}
+\bibliographystyle{JHEP}
+
+%%%%%%%%%%%%%%%%%%%%New Commands%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\hy}{\(\textsf{H}\)}
+\newcommand{\rare}{\(\textsf{R}\)}
+%\newcommand{\pod1}{\(\gamma_1\)}
+%\newcommand{\pod2}{\(\gamma_2\)}
+%\newcommand{\pod3}{\(\gamma_3\)}
+%\newcommand{\1pod}{\(\delta_1\)}
+%\newcommand{\2pod}{\(\delta_2\)}
+%\newcommand{\3pod}{\(\delta_3\)}
+%\newcommand{\conv1}{\(\beta_1\)}
+%\newcommand{\conv2}{\(\beta_2\)}
+%\newcommand{\conv2}{\(\beta_3\)}
+%\newcommand{\ae1}{\(\alpha_1\)}
+%\newcommand{\ae2}{\(\alpha_2\)}
+%\newcommand{\ae2}{\(\alpha_3\)}
+
+%%%%%%%%%%%%%%%%%Tikz Styles%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\tikzstyle{block} = [rectangle, draw, 
+text width=5em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{cube} = [rectangle, minimum width=1cm, minimum height=1cm, draw=black]
+\tikzstyle{rec} = [rectangle, rounded corners, minimum width=1cm, minimum height=5cm,text centered, draw=black]
+\tikzstyle{circ} = [circle,minimum size =1.5cm,text centered, draw=black]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+%header einstellungen
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% \fancyhead{}
+% \fancyhead[ER]{\rightmark}
+% \fancyhead[OL]{\leftmark} 
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{#1}} % set the \leftmark % set the \leftmark
+\fancyhf{}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\rightmark}
+\fancyhead[OL]{\leftmark} 
+
+%%%%%%%%%%%%%%%%%%%chapter logo %%%%%%%%%%%%%%%%%%%%%%%%%%5
+\usepackage{titlesec,titletoc}
+
+%Einstellung serifenlose überschriften
+\titleformat{\chapter}[block]{\vspace{0cm}\sffamily \bfseries \LARGE}{\thechapter}{ 0.5cm}{ }[\vspace{-0.65cm}\rule{\textwidth}{1pt}]
+\titleformat*{\section}{\sffamily \bfseries \Large}
+\titleformat*{\subsection}{\sffamily \bfseries \large}
+\titleformat*{\subsubsection}{\sffamily \bfseries \normalsize}
+
+
+
+
