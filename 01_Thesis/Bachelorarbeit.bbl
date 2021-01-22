@@ -1,0 +1,89 @@
+\begin{thebibliography}{10}
+
+\bibitem{BGK}
+Bhatnagar, Gross, and Krook.
+\newblock A model for collision processes in gases.
+\newblock 1954.
+
+\bibitem{Franz}
+Thomas Franz.
+\newblock {\em Reduced-order modeling of steady transonic flows via manifold
+  learning}.
+\newblock 2016.
+
+\bibitem{Kutz}
+Steve~L. Brunton and J.~Nathan Kutz.
+\newblock {\em Data driven science and engineering}.
+\newblock 2019.
+
+\bibitem{Bernard}
+Florian Bernard, Angelo Iollo, and Sebatian Riffaud.
+\newblock Reduced-order model for the bgk equation based on pod and optimal
+  transport.
+\newblock 2018.
+
+\bibitem{Carlberg}
+Kookjin Lee and Kevin~T. Carlberg.
+\newblock Model reduction of dynamical systems on nonlinear manifolds using
+  deep convolutional autoencoders.
+\newblock 2019.
+
+\bibitem{Goodfellow}
+Ian~J. Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em Deep Learning}.
+\newblock MIT Press, Cambridge, MA, USA, 2016.
+\newblock \url{http://www.deeplearningbook.org}.
+
+\bibitem{Rumelhart}
+D.E. Rumelhart, G.E. Hinton, and R.J. Williams.
+\newblock Learning internal representations by error propagation.
+\newblock 1986.
+
+\bibitem{Ballard}
+Dana~H. Ballard.
+\newblock Modular learning in neural networks.
+\newblock 1987.
+
+\bibitem{Rifai2011}
+Salah Rifai, Pascal Vincent, Xavier Muller, Xavier Glorot, and Yoshua Bengio.
+\newblock Contractive auto-encoders: Explicit invariance during feature
+  extraction.
+\newblock 2011.
+
+\bibitem{Rifai_2011a}
+Salah Rifai, Yann~N Dauphin, Pascal Vincent, Yoshua Bengio, and Xavier Muller.
+\newblock {\em The Manifold Tangent Classifier}.
+\newblock Curran Associates, Inc., 2011.
+
+\bibitem{rifai2012generative}
+Salah Rifai, Yoshua Bengio, Yann Dauphin, and Pascal Vincent.
+\newblock A generative process for sampling contractive auto-encoders.
+\newblock 2012.
+
+\bibitem{puppo2019kinetic}
+Gabriella Puppo.
+\newblock Kinetic models of bgk type and their numerical integration.
+\newblock 2019.
+
+\bibitem{Hornik1989}
+Kurt Hornik, Maxwell Stinchcombe, and Halbert White.
+\newblock Multilayer feedforward networks are universal approximators.
+\newblock {\em Neural Networks}, 2(5):359--366, January 1989.
+
+\bibitem{dumoulin2018guide}
+Vincent Dumoulin and Francesco Visin.
+\newblock A guide to convolution arithmetic for deep learning.
+\newblock 2018.
+
+\bibitem{CFD1}
+Julius Reiss.
+\newblock Skript zu cfd 1.
+\newblock 2018.
+
+\bibitem{Dret2016}
+Hervé~Le Dret and Brigitte Lucquin.
+\newblock {\em Partial Differential Equations: Modeling, Analysis and Numerical
+  Approximation -}.
+\newblock Birkhäuser, Basel, 2016.
+
+\end{thebibliography}
