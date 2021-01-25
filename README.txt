@@ -1,4 +1,6 @@
+########################################################################
 This work contains the thesis: Reduced Order Modeling using Autoencoders
+########################################################################
 
 It is structured as follows
     - 01_Thesis contains the thesis itself
