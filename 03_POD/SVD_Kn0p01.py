@@ -10,11 +10,13 @@ import matplotlib.pyplot as plt
 import tikzplotlib
 
 
-qty = "rare" #["hy" or "rare"]
+qty = "hy" #["hy" or "rare"]
 if qty == "hy":
 	num_mod = 3
 else:
 	num_mod = 5
+
+print('Level:',qty, '#Modes',num_mod)
 
 #Load Data
 
@@ -31,7 +33,7 @@ t=t.T
 if qty == "hy":
 	c = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
 else:
-	c = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+	c = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/rare_test_unshuffled.npy')
 c=c.T
 
 
@@ -78,4 +80,4 @@ print(test_error)
 
 #plot_pod_modes(v,u)
 
-plot_cumu()
+#plot_cumu()

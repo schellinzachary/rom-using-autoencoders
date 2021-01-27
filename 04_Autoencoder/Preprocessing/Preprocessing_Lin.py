@@ -10,7 +10,7 @@ import sys
 
 
 
-f = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
+f = sio.loadmat('/home/zachi/ROM_using_Autoencoders/02_data_sod/sod25Kn0p01/f.mat')
 f  = f['f']
 
 
@@ -130,7 +130,7 @@ print(np.sum(np.abs(c))-np.sum(np.abs(f)))
 
 #np.random.shuffle(c)
 
-#np.save('Data/sod25Kn0p01_2D_unshuffled.npy',c)
+np.save('Data/rare_test_unshuffled.npy',c)
 
 
 

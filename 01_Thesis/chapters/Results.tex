@@ -4,15 +4,33 @@
 \label{Results}
 %\pagenumbering{arabic}
 
+
+\begin{table}[htp]
+	\centering
+	\caption{}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c @{} }
+		\toprule
+		Algorithm       &L2 Hy    &L2 Rare  \\   
+		\hline
+		POD             &0.0205   &0.0087 \\
+		Fully Connected &0.0017   &0.0019 \\
+		Convolutional   &0.0142   &0.0192\\
+		\bottomrule
+	\end{tabular*}
+\end{table}
 This section covers the results of the offline phase.
+\begin{figure}[htpb!]
+	\scalebox{1}{\input{Figures/Results/ErrTime.tex}}
+	\caption{Relative Error over time for POD, Fully and Conv. results for \hy are displayed on the left, the results for \rare are displayed on the right.}
+\end{figure}
 \subsection{Hydrodynamic Regime}
 
 \begin{figure}[!htbp]
-	\scalebox{.6}{\input{Figures/Results/Hydro/MacroCode10.tex}}
+	\scalebox{1}{\input{Figures/Results/Hydro/MacroCode10.tex}}
 	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.05s\).}
 \end{figure}
 \begin{figure}[!htbp]
-	\scalebox{.6}{\input{Figures/Results/Hydro/MacroCode20.tex}}
+	\scalebox{1}{\input{Figures/Results/Hydro/MacroCode20.tex}}
 	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.099s\).}
 \end{figure}
 \begin{figure}[!htbp]

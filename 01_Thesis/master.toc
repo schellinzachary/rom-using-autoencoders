@@ -21,9 +21,9 @@
 \contentsline {chapter}{\numberline {5}Results}{14}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Hydrodynamic Regime}{14}{subsection.5.0.1}%
 \contentsline {subsection}{\numberline {5.0.2}Rarefied Regime}{14}{subsection.5.0.2}%
-\contentsline {subsection}{\numberline {5.0.3}Discussion and Outlook}{15}{subsection.5.0.3}%
-\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{18}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{33}{appendix.B}%
-\contentsline {subsection}{\numberline {B.0.1}Appendix B}{33}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{36}{appendix*.36}%
+\contentsline {subsection}{\numberline {5.0.3}Discussion and Outlook}{16}{subsection.5.0.3}%
+\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{19}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{34}{appendix.B}%
+\contentsline {subsection}{\numberline {B.0.1}Appendix B}{34}{subsection.B.0.1}%
+\contentsline {chapter}{Bibliography}{37}{appendix*.38}%
 \contentsfinish 

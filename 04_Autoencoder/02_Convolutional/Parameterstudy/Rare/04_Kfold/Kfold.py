@@ -44,6 +44,8 @@ f = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Dat
 f = tensor(f, dtype=torch.float).to(device)
 
 kf = KFold(n_splits=5)
+for train, test in kf.split(f):
+   print("%s %s" % (train, test))
 i = 0
 for train, test in kf.split(f):
     print(i)

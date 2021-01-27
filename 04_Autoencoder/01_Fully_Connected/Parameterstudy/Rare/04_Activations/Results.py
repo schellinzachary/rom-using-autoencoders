@@ -18,7 +18,7 @@ class params():
 
 class data():
     #load data
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+    f = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
     f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):

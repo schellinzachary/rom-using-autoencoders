@@ -14,17 +14,12 @@ import tikzplotlib
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 device = 'cpu'
+class data():
+    #load data
+    f = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_4D_unshuffled.npy')
+    f = tensor(f, dtype=torch.float).to(device)
 
-#act_list = [nn.LeakyReLU(),nn.SiLU(),nn.ELU(),nn.ReLU()]
-# act_list = [nn.LeakyReLU(),nn.SiLU(),nn.SiLU(),nn.SiLU(),nn.ELU()]
-# act_c_list = [nn.Tanh(),nn.LeakyReLU(),nn.Tanh(),nn.ELU(),nn.SiLU()]
-act_list = [nn.SiLU()]
 for i in range(5):
-    class data():
-        #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_4D_unshuffled.npy')
-        f = tensor(f, dtype=torch.float).to(device)
-
 
     class Encoder(nn.Module):
         def __init__(self):
@@ -34,7 +29,7 @@ for i in range(5):
             self.convE2 = nn.Conv2d(32,64,(4,10),stride=(4,10))
             self.linearE1 = nn.Linear(in_features=256,out_features=5)
             self.add_module('act',nn.SiLU())
-            # self.add_module('act_c',act_c_list[i])
+
 
         def forward(self, x):
             x = self.m(x)
@@ -42,7 +37,6 @@ for i in range(5):
             x = self.act(self.convE2(x))
             original_size = x.size()
             x = x.view(original_size[0],-1)
-            # x = self.act_c(self.linearE1(x))
             x = self.linearE1(x)
             return x
 
@@ -54,7 +48,6 @@ for i in range(5):
             self.convD1 = nn.ConvTranspose2d(64,32,(4,10),stride=(4,10))
             self.convD2 = nn.ConvTranspose2d(32,1,(4,10),stride=(3,10))
             self.add_module('act',nn.SiLU())
-            # self.add_module('act_c',act_c_list[i])
 
         def forward(self, x):
             x = self.linearD1(x)
@@ -62,7 +55,6 @@ for i in range(5):
             dim = x.shape[0]
             x = torch.reshape(x,[dim,64,2,2])
             x = self.act(self.convD1(x))
-            # x = self.act(self.convD2(x))
             x = self.act(self.convD2(x))
             return x
 
