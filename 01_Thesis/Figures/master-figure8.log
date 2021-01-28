@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  26 JAN 2021 23:52
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 JAN 2021 02:07
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1598,13 +1598,25 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )) (./chapters/Results.tex
 Chapter 5.
-(./Figures/Results/ErrTime.tex
+(./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
+) (./Figures/Results/ErrTime.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results/ErrWorst.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results/MacroError.tex
+\openout4 = Figures/master-figure8.dpth
+ [13
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 25.
+(hyperref)                than one, level fixed on input line 38.
 
 (./Figures/Results/Hydro/MacroCode10.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1613,19 +1625,15 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Results/Hydro/PODConvCode.tex
-\openout4 = Figures/master-figure8.dpth
- [13
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Results/Rare/C
-ode.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results/Rare/Code.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
 LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
- 45.
+ 58.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -1680,7 +1688,7 @@ LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
 e 80.
 
 
-LaTeX Warning: Citation `BGK' on page 17 undefined on input line 108.
+LaTeX Warning: Citation `BGK' on page 16 undefined on input line 108.
 
 
 LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
@@ -2061,25 +2069,24 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41427 strings out of 481365
- 156265,4101490 words of node,token memory allocated
+ 41514 strings out of 481365
+ 195324,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:3,2:8819,3:1567,4:85,5:557,6:44,7:13019,8:69,9:746,10:29,11:74
-7
- 56395 multiletter control sequences out of 65536+600000
+   avail lists: 1:4,2:27850,3:7169,4:270,5:557,6:44,7:13019,8:69,9:1025,10:29,11
+:747
+ 56455 multiletter control sequences out of 65536+600000
  78 fonts using 7141923 bytes
- 83i,14n,140p,2460b,2479s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share
-/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmsy10.pfb>
-Output written on Figures/master-figure8.pdf (1 page, 55782 bytes).
+ 83i,22n,140p,2460b,2740s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
+mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
+0.pfb>
+Output written on Figures/master-figure8.pdf (1 page, 66410 bytes).
 
-PDF statistics: 35 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -19,9 +19,21 @@
 	\end{tabular*}
 \end{table}
 This section covers the results of the offline phase.
+\begin{figure}[htbp!]
+	\input{Figures/Results/Var_iv.tex}
+	\caption{Variation of intrinsic variables over the \(L_2\)-Error for POD, Fully and Conv. Results for \hy are displayed on the left and for \rare on the right.}
+\end{figure}
 \begin{figure}[htpb!]
-	\scalebox{1}{\input{Figures/Results/ErrTime.tex}}
+	\input{Figures/Results/ErrTime.tex}
 	\caption{Relative Error over time for POD, Fully and Conv. results for \hy are displayed on the left, the results for \rare are displayed on the right.}
+\end{figure}
+\begin{figure}
+	\input{Figures/Results/ErrWorst.tex}
+	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case \hy is displed in the first row, \rare in the second row. }
+\end{figure}
+\begin{figure}[htbp!]
+	\input{Figures/Results/MacroError.tex}
+	\caption{}
 \end{figure}
 \subsection{Hydrodynamic Regime}
 

@@ -94,16 +94,36 @@ encoder = net.Encoder()
 decoder = net.Decoder()
 model = net.Autoencoder(encoder, decoder).to(device)
 
-#Load model
-###########
-# encoder = net.Encoder()
-# decoder = net.Decoder()
-# model = net.Autoencoder(encoder, decoder).to(device)
-# checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
-# model.load_state_dict(checkpoint['model_state_dict'])
-# train_losses = checkpoint['train_losses']
-# test_losses = checkpoint['test_losses']
-# N_EPOCHS = checkpoint['epoch']
+#Load model best performing model from Parameterstudy
+#####################################################
+encoder = net.Encoder()
+decoder = net.Decoder()
+model = net.Autoencoder(encoder, decoder).to(device)
+checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
+model.load_state_dict(checkpoint['model_state_dict'])
+train_losses = checkpoint['train_losses']
+test_losses = checkpoint['test_losses']
+N_EPOCHS = checkpoint['epoch']
+
+#Load & evaluate models from intrinsic variables variation
+##########################################################
+def intr_eval(c,iv,level):
+    params.LATENT_DIM = iv
+    encoder = net.Encoder()
+    decoder = net.Decoder()
+    model = net.Autoencoder(encoder, decoder).to(device)
+    checkpoint = torch.load('Results/Conv{}_{}.pt'.format(iv,level))
+    model.load_state_dict(checkpoint['model_state_dict'])
+    train_losses = checkpoint['train_losses']
+    test_losses = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
+    rec,code = model(c)
+    l2 = torch.norm((c - rec).flatten())/torch.norm(c.flatten()) # calculatre L2-Norm Error
+    # plt.semilogy(np.linspace(0,N_EPOCHS,N_EPOCHS+1),train_losses)
+    # plt.semilogy(np.linspace(0,N_EPOCHS,N_EPOCHS+1),test_losses)
+    # plt.title('{}_{}_{}'.format(iv,l2.detach().numpy(),level))
+    # plt.show()
+    return(l2.detach().numpy())
 
 
 
@@ -121,8 +141,10 @@ def model_train(c,iv,level):
     loss_crit = nn.MSELoss()
     train_losses = []
     val_losses = []
+    patience = 0
     if level == "rare":
-        train_in = c[0:7 and 16:39]
+        indices = list(range(0,8))+list(range(16,40))
+        train_in = c[indices]
         val_in = c[8:15]
     else:
         train_in = c[0:31]
@@ -157,12 +179,25 @@ def model_train(c,iv,level):
         #train the model
         train_loss = train()
         test_loss = test()
+
         #save the loss
         train_loss /= len(train_iterator)
         train_losses.append(train_loss)
         test_losses.append(test_loss)
         progressBar(epoch,params.N_EPOCHS)
-    print('the level is',level)
+        # if epoch > 100 and test_losses[-2] <= test_loss:
+        #     patience += 1
+        # if patience > 100:
+        #     print('early stopped')
+        #     torch.save({
+        #     'epoch': epoch,
+        #     'model_state_dict':model.state_dict(),
+        #     'optimizer_state_dict': optimizer.state_dict(),
+        #     'train_losses':train_losses,
+        #     'test_losses': test_losses
+        #     },'Results/Conv{}_{}es.pt'.format(iv,level))
+        #     break
+
     torch.save({
     'epoch': epoch,
     'model_state_dict':model.state_dict(),

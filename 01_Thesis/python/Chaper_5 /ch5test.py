@@ -19,7 +19,8 @@ import torch.tensor as tensor
 
 # method = "Fully" # one of ["Fully" , "Conv" or "POD"]
 # level = "rare" # one of ["hy", "rare"]
-iv = 1
+iv=1
+
 
 #load the full order BGK data
 #############################
@@ -88,7 +89,7 @@ def load_BGKandMethod():
 # train = "Yes"   # We want to train the models again and change the int. vars.
 # int_vars = [1,2,4,8,16,32] # number of intrinsic varibales to check
 
-# for level in ["hy", "rare"]:
+# for level in ["rare", "hy"]:
 #   for iv in int_vars:
 #           method = "Conv"
 #           x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
@@ -101,6 +102,51 @@ def load_BGKandMethod():
             # from FullyConnected import model_train
             # c = tensor(c,dtype=torch.float)
             # model_train(c,iv,level)
+
+#Plot the results of the variation of intrinsic variables
+#########################################################
+
+# train = "No"
+# fig,axs = plt.subplots(1,2)
+# i = 0
+# for level in ["hy", "rare"]:
+#     pod = []
+#     fully = []
+#     conv = []
+#     for iv in [1,2,4,8,16,32]:
+        
+#         #For POD
+#         ########
+#         method = "POD"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from POD import intr_eval
+#         l2_pod = intr_eval(c,iv)
+#         pod.append(l2_pod)
+#         #For Fully
+#         ##########
+#         method = "Fully"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from FullyConnected import intr_eval
+#         c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+#         l2_fully = intr_eval(c,iv,level)
+#         fully.append(l2_fully)
+#         #For Conv
+#         #########
+#         method = "Conv"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from Convolutional import intr_eval
+#         c = tensor(c,dtype=torch.float)
+#         l2_conv = intr_eval(c,iv,level)
+#         conv.append(l2_conv)
+        
+#     axs[i].semilogy([1,2,4,8,16,32],pod,'k''-x',label="POD")
+#     axs[i].semilogy([1,2,4,8,16,32],fully,'r''-o',label="Fully")
+#     axs[i].semilogy([1,2,4,8,16,32],conv,'g''-v',label="Conv")
+#     axs[i].legend()
+#     i+=1
+# plt.show()
+
+
 
 #Plot mistakes over time and worst mistakes
 ###########################################
@@ -116,11 +162,8 @@ def shapeback_field(predict):
 
 train = "No"
 fig,axs = plt.subplots(1,2)
-#figg,axxs = plt.subplots(4,3)
-
-i = 0
-p = 1
-g = 0
+figg,axxs = plt.subplots(4,3)
+plotvars = [0,1,0]
 for level in ["hy", "rare"]:
     #For POD
     ########
@@ -135,7 +178,7 @@ for level in ["hy", "rare"]:
     ##########
     method = "Fully"
     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-    from FullyConnected_test import model
+    from fctest import model
     c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
     rec, code = model(c)
     c = c.detach().numpy()
@@ -147,7 +190,7 @@ for level in ["hy", "rare"]:
     #########
     method = "Conv"
     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-    from Convolutional_test import model
+    from ctest import model
     c = tensor(c,dtype=torch.float)
     rec, code = model(c)
     c = c.detach().numpy()
@@ -156,23 +199,18 @@ for level in ["hy", "rare"]:
     c = c.squeeze()
     err_conv = norm((rec_conv - c),axis =(0,2)) / norm(c,axis=(0,2))
 
-    axs[i].plot(t,err_pod,'k''-x',label="POD")
-    axs[i].plot(t,err_fully,'r''-o',label="Fully")
-    axs[i].plot(t,err_conv,'g''-v',label="Conv")
-    axs[i].legend()
-    # axxs[g,1].imshow(c[:,-1,:],'gray',label="FOM")
-
-    # axxs[p,0].imshow(rec_pod[-1,:,:],'gray',label="POD")
-    # axxs[p,1].imshow(rec_fully[-1,:,:],'gray',label="Fully")
-    # axxs[p,2].imshow(rec_conv[:,-1,:],'gray',label="Conv")
-    # axxs[p,2].grid(True)
-    # axxs[p,2].set_yticks((0,10,25))
-    # #axxs.set_legend()
-
-    i += 1
-    # p = p+2
-    # g += 2
-tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/ErrTime.tex')
+    # axs[plotvars[0]].plot(t,err_pod,'k''-x',label="POD")
+    # axs[plotvars[0]].plot(t,err_fully,'r''-o',label="Fully")
+    # axs[plotvars[0]].plot(t,err_conv,'g''-v',label="Conv")
+    # axs[plotvars[0]].legend()
+    axxs[plotvars[2],1].imshow(c[:,-1,75:150],'gray',label="FOM")
+    axxs[plotvars[1],0].imshow(rec_pod[-1,:,75:150],'gray',label="POD")
+    axxs[plotvars[1],1].imshow(rec_fully[-1,:,75:150],'gray',label="Fully")
+    axxs[plotvars[1],2].imshow(rec_conv[:,-1,75:150],'gray',label="Conv")
+    plotvars[0] +=1
+    plotvars[1] +=2
+    plotvars[2] +=2
+#tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/ErrWorst.tex')
 plt.show()
 
 

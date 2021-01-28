@@ -79,16 +79,38 @@ encoder = net.Encoder()
 decoder = net.Decoder()
 model = net.Autoencoder(encoder, decoder).to(device)
 
-#Load model
-###########
-# encoder = net.Encoder()
-# decoder = net.Decoder()
-# model = net.Autoencoder(encoder, decoder).to(device)
-# checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level))
-# model.load_state_dict(checkpoint['model_state_dict'])
-# train_losses = checkpoint['train_losses']
-# test_losses = checkpoint['test_losses']
-# N_EPOCHS = checkpoint['epoch']
+#Load model best performing model from Parameterstudy
+#####################################################
+encoder = net.Encoder()
+decoder = net.Decoder()
+model = net.Autoencoder(encoder, decoder).to(device)
+checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level))
+model.load_state_dict(checkpoint['model_state_dict'])
+train_losses = checkpoint['train_losses']
+test_losses = checkpoint['test_losses']
+N_EPOCHS = checkpoint['epoch']
+
+#Load & evaluate models from intrinsic variables variation
+##########################################################
+def intr_eval(c,iv,level):
+    params.LATENT_DIM = iv
+    encoder = net.Encoder()
+    decoder = net.Decoder()
+    model = net.Autoencoder(encoder, decoder).to(device)
+    checkpoint = torch.load('Results/Fully{}_{}.pt'.format(iv,level))
+    model.load_state_dict(checkpoint['model_state_dict'])
+    train_losses = checkpoint['train_losses']
+    test_losses = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
+    rec,code = model(c)
+    l2 = torch.norm((c - rec).flatten())/torch.norm(c.flatten()) # calculatre L2-Norm Error
+    # plt.semilogy(np.linspace(0,N_EPOCHS,N_EPOCHS+1),train_losses)
+    # plt.semilogy(np.linspace(0,N_EPOCHS,N_EPOCHS+1),test_losses)
+    # plt.title('{}'.format(iv))
+    # plt.show()
+    return(l2.detach().numpy())
+
+
 
 
 
