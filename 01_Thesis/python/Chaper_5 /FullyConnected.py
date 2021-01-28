@@ -84,7 +84,8 @@ model = net.Autoencoder(encoder, decoder).to(device)
 encoder = net.Encoder()
 decoder = net.Decoder()
 model = net.Autoencoder(encoder, decoder).to(device)
-checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level))
+checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level)) #best model from Parameterstudy
+#checkpoint = torch.load('Results/Fully8_{}.pt'.format(level)) # best model from intrinsic code variation
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
 test_losses = checkpoint['test_losses']

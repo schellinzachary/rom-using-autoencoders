@@ -221,12 +221,23 @@ def load_BGKandMethod():
 def macro(f,v):
     dv = v[1]- v[0]
     rho = np.sum(f,axis = 1) * dv
-    rhou = np.sum((f * v),axis = 1) * dv
+    rhou = f * v
+    rhou = np.sum((rhou),axis = 1) * dv
     E = f * ((v**2) * .5) * dv
     E = np.sum(E, axis = 1)
     return(rho,rhou,E)
+def conservation(rho,rhou,E):
+    dtrho = np.gradient(np.sum(rho,axis=1))
+    dtrhou = np.gradient(np.sum(rhou,axis=1))
+    dtE = np.gradient(np.sum(E,axis=1))
+    return(dtrho,dtrhou,dtE)
+
+
+
+
 train="No"
-fig,ax = plt.subplots(2,3)
+# fig,ax = plt.subplots(2,3) # for macroscopic quantities
+figg,axxs = plt.subplots(2,3) # for conservation
 i=0
 for level in ["hy","rare"]:
     #For POD
@@ -238,6 +249,8 @@ for level in ["hy","rare"]:
     rec_pod = shapeback_field(rec)
     c = shapeback_field(c)
     rho_pod,rhou_pod,e_pod = macro(rec_pod,v)
+    #calculate the conservation
+    dtrho_pod,dtrhou_pod,dte_pod = conservation(rho_pod,rhou_pod,e_pod)
     #For Fully
     ##########
     method = "Fully"
@@ -250,6 +263,7 @@ for level in ["hy","rare"]:
     rec_fully = shapeback_field(rec)
     c = shapeback_field(c)
     rho_fully,rhou_fully,e_fully = macro(rec_fully,v)
+    dtrho_fully,dtrhou_fully,dte_fully = conservation(rho_fully,rhou_fully,e_fully)
     #For Conv
     #########
     method = "Conv"
@@ -263,29 +277,56 @@ for level in ["hy","rare"]:
     c = np.swapaxes(c.squeeze(),0,1)
     rho_conv,rhou_conv,e_conv = macro(rec_conv,v)
     rho_fom,rhou_fom,e_fom = macro(c,v)
-    ax[i,0].plot(x,rho_fom[-1],'p''--',label='FOM',markevery=5,markersize=5)
-    ax[i,0].plot(x,rho_pod[-1],'k''-x',label='POD',markevery=5,markersize=5)
-    ax[i,0].plot(x,rho_fully[-1],'r''-o',label='FCNN',markevery=5,markersize=5)
-    ax[i,0].plot(x,rho_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
-    ax[i,0].set_ylabel('rho')
-    ax[i,0].set_xlabel('x')
-    ax[i,0].legend()
-    ax[i,1].plot(x,rhou_fom[-1],'p''--',label='FOM',markevery=5,markersize=5)
-    ax[i,1].plot(x,rhou_pod[-1],'k''-x',label='POD',markevery=5,markersize=5)
-    ax[i,1].plot(x,rhou_fully[-1],'r''-o',label='FCNN',markevery=5,markersize=5)
-    ax[i,1].plot(x,rhou_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
-    ax[i,1].set_ylabel('rho u')
-    ax[i,1].set_xlabel('x')
-    ax[i,1].legend()
-    ax[i,2].plot(x,e_fom[-1],'p''--',label='FOM',markevery=5,markersize=5)
-    ax[i,2].plot(x,e_pod[-1],'k''-x',label='POD',markevery=5,markersize=5)
-    ax[i,2].plot(x,e_fully[-1],'r''-o',label='FCNN',markevery=5,markersize=5)
-    ax[i,2].plot(x,e_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
-    ax[i,2].set_ylabel('E')
-    ax[i,2].set_xlabel('x')
-    ax[i,2].legend()
+    dtrho_fom,dtrhou_fom,dte_fom = conservation(rho_fom,rhou_fom,e_fom)
+    dtrho_conv,dtrhou_conv,dte_conv = conservation(rho_conv,rhou_conv,e_conv)
+
+
+
+    # ax[i,0].plot(x,rho_fom[-1],'k''-x',label='FOM',markevery=5,markersize=5)
+    # ax[i,0].plot(x,rho_pod[-1],'r''-o',label='POD',markevery=5,markersize=5)
+    # ax[i,0].plot(x,rho_fully[-1],'p''--',label='FCNN',markevery=5,markersize=5)
+    # ax[i,0].plot(x,rho_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
+    # ax[i,0].set_ylabel('rho')
+    # ax[i,0].set_xlabel('x')
+    # ax[i,0].legend()
+    # ax[i,1].plot(x,rhou_fom[-1],'k''-x',label='FOM',markevery=5,markersize=5)
+    # ax[i,1].plot(x,rhou_pod[-1],'r''-o',label='POD',markevery=5,markersize=5)
+    # ax[i,1].plot(x,rhou_fully[-1],'p''--',label='FCNN',markevery=5,markersize=5)
+    # ax[i,1].plot(x,rhou_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
+    # ax[i,1].set_ylabel('rho u')
+    # ax[i,1].set_xlabel('x')
+    # ax[i,1].legend()
+    # ax[i,2].plot(x,e_fom[-1],'k''-x',label='FOM',markevery=5,markersize=5)
+    # ax[i,2].plot(x,e_pod[-1],'r''-o',label='POD',markevery=5,markersize=5)
+    # ax[i,2].plot(x,e_fully[-1],'p''--',label='FCNN',markevery=5,markersize=5)
+    # ax[i,2].plot(x,e_conv[-1],'g''v',label='CNN',markevery=5,markersize=5)
+    # ax[i,2].set_ylabel('E')
+    # ax[i,2].set_xlabel('x')
+    # ax[i,2].legend()
+
+    axxs[i,0].plot(t,dtrho_fom,'k''-x',label='FOM',markevery=5,markersize=5)
+    axxs[i,0].plot(t,dtrho_pod,'r''-o',label='POD',markevery=5,markersize=5)
+    axxs[i,0].plot(t,dtrho_fully,'p''--',label='FCNN',markevery=5,markersize=5)
+    axxs[i,0].plot(t,dtrho_conv,'g''v',label='CNN',markevery=5,markersize=5)
+    axxs[i,0].set_ylabel('rho')
+    axxs[i,0].set_xlabel('t')
+    axxs[i,0].legend()
+    axxs[i,1].plot(t,dtrhou_fom,'k''-x',label='FOM',markevery=5,markersize=5)
+    axxs[i,1].plot(t,dtrhou_pod,'r''-o',label='POD',markevery=5,markersize=5)
+    axxs[i,1].plot(t,dtrhou_fully,'p''--',label='FCNN',markevery=5,markersize=5)
+    axxs[i,1].plot(t,dtrhou_conv,'g''v',label='CNN',markevery=5,markersize=5)
+    axxs[i,1].set_ylabel('rho u')
+    axxs[i,1].set_xlabel('t')
+    axxs[i,1].legend()
+    axxs[i,2].plot(t,dte_fom,'k''-x',label='FOM',markevery=5,markersize=5)
+    axxs[i,2].plot(t,dte_pod,'r''-o',label='POD',markevery=5,markersize=5)
+    axxs[i,2].plot(t,dte_fully,'p''--',label='FCNN',markevery=5,markersize=5)
+    axxs[i,2].plot(t,dte_conv,'g''v',label='CNN',markevery=5,markersize=5)
+    axxs[i,2].set_ylabel('E')
+    axxs[i,2].set_xlabel('t')
+    axxs[i,2].legend()
     i+=1
-# tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/MacroError.tex')
+    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Conservation.tex')###
 plt.show()
     
 

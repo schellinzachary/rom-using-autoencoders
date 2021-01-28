@@ -97,9 +97,9 @@ model = net.Autoencoder(encoder, decoder).to(device)
 
 #Load Model
 if qty == "hy" :
-    checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/01_Fully_Connected/Parameterstudy/Hydro/04_Activations/Results/LeakyReLU_Tanh.pt')
+    checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/01_Fully_Connected/Parameterstudy/Hydro/04_Activations/Results/LeakyReLU_Tanh.pt')
 else:
-    checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/01_Fully_Connected/Parameterstudy/Rare/04_Activations/Results/LeakyReLU_Tanh_test-4000.pt')
+    checkpoint = torch.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/01_Fully_Connected/Parameterstudy/Rare/04_Activations/Results/LeakyReLU_Tanh_test-4000.pt')
 
 model.load_state_dict(checkpoint['model_state_dict'])
 train_losses = checkpoint['train_losses']
@@ -107,11 +107,11 @@ test_losses = checkpoint['test_losses']
 N_EPOCHS = checkpoint['epoch']
 
 #Load BGK FOM data
-c_hy = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-c_rare = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
-v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
-t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/t.mat')
-x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/x.mat')
+c_hy = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+c_rare = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy')
+v = sio.loadmat('/home/zachi/ROM_using_Autoencoders/02_data_sod/sod25Kn0p00001/v.mat')
+t = sio.loadmat('/home/zachi/ROM_using_Autoencoders/02_data_sod/sod25Kn0p00001/t.mat')
+x = sio.loadmat('/home/zachi/ROM_using_Autoencoders/02_data_sod/sod25Kn0p00001/x.mat')
 x = x['x']
 x = x.squeeze()
 t  = t['treport']
@@ -252,7 +252,7 @@ def plot_macro_2D():
         colorbar = fig.colorbar(im, ax=ax[i])#,orientation='vertical')
         colorbar.set_ticks(np.linspace(np.min(macro_original[i]), np.max(macro_original[i]), 3))
         plt.tight_layout()
-    # tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')
+    ###### tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal.tex')######
     plt.show()
 
 def plot_macro_1D():
@@ -265,15 +265,15 @@ def plot_macro_1D():
     fig, ax = plt.subplots(1,3)
     names = ['rho','rhu u','E']
     for i in range(3):
-        ax[i].plot(macro_original_hy[i][-1],'k''-',label='Kn = 0.00001')
-        ax[i].plot(macro_original_rare[i][-1],'k''--',label='Kn=0.01')
+        ax[i].plot(x,macro_original_hy[i][-1],'k''-',label='Kn = 0.00001')
+        ax[i].plot(x,macro_original_rare[i][-1],'k''--',label='Kn=0.01')
         ax[i].set_xlabel('x')
         ax[i].set_ylabel(names[i])
         ax[i].legend()
     plt.tight_layout()
-    #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Macrooriginal_Hy_vs_Rare.tex')
+    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/BGK/MacroFOMhyvsrare.tex')
     plt.show()
-
+plot_macro_1D()
 def plot_conservation_code_rho(z,t):
     g = shapeback_code(z)
     for i in range(params.LATENT_DIM):
@@ -330,7 +330,7 @@ def plot_macro_vs_code(z,predict,x):
                 ax[j].set_xlabel('x')
                 ax[j].set_ylabel('c_{},{}'.format(j,names[j]))
                 ax[j].legend()
-        #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/MacroCode{}.tex'.format(i))      
+        ####tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/MacroCode{}.tex'.format(i))  ###    
     plt.show()
 
 #-----------------------------------------------------------------------------------------
@@ -344,7 +344,7 @@ def plot_interpolation(new_macro,old_macro):
         ax[i].set_ylabel(names[i])
         ax[i].set_xlabel('t')
         ax[i].legend(loc='upper right')
-        #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')
+        #####tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/New_Points_Macro.tex')####
     plt.show()
 
 #----------------------------------------------------------------------------------------
@@ -395,7 +395,7 @@ def plot_pod_modes(v,u):
         ax[i].plot(v,u[:,i],'k')
         ax[i].set_xlabel('v')
         ax[i].set_ylabel('gamma{}'.format(i))
-    tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/PODModes.tex')
+    ####tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Results/Hydro/PODModes.tex')#####
     plt.show()
 
 
