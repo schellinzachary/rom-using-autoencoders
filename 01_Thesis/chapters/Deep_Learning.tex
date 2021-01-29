@@ -1,11 +1,12 @@
 % !TEX root = master.tex
 
-\chapter{Deep learning}
-\label{Ch:Deep Learning}
+\chapter{Dimensionality reduction algorithms}
+\label{Ch:DimRedAl}
 %\pagenumbering{arabic}
 
 
-
+\section{Proper orthogonal decomposition (POD)}
+\section{Autoencoders}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 
 The term deep learning situated around the much broader field of artificial intelligence stems from the use of deep feed forward networks also called multi layer perceptrons (MLP) or feed forward neural networks. Deep recurrent neural networks (RNN) are also used in this field but won't be covered in this thesis. In contrast to RNNs, information flows forward through these networks, which explains the name feed foward. In the following I will use the abbreviation MLP when talking about the aforementioned algorithm. Network refers to the typical composition of many different functions.\\The task of any MLP is to approximate a function \(f^\star(\mathbf{x};\mathbf{\Theta}) \approx f(\mathbf{x})\) through learning the values of the parameters \(\mathbf{\Theta}\). As mentioned before  \(f^\star\) is a composition of functions eg. \cref{Eq. Composition}.
 \begin{equation}
@@ -62,7 +63,7 @@ Subsequently the cost function \(J(\Theta)\), which will be discussed later on, 
 While the term back-propagation is solely used for the method to compute the gradients for each layer in a backward fashion, meaning form the last layer to the first, the update of the parameters is done in an optimization step.
 -L2-error as perfomance metrics
 \subsection{Autoencoders}
-Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both \hy and \rare.\\
+Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both $\hy$ and $\rare$.\\
 For the fully connected autoencoder the order of determining the hyperparameters is as follows:
 Depth $\rightarrow$ Hidden Units $\rightarrow$ Batch Size $\rightarrow$  Activation Fuctions.
 For the convolutional autoencoder the order of determining the hyperparameters is as follows:

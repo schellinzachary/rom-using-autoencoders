@@ -4,32 +4,38 @@
 \label{Results}
 %\pagenumbering{arabic}
 
+During the offline phase solutions obtained from the FOM, in this case $\hy$ and $\rare$, are reduced to their intrinsic dimension, as discussed in \cref{Ch:ROM}. From the thereby obtained intrinsic variables which define a reduced basis namely $\idhy$ and $\idrare$, the solution can be reconstructed yielding a loss of information. Hence, before buiding a ROM, the reconstruction of $\hy$ and $\rare$ needs to be evaluated. If the reduction and subsequent reconstruction fails to sustain "important" information, then the reduction algorithm is not suited for building a ROM. What these "important" qualities in the for the BGK model in the test case are and how they can be measured, as well as methods to compare the FOM solution against it's reconstruction is discussed in this section. For the dimensionality reduction the proper orthogonal decomposition (POD), a fully connected neural network (FCNN) and a convolutional neural network (CNN) is used.\\
+
+A first measure of how much information gets lost is obtained through one of our permanence metrics during neural network training: the MSE over the validation set. Yet, this metric solely applies to neural networks. To be able to compare the POD to it's neural network counterparts another metric is in use: the error over the $L2$-Norm here referred to as thr $\L2$-Error , already introduced in \cref{Ch:DimRedAl}. In \cref{Tab:L2}, the $L2$-Error for all three algorithms on both input data is provided.
 
 \begin{table}[htp]
 	\centering
-	\caption{}
+	\caption{Comparison of the $\L2$-Error over the reconstructions obtained by POD, FCNN and CNN. The CNN was trained using the k-fold algorithm, therefore the mean $\mu$ over $k=5$ folds, marked with an superscript asterix, is provided. Hence the variance $\sigma^2$ for $\hy$ is $\sigma^2_{\hy}=2.25\times 10^{-5}$ and for $\rare$ is $\sigma^2_{\rare}=3.61 \times 10^{-5}$. Parenthesised values are obtained from the best fold.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c @{} }
 		\toprule
-		Algorithm       &L2 Hy    &L2 Rare  \\   
+		Algorithm       &$\L2$-Error for $\hy$     &$\L2$-Error for $\rare$  \\   
 		\hline
 		POD             &0.0205   &0.0087 \\
-		Fully Connected &0.0017   &0.0019 \\
-		Convolutional   &0.0142   &0.0192\\
+		FCNN 			&0.0017   &0.0019 \\
+		CNN   			&0.0142* (0.0095)   &0.0178* (0.0097) \\
 		\bottomrule
-	\end{tabular*}
+	\end{tabular*} \label{Tab:L2}
 \end{table}
-This section covers the results of the offline phase.
+The FCNN performs best out of the three both for $\hy$ and $\rare$ and even drops about one decade compared to POD and CNN for $\hy$. Slightly better is the result for $\hy$ than for $\rare$ using both neural network designs. Yet the performance of FCNN and CNN doesn't seem to change a lot with changing $\hy$ and $\rare$. In contrast, the POD performs better for $\rare$ than for $\hy$. The reasons will be discussed hereafter. Note that the CNN is trained with the k-fold algorithm due to a lack of training samples as suggested in \cite{Goodfellow}. The k-fold algorithm is provided in \cref{Ch:ApB}. The mean $\mu$ over all folds gives an estimate of the models performance. Nonetheless the best performing fold is used in the subsequent analysis, yielding a better performance of the CNN.\\
+Next a step is taken in attempting to estimate the intrinsic dimension $\pstar$ for $\rare$, which is not set as discussed in \cref{Ch:BGK}. To this end the number of intrinsic variables $\pstar$ is varied for POD, FCNN and CNN over $\pstar \in \{1,2,4,8,16,32\}$ with both $\hy$ and $\rare$. Note that the neural networks needed to be trained again for these experiments and that by changing $\pstar$ i.e. widening the bottleneck layer, a gain or loss of capacity occurs which can be connected stability during training, see \cref{Ch:DimRedAl} and \cite{Goodfellow}. The stability of the POD, in contrast, is not altered when changing the value of $\pstar$.
 \begin{figure}[htbp!]
 	\input{Figures/Results/Var_iv.tex}
-	\caption{Variation of intrinsic variables over the \(L_2\)-Error for POD, Fully and Conv. Results for \hy are displayed on the left and for \rare on the right.}
+	\caption{Variation of intrinsic variables over the $\L2$-Error for POD, FCNN and CNN. Results for $\hy$ are displayed on the left and for $\rare$ on the right.}
+	\label{Fig:IntVar}
 \end{figure}
+Shown in \cref{Fig:IntVar} is the outcome of said experiments. The cumultative energy of the POD modes i.e. $\pstar$ in \cref{Ch:ROM} \cref{Fig:CumSum_Hydro} and \cref{Fig:CumSum_Rare} already revealed the performance of the POD with increasing $\pstar$. The loss of information when applying the POD goes linearly to zero with increasing $\pstar$ which is not suprising when consulting the \textit{Eckard-Young Theorem} provided in \cref{Eq:EckardYoung} taken from \cite{Kutz}. 
 \begin{figure}[htpb!]
 	\input{Figures/Results/ErrTime.tex}
-	\caption{Relative Error over time for POD, Fully and Conv. results for \hy are displayed on the left, the results for \rare are displayed on the right.}
+	\caption{Relative Error over time for POD, FCNN and CNN. Results for $\hy$ are displayed on the left, the results for $\rare$ are displayed on the right.}
 \end{figure}
 \begin{figure}
 	\input{Figures/Results/ErrWorst.tex}
-	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case \hy is displed in the first row, \rare in the second row. }
+	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displed in the first row, $\rare$ in the second row. }
 \end{figure}
 \begin{figure}[htbp!]
 	\input{Figures/Results/MacroError.tex}
@@ -56,7 +62,7 @@ This section covers the results of the offline phase.
 
 \begin{figure}[!hp]
 	\scalebox{0.9}{\input{Figures/Results/Rare/Code.tex}}
-	\caption{Intrinsic Variables of \rare}
+	\caption{Intrinsic Variables of $\rare$}
 \end{figure}
 The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
 \begin{table}[!htbp]\centering

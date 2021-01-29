@@ -15,10 +15,8 @@ import tikzplotlib
 
 device = 'cpu'
 
-#act_list = [nn.LeakyReLU(),nn.SiLU(),nn.ELU(),nn.ReLU()]
-# act_list = [nn.LeakyReLU(),nn.SiLU(),nn.SiLU(),nn.SiLU(),nn.ELU()]
-# act_c_list = [nn.Tanh(),nn.LeakyReLU(),nn.Tanh(),nn.ELU(),nn.SiLU()]
-act_list = [nn.SiLU()]
+l2=[]
+
 for i in range(5):
     class data():
         #load data
@@ -106,7 +104,7 @@ for i in range(5):
     # plt.show()
 
     l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-    # print('{}:'.format((i,act_c_list[i])),l2_error)
+    l2.append(l2_error.detach().numpy())
     print('{}:'.format(i),l2_error)
 
 
@@ -116,8 +114,12 @@ for i in range(5):
     plt.xlabel('Epoch')
     plt.ylabel('MSE Loss')
     #ax = ax[i].gca()
-    plt.title('Train & validation for channel designs with 2 layers')
+    plt.title('Fold {}'.format(i))
     plt.legend()
     # tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Parameterstudy/Convolutional/Activations/L2R.tex')
 plt.show()
 
+mean = np.mean(l2)
+var = np.var(l2)
+print(mean)
+print(var)

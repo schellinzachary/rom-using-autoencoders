@@ -12,7 +12,7 @@ import scipy.io as sio
 import tikzplotlib
 
 #device = 'cuda' if torch.cuda.is_available() else 'cpu'
-
+l2=[]
 device = 'cpu'
 class data():
     #load data
@@ -98,7 +98,7 @@ for i in range(5):
     # plt.show()
 
     l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-    # print('{}:'.format((i,act_c_list[i])),l2_error)
+    l2.append(l2_error.detach().numpy())
     print('{}:'.format(i),l2_error)
 
 
@@ -113,3 +113,7 @@ for i in range(5):
     # tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Parameterstudy/Convolutional/Activations/L2R.tex')
 plt.show()
 
+mean = np.mean(l2)
+var = np.var(l2)
+print(mean)
+print(var)

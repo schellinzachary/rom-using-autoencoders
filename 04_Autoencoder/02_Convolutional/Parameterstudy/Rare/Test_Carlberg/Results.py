@@ -107,10 +107,10 @@ for i in act_list:
     # ax[0].imshow(rec[39,0,:,:].detach().numpy())
     # ax[1].imshow(data.f[39,0,:,:].detach().numpy())
 
-    fige , ax = plt.subplots(5,1)
-    for i in range(5):
-        ax[i].plot(z[:,i].detach().numpy())
-    plt.show()
+    # fige , ax = plt.subplots(5,1)
+    # for i in range(5):
+    #     ax[i].plot(z[:,i].detach().numpy())
+    # plt.show()
 
     l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
     # print('{}:'.format((i,act_c_list[i])),l2_error)

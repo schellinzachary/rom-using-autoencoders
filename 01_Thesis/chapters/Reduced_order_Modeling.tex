@@ -1,7 +1,7 @@
 % !TEX root = master.tex
 
 \chapter{Reduced Order Model}
-\label{Ch:Deep Learning}
+\label{Ch:ROM}
 %\pagenumbering{arabic}
 
 
@@ -52,20 +52,20 @@ Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to the
 - In the following the data of the BGK full order model with a knudens number of \(Kn = 0.00001\), describing a gasflow in the hyrodynamic regime will be reffere to as \(\Pi_h\). Equally the data of the BGK full order model with a knudsen number of \(Kn = 0.01\) will be refferd to as \(\Pi_r\).
 
 \subsection{Reduced Basis by POD and Autoencoder}
-The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:eckard-young}[Eckard-Young].
-\begin{equation}[!htbp]
+The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
+\begin{equation}
 \underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
-\label{Eg:eckard-young}
+\label{Eq:EckardYoung}
 \end{equation} 
 \begin{figure}[!htbp]
 	\input{Figures/SVD/CumSum_Rare.tex}
-	\label{Fig:CumSum_Rare}
 	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}
+	\label{Fig:CumSum_Rare}
 \end{figure}
 \begin{figure}[!htbp]
 	\input{Figures/SVD/CumSum_Hydro.tex}
-	\label{Fig:CumSum_Hydro}
 	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the hydrodynamic regime.}
+	\label{Fig:CumSum_Hydro}
 \end{figure}
 \begin{table}[!htbp]\centering
 \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }

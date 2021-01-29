@@ -7,7 +7,7 @@
 \vspace{1cm}
 
 \chapter{Hyperparameters for the Fully Connected Autoencoder}
-\label{Ap: Fully Connected}
+\label{Ch:ApA}
 %\pagenumbering{arabic}
 
 
@@ -48,15 +48,15 @@ In the following the width of the hidden layer will be analysed. There are two a
 		Hidden units & 10 & 20 & 30  & 40 & 50 \\ [.5ex]
 		\hline
 		Error for \(\Pi_h\) & 0.0054 & 0.0027 & 0.0036 & 0.0017 & 0.0032\\ \hline
-		Shrinkage factor for \hy & 0.3 & 0.1 & 0.015 & 0.075 & 0.06\\ \hline
+		Shrinkage factor for $\hy$ & 0.3 & 0.1 & 0.015 & 0.075 & 0.06\\ \hline
 		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
-		Shrinkage factor for \rare & 0.5 & 0.25 & 0.01$\overline{6}$\ & 0.0125 & 0.01\\ \hline
+		Shrinkage factor for $\rare$ & 0.5 & 0.25 & 0.01$\overline{6}$\ & 0.0125 & 0.01\\ \hline
 	\end{tabular}
 	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
 	\label{Tab:Hidden Units}
 \end{table}
-For \hy and \rare forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for \hy and \(0.0125\) for \rare. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
-Next the mini-batch size is analysed. Results are displayed in \cref{Tab:Batch Size Hydro} for \hy  and in \cref{Tab:Batch Size Rare} for \rare. Additionally \cref{Sec:AppendixA} shows the training for both in put data \hy and \rare. For both input data experiments are first conducted with mini-batch sizes in the range of : \([2,4,8,16,32]\).\\ The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for \hy. Likewise the results of the L2-Error for \rare show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for \hy with mini-batch sizes of: \([10,12,24]\). Two additional experiments for \rare with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for \hy and \rare. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
+For $\hy$ and $\rare$ forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for $\hy$ and \(0.0125\) for $\rare$. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
+Next the mini-batch size is analysed. Results are displayed in \cref{Tab:Batch Size Hydro} for $\hy$  and in \cref{Tab:Batch Size Rare} for $\rare$. Additionally \cref{Sec:AppendixA} shows the training for both in put data $\hy$ and $\rare$. For both input data experiments are first conducted with mini-batch sizes in the range of : \([2,4,8,16,32]\).\\ The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for $\hy$. Likewise the results of the L2-Error for $\rare$ show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for $\hy$ with mini-batch sizes of: \([10,12,24]\). Two additional experiments for $\rare$ with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for $\hy$ and $\rare$. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
 		\hline
@@ -88,7 +88,7 @@ Together with the mini-batch sizes, activations are examined. Hence experiments 
 		\hline
 		Error & 0.0019 & 0.0017 & 0.0019 &  & \\ \hline
 	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for \hy.}
+	\caption{L2-Error different activation functions and combinations for $\hy$.}
 	\label{Tab:Activations Hydro}
 \end{table}
 \begin{table}[!htbp]\centering
@@ -101,12 +101,12 @@ Together with the mini-batch sizes, activations are examined. Hence experiments 
 		\hline
 		Error & 0.0.0032 & 0.0030 & 0.0036 &  & \\ \hline
 	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for \rare.}
+	\caption{L2-Error different activation functions and combinations for $\rare$.}
 	\label{Tab:Activations Rare} 
 \end{table}
-Both input data lead to different results this time. For that reason \hy and \rare are studied separately. Starting with \hy and the values of the L2-Error, it can be observed that,
-while ELU and SiLU stand out with the lowest value of the L2-Error, when applying the same activation function to all layers, all three coupled activations convince in the combination case. Applying different activations to the layers increases the representational capacity of the model since the model can feed on a greater variety of functions as explained in the previous subsection. The need for a great representational capacity reduces for \hy. The reasons are the linearity of that case as described in \cite{BGK}. Hence two activations (ELU and SiLU) from a similar family of functions perform well on \hy without the need of a second actiation. Still adding another activation render as good results concerning the L2-Error. When observing the train -and test loss in \cref{Fig:Activations Hydro 1} one can notice that overfitting clusters the activations into two groups. While they all achieve a similar MSE-Loss for train -and test data only ELU and Tanh are not sowing overfitting. The combination of two activations functions yields an abundance of overfitting only for the combination of LeakyReLU with Tanh. In addition LeakyReLU with Tanh reaches together with ELU in combination with SiLU the lowest train -and test loss. The slight overfitting observed with the combination ELU and SiLU  give rise to choose for the final model LeakyReLU with Tanh.\\
-To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations Rare}, ELU stands out for the single activation. ELU with Tanh and LeakyReLU with Tanh meet the lowest L2-error for the combination of activations. Next observing the training for the three activations in \cref{Fig:Activations Rare} one finds that all three show little to no overfitting, while the combination of LeakyReLU and Tanh deviates from that slightly. From this point no clean decision can be made which activation or combination to take. Therefore another run is conducted for the three. Results are shown in \cref{Tab:Activations Rare 2nd}. Only LeakyReLU with Tanh and ELU alone convince with a lower L2-loss. The train -and test loss does not give any hint which of the two remaining activations/ combination of activations to take concerning overfitting or a profound gradient for the train -and test loss. Hence a third run is performed taking the parameters already produced for the two models and training them for another 2000 epochs. This warm-starting of the models finally gives an answer on which one to take. The results in \cref{Tab:Activations Rare 2nd} show that LeakyReLU with Tanh, just as for \hy, perform well on \rare with the given model. In \cref{Fig:Activations Rare 2nd3rd} the train and test loss during training are provided for teh second and third run. 
+Both input data lead to different results this time. For that reason $\hy$ and $\rare$ are studied separately. Starting with $\hy$ and the values of the L2-Error, it can be observed that,
+while ELU and SiLU stand out with the lowest value of the L2-Error, when applying the same activation function to all layers, all three coupled activations convince in the combination case. Applying different activations to the layers increases the representational capacity of the model since the model can feed on a greater variety of functions as explained in the previous subsection. The need for a great representational capacity reduces for $\hy$. The reasons are the linearity of that case as described in \cite{BGK}. Hence two activations (ELU and SiLU) from a similar family of functions perform well on $\hy$ without the need of a second actiation. Still adding another activation render as good results concerning the L2-Error. When observing the train -and test loss in \cref{Fig:Activations Hydro 1} one can notice that overfitting clusters the activations into two groups. While they all achieve a similar MSE-Loss for train -and test data only ELU and Tanh are not sowing overfitting. The combination of two activations functions yields an abundance of overfitting only for the combination of LeakyReLU with Tanh. In addition LeakyReLU with Tanh reaches together with ELU in combination with SiLU the lowest train -and test loss. The slight overfitting observed with the combination ELU and SiLU  give rise to choose for the final model LeakyReLU with Tanh.\\
+To continue with $\rare$  the L2-Error is again observed in \cref{Tab:Activations Rare}, ELU stands out for the single activation. ELU with Tanh and LeakyReLU with Tanh meet the lowest L2-error for the combination of activations. Next observing the training for the three activations in \cref{Fig:Activations Rare} one finds that all three show little to no overfitting, while the combination of LeakyReLU and Tanh deviates from that slightly. From this point no clean decision can be made which activation or combination to take. Therefore another run is conducted for the three. Results are shown in \cref{Tab:Activations Rare 2nd}. Only LeakyReLU with Tanh and ELU alone convince with a lower L2-loss. The train -and test loss does not give any hint which of the two remaining activations/ combination of activations to take concerning overfitting or a profound gradient for the train -and test loss. Hence a third run is performed taking the parameters already produced for the two models and training them for another 2000 epochs. This warm-starting of the models finally gives an answer on which one to take. The results in \cref{Tab:Activations Rare 2nd} show that LeakyReLU with Tanh, just as for $\hy$, perform well on $\rare$ with the given model. In \cref{Fig:Activations Rare 2nd3rd} the train and test loss during training are provided for teh second and third run. 
 \begin{table}[!htbp]\centering
 	\begin{tabular}{ |c|c|c|c| }
 		\hline
@@ -115,7 +115,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 		Error 2nd run& 0.0034 & 0.0029 & 0.0025\\ \hline
 		Error 3rd run& 		  & 0.0024 & 0.0019 \\ \hline
 	\end{tabular}
-	\caption{L2-Error different activation functions and combinations for \hy.}
+	\caption{L2-Error different activation functions and combinations for $\hy$.}
 	\label{Tab:Activations Rare 2nd}
 \end{table}
 \begin{center}
@@ -125,7 +125,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex}}
-		\caption{Experiments with five different depth on \hy. Training and test loss are shown over 2000 epochs.}
+		\caption{Experiments with five different depth on $\hy$. Training and test loss are shown over 2000 epochs.}
 		\label{Fig:Depth Hydro}
 	\end{figure}
 \end{center}
@@ -136,7 +136,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex}}
-		\caption{Experiments with five different depth on \rare. Training and test loss are shown over 2000 epochs.}
+		\caption{Experiments with five different depth on $\rare$. Training and test loss are shown over 2000 epochs.}
 		\label{Fig:Depth Rare}
 	\end{figure}
 \end{center}
@@ -148,7 +148,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex}}
-		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
+		\caption{Training with different mini-batch sizes for $\hy$. Train -and test loss is shown over 5000 epochs.}
 		\label{Fig:Batch Hy}
 	\end{figure}
 \end{center}
@@ -156,7 +156,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 	\begin{figure}[htbp!]\ContinuedFloat
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex}}
-		\caption{Training with different mini-batch sizes for \hy. Train -and test loss is shown over 5000 epochs.}
+		\caption{Training with different mini-batch sizes for $\hy$. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}
 \end{center}
@@ -167,7 +167,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex}}
-		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
+		\caption{Training with different mini-batch sizes for $\rare$. Train -and test loss is shown over 5000 epochs.}
 		\label{Fig:Batch Rare}
 	\end{figure}
 \end{center}
@@ -175,7 +175,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 	\begin{figure}[htbp!]\ContinuedFloat
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex}}
 		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex}}
-		\caption{Training with different mini-batch sizes for \rare. Train -and test loss is shown over 5000 epochs.}
+		\caption{Training with different mini-batch sizes for $\rare$. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}
 \end{center}
@@ -229,7 +229,7 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 \end{center}
 \newpage
 \chapter{Hyperparameters for the Convolutional Autoencoder}
-\label{Ap: Convolutional}
+\label{Ch:ApB}
 
 \begin{figure}[!htp]
 	\input{Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex}
@@ -238,12 +238,12 @@ To continue with \rare  the L2-Error is again observed in \cref{Tab:Activations 
 	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/2Layer.tex}}
 	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/3Layer.tex}}
 	\scalebox{.9}{\input{Figures/Parameterstudy/Convolutional/Layers/4Layer.tex}}
-	\caption{Three convolutional networks with differing depth and with identical kernel evolution for \rare.}
+	\caption{Three convolutional networks with differing depth and with identical kernel evolution for $\rare$.}
 \end{figure}
 \begin{figure}
 	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L2R.tex}}\\
 	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L3R.tex}}\\
 	\scalebox{1}{\input{Figures/Parameterstudy/Convolutional/Channels/L4R.tex}}
-	\caption{Different Channel sizes for three convolutional networks with differing depth for \rare.}
+	\caption{Different Channel sizes for three convolutional networks with differing depth for $\rare$.}
 \end{figure}
 \subsection{Appendix B}\label{Sec:AppendixA}

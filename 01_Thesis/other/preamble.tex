@@ -47,9 +47,16 @@ pagesize,oneside,% for thesis use :
 %%%%%%%%%%%%%%%%%%%%New Commands%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \DeclareMathOperator*{\argmin}{\arg\!\min}
+\DeclareMathOperator*{\hy}{\textbf{\textsf{H}}}
+\DeclareMathOperator*{\rare}{\textbf{\textsf{R}}}
+\DeclareMathOperator*{\idhy}{\textbf{\textsf{h}}}
+\DeclareMathOperator*{\idrare}{\textbf{\textsf{r}}}
+\DeclareMathOperator*{\pstar}{p^{\star}}
+\DeclareMathOperator*{\Kn}{Kn}
+\DeclareMathOperator*{\L2}{L_2}
+
+
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-\newcommand{\hy}{\(\textsf{H}\)}
-\newcommand{\rare}{\(\textsf{R}\)}
 %\newcommand{\pod1}{\(\gamma_1\)}
 %\newcommand{\pod2}{\(\gamma_2\)}
 %\newcommand{\pod3}{\(\gamma_3\)}
@@ -75,16 +82,16 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 
 %header einstellungen
 \usepackage{fancyhdr}
-\pagestyle{fancy}
+%\pagestyle{fancy}
 % \fancyhead{}
 % \fancyhead[ER]{\rightmark}
 % \fancyhead[OL]{\leftmark} 
 
-\renewcommand{\sectionmark}[1]{\markboth{#1}{#1}} % set the \leftmark % set the \leftmark
-\fancyhf{}
-\fancyhead[EL,OR]{\thepage}
-\fancyhead[ER]{\rightmark}
-\fancyhead[OL]{\leftmark} 
+%\renewcommand{\sectionmark}[1]{\markboth{#1}{#1}} % set the \leftmark % set the \leftmark
+%\fancyhf{}
+%\fancyhead[EL,OR]{\thepage}
+%\fancyhead[ER]{\rightmark}
+%\fancyhead[OL]{\leftmark} 
 
 %%%%%%%%%%%%%%%%%%%chapter logo %%%%%%%%%%%%%%%%%%%%%%%%%%5
 \usepackage{titlesec,titletoc}

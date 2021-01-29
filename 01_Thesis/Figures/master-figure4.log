@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 JAN 2021 01:09
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 JAN 2021 12:04
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1105,16 +1105,7 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@erf=\skip64
 \f@nch@O@olf=\skip65
 \f@nch@O@orf=\skip66
-)
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
-ess on input line 85.
-
-
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is usel
-ess on input line 86.
-
-(/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
 \ttl@box=\box131
 \beforetitleunit=\skip67
@@ -1368,10 +1359,7 @@ LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 50.
 LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 58.
 
 
-(./Figures/BGK/Sod.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/BGK/MacroFOMhyvsrare.tex
+(./Figures/BGK/MacroFOMhyvsrare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )) (./chapters/Deep_Learning.tex
@@ -1565,15 +1553,9 @@ LaTeX Warning: Reference `Eg:eckard-young' on page 1 undefined on input line 55.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/SVD/CumSum_Hydro.tex
-\openout4 = Figures/master-figure4.dpth
-
-Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-[10
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 
 LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 93.
 
@@ -1603,9 +1585,12 @@ Overfull \hbox (21.29138pt too wide) in paragraph at lines 93--106
  []
 
 (./Charts/ROM.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)) (./chapters/Results.tex
+\openout4 = Figures/master-figure4.dpth
+ [11
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])) (./chapters/Results.tex
 Chapter 5.
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -2078,25 +2063,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41452 strings out of 481365
- 156265,4101490 words of node,token memory allocated
+ 41374 strings out of 481365
+ 125007,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5619,3:1226,4:85,5:557,6:44,7:13019,8:69,9:746,10:29,11:74
-7
- 56375 multiletter control sequences out of 65536+600000
- 78 fonts using 7141923 bytes
- 83i,14n,140p,2460b,2420s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share
-/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure4.pdf (1 page, 64180 bytes).
+   avail lists: 1:2,2:4479,3:853,4:85,5:557,6:44,7:13019,8:69,9:746,10:29,11:747
+ 56305 multiletter control sequences out of 65536+600000
+ 79 fonts using 7224683 bytes
+ 83i,19n,140p,2460b,1359s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/tex
+mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
+8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
+Output written on Figures/master-figure4.pdf (1 page, 38673 bytes).
 
-PDF statistics: 35 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

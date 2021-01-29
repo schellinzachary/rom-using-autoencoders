@@ -44,8 +44,8 @@ f = np.load('/home/zachi/ROM_using_Autoencoders/04_Autoencoder/Preprocessing/Dat
 f = tensor(f, dtype=torch.float).to(device)
 
 kf = KFold(n_splits=5)
-for train, test in kf.split(f):
-   print("%s %s" % (train, test))
+# for train, test in kf.split(f):
+#    print("%s %s" % (train, test))
 i = 0
 for train, test in kf.split(f):
     print(i)
@@ -62,41 +62,47 @@ for train, test in kf.split(f):
     class Encoder(nn.Module):
         def __init__(self):
             super(Encoder, self).__init__()
-            self.m = nn.ZeroPad2d((0,0,1,1))
-            self.convE1 = nn.Conv2d(1,32,(6,10),stride=(3,10))
-            self.convE2 = nn.Conv2d(32,64,(4,10),stride=(4,10))
-            self.linearE1 = nn.Linear(in_features=256,out_features=5)
+            self.convE1 = nn.Conv2d(1,4,5,stride=2,padding=(1,1))
+            self.convE2 = nn.Conv2d(4,8,5,stride=2,padding=(1,1))
+            self.convE3 = nn.Conv2d(8,16,5,stride=2,padding=(1,1))
+            self.convE4 = nn.Conv2d(16,32,5,stride=2,padding=(2,1))
+            self.linearE1 = nn.Linear(in_features=352,out_features=5)
             self.add_module('act',nn.SiLU())
 
 
         def forward(self, x):
-            x = self.m(x)
             x = self.act(self.convE1(x))
             x = self.act(self.convE2(x))
+            x = self.act(self.convE3(x))
+            x = self.act(self.convE4(x))
             original_size = x.size()
             x = x.view(original_size[0],-1)
+   
             x = self.linearE1(x)
             return x
-
 
 
     class Decoder(nn.Module):
         def __init__(self):
             super(Decoder, self).__init__()
-            self.linearD1 = nn.Linear(in_features=5, out_features=256)
-            self.convD1 = nn.ConvTranspose2d(64,32,(4,10),stride=(4,10))
-            self.convD2 = nn.ConvTranspose2d(32,1,(4,10),stride=(3,10))
+            self.linearD1 = nn.Linear(in_features=5, out_features=352)
+            self.convD1 = nn.ConvTranspose2d(32,16,5,stride=2,padding=(2,0)) 
+            self.convD2 = nn.ConvTranspose2d(16,8,5,stride=2,padding=(0,2)) 
+            self.convD3 = nn.ConvTranspose2d(8,4,5,stride=2,padding=(1,1)) 
+            self.convD4 = nn.ConvTranspose2d(4,1,(5,4),stride=2,)
             self.add_module('act',nn.SiLU())
 
 
         def forward(self, x):
             x = self.linearD1(x)
+            # x = self.act_c(self.linearD1(x))
             dim = x.shape[0]
-            x = torch.reshape(x,[dim,64,2,2])
+            x = torch.reshape(x,[dim,32,1,11])
             x = self.act(self.convD1(x))
             x = self.act(self.convD2(x))
+            x = self.act(self.convD3(x))
+            x = self.act(self.convD4(x))
             return x
-
 
     class Autoencoder(nn.Module):
         def __init__(self, enc, dec):
@@ -121,7 +127,7 @@ for train, test in kf.split(f):
 
 
     optimizer = Adam(params=model.parameters(), lr=lr)
-    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[800], gamma=0.1)
+    scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[600], gamma=0.1)
 
 
     loss_crit = nn.MSELoss()
