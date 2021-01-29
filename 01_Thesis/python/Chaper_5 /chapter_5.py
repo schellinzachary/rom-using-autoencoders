@@ -11,7 +11,7 @@ import scipy.io as sio
 import numpy as np
 from numpy.linalg import norm 
 import matplotlib.pyplot as plt
-import tikzplotlib
+#import tikzplotlib
 import torch
 import torch.tensor as tensor
 from scipy import interpolate
@@ -19,16 +19,16 @@ from scipy import interpolate
 
 
 method = "Fully" # one of ["Fully" , "Conv" or "POD"]
-level = "rare" # one of ["hy", "rare"]
+level = "hy" # one of ["hy", "rare"]
 iv=1
 
 #A shape function
 #################
 def shapeback_field(c):
-    f = np.empty([241,40,200])
+    t = int(c.shape[0]/200)
+    f = np.empty([t,40,200])
     n = 0
-    for i in range(241):
-
+    for i in range(t):
         for j in range(200):
             f[i,:,j] = c[j+n,:]
         n += 200
@@ -375,38 +375,40 @@ def conservation(rho,rhou,E):
 
 train="No"
 method="Fully"
-level="rare"
+level="hy"
 x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
 from FullyConnected import model
 c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
 rec, code = model(c)
-c = shapeback_code(code)
-cnew=np.empty([25,5,200])
-tnew=np.linspace(0.0,0.12,num=25)
-for i in range(5):
-    f = interpolate.interp1d(t[::2],c[::2,i,:],axis=0,kind='quadratic')
+code = shapeback_code(code)
+cnew=np.empty([241,3,200])
+tnew=np.linspace(0.0,0.12,num=241)
+for i in range(3):
+    f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='quadratic')
     cnew[:,i,:]=f(tnew)
-print(np.sum(np.abs(cnew)-np.abs(c)))
+#print(np.sum(np.abs(cnew)-np.abs(code)))
 
 
 
-# codenew = shape_AE_code(cnew)
-# codenew=tensor(codenew,dtype=torch.float)
-# from FullyConnected import decoder
-# fnew = decoder(codenew)
-# fnew=fnew.detach().numpy()
-# fnew = shapeback_field(fnew)
-# fold = np.load('Data/sod241Kn0p00001_2D_unshuffled.npy')
-# fold = shapeback_field(fold)
-# l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
-# print(l2)
+codenew = shape_AE_code(cnew)
+codenew=tensor(codenew,dtype=torch.float)
+from FullyConnected import decoder
+fnew = decoder(codenew)
+fnew=fnew.detach().numpy()
+fnew = shapeback_field(fnew)
+#fold = c.detach().numpy()
+fold = np.load('Data/sod241Kn0p00001_2D_unshuffled.npy')
+fold = shapeback_field(fold)
+l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
+print(l2)
+rho_old,rhou_old,e_old = macro(fold,v)
+rho_new,rhou_new,e_new = macro(fnew,v)
+print(rho_new.shape)
+plt.plot(rhou_new[-1],'-o',label='prediction')
+plt.plot(rhou_old[-1],'k+',label='ground truth')
+plt.legend()
 
-# rho_old,rhou_old,e_old = macro(fold,v)
-# rho_new,rhou_new,e_new = macro(fnew,v)
-# plt.plot(e_new[-1],'-o',label='prediction')
-# plt.plot(e_old[-1],'k+',label='truth')
-
-# plt.show()
+plt.show()
 
 
 
