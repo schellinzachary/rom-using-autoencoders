@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 JAN 2021 15:32
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 JAN 2021 01:09
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1368,7 +1368,10 @@ LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 50.
 LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 58.
 
 
-(./Figures/BGK/MacroFOMhyvsrare.tex
+(./Figures/BGK/Sod.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/BGK/MacroFOMhyvsrare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )) (./chapters/Deep_Learning.tex
@@ -1608,15 +1611,16 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Results/MacroError.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Conservation.tex
 \openout4 = Figures/master-figure9.dpth
  [13
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Results/Conser
+vation.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 42.
@@ -1636,7 +1640,7 @@ sable this.
 )
 
 LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
- 62.
+ 61.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2072,26 +2076,24 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41522 strings out of 481365
- 156265,4101490 words of node,token memory allocated
+ 41536 strings out of 481365
+ 195324,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:16014,3:3351,4:227,5:557,6:44,7:13019,8:69,9:999,10:29,11:
-747
- 56454 multiletter control sequences out of 65536+600000
+   avail lists: 1:4,2:27851,3:7169,4:270,5:557,6:44,7:13019,8:69,9:1025,10:29,11
+:747
+ 56459 multiletter control sequences out of 65536+600000
  78 fonts using 7141923 bytes
- 83i,22n,140p,2460b,2738s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
-sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure9.pdf (1 page, 67600 bytes).
+ 83i,22n,140p,2460b,2740s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
+mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
+0.pfb>
+Output written on Figures/master-figure9.pdf (1 page, 66410 bytes).
 
-PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
- 33 compressed objects within 1 object stream
+PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
+ 23 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -118,9 +118,12 @@ def intr_eval(c,iv,level):
 #Train Model with different # of intrinsic variables
 ####################################################
 
-def model_train(c,iv,level):
-    device = "cpu"
-    params.LATENT_DIM = iv
+def model_train(c,iv,level,study):
+    device = "cuda"
+    if study == "intvar":
+        params.LATENT_DIM = iv
+    else: 
+        params.LATENT_DIM = 3
     #INIT Model, Decoder and Encoder
     encoder = net.Encoder()
     decoder = net.Decoder()
@@ -129,8 +132,9 @@ def model_train(c,iv,level):
     loss_crit = nn.MSELoss()
     train_losses = []
     val_losses = []
-    train_in = c[0:3999]
-    val_in = c[4000:4999]
+    a = int(c.shape[0]*.8)
+    train_in = c[0:a-1]
+    val_in = c[a:-1]
     train_iterator = DataLoader(train_in, batch_size = params.BATCH_SIZE)
     test_iterator = DataLoader(val_in, batch_size = int(len(c)*0.2))
     def train():
@@ -172,5 +176,7 @@ def model_train(c,iv,level):
     'optimizer_state_dict': optimizer.state_dict(),
     'train_losses':train_losses,
     'test_losses': test_losses
-    },'Results/Fully{}_{}.pt'.format(iv,level))
+    # },'Results/Fully{}_{}.pt'.format(iv,level)) #use this for variation od intrinsic variables
+    },'Results/Fully{}_{}.pt'.format(c.shape[0],study)) #use this to train with variation of snapshots
+
     return

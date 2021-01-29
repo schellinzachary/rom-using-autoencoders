@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 JAN 2021 00:27
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 JAN 2021 01:09
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1368,7 +1368,10 @@ LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 50.
 LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 58.
 
 
-(./Figures/Results_Rom/Macrooriginal_Hy_vs_Rare.tex
+(./Figures/BGK/Sod.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/BGK/MacroFOMhyvsrare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )) (./chapters/Deep_Learning.tex
@@ -1602,42 +1605,25 @@ Chapter 5.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Results/ErrTime.tex
+\openout4 = Figures/master-figure7.dpth
+ [13
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Results/ErrWor
+st.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Results/ErrWorst.tex
-\openout4 = Figures/master-figure7.dpth
-
-Package pgfplots info on input line 20: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 37: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 54: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 71: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 88: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 105: Using 'lua backend=false' for plot 0 (t
-ype 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 122: Using 'lua backend=false' for plot 0 (t
-ype 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 139: Using 'lua backend=false' for plot 0 (t
-ype 'graphics'): plot handler does not support LUA.
-[13
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./Figures/Results/ErrWorst-0
-00.png><./Figures/Results/ErrWorst-001.png><./Figures/Results/ErrWorst-002.png><
-./Figures/Results/ErrWorst-003.png><./Figures/Results/ErrWorst-004.png><./Figure
-s/Results/ErrWorst-005.png><./Figures/Results/ErrWorst-006.png><./Figures/Result
-s/ErrWorst-007.png>]) (./Figures/Results/MacroError.tex
+) (./Figures/Results/MacroError.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Results/Conservation.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 38.
+(hyperref)                than one, level fixed on input line 42.
 
 (./Figures/Results/Hydro/MacroCode10.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1654,7 +1640,7 @@ sable this.
 )
 
 LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
- 58.
+ 61.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2090,25 +2076,26 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41578 strings out of 481365
- 156269,4101490 words of node,token memory allocated
+ 41478 strings out of 481365
+ 156265,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:10823,3:1761,4:85,5:557,6:44,7:13019,8:69,9:923,10:29,11:7
-47
- 56399 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:8214,3:1925,4:85,5:557,6:44,7:13019,8:69,9:746,10:29,11:74
+7
+ 56401 multiletter control sequences out of 65536+600000
  78 fonts using 7141923 bytes
- 83i,14n,140p,2460b,2819s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
+ 83i,22n,140p,2460b,2744s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
+mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmsy10.pfb>
-Output written on Figures/master-figure7.pdf (1 page, 43684 bytes).
+/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Figures/master-figure7.pdf (1 page, 66518 bytes).
 
-PDF statistics: 50 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
