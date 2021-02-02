@@ -11,7 +11,7 @@ import scipy.io as sio
 import numpy as np
 from numpy.linalg import norm 
 import matplotlib.pyplot as plt
-#import tikzplotlib
+import tikzplotlib
 import torch
 import torch.tensor as tensor
 from scipy import interpolate
@@ -87,7 +87,7 @@ def load_BGKandMethod():
 
     return x,v,t,c
 
-#load the full oder BGK data for hy and 251 snapshots
+#load the full oder BGK data for hy and 241 snapshots
 def load_BGK_241():
     c = np.load('Data/sod241Kn0p00001_2D_unshuffled.npy')
     return(c)
@@ -99,26 +99,26 @@ def load_BGK_241():
 #evaluate the models
 ####################
 
-train = "No"    # We don't need to train, the models are already trained
-x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-if method == "Fully":
-  from FullyConnected import model # import the method
-  c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-  rec, code = model(c)
-  c = c.detach().numpy()
-  rec = rec.detach().numpy()
-elif method == "Conv":
-  from Convolutional import model
-  c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-  rec, code = model(c)
-  c = c.detach().numpy()
-  rec = rec.detach().numpy()
-else:
-  from POD import pod as model
-  rec, code = model(c)
+# train = "No"    # We don't need to train, the models are already trained
+# x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+# if method == "Fully":
+#   from FullyConnected import model # import the method
+#   c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+#   rec, code = model(c)
+#   c = c.detach().numpy()
+#   rec = rec.detach().numpy()
+# elif method == "Conv":
+#   from Convolutional import model
+#   c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+#   rec, code = model(c)
+#   c = c.detach().numpy()
+#   rec = rec.detach().numpy()
+# else:
+#   from POD import pod as model
+#   rec, code = model(c)
         
-l2 = np.linalg.norm((c - rec).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
-print('L2-Norm Error =',l2)
+# l2 = np.linalg.norm((c - rec).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
+# print('L2-Norm Error =',l2)
 
 #Variation of intrinsic variables
 #################################
@@ -376,15 +376,20 @@ def conservation(rho,rhou,E):
 train="No"
 method="Fully"
 level="hy"
+if level == "hy":
+  iv = 3
+  ti=241
+else:
+  iv = 5
 x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
 from FullyConnected import model
 c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
 rec, code = model(c)
 code = shapeback_code(code)
-cnew=np.empty([241,3,200])
-tnew=np.linspace(0.0,0.12,num=241)
-for i in range(3):
-    f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='quadratic')
+cnew=np.empty([ti,iv,200])
+tnew=np.linspace(0.0,0.12,num=ti)
+for i in range(iv):
+    f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='cubic')
     cnew[:,i,:]=f(tnew)
 #print(np.sum(np.abs(cnew)-np.abs(code)))
 
@@ -400,14 +405,28 @@ fnew = shapeback_field(fnew)
 fold = np.load('Data/sod241Kn0p00001_2D_unshuffled.npy')
 fold = shapeback_field(fold)
 l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
-print(l2)
+print('Interpolation L2 Error:',l2)
+
 rho_old,rhou_old,e_old = macro(fold,v)
 rho_new,rhou_new,e_new = macro(fnew,v)
-print(rho_new.shape)
-plt.plot(rhou_new[-1],'-o',label='prediction')
-plt.plot(rhou_old[-1],'k+',label='ground truth')
-plt.legend()
+fig, axs = plt.subplots(1,3)
 
+axs[0].plot(x,rho_new[-1],'-o',label='prediction')
+axs[0].plot(x,rho_old[-1],'k+',label='ground truth')
+axs[0].set_xlabel('x')
+axs[0].set_ylabel('rho')
+axs[0].legend()
+axs[1].plot(x,rhou_new[-1],'-o',label='prediction')
+axs[1].plot(x,rhou_old[-1],'k+',label='ground truth')
+axs[1].set_xlabel('x')
+axs[1].set_ylabel('rho u')
+axs[1].legend()
+axs[2].plot(x,e_new[-1],'-o',label='prediction')
+axs[2].plot(x,e_old[-1],'k+',label='ground truth')
+axs[2].set_xlabel('x')
+axs[2].set_ylabel('E')
+axs[2].legend()
+##tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Hy_Int.tex')
 plt.show()
 
 

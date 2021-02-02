@@ -5,7 +5,7 @@
 \begin{groupplot}[group style={group size=2 by 1,horizontal sep=2cm}]
 \nextgroupplot[
 legend cell align={left},
-legend style={draw=none, at={(0,1)},anchor= north west},
+legend style={fill opacity=0.1,text opacity=1.0,draw=none, at={(0,1)},anchor= north west},
 tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
@@ -14,11 +14,11 @@ xtick style={color=black},
 y grid style={white!69.0196078431373!black},
 ymin=-0.000841513772702749, ymax=0.0304345512636816,
 ytick style={color=black},
-ylabel={Relative Error},
+ylabel={$L2$-Error},
 xlabel={\(t\)},
 axis lines=left,
 width=0.47\textwidth,
-height =.45\textwidth,
+height =.3\textwidth,
 x tick label style={/pgf/number format/fixed}
 ]
 \addplot [semithick, red, mark=o, mark size=2, mark options={solid}]
@@ -111,7 +111,7 @@ table {%
 
 \nextgroupplot[
 legend cell align={left},
-legend style={draw=none,at={(0,1)},anchor= north west},
+legend style={fill opacity=0.1,text opacity=1.0,draw=none,at={(0,1)},anchor= north west},
 tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
@@ -120,11 +120,11 @@ xtick style={color=black},
 y grid style={white!69.0196078431373!black},
 ymin=-0.00230221234608083, ymax=0.0611092213046212,
 ytick style={color=black},
-ylabel={Relative Error},
+ylabel={$L2$-Error},
 xlabel={\(t\)},
 axis lines=left,
 width=0.47\textwidth,
-height =.45\textwidth,
+height =.3\textwidth,
 x tick label style={/pgf/number format/fixed}
 ]
 \addplot [semithick, red, mark=o, mark size=2, mark options={solid}]

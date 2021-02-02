@@ -4,7 +4,7 @@
 \label{Results}
 %\pagenumbering{arabic}
 
-During the offline phase solutions obtained from the FOM, in this case $\hy$ and $\rare$, are reduced to their intrinsic dimension, as discussed in \cref{Ch:ROM}. From the thereby obtained intrinsic variables which define a reduced basis namely $\idhy$ and $\idrare$, the solution can be reconstructed yielding a loss of information. Hence, before buiding a ROM, the reconstruction of $\hy$ and $\rare$ needs to be evaluated. If the reduction and subsequent reconstruction fails to sustain "important" information, then the reduction algorithm is not suited for building a ROM. What these "important" qualities in the for the BGK model in the test case are and how they can be measured, as well as methods to compare the FOM solution against it's reconstruction is discussed in this section. For the dimensionality reduction the proper orthogonal decomposition (POD), a fully connected neural network (FCNN) and a convolutional neural network (CNN) is used.\\
+During the offline phase solutions obtained from the FOM, in this case $\hy$ and $\rare$, are reduced to their intrinsic dimension, as discussed in \cref{Ch:ROM}. From the thereby obtained intrinsic variables which define a reduced basis namely $\idhy$ and $\idrare$, the solution can be reconstructed yielding a loss of information. Hence, before buiding a ROM, the reconstruction of $\hy$ and $\rare$ needs to be evaluated. If the reduction and subsequent reconstruction fails to sustain "important" information, then the reduction algorithm is not suited for building a ROM. What these "important" qualities for the BGK model in the test case are and how they can be measured, as well as methods to compare the FOM solution against it's reconstruction is discussed in this section. For the dimensionality reduction the proper orthogonal decomposition (POD), a fully connected neural network (FCNN) and a convolutional neural network (CNN) is used.\\
 
 A first measure of how much information gets lost is obtained through one of our permanence metrics during neural network training: the MSE over the validation set. Yet, this metric solely applies to neural networks. To be able to compare the POD to it's neural network counterparts another metric is in use: the error over the $L2$-Norm here referred to as thr $\L2$-Error , already introduced in \cref{Ch:DimRedAl}. In \cref{Tab:L2}, the $L2$-Error for all three algorithms on both input data is provided.
 
@@ -28,27 +28,36 @@ Next a step is taken in attempting to estimate the intrinsic dimension $\pstar$ 
 	\caption{Variation of intrinsic variables over the $\L2$-Error for POD, FCNN and CNN. Results for $\hy$ are displayed on the left and for $\rare$ on the right.}
 	\label{Fig:IntVar}
 \end{figure}
-Shown in \cref{Fig:IntVar} is the outcome of said experiments. The design for \cref{Fig:IntVar} is taken from \cite{Carlberg}. The cumultative energy of the POD modes i.e. $\pstar$ in \cref{Ch:ROM} \cref{Fig:CumSum_Hydro} and \cref{Fig:CumSum_Rare} already revealed the performance of the POD with increasing $\pstar$. The loss of information when applying the POD goes linearly to zero with increasing $\pstar$ which is not suprising when consulting the \textit{Eckard-Young Theorem} provided in \cref{Eq:EckardYoung} taken from \cite{Kutz}. The left plot of \cref{Fig:IntVar} displays the results for $\hy$ with $\pstar=3$ the known dimension of the solution manifold for a simple gas which can be viewed as a continuum, emphasized with a black line. Here a drop of the $L2$-Error can be observed for both neural networks until they meet $\pstar = 3$. Afterwards they stagnate at the $L2$-Error they have reached. Hence for $\hy$ the logically deducted value for $\pstar=3$ can be confirmed.\\
-The right plot of \cref{Fig:IntVar} shows the results for $\rare$.
-
-(The size of both neural networks is kept comparatively small which is the usual case for autoencoders, in order to account for over -and underfitting as explained in \cite{Goodfellow}. Now any variation of $\pstar$ i.e. the width of the bottleneck layer leads to underfitting when shrinking the capacity as seen for values of $\pstar \in \{1,2\}$.  
-As stated before the FCNN  performs about a decade better than the CNN.
-Hence when building an autoencoder and working on approaching the optimal capacity for the input data which includes the width of each layer, one obtains an estimator for the input data which is hopefully already at it's optimum. As stated before)          
+Shown in \cref{Fig:IntVar} is the outcome of said experiments. The design for \cref{Fig:IntVar} is taken from \cite{Carlberg}. The cumulative energy of the POD modes i.e. $\pstar$ in \cref{Ch:ROM} \cref{Fig:CumSum_Hydro} and \cref{Fig:CumSum_Rare} already revealed the performance of the POD with increasing $\pstar$. The loss of information when applying the POD goes linearly to zero with increasing $\pstar$ which is not suprising when consulting the \textit{Eckard-Young Theorem} provided in \cref{Eq:EckardYoung} taken from \cite{Kutz}.
+The left plot of \cref{Fig:IntVar} displays the results for $\hy$ with $\pstar=3$ the known dimension of the solution manifold for a simple gas which can be viewed as a continuum, emphasized with a black line. Here a drop of the $L2$-Error can be observed for both neural networks until they meet at $\pstar = 3$. Afterwards they stagnate at the $L2$-Error they have reached before. Hence for $\hy$ the logically deducted value for $\pstar=3$ can be confirmed.\\
+For measuring the size of the intrinsic dimension for $\rare$ we look at the right plot of \cref{Fig:IntVar}. Again, emphasized  with a black line, is the supposed value for $\pstar$ with $\pstar=5$. A drop in the $L2$-Error can be observed for both neural networks with increasing $\pstar$ until they meet at $\pstar = 5$. The continued widening of the bottleneck layer left the $L2$-Error for both neural networks unchanged. Hence $\pstar=5$ is the estimated size of the intrinsic dimension of $\rare$. Note that the CNN reaches it's ultimate value for the $L2$-Error already at $\pstar=4$, while the FCNN only stagnates with $\pstar=5$. This discrepancy occurs because neural networks are able to shift missing nodes i.e. weights and biases in the bottleneck layer to the weights and biases of other layers, which can make them invariant to changes of one node in a layer. As a keystone for determining $\pstar$ is here the FCNN, because of it's stable training as seen in \cref{Ch:ApA} and the cumulative energy of the POD.\\
+The "important" qualities, mentioned in the beginning, become visible when looking at the worst reconstructions. Those can be determined with the $L2$-Error over time for all three models as seen in \cref{Fig:ErrTime}.
 \begin{figure}[htpb!]
 	\input{Figures/Results/ErrTime.tex}
 	\caption{Relative Error over time for POD, FCNN and CNN. Results for $\hy$ are displayed on the left, the results for $\rare$ are displayed on the right.}
+	\label{Fig:ErrTime}
 \end{figure}
-\begin{figure}
+For POD and the CNN the last timestep at $t=0.12s$ in both cases $\hy$ and $\rare$ is the most rich in the $L2$-Error. While performing best, the FCNN in contrast has troubles in the beginning around $t=0.01s$ for $\hy$  and $t=0.3s$ for $\rare$. For a detailed comparison of the models, reconstructions for $f(x,v)$ at $t=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}. Representations of the FOM as $f(x,v)$ were already introduced in \cref{Ch:BGK}.
+\begin{figure}[hpb!]
 	\input{Figures/Results/ErrWorst.tex}
-	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displed in the first row, $\rare$ in the second row. }
+	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displed in the top row, $\rare$ in the bottom row. }
+	\label{Fig:ErrWorst}
 \end{figure}
+For clarity, $f(x_0,v)$ is a probability distribution for a gas having a velocity at point $x_0$ in space at one moment $t_i$ in time. Top row in \cref{Fig:ErrWorst} show reconstructions for $\hy$ and the bottom row for $\rare$ with FOM solution as paradigm. Starting with \(\hy\) one observers, that a restored \(f(x,v)\) up to \(x=120\), the point around which dilution initiates, gets defective for POD and the CNN. Here the probability distribution is thinner with POD and thicker as well as smeared with the CNN. This in turn leads errors in velocities gas particles can have once passing \(x=120\). The FCNN seems to be less faulty on width of \(f(x,v)\), but also produces smeared characteristics similar to the CNN.\\
+Continuing with a row further down of \cref{Fig:ErrWorst} and therefore \(\rare\), in place of a pronounced separation in a dense and rare region, stands bifurcation of \(f(x,v)\) into two probability distribution functions as outlined in \cref{Ch:BGK}. Neither POD, nor the CNN are able to recover this information during compression and reconstruction. Results of POD seem to average out the bifurcation. Results of the CNN seem to reproduce results as in case \(\hy\). Again the FCNN however reproduces this characteristic well enough.\\      
 \begin{figure}[htbp!]
 	\input{Figures/Results/MacroError.tex}
-	\caption{}
+	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. CNN is displayed with marks only because of tremblings in the signal.}
+	\label{Fig:ErrMacro}
 \end{figure}
+Information losses described above unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}. 
 \begin{figure}
 	\input{Figures/Results/Conservation.tex}
 	\caption{Conservation}
+\end{figure}
+\begin{figure}
+	\input{Figures/Results/Hy_Int.tex}
+	\caption{Interpoaltionin in time for \(\hy\) from 25 snapshots to 241 snapshots with cubic splines using the FCNN.}
 \end{figure}
 \subsection{Hydrodynamic Regime}
 
