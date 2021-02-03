@@ -1,8 +1,6 @@
 % This file was created by tikzplotlib v0.9.6.
 \begin{tikzpicture}
 
-\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
-
 \begin{groupplot}[group style={group size=3 by 1,horizontal sep=2cm}]
 \nextgroupplot[
 legend cell align={left},
@@ -20,7 +18,7 @@ ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth
 ]
-\addplot [semithick, color0, mark=o, mark size=2, mark options={solid}]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%
 0.0025 0.999939968236364
 0.0075 0.999939968236364
@@ -224,7 +222,7 @@ table {%
 0.9975 0.124945857633765
 };
 \addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks]
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
 table {%
 0.0025 0.999999999999998
 0.0075 0.999999999999989
@@ -445,7 +443,7 @@ ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth
 ]
-\addplot [semithick, color0, mark=o, mark size=2, mark options={solid}]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%
 0.0025 -0.000632143126926788
 0.0075 -0.000632143126926788
@@ -648,8 +646,8 @@ table {%
 0.9925 -0.000480588777805142
 0.9975 -0.000480903566059982
 };
-\addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
 table {%
 0.0025 6.30909942701128e-15
 0.0075 2.52743810784534e-14
@@ -870,7 +868,7 @@ ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth
 ]
-\addplot [semithick, color0, mark=o, mark size=2, mark options={solid}]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%
 0.0025 0.500139485923816
 0.0075 0.500139485923816
@@ -1074,7 +1072,7 @@ table {%
 0.9975 0.0160963666699128
 };
 \addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks]
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
 table {%
 0.0025 0.499999999999975
 0.0075 0.499999999999952

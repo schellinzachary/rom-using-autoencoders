@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  2 FEB 2021 19:23
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  3 FEB 2021 10:35
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1692,7 +1692,7 @@ sable this.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 61.
+(hyperref)                than one, level fixed on input line 62.
 
 (./Figures/Results/Hydro/MacroCode10.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1709,7 +1709,7 @@ sable this.
 )
 
 LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
- 80.
+ 81.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2146,20 +2146,20 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  41500 strings out of 481365
- 244155,4101490 words of node,token memory allocated
+ 156259,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:5,2:31774,3:9390,4:82,5:611,6:38,7:13082,8:63,9:773,10:30,11:7
+   avail lists: 1:7,2:12682,3:3027,4:82,5:611,6:38,7:13082,8:63,9:773,10:30,11:7
 47
  56423 multiletter control sequences out of 65536+600000
  78 fonts using 7141923 bytes
- 83i,22n,140p,2460b,2679s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,22n,140p,2460b,2676s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
 mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 0.pfb>
-Output written on Figures/master-figure10.pdf (1 page, 98808 bytes).
+Output written on Figures/master-figure10.pdf (1 page, 43887 bytes).
 
 PDF statistics: 29 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream

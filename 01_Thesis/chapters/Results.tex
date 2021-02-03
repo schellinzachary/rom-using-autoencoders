@@ -47,10 +47,10 @@ For clarity, $f(x_0,v)$ is a probability distribution for a gas having a velocit
 Continuing with a row further down of \cref{Fig:ErrWorst} and therefore \(\rare\), in place of a pronounced separation in a dense and rare region, stands bifurcation of \(f(x,v)\) into two probability distribution functions as outlined in \cref{Ch:BGK}. Neither POD, nor the CNN are able to recover this information during compression and reconstruction. Results of POD seem to average out the bifurcation. Results of the CNN seem to reproduce results as in case \(\hy\). Again the FCNN however reproduces this characteristic well enough.\\      
 \begin{figure}[htbp!]
 	\input{Figures/Results/MacroError.tex}
-	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. CNN is displayed with marks only because of tremblings in the signal.}
+	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. Top row shows results for \(\hy\), bottom row for \(\rare\). CNN is displayed with marks only because of tremblings in the signal.}
 	\label{Fig:ErrMacro}
 \end{figure}
-Information losses described above unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}. 
+Loss of information described above unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}.  
 \begin{figure}
 	\input{Figures/Results/Conservation.tex}
 	\caption{Conservation}

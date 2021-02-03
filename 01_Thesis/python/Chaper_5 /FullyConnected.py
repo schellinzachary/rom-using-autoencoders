@@ -9,9 +9,7 @@ import torch.tensor as tensor
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 import sys
-from __main__ import level
-from __main__ import train
-from __main__ import iv
+
 
 
 device = 'cpu'
@@ -28,20 +26,18 @@ class params:
     N_EPOCHS = 2000
     BATCH_SIZE = 16
     lr = 1e-4
-    if level == "hy":
-        LATENT_DIM = 3
-    else:
-        LATENT_DIM = 5
 
-
-class net:
-
+class net():
     class Encoder(nn.Module):
-        def __init__(self):
+        def __init__(self,level):
+            if level == "hy":
+                self.level = 3
+            else:
+                self.level = 5
             super(net.Encoder, self).__init__()
             self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=40))
             self.add_module('activ_1', nn.LeakyReLU())
-            self.add_module('layer_c',nn.Linear(in_features=40, out_features=params.LATENT_DIM))
+            self.add_module('layer_c',nn.Linear(in_features=40, out_features=self.level))
             self.add_module('activ_c', nn.Tanh())
         def forward(self, x):
             for _, method in self.named_children():
@@ -51,9 +47,13 @@ class net:
 
 
     class Decoder(nn.Module):
-        def __init__(self):
+        def __init__(self,level):
+            if level == "hy":
+                self.level = 3
+            else:
+                self.level = 5
             super(net.Decoder, self).__init__()
-            self.add_module('layer_c',nn.Linear(in_features=params.LATENT_DIM, out_features=40))
+            self.add_module('layer_c',nn.Linear(in_features=self.level, out_features=40))
             self.add_module('activ_c', nn.LeakyReLU())
             self.add_module('layer_4', nn.Linear(in_features=40,out_features=40))
         def forward(self, x):
@@ -73,23 +73,31 @@ class net:
             predicted = self.dec(z)
             return predicted, z
 
-#INIT Model, Decoder and Encoder
-################################
-encoder = net.Encoder()
-decoder = net.Decoder()
-model = net.Autoencoder(encoder, decoder).to(device)
 
-#Load model best performing model from Parameterstudy
-#####################################################
-encoder = net.Encoder()
-decoder = net.Decoder()
-model = net.Autoencoder(encoder, decoder).to(device)
-checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level)) #best model from Parameterstudy
-#checkpoint = torch.load('Results/Fully8_{}.pt'.format(level)) # best model from intrinsic code variation
-model.load_state_dict(checkpoint['model_state_dict'])
-train_losses = checkpoint['train_losses']
-test_losses = checkpoint['test_losses']
-N_EPOCHS = checkpoint['epoch']
+
+
+class fully(object):
+    def __init__(self,level):
+        self.level = level
+    def load(level,c):
+        #Load model best performing model from Parameterstudy
+        #####################################################
+        encoder = net.Encoder(level)
+        decoder = net.Decoder(level)
+        model = net.Autoencoder(encoder, decoder).to(device)
+        print('Conv_{}'.format(level))
+        checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level)) #best model from Parameterstudy
+        #checkpoint = torch.load('Results/Fully8_{}.pt'.format(level)) # best model from intrinsic code variation
+        model.load_state_dict(checkpoint['model_state_dict'])
+        train_losses = checkpoint['train_losses']
+        test_losses = checkpoint['test_losses']
+        N_EPOCHS = checkpoint['epoch']
+        rec, code = model(c)
+        return rec,code
+
+
+
+
 
 #Load & evaluate models from intrinsic variables variation
 ##########################################################

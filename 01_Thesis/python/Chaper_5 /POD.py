@@ -1,18 +1,22 @@
 import numpy as np
-from __main__ import level
 
 
-if level == "hy":
-    num_mod = 3
-else:
-    num_mod = 5
 
-def pod(c):
-    u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
-    S = np.diagflat(s)
 
-    xx = u[:,:num_mod]@S[:num_mod,:num_mod]@vh[:num_mod,:]
-    return xx, s
+
+class pod(object):
+    def __init__(self,level):
+        self.level = level
+    def load(level,c):
+        if level == "hy":
+            level = 3
+        else:
+            level = 5
+        print(level)
+        u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
+        S = np.diagflat(s)
+        xx = u[:,:level]@S[:level,:level]@vh[:level,:]
+        return xx, s
 
 
 #Compute POD for intrinsic variables variation

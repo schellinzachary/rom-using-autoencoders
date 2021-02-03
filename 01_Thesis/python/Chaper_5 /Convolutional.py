@@ -9,9 +9,7 @@ import torch.tensor as tensor
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 import sys
-from __main__ import level
-from __main__ import train
-from __main__ import iv
+
 
 
 device = 'cpu'
@@ -25,25 +23,24 @@ def progressBar(value, endvalue, bar_length=20):
         sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
         sys.stdout.flush() 
 
-class params:
-    N_EPOCHS = 6000
-    BATCH_SIZE = 4
-    lr = 1e-4
-    if level == "hy":
-        LATENT_DIM = 3
-    else:
-        LATENT_DIM = 5
+
+N_EPOCHS = 6000
+BATCH_SIZE = 4
+lr = 1e-4
 
 
-
-class net:
+class net():
     class Encoder(nn.Module):
-        def __init__(self):
+        def __init__(self,level):
+            if level == "hy":
+                self.level = 3
+            else:
+                self.level = 5
             super(net.Encoder, self).__init__()
             self.m = nn.ZeroPad2d((0,0,1,1))
             self.convE1 = nn.Conv2d(1,32,(6,10),stride=(3,10))
             self.convE2 = nn.Conv2d(32,64,(4,10),stride=(4,10))
-            self.linearE1 = nn.Linear(in_features=256,out_features=params.LATENT_DIM)
+            self.linearE1 = nn.Linear(in_features=256,out_features=self.level)
             self.add_module('act',nn.SiLU())
 
 
@@ -58,9 +55,13 @@ class net:
 
 
     class Decoder(nn.Module):
-        def __init__(self):
+        def __init__(self,level):
+            if level == "hy":
+                self.level = 3
+            else:
+                self.level = 5
             super(net.Decoder, self).__init__()
-            self.linearD1 = nn.Linear(in_features=params.LATENT_DIM, out_features=256)
+            self.linearD1 = nn.Linear(in_features=self.level, out_features=256)
             self.convD1 = nn.ConvTranspose2d(64,32,(4,10),stride=(4,10))
             self.convD2 = nn.ConvTranspose2d(32,1,(4,10),stride=(3,10))
             self.add_module('act',nn.SiLU())
@@ -88,22 +89,41 @@ class net:
             return x, z
 
 
+class conv(object):
+    def __init__(self,level):
+        self.level = level
+    def load(level,c):
+        #Load model best performing model from Parameterstudy
+        #####################################################
+        encoder = net.Encoder(level)
+        decoder = net.Decoder(level)
+        model = net.Autoencoder(encoder, decoder).to(device)
+        print('Conv_{}'.format(level))
+        checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
+        model.load_state_dict(checkpoint['model_state_dict'])
+        train_losses = checkpoint['train_losses']
+        test_losses = checkpoint['test_losses']
+        N_EPOCHS = checkpoint['epoch']
+        rec, code = model(c)
+        return rec,code
+
 #INIT Model, Decoder and Encoder
 ################################
-encoder = net.Encoder()
-decoder = net.Decoder()
-model = net.Autoencoder(encoder, decoder).to(device)
+# encoder = net.Encoder()
+# decoder = net.Decoder()
+# model = net.Autoencoder(encoder, decoder).to(device)
 
 #Load model best performing model from Parameterstudy
 #####################################################
-encoder = net.Encoder()
-decoder = net.Decoder()
-model = net.Autoencoder(encoder, decoder).to(device)
-checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
-model.load_state_dict(checkpoint['model_state_dict'])
-train_losses = checkpoint['train_losses']
-test_losses = checkpoint['test_losses']
-N_EPOCHS = checkpoint['epoch']
+# encoder = net.Encoder()
+# decoder = net.Decoder()
+# model = net.Autoencoder(encoder, decoder).to(device)
+# print('Conv_{}'.format(level))
+# checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
+# model.load_state_dict(checkpoint['model_state_dict'])
+# train_losses = checkpoint['train_losses']
+# test_losses = checkpoint['test_losses']
+# N_EPOCHS = checkpoint['epoch']
 
 #Load & evaluate models from intrinsic variables variation
 ##########################################################
