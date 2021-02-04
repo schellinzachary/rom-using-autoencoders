@@ -31,27 +31,30 @@ Next a step is taken in attempting to estimate the intrinsic dimension $\pstar$ 
 Shown in \cref{Fig:IntVar} is the outcome of said experiments. The design for \cref{Fig:IntVar} is taken from \cite{Carlberg}. The cumulative energy of the POD modes i.e. $\pstar$ in \cref{Ch:ROM} \cref{Fig:CumSum_Hydro} and \cref{Fig:CumSum_Rare} already revealed the performance of the POD with increasing $\pstar$. The loss of information when applying the POD goes linearly to zero with increasing $\pstar$ which is not suprising when consulting the \textit{Eckard-Young Theorem} provided in \cref{Eq:EckardYoung} taken from \cite{Kutz}.
 The left plot of \cref{Fig:IntVar} displays the results for $\hy$ with $\pstar=3$ the known dimension of the intrinsic solution manifold for a simple gas which can be viewed as a continuum, emphasized with a black line. Here a sharp drop in the $\L2$-Error can be observed for both neural networks until $\pstar = 3$. Afterwards a stagnation is observed for CNN. FCNN continues to improve slighly. However the logically deducted and by POD proposed value of $\pstar=3$ can be confirmed.\\
 Moving forward to measuring the size of the intrinsic solution manifold \(\pstar\) for $\rare$ we look at the right plot of \cref{Fig:IntVar}. Again, emphasized  with a black line, is the from POD proposed value for $\pstar$ with $\pstar=5$. See again \cref{Ch:ROM} for details. A drop in the $\L2$-Error can be observed for both neural networks with increasing $\pstar$ until they reach $\pstar = 5$. Note, the CNN already arrives there with \(\pstar = 4\). The continued widening of the bottleneck layer results in an slightly increased $\L2$-Error for both neural networks. Overfitting due to increased capacity of the model is the reason here. The discrepancy between \(\pstar=4\) and \(\pstar = 5\) in the CNN and FCNN occurs since neural networks are capable of shift missing nodes i.e. weights and biases in the bottleneck layer to the weights and biases of other layers. Hence a determination of \(\pstar\) by one variable is not exact with this method. As a backbone for determining $\pstar$ suits the FCNN, because of it's stable training, as seen in \cref{Ch:ApA}, and the cumulative energy of the POD modes, as seen in \cref{Ch:ROM}.\\
-The "important" qualities, mentioned in the beginning, become visible when looking at the worst reconstructions. Those can be determined with the $L2$-Error over time for all three models as seen in \cref{Fig:ErrTime}.
-\begin{figure}[htpb!]
+The "important" qualities, mentioned in the beginning, become visible when looking at the worst reconstructions. Those can be determined with the $\L2$-Error over time for all three models as seen in \cref{Fig:ErrTime}.
+\begin{figure}[htbp!]
 	\input{Figures/Results/ErrTime.tex}
 	\caption{Relative Error over time for POD, FCNN and CNN. Results for $\hy$ are displayed on the left, the results for $\rare$ are displayed on the right.}
 	\label{Fig:ErrTime}
 \end{figure}
-For POD and the CNN the last timestep at $t=0.12s$ in both cases $\hy$ and $\rare$ is the most rich in the $L2$-Error. While performing best, the FCNN in contrast has troubles in the beginning around $t=0.01s$ for $\hy$  and $t=0.3s$ for $\rare$. For a detailed comparison of the models, reconstructions for $f(x,v)$ at $t=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}. Representations of the FOM as $f(x,v)$ were already introduced in \cref{Ch:BGK}.
-\begin{figure}[hpb!]
+For POD and the CNN the last timestep at $t=0.12s$ in both cases $\hy$ and $\rare$ is the most rich in the $L2$-Error. While performing best, the FCNN in contrast has troubles in the beginning around $t=0.01s$ for $\hy$ and $\rare$. 
+\begin{figure}[htbp!]
 	\input{Figures/Results/ErrWorst.tex}
-	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displed in the top row, $\rare$ in the bottom row. }
+	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displayed in the top row, $\rare$ in the bottom row. }
 	\label{Fig:ErrWorst}
 \end{figure}
-For clarity, $f(x_0,v)$ is a probability distribution for a gas having a velocity at point $x_0$ in space at one moment $t_i$ in time. Top row in \cref{Fig:ErrWorst} show reconstructions for $\hy$ and the bottom row for $\rare$ with FOM solution as paradigm. Starting with \(\hy\) one observers, that a restored \(f(x,v)\) up to \(x=120\), the point around which dilution initiates, gets defective for POD and the CNN. Here the probability distribution is thinner with POD and thicker as well as smeared with the CNN. This in turn leads errors in velocities gas particles can have once passing \(x=120\). The FCNN seems to be less faulty on width of \(f(x,v)\), but also produces smeared characteristics similar to the CNN.\\
-Continuing with a row further down of \cref{Fig:ErrWorst} and therefore \(\rare\), in place of a pronounced separation in a dense and rare region, stands bifurcation of \(f(x,v)\) into two probability distribution functions as outlined in \cref{Ch:BGK}. Neither POD, nor the CNN are able to recover this information during compression and reconstruction. Results of POD seem to average out the bifurcation. Results of the CNN seem to reproduce results as in case \(\hy\). Again the FCNN however reproduces this characteristic well enough.\\      
+For a detailed comparison of the models, reconstructions of $f(x,v)$ at $t=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}.
+A presentation of the FOM in $f(x,v)$ was already introduced in \cref{Ch:BGK}.
+For clarity, $f(x_0,v)$ is a probability distribution for a gas having a velocity $v$ at point $x_0$ in space at one moment $t_i$ in time.\\
+Top row in \cref{Fig:ErrWorst} show reconstructions for $\hy$ and the bottom row for $\rare$ with FOM solution as paradigm. Starting with \(\hy\) one observers, that a restored \(f(x,v)\) from\(x=120\), the point around which dilution initiates, gets defective for POD and the CNN. Here the probability distribution is thinner as the original with POD and smeared around the borders with the CNN. This in turn leads errors in velocities gas particles can have once passing \(x=120\). The FCNN reproduces the FOM solution relatively correct.\\
+Continuing with a row further down of \cref{Fig:ErrWorst} and therefore \(\rare\), in place of a pronounced separation in a dense and rare region, stands bifurcation of \(f(x,v)\) into two probability distribution functions as outlined in \cref{Ch:BGK}. POD and the FCNN reproduce the FOM solution without any visible drawback. On the other hand the CNN reproduces smeared corners as in \(\hy\).\\    
 \begin{figure}[htbp!]
 	\input{Figures/Results/MacroError.tex}
-	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. Top row shows results for \(\hy\), bottom row for \(\rare\). CNN is displayed with marks only because of tremblings in the signal.}
+	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. Top row shows results for \(\hy\), bottom row for \(\rare\). CNN is displayed with marks only because of trembles in the signal.}
 	\label{Fig:ErrMacro}
 \end{figure}
-Loss of information described above unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}.  
-\begin{figure}
+Loss of information described above can unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}. In the following descriptions of features of the macroscopic quantities are expressed in terms of rarefaction wave, contact discontinuity and height as well as position of the shockfront. For details see \cref{Ch:BGK}. Following the structure in the preceding figures, macroscopic quantities of \(\hy\) are displayed in the top row and for \(\rare\) in the bottom row of \cref{Fig:ErrMacro}. First the reproduction of the macroscopic quantities \(\rho\), \(\rho u\) and \(E\), obtained by the FCNN is exact for both cases \(\hy\) and \(\rare\). In particular the density \(\rho\) matches with results from the FOM exactly for all three algorithms in both cases \(\hy\) and \(\rare\), aside using POD for \(?y\). Second the CNN produces trembles in \(\rho u\) and especially in \(E\) which is why it's shown with marks only. Results from the CNN are similar for \(\hy\) and \(\rare\). The momentum \(\rho u\) holds errors for the tail of the rarefaction wave as well as the contact discontinuity and the position of the shockwave. One reason of the lacking ability of the CNN is the small number of samples, as described in \cref{Ch:ApB} and \cref{Ch:ROM}. The resulting trembles of the signal when calculating the macroscopic quantities is due the kernel approach of the CNN. During reconstruction the resolution of the output image is bounded by the size of the kernel, which leads to pixelation. Third POD performs better on \(\rare\), holding only small deviations in the contact discontinuity and position of shockwave in the momentum \(\rho u\) and the total energy \(E\). Distinct deviations from the FOM solution occur using POD on \(\hy\). The density \(\rho\) holds errors in the  height of the shockwave. The momentum \(\rho u\) holds errors in the tail of the rarefaction wave, the contact discontinuity and the height of the shockwave. Hence in the total energy \(E\) errors occur in the rarefaction wave, especially the tail, the contact discontinuity and the height of the shockwave. What we see here is the known drawback of POD. Sharp fronts and especially advection dominated problems lead to a fast decaying kogolomorov n-width. These problems need a nonlienar ansatz, as described in \cref{Ch:ROM}.
+\begin{figure}[hbp!]
 	\input{Figures/Results/Conservation.tex}
 	\caption{Conservation}
 \end{figure}
@@ -59,7 +62,7 @@ Loss of information described above unfold in severe mistakes in \(\rho\), \(\rh
 	\input{Figures/Results/Hy_Int.tex}
 	\caption{Interpoaltionin in time for \(\hy\) from 25 snapshots to 241 snapshots with cubic splines using the FCNN.}
 \end{figure}
-\subsection{Hydrodynamic Regime}
+
 
 \begin{figure}[!htbp]
 	\scalebox{1}{\input{Figures/Results/Hydro/MacroCode10.tex}}
@@ -78,16 +81,4 @@ Loss of information described above unfold in severe mistakes in \(\rho\), \(\rh
 	\scalebox{0.9}{\input{Figures/Results/Rare/Code.tex}}
 	\caption{Intrinsic Variables of $\rare$}
 \end{figure}
-The number of intrinsic variables defining the rarefied regime is unknown. Therefore experiments varying the number of intrinsic variables from two to ten are performed. \Cref{Tab:Intrinsic units} shows the results of two runs. From seven up to ten intrinsic varibales onward the the L2-Error reaches values around \(1.2e^{-3}\). From five and six intrinsic variables a shift happens to a value for the L2-Error around \(2.3e^{-3}\). A lowering of the number of intrinsic variables up to two increases the L2-Error further. A comparison between results obtained from the SVD and the autoencoder, show that both algorithms perform nearly the same with eight intrinsic variables with an L2-Error of \(1.4e^{-3}\). With more than eight intrinsic variables  
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
-		\hline
-		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ [.5ex]
-		\hline
-		Error 1st run & 0.0048 & 0.0025 & 0.0026 & 0.0027 & 0.0013 & 0.0014 & 0.0013 & 0.0009\\ \hline
-		Error 2nd run & 0.0038 & 0.0024 & 0.0016 & 0.0015 & 0.0011 & 0.0010 & 0.0012 & 0.0010\\\hline
-	\end{tabular}
-	\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Experiments with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
-	\label{Tab:Intrinsic units}
-\end{table}
 \subsection{Discussion and Outlook}
