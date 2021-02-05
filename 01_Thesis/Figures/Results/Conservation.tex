@@ -2,7 +2,7 @@
 \begin{tikzpicture}
 
 
-\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.5cm,vertical sep=1.1cm}]
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.1cm,vertical sep=1.1cm}]
 \nextgroupplot[
 legend cell align={left},
 legend style={fill opacity=0,at={(1,1)},anchor=north east, draw opacity=1, text opacity=1, draw=none},
@@ -19,8 +19,9 @@ ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 y tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth
-%y label style={yshift=-.7em}
+height=.37\textwidth,
+y label style={yshift=-1em},
+y label style={xshift=-.7em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%
@@ -154,8 +155,9 @@ ymin=0.76497750084915, ymax=1.02392312637622,
 ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth,
-y label style={yshift=-.7em}
+height=.37\textwidth,
+y label style={yshift=-2em},
+y label style={xshift=-.9em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%
@@ -289,8 +291,9 @@ ymin=-2.31850155192636, ymax=0.790251347012884,
 ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth,
-y label style={yshift=-.7em}
+height=.37\textwidth,
+y label style={yshift=-2em},
+y label style={xshift=.5em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%
@@ -424,7 +427,9 @@ ymin=-0.0881143382344607, ymax=0.0927148425044127,
 ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth
+height=.37\textwidth,
+y label style={yshift=-1em},
+y label style={xshift=-.7em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%
@@ -558,8 +563,9 @@ ymin=0.576816271057281, ymax=1.1112201505512,
 ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth,
-y label style={yshift=-.7em}
+height=.37\textwidth,
+y label style={yshift=-2em}
+%y label style={xshift=.7em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%
@@ -693,8 +699,9 @@ ymin=-6.49238083759086, ymax=3.5924661339907,
 ytick style={color=black},
 x tick label style={/pgf/number format/fixed},
 width=.35\textwidth,
-height=.4\textwidth,
-y label style={yshift=-.7em}
+height=.37\textwidth,
+y label style={yshift=-2em},
+y label style={xshift=.5em}
 ]
 \addplot [semithick, black, mark=x, mark size=2.5, mark repeat=5, mark options={solid}]
 table {%

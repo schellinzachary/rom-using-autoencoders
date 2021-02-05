@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  4 FEB 2021 19:12
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  5 FEB 2021 14:42
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1595,43 +1595,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 ) (./Figures/Results/ErrWorst.tex
 ===== Image 'Figures/master-figure7' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--43
+Underfull \hbox (badness 10000) in paragraph at lines 2--42
 
  []
 
 (./Figures/Results/MacroError.tex
 ===== Image 'Figures/master-figure8' is up-to-date. ======
-)
-Overfull \hbox (24.5768pt too wide) in paragraph at lines 2--53
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--53
-
- []
-
-(./Figures/Results/Conservation.tex
+) (./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure9' is up-to-date. ======
-)
-Overfull \hbox (23.9886pt too wide) in paragraph at lines 2--59
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--59
-
- []
-
-(./Figures/Results/Hy_Int.tex
+) (./Figures/Results/Hy_Int.tex
 ===== Image 'Figures/master-figure10' is up-to-date. ======
 )
-Overfull \hbox (43.64001pt too wide) in paragraph at lines 2--63
+Overfull \hbox (43.64001pt too wide) in paragraph at lines 2--65
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--63
+Underfull \hbox (badness 10000) in paragraph at lines 2--65
 
  []
 
@@ -1640,8 +1620,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--63
 
 
 ] [15<./Figures/master-figure5.pdf>] [16<./Figures/master-figure6.pdf><./Figures
-/master-figure7.pdf>] [17<./Figures/master-figure8.pdf>]
-(./Figures/Results/Hydro/MacroCode10.tex
+/master-figure7.pdf>] [17<./Figures/master-figure8.pdf>] [18<./Figures/master-fi
+gure9.pdf>] (./Figures/Results/Hydro/MacroCode10.tex
 ===== Image 'Figures/master-figure11' is up-to-date. ======
 ) (./Figures/Results/Hydro/MacroCode20.tex
 ===== Image 'Figures/master-figure12' is up-to-date. ======
@@ -1650,18 +1630,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--63
 ) (./Figures/Results/Rare/Code.tex
 ===== Image 'Figures/master-figure14' is up-to-date. ======
 )
-Overfull \hbox (38.6866pt too wide) in paragraph at lines 81--82
+Overfull \hbox (38.6866pt too wide) in paragraph at lines 83--84
 [][] 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 84.
+(hyperref)                than one, level fixed on input line 86.
 
-) [18] [19<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]
-[20<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf>] [21<./Figures
-/master-figure13.pdf>] [22<./Figures/master-figure14.pdf>]
-(./appendix/appendixA.tex [23
+) [19<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>] [20<./Figur
+es/master-figure12.pdf><./Figures/master-figure13.pdf>] [21<./Figures/master-fig
+ure14.pdf>] [22] (./appendix/appendixA.tex [23
 
 ]
 Appendix A.
@@ -1939,16 +1918,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42248 strings out of 481365
+ 42250 strings out of 481365
  125007,10205817 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:1,2:2351,3:373,4:83,5:718,6:60,7:13205,8:67,9:762,10:30,11:758
+   avail lists: 1:3,2:2361,3:373,4:83,5:767,6:58,7:13205,8:66,9:762,10:30,11:781
 
- 56045 multiletter control sequences out of 65536+600000
+ 56047 multiletter control sequences out of 65536+600000
  76 fonts using 6978131 bytes
- 81i,14n,138p,2451b,495s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,14n,138p,2435b,495s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -1965,10 +1944,10 @@ r/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (47 pages, 7189694 bytes).
+Output written on master.pdf (47 pages, 7190752 bytes).
 
-PDF statistics: 2392 PDF objects out of 2487 (max. 8388607)
- 1947 compressed objects within 20 object streams
+PDF statistics: 2396 PDF objects out of 2487 (max. 8388607)
+ 1951 compressed objects within 20 object streams
  170 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

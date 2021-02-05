@@ -3,7 +3,7 @@
 
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 
-\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.5cm,vertical sep=1.1cm}]
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=1.1cm,vertical sep=1.1cm}]
 \nextgroupplot[
 legend cell align={left},
 legend style={at={(1,1)},anchor=north east,fill opacity=0.1, draw opacity=1, text opacity=1,draw=none},
@@ -21,7 +21,8 @@ ymin=0.0787652333577474, ymax=1.04575335673797,
 ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth,
-x label style={xshift=-.10em}
+y label style={yshift=-.9em},
+y label style={xshift=-.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2,mark repeat=25, mark options={solid}]
 table {%
@@ -856,7 +857,9 @@ ylabel={\(\rho u\)},
 ymin=-0.0237175295924032, ymax=0.479965021862334,
 ytick style={color=black},
 width=.37\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-.9em},
+y label style={xshift=+.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2, mark repeat=25, mark options={solid}]
 table {%
@@ -1692,7 +1695,8 @@ ymin=-0.120552432712838, ymax=0.605980670973315,
 ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth,
-y label style={yshift=-.7em}
+y label style={yshift=-.9em},
+y label style={xshift=+.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2, mark repeat=25, mark options={solid}]
 table {%
@@ -2527,7 +2531,9 @@ ylabel={\(\rho\)},
 ymin=0.0789182724860998, ymax=1.04959383645119,
 ytick style={color=black},
 width=.35\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-.9em},
+y label style={xshift=-.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2, mark repeat=25, mark options={solid}]
 table {%
@@ -3362,7 +3368,9 @@ ylabel={\(\rho u\)},
 ymin=-0.0232244711945436, ymax=0.473814120212489,
 ytick style={color=black},
 width=.37\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-.9em},
+y label style={xshift=+.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2, mark repeat=25, mark options={solid}]
 table {%
@@ -4199,7 +4207,8 @@ ytick style={color=black},
 width=.35\textwidth,
 height=.4\textwidth,
 clip=false,
-y label style={yshift=-.7em}
+y label style={yshift=-.9em},
+y label style={xshift=+.7em}
 ]
 \addplot [semithick, black, dashed, mark=x,mark size=2, mark repeat=25, mark options={solid}]
 table {%
