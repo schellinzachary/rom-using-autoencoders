@@ -55,6 +55,10 @@ pagesize,oneside,% for thesis use :
 \DeclareMathOperator*{\pstar}{p^{\star}}
 \DeclareMathOperator*{\Kn}{Kn}
 \DeclareMathOperator*{\L2}{L_2}
+\DeclareMathOperator*{\a1}{\alpha_{1}}
+\DeclareMathOperator*{\a2}{\alpha_{2}}
+\DeclareMathOperator*{\a3}{\alpha_{3}}
+
 
 
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
@@ -67,9 +71,6 @@ pagesize,oneside,% for thesis use :
 %\newcommand{\conv1}{\(\beta_1\)}
 %\newcommand{\conv2}{\(\beta_2\)}
 %\newcommand{\conv2}{\(\beta_3\)}
-%\newcommand{\ae1}{\(\alpha_1\)}
-%\newcommand{\ae2}{\(\alpha_2\)}
-%\newcommand{\ae2}{\(\alpha_3\)}
 
 %%%%%%%%%%%%%%%%%Tikz Styles%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -82,7 +83,7 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 
 %%%%%%%%%%%%%%%%%%%%%%%Colors%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
-%header einstellungen
+%%%%%%%%%%%header einstellungen%%%%%%%%%%%%%%%%%%%
 \usepackage{fancyhdr}
 %\pagestyle{fancy}
 % \fancyhead{}
@@ -103,6 +104,9 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 \titleformat*{\section}{\sffamily \bfseries \Large}
 \titleformat*{\subsection}{\sffamily \bfseries \large}
 \titleformat*{\subsubsection}{\sffamily \bfseries \normalsize}
+
+%%%%Keine Identierung
+\setlength\parindent{0pt}
 
 
 

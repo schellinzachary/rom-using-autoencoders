@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  2 FEB 2021 19:12
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  5 FEB 2021 20:50
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -490,6 +490,13 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count272
+\float@exts=\toks24
+\float@box=\box95
+\@float@everytoks=\toks25
+\@floatcapt=\box96
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/te
 xlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
 Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
@@ -497,13 +504,13 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 /texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-
 dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/gene
 ric/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks24
+\pgfutil@everybye=\toks26
 \pgfutil@tempdima=\dimen164
 \pgfutil@tempdimb=\dimen165
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box95
+\pgfutil@abb=\box97
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/u
@@ -516,12 +523,12 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 xmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks25
-\pgfkeys@temptoks=\toks26
+\pgfkeys@pathtoks=\toks27
+\pgfkeys@temptoks=\toks28
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
 ex
-\pgfkeys@tmptoks=\toks27
+\pgfkeys@tmptoks=\toks29
 ))
 \pgf@x=\dimen166
 \pgf@y=\dimen167
@@ -535,14 +542,14 @@ ex
 \pgf@yd=\dimen175
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count272
-\c@pgf@countb=\count273
-\c@pgf@countc=\count274
-\c@pgf@countd=\count275
-\t@pgf@toka=\toks28
-\t@pgf@tokb=\toks29
-\t@pgf@tokc=\toks30
-\pgf@sys@id@count=\count276
+\c@pgf@counta=\count273
+\c@pgf@countb=\count274
+\c@pgf@countc=\count275
+\c@pgf@countd=\count276
+\t@pgf@toka=\toks30
+\t@pgf@tokb=\toks31
+\t@pgf@tokc=\toks32
+\pgf@sys@id@count=\count277
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -557,8 +564,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count277
-\pgfsyssoftpath@bigbuffer@items=\count278
+\pgfsyssoftpath@smallbuffer@items=\count278
+\pgfsyssoftpath@bigbuffer@items=\count279
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -585,11 +592,11 @@ e/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texl
 ive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/t
 exmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen176
-\pgfmath@count=\count279
-\pgfmath@box=\box96
-\pgfmath@toks=\toks31
-\pgfmath@stack@operand=\toks32
-\pgfmath@stack@operation=\toks33
+\pgfmath@count=\count280
+\pgfmath@box=\box98
+\pgfmath@toks=\toks33
+\pgfmath@stack@operand=\toks34
+\pgfmath@stack@operation=\toks35
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
@@ -609,7 +616,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmat
 hfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count280
+\c@pgfmathroundto@lastzeros=\count281
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
@@ -644,10 +651,10 @@ File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box97
-\pgf@hbox=\box98
-\pgf@layerbox@main=\box99
-\pgf@picture@serial@count=\count281
+\pgfpic=\box99
+\pgf@hbox=\box100
+\pgf@layerbox@main=\box101
+\pgf@picture@serial@count=\count282
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -680,8 +687,8 @@ File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \pgf@max=\dimen256
-\pgf@sys@shading@range@num=\count282
-\pgf@shadingcount=\count283
+\pgf@sys@shading@range@num=\count283
+\pgf@shadingcount=\count284
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -689,7 +696,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box100
+\pgfexternal@startupbox=\box102
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -707,7 +714,7 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box101
+\pgfnodeparttextbox=\box103
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -730,8 +737,8 @@ Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
 \pgffor@iter=\dimen259
 \pgffor@skip=\dimen260
-\pgffor@stack=\toks34
-\pgffor@toks=\toks35
+\pgffor@stack=\toks36
+\pgffor@toks=\toks37
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
@@ -739,7 +746,7 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count284
+\pgf@plot@mark@count=\count285
 \pgfplotmarksize=\dimen261
 )
 \tikz@lastx=\dimen262
@@ -750,22 +757,22 @@ File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \tikz@lastmovetoy=\dimen267
 \tikzleveldistance=\dimen268
 \tikzsiblingdistance=\dimen269
-\tikz@figbox=\box102
-\tikz@figbox@bg=\box103
-\tikz@tempbox=\box104
-\tikz@tempbox@bg=\box105
-\tikztreelevel=\count285
-\tikznumberofchildren=\count286
-\tikznumberofcurrentchild=\count287
-\tikz@fig@count=\count288
+\tikz@figbox=\box104
+\tikz@figbox@bg=\box105
+\tikz@tempbox=\box106
+\tikz@tempbox@bg=\box107
+\tikztreelevel=\count286
+\tikznumberofchildren=\count287
+\tikznumberofcurrentchild=\count288
+\tikz@fig@count=\count289
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count289
-\pgfmatrixcurrentcolumn=\count290
-\pgf@matrix@numberofcolumns=\count291
+\pgfmatrixcurrentrow=\count290
+\pgfmatrixcurrentcolumn=\count291
+\pgf@matrix@numberofcolumns=\count292
 )
-\tikz@expandcount=\count292
+\tikz@expandcount=\count293
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -774,12 +781,12 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 /share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
 Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \pgfplots@luabackend@table=\catcodetable5
-\t@pgfplots@toka=\toks36
-\t@pgfplots@tokb=\toks37
-\t@pgfplots@tokc=\toks38
+\t@pgfplots@toka=\toks38
+\t@pgfplots@tokb=\toks39
+\t@pgfplots@tokc=\toks40
 \pgfplots@tmpa=\dimen270
-\c@pgfplots@coordindex=\count293
-\c@pgfplots@scanlineindex=\count294
+\c@pgfplots@coordindex=\count294
+\c@pgfplots@scanlineindex=\count295
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -804,14 +811,14 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count295
+\c@pgfplotsarray@tmp=\count296
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count296
-\t@pgfplotstable@a=\toks39
+\c@pgfplotstable@counta=\count297
+\t@pgfplotstable@a=\toks41
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
 .code.tex)
@@ -823,7 +830,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count297
+\c@pgfplotslibrarysurf@no=\count298
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-luatex.def)))
@@ -854,11 +861,11 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen273
 \pgfdecoratedinputsegmentremainingdistance=\dimen274
 \pgf@decorate@distancetomove=\dimen275
-\pgf@decorate@repeatstate=\count298
+\pgf@decorate@repeatstate=\count299
 \pgfdecorationsegmentamplitude=\dimen276
 \pgfdecorationsegmentlength=\dimen277
 )
-\tikz@lib@dec@box=\box106
+\tikz@lib@dec@box=\box108
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -868,7 +875,7 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count299
+\pgfplots@numplots=\count300
 \pgfplots@xmin@reg=\dimen278
 \pgfplots@xmax@reg=\dimen279
 \pgfplots@ymin@reg=\dimen280
@@ -894,12 +901,12 @@ Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
 ype.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen284
-\ar@mcellbox=\box107
+\ar@mcellbox=\box109
 \extrarowheight=\dimen285
-\NC@list=\toks40
+\NC@list=\toks42
 \extratabsurround=\skip56
 \backup@length=\skip57
-\ar@cellbox=\box108
+\ar@cellbox=\box110
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
@@ -956,26 +963,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box109
-\pgfnodeparttwobox=\box110
-\pgfnodepartthreebox=\box111
-\pgfnodepartfourbox=\box112
-\pgfnodeparttwentybox=\box113
-\pgfnodepartnineteenbox=\box114
-\pgfnodeparteighteenbox=\box115
-\pgfnodepartseventeenbox=\box116
-\pgfnodepartsixteenbox=\box117
-\pgfnodepartfifteenbox=\box118
-\pgfnodepartfourteenbox=\box119
-\pgfnodepartthirteenbox=\box120
-\pgfnodeparttwelvebox=\box121
-\pgfnodepartelevenbox=\box122
-\pgfnodeparttenbox=\box123
-\pgfnodepartninebox=\box124
-\pgfnodeparteightbox=\box125
-\pgfnodepartsevenbox=\box126
-\pgfnodepartsixbox=\box127
-\pgfnodepartfivebox=\box128
+\pgfnodepartlowerbox=\box111
+\pgfnodeparttwobox=\box112
+\pgfnodepartthreebox=\box113
+\pgfnodepartfourbox=\box114
+\pgfnodeparttwentybox=\box115
+\pgfnodepartnineteenbox=\box116
+\pgfnodeparteighteenbox=\box117
+\pgfnodepartseventeenbox=\box118
+\pgfnodepartsixteenbox=\box119
+\pgfnodepartfifteenbox=\box120
+\pgfnodepartfourteenbox=\box121
+\pgfnodepartthirteenbox=\box122
+\pgfnodeparttwelvebox=\box123
+\pgfnodepartelevenbox=\box124
+\pgfnodeparttenbox=\box125
+\pgfnodepartninebox=\box126
+\pgfnodeparteightbox=\box127
+\pgfnodepartsevenbox=\box128
+\pgfnodepartsixbox=\box129
+\pgfnodepartfivebox=\box130
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1004,9 +1011,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count300
-\pgfplots@group@current@row=\count301
-\pgfplots@group@current@column=\count302
+\pgfplots@group@current@plot=\count301
+\pgfplots@group@current@row=\count302
+\pgfplots@group@current@column=\count303
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1015,28 +1022,28 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count303
+\etb@tempcnta=\count304
 ) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/s
 hare/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count304
-\l__pdf_internal_box=\box129
+\l__kernel_color_stack_int=\count305
+\l__pdf_internal_box=\box131
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count305
-\g__xparse_grabber_int=\count306
-\l__xparse_m_args_int=\count307
-\l__xparse_v_nesting_int=\count308
+\l__xparse_current_arg_int=\count306
+\g__xparse_grabber_int=\count307
+\l__xparse_m_args_int=\count308
+\l__xparse_v_nesting_int=\count309
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/te
 xlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count309
-\decimalpart=\count310
+\integerpart=\count310
+\decimalpart=\count311
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box130
+\tikzscale@measuredSize=\box132
 ) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -1062,12 +1069,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen294
 \cmidrulekern=\dimen295
 \defaultaddspace=\dimen296
-\@cmidla=\count311
-\@cmidlb=\count312
+\@cmidla=\count312
+\@cmidlb=\count313
 \@aboverulesep=\dimen297
 \@belowrulesep=\dimen298
-\@thisruleclass=\count313
-\@lastruleclass=\count314
+\@thisruleclass=\count314
+\@lastruleclass=\count315
 \@thisrulewidth=\dimen299
 ) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2020/01/03 v3.4h Customizing captions (AR)
@@ -1083,8 +1090,9 @@ Package caption3 Info: TeX engine: e-TeX on input line 61.
 \caption@hangindent=\dimen306
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count315
-\c@continuedfloat=\count316
+\c@caption@flags=\count316
+\c@continuedfloat=\count317
+Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 ) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
@@ -1094,7 +1102,7 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 56.
+LaTeX Info: Redefining \L2 on input line 57.
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
@@ -1109,12 +1117,12 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@orf=\skip66
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box131
+\ttl@box=\box133
 \beforetitleunit=\skip67
 \aftertitleunit=\skip68
 \ttl@plus=\dimen307
 \ttl@minus=\dimen308
-\ttl@toksa=\toks41
+\ttl@toksa=\toks43
 \titlewidth=\dimen309
 \titlewidthlast=\dimen310
 \titlewidthfirst=\dimen311
@@ -1155,17 +1163,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
+\scratchcounter=\count318
 \scratchdimen=\dimen313
-\scratchbox=\box132
-\nofMPsegments=\count318
-\nofMParguments=\count319
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count320
+\scratchbox=\box134
+\nofMPsegments=\count319
+\nofMParguments=\count320
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count321
 \MPscratchDim=\dimen314
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
-\everyMPtoPDFconversion=\toks43
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
+\everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -1174,7 +1182,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box133
+\AtBeginShipoutBox=\box135
 Package hyperref Info: Link coloring OFF on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1183,7 +1191,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count323
+\c@section@level=\count324
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1594,76 +1602,82 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `Tab:L2' on page 1 undefined on input line 9.
 
 
+LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 23.
+
+
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 23.
+
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 24.
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 24.
+
+
 LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 24.
-
-
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 24.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 25.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 25.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 25.
 
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 31.
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 31.
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Citation `Carlberg' on page 13 undefined on input line 31.
+LaTeX Warning: Citation `Carlberg' on page 13 undefined on input line 30.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 31.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Reference `Fig:CumSum_Hydro' on page 1 undefined on input line 31
+LaTeX Warning: Reference `Fig:CumSum_Hydro' on page 1 undefined on input line 30
 .
 
 
-LaTeX Warning: Reference `Fig:CumSum_Rare' on page 1 undefined on input line 31.
+LaTeX Warning: Reference `Fig:CumSum_Rare' on page 1 undefined on input line 30.
 
 
 
-LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 31.
+LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Citation `Kutz' on page 13 undefined on input line 31.
+LaTeX Warning: Citation `Kutz' on page 13 undefined on input line 30.
+
+
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 31.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 32.
 
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 33.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 32.
 
 
-LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 33.
+LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 32.
 
 
-LaTeX Warning: Reference `Fig:ErrTime' on page 1 undefined on input line 34.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 32.
+
+
+LaTeX Warning: Reference `Fig:ErrTime' on page 1 undefined on input line 33.
 
 (./Figures/Results/ErrTime.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 40.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 40.
+LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 39.
 
 (./Figures/Results/ErrWorst.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 45.
+
 
 LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 46.
 
@@ -1680,18 +1694,30 @@ sable this.
 
 LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 53.
 
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 53.
+
+
+LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 53.
+
 (./Figures/Results/Conservation.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 59.
+
+
+LaTeX Warning: Reference `Fig:Conservation' on page 1 undefined on input line 59
+.
+
+(./Figures/Results/Code2D_hy_FCNN.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Results/Hy_Int.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 61.
-
-(./Figures/Results/Hydro/MacroCode10.tex
+) (./Figures/Results/Hydro/MacroCode10.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Results/Hydro/MacroCode20.tex
@@ -1705,8 +1731,17 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Tab:Intrinsic units' on page 1 undefined on input line
- 80.
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 89.
+
+
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 90.
+
+
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 90.
+
+
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 91.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -1761,7 +1796,7 @@ LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
 e 80.
 
 
-LaTeX Warning: Citation `BGK' on page 18 undefined on input line 108.
+LaTeX Warning: Citation `BGK' on page 20 undefined on input line 108.
 
 
 LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
@@ -1901,18 +1936,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--151
  []
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
 \openout4 = Figures/master-figure32.dpth
 
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
-[21
+[23
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
+/Fully_Connected/Batch_Size/Hydro/32.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 157--159
 [][]
  []
@@ -2148,22 +2184,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41474 strings out of 481365
- 244160,4101490 words of node,token memory allocated
+ 41538 strings out of 481365
+ 244168,4101490 words of node,token memory allocated
  804 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:5,2:33188,3:10566,4:83,5:611,6:38,7:13083,8:63,9:775,10:30,11:
+   avail lists: 1:3,2:33278,3:10586,4:83,5:611,6:38,7:13083,8:64,9:775,10:30,11:
 747
- 56397 multiletter control sequences out of 65536+600000
+ 56445 multiletter control sequences out of 65536+600000
  78 fonts using 7141923 bytes
- 83i,22n,140p,2460b,2416s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,22n,140p,2460b,2412s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure32.pdf (1 page, 129630 bytes).
+Output written on Figures/master-figure32.pdf (1 page, 135857 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream

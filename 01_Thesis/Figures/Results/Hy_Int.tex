@@ -1,7 +1,7 @@
 % This file was created by tikzplotlib v0.9.6.
 \begin{tikzpicture}
 
-\begin{groupplot}[group style={group size=3 by 1,horizontal sep=2cm}]
+\begin{groupplot}[group style={group size=3 by 1,horizontal sep=1.1cm}]
 \nextgroupplot[
 legend cell align={left},
 legend style={fill opacity=0.1, draw opacity=1, text opacity=1, at={(1,1)}, anchor=north east, draw=none},
@@ -15,8 +15,10 @@ y grid style={white!69.0196078431373!black},
 ylabel={\(\rho\)},
 ymin=0.08119311315509, ymax=1.04375270889737,
 ytick style={color=black},
+ytick={0.2,0.4,0.8,1},
 width=.35\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-2em}
 ]
 \addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%
@@ -440,8 +442,10 @@ y grid style={white!69.0196078431373!black},
 ylabel={\(\rho u\)},
 ymin=-0.0216445882565124, ymax=0.436433253808628,
 ytick style={color=black},
+ytick = {0,0.1,0.3,0.4},
 width=.35\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-2em}                    
 ]
 \addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%
@@ -865,8 +869,11 @@ y grid style={white!69.0196078431373!black},
 ylabel={\(E\)},
 ymin=-0.00858808405920983, ymax=0.524365251037421,
 ytick style={color=black},
+ytick={0,0.1,0.2,0.4,0.5},
 width=.35\textwidth,
-height=.4\textwidth
+height=.4\textwidth,
+y label style={yshift=-2em},
+y label style={xshift=.8em}     
 ]
 \addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
 table {%

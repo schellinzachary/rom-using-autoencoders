@@ -86,7 +86,7 @@ class fully(object):
         decoder = net.Decoder(level)
         model = net.Autoencoder(encoder, decoder).to(device)
         print('Conv_{}'.format(level))
-        checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level)) #best model from Parameterstudy
+        checkpoint = torch.load('State_Dict/Fully_{}.pt'.format(level),map_location=torch.device('cpu')) #best model from Parameterstudy
         #checkpoint = torch.load('Results/Fully8_{}.pt'.format(level)) # best model from intrinsic code variation
         model.load_state_dict(checkpoint['model_state_dict'])
         train_losses = checkpoint['train_losses']

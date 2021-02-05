@@ -98,8 +98,7 @@ class conv(object):
         encoder = net.Encoder(level)
         decoder = net.Decoder(level)
         model = net.Autoencoder(encoder, decoder).to(device)
-        print('Conv_{}'.format(level))
-        checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level))
+        checkpoint = torch.load('State_Dict/Conv_{}.pt'.format(level),map_location=torch.device('cpu'))
         model.load_state_dict(checkpoint['model_state_dict'])
         train_losses = checkpoint['train_losses']
         test_losses = checkpoint['test_losses']
