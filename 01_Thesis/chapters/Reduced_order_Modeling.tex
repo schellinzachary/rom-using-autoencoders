@@ -1,24 +1,28 @@
 % !TEX root = master.tex
 
-\chapter{Reduced Order Model}
+\chapter{Model Order Reduction}
 \label{Ch:ROM}
 %\pagenumbering{arabic}
 
 
+In this chapter model order reduction (MOR) will be introduced for which POD and autoencoders are adopted to obtain a reduced basis (RB). For this introduction the BGK-model in the Sod shock tube will serve as an example, hence omitting general formulations.\\
+Model order reduction is a technique used for reducing the computational cost when evaluating PDE's. To achieve this, the solution to the PDE is being approximated by reducing one or more of it's dimensions. In our case the solution to the BGK-model is \(f(x,v,t) \in \mathbb{R}^3\). Now we could reduce i.e. \(v\) to \(n\) with \(n << v\), yielding a reduced order model (ROM) \(q(x,n,t)\) of significantly lower dimension. In particular \(n\) is called the reduced basis or the intrinsic variables. In \cref{Ch:BGK} we saw that the BGK-model is a PDE which through discretization in the spatial dimension \(x\) and the velocity dimension \(v\) holds a system of \(KJ\) ODE's in time in 1D and \(K^3J^3\) ODE's in time in 3D.  By the reduction of \(v\) we arrive at \(nJ\) ODE's in time for 1D and \(nJ^3\) ODE's in time in 3D, though we discuss the 1D case only. This example should illustrate the amount of computations saved by MOR.\\
+To sum up, the idea that every high dimensional dynamical-state space, which in our case is \(f(x,v,t) \in \mathbb{R}^3\), can be mapped onto a state-space i.e. \(q_n(\mu_i)\) of lower dimension, is exploited within MOR. Here \(i\) gives the number of variables that are left after the reduction and \(n\) beeing the number of so called intrinsic variables.\\
+\begin{figure}[H]
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\input{Figures/MOR/flow.tex}
+		\subcaption{Evolving the BGK-model in the Sod shock tube in time is generated through evaluating the FOM in space \(x\), velocity \(v\) and time \(t\), which yields the solution \(f(x,v,t)\). The operator \(Q\) is here the FOM described in \cref{Ch:BGK}.}
+	\end{subfigure}\hfill
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\input{Figures/MOR/flow_red.tex}
+		\subcaption{Evolving the ROM of the BGK-model in the Sod shock tube in time through evaluating the ROM at \(n\) and \(\mu_i\), yields an approximation to the FOM solution \(\tilde{f}\). The operator \(Q\) is here either POD or a neural network described in \cref{Ch:DimRedAl}.}
+	\end{subfigure}
+	\caption{Outline of the correlation between the FOM solution and the approximation obtained from the ROM.}
+\end{figure}
+MOR is partitioned into two successive phases called the \textit{offline} - and the \textit{online} phase. During the offline phase \textit{snapshots} of a dynamical-system are generated through experiments or simulations of the full order model (FOM). The snapshots \(U = \{u(t1),...,u(t_n)\}\) are created once, each representing one moment in time of the dynamical system. Thus in our case one needs a snapshot database of solutions \(f(x,v,t)\) of the BKG-model in the Sod shock tube. Next a mapping \(q_n\) is constructed such that \(\tilde{u} = q_n(u)\), for which \(u(t_i) \approx \tilde{u}(t_i)\), reducing the dimensionality of the FOM solution as outlined before. During the online phase the reduced order model is evaluated and the error is estimated by eg. \(||u(t) - \tilde{u}(t)||\). Therefore the online phase may be described as a stage of independence from the full order model. 
 
-In this section model order reduction (ROM) will be introduced and two algorithms for obtaining a reduced basis (RB) are discussed. The proper orthogonal decomposition (POD) and autoencoders. In addition a reduced order model (ROM) based on the method of characteristics\cite{CFD1} is evaluated.\\
-Model order reduction is a technique used for reducing the computational cost, which is computational resources as memory and computation power. Partial differential equations (PDEs) once discretized become a system of high dimensional ordinary differential equations (ODEs) as shown in \cref{Sec: BGK}. Here model order reduction exploits the idea that every high dimensional dynamical-state space\(f(\mathbf{x},\mathbf{\mu}) \in \mathcal{D}\)  can be described by a state-space or manifold of lower dimension \(\tilde{f}(\mathbf{\mu}) \in \mathcal{E}\)
-\begin{equation}
-	f \approx \tilde{f} \qquad\textrm{with}\qquad \mathcal{D} \ll \mathcal{E}.
-\end{equation}
-Reduced order modeling is partitioned into two successive phases called the \textit{offline} - and the \textit{online phase}. During the offline phase data or \textit{snapshots} of a dynamical-system is generated through experiments or simulations of the full order model (FOM). The so called \textit{snapshots} \(U = {u(t1),...,u(t_n)}\) are created once, each representing one moment in time of the dynamical system. Next a mapping \(g\) is constructed such that \(\tilde{u} = g(\tilde{u})\), for which \(u(t_i) \approx u(t_i)\). During the online phase the reduced order model is evaluated and the error is estimated by eg. \(||u(t) - \tilde{u}(t)\). Therefore the online phase may be described as stage of independence from the full order model. 
-To continue the definition of the \textit{intrinsic solution manifold dimensionality} by \textit{Carlberg et al.} \cite{Carlberg} is needed: Assuming the initial value problem
-\begin{equation}
-	\mathbf{r}^n(\mathbf{x}^n;\mathbf{\mu}) = 0, \qquad n=1,...,N_t
-\end{equation} 
-has a unique solution for each parameter instance \(\mathbf{\mu} \in \mathcal{D}\), the intrinsic dimensionality of the solution manifold \(\{\mathbf{x}(t,\mathbf{\mu})|t \in [0,T],\mathbf
-\mu \in \mathcal{D}\}\) is (at most) \(p^{\star} = n_{\mu} + 1\), as a mapping \((t,\mathbf{\mu})\mapsto \mathbf{x}\) is unique in this case. This provides a practical lower bound on the dimension of a nonlinear trial manifold for exactly representing the dynamical-system state. In summary the intrinsic solution manifold dimensionality, in the following referred to as the number of intrinsic variables, are in number as much as there are parameters that can describe the whole dynamical-system state plus one, the time \(t\). As for the full order BGK equation \cref{Sec: BGK} the intrinsic variables could be three for the macroscopic velocity \(U(\mathbf{x},t)\), three for the microscopic velocities \(\xi\)of the collision operator \(Q(f,f)\), three for \(T\),\(\rho\) and \(\nu\) plus one equaling to a total of ten intrinsic variables for the 3D case. In the following subsection the available data for this thesis is introduced along with a proposal for the number of intrinsinc variables.\\
-The BGK equation is valid for gases in the hydrodynamic regime as well as for rarefied gases. As described in \cref{Sec: BGK} depending on the equilibrium of the BGK equation, the solution transitions between a pure Boltzmann - and a Maxwellian distribution. The former is known to be well approximated by linear methods as the SVD, while the latter poses problems due to the non-linear behavior.
 \section{Offline Phase}
 \subsection{Full order BGK model}\label{Sec: Data Sampling}
 The number of intrinsic variables can therefore be determined for the 1D case of the BGK equation. The parameters \(\mathbf{\mu}\)describing the gas flow in the hydrodynamic regime has therefore one macroscopic velocity \(U(x)\), and th
