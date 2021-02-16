@@ -60,9 +60,10 @@ K.~Hornik, M.~Stinchcombe and H.~White, \emph{Multilayer feedforward networks
 V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep
   learning},  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
 
-\bibitem{CFD1}
-J.~Reiss, \emph{Skript zu cfd 1},
-  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
+\bibitem{ohlberger2015reduced}
+M.~Ohlberger and S.~Rave, \emph{Reduced basis methods: Success, limitations and
+  future challenges},  \href{https://arxiv.org/abs/1511.02021}{{\ttfamily
+  1511.02021}}.
 
 \bibitem{Dret2016}
 H.~L. Dret and B.~Lucquin, \emph{Partial Differential Equations: Modeling,

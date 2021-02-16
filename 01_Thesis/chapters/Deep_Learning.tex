@@ -6,7 +6,9 @@
 
 
 \section{Proper orthogonal decomposition (POD)}
+\label{Sec: POD}
 \section{Autoencoders}
+\label{Sec:AE}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 
 The term deep learning situated around the much broader field of artificial intelligence stems from the use of deep feed forward networks also called multi layer perceptrons (MLP) or feed forward neural networks. Deep recurrent neural networks (RNN) are also used in this field but won't be covered in this thesis. In contrast to RNNs, information flows forward through these networks, which explains the name feed foward. In the following I will use the abbreviation MLP when talking about the aforementioned algorithm. Network refers to the typical composition of many different functions.\\The task of any MLP is to approximate a function \(f^\star(\mathbf{x};\mathbf{\Theta}) \approx f(\mathbf{x})\) through learning the values of the parameters \(\mathbf{\Theta}\). As mentioned before  \(f^\star\) is a composition of functions eg. \cref{Eq. Composition}.
 \begin{equation}

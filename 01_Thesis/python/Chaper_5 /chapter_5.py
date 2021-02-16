@@ -373,22 +373,22 @@ def conservation(rho,rhou,E):
 
 #Look at the code of the FCNN
 #############################
-train = "No"
-level = "hy"
-method = "Fully"
-x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-from FullyConnected import fully
-c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-rec, code = fully.load(level,c)
-code = code.detach().numpy()
-code = shapeback_code(code)
+# train = "No"
+# level = "hy"
+# method = "Fully"
+# x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+# from FullyConnected import fully
+# c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+# rec, code = fully.load(level,c)
+# code = code.detach().numpy()
+# code = shapeback_code(code)
 
-fig, axs=plt.subplots(3,1)
-for i in range(3):
-  im = axs[i].imshow(code[:,i,:],cmap='Greys')
-  fig.colorbar(im, ax=axs[i])
-#tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Code2D_hy_FCNN.tex')###
-plt.show()
+# fig, axs=plt.subplots(3,1)
+# for i in range(3):
+#   im = axs[i].imshow(code[:,i,:],cmap='Greys')
+#   fig.colorbar(im, ax=axs[i])
+# #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Code2D_hy_FCNN.tex')###
+# plt.show()
 
 
 

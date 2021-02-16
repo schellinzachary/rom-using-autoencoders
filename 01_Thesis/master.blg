@@ -20,15 +20,15 @@ Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
 You've used 16 entries,
             2189 wiz_defined-function locations,
-            614 strings with 5859 characters,
-and the built_in function-call counts, 2583 in all, are:
-= -- 206
-> -- 192
+            615 strings with 5955 characters,
+and the built_in function-call counts, 2603 in all, are:
+= -- 207
+> -- 197
 < -- 0
-+ -- 57
-- -- 41
-* -- 171
-:= -- 412
++ -- 58
+- -- 42
+* -- 173
+:= -- 415
 add.period$ -- 21
 call.type$ -- 16
 change.case$ -- 11
@@ -36,8 +36,8 @@ chr.to.int$ -- 0
 cite$ -- 19
 duplicate$ -- 107
 empty$ -- 232
-format.name$ -- 41
-if$ -- 626
+format.name$ -- 42
+if$ -- 631
 int.to.chr$ -- 0
 int.to.str$ -- 16
 missing$ -- 44
@@ -47,7 +47,7 @@ pop$ -- 52
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 37
+skip$ -- 38
 stack$ -- 0
 substring$ -- 32
 swap$ -- 15
