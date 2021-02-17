@@ -5,8 +5,8 @@
 %\pagenumbering{arabic}
 
 
-In this chapter model order reduction (MOR) will be introduced for which POD and autoencoders are adopted to obtain a reduced basis (RB). For this introduction the BGK-model in the Sod shock tube will serve as an example, hence omitting general formulations.\\
-Model order reduction is a technique used for reducing the computational cost when evaluating PDE's \cite{Bernard}\cite{Carlberg}\cite{ohlberger2015reduced}. To achieve this, the solution to the PDE is being approximated by reducing one or more of it's dimensions. In our case the solution to the BGK-model is \(f(x,v,t) \in \mathbb{R}^3\). Now we could reduce i.e. \(v\) to \(n\) with \(n << v\), yielding a reduced order model (ROM) \(q(x,n,t)\) of significantly lower dimension. In particular \(n\) is called the reduced basis or the intrinsic variables. In \cref{Ch:BGK} we saw that the BGK-model is a PDE which through discretization in the spatial dimension \(x\) and the velocity dimension \(v\) holds a system of \(KJ\) ODE's in time in 1D and \(K^3J^3\) ODE's in time in 3D.  By the reduction of \(v\) we arrive at \(nJ\) ODE's in time for 1D and \(nJ^3\) ODE's in time in 3D, though we discuss the 1D case only. This example should illustrate the amount of computations saved by MOR.\\
+In this chapter model order reduction (MOR) of the BGK-model in the Sod shock tube will be introduced for which POD and in particular autoencoders are adopted to obtain a reduced basis (RB).\\
+Model order reduction is a technique used for reducing the computational cost when evaluating PDE's \cite{Bernard}\cite{Carlberg}\cite{ohlberger2015reduced}. To achieve this, the solution to the PDE is being approximated by reducing one or more of it's dimensions. In our case the solution to the BGK-model is \(f(x,v,t) \in \mathbb{R}^3\). Now we could reduce i.e. \(v\) to \(n\), with \(o\) beeing the number of elements in \(v\) and \(p\) in \(n\). With \(p << o\) we obtain a reduced order model (ROM) \(q(x,n,t)\) of significantly lower dimension. In particular \(n\) is called the reduced basis or the intrinsic variables. In \cref{Ch:BGK} we saw that the BGK-model is a PDE which through discretization in the spatial dimension \(x\) and the velocity dimension \(v\) holds a system of \(KJ\) ODE's in time in 1D and \(K^3J^3\) ODE's in time in 3D.  By the reduction of \(v\) we arrive at \(nJ\) ODE's in time for 1D and \(nJ^3\) ODE's in time in 3D, though we discuss the 1D case only. This example should illustrate the amount of computations saved by MOR.\\
 To sum up, the idea that every high dimensional dynamical-state space \(W\), also called solution manifold, which in our case is \(f(x,v,t) \in W\), can be mapped onto a state-space i.e. \(q_n(\mu_i)\)  of lower dimension, is exploited within MOR \cite{ohlberger2015reduced}. Here \(i\) gives the number of variables that are left after the reduction and \(n\) beeing the number of so called intrinsic variables. The state space of lower dimension is called the intrinsic solution manifold \(V\) with \(q_n(\mu_i) \in V\) \cite{Carlberg}.\\
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
@@ -24,40 +24,39 @@ To sum up, the idea that every high dimensional dynamical-state space \(W\), als
 MOR is partitioned into two successive phases called the \textit{offline} - and the \textit{online} phase. During the offline phase \textit{snapshots} of a dynamical-system are generated through experiments or simulations of the full order model (FOM). The snapshots \(U = \{u(t1),...,u(t_n)\}\) are created once, each representing one moment in time of the dynamical system. Thus in our case one needs a snapshot database of solutions \(f(x,v,t)\) of the BKG-model in the Sod shock tube. Next a mapping \(q_n\) is constructed such that \(\tilde{u} = q_n(u)\), for which \(u(t_i) \approx \tilde{u}(t_i)\), reducing the dimensionality of the FOM solution as outlined before. During the online phase the reduced order model is evaluated and the error is estimated by eg. \(||u(t) - \tilde{u}(t)||\). Therefore the online phase may be described as a stage of independence from the full order model.
 Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD \cref{Sec: POD}, depends on a rapidly decaying Kolmogorov N-width. In particular advection dominated problems exhibit a slow decay of the Kolmogorov N-width. Thus yielding a need for non-linear methods like autoencoders described in \cref{Sec:AE}. The Kolmogorov N-width is given by
 \begin{equation}
-	d_{q_n}(W):= \sup_{\tilde{f} \in V} \inf_{f \in W} ||f-\tilde{f}||
-\end{equation} 
+	d_{V}(W):= \sup_{f \in W} \inf_{\tilde{f} \in V} ||f-\tilde{f}||
+\end{equation}
+and gives the worst best approximation error for elements of \(W\). The convergence behaviour of the Kolmogorov N-width for advection dominated problems, especially when jump conditions are involved as in the Sod shock tube \cref{Ch:BGK}, decays with
+\begin{equation}
+	d_n(W) \leq \frac{1}{2} n^{-1/2},
+\end{equation}
+where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as depicted in \cref{Ch:BGK}.   
 \section{Offline Phase}
-\subsection{Full order BGK model}\label{Sec: Data Sampling}
-The number of intrinsic variables can therefore be determined for the 1D case of the BGK equation. The parameters \(\mathbf{\mu}\)describing the gas flow in the hydrodynamic regime has therefore one macroscopic velocity \(U(x)\), and th
-DIE ORIGINAL DTATENSTRUJTUR BESCHREIBEN
-For the autencoder using fully connected layers, the input vectors $y_o \in \mathbb{R}$ of size $n_{\text{input}} = n_{\xi} = 40$ are arranged in the sampling matrix $S_{AE} \in \mathbb{R}^{n_{\mathrm{S}\times n_\xi}}$ as seen in \cref{AE_matrix} resulting in $n_S = 5000$ available samples. Note that the POD uses the same matrix transposed $S_{AE}^T$ as input. In the following hydrodynamic regime will reffer for the input data for knudsen number 10e-4 and rarefied regime will refer to the input data for knudsen numbers 10e2.
-- insert unshuffled set pls
+\subsection{Full order BGK-model}\label{Sec: FOM}
+The FOM 
 \begin{multicols}{2}
 	\begin{equation}
-	S_{AE} = \begin{bmatrix}
-	f(\xi_1,t_1,x_1)&\cdots &f(\xi_n,t_1,x_1) \\
-	f(\xi_1,t_1,x_2)&\cdots &f(\xi_n,t_1,x_2) \\
+	\Pi_{AE} = \begin{bmatrix}
+	f(v_1,t_1,x_1)&\cdots &f(v_n,t_1,x_1) \\
+	f(v_1,t_1,x_2)&\cdots &f(v_n,t_1,x_2) \\
 	\vdots& \vdots & \vdots\\
-	f(\xi_1,t_1,x_n)&\cdots &f(\xi_n,t_1,x_n)\\
-	f(\xi_1,t_2,x_1)&\cdots &f(\xi_n,t_2,x_1)\\
+	f(v_1,t_1,x_n)&\cdots &f(v_n,t_1,x_n)\\
+	f(v_1,t_2,x_1)&\cdots &f(v_n,t_2,x_1)\\
 	\vdots & \vdots & \vdots\\
-	f(\xi_1,t_n,x_n)&\cdots &f(\xi_n,t_n,x_n)
+	f(v_1,t_n,x_n)&\cdots &f(v_n,t_n,x_n)
 	\end{bmatrix}
 	\label{AE_matrix}
 	\end{equation}\break
 	\begin{equation}
-	S_{Conv}= \begin{bmatrix}
-	n_{Filters}&f(\xi_1,\textbf{t},\textbf{x})\\
-	n_{Filters}&f(\xi_2,\textbf{t},\textbf{x})\\
-	\vdots\\
-	n_{Filters}&f(\xi_n,\textbf{t},\textbf{x})
+	\Pi_{Conv}= \begin{bmatrix}
+	n_{Filters}&f(v_1,\textbf{t},\textbf{x})\\
+	n_{Filters}&f(v_2,\textbf{t},\textbf{x})\\
+	\vdots&\vdots\\
+	n_{Filters}&f(v_n,\textbf{t},\textbf{x})
 	\end{bmatrix}
 	\label{Conv_matrix}
 	\end{equation}
-\end{multicols}\noindent
-Convolutional autoencoders use a different sampling matrix $S_{Conv}$ due to their two dimensional capability resulting in $n_S = 40$ available samples \cref{Conv_matrix}.$N_{Filters}$ varies over the succeeding layers, growing with the shrinkage of $(\textbf{t},\textbf{x})$.
-- In the following the data of the BGK full order model with a knudens number of \(Kn = 0.00001\), describing a gasflow in the hyrodynamic regime will be reffere to as \(\Pi_h\). Equally the data of the BGK full order model with a knudsen number of \(Kn = 0.01\) will be refferd to as \(\Pi_r\).
-
+\end{multicols}
 \subsection{Reduced Basis by POD and Autoencoder}
 The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
 \begin{equation}

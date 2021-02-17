@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  16 FEB 2021 19:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 FEB 2021 19:37
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1528,6 +1528,10 @@ LaTeX Warning: Citation `bibid' on page 8 undefined on input line 46.
 
 LaTeX Warning: Reference `labellist' on page 1 undefined on input line 73.
 
+
+LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
+73.
+
 [8]) [9]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
@@ -1553,43 +1557,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 <./Figures/master-figure2.pdf><./Figures/master-figure3.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 47--48
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 
-LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 62.
+LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 61.
 
 [11] (./Figures/SVD/CumSum_Rare.tex
 ===== Image 'Figures/master-figure4' is up-to-date. ======
 )
-Overfull \hbox (22.37256pt too wide) in paragraph at lines 2--69
+Overfull \hbox (22.37256pt too wide) in paragraph at lines 2--68
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--69
+Underfull \hbox (badness 10000) in paragraph at lines 2--68
 
  []
 
 (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure5' is up-to-date. ======
 )
-Overfull \hbox (22.37256pt too wide) in paragraph at lines 2--74
+Overfull \hbox (22.37256pt too wide) in paragraph at lines 2--73
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--74
+Underfull \hbox (badness 10000) in paragraph at lines 2--73
 
  []
 
 
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 100.
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 99.
 
 
-
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 100--113
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 99--112
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
@@ -1926,7 +1929,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 9BFC9D96252D2B48AE921590D11C20C0;4232.
+(rerunfilecheck)             Checksum: AD5B27D4794EB3FF443D701C7D7FAB6A;4229.
 
 
 LaTeX Warning: There were undefined references.
@@ -1938,37 +1941,35 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42451 strings out of 481365
+ 42453 strings out of 481365
  125011,10205817 words of node,token memory allocated
- 798 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 87 attribute,
- 62 glue_spec, 45 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:51,7:13205,8:66,9:762,10:30,11:758
+ 810 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 91 attribute,
+ 62 glue_spec, 47 attribute_list, 2 write nodes
+   avail lists: 1:1,2:2351,3:373,4:83,5:614,6:51,7:13205,8:67,9:762,10:30,11:758
 
- 56147 multiletter control sequences out of 65536+600000
+ 56148 multiletter control sequences out of 65536+600000
  101 fonts using 8688939 bytes
  81i,14n,138p,2435b,616s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmt
-t10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb>
-Output written on master.pdf (49 pages, 7323317 bytes).
+1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></
+usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/pu
+blic/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb>
+Output written on master.pdf (49 pages, 7301621 bytes).
 
-PDF statistics: 2501 PDF objects out of 2984 (max. 8388607)
- 2028 compressed objects within 21 object streams
- 173 named destinations out of 1000 (max. 131072)
+PDF statistics: 2488 PDF objects out of 2984 (max. 8388607)
+ 2018 compressed objects within 21 object streams
+ 174 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 
