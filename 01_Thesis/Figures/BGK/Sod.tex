@@ -1,3 +1,18 @@
 \begin{tikzpicture}
-	\draw (1,0) rectangle +(2,1)
+% place nodes
+\node[] at (0, 0) (a) {};
+\node[] at (10,0) (b) {};
+
+\node[] at (0,5)  (c) {};
+\node[] at (10,5) (d) {};
+
+\node[] at (5,5)  (e) {};
+\node[] at (5,0) (f) {};
+
+% draw edges  
+\draw[] (a.center) -- (b.center) node[above] {};
+\draw[] (c.center) -- (a.center) node[above] {};
+\draw[] (c.center) -- (d.center) node[above] {};
+\draw[] (d.center) -- (b.center) node[above] {};
+\draw[dashed] (e.center) -- (f.center) node[above] {};
 \end{tikzpicture}

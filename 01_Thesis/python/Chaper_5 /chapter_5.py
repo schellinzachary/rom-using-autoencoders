@@ -11,7 +11,7 @@ import scipy.io as sio
 import numpy as np
 from numpy.linalg import norm 
 import matplotlib.pyplot as plt
-import tikzplotlib
+#import tikzplotlib
 import torch
 import torch.tensor as tensor
 from scipy import interpolate
@@ -84,7 +84,9 @@ def load_BGKandMethod():
     x = x.squeeze()
     t=t.squeeze()
     t=t.T
-
+    print('v:',v,'dv',(v[1]-v[0]),'num:',len(v))
+    print('x:',x,'dx',(x[1]-x[0]),'num:',len(x),x[100])
+    print('t:',t,'dt',(t[1]-t[0]),'num:',len(t))
     return x,v,t,c
 
 #load the full oder BGK data for hy and 241 snapshots
@@ -275,50 +277,50 @@ def conservation(rho,rhou,E):
 
 
 
-# train="No"
-# # fig,ax = plt.subplots(2,3) # for macroscopic quantities
-# figg,axxs = plt.subplots(2,3) # for conservation
-# i=0
-# for level in ["hy","rare"]:
-#     #For POD
-#     ########
-#     method = "POD"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from POD import pod 
-#     rec, code = pod.load(level,c)
-#     rec_pod = shapeback_field(rec)
-#     c = shapeback_field(c)
-#     rho_pod,rhou_pod,e_pod = macro(rec_pod,v)
-#     #calculate the conservation
-#     dtrho_pod,dtrhou_pod,dte_pod = conservation(rho_pod,rhou_pod,e_pod)
-#     #For Conv
-#     #########
-#     method = "Conv"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from Convolutional import conv
-#     c = tensor(c,dtype=torch.float)
-#     rec, code = conv.load(level,c)
-#     c = c.detach().numpy()
-#     rec = rec.detach().numpy()
-#     rec_conv = np.swapaxes(rec.squeeze(),0,1)
-#     c = np.swapaxes(c.squeeze(),0,1)
-#     rho_conv,rhou_conv,e_conv = macro(rec_conv,v)
-#     rho_fom,rhou_fom,e_fom = macro(c,v)
-#     dtrho_fom,dtrhou_fom,dte_fom = conservation(rho_fom,rhou_fom,e_fom)
-#     dtrho_conv,dtrhou_conv,dte_conv = conservation(rho_conv,rhou_conv,e_conv)
-#     #For Fully
-#     ##########
-#     method = "Fully"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from FullyConnected import fully
-#     c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-#     rec, code = fully.load(level,c)
-#     c = c.detach().numpy()
-#     rec = rec.detach().numpy()
-#     rec_fully = shapeback_field(rec)
-#     c = shapeback_field(c)
-#     rho_fully,rhou_fully,e_fully = macro(rec_fully,v)
-#     dtrho_fully,dtrhou_fully,dte_fully = conservation(rho_fully,rhou_fully,e_fully)
+train="No"
+# fig,ax = plt.subplots(2,3) # for macroscopic quantities
+figg,axxs = plt.subplots(2,3) # for conservation
+i=0
+for level in ["hy","rare"]:
+    #For POD
+    ########
+    method = "POD"
+    x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+    from POD import pod 
+    rec, code = pod.load(level,c)
+    rec_pod = shapeback_field(rec)
+    c = shapeback_field(c)
+    rho_pod,rhou_pod,e_pod = macro(rec_pod,v)
+    #calculate the conservation
+    dtrho_pod,dtrhou_pod,dte_pod = conservation(rho_pod,rhou_pod,e_pod)
+    #For Conv
+    #########
+    method = "Conv"
+    x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+    from Convolutional import conv
+    c = tensor(c,dtype=torch.float)
+    rec, code = conv.load(level,c)
+    c = c.detach().numpy()
+    rec = rec.detach().numpy()
+    rec_conv = np.swapaxes(rec.squeeze(),0,1)
+    c = np.swapaxes(c.squeeze(),0,1)
+    rho_conv,rhou_conv,e_conv = macro(rec_conv,v)
+    rho_fom,rhou_fom,e_fom = macro(c,v)
+    dtrho_fom,dtrhou_fom,dte_fom = conservation(rho_fom,rhou_fom,e_fom)
+    dtrho_conv,dtrhou_conv,dte_conv = conservation(rho_conv,rhou_conv,e_conv)
+    #For Fully
+    ##########
+    method = "Fully"
+    x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+    from FullyConnected import fully
+    c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+    rec, code = fully.load(level,c)
+    c = c.detach().numpy()
+    rec = rec.detach().numpy()
+    rec_fully = shapeback_field(rec)
+    c = shapeback_field(c)
+    rho_fully,rhou_fully,e_fully = macro(rec_fully,v)
+    dtrho_fully,dtrhou_fully,dte_fully = conservation(rho_fully,rhou_fully,e_fully)
 
 
 

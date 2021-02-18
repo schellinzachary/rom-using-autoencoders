@@ -33,7 +33,21 @@ and gives the worst best approximation error for elements of \(W\). The converge
 where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as depicted in \cref{Ch:BGK}.   
 \section{Offline Phase}
 \subsection{Full order BGK-model}\label{Sec: FOM}
-The FOM 
+The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup}.
+\begin{table}[htp]
+	\centering
+	\caption{Problem setup for the BGK model in the Sod shock tube. The diaphragm is positioned at \(x_d=0.5025\). For \(x<x_d\) the gas is present, for \(x\geq x_d\) particles are absent.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c @{} }
+		\toprule
+		Variable   & Number of nodes&   Domain extension& Step size (uniform)\\   
+		\hline
+		\(x\) 		&	200&     [0.0025,0.9975]&	    0.00499\\
+		\(v\)       &   40 &  		    [-10,10]&	    0.05128\\
+		\(t\)   	&	25 &        	[0,0.12]&	      0.005\\
+		\bottomrule
+	\end{tabular*} \label{Tab:Setup}
+\end{table}
+One is a slip flow with \(Kn=0.01\). For this kind of rarefaction the 
 \begin{multicols}{2}
 	\begin{equation}
 	\Pi_{AE} = \begin{bmatrix}
