@@ -7,6 +7,13 @@
 
 \section{Proper orthogonal decomposition (POD)}
 \label{Sec: POD}
+
+The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
+\begin{equation}
+\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
+\label{Eq:EckardYoung}
+\end{equation} 
+
 \section{Autoencoders}
 \label{Sec:AE}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 

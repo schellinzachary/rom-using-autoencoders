@@ -6,7 +6,7 @@
 
 
 In this chapter model order reduction (MOR) of the BGK-model in the Sod shock tube will be introduced for which POD and in particular autoencoders are adopted to obtain a reduced basis (RB).\\
-Model order reduction is a technique used for reducing the computational cost when evaluating PDE's \cite{Bernard}\cite{Carlberg}\cite{ohlberger2015reduced}. To achieve this, the solution to the PDE is being approximated by reducing one or more of it's dimensions. In our case the solution to the BGK-model is \(f(x,v,t) \in \mathbb{R}^3\). Now we could reduce i.e. \(v\) to \(n\), with \(o\) beeing the number of elements in \(v\) and \(p\) in \(n\). With \(p << o\) we obtain a reduced order model (ROM) \(q(x,n,t)\) of significantly lower dimension. In particular \(n\) is called the reduced basis or the intrinsic variables. In \cref{Ch:BGK} we saw that the BGK-model is a PDE which through discretization in the spatial dimension \(x\) and the velocity dimension \(v\) holds a system of \(KJ\) ODE's in time in 1D and \(K^3J^3\) ODE's in time in 3D.  By the reduction of \(v\) we arrive at \(nJ\) ODE's in time for 1D and \(nJ^3\) ODE's in time in 3D, though we discuss the 1D case only. This example should illustrate the amount of computations saved by MOR.\\
+Model order reduction is a technique used for reducing the computational cost when evaluating PDE's \cite{Bernard}\cite{Carlberg}\cite{ohlberger2015reduced}. To achieve this, the solution to the PDE is being approximated by reducing one or more of it's dimensions. The reduction is performed by a mapping onto a low dimensional manifold. In our case the solution to the BGK-model is \(f(x,v,t) \in \mathbb{R}^3\). Now we could reduce i.e. \(v\) to \(n\), with \(o\) beeing the number of elements in \(v\) and \(p\) in \(n\). With \(p << o\) we obtain a reduced order model (ROM) \(q(x,n,t)\) of significantly lower dimension. In particular \(n\) is called the reduced basis or the intrinsic variables. In \cref{Ch:BGK} we saw that the BGK-model is a PDE which through discretization in the spatial dimension \(x\) and the velocity dimension \(v\) holds a system of \(KJ\) ODE's in time in 1D and \(K^3J^3\) ODE's in time in 3D.  By the reduction of \(v\) we arrive at \(nJ\) ODE's in time for 1D and \(nJ^3\) ODE's in time in 3D, though we discuss the 1D case only. This example should illustrate the amount of computations saved by MOR. The mapping from \(f(x,v,t)\) to \(q(x,n,t)\) is implemented through a reduction algorithm, which also performs a remapping back to \(\tilde{f}(x,v,t)\), such that the distance \(||f - \tilde{f}||\) is small.\\
 To sum up, the idea that every high dimensional dynamical-state space \(W\), also called solution manifold, which in our case is \(f(x,v,t) \in W\), can be mapped onto a state-space i.e. \(q_n(\mu_i)\)  of lower dimension, is exploited within MOR \cite{ohlberger2015reduced}. Here \(i\) gives the number of variables that are left after the reduction and \(n\) beeing the number of so called intrinsic variables. The state space of lower dimension is called the intrinsic solution manifold \(V\) with \(q_n(\mu_i) \in V\) \cite{Carlberg}.\\
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
@@ -33,13 +33,13 @@ and gives the worst best approximation error for elements of \(W\). The converge
 where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as depicted in \cref{Ch:BGK}.   
 \section{Offline Phase}
 \subsection{Full order BGK-model}\label{Sec: FOM}
-The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup}.
+The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}.
 \begin{table}[htp]
 	\centering
 	\caption{Problem setup for the BGK model in the Sod shock tube. The diaphragm is positioned at \(x_d=0.5025\). For \(x<x_d\) the gas is present, for \(x\geq x_d\) particles are absent.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c @{} }
 		\toprule
-		Variable   & Number of nodes&   Domain extension& Step size (uniform)\\   
+		Variable   & Number of nodes \(i\)&   Domain extension& Step size (uniform)\\   
 		\hline
 		\(x\) 		&	200&     [0.0025,0.9975]&	    0.00499\\
 		\(v\)       &   40 &  		    [-10,10]&	    0.05128\\
@@ -47,10 +47,11 @@ The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction,
 		\bottomrule
 	\end{tabular*} \label{Tab:Setup}
 \end{table}
-One is a slip flow with \(Kn=0.01\). For this kind of rarefaction the 
-\begin{multicols}{2}
+One is a slip flow with \(Kn=0.01\), hereafter will be referred to as \(\rare\). For this kind of rarefaction level the common Navier-Stokes equations are not valid anymore. The other is a continuum flow with \(\Kn=0.00001\) for which the Navier-Stokes equations can be utilized. A detailed description can be found in \cref{Ch:BGK}. Hereafter the continuum flow will be referred to as \(\hy\). Note that both \(\hy\) and \(\rare\) are three dimensional tensors containing \(f(x,v,t)\).\\
+The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct reshaping of the input data before they can be used. The preprocessed matrix for the FCNN, \(\mae\), is shown in \cref{Eq:AE_matrix}. Each row of \(\mae\) contains a sample shown to the FCNN. In turn we aquire \(x_it_i=5000\) samples. The preprocessed matrix for the CNN, \(\mconv\), is shown in \cref{Eq:CNN_matrix}. We obtain \(v_i=40\) samples, each containing a matrix \(\pi_{CNN}^{x_i\times t_i}\) holding the information about \(f(x,t)\) for a fixed point in \(v\). POD uses the \(mae\) matrix or its transposition.\\
+\begin{minipage}{.55\linewidth}
 	\begin{equation}
-	\Pi_{AE} = \begin{bmatrix}
+	\mae = \begin{bmatrix}
 	f(v_1,t_1,x_1)&\cdots &f(v_n,t_1,x_1) \\
 	f(v_1,t_1,x_2)&\cdots &f(v_n,t_1,x_2) \\
 	\vdots& \vdots & \vdots\\
@@ -59,24 +60,23 @@ One is a slip flow with \(Kn=0.01\). For this kind of rarefaction the
 	\vdots & \vdots & \vdots\\
 	f(v_1,t_n,x_n)&\cdots &f(v_n,t_n,x_n)
 	\end{bmatrix}
-	\label{AE_matrix}
-	\end{equation}\break
-	\begin{equation}
-	\Pi_{Conv}= \begin{bmatrix}
-	n_{Filters}&f(v_1,\textbf{t},\textbf{x})\\
-	n_{Filters}&f(v_2,\textbf{t},\textbf{x})\\
-	\vdots&\vdots\\
-	n_{Filters}&f(v_n,\textbf{t},\textbf{x})
-	\end{bmatrix}
-	\label{Conv_matrix}
+	\label{Eq:AE_matrix}
 	\end{equation}
-\end{multicols}
-\subsection{Reduced Basis by POD and Autoencoder}
-The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
-\begin{equation}
-\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
-\label{Eq:EckardYoung}
-\end{equation} 
+\end{minipage}%
+\begin{minipage}{.45\linewidth}
+	\begin{equation}
+	\mconv= \begin{bmatrix}
+	n_{Filters},&f(v_1,\textbf{t},\textbf{x})\\
+	n_{Filters},&f(v_2,\textbf{t},\textbf{x})\\
+	\vdots&\vdots\\
+	n_{Filters},&f(v_n,\textbf{t},\textbf{x})
+	\end{bmatrix}
+	\label{Eq:CNN_matrix}
+	\end{equation}
+\end{minipage}\\
+In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter.
+\subsection{Contructing the mapping}
+
 \begin{figure}[!htbp]
 	\input{Figures/SVD/CumSum_Rare.tex}
 	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}

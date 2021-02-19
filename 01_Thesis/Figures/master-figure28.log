@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 FEB 2021 19:52
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  19 FEB 2021 12:03
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1606,12 +1606,17 @@ LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 33.
 LaTeX Warning: Reference `Tab:Setup' on page 1 undefined on input line 36.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 63--64
+LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 36
+.
 
- []
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 50.
 
 
-LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 75.
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 51.
+
+
+LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 78.
 
 (./Figures/SVD/CumSum_Rare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1621,32 +1626,32 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 116.
 
 
 
-LaTeX Warning: Citation `Dret2016' on page 12 undefined on input line 113.
+LaTeX Warning: Citation `Dret2016' on page 12 undefined on input line 116.
 
 
-LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 116.
 
 
 
-LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 116.
 
 
 LaTeX Warning: Reference `Eq. Characteristics' on page 1 undefined on input line
- 124.
+ 127.
 
 
-LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 124.
+LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 127.
 
 
 
-LaTeX Warning: Reference `Results' on page 1 undefined on input line 125.
+LaTeX Warning: Reference `Results' on page 1 undefined on input line 128.
 
 
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 113--126
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 116--129
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
@@ -2251,14 +2256,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41699 strings out of 481365
- 156261,4101490 words of node,token memory allocated
- 810 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 91 attribute,
- 62 glue_spec, 47 attribute_list, 2 write nodes
-   avail lists: 1:2,2:14600,3:4453,4:84,5:611,6:39,7:13083,8:64,9:775,10:30,11:7
+ 41700 strings out of 481365
+ 156261,4921788 words of node,token memory allocated
+ 795 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
+ 62 glue_spec, 46 attribute_list, 2 write nodes
+   avail lists: 1:4,2:14600,3:4453,4:84,5:611,6:39,7:13083,8:63,9:775,10:30,11:7
 47
- 56543 multiletter control sequences out of 65536+600000
+ 56544 multiletter control sequences out of 65536+600000
  104 fonts using 8935491 bytes
  83i,22n,140p,2460b,2405s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
