@@ -76,16 +76,17 @@ The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct r
 \end{minipage}\\
 In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter.
 \subsection{Contructing the mapping}
-
 \begin{figure}[!htbp]
+\begin{subfigure}{.45\textwidth}
 	\input{Figures/SVD/CumSum_Rare.tex}
-	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}
+	\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}
 	\label{Fig:CumSum_Rare}
-\end{figure}
-\begin{figure}[!htbp]
+\end{subfigure}\hfill
+\begin{subfigure}{.45\textwidth}
 	\input{Figures/SVD/CumSum_Hydro.tex}
-	\caption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the hydrodynamic regime.}
+	\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the hydrodynamic regime.}
 	\label{Fig:CumSum_Hydro}
+\end{subfigure}
 \end{figure}
 \begin{table}[!htbp]\centering
 \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }

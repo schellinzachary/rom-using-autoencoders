@@ -1,7 +1,7 @@
 % This file was created by tikzplotlib v0.9.6.
 \begin{tikzpicture}
 
-\begin{groupplot}[group style={group size=2 by 1, horizontal sep=2cm, vertical sep=2cm}]
+\begin{groupplot}[group style={group size=2 by 1, horizontal sep=1cm, vertical sep=2cm}]
 \nextgroupplot[
 log basis y={10},
 tick align=outside,
@@ -15,10 +15,13 @@ ylabel={\(\sigma\)},
 ymin=2.86160392849359e-16, ymax=240.32740800328,
 ymode=log,
 ytick style={color=black},
-width=.2\textwidth,
-height=.2\textwidth
+ytick={1e1,1e-3,1e-11,1e-15},
+width=.55\textwidth,
+height=.7\textwidth,
+y label style={yshift=-2.5em},
+grid=both
 ]
-\addplot [semithick, black, mark=o, mark size=2, mark options={solid}]
+\addplot [semithick, red, mark=o, mark size=2, mark options={solid}]
 table {%
 0 36.8185958349281
 1 5.78483852846218
@@ -70,13 +73,16 @@ xlabel={\(k\)},
 xmin=-1.95, xmax=40.95,
 xtick style={color=black},
 y grid style={white!69.0196078431373!black},
-ylabel={\(Cumultative Energy\)},
+ylabel={cum-sum},
 ymin=0.760859233580134, ymax=1.0113876555438,
 ytick style={color=black},
-width=.2\textwidth,
-height=.2\textwidth
+ytick={1,.8},
+width=.55\textwidth,
+height=.7\textwidth,
+y label style={yshift=-2em},
+grid=both
 ]
-\addplot [semithick, black, mark=o, mark size=2, mark options={solid}]
+\addplot [semithick, red, mark=o, mark size=2, mark options={solid}]
 table {%
 0 0.772246889123937
 1 0.893580238655189

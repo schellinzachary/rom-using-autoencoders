@@ -25,5 +25,5 @@
 \contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{26}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{41}{appendix.B}%
 \contentsline {subsection}{\numberline {B.0.1}Appendix B}{41}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{44}{appendix*.46}%
+\contentsline {chapter}{Bibliography}{44}{appendix*.45}%
 \contentsfinish 
