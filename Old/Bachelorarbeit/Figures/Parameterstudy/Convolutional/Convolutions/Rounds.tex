@@ -1,0 +1,17 @@
+
+\begin{tikzpicture}[node distance = 2cm,>=latex,text height=1.5ex,text depth=0.25ex,scale=.5,every node/.style={scale=.8}]
+	 \node [cube] (1) {K};
+	 \node [cube,below of=1] (2) {C};
+	 \node [cube,below of=2] (3) {S A};
+ 	 \node [cube,below of=3] (4) {C A};
+	 \node [cube,below of=4] (5) {F};
+
+\path[->] (1) -- (2);
+\path[->] (2) -- (3);
+\path[->] (3) -- (4);
+\path[->] (4) -- (5);
+
+%(2) edge[thick] (3)
+%(3) edge[thick] (4)
+%(4) edge[thick] (5);
+\end{tikzpicture}

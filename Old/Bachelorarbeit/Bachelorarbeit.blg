@@ -1,0 +1,66 @@
+This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Bachelorarbeit.aux
+White space in argument---line 81 of file Bachelorarbeit.aux
+ : \citation{Pytorch
+ :                   website}
+I'm skipping whatever remains of this command
+The style file: unsrt.bst
+Database file #1: Bibliography.bib
+Warning--I didn't find a database entry for "bibid"
+Warning--I didn't find a database entry for "the"
+Warning--empty journal in BGK
+Warning--empty publisher in Franz
+Warning--empty publisher in Kutz
+Warning--empty journal in Bernard
+Warning--empty journal in Carlberg
+Warning--empty journal in Rumelhart
+Warning--empty journal in Ballard
+Warning--empty journal in Rifai2011
+Warning--can't use both author and editor fields in Rifai_2011a
+Warning--empty journal in rifai2012generative
+Warning--empty journal in puppo2019kinetic
+Warning--empty journal in dumoulin2018guide
+Warning--empty journal in CFD1
+You've used 16 entries,
+            1791 wiz_defined-function locations,
+            532 strings with 5710 characters,
+and the built_in function-call counts, 2665 in all, are:
+= -- 197
+> -- 151
+< -- 0
++ -- 57
+- -- 41
+* -- 133
+:= -- 467
+add.period$ -- 49
+call.type$ -- 16
+change.case$ -- 11
+chr.to.int$ -- 0
+cite$ -- 29
+duplicate$ -- 139
+empty$ -- 260
+format.name$ -- 41
+if$ -- 570
+int.to.chr$ -- 0
+int.to.str$ -- 16
+missing$ -- 21
+newline$ -- 84
+num.names$ -- 16
+pop$ -- 84
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 46
+stack$ -- 0
+substring$ -- 25
+swap$ -- 7
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 13
+while$ -- 18
+width$ -- 18
+write$ -- 155
+(There was 1 error message)

@@ -1,0 +1,14 @@
+\frametitle{Using Autoencoders for Reduced Order Modeling}
+			\framesubtitle{Layer Options and Framework}
+			Deep learning framework
+			\begin{itemize}
+				\item Tensorflow with Keras
+			\end{itemize}\\
+			Layer Options
+			\begin{itemize}
+				\item Using three dense layers for encoding and decoding.
+				\item Activation function for each layer:"relu" - rectified linear unit
+				\item reducing the input from (8000x25) to (32x25) (25 timesteps)
+				\item Optimizer "adadelta" $\rightarrow$ learning rate is adapted automatically compared to sgd
+				\item Loss-function "binary-crossentropy"
+			\end{itemize}	
