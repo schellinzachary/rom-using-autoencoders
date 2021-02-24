@@ -29,24 +29,32 @@ def load_data(qty):
 #Perform POD
 ############
 def POD(c):
+	ls = []
 	u, s, vh = np.linalg.svd(c.T,full_matrices=True) #s Singularvalues
-	return(s)
+	S = np.diagflat(s)
+	for i in range(len(s)):
+		rec = u[:,:i]@S[:i,:i]@vh[:i,:]
+		l2 = np.linalg.norm((c.T - rec).flatten())/np.linalg.norm(c.T.flatten()) # calculatre L2-Norm Error
+		ls.append(l2)
+	return s, ls
 
 #Plot cumultative energy and singular values
 ###########################################
 c_r = load_data("hy")
 c_h = load_data("rare")
-s_r = POD(c_r)
-s_h = POD(c_h)
-print(s_h)
+s_r, ls_r = POD(c_r)
+s_h, ls_h = POD(c_h)
 k = range(len(s_h))
-fig, ax = plt.subplots(2,2)
-for idx, frac in enumerate([s_h,s_r]):
-	ax[0,0].semilogy(k,frac,'.-''k')
-	ax[0,0].ylabel('sigma')
-	ax[0,0].xlabel('k')
-	plt.plot(k,np.cumsum(s)/np.sum(s),'.-''r')
-	plt.ylabel('Cumultative Energy')
-	plt.xlabel('k')
+fig, ax = plt.subplots(2,1)
+lvl = ["hy","rare"]
+for idx, frac in enumerate([[s_h,ls_h],[s_r,ls_r]]):
+	ax[0].semilogy(k,frac[0],'.-''k')
+	ax[0].set_ylabel('sigma')
+	ax[0].set_xlabel('k')
+	ax[1].plot(k,np.cumsum(frac[0])/np.sum(frac[0]),'.-''r')
+	ax[1].set_ylabel('Cumultative Energy')
+	ax[1].set_xlabel('k')
 	#tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/SVD/CumSum_Hydro.tex')
-	plt.show()
+	for i in k:
+		print(lvl[idx],i, frac[1][i])
+plt.show()

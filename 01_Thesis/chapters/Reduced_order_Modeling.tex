@@ -76,39 +76,32 @@ The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct r
 \end{minipage}\\
 In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter.
 \subsection{Contructing the mapping}
+\begin{table}[!htbp]
+	\centering
+	\caption{}
+	\begin{tabular*}{16.5cm}{ @{\extracolsep{\fill}} c c c c c c c c c c c @{} }
+		\toprule
+		Intrinsic variables&  2 & 3 &  4  &  5  & 6  & 7  & 8  & 9  & 10 \\   
+		\hline
+		\(\L2\)-Error for \(\rare\)& 0.0750 & 0.0205 &0.0081& 0.0030& 0.0013& 0.0006& 0.0002& 6.2\(e^{-5}\)& 2.7\(e^{-5}\) \\
+		\(\L2\)-Error for \(\hy\)&0.0853 & 0.0327 & 0.0153 & 0.0087 & 0.0046 & 0.0021 & 0.0014 & 0.0005 & 0.0003\\
+		\bottomrule
+	\end{tabular*} \label{Tab:NumIntVar}
+\end{table}
 \begin{figure}[!htbp]
+	\begin{subfigure}{.45\textwidth}
+		\input{Figures/SVD/CumSum_Hydro.tex}
+		\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cum-sum\grqq{} over \(k\) (right) for \(\hy\).}
+		\label{Fig:CumSum_Hydro}
+	\end{subfigure}\hfill
 \begin{subfigure}{.45\textwidth}
 	\input{Figures/SVD/CumSum_Rare.tex}
-	\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the rarefied regime.}
+	\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cum-sum\grqq{} over \(k\) (right) for \(\rare\).}
 	\label{Fig:CumSum_Rare}
-\end{subfigure}\hfill
-\begin{subfigure}{.45\textwidth}
-	\input{Figures/SVD/CumSum_Hydro.tex}
-	\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values left and \(cumultative\) \(energy\) over \(k\) right for the gas flow in the hydrodynamic regime.}
-	\label{Fig:CumSum_Hydro}
 \end{subfigure}
+\caption{Comparison of singular variables \(\sigma\) and cumulative energy for \(hy\) and \(\rare\). The decay of the singular values can be used to estimate the decay of the Kolmogorov n-width.}
 \end{figure}
-\begin{table}[!htbp]\centering
-\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
-	\hline
-	Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ %[.5ex]
-	\hline
-	Error & 0.0327 & 0.0153 & 0.0087 & 0.0046 & 0.0021 & 0.0014 & 0.0005 & 0.0003\\ \hline
-\end{tabular}
-\caption{L2-Error for different numbers of intrinsic variables for the rarefied gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
-\label{Tab:Intrinsic units svd rare}
-\end{table}
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
-		\hline
-		Intrinsic variables  & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\ %[.5ex]
-		\hline
-		Error & 0.0205 & 0.0081 & 0.0030 & 0.0013 & 0.0006 & 0.0002 & 6.2\(e^{-5}\) & 2.7\(e^{-5}\)\\ \hline
-	\end{tabular}
-	\caption{L2-Error for different numbers of intrinsic variables for the hydrodynamic gas flow. Calculations with two intrinsic variables are also performed, but not shown here because two intrinsic variables is considered trivial.}
-	\label{Tab:Intrinsic units svd hydro}
-\end{table}
-\textbf{}\subsection{Online Phase}
+\subsection{Online Phase}
 loremipsu
 \subsection{Reduced Order Model}\label{Reduced Order Model}
 The compression of the input data $y_0$ yields a code $C \in \mathbb{R}^{ix5000}$, composed  of the instrinsic variables \(c_i\). The index \(i\) corresponds to the i-th intrinsic variable whereas their number is given by the input data. Each of them describes the transport of a discontinuity as seen in \cref{Fig:Code_Fully}. Hence the expolitability of the code in terms of constructing a ROM is not provided. On that account the method of characteristics \cite{Dret2016} provides a means to bypass this shortage. It is necessary for $c_i(x,t)$ to satisfy the conservative condition \cref{Eq. Mass_Const} and the transport equation \cref{Eq. Transport}.\\
