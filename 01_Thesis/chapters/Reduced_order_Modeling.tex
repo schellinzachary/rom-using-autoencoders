@@ -30,7 +30,7 @@ and gives the worst best approximation error for elements of \(W\). The converge
 \begin{equation}
 	d_n(W) \leq \frac{1}{2} n^{-1/2},
 \end{equation}
-where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables\cite{ohlberger2015reduced}. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as depicted in \cref{Ch:BGK}.   
+where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables\cite{ohlberger2015reduced}. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as described in \cref{Ch:BGK}: Diffusion dominates the behavior  
 \section{Offline Phase}
 \subsection{Full order BGK-model}\label{Sec: FOM}
 The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}.
@@ -73,23 +73,36 @@ The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct r
 	\end{bmatrix}
 	\label{Eq:CNN_matrix}
 	\end{equation}
-\end{minipage}\\
+\end{minipage}\\\\
 In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter.
 \subsection{Contructing the mapping}
-With the FOM solution at hand it is possible to contruct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). For the mapping \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. Since this thesis mainly focuses on methods from machine learning, POD serves a comparative measure. To continue, the intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\). The former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
-As announced earlier, does the decay of the Kolmogorov n-width depend on the formation of sharp shock fronts, which in turn depends on the level of rarefaction in the Sod shock tube, as well as on the advection character of the gas flow. 
+With the FOM solution at hand it is possible to construct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). For \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. Since this thesis mainly focuses on methods from machine learning, POD serves as a comparative measure. To continue, the intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\). The former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
+In order to choose the number of intrinsic variables (sizes of \(\idhy\) and \(\idrare\)) we will utilized POD as a reference framework. Therefore the singular values \(\sigma\), as well as, the cumulative energy (cusum-e)\\
+\noindent \begin{minipage}{.3\linewidth}
+	\begin{equation}
+	\textrm{cusum-e} = \frac{\textrm{cusum}}{\sum_i \sigma_i}
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{.7\linewidth}
+	\begin{equation}
+			\textrm{with} \qquad\qquad(\textrm{cusum})_i =(\text{cusum})_{i-1} + \sigma_{i}
+	\end{equation}
+\end{minipage}\\\\
+over the singular values, are employed. From a physical point of view the number of intrinsic variables for \(\hy\) should be in total not more than three, as a slip-flow can be described in terms of pressure \(p\), macroscopic velocity \(u\) and temperrture \(T\), for example. A comparison for both levels of rarefaction is provided in \cref{Fig:CUSUM-e}. \\
+As announced earlier, does the decay of the Kolmogorov n-width depend on the formation of sharp shock fronts, which in turn depends on the level of rarefaction in the Sod shock tube. Rarefied gases exhibit a diffusion dominated behavior whereas with increasing compression, the advection behavior becomes gradually dominant, see \cref{Ch:BGK}. 
 \begin{figure}[!htbp]
 	\begin{subfigure}{.45\textwidth}
 		\input{Figures/SVD/CumSum_Hydro.tex}
-		\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cum-sum\grqq{} over \(k\) (right) for \(\hy\).}
-		\label{Fig:CumSum_Hydro}
+		\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cusum-e\grqq{} over \(k\) (right) for \(\hy\).}
+		\label{Fig:CumSum_Rare}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.45\textwidth}
 		\input{Figures/SVD/CumSum_Rare.tex}
-		\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cum-sum\grqq{} over \(k\) (right) for \(\rare\).}
-		\label{Fig:CumSum_Rare}
+		\subcaption{Sigular values \(\sigma\) over \(k\) number of singular values (left) and cumulative energy, here labeled as \glqq cusum-e\grqq{} over \(k\) (right) for \(\rare\).}
+		\label{Fig:CumSum_Hydro}
 	\end{subfigure}
 	\caption{Comparison of singular variables \(\sigma\) and cumulative energy for \(hy\) and \(\rare\). The decay of the singular values can be used to estimate the decay of the Kolmogorov n-width.}
+	\label{Fig:CUSUM-e}
 \end{figure}
 \begin{table}[!htbp]
 	\centering

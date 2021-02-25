@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 FEB 2021 18:17
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 FEB 2021 21:28
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1600,6 +1600,10 @@ LaTeX Warning: Reference `Sec:AE' on page 1 undefined on input line 25.
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 29.
 
 
+LaTeX Warning: Citation `ohlberger2015reduced' on page 11 undefined on input lin
+e 33.
+
+
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 33.
 
 
@@ -1624,46 +1628,69 @@ LaTeX Warning: Reference `Eq:AE_matrix' on page 1 undefined on input line 51.
 
 LaTeX Warning: Reference `Eq:CNN_matrix' on page 1 undefined on input line 51.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--78
+
+ []
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 79.
+
+
+LaTeX Warning: Reference `Fig:CUSUM-e' on page 1 undefined on input line 91.
+
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 92.
+
 (./Figures/SVD/CumSum_Hydro.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/SVD/CumSum_Rare.tex
 \openout4 = Figures/master-figure6.dpth
 
-Package pgfplots info on input line 23: Using 'lua backend=false' for axis: ymod
+Package pgfplots info on input line 25: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
 [12
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 115.
-
-
-
-LaTeX Warning: Citation `Dret2016' on page 12 undefined on input line 115.
+Overfull \hbox (3.39375pt too wide) in alignment at lines 110--117
+[] [] [] [] [] [] [] [] [] [] []
+ []
 
 
-LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 115.
+Underfull \hbox (badness 10000) in paragraph at lines 79--119
+
+ []
+
+
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 123.
 
 
 
-LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 115.
+LaTeX Warning: Citation `Dret2016' on page 12 undefined on input line 123.
+
+
+LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 123.
+
+
+
+LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 123.
 
 
 LaTeX Warning: Reference `Eq. Characteristics' on page 1 undefined on input line
- 126.
+ 134.
 
 
-LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 126.
+LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 134.
 
 
 
-LaTeX Warning: Reference `Results' on page 1 undefined on input line 127.
+LaTeX Warning: Reference `Results' on page 1 undefined on input line 135.
 
 
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 115--128
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 123--136
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
@@ -1687,7 +1714,7 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `Tab:L2' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 14 undefined on input line 23.
+LaTeX Warning: Citation `Goodfellow' on page 15 undefined on input line 23.
 
 
 LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 23.
@@ -1699,7 +1726,7 @@ LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 24.
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 24.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 14 undefined on input line 24.
+LaTeX Warning: Citation `Goodfellow' on page 15 undefined on input line 24.
 
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1712,7 +1739,7 @@ LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 30.
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 30.
+LaTeX Warning: Citation `Carlberg' on page 15 undefined on input line 30.
 
 
 LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 30.
@@ -1729,7 +1756,7 @@ LaTeX Warning: Reference `Fig:CumSum_Rare' on page 1 undefined on input line 30.
 LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 30.
 
 
-LaTeX Warning: Citation `Kutz' on page 14 undefined on input line 30.
+LaTeX Warning: Citation `Kutz' on page 15 undefined on input line 30.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 31.
@@ -1881,7 +1908,7 @@ LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
 e 80.
 
 
-LaTeX Warning: Citation `BGK' on page 21 undefined on input line 108.
+LaTeX Warning: Citation `BGK' on page 22 undefined on input line 108.
 
 
 LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
@@ -2262,22 +2289,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41734 strings out of 481365
- 156267,4921788 words of node,token memory allocated
- 795 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
- 62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5436,3:1198,4:83,5:611,6:38,7:13082,8:64,9:773,10:30,11:74
+ 41737 strings out of 481365
+ 156265,4921788 words of node,token memory allocated
+ 819 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 97 attribute,
+ 62 glue_spec, 50 attribute_list, 2 write nodes
+   avail lists: 1:3,2:5713,3:1231,4:83,5:611,6:38,7:13082,8:64,9:773,10:30,11:74
 7
- 56571 multiletter control sequences out of 65536+600000
+ 56574 multiletter control sequences out of 65536+600000
  111 fonts using 9514427 bytes
- 83i,15n,140p,2460b,2587s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,16n,140p,2460b,2589s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure6.pdf (1 page, 59859 bytes).
+Output written on Figures/master-figure6.pdf (1 page, 61469 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream

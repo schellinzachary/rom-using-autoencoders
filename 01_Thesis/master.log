@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 FEB 2021 15:21
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 FEB 2021 22:09
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1562,44 +1562,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 
-<./Figures/master-figure3.pdf><./Figures/master-figure4.pdf>] [11]
-(./Figures/SVD/CumSum_Hydro.tex
+<./Figures/master-figure3.pdf><./Figures/master-figure4.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 36--78
+
+ []
+
+[11] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure5' is up-to-date. ======
-)
-Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--84
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--84
-
- []
-
-(./Figures/SVD/CumSum_Rare.tex
-===== Image 'Figures/master-figure6' is up-to-date. ======
 
 Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--130
 [][] 
  []
 
+) (./Figures/SVD/CumSum_Rare.tex
+===== Image 'Figures/master-figure6' is up-to-date. ======
 )
-Overfull \hbox (3.39375pt too wide) in alignment at lines 97--104
+Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--101
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--101
+
+ []
+
+
+Overfull \hbox (3.39375pt too wide) in alignment at lines 110--117
 [] [] [] [] [] [] [] [] [] [] []
  []
 
 
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 110.
+Underfull \hbox (badness 10000) in paragraph at lines 79--119
+
+ []
+
+[12] [13<./Figures/master-figure5.pdf><./Figures/master-figure6.pdf>]
+
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 123.
 
 
 
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 110--123
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 123--136
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
-[12] (./Charts/ROM.tex
+(./Charts/ROM.tex
 ===== Image 'Figures/master-figure7' is up-to-date. ======
-)) [13<./Figures/master-figure5.pdf><./Figures/master-figure6.pdf>] [14<./Figure
-s/master-figure7.pdf>]
+)) [14<./Figures/master-figure7.pdf>]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1941,14 +1950,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42509 strings out of 481365
+ 42513 strings out of 481365
  125007,10205817 words of node,token memory allocated
- 795 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
- 62 glue_spec, 46 attribute_list, 2 write nodes
+ 819 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 97 attribute,
+ 62 glue_spec, 50 attribute_list, 2 write nodes
    avail lists: 1:3,2:2351,3:373,4:83,5:614,6:51,7:13205,8:66,9:762,10:30,11:758
 
- 56175 multiletter control sequences out of 65536+600000
+ 56177 multiletter control sequences out of 65536+600000
  109 fonts using 9350571 bytes
  81i,14n,138p,2435b,642s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
@@ -1966,10 +1975,10 @@ e1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (49 pages, 7348305 bytes).
+Output written on master.pdf (49 pages, 7353202 bytes).
 
-PDF statistics: 2530 PDF objects out of 2984 (max. 8388607)
- 2054 compressed objects within 21 object streams
- 174 named destinations out of 1000 (max. 131072)
+PDF statistics: 2534 PDF objects out of 2984 (max. 8388607)
+ 2058 compressed objects within 21 object streams
+ 176 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

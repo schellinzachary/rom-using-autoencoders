@@ -47,14 +47,17 @@ s_h, ls_h = POD(c_h)
 k = range(len(s_h))
 fig, ax = plt.subplots(2,1)
 lvl = ["hy","rare"]
+labels = ["o-","-v"]
 for idx, frac in enumerate([[s_h,ls_h],[s_r,ls_r]]):
-	ax[0].semilogy(k,frac[0],'.-''k')
+	ax[0].semilogy(k,frac[0],labels[idx],label='%s'%lvl[idx])
 	ax[0].set_ylabel('sigma')
 	ax[0].set_xlabel('k')
-	ax[1].plot(k,np.cumsum(frac[0])/np.sum(frac[0]),'.-''r')
+	ax[1].plot(k,np.cumsum(frac[0])/np.sum(frac[0]),labels[idx],label='%s'%lvl[idx])
 	ax[1].set_ylabel('Cumultative Energy')
 	ax[1].set_xlabel('k')
 	#tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/SVD/CumSum_Hydro.tex')
-	for i in k:
-		print(lvl[idx],i, frac[1][i])
+	# for i in k:
+	# 	print(lvl[idx],i, frac[1][i])
+	ax[0].legend()
+	ax[1].legend()
 plt.show()
