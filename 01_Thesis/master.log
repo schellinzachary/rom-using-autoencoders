@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 FEB 2021 19:44
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 FEB 2021 15:21
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1563,19 +1563,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 <./Figures/master-figure3.pdf><./Figures/master-figure4.pdf>] [11]
-Overfull \hbox (3.39375pt too wide) in alignment at lines 82--89
-[] [] [] [] [] [] [] [] [] [] []
- []
-
 (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure5' is up-to-date. ======
 )
-Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--94
+Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--84
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--94
+Underfull \hbox (badness 10000) in paragraph at lines 2--84
 
  []
 
@@ -1587,12 +1583,16 @@ Overfull \hbox (5.47186pt too wide) in paragraph at lines 2--130
  []
 
 )
+Overfull \hbox (3.39375pt too wide) in alignment at lines 97--104
+[] [] [] [] [] [] [] [] [] [] []
+ []
 
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 107.
+
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 110.
 
 
 
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 107--120
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 110--123
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
@@ -1950,7 +1950,7 @@ Here is how much of LuaTeX's memory you used:
 
  56175 multiletter control sequences out of 65536+600000
  109 fonts using 9350571 bytes
- 81i,14n,138p,2435b,638s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,14n,138p,2435b,642s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -1966,10 +1966,10 @@ e1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (49 pages, 7346859 bytes).
+Output written on master.pdf (49 pages, 7348305 bytes).
 
-PDF statistics: 2528 PDF objects out of 2984 (max. 8388607)
- 2052 compressed objects within 21 object streams
+PDF statistics: 2530 PDF objects out of 2984 (max. 8388607)
+ 2054 compressed objects within 21 object streams
  174 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 
