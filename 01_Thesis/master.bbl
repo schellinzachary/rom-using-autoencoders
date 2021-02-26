@@ -65,6 +65,15 @@ M.~Ohlberger and S.~Rave, \emph{Reduced basis methods: Success, limitations and
   future challenges},  \href{https://arxiv.org/abs/1511.02021}{{\ttfamily
   1511.02021}}.
 
+\bibitem{schaaf}
+S.~A. {Schaaf}, \emph{{Mechanics of Rarefied Gases}},
+  \href{http://dx.doi.org/10.1007/978-3-662-10109-4_5}{\emph{Handbuch der
+  Physik} {\bfseries 3} (Jan., 1963) 591--624}.
+
+\bibitem{NumaKUL}
+J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
+  equations.'' 2020.
+
 \bibitem{Dret2016}
 H.~L. Dret and B.~Lucquin, \emph{Partial Differential Equations: Modeling,
   Analysis and Numerical Approximation -}.

@@ -18,12 +18,12 @@
 \contentsline {section}{\numberline {4.1}Offline Phase}{11}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{11}{subsection.4.1.1}%
 \contentsline {subsection}{\numberline {4.1.2}Contructing the mapping}{12}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Online Phase}{14}{subsection.4.1.3}%
-\contentsline {subsection}{\numberline {4.1.4}Reduced Order Model}{14}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.3}Online Phase}{13}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Reduced Order Model}{13}{subsection.4.1.4}%
 \contentsline {chapter}{\numberline {5}Results}{15}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{20}{subsection.5.0.1}%
 \contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{26}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{41}{appendix.B}%
 \contentsline {subsection}{\numberline {B.0.1}Appendix B}{41}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{44}{appendix*.44}%
+\contentsline {chapter}{Bibliography}{44}{appendix*.45}%
 \contentsfinish 
