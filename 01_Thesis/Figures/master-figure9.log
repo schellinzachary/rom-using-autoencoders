@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 16:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 20:02
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1680,107 +1680,48 @@ LaTeX Warning: Citation `BGK' on page 12 undefined on input line 112.
 LaTeX Warning: Citation `Bernard' on page 12 undefined on input line 112.
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 112.
 
 
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 113.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 113.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 112.
 
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 119.
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 118.
+
+
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 118.
+
+
+LaTeX Warning: Citation `Carlberg' on page 12 undefined on input line 118.
+
+
+LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 118.
+
+
+
+LaTeX Warning: Citation `Kutz' on page 12 undefined on input line 118.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 119.
-
-
-LaTeX Warning: Citation `Carlberg' on page 12 undefined on input line 119.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 119.
-
-
-LaTeX Warning: Reference `Fig:CumSum_Hydro' on page 1 undefined on input line 11
-9.
-
-
-LaTeX Warning: Reference `Fig:CumSum_Rare' on page 1 undefined on input line 119
-.
-
-
-LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 119.
-
-
-
-LaTeX Warning: Citation `Kutz' on page 12 undefined on input line 119.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
 
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 121.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 121.
-
-
-LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 121.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 121.
-
-
-Overfull \hbox (3.39375pt too wide) in alignment at lines 125--132
+Overfull \hbox (3.39375pt too wide) in alignment at lines 124--131
 [] [] [] [] [] [] [] [] [] [] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--134
+Underfull \hbox (badness 10000) in paragraph at lines 84--133
 
  []
 
-
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 138.
-
-
-
-LaTeX Warning: Citation `Dret2016' on page 14 undefined on input line 138.
-
-
-LaTeX Warning: Reference `Eq. Mass_Const' on page 1 undefined on input line 138.
-
-
-
-LaTeX Warning: Reference `Eq. Transport' on page 1 undefined on input line 138.
-
-
-LaTeX Warning: Reference `Eq. Characteristics' on page 1 undefined on input line
- 149.
-
-
-LaTeX Warning: Reference `Fig. Flowchart' on page 1 undefined on input line 149.
-
-
-
-LaTeX Warning: Reference `Results' on page 1 undefined on input line 150.
-
-
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 138--151
-[]$$[]$ \T1/lmr/m/n/10.95 The
- []
-
-(./Charts/ROM.tex
-\openout4 = Figures/master-figure9.dpth
- [14
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])) (./chapters/Results.tex
+) (./chapters/Results.tex
 Chapter 5.
 
 LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 7.
@@ -1797,7 +1738,7 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `Tab:L2' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 23.
+LaTeX Warning: Citation `Goodfellow' on page 15 undefined on input line 23.
 
 
 LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 23.
@@ -1811,9 +1752,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--24
 LaTeX Warning: Reference `Fig:ErrTime' on page 1 undefined on input line 25.
 
 (./Figures/Results/ErrTime.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
+\openout4 = Figures/master-figure9.dpth
+ [15
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
 LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 31.
 
@@ -1942,7 +1886,7 @@ LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
 e 80.
 
 
-LaTeX Warning: Citation `BGK' on page 21 undefined on input line 108.
+LaTeX Warning: Citation `BGK' on page 20 undefined on input line 108.
 
 
 LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
@@ -2323,23 +2267,26 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41673 strings out of 481365
- 125007,4921788 words of node,token memory allocated
- 831 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 101 attribute
-, 62 glue_spec, 52 attribute_list, 2 write nodes
-   avail lists: 1:2,2:4520,3:848,4:83,5:613,6:38,7:13082,8:64,9:773,10:30,11:747
- 56501 multiletter control sequences out of 65536+600000
+ 41753 strings out of 481365
+ 156259,4921788 words of node,token memory allocated
+ 795 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
+ 62 glue_spec, 46 attribute_list, 2 write nodes
+   avail lists: 1:3,2:8461,3:1923,4:83,5:611,6:38,7:13082,8:64,9:773,10:30,11:74
+7
+ 56590 multiletter control sequences out of 65536+600000
  111 fonts using 9514427 bytes
- 83i,19n,140p,2460b,1357s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/tex
-mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
-8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
-Output written on Figures/master-figure9.pdf (1 page, 38673 bytes).
+ 83i,22n,140p,2460b,2749s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
+mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
+sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Figures/master-figure9.pdf (1 page, 66177 bytes).
 
-PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
