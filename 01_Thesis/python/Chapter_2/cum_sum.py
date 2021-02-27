@@ -30,7 +30,7 @@ def load_data(qty):
 ############
 def POD(c):
 	ls = []
-	u, s, vh = np.linalg.svd(c.T,full_matrices=True) #s Singularvalues
+	u, s, vh = np.linalg.svd(c.T,full_matrices=False) #s Singularvalues
 	S = np.diagflat(s)
 	for i in range(len(s)):
 		rec = u[:,:i]@S[:i,:i]@vh[:i,:]
@@ -38,8 +38,27 @@ def POD(c):
 		ls.append(l2)
 	return s, ls
 
+
+#Calculate the difference in derivatives for hy and rare sing. val.
+##################################################################
+c_r = load_data("hy")
+c_h = load_data("rare")
+s_r, ls_r = POD(c_r)
+s_h, ls_h = POD(c_h)
+k = range(1,len(s_h)+1)
+
+grad_h = np.gradient(s_h[0:10])
+grad_r = np.gradient(s_r[0:10])
+
+print("Diff in grad:", np.linalg.norm(grad_h - grad_r)/np.linalg.norm(grad_h))
+
+
+
+
+
+
 #Plot cumultative energy and singular values
-###########################################
+############################################
 c_r = load_data("hy")
 c_h = load_data("rare")
 s_r, ls_r = POD(c_r)
@@ -55,9 +74,10 @@ for idx, frac in enumerate([[s_h,ls_h],[s_r,ls_r]]):
 	ax[1].plot(k,np.cumsum(frac[0])/np.sum(frac[0]),labels[idx],label='%s'%lvl[idx])
 	ax[1].set_ylabel('Cumultative Energy')
 	ax[1].set_xlabel('k')
-	tikzplotlib.save('%s/rom-using-autoencoders/01_Thesis/Figures/SVD/CumSum_test.tex'%home)
+	#tikzplotlib.save('%s/rom-using-autoencoders/01_Thesis/Figures/SVD/CumSum_test.tex'%home)
 	# for i in k:
 	# 	print(lvl[idx],i, frac[1][i])
 	ax[0].legend()
 	ax[1].legend()
 plt.show()
+

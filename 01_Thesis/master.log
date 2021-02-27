@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  26 FEB 2021 22:10
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 16:18
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1475,26 +1475,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--39
 
 
 ] (./Figures/BGK/Kn.tex
-\openout3 = Figures/master-figure1.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure1" "\def\tikzextern
-alrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure1' is up-to-date. ======
 ) (./Figures/BGK/Sod.tex
 ===== Image 'Figures/master-figure2' is up-to-date. ======
 ) (./Figures/BGK/MacroFOMhyvsrare.tex
 ===== Image 'Figures/master-figure3' is up-to-date. ======
 )
-Overfull \hbox (15.18771pt too wide) in paragraph at lines 2--74
+Overfull \hbox (15.18771pt too wide) in paragraph at lines 2--77
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--74
+Underfull \hbox (badness 10000) in paragraph at lines 2--77
 
  []
 
@@ -1574,21 +1566,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 <./Figures/master-figure4.pdf><./Figures/master-figure5.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 36--78
+Underfull \hbox (badness 10000) in paragraph at lines 41--83
 
  []
 
-[11]
-Underfull \hbox (badness 10000) in paragraph at lines 79--93
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 79--93
-
- []
-
-[12] (./Figures/SVD/CumSum_Hydro.tex
+[11] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure6' is up-to-date. ======
 
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
@@ -1598,33 +1580,48 @@ Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
 ) (./Figures/SVD/CumSum_Rare.tex
 ===== Image 'Figures/master-figure7' is up-to-date. ======
 )
-Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--103
+Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--106
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--103
+Underfull \hbox (badness 10000) in paragraph at lines 2--106
 
  []
 
+(./Figures/Results/Var_iv.tex
+\openout3 = Figures/master-figure8.md5
 
-Overfull \hbox (3.39375pt too wide) in alignment at lines 112--119
+\openout3 = master.auxlock
+
+===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
+-error -interaction=batchmode -jobname "Figures/master-figure8" "\def\tikzextern
+alrealjob{master}\input{master}"' ========
+
+\openout3 = master.auxlock
+)
+Overfull \hbox (3.39375pt too wide) in alignment at lines 124--131
 [] [] [] [] [] [] [] [] [] [] []
  []
 
 
-LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 125.
+Underfull \hbox (badness 10000) in paragraph at lines 84--133
+
+ []
+
+[12] [13<./Figures/master-figure6.pdf><./Figures/master-figure7.pdf>]
+
+LaTeX Warning: Reference `Fig:Code_Fully' on page 1 undefined on input line 137.
 
 
 
-Overfull \hbox (21.29138pt too wide) in paragraph at lines 125--138
+Overfull \hbox (21.29138pt too wide) in paragraph at lines 137--150
 []$$[]$ \T1/lmr/m/n/10.95 The
  []
 
-[13<./Figures/master-figure6.pdf><./Figures/master-figure7.pdf>]
-(./Charts/ROM.tex
-===== Image 'Figures/master-figure8' is up-to-date. ======
-)) [14<./Figures/master-figure8.pdf>]
+[14<./Figures/master-figure8.pdf>] (./Charts/ROM.tex
+===== Image 'Figures/master-figure9' is up-to-date. ======
+)) [15] [16<./Figures/master-figure9.pdf>]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1633,35 +1630,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--8
 
  []
 
-(./Figures/Results/Var_iv.tex
-===== Image 'Figures/master-figure9' is up-to-date. ======
-) (./Figures/Results/ErrTime.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--24
+
+ []
+
+(./Figures/Results/ErrTime.tex
 ===== Image 'Figures/master-figure10' is up-to-date. ======
 ) (./Figures/Results/ErrWorst.tex
 ===== Image 'Figures/master-figure11' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--42
+Underfull \hbox (badness 10000) in paragraph at lines 2--34
 
  []
 
-[15
+[17
 
 
 
-] [16<./Figures/master-figure9.pdf>] (./Figures/Results/MacroError.tex
+] (./Figures/Results/MacroError.tex
 ===== Image 'Figures/master-figure12' is up-to-date. ======
-) [17<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>]
+) [18<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>]
 (./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure13' is up-to-date. ======
-) [18<./Figures/master-figure12.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+) [19<./Figures/master-figure12.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
 ===== Image 'Figures/master-figure14' is up-to-date. ======
 )
-Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--65
+Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--57
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--65
+Underfull \hbox (badness 10000) in paragraph at lines 2--57
 
  []
 
@@ -1676,19 +1676,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--65
 ) (./Figures/Results/Rare/Code.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
 )
-Overfull \hbox (38.6866pt too wide) in paragraph at lines 84--85
+Overfull \hbox (38.6866pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
-[19<./Figures/master-figure13.pdf>]
+[20<./Figures/master-figure13.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 87.
+(hyperref)                than one, level fixed on input line 79.
 
-) [20] [21<./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
-[22<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>] [23<./Figures
-/master-figure18.pdf>] [24<./Figures/master-figure19.pdf>]
-(./appendix/appendixA.tex [25
+) [21] [22<./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
+[23<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>] [24<./Figures
+/master-figure18.pdf>] [25<./Figures/master-figure19.pdf>]
+(./appendix/appendixA.tex [26
 
 ]
 Appendix A.
@@ -1709,9 +1709,9 @@ LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
 
 LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 
-[26
+[27
 
-] [27] [28] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+] [28] [29] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure21' is up-to-date. ======
@@ -1884,23 +1884,23 @@ Underfull \hbox (badness 5490) in paragraph at lines 223--226
 [][] []
  []
 
-[29] [30<./Figures/master-figure20.pdf><./Figures/master-figure21.pdf><./Figures
+[30] [31<./Figures/master-figure20.pdf><./Figures/master-figure21.pdf><./Figures
 /master-figure22.pdf><./Figures/master-figure23.pdf><./Figures/master-figure24.p
-df>] [31<./Figures/master-figure25.pdf><./Figures/master-figure26.pdf><./Figures
+df>] [32<./Figures/master-figure25.pdf><./Figures/master-figure26.pdf><./Figures
 /master-figure27.pdf><./Figures/master-figure28.pdf><./Figures/master-figure29.p
-df>] [32<./Figures/master-figure30.pdf><./Figures/master-figure31.pdf><./Figures
+df>] [33<./Figures/master-figure30.pdf><./Figures/master-figure31.pdf><./Figures
 /master-figure32.pdf><./Figures/master-figure33.pdf><./Figures/master-figure34.p
-df><./Figures/master-figure35.pdf>] [33<./Figures/master-figure36.pdf><./Figures
-/master-figure37.pdf>] [34<./Figures/master-figure38.pdf><./Figures/master-figur
+df><./Figures/master-figure35.pdf>] [34<./Figures/master-figure36.pdf><./Figures
+/master-figure37.pdf>] [35<./Figures/master-figure38.pdf><./Figures/master-figur
 e39.pdf><./Figures/master-figure40.pdf><./Figures/master-figure41.pdf><./Figures
-/master-figure42.pdf>] [35<./Figures/master-figure43.pdf><./Figures/master-figur
-e44.pdf>] [36<./Figures/master-figure45.pdf><./Figures/master-figure46.pdf><./Fi
+/master-figure42.pdf>] [36<./Figures/master-figure43.pdf><./Figures/master-figur
+e44.pdf>] [37<./Figures/master-figure45.pdf><./Figures/master-figure46.pdf><./Fi
 gures/master-figure47.pdf><./Figures/master-figure48.pdf><./Figures/master-figur
-e49.pdf><./Figures/master-figure50.pdf>] [37<./Figures/master-figure51.pdf><./Fi
-gures/master-figure52.pdf>] [38<./Figures/master-figure53.pdf><./Figures/master-
+e49.pdf><./Figures/master-figure50.pdf>] [38<./Figures/master-figure51.pdf><./Fi
+gures/master-figure52.pdf>] [39<./Figures/master-figure53.pdf><./Figures/master-
 figure54.pdf><./Figures/master-figure55.pdf><./Figures/master-figure56.pdf><./Fi
 gures/master-figure57.pdf><./Figures/master-figure58.pdf>]
-[39<./Figures/master-figure59.pdf><./Figures/master-figure60.pdf>] [40<./Figures
+[40<./Figures/master-figure59.pdf><./Figures/master-figure60.pdf>] [41<./Figures
 /master-figure61.pdf><./Figures/master-figure62.pdf><./Figures/master-figure63.p
 df>]
 Appendix B.
@@ -1931,14 +1931,14 @@ LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 249.
 
-) [41
+) [42
 
-<./Figures/master-figure64.pdf>] [42<./Figures/master-figure65.pdf><./Figures/ma
-ster-figure66.pdf><./Figures/master-figure67.pdf>] [43<./Figures/master-figure68
+<./Figures/master-figure64.pdf>] [43<./Figures/master-figure65.pdf><./Figures/ma
+ster-figure66.pdf><./Figures/master-figure67.pdf>] [44<./Figures/master-figure68
 .pdf><./Figures/master-figure69.pdf><./Figures/master-figure70.pdf>]
-(./master.bbl [44
+(./master.bbl [45
 
-]) [45] (./back/acknowledgement.tex) [46
+]) [46] (./back/acknowledgement.tex) [47
 
 ]
 (./back/declaration.tex
@@ -1946,7 +1946,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [47]
+) [48]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -1967,14 +1967,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42548 strings out of 481365
+ 42554 strings out of 481365
  125007,10205817 words of node,token memory allocated
- 819 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 97 attribute,
- 62 glue_spec, 50 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2351,3:373,4:83,5:614,6:51,7:13205,8:66,9:762,10:30,11:758
+ 831 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 101 attribute
+, 62 glue_spec, 52 attribute_list, 2 write nodes
+   avail lists: 1:2,2:2419,3:373,4:84,5:649,6:53,7:13205,8:66,9:762,10:30,11:758
 
- 56180 multiletter control sequences out of 65536+600000
+ 56184 multiletter control sequences out of 65536+600000
  109 fonts using 9350571 bytes
  81i,14n,138p,2435b,642s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
@@ -1992,10 +1992,10 @@ e1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (50 pages, 7402732 bytes).
+Output written on master.pdf (51 pages, 7405782 bytes).
 
-PDF statistics: 2572 PDF objects out of 2984 (max. 8388607)
- 2091 compressed objects within 21 object streams
- 180 named destinations out of 1000 (max. 131072)
+PDF statistics: 2574 PDF objects out of 2984 (max. 8388607)
+ 2093 compressed objects within 21 object streams
+ 182 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

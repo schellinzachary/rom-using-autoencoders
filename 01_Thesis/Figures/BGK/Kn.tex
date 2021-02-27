@@ -1,27 +1,19 @@
 \begin{tikzpicture}
 \begin{axis}[
-    y=3cm,            % y unit vector
+    y=5cm,            % y unit vector
     hide y axis,        % hide the y axis
     xmode = log,        % logarithmic x axis
     axis x line*=bottom,% only show the bottom x axis line, without an arrow tip
     xmin=1e-3, xmax=1e2,% range for the x axis
     xlabel = Kn,
-    width=\textwidth,
+    width=\textwidth
 ]
-\addplot [no markers, line width=6pt] table {%
-0.002 1
-0.003 1
-};
-\draw [|<->|,dashed] (axis cs:0.003,1) -- (axis cs: 0.01,1) node[midway,above] {Eueler};
+\addplot [draw=none] coordinates {(0.001,0.9)};
+\draw [decorate,decoration={brace,amplitude=4pt}] (axis cs:0.0008,.8) -- (axis cs: 0.0045,.8) node[rectangle split,rectangle split parts=2,midway,above=6pt] {Euler \nodepart{second} equations};
+\draw [decorate,decoration={brace,amplitude=4pt}] (axis cs:0.0051,.8) -- (axis cs: 0.025,.8) node[rectangle split,rectangle split parts=2,midway,above=6pt] {NSF \nodepart{second} equations};
+\draw [decorate,decoration={brace,amplitude=4pt}] (axis cs:0.035,.8) -- (axis cs: 1.4,.8) node[rectangle split,rectangle split parts=2,midway,above=6pt] {Transition  \nodepart{second} regime};
+\draw [decorate,decoration={brace,amplitude=4pt}] (axis cs:1.5,.8) -- (axis cs: 14,.8) node[rectangle split,rectangle split parts=2,midway,above=6pt] {Kinetic  \nodepart{second} regime};
+\draw [decorate,decoration={brace,amplitude=4pt}] (axis cs:15,.8) -- (axis cs: 150,.8) node[rectangle split,rectangle split parts=2,midway,above=6pt] {Free  \nodepart{second} flight};
+%\draw [<->] (axis cs:0.001,-.8) -- (axis cs: 0.006,-.8) node[midway,fill=white] {Equilibrium};
 \end{axis}
-%\begin{scope}[decoration=brace]
-%	\draw [decorate] (current axis.south-|0.003) -- (current axis.south-|0.01) node[midway,above] {Eueler};
-%\end{scope}
-%\draw [] (axis cs:0.25,2.1) node[above] {\(T\)};
-%\begin{scope}[decoration=brace]
-%\pgfdecorationsegmentamplitude=5pt
-%\draw[decorate] (T2.south east) -- (T0.south west) node[midway,below=\pgfdecorationsegmentamplitude] {Part 1};
-%\draw[decorate] (T14.south east) -- (T3.south west) node[midway,below=\pgfdecorationsegmentamplitude] {Part 2};
-%\draw[decorate] (T20.south east) -- (T15.south west) node[midway,below=\pgfdecorationsegmentamplitude] {Part 3};
-%\end{scope}
 \end{tikzpicture}

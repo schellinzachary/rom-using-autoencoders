@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  26 FEB 2021 22:10
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 11:03
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1377,7 +1377,7 @@ Package pgfplots info on input line 10: Using 'lua backend=false' for axis: xmod
 e=log unsupported (yet).
 
 Package pgfplots Warning: Axis range for axis y is approximately empty; enlargin
-g it (it is [1.0000000000:1.0000000000]) on input line 16.
+g it (it is [0.9:0.9]) on input line 18.
 
  [warning /pgfplots/warning/approx empty range enlarged]
 [4
@@ -2326,20 +2326,20 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41719 strings out of 481365
- 125007,4921788 words of node,token memory allocated
+ 41726 strings out of 481365
+ 125011,4921788 words of node,token memory allocated
  819 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 97 attribute,
  62 glue_spec, 50 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2251,3:338,4:83,5:611,6:38,7:13082,8:64,9:773,10:30,11:747
- 56547 multiletter control sequences out of 65536+600000
+   avail lists: 1:4,2:2440,3:438,4:83,5:611,6:38,7:13082,8:63,9:773,10:30,11:747
+ 56554 multiletter control sequences out of 65536+600000
  111 fonts using 9514427 bytes
- 83i,14n,140p,2460b,2151s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,14n,140p,2460b,2200s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/tex
 mf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
 pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure1.pdf (1 page, 50494 bytes).
+Output written on Figures/master-figure1.pdf (1 page, 54254 bytes).
 
 PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
