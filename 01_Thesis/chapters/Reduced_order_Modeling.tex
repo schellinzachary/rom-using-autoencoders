@@ -35,7 +35,7 @@ and gives the worst best approximation error for elements of \(W\). The converge
 	d_n(W) \leq \frac{1}{2} n^{-1/2},
 	\label{Eq:KolmoAdv}
 \end{equation}
-where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables\cite{ohlberger2015reduced}. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts heavily depends on the rarefaction of the gas as described in \cref{Ch:BGK}.
+where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables\cite{ohlberger2015reduced}. The relevance of this contribution, using non-linear methods for MOR in rarefied gas dynamics, was already implied in the beginning and now takes shape. The BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK}. Thus linear reduction methods should fail. We will see in the following, that this is only partly true, because the advection character as well as the formation of sharp shock fronts depends on the rarefaction of the gas as described in \cref{Ch:BGK}.
 \section{Offline Phase}
 \subsection{Full order BGK-model}\label{Sec: FOM}
 The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}. Details about the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.
@@ -81,8 +81,8 @@ The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct r
 \end{minipage}\\\\
 In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter. This designation is mainly used in \cref{Ch:ApB} and \cref{Ch:ApA}.
 \subsection{Contructing the mapping}
-With the FOM solution at hand it is possible to construct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). For \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. The architecture, selection of hyperparameters and training for the FCNN and the CNN is discussed in \cref{Sec:AppendixA}. Hence the existence of fully trained and tuned FCNN and CNN is given from now on. Since this thesis mainly focuses on methods from machine learning, POD serves as a comparative measure. To continue, the intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\). The former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
-In order to choose the number \(p\) of intrinsic variables (sizes of \(\idhy\) and \(\idrare\)) we will utilized POD as a reference framework. Therefore the singular values \(\sigma\), as well as, the cumulative energy (cusum-e)\\
+With the FOM solution at hand it is possible to construct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). For \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. The architecture, selection of hyperparameters and training for the FCNN and the CNN is discussed in \cref{Ch:ApA} and \cref{Ch:ApB}. Hence the availability of fully trained and tuned FCNN and CNN is given from now on. Since this thesis mainly focuses on methods from machine learning, POD serves as a comparative measure. To continue, the intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\). The former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
+In order to contrast the number \(p\) of intrinsic variables in the autoencoders (sizes of \(\idhy\) and \(\idrare\)) we will utilize POD as a reference framework. Therefore the singular values \(\sigma\), as well as, the cumulative energy (cusum-e)\\
 \noindent \begin{minipage}{.3\linewidth}
 	\begin{equation}
 	\textrm{cusum-e} = \frac{\textrm{cusum}}{\sum_i \sigma_i}
@@ -93,8 +93,8 @@ In order to choose the number \(p\) of intrinsic variables (sizes of \(\idhy\) a
 			\textrm{with} \qquad\qquad(\textrm{cusum})_i =(\text{cusum})_{i-1} + \sigma_{i}
 	\end{equation}
 \end{minipage}\\\\
-over the singular values, are employed. A comparison for both levels of rarefaction is provided in \cref{Fig:CUSUM-e}. With a total of \(p=6\) intrinsic variables, a cumulative energy of over \(99\%\) can be achieved for \(\hy\). The sixth singular value measures to a value of \(\sigma_6 = 0.275\). The cumulative energy of the singular values of \(\rare\) arrives above \(99\%\) with \(p=4\) singular values. The forth value is at \(\sigma_4 = 0.706\). The rate at which the singular values drop is exponential in \(\rare\) and close to exponential  in \(\hy\), with a difference of \(\L2 = 0.025\) in the \(\L2\)-Error in the gradients of the first \(p=10\) singular values.\\
-We can link the decay of the Kolmogorov n-width in \cref{Eq:KolmoAdv} for advection dominated problems with the slightly dissimilar decay in singular values, which manifests in the transition from \(\hy \rightarrow \rare \). Specifically on the spectrum between advection and diffusion, \(\hy\) is the advective one, as the compression is higher in this case. See \cref{Fig:KN} for a closer survey. Though, for both \(\hy\) and \(\rare\) the Kolmogorov n-width decays rapidly which in turn leads to the assumption that advection and sharp shock fronts do not appear predominantly.
+over the singular values, are employed. A comparison for both levels of rarefaction is provided in \cref{Fig:CUSUM-e}. With a total of \(p=4\) intrinsic variables, a cumulative energy of over \(99\%\) can be achieved for \(\hy\). The fourth singular value measures to a value of \(\sigma_4 = 0.706\). The cumulative energy of the singular values of \(\rare\) arrives above \(99\%\) with \(p=6\) singular values. The sixth value is at \(\sigma_6 = 0.275\). The rate at which the singular values drop is exponential in \(\hy\) and in \(\rare\), with a difference of \(\L2 = 0.025\) in the \(\L2\)-Error when comparing the gradients of the first \(p=10\) singular values. This should highlight the difference between both data sets.\\
+We can link the decay of the Kolmogorov n-width in \cref{Eq:KolmoAdv} for advection dominated problems with the slightly dissimilar decay in singular values, which manifests in the transition from \(\hy \rightarrow \rare \). Specifically, on the spectrum between advection and diffusion, \(\hy\) is the advective one, as the compression is higher in this case. See \cref{Fig:KN} for a closer survey. Though, for both \(\hy\) and \(\rare\) the Kolmogorov n-width decays rapidly which in turn leads to the assumption that advection and sharp shock fronts do not appear predominantly.
 \begin{figure}[!htbp]
 	\begin{subfigure}{.45\textwidth}
 		\input{Figures/SVD/CumSum_Hydro.tex}
@@ -125,10 +125,9 @@ Moving forward to establish the value of \(p\) for $\rare$ we look at the right 
 		\toprule
 		Intrinsic variables&  2 & 3 &  4  &  5  & 6  & 7  & 8  & 9  & 10 \\   
 		\hline
-		\(\L2\)-Error for \(\rare\)& 0.0750 & 0.0205 &0.0081& 0.0030& 0.0013& 0.0006& 0.0002& 6.2\(e^{-5}\)& 2.7\(e^{-5}\) \\
-		\(\L2\)-Error for \(\hy\)&0.0853 & 0.0327 & 0.0153 & 0.0087 & 0.0046 & 0.0021 & 0.0014 & 0.0005 & 0.0003\\
+		\(\L2\)-Error for \(\hy\)& 0.0750 & 0.0205 &0.0081& 0.0030& 0.0013& 0.0006& 0.0002& 6.2\(e^{-5}\)& 2.7\(e^{-5}\) \\
+		\(\L2\)-Error for \(\rare\)&0.0853 & 0.0327 & 0.0153 & 0.0087 & 0.0046 & 0.0021 & 0.0014 & 0.0005 & 0.0003\\
 		\bottomrule
 	\end{tabular*} \label{Tab:NumIntVar}
 \end{table}
-
 \subsection{Online Phase}

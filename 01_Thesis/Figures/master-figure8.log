@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 22:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 FEB 2021 19:34
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1688,9 +1688,9 @@ LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 112.
 (./Figures/Results/Var_iv.tex
 \openout4 = Figures/master-figure8.dpth
 
-Package pgfplots info on input line 29: Using 'lua backend=false' for axis: ymod
+Package pgfplots info on input line 31: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
-Package pgfplots info on input line 88: Using 'lua backend=false' for axis: ymod
+Package pgfplots info on input line 92: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
 [12
 
@@ -2272,22 +2272,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41764 strings out of 481365
+ 41761 strings out of 481365
  156265,4921788 words of node,token memory allocated
  795 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:3,2:7214,3:1238,4:83,5:611,6:38,7:13082,8:64,9:855,10:30,11:74
+   avail lists: 1:3,2:7781,3:1329,4:83,5:611,6:38,7:13082,8:64,9:911,10:30,11:74
 7
- 56601 multiletter control sequences out of 65536+600000
+ 56598 multiletter control sequences out of 65536+600000
  111 fonts using 9514427 bytes
- 83i,22n,140p,2460b,2736s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,22n,140p,2460b,2739s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure8.pdf (1 page, 62031 bytes).
+Output written on Figures/master-figure8.pdf (1 page, 61874 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream

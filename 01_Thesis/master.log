@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 22:05
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 FEB 2021 21:00
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1572,24 +1572,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--83
 
 [11] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure6' is up-to-date. ======
+)
+Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--101
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--101
+
+ []
+
+(./Figures/SVD/CumSum_Rare.tex
+===== Image 'Figures/master-figure7' is up-to-date. ======
 
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
 [][] 
  []
 
-) (./Figures/SVD/CumSum_Rare.tex
-===== Image 'Figures/master-figure7' is up-to-date. ======
-)
-Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--106
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--106
-
- []
-
-(./Figures/Results/Var_iv.tex
+) (./Figures/Results/Var_iv.tex
 ===== Image 'Figures/master-figure8' is up-to-date. ======
 )
 Overfull \hbox (3.39375pt too wide) in alignment at lines 124--131
@@ -1602,7 +1602,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--133
  []
 
 [12] [13<./Figures/master-figure6.pdf><./Figures/master-figure7.pdf>]) [14<./Fig
-ures/master-figure8.pdf>]
+ures/master-figure8.pdf>] [15]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1625,16 +1625,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--34
 
  []
 
-[15
+[16
 
 
 
 ] (./Figures/Results/MacroError.tex
 ===== Image 'Figures/master-figure11' is up-to-date. ======
-) [16<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]
+) [17<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]
 (./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure12' is up-to-date. ======
-) [17<./Figures/master-figure11.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+) [18<./Figures/master-figure11.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
 ===== Image 'Figures/master-figure13' is up-to-date. ======
 )
 Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--57
@@ -1661,15 +1661,15 @@ Overfull \hbox (38.6866pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
-[18<./Figures/master-figure12.pdf>]
+[19<./Figures/master-figure12.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 79.
 
-) [19] [20<./Figures/master-figure13.pdf><./Figures/master-figure14.pdf>]
-[21<./Figures/master-figure15.pdf><./Figures/master-figure16.pdf>] [22<./Figures
-/master-figure17.pdf>] [23<./Figures/master-figure18.pdf>]
-(./appendix/appendixA.tex [24
+) [20] [21<./Figures/master-figure13.pdf><./Figures/master-figure14.pdf>]
+[22<./Figures/master-figure15.pdf><./Figures/master-figure16.pdf>] [23<./Figures
+/master-figure17.pdf>] [24<./Figures/master-figure18.pdf>]
+(./appendix/appendixA.tex [25
 
 ]
 Appendix A.
@@ -1690,9 +1690,9 @@ LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
 
 LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 
-[25
+[26
 
-] [26] [27] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+] [27] [28] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
@@ -1865,23 +1865,23 @@ Underfull \hbox (badness 5490) in paragraph at lines 223--226
 [][] []
  []
 
-[28] [29<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf><./Figures
+[29] [30<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf><./Figures
 /master-figure21.pdf><./Figures/master-figure22.pdf><./Figures/master-figure23.p
-df>] [30<./Figures/master-figure24.pdf><./Figures/master-figure25.pdf><./Figures
+df>] [31<./Figures/master-figure24.pdf><./Figures/master-figure25.pdf><./Figures
 /master-figure26.pdf><./Figures/master-figure27.pdf><./Figures/master-figure28.p
-df>] [31<./Figures/master-figure29.pdf><./Figures/master-figure30.pdf><./Figures
+df>] [32<./Figures/master-figure29.pdf><./Figures/master-figure30.pdf><./Figures
 /master-figure31.pdf><./Figures/master-figure32.pdf><./Figures/master-figure33.p
-df><./Figures/master-figure34.pdf>] [32<./Figures/master-figure35.pdf><./Figures
-/master-figure36.pdf>] [33<./Figures/master-figure37.pdf><./Figures/master-figur
+df><./Figures/master-figure34.pdf>] [33<./Figures/master-figure35.pdf><./Figures
+/master-figure36.pdf>] [34<./Figures/master-figure37.pdf><./Figures/master-figur
 e38.pdf><./Figures/master-figure39.pdf><./Figures/master-figure40.pdf><./Figures
-/master-figure41.pdf>] [34<./Figures/master-figure42.pdf><./Figures/master-figur
-e43.pdf>] [35<./Figures/master-figure44.pdf><./Figures/master-figure45.pdf><./Fi
+/master-figure41.pdf>] [35<./Figures/master-figure42.pdf><./Figures/master-figur
+e43.pdf>] [36<./Figures/master-figure44.pdf><./Figures/master-figure45.pdf><./Fi
 gures/master-figure46.pdf><./Figures/master-figure47.pdf><./Figures/master-figur
-e48.pdf><./Figures/master-figure49.pdf>] [36<./Figures/master-figure50.pdf><./Fi
-gures/master-figure51.pdf>] [37<./Figures/master-figure52.pdf><./Figures/master-
+e48.pdf><./Figures/master-figure49.pdf>] [37<./Figures/master-figure50.pdf><./Fi
+gures/master-figure51.pdf>] [38<./Figures/master-figure52.pdf><./Figures/master-
 figure53.pdf><./Figures/master-figure54.pdf><./Figures/master-figure55.pdf><./Fi
 gures/master-figure56.pdf><./Figures/master-figure57.pdf>]
-[38<./Figures/master-figure58.pdf><./Figures/master-figure59.pdf>] [39<./Figures
+[39<./Figures/master-figure58.pdf><./Figures/master-figure59.pdf>] [40<./Figures
 /master-figure60.pdf><./Figures/master-figure61.pdf><./Figures/master-figure62.p
 df>]
 Appendix B.
@@ -1912,14 +1912,14 @@ LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 249.
 
-) [40
+) [41
 
-<./Figures/master-figure63.pdf>] [41<./Figures/master-figure64.pdf><./Figures/ma
-ster-figure65.pdf><./Figures/master-figure66.pdf>] [42<./Figures/master-figure67
+<./Figures/master-figure63.pdf>] [42<./Figures/master-figure64.pdf><./Figures/ma
+ster-figure65.pdf><./Figures/master-figure66.pdf>] [43<./Figures/master-figure67
 .pdf><./Figures/master-figure68.pdf><./Figures/master-figure69.pdf>]
-(./master.bbl [43
+(./master.bbl [44
 
-]) [44] (./back/acknowledgement.tex) [45
+]) [45] (./back/acknowledgement.tex) [46
 
 ]
 (./back/declaration.tex
@@ -1927,7 +1927,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [46]
+) [47]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -1948,12 +1948,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42506 strings out of 481365
+ 42507 strings out of 481365
  125007,10205817 words of node,token memory allocated
  795 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:50,7:13205,8:66,9:762,10:30,11:758
+   avail lists: 1:2,2:2351,3:373,4:83,5:617,6:50,7:13205,8:66,9:762,10:30,11:758
 
  56171 multiletter control sequences out of 65536+600000
  109 fonts using 9350571 bytes
@@ -1973,10 +1973,10 @@ e1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (49 pages, 7362485 bytes).
+Output written on master.pdf (50 pages, 7362914 bytes).
 
-PDF statistics: 2522 PDF objects out of 2984 (max. 8388607)
- 2047 compressed objects within 21 object streams
- 175 named destinations out of 1000 (max. 131072)
+PDF statistics: 2527 PDF objects out of 2984 (max. 8388607)
+ 2051 compressed objects within 21 object streams
+ 176 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
