@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 FEB 2021 21:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  2 MAR 2021 21:17
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1566,19 +1566,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 <./Figures/master-figure4.pdf><./Figures/master-figure5.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 41--83
+Underfull \hbox (badness 10000) in paragraph at lines 42--84
 
  []
 
 [11] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure6' is up-to-date. ======
 )
-Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--101
+Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--102
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--101
+Underfull \hbox (badness 10000) in paragraph at lines 2--102
 
  []
 
@@ -1589,20 +1589,20 @@ Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
 [][] 
  []
 
-) (./Figures/Results/Var_iv.tex
+)
+Underfull \hbox (badness 10000) in paragraph at lines 85--112
+
+ []
+
+[12] (./Figures/Results/Var_iv.tex
 ===== Image 'Figures/master-figure8' is up-to-date. ======
 )
-Overfull \hbox (3.39375pt too wide) in alignment at lines 124--131
+Overfull \hbox (3.39375pt too wide) in alignment at lines 126--133
 [] [] [] [] [] [] [] [] [] [] []
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--133
-
- []
-
-[12] [13<./Figures/master-figure6.pdf><./Figures/master-figure7.pdf>]) [14<./Fig
-ures/master-figure8.pdf>] [15]
+[13<./Figures/master-figure6.pdf><./Figures/master-figure7.pdf>]) [14<./Figures/
+master-figure8.pdf>] [15]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1948,16 +1948,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42507 strings out of 481365
+ 42509 strings out of 481365
  125007,10205817 words of node,token memory allocated
  795 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2351,3:373,4:83,5:617,6:50,7:13205,8:66,9:762,10:30,11:758
+   avail lists: 1:4,2:2351,3:373,4:83,5:614,6:50,7:13205,8:66,9:762,10:31,11:758
 
- 56171 multiletter control sequences out of 65536+600000
+ 56173 multiletter control sequences out of 65536+600000
  109 fonts using 9350571 bytes
- 81i,14n,138p,2435b,642s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,14n,138p,2435b,634s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -1973,7 +1973,7 @@ e1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (50 pages, 7362914 bytes).
+Output written on master.pdf (50 pages, 7363088 bytes).
 
 PDF statistics: 2527 PDF objects out of 2984 (max. 8388607)
  2051 compressed objects within 21 object streams
