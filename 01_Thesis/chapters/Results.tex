@@ -1,7 +1,7 @@
 % !TEX root = master.tex
 
 \chapter{Results}
-\label{Results}
+\label{Ch:Results}
 %\pagenumbering{arabic}
 
 During the offline phase solutions obtained from the FOM, in this case $\hy$ and $\rare$, are reduced to their intrinsic dimension, as discussed in \cref{Ch:ROM}. From the thereby obtained intrinsic variables which define a reduced basis namely $\idhy$ and $\idrare$, the solution can be reconstructed yielding a loss of information. Hence, before buiding a ROM, the reconstruction of $\hy$ and $\rare$ needs to be evaluated. If the reduction and subsequent reconstruction fails to sustain "important" information, then the reduction algorithm is not suited for building a ROM. What these "important" qualities for the BGK model in the test case are and how they can be measured, as well as methods to compare the FOM solution against it's reconstruction is discussed in this section. For the dimensionality reduction the proper orthogonal decomposition (POD), a fully connected neural network (FCNN) and a convolutional neural network (CNN) is used.\\

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 FEB 2021 21:05
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  3 MAR 2021 18:04
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -41,10 +41,10 @@ Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script help
 Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicode
 Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'.
 (./master.tex (./other/preamble.tex (/usr/share/texlive/texmf-dist/tex/latex/ba
-se/book.cls
-Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
-File: bk11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+se/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 luaotfload | db : Font names database loaded from /home/zachi/.texlive2019/texmf
 -var/luatex-cache/generic-dev/names/luaotfload-names.luc)
 \c@part=\count163
@@ -1309,82 +1309,70 @@ LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
 
 ) (./chapters/BGK_model.tex
 Chapter 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
-
-LaTeX Warning: Citation `BGK' on page 3 undefined on input line 13.
-
-
-LaTeX Warning: Citation `puppo2019kinetic' on page 3 undefined on input line 13.
-
-
-
-LaTeX Warning: Citation `puppo2019kinetic' on page 3 undefined on input line 29.
-
-
-
-LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 29.
-
-
-LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 30.
-
-
-(./Figures/BGK/Boltzmann.tex
+(./Figures/BGK/Kn.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (171.68451pt too wide) in paragraph at lines 34--35
+
+LaTeX Warning: Citation `BGK' on page 3 undefined on input line 19.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 3 undefined on input line 19.
+
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 3 undefined on input line 35.
+
+
+
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 35.
+
+
+LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 36.
+
+
+(./Figures/BGK/Boltzmann.tex
+\openout4 = Figures/master-figure1.dpth
+ [3
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+Overfull \hbox (157.21332pt too wide) in paragraph at lines 40--41
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--39
+Underfull \hbox (badness 10000) in paragraph at lines 34--45
 
  []
 
 
-LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 40.
+LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 46.
 
 
 
-LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 48.
+LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 54.
 
 
 
-LaTeX Warning: Reference `Fig:Demo Macro' on page 1 undefined on input line 49.
+LaTeX Warning: Reference `Fig:Demo Macro' on page 1 undefined on input line 55.
 
 
-LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 50.
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 56.
 
 
-LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 50.
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 56.
 
 
-LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 50.
-
-
-
-LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 58.
-
-
-(./Figures/BGK/Kn.tex
-\openout4 = Figures/master-figure1.dpth
-
-Package pgfplots info on input line 11: Using 'lua backend=false' for axis: xmod
-e=log unsupported (yet).
-
-Package pgfplots Warning: Axis range for axis y is approximately empty; enlargin
-g it (it is [0.9:0.9]) on input line 20.
-
- [warning /pgfplots/warning/approx empty range enlarged]
-[4
+LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 56.
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/BGK/Sod.tex
+LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 64.
+
+
+(./Figures/BGK/Sod.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/BGK/MacroFOMhyvsrare.tex
@@ -1536,7 +1524,7 @@ LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line
 80.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 8 undefined on input line 81.
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 81.
 
 
 LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 81.
@@ -1611,71 +1599,74 @@ LaTeX Warning: Reference `Sec: POD' on page 1 undefined on input line 29.
 LaTeX Warning: Reference `Sec:AE' on page 1 undefined on input line 29.
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 33.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 34.
 
 
 LaTeX Warning: Citation `ohlberger2015reduced' on page 11 undefined on input lin
-e 38.
+e 39.
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 38.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 39.
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 38.
+LaTeX Warning: Reference `Tab:Setup' on page 1 undefined on input line 42.
 
 
-LaTeX Warning: Reference `Tab:Setup' on page 1 undefined on input line 41.
-
-
-LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 41
+LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 42
 .
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 41.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 42.
 
 
-LaTeX Warning: Citation `schaaf' on page 11 undefined on input line 55.
+LaTeX Warning: Citation `schaaf' on page 11 undefined on input line 56.
 
 
-LaTeX Warning: Citation `NumaKUL' on page 11 undefined on input line 55.
+LaTeX Warning: Citation `NumaKUL' on page 11 undefined on input line 56.
 
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 55.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 56.
 
 
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 56.
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 57.
 
 
-LaTeX Warning: Reference `Eq:AE_matrix' on page 1 undefined on input line 56.
+LaTeX Warning: Reference `Eq:AE_matrix' on page 1 undefined on input line 57.
 
 
-LaTeX Warning: Reference `Eq:CNN_matrix' on page 1 undefined on input line 56.
+LaTeX Warning: Reference `Eq:CNN_matrix' on page 1 undefined on input line 57.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 82.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 83.
 
 
-LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 82.
+LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 83.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--83
+Underfull \hbox (badness 10000) in paragraph at lines 42--84
 
  []
 
 
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 84.
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 85.
 
 
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 84.
+LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 85.
 
 
-LaTeX Warning: Reference `Fig:CUSUM-e' on page 1 undefined on input line 96.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 85.
 
 
-LaTeX Warning: Reference `Eq:KolmoAdv' on page 1 undefined on input line 97.
+LaTeX Warning: Reference `Fig:CUSUM-e' on page 1 undefined on input line 97.
 
 
-LaTeX Warning: Reference `Fig:KN' on page 1 undefined on input line 97.
+LaTeX Warning: Reference `Eq:Kolmogorov' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Reference `Eq:KolmoAdv' on page 1 undefined on input line 98.
+
+
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 98.
 
 (./Figures/SVD/CumSum_Hydro.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1684,53 +1675,62 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
+Underfull \hbox (badness 10000) in paragraph at lines 85--112
 
-LaTeX Warning: Citation `BGK' on page 12 undefined on input line 112.
-
-
-LaTeX Warning: Citation `Bernard' on page 12 undefined on input line 112.
+ []
 
 
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 112.
+LaTeX Warning: Citation `BGK' on page 13 undefined on input line 113.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 112.
+LaTeX Warning: Citation `Bernard' on page 13 undefined on input line 113.
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 114.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 114.
 
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 118.
-
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 118.
-
-
-LaTeX Warning: Citation `Carlberg' on page 12 undefined on input line 118.
-
-
-LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 118.
-
-
-
-LaTeX Warning: Citation `Kutz' on page 12 undefined on input line 118.
-
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 119.
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
 
 
-Overfull \hbox (3.39375pt too wide) in alignment at lines 124--131
-[] [] [] [] [] [] [] [] [] [] []
- []
+LaTeX Warning: Citation `Carlberg' on page 13 undefined on input line 120.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--133
+LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 120.
 
- []
+
+
+LaTeX Warning: Citation `Kutz' on page 13 undefined on input line 120.
+
+
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 121.
+
+
+LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 122.
+
+
+LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 123.
+
+
+LaTeX Warning: Citation `Bernard' on page 14 undefined on input line 125.
+
+
+LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 125.
+
+
+LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 125.
+
+
+LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 125.
 
 ) (./chapters/Results.tex
 Chapter 5.
@@ -2275,23 +2275,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 41736 strings out of 481365
+ 41769 strings out of 481365
  125007,4921788 words of node,token memory allocated
  795 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 89 attribute,
  62 glue_spec, 46 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2786,3:518,4:83,5:611,6:38,7:13082,8:63,9:773,10:30,11:747
- 56573 multiletter control sequences out of 65536+600000
+   avail lists: 1:1,2:3404,3:647,4:83,5:611,6:31,7:13082,8:63,9:773,10:30,11:747
+ 56606 multiletter control sequences out of 65536+600000
  111 fonts using 9514427 bytes
- 83i,14n,140p,2460b,2206s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/tex
-mf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure1.pdf (1 page, 54741 bytes).
+ 83i,22n,140p,2460b,2325s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share
+/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on Figures/master-figure1.pdf (1 page, 32836 bytes).
 
-PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+PDF statistics: 31 PDF objects out of 1000 (max. 8388607)
+ 24 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
