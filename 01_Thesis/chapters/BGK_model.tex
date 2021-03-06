@@ -41,15 +41,24 @@ The fruitfullness of performing a model order reduction on the BGK model becomes
 	\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t)) \text{,}
 	\label{Eq:Discrete BGK}
 \end{equation}
-found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(x_j,v_k,t)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\ 
+found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(x_j,v_k,t)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
 To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3J^3\) first order differential equations. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together motivate for a reduced order model.\\
-Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity space which can be obtained with
-\begin{align} 
+A closer look on the discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations.\\  
+\begin{wrapfigure}{r}{0.5\textwidth}
+	\vspace{-10pt}
+	\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
+	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and f the distribution function \(f\).}
+	\vspace{-40pt}
+	\label{Fig:Demo Macro}
+\end{wrapfigure}
+Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity spacewhich can be obtained with
+	\begin{align} 
 	\rho(x,t) &= \int\! f \,\mathrm{d}v  \mathrm{,}\label{Eq:Moments1}\\
 	\rho(x,t) u(x,t) &= \int\! v f \,\mathrm{d}v \mathrm{,}\label{Eq:Moments2}\\
 	E(x,t) &= \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \mathrm{,}\label{Eq:Moments3}
-\end{align}
+	\end{align}
 as explained in  \cite{puppo2019kinetic}. With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.\\
+
 Again the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Now by multiplying the equilibrium solution (left hand side of \cref{Eq:BGK} substituting \(f=M_f\)) by \(\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics using the equation of state of the gas as in \cite{puppo2019kinetic}. These are
 \begin{align}\label{Eq:Conservation}
 	\partial_t&\rho + \partial_x(\rho u) = 0 \mathrm{,}\\
@@ -64,17 +73,10 @@ which is accomplished by the computation of a discrete maxwellian \(\mathcal{M}_
 \begin{equation}
 	\sum_k w_k \Phi(v_k) [f(x,v_k,t) - \exp(\alpha(x,t)\Phi(v_k))] = 0\mathrm{.}
 \end{equation}
-Here \(w_k\) are weights and is a vector \(\alpha(x,t)\) containing three elements from which a unique solution for can be determined \(\mathcal{M}_f\). Further details 
+Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution for can be determined for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and time discretization will be omitted.\\
+
 Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distribution function \(f(v)\) gives the values for the macroscopic quantities. The distribution is centered around the macroscopic velocity \(u\), the mean velocity of the distribution \(f\) is the temperature \(T\), integrating \(f(v)\) over velocity space one obtains the density \(\rho\).\\ 
-\begin{wrapfigure}{r}{0.5\textwidth}
-	\vspace{-10pt}
-	\begin{center}
-		\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
-	\end{center}
-	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and f the distribution function \(f\).}
-	\vspace{-40pt}
-	\label{Fig:Demo Macro}
-\end{wrapfigure}\\
+
 Note that the Boltzmann transport equation the conservative properties of the microscopic collisions lead to a global conservation of mass, momentum and energy. Hence the conservation of mass, momentum and energy is found in the BGk model as well \cite{puppo2019kinetic}.\\
 To continue .....
 rarefaction KN

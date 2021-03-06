@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  5 MAR 2021 21:18
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  6 MAR 2021 12:20
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1467,10 +1467,47 @@ Chapter 2.
 
 
 
-<./Figures/master-figure0.pdf>] [4] (./Figures/BGK/Boltzmann.tex
+<./Figures/master-figure0.pdf>] (./Figures/BGK/Boltzmann.tex
 ===== Image 'Figures/master-figure1' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 66--77
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
+
+ []
+
+[4]
+Underfull \hbox (badness 6995) in paragraph at lines 59--61
+\T1/lmr/m/n/10.95 as ex-plained in [[]]. With mul-ti-ply-
+ []
+
+
+Underfull \hbox (badness 3679) in paragraph at lines 59--61
+\T1/lmr/m/n/10.95 ing $\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 v\OT1/lmr/m/n/1
+0.95 ) = [1\OML/lmm/m/it/10.95 ; v; []v[]\OT1/lmr/m/n/10.95 ]$\T1/lmr/m/n/10.95
+ , called the col-li-
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 59--61
+\T1/lmr/m/n/10.95 sion in-vari-ants, and in-te-grat-ing in ve-loc-ity
+ []
+
+
+Underfull \hbox (badness 1521) in paragraph at lines 59--61
+\T1/lmr/m/n/10.95 are needed to com-pute the maxwellian in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
@@ -1479,16 +1516,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--77
 ) (./Figures/BGK/MacroFOMhyvsrare.tex
 ===== Image 'Figures/master-figure3' is up-to-date. ======
 )
-Overfull \hbox (15.18771pt too wide) in paragraph at lines 2--93
+Overfull \hbox (15.18771pt too wide) in paragraph at lines 2--95
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--93
+Underfull \hbox (badness 10000) in paragraph at lines 2--95
 
  []
 
-) [6<./Figures/master-figure2.pdf><./Figures/master-figure3.pdf>] [7]
+) [6<./Figures/master-figure2.pdf>] [7<./Figures/master-figure3.pdf>]
 \openout2 = chapters/Deep_Learning.aux
 
 (./chapters/Deep_Learning.tex
@@ -1944,7 +1981,7 @@ Here is how much of LuaTeX's memory you used:
  843 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
 , 62 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2351,3:373,4:83,5:614,6:50,7:13205,8:66,9:762,10:30,11:758
+   avail lists: 1:3,2:2351,3:373,4:83,5:614,6:50,7:13205,8:67,9:762,10:30,11:758
 
  56582 multiletter control sequences out of 65536+600000
  115 fonts using 9846811 bytes
@@ -1965,10 +2002,10 @@ hare/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (51 pages, 7386197 bytes).
+Output written on master.pdf (51 pages, 7386529 bytes).
 
-PDF statistics: 2555 PDF objects out of 2984 (max. 8388607)
- 2076 compressed objects within 21 object streams
+PDF statistics: 2556 PDF objects out of 2984 (max. 8388607)
+ 2077 compressed objects within 21 object streams
  179 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
