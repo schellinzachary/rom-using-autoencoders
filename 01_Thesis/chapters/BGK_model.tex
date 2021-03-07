@@ -19,7 +19,7 @@ where \(\lambda\) is the mean free path of a particle and \(l\), some domain spe
 	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. The Euler equations can be used up to approximately \(\Kn < 0.01\) and describe a \glqq continuum flow\grqq{}. A \grqq slip flow\grqq{} can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourrier equations yield accurate results. From \(\Kn > 0.1\) onwards (transition regime, kinetic regime and free flight) the rarefaction increases steadily and only kinetic gas models deliver reasonable computations. The BGK model can be used for all rarefaction levels.}
 	\label{Fig:ExpKN}
 \end{figure}
-\section{Discretization, conservative properties and equilibirum}
+\section{Space and Velocity Discretization, Moments and Conservation}
 The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann transport equation. More precisely the right hand side of the Boltzmann equation is approximated by the BGK operator 
 \begin{equation}
 \partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f) \text{,}
@@ -47,8 +47,8 @@ A closer look on the discretization in velocity space yields the necessity to co
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
 	\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
-	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and f the distribution function \(f\).}
-	\vspace{-40pt}
+	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
+	\vspace{-70pt}
 	\label{Fig:Demo Macro}
 \end{wrapfigure}
 Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity spacewhich can be obtained with
@@ -60,16 +60,16 @@ Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rh
 as explained in  \cite{puppo2019kinetic}. With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.\\
 
 Again the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Now by multiplying the equilibrium solution (left hand side of \cref{Eq:BGK} substituting \(f=M_f\)) by \(\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics using the equation of state of the gas as in \cite{puppo2019kinetic}. These are
-\begin{align}\label{Eq:Conservation}
-	\partial_t&\rho + \partial_x(\rho u) = 0 \mathrm{,}\\
-	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0\mathrm{,}\\
-	\partial_t&E + \partial_x(u(E+p)) = 0\mathrm{,}
+\begin{align}
+	\partial_t&\rho + \partial_x(\rho u) = 0 \mathrm{,}\label{Eq:Conservation1} \\
+	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0\mathrm{,}\label{Eq:Conservation2}\\
+	\partial_t&E + \partial_x(u(E+p)) = 0\label{Eq:Conservation3}\mathrm{,}
 \end{align}
 and provide conservation laws for the BGK model. Note that the evaluation of the maxwellian\(M_f\) is not straight forward and requires three additional non linear equations for every \(K\)-th grid point in velocity space. This is due to the fact, that for \(M_f\) the moments in \cref{Eq:Moments1}, \cref{Eq:Moments2} and \cref{Eq:Moments3} are needed. The quadrature rule used to compute the moments requires to be exact because even small errors magnify when \(\tau \rightarrow 0\) and in turn one fails to obtain the Euler equations. Therefore \(M_f\) must satisfy  
 \begin{equation}
 	<\Phi(v)f> - <\Phi(v)M_f> = 0\mathrm{,}
 \end{equation}
-which is accomplished by the computation of a discrete maxwellian \(\mathcal{M}_f\) by solving
+which is accomplished by the computation of a discrete Maxwellian \(\mathcal{M}_f\) by solving
 \begin{equation}
 	\sum_k w_k \Phi(v_k) [f(x,v_k,t) - \exp(\alpha(x,t)\Phi(v_k))] = 0\mathrm{.}
 \end{equation}
@@ -77,19 +77,30 @@ Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from 
 
 Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distribution function \(f(v)\) gives the values for the macroscopic quantities. The distribution is centered around the macroscopic velocity \(u\), the mean velocity of the distribution \(f\) is the temperature \(T\), integrating \(f(v)\) over velocity space one obtains the density \(\rho\).\\ 
 
-Note that the Boltzmann transport equation the conservative properties of the microscopic collisions lead to a global conservation of mass, momentum and energy. Hence the conservation of mass, momentum and energy is found in the BGk model as well \cite{puppo2019kinetic}.\\
-To continue .....
-rarefaction KN
-SOD\\
-Physically speaking, highly rarefied gases exhibit a diffusion dominated behavior whereas with increasing compression, the advection behavior seizes gradually.
-
-\section{Sod's schock tube as a test case for the BGK model} \label{FeaturesSOD}
+The BGK model inherits global conservation of mass, momentum and energy from the Boltzmann equation as seen in \cref{Eq:Conservation1}, \cref{Eq:Conservation2} and \cref{Eq:Conservation3} found in \cite{puppo2019kinetic}.
+\section{Sod's shock tube as a test case for the BGK model} \label{Sec:FeaturesSOD}
+Using a shock tube as a test case for numerical schemes solving non linear hyperbolic conservation laws in gas dynamics was first introduced by Gary A. Sod in 1978 \cite{Sod}. When referring to Sod's shock tube one does not only imply the usage of a shock tube as a physical structure, but also the specific behavior gases exhibit herein. For a detailed outline of specific patterns gases display in Sod's shock tube \cref{Fig:SodTime} and \cref{Fig:SodProbSetup} are provided.
 \begin{figure}[H]
 	\centering
 	\input{Figures/BGK/Sod.tex}
 	\caption{Problem setup for the Sod shock tube in 1D. A diaphragm is positioned at \(x_d\), seperating the whole domain in two areas. Shown are the starting conditions for \(\rho\),\(v\) and \(T\) indexed with one. Zero indexing refers to the absence of matter.}
 	\label{Fig:SodProbSetup}
 \end{figure}
+\begin{figure}[H]
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\input{Figures/BGK/Sod_time0.tex}
+		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding pressure}
+		\label{Fig:SodTime}
+	\end{subfigure}\hfill
+	\begin{subfigure}{.45\textwidth}
+		\centering
+		\input{Figures/BGK/Sod_time.tex}
+		\caption{Sod's shock tube at \(t>0\). The whole domain is split into two regions with corresponding pressure}
+		\label{Fig:SodTime0}
+	\end{subfigure}
+\end{figure}
+
 \begin{figure}[!htbp]
 	\input{Figures/BGK/MacroFOMhyvsrare.tex}
 	\caption{Macroscopic quantities \(rho\), \(\rho u\) and \(E\) in the SOD schock tube at the last time stamp. The quantites are displayed for the hydrodynamic regime in - - lines and for the rarefied regime in - lines.}

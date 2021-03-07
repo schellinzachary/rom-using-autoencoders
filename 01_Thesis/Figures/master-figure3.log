@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  6 MAR 2021 08:35
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 MAR 2021 23:19
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1347,74 +1347,113 @@ LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 44.
 
 LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 44.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 43--45
-
- []
-
-
-LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 53.
-
-
-
-LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 53.
-
-
 (./Figures/BGK/Boltzmann.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 52--62
+Overfull \hbox (171.68451pt too wide) in paragraph at lines 49--50
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--53
 
  []
 
 
-LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 63.
-
-
-LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 63.
-
-
-LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 63.
+LaTeX Warning: Citation `puppo2019kinetic' on page 4 undefined on input line 60.
 
 
 
-LaTeX Warning: Reference `Eq:Moments1' on page 1 undefined on input line 69.
+LaTeX Warning: Reference `Eq:Discrete BGK' on page 1 undefined on input line 60.
 
 
-LaTeX Warning: Reference `Eq:Moments2' on page 1 undefined on input line 69.
 
-
-LaTeX Warning: Reference `Eq:Moments3' on page 1 undefined on input line 69.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 76--78
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
 
  []
 
 
-LaTeX Warning: Reference `Fig:Demo Macro' on page 1 undefined on input line 79.
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 62.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--80
+LaTeX Warning: Reference `Eq:BGK' on page 1 undefined on input line 62.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 62.
+
+
+
+LaTeX Warning: Reference `Eq:Moments1' on page 1 undefined on input line 68.
+
+
+LaTeX Warning: Reference `Eq:Moments2' on page 1 undefined on input line 68.
+
+
+LaTeX Warning: Reference `Eq:Moments3' on page 1 undefined on input line 68.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--77
 
  []
 
 
-LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 81.
+LaTeX Warning: Reference `Fig:Demo Macro' on page 1 undefined on input line 78.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+LaTeX Warning: Reference `Eq:Conservation1' on page 1 undefined on input line 80
+.
+
+
+LaTeX Warning: Reference `Eq:Conservation2' on page 1 undefined on input line 80
+.
+
+
+LaTeX Warning: Reference `Eq:Conservation3' on page 1 undefined on input line 80
+.
+
+
+LaTeX Warning: Citation `puppo2019kinetic' on page 5 undefined on input line 80.
+
+
+
+LaTeX Warning: Citation `Sod' on page 5 undefined on input line 82.
+
+
+LaTeX Warning: Reference `Fig:SodTime' on page 1 undefined on input line 82.
+
+
+LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 82
+.
 
 (./Figures/BGK/Sod.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/BGK/MacroFOMhyvsrare.tex
+) (./Figures/BGK/Sod_time0.tex
 \openout4 = Figures/master-figure3.dpth
  [5
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])) (./chapters/Deep_Learnin
-g.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 93.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 93.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 93.
+(./Figures/BGK/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/BGK/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)) (./chapters/Deep_Learning.tex
 Chapter 3.
 
 LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 11.
@@ -1594,12 +1633,6 @@ LaTeX Warning: Citation `Carlberg' on page 11 undefined on input line 10.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
 
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 15.
 
@@ -2311,25 +2344,24 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42175 strings out of 481365
- 156265,4921788 words of node,token memory allocated
+ 41851 strings out of 481365
+ 125011,4921788 words of node,token memory allocated
  843 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
 , 62 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:3,2:8587,3:2057,4:83,5:611,6:38,7:13082,8:63,9:773,10:30,11:74
-7
- 56999 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:2251,3:332,4:83,5:611,6:38,7:13082,8:64,9:773,10:30,11:747
+ 56657 multiletter control sequences out of 65536+600000
  117 fonts using 10010603 bytes
- 83i,21n,140p,2460b,2575s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure3.pdf (1 page, 63778 bytes).
+ 83i,14n,140p,2460b,940s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/tex
+mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
+0.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmr8.pfb>
+Output written on Figures/master-figure3.pdf (1 page, 64787 bytes).
 
-PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+PDF statistics: 35 PDF objects out of 1000 (max. 8388607)
+ 27 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
