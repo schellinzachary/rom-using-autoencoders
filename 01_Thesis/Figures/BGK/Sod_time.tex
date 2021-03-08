@@ -7,6 +7,11 @@
 	\node [] at (4.5,0) (a4) {};
 	\node [] at (5.5,0) (a5) {};
 	\node [] at (7.5,0) (a6) {};
+	\node [on grid,below = 1.5ex of a2] (xd) {$x_d$};
+	\node [on grid,below = 1.5ex of a1] (x1) {$x_1$};
+	\node [on grid,below = 1.5ex of a3] (x2) {$x_2$};
+	\node [on grid,below = 1.5ex of a4] (x3) {$x_3$};
+	\node [on grid,below = 1.5ex of a5] (x4) {$x_4$};
 	%level 1 nodes
 	\node [] at (7.5,0.5) (b6) {};
 	\node [] at (5.5,0.5) (b5) {};
@@ -45,7 +50,7 @@
 	\node [] at (5.5,3) (i5) {};
 	\node [] at (7.5,3) (i6) {};
 	%draw and bottom edge
-	\draw[thick] (a0.center) -- (a6.center) {};
+	\draw [|->,thick] (a0.center) -- (a6.center) node [below left] {$x$};
 	\path [] (a0.center) -- (a1.center) node [midway,above] {$u_1$};
 	\path [] (a5.center) -- (a6.center) node [midway,above] { $u_5$};
 	%draw top descriptors
@@ -82,4 +87,5 @@
 	\draw[dashed] (a3.center) -- (i3.center) {};
 	\draw[dashed] (a4.center) -- (i4.center) {};
 	\draw[dashed] (a5.center) -- (i5.center) {};
+
 \end{tikzpicture}

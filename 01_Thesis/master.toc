@@ -10,19 +10,19 @@
 \contentsline {chapter}{\numberline {2}The BGK Model}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Space and Velocity Discretization, Moments and Conservation}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Sod's shock tube as a test case for the BGK model}{6}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Dimensionality reduction algorithms}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Autoencoders}{8}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Autoencoders}{11}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}Model Order Reduction}{12}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Offline Phase}{13}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{13}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Contructing the mapping}{14}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Online Phase}{17}{subsection.4.1.3}%
-\contentsline {chapter}{\numberline {5}Results}{18}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{22}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{28}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{43}{appendix.B}%
-\contentsline {subsection}{\numberline {B.0.1}Appendix B}{43}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{46}{appendix*.44}%
+\contentsline {chapter}{\numberline {3}Dimensionality reduction algorithms}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Autoencoders}{9}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Autoencoders}{12}{subsection.3.2.1}%
+\contentsline {chapter}{\numberline {4}Model Order Reduction}{13}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Offline Phase}{14}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{14}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Contructing the mapping}{15}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Online Phase}{18}{subsection.4.1.3}%
+\contentsline {chapter}{\numberline {5}Results}{19}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{23}{subsection.5.0.1}%
+\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{29}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{44}{appendix.B}%
+\contentsline {subsection}{\numberline {B.0.1}Appendix B}{44}{subsection.B.0.1}%
+\contentsline {chapter}{Bibliography}{47}{appendix*.44}%
 \contentsfinish 

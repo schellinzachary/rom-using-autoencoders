@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 MAR 2021 22:30
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  8 MAR 2021 23:01
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -938,6 +938,10 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zexternalshared.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+)
 No auxiliary output files.
 
 \w@pgfexternal@auxout=\write4
@@ -1434,10 +1438,20 @@ LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 82
 (./Figures/BGK/Sod.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/BGK/Sod_time.tex
+) (./Figures/BGK/Sod_time0.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/BGK/Sod_time0.tex
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 93.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 93.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 93.
+(./Figures/BGK/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/BGK/ExamplesSOD.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/BGK/MacroFOMhyvsrare.tex
@@ -1623,12 +1637,6 @@ LaTeX Warning: Citation `Carlberg' on page 11 undefined on input line 10.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 15.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 15.
 
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 15.
 
@@ -2168,9 +2176,6 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
 \openout4 = Figures/master-figure51.dpth
 
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
@@ -2179,7 +2184,11 @@ e=log unsupported (yet).
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
+/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 184--190
 [][]
  []
@@ -2346,22 +2355,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42179 strings out of 481365
- 195334,4921788 words of node,token memory allocated
+ 42223 strings out of 481365
+ 195333,4921788 words of node,token memory allocated
  843 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
 , 62 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:5,2:15644,3:4651,4:84,5:611,6:38,7:13083,8:64,9:775,10:30,11:7
+   avail lists: 1:5,2:15617,3:4646,4:84,5:611,6:38,7:13083,8:64,9:775,10:30,11:7
 47
- 56985 multiletter control sequences out of 65536+600000
+ 57013 multiletter control sequences out of 65536+600000
  117 fonts using 10010603 bytes
- 83i,22n,140p,2460b,2405s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,22n,140p,2460b,2406s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure51.pdf (1 page, 91144 bytes).
+Output written on Figures/master-figure51.pdf (1 page, 91020 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
