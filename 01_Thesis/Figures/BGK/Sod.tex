@@ -6,11 +6,11 @@
 \node[] at (10,0) (b) {};
 \node[] at (10,-.3) (b1){};
 
-\node[] at (0,5)  (c) {};
-\node[] at (-.3,5) (c1){};
-\node[] at (10,5) (d) {};
+\node[] at (0,2.5)  (c) {};
+\node[] at (-.3,2.5) (c1){};
+\node[] at (10,2.5) (d) {};
 
-\node[] at (5,5)  (e) {};
+\node[] at (5,2.5)  (e) {};
 \node[] at (5,0) (f) {};
 
 % draw edges  
@@ -21,14 +21,14 @@
 \draw[] (c.center) -- (d.center) node[above] {};
 \draw[] (d.center) -- (b.center) node[above] {};
 \draw[dashed] (e.center) -- (f.center) node[sloped,above,midway] {Diaphragm};
-\draw[<-] (f.center)-- +(5pt,5pt) node[right] {\(x_d\)};
+\draw[<-] (f.center)-- +(-5pt,5pt) node[above left] {\(x_d\)};
 
 %draw quantities
-\node[] at (2.5,2.5) (T){\(T_1\)};
-\node [above of=T] (rho) {\(\rho_1\)}; 
-\node [below of=T] (v) {\(v_1\)};
+\node[] at (2.5,1.25) (T){\(p_0\)};
+\node [above left of=T] (rho) {\(\rho_0\)}; 
+\node [below left of=T] (v) {\(u_0\)};
 
-\node[] at (7.5,2.5) (T0){\(T_0\)};
-\node [above of=T0] (rho0) {\(\rho_0\)}; 
-\node [below of=T0] (v0) {\(v_0\)};
+\node[] at (7.5,1.25) (T0){\(p_1\)};
+\node [above right of=T0] (rho0) {\(\rho_1\)}; 
+\node [below right of=T0] (v0) {\(u_1\)};
 \end{tikzpicture}

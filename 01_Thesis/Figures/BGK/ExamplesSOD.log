@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  9 MAR 2021 19:36
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  10 MAR 2021 21:53
  system commands enabled.
 **ExamplesSOD.tex ExamplesSOD.tex
 (./ExamplesSOD.tex
@@ -263,7 +263,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.43 \node
-        [fill=white] at (axis cs:.83,-6.5) {\small $t=0.06s$};
+        [fill=white] at (axis cs:.775,-6.5) {\small $t=0.06s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -271,7 +271,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.43 \node[fill=white] at (axis cs:.83,-6.5) {\small
+l.43 ...e[fill=white] at (axis cs:.775,-6.5) {\small
                                                    $t=0.06s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -370,7 +370,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.68 \node
-        [fill=white] at (axis cs:.83,-6.5) {\small $t=0s$};
+        [fill=white] at (axis cs:.775,-6.5) {\small $t=0.12s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -378,8 +378,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.68 \node[fill=white] at (axis cs:.83,-6.5) {\small
-                                                   $t=0s$};
+l.68 ...e[fill=white] at (axis cs:.775,-6.5) {\small
+                                                   $t=0.12s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -407,8 +407,9 @@ Overfull \hbox (14.16663pt too wide) in paragraph at lines 45--69
  []
 
 
-Overfull \hbox (9.68752pt too wide) in paragraph at lines 45--69
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 s$\nullfont ; 
+Overfull \hbox (22.46533pt too wide) in paragraph at lines 45--69
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 12\OML/cmm/m/it/10 s$\nullfo
+nt ; 
  []
 
 ! Undefined control sequence.
@@ -582,7 +583,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.108 \node
-         [fill=white] at (axis cs:.83,-6.5) {\small $t=0s$};
+         [fill=white] at (axis cs:.775,-6.5) {\small $t=0.06s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -590,8 +591,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.108 ...e[fill=white] at (axis cs:.83,-6.5) {\small
-                                                   $t=0s$};
+l.108 ...[fill=white] at (axis cs:.775,-6.5) {\small
+                                                   $t=0.06s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -651,7 +652,7 @@ and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.132 \node
-         [fill=white] at (axis cs:.83,-6.5) {\small $t=0s$};
+         [fill=white] at (axis cs:.775,-6.5) {\small $t=0.12s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -659,8 +660,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.132 ...e[fill=white] at (axis cs:.83,-6.5) {\small
-                                                   $t=0s$};
+l.132 ...[fill=white] at (axis cs:.775,-6.5) {\small
+                                                   $t=0.12s$};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -701,8 +702,9 @@ Overfull \hbox (14.16663pt too wide) in paragraph at lines 90--134
  []
 
 
-Overfull \hbox (9.68752pt too wide) in paragraph at lines 90--134
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 s$\nullfont ;
+Overfull \hbox (22.46533pt too wide) in paragraph at lines 90--134
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 06\OML/cmm/m/it/10 s$\nullfo
+nt ;
  []
 
 
@@ -721,8 +723,9 @@ Overfull \hbox (14.16663pt too wide) in paragraph at lines 90--134
  []
 
 
-Overfull \hbox (9.68752pt too wide) in paragraph at lines 90--134
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 s$\nullfont ;
+Overfull \hbox (22.46533pt too wide) in paragraph at lines 90--134
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 12\OML/cmm/m/it/10 s$\nullfo
+nt ;
  []
 
 
@@ -760,10 +763,10 @@ If that doesn't work, type  X <return>  to quit.
 
 Here is how much of LuaTeX's memory you used:
  35 strings out of 481365
- 100000,319454 words of node,token memory allocated 24442 words of node memory still in use:
+ 100000,319454 words of node,token memory allocated 24533 words of node memory still in use:
    55 hlist, 32 disc, 6 local_par, 1 dir, 18 math, 356 glue, 9 kern, 20 penalty,
- 2896 glyph, 74 attribute, 39 glue_spec, 74 attribute_list, 1 temp nodes
-   avail lists: 3:1,4:35,5:2,7:93,8:7,10:34
+ 2909 glyph, 74 attribute, 39 glue_spec, 74 attribute_list, 1 temp nodes
+   avail lists: 3:4,4:35,5:2,7:93,8:7,10:34
  17249 multiletter control sequences out of 65536+600000
  34 fonts using 3749011 bytes
  18i,1n,15p,158b,65s stack positions out of 5000i,500n,10000p,200000b,100000s
