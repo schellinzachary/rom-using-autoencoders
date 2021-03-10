@@ -90,26 +90,28 @@ Using a shock tube as a test case for numerical schemes solving non linear hyper
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\input{Figures/BGK/Sod_time0.tex}
-		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding pressure}
+		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding initial conditions for pressure \(p\), density \(\rho\) and macroscopic velocity \(u\). Position of the diaphragm is labeled as \(x_d\).\\ \\ \\}
 		\label{Fig:SodTime}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\input{Figures/BGK/Sod_time.tex}
-		\caption{Sod's shock tube at \(t>0\). The whole domain is split into two regions with corresponding pressure}
+		\caption{Sod's shock tube at \(t>0\). Shown are pressure \(p\), denisty \(\rho\)  and macroscoppic velocity \(u\). Five regions can be identified marked out with \(x_1\) and \(x_2\) as head and tail of the rarefaction wave, \(x_3\) as the contact discontinuity and \(x_4\) as the position of the shock wave. The position of the initial diaphragm is labeled \(x_d\) and \(x_3\) also locating a particle having traveled from there during \(\Delta t\).}
 		\label{Fig:SodTime0}
 	\end{subfigure}\\ \\ \vfill
 	\begin{subfigure}{\textwidth}
 		\centering
 		\input{Figures/BGK/ExamplesSod.tex}
-		\caption{Sod's shock tube at \(t>0\). The whole domain is split into two regions with corresponding pressure}
+		\caption{}
 		\label{Fig:ExamplesSod}
+	\end{subfigure}\\
+	\begin{subfigure}{\textwidth}
+		\input{Figures/BGK/MacroFOMhyvsrare.tex}
+		\caption{Macroscopic quantities \(rho\), \(\rho u\) and \(E\) in the SOD schock tube at \(t=0.12s\). The quantites are displayed for \(\Kn=0.00001\)  in - - lines and for \(\Kn=0.01\) in - lines.}
 	\end{subfigure}
 \end{figure}
 
-\begin{figure}[!htbp]
-	\input{Figures/BGK/MacroFOMhyvsrare.tex}
-	\caption{Macroscopic quantities \(rho\), \(\rho u\) and \(E\) in the SOD schock tube at the last time stamp. The quantites are displayed for the hydrodynamic regime in - - lines and for the rarefied regime in - lines.}
-\end{figure}
-- intrinsic code variables for hydro an rare add pls
--advection vs diffusion pls
+%\begin{figure}[!htbp]
+%	\input{Figures/BGK/MacroFOMhyvsrare.tex}
+%	\caption{Macroscopic quantities \(rho\), \(\rho u\) and \(E\) in the SOD schock tube at the last time stamp. The quantites are displayed for the hydrodynamic regime in - - lines and for the rarefied regime in - lines.}
+%\end{figure}

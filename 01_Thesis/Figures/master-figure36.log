@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  8 MAR 2021 23:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  9 MAR 2021 20:34
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1448,10 +1448,30 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 93.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 93.
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+
+ []
+
 (./Figures/BGK/Sod_time.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/BGK/ExamplesSOD.tex
+)
+Underfull \hbox (badness 10000) in paragraph at lines 90--101
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--101
+
+ []
+
+(./Figures/BGK/ExamplesSOD.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/BGK/MacroFOMhyvsrare.tex
