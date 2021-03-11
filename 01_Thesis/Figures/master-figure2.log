@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  10 MAR 2021 20:47
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  11 MAR 2021 08:12
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -2386,7 +2386,7 @@ Here is how much of LuaTeX's memory you used:
 mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
 8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/
 type1/public/lm/lmr8.pfb>
-Output written on Figures/master-figure2.pdf (1 page, 48518 bytes).
+Output written on Figures/master-figure2.pdf (1 page, 53932 bytes).
 
 PDF statistics: 35 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream

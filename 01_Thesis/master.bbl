@@ -61,6 +61,10 @@ G.~A. {Sod}, \emph{{Review. A Survey of Several Finite Difference Methods for
   \href{http://dx.doi.org/10.1016/0021-9991(78)90023-2}{\emph{Journal of
   Computational Physics} {\bfseries 27} (Apr., 1978) 1--31}.
 
+\bibitem{CFD1}
+J.~Reiss, \emph{Skript zu cfd 1},
+  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
+
 \bibitem{Hornik1989}
 K.~Hornik, M.~Stinchcombe and H.~White, \emph{Multilayer feedforward networks
   are universal approximators},

@@ -18,36 +18,36 @@ Warning--I didn't find a database entry for "the"
 Warning--empty publisher in Franz
 Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
-You've used 18 entries,
+You've used 19 entries,
             2189 wiz_defined-function locations,
-            631 strings with 6259 characters,
-and the built_in function-call counts, 3177 in all, are:
-= -- 268
-> -- 215
+            635 strings with 6294 characters,
+and the built_in function-call counts, 3287 in all, are:
+= -- 278
+> -- 220
 < -- 0
-+ -- 64
-- -- 46
-* -- 226
-:= -- 503
-add.period$ -- 22
-call.type$ -- 18
-change.case$ -- 14
++ -- 66
+- -- 47
+* -- 235
+:= -- 522
+add.period$ -- 23
+call.type$ -- 19
+change.case$ -- 15
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 131
-empty$ -- 279
-format.name$ -- 46
-if$ -- 777
+cite$ -- 22
+duplicate$ -- 135
+empty$ -- 289
+format.name$ -- 47
+if$ -- 803
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 50
-newline$ -- 62
-num.names$ -- 18
-pop$ -- 51
+int.to.str$ -- 19
+missing$ -- 53
+newline$ -- 65
+num.names$ -- 19
+pop$ -- 52
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 58
+skip$ -- 59
 stack$ -- 0
 substring$ -- 75
 swap$ -- 28
@@ -56,7 +56,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 25
-width$ -- 20
-write$ -- 138
+while$ -- 26
+width$ -- 21
+write$ -- 145
 (There was 1 error message)

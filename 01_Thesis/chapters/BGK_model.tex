@@ -79,13 +79,14 @@ Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distrib
 
 The BGK model inherits global conservation of mass, momentum and energy from the Boltzmann equation as seen in \cref{Eq:Conservation1}, \cref{Eq:Conservation2} and \cref{Eq:Conservation3} found in \cite{puppo2019kinetic}.
 \section{Sod's shock tube as a test case for the BGK model} \label{Sec:FeaturesSOD}
-Using a shock tube as a test case for numerical schemes solving non linear hyperbolic conservation laws in gas dynamics was first introduced by Gary A. Sod in 1978 \cite{Sod}. When referring to Sod's shock tube one does not only imply the usage of a shock tube as a physical structure, but also the specific behavior gases exhibit herein. For a detailed outline of specific patterns gases display in Sod's shock tube \cref{Fig:SodTime} and \cref{Fig:SodProbSetup} are provided.
+Using a shock tube as a test case for numerical schemes solving nonlinear hyperbolic conservation laws in gas dynamics was first introduced by Gary A. Sod in 1978 \cite{Sod}. Since then it serves as a commonly used benchmark problem. Nonlinear conservation laws in a simple shock tube can be solved analytically and thereafter be compared to the numerical approximation. The analytical solution is obtained using the method of characteristics and the Rankine Hugoniot jump conditions to connect the states before and after the shock. Details about both methods can be found in \cite{CFD1}. The problem setup for a shock tube is shown in \cref{Fig:SodProbSetup} and \cref{Fig:SodTime}, which is split into two areas. Here the initial conditions are \(\rho_0 = 1\) and \(\rho_5=0.125\) for the density, \(p_0=1\) and \(p_5=0.1\) for the pressure and \(u_0=u_5=0\) for the macroscopic velocity.
 \begin{figure}[H]
 	\centering
 	\input{Figures/BGK/Sod.tex}
-	\caption{Problem setup for the Sod shock tube in 1D. A diaphragm is positioned at \(x_d\), seperating the whole domain in two areas. Shown are the starting conditions for \(\rho\),\(v\) and \(T\) indexed with one. Zero indexing refers to the absence of matter.}
+	\caption{Problem setup for the Sod shock tube in 1D. A diaphragm is positioned at \(x_d\), seperating the whole domain in two areas. Shown are the starting conditions for density \(\rho\), pressure \(p\) and macroscopic velocity \(u\).}
 	\label{Fig:SodProbSetup}
 \end{figure}
+
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
 		\centering
@@ -98,7 +99,7 @@ Using a shock tube as a test case for numerical schemes solving non linear hyper
 		\input{Figures/BGK/Sod_time.tex}
 		\caption{Sod's shock tube at \(t>0\). Shown are pressure \(p\), denisty \(\rho\)  and macroscoppic velocity \(u\). Five regions can be identified marked out with \(x_1\) and \(x_2\) as head and tail of the rarefaction wave, \(x_3\) as the contact discontinuity and \(x_4\) as the position of the shock wave. The position of the initial diaphragm is labeled \(x_d\) and \(x_3\) also locating a particle having traveled from there during \(\Delta t\).}
 		\label{Fig:SodTime0}
-	\end{subfigure}\\ \\ \vfill
+	\end{subfigure}\\ \vfill
 	\begin{subfigure}{\textwidth}
 		\centering
 		\input{Figures/BGK/ExamplesSod.tex}
@@ -108,7 +109,7 @@ Using a shock tube as a test case for numerical schemes solving non linear hyper
 	\begin{subfigure}{\textwidth}
 		\input{Figures/BGK/MacroFOMhyvsrare.tex}
 		\caption{Macroscopic quantities \(\rho(x,t_i)\), \(\rho u(x,t_i)\) and \(E(x,t_i)\) in the SOD schock tube at \(t_i=0.12s\). Displayed are the quantities for \(\Kn=0.00001\)  in - - lines and for \(\Kn=0.01\) in - lines, where the former is abbreviated with \(\hy\) and the latter with \(\rare\).}
-	\end{subfigure}
+	\end{subfigure}\caption{BGK model in Sod's shock tube: Initial conditions and their evolution after \(\Delta t\) are shown in (a) and (b). Two solutions of differing rarefaction levels are presented in (c). Macroscopic quantities at \(t=0.12s\) are shown in (d).}
 \end{figure}
 
 %\begin{figure}[!htbp]
