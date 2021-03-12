@@ -11,6 +11,8 @@ x grid style={white!69.0196078431373!black},
 xlabel={\(x\)},
 xmin=-0.04725, xmax=1.04725,
 xtick style={color=black},
+xtick={0,0.2525,0.48,0.61,0.75,1},
+xticklabels={0,$x_1$,$x_2$,$x_3$,$x_4$,1},
 y grid style={white!69.0196078431373!black},
 ylabel={\(\rho\)},
 ymin=0.0812472272613489, ymax=1.04375013203517,
@@ -20,7 +22,7 @@ yticklabels={0.0,0.2,0.4,0.6,0.8,1.0,1.2},
 width=.33\textwidth,
 height=.25\textwidth
 ]
-\addplot [semithick, black]
+\addplot [semithick, color0, mark=o,mark repeat=25,mark repeat=20,mark size=1.5pt]
 table {%
 0.0025 0.999999999999998
 0.0075 0.999999999999989
@@ -224,7 +226,7 @@ table {%
 0.9975 0.124997359296523
 };
 \addlegendentry{\small \(\hy\)}
-\addplot [semithick, black, dashed]
+\addplot [semithick, red, mark=square,mark repeat=20,mark size=1pt]
 table {%
 0.0025 0.99999981316608
 0.0075 0.99999975421908
@@ -428,7 +430,26 @@ table {%
 0.9975 0.125016719545722
 };
 \addlegendentry{\small \(\rare\)}
-
+\addplot [semithick,dashed]
+table {%
+0.2525 0
+0.2525 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.48 0
+	0.48 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.61 0
+	0.61 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.75 0
+	0.75 1.5
+};
 \nextgroupplot[
 legend cell align={left},
 legend style={fill opacity=0.1, draw opacity=1, text opacity=1,draw=none},
@@ -438,6 +459,8 @@ x grid style={white!69.0196078431373!black},
 xlabel={\(x\)},
 xmin=-0.04725, xmax=1.04725,
 xtick style={color=black},
+xtick={0,0.2525,0.48,0.61,0.75,1},
+xticklabels={0,$x_1$,$x_2$,$x_3$,$x_4$,1},
 y grid style={white!69.0196078431373!black},
 ylabel={\(\rho u\)},
 ymin=-0.0207805766857379, ymax=0.436392110400496,
@@ -447,7 +470,7 @@ yticklabels={−0.1,0.0,0.1,0.2,0.3,0.4,0.5},
 width=.33\textwidth,
 height=.25\textwidth
 ]
-\addplot [semithick, black]
+\addplot [semithick, color0, mark=o,mark repeat=25,mark repeat=20,mark size=1.5pt]
 table {%
 0.0025 6.30909942701128e-15
 0.0075 2.52743810784534e-14
@@ -651,7 +674,7 @@ table {%
 0.9975 1.35610010757515e-19
 };
 \addlegendentry{\small \(\hy\)}
-\addplot [semithick, black, dashed]
+\addplot [semithick, red, mark=square,mark repeat=20,mark size=1pt]
 table {%
 0.0025 4.54455299100046e-07
 0.0075 5.99854726306051e-07
@@ -855,7 +878,26 @@ table {%
 0.9975 5.41183398169117e-05
 };
 \addlegendentry{\small \(\rare\)}
-
+\addplot [semithick,dashed]
+table {%
+	0.2525 0
+	0.2525 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.48 0
+	0.48 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.61 0
+	0.61 1.5
+};
+\addplot [semithick,dashed]
+table {%
+	0.75 0
+	0.75 1.5
+};
 \nextgroupplot[
 legend cell align={left},
 legend style={fill opacity=0.1, draw opacity=1, text opacity=1, draw=none},
@@ -865,6 +907,8 @@ x grid style={white!69.0196078431373!black},
 xlabel={\(x\)},
 xmin=-0.04725, xmax=1.04725,
 xtick style={color=black},
+xtick={0,0.2525,0.48,0.61,0.75,1},
+xticklabels={0,$x_1$,$x_2$,$x_3$,$x_4$,1},
 y grid style={white!69.0196078431373!black},
 ylabel={\(E\)},
 ymin=-0.01673310421985, ymax=1.02222538591518,
@@ -874,7 +918,8 @@ yticklabels={−0.2,0.0,0.2,0.4,0.6,0.8,1.0,1.2},
 width=.33\textwidth,
 height=.25\textwidth
 ]
-\addplot [semithick, black]
+
+\addplot [semithick, color0, mark=o,mark repeat=25,mark repeat=20,mark size=1.5pt]
 table {%
 0.0025 0.974999999999951
 0.0075 0.974999999999907
@@ -1078,7 +1123,7 @@ table {%
 0.9975 0.0304922816953786
 };
 \addlegendentry{\small \(\hy\)}
-\addplot [semithick, black, dashed]
+\addplot [semithick, red, mark=square,mark repeat=20,mark size=1pt]
 table {%
 0.0025 0.97499875113314
 0.0075 0.974998415169894
@@ -1282,6 +1327,26 @@ table {%
 0.9975 0.0306621360327894
 };
 \addlegendentry{\small \(\rare\)}
+\addplot [semithick,dashed]
+table {%
+	0.2525 0
+	0.2525 1
+};
+\addplot [semithick,dashed]
+table {%
+	0.48 0
+	0.48 1
+};
+\addplot [semithick,dashed]
+table {%
+	0.61 0
+	0.61 1
+};
+\addplot [semithick,dashed]
+table {%
+	0.75 0
+	0.75 1
+};
 \end{groupplot}
 
 \end{tikzpicture}
