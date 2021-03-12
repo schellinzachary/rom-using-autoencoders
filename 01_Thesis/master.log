@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  11 MAR 2021 09:31
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  11 MAR 2021 20:00
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1515,47 +1515,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-(./Figures/BGK/Sod.tex
+
+Underfull \hbox (badness 10000) in paragraph at lines 82--84
+
+ []
+
+[5<./Figures/master-figure1.pdf>] (./Figures/BGK/Sod.tex
 ===== Image 'Figures/master-figure2' is up-to-date. ======
-) [5<./Figures/master-figure1.pdf>] (./Figures/BGK/Sod_time0.tex
+) (./Figures/BGK/Sod_time0.tex
 ===== Image 'Figures/master-figure3' is up-to-date. ======
 )
-Overfull \hbox (9.3062pt too wide) in paragraph at lines 1--94
+Overfull \hbox (9.3062pt too wide) in paragraph at lines 1--98
  [][] 
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 94.
+(Font)              <10> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 94.
+(Font)              <7> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 94.
+(Font)              <5> on input line 98.
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--94
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
 
  []
 
 (./Figures/BGK/Sod_time.tex
 ===== Image 'Figures/master-figure4' is up-to-date. ======
 )
-Overfull \hbox (9.3062pt too wide) in paragraph at lines 1--100
+Overfull \hbox (9.3062pt too wide) in paragraph at lines 1--104
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--102
+Underfull \hbox (badness 10000) in paragraph at lines 95--106
 
  []
 
 (./Figures/BGK/ExamplesSOD.tex
 ===== Image 'Figures/master-figure5' is up-to-date. ======
 )
-Overfull \hbox (5.53064pt too wide) in paragraph at lines 2--106
+Overfull \hbox (5.53064pt too wide) in paragraph at lines 2--110
  [][] 
  []
 
@@ -2010,14 +2015,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43054 strings out of 481365
+ 43060 strings out of 481365
  125007,10205817 words of node,token memory allocated
  843 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
 , 62 glue_spec, 54 attribute_list, 2 write nodes
    avail lists: 1:4,2:2351,3:373,4:83,5:614,6:50,7:13205,8:66,9:762,10:30,11:758
 
- 56629 multiletter control sequences out of 65536+600000
+ 56635 multiletter control sequences out of 65536+600000
  115 fonts using 9846811 bytes
  81i,14n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
@@ -2037,10 +2042,10 @@ m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on master.pdf (52 pages, 7570965 bytes).
+Output written on master.pdf (52 pages, 7573341 bytes).
 
-PDF statistics: 2657 PDF objects out of 2984 (max. 8388607)
- 2147 compressed objects within 22 object streams
+PDF statistics: 2668 PDF objects out of 2984 (max. 8388607)
+ 2158 compressed objects within 22 object streams
  182 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
