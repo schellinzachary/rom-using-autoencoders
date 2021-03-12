@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAR 2021 14:29
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAR 2021 19:35
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1576,49 +1576,54 @@ figure5.pdf><./Figures/master-figure6.pdf>])
  (./chapters/Deep_Learning.tex
 Chapter 3.
 
-LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 11.
+Underfull \hbox (badness 10000) in paragraph at lines 7--12
+
+ []
 
 
-LaTeX Warning: Citation `the' on page 8 undefined on input line 19.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 28
-.
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Citation `bibid' on page 8 undefined on input line 28.
+LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 15.
 
 
-LaTeX Warning: Citation `bibid' on page 8 undefined on input line 28.
+LaTeX Warning: Citation `the' on page 8 undefined on input line 23.
 
 [8
 
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 32
+.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 
 LaTeX Warning: Citation `bibid' on page 9 undefined on input line 32.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 9 undefined on input line 32.
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 32.
+
+
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 36.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 9 undefined on input line 36.
 
 [9]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 5
-1.
+5.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 53.
+LaTeX Warning: Citation `bibid' on page 10 undefined on input line 57.
 
 [10]
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 80.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 84.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-80.
+84.
 
 ) [11]
 \openout2 = chapters/Reduced_order_Modeling.aux
@@ -2016,11 +2021,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  43060 strings out of 481365
- 125007,10205817 words of node,token memory allocated
+ 125011,10205817 words of node,token memory allocated
  843 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
 , 62 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:4,2:2351,3:373,4:83,5:614,6:50,7:13205,8:66,9:762,10:30,11:758
+   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:50,7:13205,8:73,9:762,10:30,11:758
 
  56635 multiletter control sequences out of 65536+600000
  115 fonts using 9846811 bytes
@@ -2042,10 +2047,10 @@ m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
 .pfb>
-Output written on master.pdf (52 pages, 7598808 bytes).
+Output written on master.pdf (52 pages, 7599390 bytes).
 
-PDF statistics: 2669 PDF objects out of 2984 (max. 8388607)
- 2158 compressed objects within 22 object streams
+PDF statistics: 2668 PDF objects out of 2984 (max. 8388607)
+ 2157 compressed objects within 22 object streams
  182 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
