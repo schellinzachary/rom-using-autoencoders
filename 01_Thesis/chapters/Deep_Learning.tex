@@ -6,11 +6,11 @@
 
 In this chapter dimensionality reduction algorithms which will be applied to solutions of the BGK model in Sod's shock tube are introduced: Proper orthogonal Decomposition (POD) and Autoencoders (AEs).\\
 We will start off with a short introducing into POD, continue with autoencoders and finish with a detailed description of deep learning. Note that the main focus of this thesis lies in the application of autoencoders for which POD solely serves as a comparative method.\\
-Dimensionality reduction algorithms lie at the heart of any reduced order model (ROM). As input serve datasets such as solutions of a full order model (FOM) or experimental data. The output is an approximation to the input.\\
--dynamical systems\\
--capture dynamics of the system\\      
+Dimensionality reduction algorithms lie at the heart of any reduced order model (ROM) which is described in he following chapter. As input serve datasets such as solutions of a full order model (FOM) or experimental data. These datasets contain the dynamics of a spatio-temporal problem. The output is an approximation to the input. It is reconstructed from a low-dimensional representation that captured the underlying dynamics of the input problem. 
 \section{Proper orthogonal decomposition (POD)}
 \label{Sec: POD}
+The solution of PDEs can be approximated either by disection into a system od ODEs as described in \cref{Ch:BGK}, or equally by seperation of variables.  
+
 
 The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
 \begin{equation}
