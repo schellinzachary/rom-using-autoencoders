@@ -9,15 +9,31 @@ We will start off with a short introducing into POD, continue with autoencoders 
 Dimensionality reduction algorithms lie at the heart of any reduced order model (ROM) which is described in he following chapter. As input serve datasets such as solutions of a full order model (FOM) or experimental data. These datasets contain the dynamics of a spatio-temporal problem. The output is an approximation to the input. It is reconstructed from a low-dimensional representation that captured the underlying dynamics of the input problem. 
 \section{Proper orthogonal decomposition (POD)}
 \label{Sec: POD}
-The solution of PDEs can be approximated either by disection into a system od ODEs as described in \cref{Ch:BGK}, or equally by seperation of variables.  
-
-
-The singular value decomposition of the input $X$ [REF to Section 1] gives the optimal low-rank approximation $\tilde{X}$ of $X$ \cref{Eg:EckardYoung}[Eckard-Young].
+The solution of PDEs can be approximated either through a discretization into a system of ODEs as described in \cref{Ch:BGK}, or alternatively through a separation of variables ansatz
 \begin{equation}
-\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} || X -\tilde{X} ||_F=\tilde{U}\tilde{\Sigma}\tilde{V}^*
+	f(t,v,x) = \sum_na_n(t)\Phi_n(x,v)\mathrm{,}
+\end{equation}  
+as descried in \cite{Kutz}. Temporal dependence rendered through \(a_n(t)\) is independent from the spatial information carried in \(\Phi_n(x,v)\). Here \(\Phi_n(x,v)\) are called basis modes. With increasing \(n\), the accuracy of the solution consequently increases as well, which is similar to increasing the spatial resolution in finite difference methods outlined in \cref{Ch:BGK}. The essence of dimensionality reduction algorithms is now to find an optimal basis \(\Phi(x,v)_n\), that is optimal in the sense that they are \glqq specifically tailored for the dynamics and geometry[...]\grqq{} thus \glqq [...]allowing for a minimal number of modes to reconstruct the dynamics[...]\grqq{}(\cite{Kutz},p.380 f).\\
+An optimal basis can be provided by POD. It leverages a physically interpretable spatio-temporal decomposition of the input data \cite{Kutz}. At first this data needs to be preprocessed in a fashion, that seperates the temporal and spatial axis. Each temporal state is called snapshot and is stacked in a matrix \(\Pi\) such that
+\begin{equation}
+	\mathbf{\Pi}=\left[ \mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_i \right] \qquad \mathrm{with}\qquad \mathbf{u}_i=\left[f(v_1,x_1),\dots,f(v_k,x_1),f(v_1,x_2)\dots,f(v_k,x_j)\right]^T \mathrm{,}
+\end{equation}
+where \(i\) is the number of available snapshots. Afterwards \(\mathbf{\Pi}\) is decomposed using the singular value decomposition (SVD) which solves the left and right singular value problem leveraging
+\begin{equation}
+	\mathbf{\Pi} = \mathbf{U}\mathbf{\Sigma}\mathbf{V}^*\mathrm{,}
+\end{equation}
+where \(\mathbf{U}\) is a unitary matrix containing the left singular vectors of \(\mathbf{\Pi}\) in it's columns and \(\mathbf{V}\), also a unitary matrix, containing the right singular vectors in it's columns. Here superscribt asterix denotes the complex conjugate transpose. Furthermore \(\mathbf{\Sigma}\) is a sparse matrix with the singular values in descending order on it's diagonal \cite{Kutz}. Note that the SVD always produces as much singular values and in turn singular vectors as there are elements on the shortest axis of the input matrix. Hence when preprocessing the input data as described above one gets as many singular values -and vectors as there are snapshots, given that the resolution in time is smaller than the spatial resolution.\\
+Next, by applying the Eckard-Young theorem, that can be looked up in \cite{Kutz}, it is possible to solely harness the first leading singular values and corresponding vectors to approximate \(\mathbf{\Pi}\) to a given accuracy. The theorem states that the the optimal rank-r approximation to $\mathbf{\Pi}$, in a least-squares sense, is given by the rank-r SVD truncation \(\mathbf{\tilde{\Pi}}\):
+\begin{equation}
+\underset{\tilde{\mathbf
+	{\Pi}}, s.t. rank(\tilde{\mathbf
+{\Pi}})=r}{\operatorname{argmin}} \| \mathbf
+{\Pi} -\tilde{\mathbf
+{\Pi}} \|_F=\mathbf{\tilde{U}}\mathbf{\tilde{\Sigma}}\mathbf{\tilde{V}}^*\mathrm{.}
 \label{Eq:EckardYoung}
 \end{equation} 
-
+Here \(\mathbf{\tilde{U}}\) and \(\mathbf{\tilde{V}}\) denote the first \(r\) leading columns of \(\mathbf{U}\) and \(\mathbf{V}\), and \(\mathbf{\tilde{\Sigma}}\) contains the leading \(r \times r\) sub-block of \(\mathbf{\Sigma}\). \(\|\cdot\|_F\) is the Frobenius norm \cite{Kutz}.\\
+When decomposing a matrix that contains snapshots of a dynamical system, the columns of \(\mathbf{\tilde{U}}\) and \(\mathbf{\tilde{V}}\) contain dominant patterns that describe the dynamical system. Moreover they provide a hierarchical set of modes, that characterize the observed attractor on which we may project a low-dimensional dynamical system to obtain reduced order models. That being said, we use the left singular values of \(\mathbf{\tilde{U}}\) as optimal basis modes. They provide a coordinate transformation from the high dimensional input space onto the low dimensional pattern space.[PLS CHECK AGAIN, sentence is stolen from KUTZ]
 \section{Autoencoders}
 \label{Sec:AE}
 In this section deep learning with the focus on fully connected autoencoders and convolutional autoencoders will be introduced. Starting of with addressing important terminology whilst presenting the concept of autoencoders and continuing with the introduction of the fully connected and convolutional forwardpass , this section closes with ADAM \cite{the} an update to the backpropagation algorithm as well as important training methods.\\ 

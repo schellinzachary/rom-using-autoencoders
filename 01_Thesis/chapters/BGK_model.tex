@@ -25,7 +25,7 @@ The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar
 \partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f) \text{,}
 \label{Eq:BGK}
 \end{equation}
-which can be found in \cite{puppo2019kinetic}.It features the relaxation time \(\tau(x,t)\), the Maxwellian distribution \(M_f\) and \(f(x,v,t)\) the probability of a gas particle having a microscopic velocity \(v\) in phase space \((x,v,t)\). The right hand side is a source term describing the distance between the current probability density function \(f\) and it's equilibrium solution \(M_f\). Evidently when \(f = M_f\) the right hand side becomes zero. More precisely equilibirum is reached. A time scale for which \(f\) transitions into equilibrium is given by \(\tau\) which can be defined with
+which can be found in \cite{puppo2019kinetic}.It features the relaxation time \(\tau(x,t)\), the Maxwellian distribution \(M_f\) and \(f(t,v,x)\) the probability of a gas particle having a microscopic velocity \(v\) in phase space \((t,v,x)\). The right hand side is a source term describing the distance between the current probability density function \(f\) and it's equilibrium solution \(M_f\). Evidently when \(f = M_f\) the right hand side becomes zero. More precisely equilibirum is reached. A time scale for which \(f\) transitions into equilibrium is given by \(\tau\) which can be defined with
 \begin{equation}
 	\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{\Kn}\mathrm{,}
 \end{equation}
@@ -33,7 +33,7 @@ taken from \cite{Bernard}. Through \(\tau\) the viscosity exponent \(\nu\), dens
 \begin{equation}
 M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) \text{.}
 \end{equation} 
-The left hand side of the BGK model is the Boltzmann transport equation for \(f(x,v,t)\) with microscopic transport velocity \(v\).
+The left hand side of the BGK model is the Boltzmann transport equation for \(f(t,v,x)\) with microscopic transport velocity \(v\).
 In one dimension, the BGK model needs to be evaluated for the three independent variables \(x\), \(v\) and \(t\) as seen above. Furthermore in three dimensions one needs to include the evaluation at \((x,y,z)\) in space and \((v_x,v_y,v_z)\) in velocity space. Note that in this thesis the BGK model is discussed in one dimension only.\\ 
 Now what makes the BGK model especially attractive for model order reduction?
 The fruitfullness of performing a model order reduction on the BGK model becomes clearer when looking at it's space and velocity discretization
@@ -41,7 +41,7 @@ The fruitfullness of performing a model order reduction on the BGK model becomes
 	\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t)) \text{,}
 	\label{Eq:Discrete BGK}
 \end{equation}
-found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(x_j,v_k,t)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
+found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^n = n \Delta t\), \(n \in \mathbb{N}\) on which \(f_{j,k} = f(t,v_k,x_j)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
 To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3J^3\) first order differential equations. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together motivate for a reduced order model.\\
 A closer look on the discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations.\\  
 \begin{wrapfigure}{r}{0.5\textwidth}
@@ -71,7 +71,7 @@ and provide conservation laws for the BGK model. Note that the evaluation of the
 \end{equation}
 which is accomplished by the computation of a discrete Maxwellian \(\mathcal{M}_f\) by solving
 \begin{equation}
-	\sum_k w_k \Phi(v_k) [f(x,v_k,t) - \exp(\alpha(x,t)\Phi(v_k))] = 0\mathrm{.}
+	\sum_k w_k \Phi(v_k) [f(t,v_k,x) - \exp(\alpha(x,t)\Phi(v_k))] = 0\mathrm{.}
 \end{equation}
 Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution for can be determined for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and time discretization will be omitted.\\
 
@@ -90,7 +90,7 @@ The problem setup for a shock tube at \(t=0\) is shown in \cref{Fig:SodProbSetup
 	\label{Fig:SodProbSetup}
 \end{figure}
 At \(t>0\) the diaphragm is broken, which leads to the formation of five regions which are depicted in \cref{Fig:SodTime0}. Between \(x_1\) and \(x_2\) we find the head and tail of the rarefaction wave traveling left. The solution for \(\rho\), \(p\) and \(u\) is continuous in this area. The rarefaction wave is clearly discernible for a dilution of \(\Kn=0.01\) and \(\Kn=0.00001\) as seen \cref{Fig:SODHyRare}. The contact discontinuity at \(x_3\) is the point where a particle traveled from it's initial location at \(x_d\) in a time \(\Delta t\). The original paper by Sod mentions here, that across the contact discontinuity \(x_3\) the macroscopic velocity \(u\) and the pressure \(p\) are continuous in  contrast to the density \(\rho\) and the energy \(E\), as depicted in \cref{Fig:SodTime0}. This cannot be assumed for rarefied gases with \(\Kn=0.01\) as seen in \cref{Fig:SODHyRare}. A pronounced contact discontinuity in the density \(\rho\) and the energy \(E\) cannot be found. Labeled as \(x_4\) is the position of the shock wave, at which in general none of the microscopic quantities will be continuous for gases with \(\Kn=0.00001\). Again this does not hold for rarefied regimes as seen in \cref{Fig:SODHyRare}.\\
-Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} in order to elaborate the general evolution in time of a gas of \(\Kn<0.01\) in Sod's shock tube. \Cref{Fig:ExamplesSod} shows solutions \(f(x,v,t_i)\) of the BGK model with \(t_0=0s\),\(t_1=0.06\) and \(t_3=0.12s\) for two rarefaction levels \(\Kn=0.00001\) and \(\Kn=0.01\). There the difference when increasing the dilution of a gas in Sod's shock tube is visible: An increased dilution leads to a smooth transition from region 1 to region 5 with the abundance of a pronounced shock front. 
+Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} in order to elaborate the general evolution in time of a gas of \(\Kn<0.01\) in Sod's shock tube. \Cref{Fig:ExamplesSod} shows solutions \(f(t_i,v,x)\) of the BGK model with \(t_0=0s\),\(t_1=0.06\) and \(t_3=0.12s\) for two rarefaction levels \(\Kn=0.00001\) and \(\Kn=0.01\). There the difference when increasing the dilution of a gas in Sod's shock tube is visible: An increased dilution leads to a smooth transition from region 1 to region 5 with the abundance of a pronounced shock front. 
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
 		\centering
@@ -108,7 +108,7 @@ Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} i
 		\centering
 		\input{Figures/BGK/ExamplesSod.tex}
 		\vspace{-10pt}
-		\caption{Two solutions of the BGK model \(f(v,x,t_i)\) in Sod's shock tube with \(\Kn=0.00001\) (top row) and \(\Kn=0.01\) (bottom row) for a fixed time \(t_i\). Solutions are presented for \(t_0=0s\), \(t_1=0.06s\) and \(t_2=0.12s\).}
+		\caption{Two solutions of the BGK model \(f(t_i,v,x)\) in Sod's shock tube with \(\Kn=0.00001\) (top row) and \(\Kn=0.01\) (bottom row) for a fixed time \(t_i\). Solutions are presented for \(t_0=0s\), \(t_1=0.06s\) and \(t_2=0.12s\).}
 		\label{Fig:ExamplesSod}
 	\end{subfigure}\\%\vspace{5pt}
 	\begin{subfigure}{\textwidth}

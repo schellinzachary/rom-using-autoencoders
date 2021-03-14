@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  13 MAR 2021 17:55
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  14 MAR 2021 23:37
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1575,52 +1575,51 @@ figure5.pdf><./Figures/master-figure6.pdf>])
 \openout2 = chapters/Deep_Learning.aux
  (./chapters/Deep_Learning.tex
 Chapter 3.
-
-LaTeX Warning: Reference `Eg:EckardYoung' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Citation `the' on page 8 undefined on input line 23.
-
 [8
 
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 32
+
+LaTeX Warning: Citation `the' on page 9 undefined on input line 39.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 48
 .
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 32.
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 48.
 
 
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 32.
-
-
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 36.
-
-
-LaTeX Warning: Citation `Pytorch website' on page 9 undefined on input line 36.
+LaTeX Warning: Citation `bibid' on page 9 undefined on input line 48.
 
 [9]
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 5
-5.
+
+LaTeX Warning: Citation `bibid' on page 10 undefined on input line 52.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 10 undefined on input line 52.
+
+
+[10]
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 7
+1.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 57.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 73.
 
-[10]
+[11]
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 84.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 100.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-84.
+100.
 
-) [11]
+) [12]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -1633,7 +1632,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
  []
 
-[12
+[13
 
 
 
@@ -1642,7 +1641,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--84
 
  []
 
-[13] (./Figures/SVD/CumSum_Hydro.tex
+[14] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure9' is up-to-date. ======
 )
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--102
@@ -1666,10 +1665,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--112
 
  []
 
-[14] (./Figures/Results/Var_iv.tex
+[15] (./Figures/Results/Var_iv.tex
 ===== Image 'Figures/master-figure11' is up-to-date. ======
-) [15<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]) [16<./Figur
-es/master-figure11.pdf>] [17]
+) [16<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]) [17<./Figur
+es/master-figure11.pdf>] [18]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1692,16 +1691,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--34
 
  []
 
-[18
+[19
 
 
 
 ] (./Figures/Results/MacroError.tex
 ===== Image 'Figures/master-figure14' is up-to-date. ======
-) [19<./Figures/master-figure12.pdf><./Figures/master-figure13.pdf>]
+) [20<./Figures/master-figure12.pdf><./Figures/master-figure13.pdf>]
 (./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure15' is up-to-date. ======
-) [20<./Figures/master-figure14.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+) [21<./Figures/master-figure14.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
 ===== Image 'Figures/master-figure16' is up-to-date. ======
 )
 Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--57
@@ -1728,15 +1727,15 @@ Overfull \hbox (38.6866pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
-[21<./Figures/master-figure15.pdf>]
+[22<./Figures/master-figure15.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 79.
 
-) [22] [23<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>]
-[24<./Figures/master-figure18.pdf><./Figures/master-figure19.pdf>] [25<./Figures
-/master-figure20.pdf>] [26<./Figures/master-figure21.pdf>]
-(./appendix/appendixA.tex [27
+) [23] [24<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>]
+[25<./Figures/master-figure18.pdf><./Figures/master-figure19.pdf>] [26<./Figures
+/master-figure20.pdf>] [27<./Figures/master-figure21.pdf>]
+(./appendix/appendixA.tex [28
 
 ]
 Appendix A.
@@ -1757,9 +1756,9 @@ LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
 
 LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 
-[28
+[29
 
-] [29] [30] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+] [30] [31] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure22' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure23' is up-to-date. ======
@@ -1932,23 +1931,23 @@ Underfull \hbox (badness 5490) in paragraph at lines 223--226
 [][] []
  []
 
-[31] [32<./Figures/master-figure22.pdf><./Figures/master-figure23.pdf><./Figures
+[32] [33<./Figures/master-figure22.pdf><./Figures/master-figure23.pdf><./Figures
 /master-figure24.pdf><./Figures/master-figure25.pdf><./Figures/master-figure26.p
-df>] [33<./Figures/master-figure27.pdf><./Figures/master-figure28.pdf><./Figures
+df>] [34<./Figures/master-figure27.pdf><./Figures/master-figure28.pdf><./Figures
 /master-figure29.pdf><./Figures/master-figure30.pdf><./Figures/master-figure31.p
-df>] [34<./Figures/master-figure32.pdf><./Figures/master-figure33.pdf><./Figures
+df>] [35<./Figures/master-figure32.pdf><./Figures/master-figure33.pdf><./Figures
 /master-figure34.pdf><./Figures/master-figure35.pdf><./Figures/master-figure36.p
-df><./Figures/master-figure37.pdf>] [35<./Figures/master-figure38.pdf><./Figures
-/master-figure39.pdf>] [36<./Figures/master-figure40.pdf><./Figures/master-figur
+df><./Figures/master-figure37.pdf>] [36<./Figures/master-figure38.pdf><./Figures
+/master-figure39.pdf>] [37<./Figures/master-figure40.pdf><./Figures/master-figur
 e41.pdf><./Figures/master-figure42.pdf><./Figures/master-figure43.pdf><./Figures
-/master-figure44.pdf>] [37<./Figures/master-figure45.pdf><./Figures/master-figur
-e46.pdf>] [38<./Figures/master-figure47.pdf><./Figures/master-figure48.pdf><./Fi
+/master-figure44.pdf>] [38<./Figures/master-figure45.pdf><./Figures/master-figur
+e46.pdf>] [39<./Figures/master-figure47.pdf><./Figures/master-figure48.pdf><./Fi
 gures/master-figure49.pdf><./Figures/master-figure50.pdf><./Figures/master-figur
-e51.pdf><./Figures/master-figure52.pdf>] [39<./Figures/master-figure53.pdf><./Fi
-gures/master-figure54.pdf>] [40<./Figures/master-figure55.pdf><./Figures/master-
+e51.pdf><./Figures/master-figure52.pdf>] [40<./Figures/master-figure53.pdf><./Fi
+gures/master-figure54.pdf>] [41<./Figures/master-figure55.pdf><./Figures/master-
 figure56.pdf><./Figures/master-figure57.pdf><./Figures/master-figure58.pdf><./Fi
 gures/master-figure59.pdf><./Figures/master-figure60.pdf>]
-[41<./Figures/master-figure61.pdf><./Figures/master-figure62.pdf>] [42<./Figures
+[42<./Figures/master-figure61.pdf><./Figures/master-figure62.pdf>] [43<./Figures
 /master-figure63.pdf><./Figures/master-figure64.pdf><./Figures/master-figure65.p
 df>]
 Appendix B.
@@ -1979,14 +1978,14 @@ LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 249.
 
-) [43
+) [44
 
-<./Figures/master-figure66.pdf>] [44<./Figures/master-figure67.pdf><./Figures/ma
-ster-figure68.pdf><./Figures/master-figure69.pdf>] [45<./Figures/master-figure70
+<./Figures/master-figure66.pdf>] [45<./Figures/master-figure67.pdf><./Figures/ma
+ster-figure68.pdf><./Figures/master-figure69.pdf>] [46<./Figures/master-figure70
 .pdf><./Figures/master-figure71.pdf><./Figures/master-figure72.pdf>]
-(./master.bbl [46
+(./master.bbl [47
 
-]) [47] (./back/acknowledgement.tex) [48
+]) [48] (./back/acknowledgement.tex) [49
 
 ]
 (./back/declaration.tex
@@ -1994,7 +1993,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [49]
+) [50]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2015,37 +2014,37 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43060 strings out of 481365
- 125011,10205817 words of node,token memory allocated
- 843 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 105 attribute
-, 62 glue_spec, 54 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:50,7:13205,8:73,9:762,10:30,11:758
+ 43063 strings out of 481365
+ 125007,10205817 words of node,token memory allocated
+ 969 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 11 sub_mlist, 1 glyph, 137 attribut
+e, 62 glue_spec, 70 attribute_list, 2 write nodes
+   avail lists: 1:1,2:2351,3:373,4:84,5:614,6:50,7:13205,8:73,9:762,10:30,11:758
 
- 56635 multiletter control sequences out of 65536+600000
+ 56634 multiletter control sequences out of 65536+600000
  115 fonts using 9846811 bytes
  81i,14n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
-s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/te
-xmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10
-.pfb>
-Output written on master.pdf (52 pages, 7599651 bytes).
+s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/shar
+e/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/tex
+mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
+8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (53 pages, 7624650 bytes).
 
-PDF statistics: 2670 PDF objects out of 2984 (max. 8388607)
- 2159 compressed objects within 22 object streams
- 182 named destinations out of 1000 (max. 131072)
+PDF statistics: 2689 PDF objects out of 2984 (max. 8388607)
+ 2176 compressed objects within 22 object streams
+ 186 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
