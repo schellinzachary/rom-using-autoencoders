@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 MAR 2021 21:25
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 MAR 2021 23:49
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1036,6 +1036,12 @@ zexternalshared.code.tex))
 zlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@layerbox@background=\box111
+\pgf@layerboxsaved@background=\box112
+)
 \openout3 = master.auxlock
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -1085,26 +1091,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box111
-\pgfnodeparttwobox=\box112
-\pgfnodepartthreebox=\box113
-\pgfnodepartfourbox=\box114
-\pgfnodeparttwentybox=\box115
-\pgfnodepartnineteenbox=\box116
-\pgfnodeparteighteenbox=\box117
-\pgfnodepartseventeenbox=\box118
-\pgfnodepartsixteenbox=\box119
-\pgfnodepartfifteenbox=\box120
-\pgfnodepartfourteenbox=\box121
-\pgfnodepartthirteenbox=\box122
-\pgfnodeparttwelvebox=\box123
-\pgfnodepartelevenbox=\box124
-\pgfnodeparttenbox=\box125
-\pgfnodepartninebox=\box126
-\pgfnodeparteightbox=\box127
-\pgfnodepartsevenbox=\box128
-\pgfnodepartsixbox=\box129
-\pgfnodepartfivebox=\box130
+\pgfnodepartlowerbox=\box113
+\pgfnodeparttwobox=\box114
+\pgfnodepartthreebox=\box115
+\pgfnodepartfourbox=\box116
+\pgfnodeparttwentybox=\box117
+\pgfnodepartnineteenbox=\box118
+\pgfnodeparteighteenbox=\box119
+\pgfnodepartseventeenbox=\box120
+\pgfnodepartsixteenbox=\box121
+\pgfnodepartfifteenbox=\box122
+\pgfnodepartfourteenbox=\box123
+\pgfnodepartthirteenbox=\box124
+\pgfnodeparttwelvebox=\box125
+\pgfnodepartelevenbox=\box126
+\pgfnodeparttenbox=\box127
+\pgfnodepartninebox=\box128
+\pgfnodeparteightbox=\box129
+\pgfnodepartsevenbox=\box130
+\pgfnodepartsixbox=\box131
+\pgfnodepartfivebox=\box132
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1156,7 +1162,7 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count309
-\l__pdf_internal_box=\box131
+\l__pdf_internal_box=\box133
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count310
@@ -1171,7 +1177,7 @@ Package: xparse 2020-02-14 L3 Experimental document command parser
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box132
+\tikzscale@measuredSize=\box134
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1234,7 +1240,7 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box133
+\ttl@box=\box135
 \beforetitleunit=\skip67
 \aftertitleunit=\skip68
 \ttl@plus=\dimen307
@@ -1306,7 +1312,7 @@ LaTeX Font Info:    ... okay on input line 6.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
 \scratchdimen=\dimen313
-\scratchbox=\box134
+\scratchbox=\box136
 \nofMPsegments=\count321
 \nofMParguments=\count322
 \everyMPshowfont=\toks44
@@ -1324,7 +1330,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box135
+\AtBeginShipoutBox=\box137
 Package hyperref Info: Link coloring OFF on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1579,56 +1585,59 @@ Chapter 3.
 
 
 
-] (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
-===== Image 'Figures/master-figure7' is up-to-date. ======
-)
-Underfull \hbox (badness 10000) in paragraph at lines 44--49
+]
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 59
+(./Figures/Reduced_Order_Algorithms/AE_scheme.tex
+===== Image 'Figures/master-figure7' is up-to-date. ======
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 47.
+ [9]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 61
 .
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 59.
+LaTeX Warning: Citation `bibid' on page 10 undefined on input line 61.
 
 
-LaTeX Warning: Citation `bibid' on page 9 undefined on input line 59.
-
-[9<./Figures/master-figure7.pdf>]
-
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 63.
+LaTeX Warning: Citation `bibid' on page 10 undefined on input line 61.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 10 undefined on input line 63.
+LaTeX Warning: Citation `bibid' on page 10 undefined on input line 65.
 
 
-[10]
+LaTeX Warning: Citation `Pytorch website' on page 10 undefined on input line 65.
+
+
+[10<./Figures/master-figure7.pdf>]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 8
-2.
+4.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 84.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 86.
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 93.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 95.
 
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 94.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 96.
 
 
 [11]
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 111.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 113.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-111.
+113.
 
 ) [12]
 \openout2 = chapters/Reduced_order_Modeling.aux
@@ -2025,33 +2034,35 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43085 strings out of 481365
+ 43189 strings out of 481365
  125007,10205817 words of node,token memory allocated
- 969 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 11 sub_mlist, 1 glyph, 137 attribut
-e, 62 glue_spec, 70 attribute_list, 2 write nodes
-   avail lists: 2:2351,3:373,4:83,5:614,6:50,7:13205,8:72,9:762,10:72,11:758
- 56634 multiletter control sequences out of 65536+600000
- 115 fonts using 9846811 bytes
+ 879 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
+, 62 glue_spec, 60 attribute_list, 2 write nodes
+   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:50,7:13205,8:73,9:762,10:30,11:758
+
+ 56721 multiletter control sequences out of 65536+600000
+ 124 fonts using 10472211 bytes
  81i,14n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
-s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf
+s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
+></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
+1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf
 /fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.p
 fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type
 1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
-8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (53 pages, 7656802 bytes).
+e/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/l
+mri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
+.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msbm10.pfb>
+Output written on master.pdf (53 pages, 7658131 bytes).
 
 PDF statistics: 2702 PDF objects out of 2984 (max. 8388607)
  2186 compressed objects within 22 object streams

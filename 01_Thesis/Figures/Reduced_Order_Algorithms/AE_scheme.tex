@@ -1,33 +1,47 @@
 \begin{tikzpicture}
+
 %input layer
-\node[circ] at (0, 0)   (1) {};
-\node[circ] at (0, .5)  (2) {};
-\node[circ] at (0, 1)   (3) {};
-\node[circ] at (0, 1.5) (4) {};
-\node[circ] at (0, 2)   (5) {};
-\node[circ] at (0, 2.5) (6) {};
+\foreach \x [count=\y] in {0,.5,1.0,1.5,2,2.5}
+	\node[circ] at (0,\x) (\y) {};
+%hidden layer
+\foreach \x  [count=\y from 7] in {0.25,0.75,1.25,1.75,2.25}
+	\node[circ] at (2,\x) (\y) {};
 %code layer
-\node[circ] at (2, 0.75) (7) {};
-\node[circ] at (2, 1.25) (8) {};
-\node[circ] at (2, 1.75) (9) {};
+\foreach \x [count=\y from 12] in {0.75,1.25,1.75}
+\node[circ] at (4, \x) (\y) {};
+%hidden layer
+\foreach \x  [count=\y from 15] in {0.25,0.75,1.25,1.75,2.25}
+\node[circ] at (6,\x) (\y) {};
 %output layer
-\node[circ] at (4, 0)   (10) {};
-\node[circ] at (4, .5)  (11) {};
-\node[circ] at (4, 1)   (12) {};
-\node[circ] at (4, 1.5) (13) {};
-\node[circ] at (4, 2)   (14) {};
-\node[circ] at (4, 2.5) (15) {};
+\foreach \x [count=\y from 20] in {0,.5,1.0,1.5,2,2.5}
+\node[circ] at (8, \x)   (\y) {};
+\begin{pgfonlayer}{background}
 %draw connections
-\foreach \x in {1,...,6,10,11,12,13,14,15}
-\foreach \y in {7,8,9}
+\foreach \x in {1,...,6}
+\foreach \y in {7,...,11}
 	\draw (\x) -- (\y);
-\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (-.3,-.5) -- (1.98,-.5) node [midway,below = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-{Encoder:\nodepart{second} \(h(\Pi)=\Phi\)};
-\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (2.02,-.5) -- (4.3,-.5) node [ midway,below= 8pt,draw=none,rectangle split,rectangle split parts=2] {Decoder: \nodepart{second} g(\Phi)=$\tilde{\Pi}$};
-\draw [thick,decorate,decoration={brace,amplitude=3pt}] (-.3,2.75) -- (.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-{Input \nodepart{second}Layer};
-\draw [thick,decorate,decoration={brace,amplitude=3pt}] (1.7,2) -- (2.3,2) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-{Hidden \nodepart{second}Layer};
-\draw [thick,decorate,decoration={brace,amplitude=3pt}] (3.7,2.75) -- (4.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-{Output \nodepart{second}Layer};
+\foreach \x in {7,...,11}
+\foreach \y in {12,...,14}
+\draw (\x) -- (\y);
+\foreach \y in {12,...,14}
+\foreach \x in {15,...,19}
+\draw (\x) -- (\y);
+\foreach \y in {15,...,19}
+\foreach \x in {20,...,25}
+\draw (\x) -- (\y);
+\end{pgfonlayer}
+%dots
+\path (3,0)--(3,2.5) node[ellipse,rotate=90,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
+%dots
+\path (5,0)--(5,2.5) node[ellipse,rotate=270,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
+
+%\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (-.3,-.5) -- (1.98,-.5) node [midway,below = 8pt,draw=none,rectangle split,rectangle split parts=2] 
+%{Encoder:\nodepart{second} \(h(\Pi)=\Phi\)};
+%\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (2.02,-.5) -- (4.3,-.5) node [ midway,below= 8pt,draw=none,rectangle split,rectangle split parts=2] {Decoder: \nodepart{second} g(\Phi)=$\tilde{\Pi}$};
+%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (-.3,2.75) -- (.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
+%{Input \nodepart{second}Layer};
+%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (1.7,2) -- (2.3,2) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
+%{Hidden \nodepart{second}Layer};
+%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (3.7,2.75) -- (4.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
+%{Output \nodepart{second}Layer};
 \end{tikzpicture}
