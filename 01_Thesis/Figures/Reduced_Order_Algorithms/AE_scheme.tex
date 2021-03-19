@@ -5,16 +5,16 @@
 	\node[circ] at (0,\x) (\y) {};
 %hidden layer
 \foreach \x  [count=\y from 7] in {0.25,0.75,1.25,1.75,2.25}
-	\node[circ] at (2,\x) (\y) {};
+	\node[circ] at (3,\x) (\y) {};
 %code layer
 \foreach \x [count=\y from 12] in {0.75,1.25,1.75}
-\node[circ] at (4, \x) (\y) {};
+\node[circ] at (6, \x) (\y) {};
 %hidden layer
 \foreach \x  [count=\y from 15] in {0.25,0.75,1.25,1.75,2.25}
-\node[circ] at (6,\x) (\y) {};
+\node[circ] at (9,\x) (\y) {};
 %output layer
 \foreach \x [count=\y from 20] in {0,.5,1.0,1.5,2,2.5}
-\node[circ] at (8, \x)   (\y) {};
+\node[circ] at (12, \x)   (\y) {};
 \begin{pgfonlayer}{background}
 %draw connections
 \foreach \x in {1,...,6}
@@ -31,17 +31,27 @@
 \draw (\x) -- (\y);
 \end{pgfonlayer}
 %dots
-\path (3,0)--(3,2.5) node[ellipse,rotate=90,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
-%dots
-\path (5,0)--(5,2.5) node[ellipse,rotate=270,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
+%\path (3,0)--(3,2.5) node[ellipse,rotate=90,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
+%%dots
+%\path (5,0)--(5,2.5) node[ellipse,rotate=270,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
+%rectabgle enc
+\draw[thick,dashed,blue] (-1,-1) rectangle  (6.3,3.5) ;
+\draw [draw=none] (-1,3.5) -- (6.3,3.5) node [midway,below,draw=none,blue] 
+{Encoder: \(h(\Pi)=\Phi\)};
+%rec dec
+\draw[thick,dashed,red] (13,3.5) rectangle  (5.7,-1) ;
+\draw [draw=none] (13,3.5) -- (5.7,3.5) node [midway,below,draw=none,red] 
+{Decoder: g(\Phi)=$\tilde{\Pi}$};
 
-%\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (-.3,-.5) -- (1.98,-.5) node [midway,below = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-%{Encoder:\nodepart{second} \(h(\Pi)=\Phi\)};
-%\draw [thick,decorate,decoration={brace,mirror,amplitude=5pt}] (2.02,-.5) -- (4.3,-.5) node [ midway,below= 8pt,draw=none,rectangle split,rectangle split parts=2] {Decoder: \nodepart{second} g(\Phi)=$\tilde{\Pi}$};
-%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (-.3,2.75) -- (.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-%{Input \nodepart{second}Layer};
-%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (1.7,2) -- (2.3,2) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-%{Hidden \nodepart{second}Layer};
-%\draw [thick,decorate,decoration={brace,amplitude=3pt}] (3.7,2.75) -- (4.3,2.75) node [midway,above = 8pt,draw=none,rectangle split,rectangle split parts=2] 
-%{Output \nodepart{second}Layer};
+\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (-.3,-.3) -- (.3,-.3) node [midway, below = 4pt,draw=none] {\footnotesize Input Layer};
+\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (2.7,0) -- (3.3,0) node [midway,below = 6pt,draw=none] 
+{\footnotesize Hidden Layer};
+
+\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (8.7,0) -- (9.3,0) node [midway,below = 6pt,draw=none] 
+{\footnotesize Hidden Layer};
+
+\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (5.7,0.45) -- (6.3,0.45) node [midway,below = 6pt,draw=none,fill=white] 
+{\footnotesize Code Layer};
+
+\draw [thick,decorate,decoration={brace,mirror,amplitude=3pt}] (11.7,-.3) -- (12.3,-.3) node [midway,below = 4pt,draw=none,xshift=-.9ex] {\footnotesize Output Layer};
 \end{tikzpicture}

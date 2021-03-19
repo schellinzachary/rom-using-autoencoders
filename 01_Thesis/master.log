@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 MAR 2021 23:49
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  19 MAR 2021 18:57
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1586,60 +1586,59 @@ Chapter 3.
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 42--43
+Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
  []
 
-(./Figures/Reduced_Order_Algorithms/AE_scheme.tex
+[9] (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
 ===== Image 'Figures/master-figure7' is up-to-date. ======
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 47.
- [9]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 61
+(Font)              <9> on input line 48.
+ [10<./Figures/master-figure7.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 62
 .
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 61.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 62.
 
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 61.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 62.
 
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 65.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 66.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 10 undefined on input line 65.
+LaTeX Warning: Citation `Pytorch website' on page 11 undefined on input line 66.
 
 
-[10<./Figures/master-figure7.pdf>]
+[11]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 8
-4.
+5.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 86.
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 95.
-
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 87.
 
 
 LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 96.
 
 
-[11]
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 113.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 97.
+
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 114.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-113.
+114.
 
-) [12]
+[12]) [13]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -1652,7 +1651,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
  []
 
-[13
+[14
 
 
 
@@ -1661,7 +1660,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--84
 
  []
 
-[14] (./Figures/SVD/CumSum_Hydro.tex
+[15] (./Figures/SVD/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure10' is up-to-date. ======
 )
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--102
@@ -1685,10 +1684,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--112
 
  []
 
-[15] (./Figures/Results/Var_iv.tex
+[16] (./Figures/Results/Var_iv.tex
 ===== Image 'Figures/master-figure12' is up-to-date. ======
-) [16<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>]) [17<./Figu
-res/master-figure12.pdf>] [18]
+) [17<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>]) [18<./Figu
+res/master-figure12.pdf>] [19]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1711,16 +1710,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--34
 
  []
 
-[19
+[20
 
 
 
 ] (./Figures/Results/MacroError.tex
 ===== Image 'Figures/master-figure15' is up-to-date. ======
-) [20<./Figures/master-figure13.pdf><./Figures/master-figure14.pdf>]
+) [21<./Figures/master-figure13.pdf><./Figures/master-figure14.pdf>]
 (./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure16' is up-to-date. ======
-) [21<./Figures/master-figure15.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+) [22<./Figures/master-figure15.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
 ===== Image 'Figures/master-figure17' is up-to-date. ======
 )
 Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--57
@@ -1747,15 +1746,15 @@ Overfull \hbox (38.6866pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
-[22<./Figures/master-figure16.pdf>]
+[23<./Figures/master-figure16.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 79.
 
-) [23] [24<./Figures/master-figure17.pdf><./Figures/master-figure18.pdf>]
-[25<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf>] [26<./Figures
-/master-figure21.pdf>] [27<./Figures/master-figure22.pdf>]
-(./appendix/appendixA.tex [28
+) [24] [25<./Figures/master-figure17.pdf><./Figures/master-figure18.pdf>]
+[26<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf>] [27<./Figures
+/master-figure21.pdf>] [28<./Figures/master-figure22.pdf>]
+(./appendix/appendixA.tex [29
 
 ]
 Appendix A.
@@ -1776,9 +1775,9 @@ LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
 
 LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 
-[29
+[30
 
-] [30] [31] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+] [31] [32] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure23' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure24' is up-to-date. ======
@@ -1951,23 +1950,23 @@ Underfull \hbox (badness 5490) in paragraph at lines 223--226
 [][] []
  []
 
-[32] [33<./Figures/master-figure23.pdf><./Figures/master-figure24.pdf><./Figures
+[33] [34<./Figures/master-figure23.pdf><./Figures/master-figure24.pdf><./Figures
 /master-figure25.pdf><./Figures/master-figure26.pdf><./Figures/master-figure27.p
-df>] [34<./Figures/master-figure28.pdf><./Figures/master-figure29.pdf><./Figures
+df>] [35<./Figures/master-figure28.pdf><./Figures/master-figure29.pdf><./Figures
 /master-figure30.pdf><./Figures/master-figure31.pdf><./Figures/master-figure32.p
-df>] [35<./Figures/master-figure33.pdf><./Figures/master-figure34.pdf><./Figures
+df>] [36<./Figures/master-figure33.pdf><./Figures/master-figure34.pdf><./Figures
 /master-figure35.pdf><./Figures/master-figure36.pdf><./Figures/master-figure37.p
-df><./Figures/master-figure38.pdf>] [36<./Figures/master-figure39.pdf><./Figures
-/master-figure40.pdf>] [37<./Figures/master-figure41.pdf><./Figures/master-figur
+df><./Figures/master-figure38.pdf>] [37<./Figures/master-figure39.pdf><./Figures
+/master-figure40.pdf>] [38<./Figures/master-figure41.pdf><./Figures/master-figur
 e42.pdf><./Figures/master-figure43.pdf><./Figures/master-figure44.pdf><./Figures
-/master-figure45.pdf>] [38<./Figures/master-figure46.pdf><./Figures/master-figur
-e47.pdf>] [39<./Figures/master-figure48.pdf><./Figures/master-figure49.pdf><./Fi
+/master-figure45.pdf>] [39<./Figures/master-figure46.pdf><./Figures/master-figur
+e47.pdf>] [40<./Figures/master-figure48.pdf><./Figures/master-figure49.pdf><./Fi
 gures/master-figure50.pdf><./Figures/master-figure51.pdf><./Figures/master-figur
-e52.pdf><./Figures/master-figure53.pdf>] [40<./Figures/master-figure54.pdf><./Fi
-gures/master-figure55.pdf>] [41<./Figures/master-figure56.pdf><./Figures/master-
+e52.pdf><./Figures/master-figure53.pdf>] [41<./Figures/master-figure54.pdf><./Fi
+gures/master-figure55.pdf>] [42<./Figures/master-figure56.pdf><./Figures/master-
 figure57.pdf><./Figures/master-figure58.pdf><./Figures/master-figure59.pdf><./Fi
 gures/master-figure60.pdf><./Figures/master-figure61.pdf>]
-[42<./Figures/master-figure62.pdf><./Figures/master-figure63.pdf>] [43<./Figures
+[43<./Figures/master-figure62.pdf><./Figures/master-figure63.pdf>] [44<./Figures
 /master-figure64.pdf><./Figures/master-figure65.pdf><./Figures/master-figure66.p
 df>]
 Appendix B.
@@ -1998,14 +1997,14 @@ LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 249.
 
-) [44
+) [45
 
-<./Figures/master-figure67.pdf>] [45<./Figures/master-figure68.pdf><./Figures/ma
-ster-figure69.pdf><./Figures/master-figure70.pdf>] [46<./Figures/master-figure71
+<./Figures/master-figure67.pdf>] [46<./Figures/master-figure68.pdf><./Figures/ma
+ster-figure69.pdf><./Figures/master-figure70.pdf>] [47<./Figures/master-figure71
 .pdf><./Figures/master-figure72.pdf><./Figures/master-figure73.pdf>]
-(./master.bbl [47
+(./master.bbl [48
 
-]) [48] (./back/acknowledgement.tex) [49
+]) [49] (./back/acknowledgement.tex) [50
 
 ]
 (./back/declaration.tex
@@ -2013,7 +2012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [50]
+) [51]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2034,7 +2033,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43189 strings out of 481365
+ 43190 strings out of 481365
  125007,10205817 words of node,token memory allocated
  879 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
@@ -2062,10 +2061,10 @@ onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on master.pdf (53 pages, 7658131 bytes).
+Output written on master.pdf (54 pages, 7693218 bytes).
 
-PDF statistics: 2702 PDF objects out of 2984 (max. 8388607)
- 2186 compressed objects within 22 object streams
- 187 named destinations out of 1000 (max. 131072)
+PDF statistics: 2724 PDF objects out of 2984 (max. 8388607)
+ 2204 compressed objects within 23 object streams
+ 188 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
