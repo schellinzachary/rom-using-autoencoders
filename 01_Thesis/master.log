@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  19 MAR 2021 18:57
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  20 MAR 2021 20:01
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1585,58 +1585,66 @@ Chapter 3.
 
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 42--44
+] (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
+\openout3 = Figures/master-figure7.md5
 
- []
+\openout3 = master.auxlock
 
-[9] (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
-===== Image 'Figures/master-figure7' is up-to-date. ======
+===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
+-error -interaction=batchmode -jobname "Figures/master-figure7" "\def\tikzextern
+alrealjob{master}\input{master}"' ========
+
+\openout3 = master.auxlock
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 48.
- [10<./Figures/master-figure7.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 62
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--52
+
+ []
+
+[9] [10<./Figures/master-figure7.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 63
 .
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 62.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 63.
 
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 62.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 63.
 
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 66.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 67.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 11 undefined on input line 66.
+LaTeX Warning: Citation `Pytorch website' on page 11 undefined on input line 67.
 
 
 [11]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 8
-5.
+6.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 12 undefined on input line 87.
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 96.
-
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 88.
 
 
 LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 97.
 
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 114.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 98.
+
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 115.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-114.
+115.
 
 [12]) [13]
 \openout2 = chapters/Reduced_order_Modeling.aux
@@ -2033,12 +2041,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43190 strings out of 481365
+ 43197 strings out of 481365
  125007,10205817 words of node,token memory allocated
  879 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
 , 62 glue_spec, 60 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2351,3:373,4:83,5:614,6:50,7:13205,8:73,9:762,10:30,11:758
+   avail lists: 1:1,2:2351,3:373,4:83,5:614,6:50,7:13205,8:72,9:762,10:30,11:758
 
  56721 multiletter control sequences out of 65536+600000
  124 fonts using 10472211 bytes
@@ -2061,10 +2069,10 @@ onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
 .pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/symbols/msbm10.pfb>
-Output written on master.pdf (54 pages, 7693218 bytes).
+Output written on master.pdf (54 pages, 7696356 bytes).
 
-PDF statistics: 2724 PDF objects out of 2984 (max. 8388607)
- 2204 compressed objects within 23 object streams
+PDF statistics: 2731 PDF objects out of 2984 (max. 8388607)
+ 2210 compressed objects within 23 object streams
  188 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

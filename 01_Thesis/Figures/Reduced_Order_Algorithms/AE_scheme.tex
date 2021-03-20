@@ -30,11 +30,10 @@
 \foreach \x in {20,...,25}
 \draw (\x) -- (\y);
 \end{pgfonlayer}
-%dots
-%\path (3,0)--(3,2.5) node[ellipse,rotate=90,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
-%%dots
-%\path (5,0)--(5,2.5) node[ellipse,rotate=270,midway, fill=white] {\vdots\hspace{0.5em} \vdots\hspace{0.5em} \vdots \hspace{0.5em} \vdots};
-%rectabgle enc
+%node calculation
+\node[draw=none] at (-2,2.5) (input) {\footnotesize I};
+\node[draw=none] at (-1.5,2.5) (weight) {\footnotesize w};
+\node[circ] at (-1.75,1.5) (times) {\footnotesize $\times$};
 \draw[thick,dashed,blue] (-1,-1) rectangle  (6.3,3.5) ;
 \draw [draw=none] (-1,3.5) -- (6.3,3.5) node [midway,below,draw=none,blue] 
 {Encoder: \(h(\Pi)=\Phi\)};
