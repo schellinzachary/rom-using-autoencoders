@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 MAR 2021 15:49
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  21 MAR 2021 20:18
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -942,6 +942,12 @@ zexternalshared.code.tex))
 zlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@layerbox@background=\box111
+\pgf@layerboxsaved@background=\box112
+)
 No auxiliary output files.
 
 \w@pgfexternal@auxout=\write4
@@ -993,26 +999,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box111
-\pgfnodeparttwobox=\box112
-\pgfnodepartthreebox=\box113
-\pgfnodepartfourbox=\box114
-\pgfnodeparttwentybox=\box115
-\pgfnodepartnineteenbox=\box116
-\pgfnodeparteighteenbox=\box117
-\pgfnodepartseventeenbox=\box118
-\pgfnodepartsixteenbox=\box119
-\pgfnodepartfifteenbox=\box120
-\pgfnodepartfourteenbox=\box121
-\pgfnodepartthirteenbox=\box122
-\pgfnodeparttwelvebox=\box123
-\pgfnodepartelevenbox=\box124
-\pgfnodeparttenbox=\box125
-\pgfnodepartninebox=\box126
-\pgfnodeparteightbox=\box127
-\pgfnodepartsevenbox=\box128
-\pgfnodepartsixbox=\box129
-\pgfnodepartfivebox=\box130
+\pgfnodepartlowerbox=\box113
+\pgfnodeparttwobox=\box114
+\pgfnodepartthreebox=\box115
+\pgfnodepartfourbox=\box116
+\pgfnodeparttwentybox=\box117
+\pgfnodepartnineteenbox=\box118
+\pgfnodeparteighteenbox=\box119
+\pgfnodepartseventeenbox=\box120
+\pgfnodepartsixteenbox=\box121
+\pgfnodepartfifteenbox=\box122
+\pgfnodepartfourteenbox=\box123
+\pgfnodepartthirteenbox=\box124
+\pgfnodeparttwelvebox=\box125
+\pgfnodepartelevenbox=\box126
+\pgfnodeparttenbox=\box127
+\pgfnodepartninebox=\box128
+\pgfnodeparteightbox=\box129
+\pgfnodepartsevenbox=\box130
+\pgfnodepartsixbox=\box131
+\pgfnodepartfivebox=\box132
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1059,7 +1065,7 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count309
-\l__pdf_internal_box=\box131
+\l__pdf_internal_box=\box133
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count310
@@ -1073,7 +1079,7 @@ xlive/texmf-dist/tex/generic/xstring/xstring.tex
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box132
+\tikzscale@measuredSize=\box134
 ) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -1131,7 +1137,7 @@ Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 \f@nch@O@orf=\skip66
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box133
+\ttl@box=\box135
 \beforetitleunit=\skip67
 \aftertitleunit=\skip68
 \ttl@plus=\dimen307
@@ -1179,7 +1185,7 @@ LaTeX Font Info:    ... okay on input line 6.
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
 \scratchdimen=\dimen313
-\scratchbox=\box134
+\scratchbox=\box136
 \nofMPsegments=\count321
 \nofMParguments=\count322
 \everyMPshowfont=\toks44
@@ -1196,7 +1202,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box135
+\AtBeginShipoutBox=\box137
 Package hyperref Info: Link coloring OFF on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1533,183 +1539,216 @@ LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 25.
 LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 26.
 
 
-LaTeX Warning: Citation `Kutz' on page 9 undefined on input line 35.
+LaTeX Warning: Citation `Kutz' on page 9 undefined on input line 33.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 42.
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 42.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+
+
+
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 43.
 
 (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 47.
+(./Figures/Reduced_Order_Algorithms/Training.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 
-LaTeX Warning: Citation `the' on page 9 undefined on input line 47.
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 48.
-
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 53.
-
+LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 56.
 
 
-LaTeX Warning: Citation `Hornik1989' on page 10 undefined on input line 54.
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 56.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 54.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 56
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
+
+
+LaTeX Warning: Citation `Hornik1989' on page 11 undefined on input line 65.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 65.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 67
 .
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 56.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 67.
 
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 56.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 67.
 
 
 LaTeX Warning: Reference `Eq. Linear Transformation' on page 1 undefined on inpu
-t line 56.
+t line 67.
 
 
-LaTeX Warning: Citation `bibid' on page 10 undefined on input line 60.
+LaTeX Warning: Citation `bibid' on page 11 undefined on input line 71.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 60.
+LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 71.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 60.
+LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 71.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 60.
-
-
-
-LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 60.
-
-
-LaTeX Warning: Citation `Pytorch website' on page 10 undefined on input line 60.
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 71.
 
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 10 undefined on input line 60
+LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 71.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 11 undefined on input line 71.
+
+
+
+LaTeX Warning: Reference `Eq. Convolution' on page 11 undefined on input line 71
 .
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 60.
+ line 71.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 60.
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 71.
 
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 60.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 66.
+ line 71.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
+ line 77.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 66.
-
-
-LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 66.
-
-
-LaTeX Warning: Citation `dumoulin2018guide' on page 11 undefined on input line 7
-7.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 77.
+input line 77.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
  input line 77.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 7
-9.
+
+LaTeX Warning: Citation `dumoulin2018guide' on page 11 undefined on input line 8
+8.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 88.
+
+
+LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
+ input line 88.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 9
+0.
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 81.
+ned on input line 92.
 
 
-LaTeX Warning: Citation `bibid' on page 11 undefined on input line 81.
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 92.
 
 
-LaTeX Warning: Citation `dumoulin2018guide' on page 11 undefined on input line 8
-3.
+LaTeX Warning: Citation `dumoulin2018guide' on page 12 undefined on input line 9
+4.
 
 
 LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 83.
+ut line 94.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 83.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 94.
 
 
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 83.
-
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 90.
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 94.
 
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 91.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 101
+.
 
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 102
+.
 
 
 LaTeX Warning: Reference `Eq. Backpropagation1' on page 1 undefined on input lin
-e 91.
+e 102.
 
 
 LaTeX Warning: Reference `Eq. Backpropagation3' on page 1 undefined on input lin
-e 91.
+e 102.
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 108.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 119.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-108.
+119.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 109.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 120.
 
 
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 109.
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 120.
 
 
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 112.
+LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 123.
 
 ) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
 
-LaTeX Warning: Citation `Bernard' on page 13 undefined on input line 9.
+LaTeX Warning: Citation `Bernard' on page 14 undefined on input line 9.
 
 
-LaTeX Warning: Citation `Carlberg' on page 13 undefined on input line 9.
+LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 9.
 
 
-LaTeX Warning: Citation `ohlberger2015reduced' on page 13 undefined on input lin
+LaTeX Warning: Citation `ohlberger2015reduced' on page 14 undefined on input lin
 e 9.
 
 
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `ohlberger2015reduced' on page 13 undefined on input lin
+LaTeX Warning: Citation `ohlberger2015reduced' on page 14 undefined on input lin
 e 10.
 
 
-LaTeX Warning: Citation `Carlberg' on page 13 undefined on input line 10.
+LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 10.
 
 (./Figures/MOR/flow.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1737,11 +1776,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
  []
 
 
-LaTeX Warning: Citation `ohlberger2015reduced' on page 14 undefined on input lin
+LaTeX Warning: Citation `ohlberger2015reduced' on page 15 undefined on input lin
 e 29.
 
 
-LaTeX Warning: Citation `Carlberg' on page 14 undefined on input line 29.
+LaTeX Warning: Citation `Carlberg' on page 15 undefined on input line 29.
 
 
 LaTeX Warning: Reference `Sec: POD' on page 1 undefined on input line 29.
@@ -1753,7 +1792,7 @@ LaTeX Warning: Reference `Sec:AE' on page 1 undefined on input line 29.
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 34.
 
 
-LaTeX Warning: Citation `ohlberger2015reduced' on page 14 undefined on input lin
+LaTeX Warning: Citation `ohlberger2015reduced' on page 15 undefined on input lin
 e 39.
 
 
@@ -1770,10 +1809,10 @@ LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 42
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 42.
 
 
-LaTeX Warning: Citation `schaaf' on page 14 undefined on input line 56.
+LaTeX Warning: Citation `schaaf' on page 15 undefined on input line 56.
 
 
-LaTeX Warning: Citation `NumaKUL' on page 14 undefined on input line 56.
+LaTeX Warning: Citation `NumaKUL' on page 15 undefined on input line 56.
 
 
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 56.
@@ -1831,16 +1870,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--112
  []
 
 
-LaTeX Warning: Citation `BGK' on page 16 undefined on input line 113.
+LaTeX Warning: Citation `BGK' on page 17 undefined on input line 113.
 
 
-LaTeX Warning: Citation `Bernard' on page 16 undefined on input line 113.
+LaTeX Warning: Citation `Bernard' on page 17 undefined on input line 113.
 
 
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 114.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 114.
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 114.
 
 (./Figures/Results/Var_iv.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1853,14 +1892,14 @@ LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
 
 
-LaTeX Warning: Citation `Carlberg' on page 16 undefined on input line 120.
+LaTeX Warning: Citation `Carlberg' on page 17 undefined on input line 120.
 
 
 LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 120.
 
 
 
-LaTeX Warning: Citation `Kutz' on page 16 undefined on input line 120.
+LaTeX Warning: Citation `Kutz' on page 17 undefined on input line 120.
 
 
 LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 121.
@@ -1872,13 +1911,13 @@ LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 122.
 LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 123.
 
 
-LaTeX Warning: Citation `Bernard' on page 17 undefined on input line 125.
+LaTeX Warning: Citation `Bernard' on page 18 undefined on input line 125.
 
 
-LaTeX Warning: Citation `Carlberg' on page 17 undefined on input line 125.
+LaTeX Warning: Citation `Carlberg' on page 18 undefined on input line 125.
 
 
-LaTeX Warning: Citation `Carlberg' on page 17 undefined on input line 125.
+LaTeX Warning: Citation `Carlberg' on page 18 undefined on input line 125.
 
 
 LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 125.
@@ -1900,7 +1939,7 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 9.
 LaTeX Warning: Reference `Tab:L2' on page 1 undefined on input line 9.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 23.
+LaTeX Warning: Citation `Goodfellow' on page 19 undefined on input line 23.
 
 
 LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 23.
@@ -2045,7 +2084,7 @@ LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
 e 80.
 
 
-LaTeX Warning: Citation `BGK' on page 23 undefined on input line 108.
+LaTeX Warning: Citation `BGK' on page 24 undefined on input line 108.
 
 
 LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
@@ -2355,18 +2394,19 @@ sable this.
 )
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
 tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
 \openout4 = Figures/master-figure66.dpth
 
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
-[28
+[29
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
+/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 Underfull \hbox (badness 10000) in paragraph at lines 223--226
 [][]
  []
@@ -2432,22 +2472,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42236 strings out of 481365
+ 42350 strings out of 481365
  195333,4921788 words of node,token memory allocated
- 990 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 12 sub_mlist, 1 glyph, 143 attribut
-e, 62 glue_spec, 73 attribute_list, 2 write nodes
-   avail lists: 1:4,2:26651,3:8495,4:84,5:611,6:38,7:13083,8:70,9:775,10:30,11:7
+ 879 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
+, 62 glue_spec, 60 attribute_list, 2 write nodes
+   avail lists: 1:2,2:26648,3:8498,4:85,5:611,6:38,7:13083,8:70,9:775,10:30,11:7
 47
- 57017 multiletter control sequences out of 65536+600000
- 117 fonts using 10010603 bytes
+ 57105 multiletter control sequences out of 65536+600000
+ 126 fonts using 10636003 bytes
  83i,22n,140p,2460b,2406s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure66.pdf (1 page, 119110 bytes).
+Output written on Figures/master-figure66.pdf (1 page, 120498 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream

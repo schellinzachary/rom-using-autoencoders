@@ -31,9 +31,21 @@
 \draw (\x) -- (\y);
 \end{pgfonlayer}
 %node calculation
-\node[draw=none] at (-2,2.5) (input) {\footnotesize I};
-\node[draw=none] at (-1.5,2.5) (weight) {\footnotesize w};
+\node[draw=none] at (-2,2.5) (input) {\footnotesize $I$};
+\node[draw=none] at (-1.5,2.5) (weight) {\footnotesize $w$};
 \node[circ] at (-1.75,1.5) (times) {\footnotesize $\times$};
+\node[draw=none] at (-2.5,2.5) (bias){\footnotesize $b$};
+\node[circ] at (-1.75,.5) (plus) {\footnotesize $+$};
+\node[draw=none] at (-1.75,-.5)(output) {\footnotesize $O$};
+\draw [arrow,thin](input) to [bend right](times);
+\draw [arrow,thin](weight) to [bend left](times);
+\draw [arrow,thin](times) -- (plus) node[midway,xshift=1ex] {\footnotesize $I^*$};
+\draw [arrow,thin](bias) to [bend right](plus);
+\draw [arrow,thin](plus) -- (output);
+%rec around calc
+\draw[thick] (-2.7,2.7) rectangle  (-1.2,-.7);
+\draw[arrow,thin] (-2,2.7) to [bend left] ($(6)!0.5!(11)$);
+%rec enc
 \draw[thick,dashed,blue] (-1,-1) rectangle  (6.3,3.5) ;
 \draw [draw=none] (-1,3.5) -- (6.3,3.5) node [midway,below,draw=none,blue] 
 {Encoder: \(h(\Pi)=\Phi\)};
@@ -41,6 +53,10 @@
 \draw[thick,dashed,red] (13,3.5) rectangle  (5.7,-1) ;
 \draw [draw=none] (13,3.5) -- (5.7,3.5) node [midway,below,draw=none,red] 
 {Decoder: g(\Phi)=$\tilde{\Pi}$};
+%%forpass
+%\draw[arrow,thin] (0,3.6)--(12,3.6)node [midway,above]{\footnotesize Forward Pass};
+%%bckpass
+%\draw[arrow,thin] (12,4.1)--(0,4.1)node [midway,above]{\footnotesize Backward Pass};
 
 \draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (-.3,-.3) -- (.3,-.3) node [midway, below = 4pt,draw=none] {\footnotesize Input Layer};
 \draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (2.7,0) -- (3.3,0) node [midway,below = 6pt,draw=none] 

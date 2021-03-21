@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  20 MAR 2021 20:01
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  21 MAR 2021 15:56
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1567,7 +1567,7 @@ LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 44.
 \openout4 = Figures/master-figure7.dpth
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 36.
+(Font)              <9> on input line 34.
 [9
 
 
@@ -2461,25 +2461,27 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42198 strings out of 481365
- 156267,4921788 words of node,token memory allocated
+ 42262 strings out of 481365
+ 156265,4921788 words of node,token memory allocated
  879 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
 , 62 glue_spec, 60 attribute_list, 2 write nodes
-   avail lists: 1:2,2:5660,3:1057,4:84,5:611,6:38,7:13082,8:69,9:773,10:30,11:74
+   avail lists: 1:2,2:6301,3:1181,4:84,5:611,6:38,7:13082,8:69,9:773,10:30,11:74
 7
- 56962 multiletter control sequences out of 65536+600000
+ 57026 multiletter control sequences out of 65536+600000
  126 fonts using 10636003 bytes
  83i,14n,140p,2460b,911s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb>
-Output written on Figures/master-figure7.pdf (1 page, 59294 bytes).
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmsy9.pfb>
+Output written on Figures/master-figure7.pdf (1 page, 66362 bytes).
 
-PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+PDF statistics: 48 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

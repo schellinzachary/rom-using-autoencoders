@@ -33,7 +33,7 @@ pagesize,oneside,% for thesis use :
 \usepackage{tikz}
 \usetikzlibrary{external,positioning,backgrounds}
 \tikzexternalize[prefix=Figures/]
-\usetikzlibrary{shapes,arrows,snakes}
+\usetikzlibrary{shapes,arrows,snakes,chains}
 \usetikzlibrary{matrix}
 \usetikzlibrary{decorations}
 \pgfplotsset{compat=newest}
@@ -87,7 +87,10 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 \tikzstyle{rec} = [rectangle,minimum height=4em,text centered, fill=blue!20,draw=black]
 \tikzstyle{circ} = [circle,minimum size =0.4cm,text centered, draw=black,inner sep = 0pt]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-
+\tikzstyle{base} = [draw, on chain, on grid, align=center, minimum height=4ex]
+\tikzstyle{proc} = [base, rectangle, text width=8em]
+\tikzstyle{test} = [base, diamond, aspect=2, text width=5em]
+\tikzstyle{term} = [proc, rounded corners]
 %%%%%%%%%%%%%%%%%%%%%%%Colors%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 %%%%%%%%%%%header einstellungen%%%%%%%%%%%%%%%%%%%
