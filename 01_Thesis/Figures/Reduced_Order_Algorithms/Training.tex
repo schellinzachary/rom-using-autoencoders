@@ -1,13 +1,14 @@
 %flowchart training
 \begin{tikzpicture}[%
- >=triangle 60,              
-start chain=going below,   
-node distance=6mm and 60mm, 
-every join/.style={norm},
+>=triangle 60,              % Nice arrows; your taste may be different
+start chain=going below,    % General flow is top-to-bottom
+node distance=6mm and 50mm, % Global setup of box spacing
+every join/.style={norm},   % Default linetype for connecting boxes
 ]
+% ---------
 \tikzset{
 	base/.style={draw, on chain, on grid, align=center, minimum height=4ex},
-	proc/.style={base, rectangle, text width=8em},
+	proc/.style={base, rectangle, text width=11em},
 	test/.style={base, diamond, aspect=2, text width=5em},
 	term/.style={proc, rounded corners},
 	% coord node style is used for placing corners of connecting lines
@@ -17,16 +18,30 @@ every join/.style={norm},
 	% -------------------------------------------------
 	% Connector line styles for different parts of the diagram
 	norm/.style={->, draw},
-	free/.style={->, draw},
-	cong/.style={->, draw},
 	it/.style={font={\small\itshape}}
 }
+\tikzstyle{every node} = [font=\footnotesize]
 	% Start by placing the nodes
-	\node [proc] (start) {\footnotesize \(Epoch = 0\)\\ \(Batch=0\)};
-	% Use join to connect a node to the previous one 
-	\node [test, join]      {\footnotesize \(Epoch < Epoch_{max}\)};
-	\node [proc, join] (p1) {Get quota $k > 1$};
-	\node [proc, join]      {Open queue};
-	\node [proc, join]      {Dispatch message};
-	\node [test, join] (t1) {Got msg?};
+	\node [proc] (start) {\(E_n = 0\)\\ \(B_n=0\)};
+	\node [proc,join] (ini) {Initialize weights};
+	\node [test,join] (t1) {\(E_n < E_{max}\)};
+	\node [test,join] (t2) {\(B_n < B_{max}\)};
+	\node [proc,join] (p1) {Evaluate:\\ \(AE(\Pi_{Batch_n})=\tilde{\Pi}_{Batch}\)};
+	\node [proc,join]      {Evaluate:\\ \(MSE(\Pi_{Batch_n},\tilde{\Pi}_{Batch_n})=E_b\)};
+	\node [proc,join]      {Backpropagate\\ \(E_b\)};
+	\node [proc,join]      {Optimize \(w\) and \(b\):\\\(Adam(w_n,b_n)=(w_{n+1},b_{n+1})\)};
+	\node [proc,join]      {Evaluate:\\ \(AE(\Pi_{val})=\Pi_val\)};
+	\node [proc,join]      {Evaluate:\\ \(AE(\Pi_{val})=\Pi_{val}\)};
+	\node [proc,join] (Bplus) {\(B_{n+1} = B_n + 1\)};
+	\node [coord, left=of Bplus]  (c4)  {};
+	\node [proc, right=of t2] (p4) {\(E_{n+1} =E_n + 1\)} ;
+    \node [term,left=of t1] (fini) {finish};
+    %connections
+	\draw [->] (t2.east) -- (p4); 
+	\draw [->] (t1.west) -- (fini); 
+	\draw [->] (p4.north) |- (t1.east); 
+	\draw [->] (Bplus.west) -- (c4)|-(t2); 
+	%decisions
+	\path (t1.south) to node [near start, xshift=1em] {$y$} (t2);
+	\path (t1.west) to node [near start, yshift=1em] {$n$} (fini);
 \end{tikzpicture}
