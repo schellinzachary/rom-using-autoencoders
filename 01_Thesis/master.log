@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  23 MAR 2021 21:15
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAR 2021 13:13
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1595,55 +1595,68 @@ Chapter 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 47.
  [9] (./Figures/Reduced_Order_Algorithms/Training.tex
-===== Image 'Figures/master-figure8' is up-to-date. ======
+\openout3 = Figures/master-figure8.md5
+
+\openout3 = master.auxlock
+
+===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
+-error -interaction=batchmode -jobname "Figures/master-figure8" "\def\tikzextern
+alrealjob{master}\input{master}"' ========
+
+\openout3 = master.auxlock
 )
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--54
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 [10<./Figures/master-figure7.pdf>] [11<./Figures/master-figure8.pdf>] [12]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 67
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 68
 .
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 67.
+LaTeX Warning: Citation `bibid' on page 13 undefined on input line 68.
 
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 67.
+LaTeX Warning: Citation `bibid' on page 13 undefined on input line 68.
 
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 71.
+LaTeX Warning: Citation `bibid' on page 13 undefined on input line 72.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 13 undefined on input line 71.
+LaTeX Warning: Citation `Pytorch website' on page 13 undefined on input line 72.
 
 
 [13]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 9
-0.
+1.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 14 undefined on input line 92.
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 101
-.
+LaTeX Warning: Citation `bibid' on page 14 undefined on input line 93.
 
 
 LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 102
 .
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 119.
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 103
+.
+
+
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 120.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-119.
+120.
 
 [14]) [15]
 \openout2 = chapters/Reduced_order_Modeling.aux
@@ -2040,7 +2053,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43270 strings out of 481365
+ 43277 strings out of 481365
  125011,10205817 words of node,token memory allocated
  879 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
@@ -2050,28 +2063,29 @@ Here is how much of LuaTeX's memory you used:
  56769 multiletter control sequences out of 65536+600000
  124 fonts using 10472211 bytes
  81i,14n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
-vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
+/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb
 ></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type
-1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/l
-mri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10
-.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (56 pages, 7769531 bytes).
+1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (56 pages, 7802196 bytes).
 
-PDF statistics: 2789 PDF objects out of 2984 (max. 8388607)
- 2257 compressed objects within 23 object streams
+PDF statistics: 2807 PDF objects out of 2984 (max. 8388607)
+ 2271 compressed objects within 23 object streams
  192 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

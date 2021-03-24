@@ -39,7 +39,7 @@
 \node[draw=none] at (-1.75,-.5)(output) {\footnotesize $O$};
 \draw [arrow,thin](input) to [bend right](times);
 \draw [arrow,thin](weight) to [bend left](times);
-\draw [arrow,thin](times) -- (plus) node[midway,xshift=1ex] {\footnotesize $I^*$};
+\draw [arrow,thin](times) -- (plus) node[near start,xshift=1ex] {\footnotesize $I^*$};
 \draw [arrow,thin](bias) to [bend right](plus);
 \draw [arrow,thin](plus) -- (output);
 %rec around calc
