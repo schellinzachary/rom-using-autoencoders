@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAR 2021 15:43
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 MAR 2021 20:53
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1525,58 +1525,73 @@ sable this.
 )) (./chapters/Deep_Learning.tex
 Chapter 3.
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 12.
-
-
-LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 16.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 16.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 13.
 
 
 LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 17.
 
 
-LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 25.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 17.
 
 
-LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 26.
+LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 18.
 
 
-LaTeX Warning: Citation `Kutz' on page 9 undefined on input line 33.
+LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 27.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 42.
+LaTeX Warning: Citation `Kutz' on page 8 undefined on input line 28.
 
 
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 42.
+LaTeX Warning: Citation `Kutz' on page 9 undefined on input line 35.
 
 
-
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
-
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 45.
 
 
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
-
-
-
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 45.
 
 
 
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 43.
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 46.
 
 
 
-LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 43.
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 46.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 46.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 46.
+
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 46.
+
+
+
+LaTeX Warning: Citation `Goodfellow' on page 9 undefined on input line 46.
 
 (./Figures/Reduced_Order_Algorithms/AE_scheme.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 47.
+(Font)              <9> on input line 50.
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 56.
+
+
+
+LaTeX Warning: Reference `Eq:PiPOD' on page 1 undefined on input line 64.
+
+
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 64.
+
+
 (./Figures/Reduced_Order_Algorithms/Training.tex
 \openout4 = Figures/master-figure8.dpth
  [10
@@ -1585,155 +1600,155 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
-LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 57.
+LaTeX Warning: Citation `Goodfellow' on page 10 undefined on input line 77.
 
 
-LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 57.
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 77.
 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+Underfull \hbox (badness 10000) in paragraph at lines 67--78
 
  []
 
 
-LaTeX Warning: Citation `Hornik1989' on page 12 undefined on input line 66.
+LaTeX Warning: Citation `Hornik1989' on page 12 undefined on input line 86.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 66.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 86.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 68
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 88
 .
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 12 undefined on input line 68.
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 88.
 
 
-LaTeX Warning: Citation `bibid' on page 12 undefined on input line 68.
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 88.
 
 
 LaTeX Warning: Reference `Eq. Linear Transformation' on page 1 undefined on inpu
-t line 68.
+t line 88.
 
 
-LaTeX Warning: Citation `bibid' on page 12 undefined on input line 72.
+LaTeX Warning: Citation `bibid' on page 12 undefined on input line 92.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 72.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 92.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 72.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 92.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 72.
-
-
-
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 72.
-
-
-LaTeX Warning: Citation `Pytorch website' on page 12 undefined on input line 72.
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 92.
 
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 12 undefined on input line 72
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 92.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 12 undefined on input line 92.
+
+
+
+LaTeX Warning: Reference `Eq. Convolution' on page 12 undefined on input line 92
 .
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 72.
+ line 92.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 72.
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 92.
 
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 72.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 78.
+ line 92.
+
+
+LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
+ line 98.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 78.
+input line 98.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 78.
+ input line 98.
 
 
-LaTeX Warning: Citation `dumoulin2018guide' on page 12 undefined on input line 8
-9.
+LaTeX Warning: Citation `dumoulin2018guide' on page 12 undefined on input line 1
+09.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 89.
+LaTeX Warning: Citation `Goodfellow' on page 12 undefined on input line 109.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 89.
+ input line 109.
 
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 9
-1.
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 1
+11.
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 93.
+ned on input line 113.
 
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 93.
+LaTeX Warning: Citation `bibid' on page 13 undefined on input line 113.
 
 
-LaTeX Warning: Citation `dumoulin2018guide' on page 13 undefined on input line 9
-5.
+LaTeX Warning: Citation `dumoulin2018guide' on page 13 undefined on input line 1
+15.
 
 
 LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 95.
+ut line 115.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 95.
+LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 115.
 
 
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 95.
-
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 102
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 115
 .
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 103
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 122
+.
+
+
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 123
 .
 
 
 LaTeX Warning: Reference `Eq. Backpropagation1' on page 1 undefined on input lin
-e 103.
+e 123.
 
 
 LaTeX Warning: Reference `Eq. Backpropagation3' on page 1 undefined on input lin
-e 103.
+e 123.
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 120.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 140.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-120.
+140.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 121.
+LaTeX Warning: Citation `Goodfellow' on page 13 undefined on input line 141.
 
 
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 121.
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 141.
 
 
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 124.
+LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 144.
 
 ) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2472,15 +2487,15 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 42385 strings out of 481365
+ 42388 strings out of 481365
  125007,4921788 words of node,token memory allocated
- 879 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 117 attribute
-, 62 glue_spec, 60 attribute_list, 2 write nodes
-   avail lists: 1:2,2:3742,3:583,4:84,5:611,6:38,7:13082,8:69,9:773,10:30,11:747
- 57133 multiletter control sequences out of 65536+600000
+ 915 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 129 attribute
+, 62 glue_spec, 66 attribute_list, 2 write nodes
+   avail lists: 1:2,2:4001,3:610,4:85,5:611,6:38,7:13082,8:69,9:773,10:30,11:747
+ 57136 multiletter control sequences out of 65536+600000
  126 fonts using 10636003 bytes
- 83i,14n,140p,2460b,1051s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,14n,140p,2460b,1053s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-
@@ -2490,7 +2505,7 @@ usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmr5.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/te
 xmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9
 .pfb>
-Output written on Figures/master-figure8.pdf (1 page, 84016 bytes).
+Output written on Figures/master-figure8.pdf (1 page, 83696 bytes).
 
 PDF statistics: 55 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

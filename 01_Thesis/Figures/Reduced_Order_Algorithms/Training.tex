@@ -28,14 +28,14 @@ every join/.style={norm},   % Default linetype for connecting boxes
 	\node [test,join] (t1) {\(E_h \leq E_{H}\)};
 	\node [test,join] (t2) {\(B_n\leq B_{N}\)};
 	\node [proc,join] (p1) {Evaluate:\\ \(AE(\Pi_{B_n})=\tilde{\Pi}_{B_n}\)};
-	\node [proc,join] (p2) {Evaluate:\\ \(MSE(\Pi_{B_n},\tilde{\Pi}_{B_n})=E_{B_n}\)};
+	\node [proc,join] (p2) {Evaluate:\\ \(L(\Pi_{B_n},\tilde{\Pi}_{B_n})=E_{B_n}\)};
 	\node [proc,join] (p3) {Backpropagate\\ \(E_{B_n}\)};
 	\node [proc,join] (p4) {Optimize \(w\) and \(b\):\\\(Adam(w_n,b_n)=(w_{n+1},b_{n+1})\)};
 	\node [proc,join] (Bplus) {\(B_{n+1} = B_n + 1\)};
 	%side nodes	
 	\node [proc,right =of mb] (tv) {Partition \(\Pi\) into training and validation set:\\ \(\Pi = \{\Pi_{train},\Pi_{val}\}\)};
 	\node [proc, right=of t2] (p5) {Evaluate:\\ \(AE(\Pi_{val})=\tilde{\Pi}_{val}\)};
-	\node [proc, right=of p1,join] (p6) {Evaluate:\\ \(MSE(\Pi_{val},\tilde{\Pi}_{val})=E_{val}\)};
+	\node [proc, right=of p1,join] (p6) {Evaluate:\\ \(L(\Pi_{val},\tilde{\Pi}_{val})=E_{val}\)};
 	\node [proc, right=of p2,join] (aveMSE) {\(\frac{1}{N} \sum_n E_{B_n} =\overline{E}_B\)} ;
 	\node [proc, right=of p3,join] (Eplus) {\(E_{h+1} =E_h + 1\)} ;
     \node [term,left=of t1] (fini) {finish};
