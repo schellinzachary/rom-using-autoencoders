@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 MAR 2021 21:40
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  27 MAR 2021 19:09
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -577,6 +577,70 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks25
 \@floatcapt=\box96
 )
+(/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count273
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\algocf@hangindent=\skip56
+
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count274
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip57
+\skiplinenumber=\skip58
+\skiprule=\skip59
+\skiphlne=\skip60
+\skiptext=\skip61
+\skiplength=\skip62
+\algomargin=\skip63
+\skipalgocfslide=\skip64
+\algowidth=\dimen164
+\inoutsize=\dimen165
+\inoutindent=\dimen166
+\interspacetitleruled=\dimen167
+\interspacealgoruled=\dimen168
+\interspacetitleboxruled=\dimen169
+\algocf@ruledwidth=\skip65
+\algocf@inoutbox=\box97
+\algocf@inputbox=\box98
+\AlCapSkip=\skip66
+\AlCapHSkip=\skip67
+\algoskipindent=\skip68
+\algocf@nlbox=\box99
+\algocf@hangingbox=\box100
+\algocf@untilbox=\box101
+\algocf@skipuntil=\skip69
+\algocf@capbox=\box102
+\algocf@lcaptionbox=\skip70
+\algoheightruledefault=\skip71
+\algoheightrule=\skip72
+\algotitleheightruledefault=\skip73
+\algotitleheightrule=\skip74
+\c@algocfline=\count275
+\c@algocfproc=\count276
+\c@algocf=\count277
+\algocf@algoframe=\box103
+\algocf@algobox=\box104
+)
+(/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count278
+\c@ALC@line=\count279
+\c@ALC@rem=\count280
+\c@ALC@depth=\count281
+\ALC@tlm=\skip75
+\algorithmicindent=\skip76
+)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
 
@@ -586,23 +650,23 @@ Package: caption 2020/01/03 v3.4h Customizing captions (AR)
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 61.
-\captionmargin=\dimen164
-\captionmargin@=\dimen165
-\captionwidth=\dimen166
-\caption@tempdima=\dimen167
-\caption@indent=\dimen168
-\caption@parindent=\dimen169
-\caption@hangindent=\dimen170
+\captionmargin=\dimen170
+\captionmargin@=\dimen171
+\captionwidth=\dimen172
+\caption@tempdima=\dimen173
+\caption@indent=\dimen174
+\caption@parindent=\dimen175
+\caption@hangindent=\dimen176
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count273
-\c@continuedfloat=\count274
+\c@caption@flags=\count282
+\c@continuedfloat=\count283
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
 )
-\c@subfigure=\count275
-\c@subtable=\count276
+\c@subfigure=\count284
+\c@subtable=\count285
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
@@ -613,12 +677,12 @@ Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks26
-\pgfutil@tempdima=\dimen171
-\pgfutil@tempdimb=\dimen172
+\pgfutil@tempdima=\dimen177
+\pgfutil@tempdimb=\dimen178
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
 ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box97
+\pgfutil@abb=\box105
 (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
@@ -641,26 +705,26 @@ Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
 ex
 \pgfkeys@tmptoks=\toks29
 ))
-\pgf@x=\dimen173
-\pgf@y=\dimen174
-\pgf@xa=\dimen175
-\pgf@ya=\dimen176
-\pgf@xb=\dimen177
-\pgf@yb=\dimen178
-\pgf@xc=\dimen179
-\pgf@yc=\dimen180
-\pgf@xd=\dimen181
-\pgf@yd=\dimen182
+\pgf@x=\dimen179
+\pgf@y=\dimen180
+\pgf@xa=\dimen181
+\pgf@ya=\dimen182
+\pgf@xb=\dimen183
+\pgf@yb=\dimen184
+\pgf@xc=\dimen185
+\pgf@yc=\dimen186
+\pgf@xd=\dimen187
+\pgf@yd=\dimen188
 \w@pgf@writea=\write3
 \r@pgf@reada=\read3
-\c@pgf@counta=\count277
-\c@pgf@countb=\count278
-\c@pgf@countc=\count279
-\c@pgf@countd=\count280
+\c@pgf@counta=\count286
+\c@pgf@countb=\count287
+\c@pgf@countc=\count288
+\c@pgf@countd=\count289
 \t@pgf@toka=\toks30
 \t@pgf@tokb=\toks31
 \t@pgf@tokc=\toks32
-\pgf@sys@id@count=\count281
+\pgf@sys@id@count=\count290
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -676,8 +740,8 @@ File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count282
-\pgfsyssoftpath@bigbuffer@items=\count283
+\pgfsyssoftpath@smallbuffer@items=\count291
+\pgfsyssoftpath@bigbuffer@items=\count292
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -706,9 +770,9 @@ Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen183
-\pgfmath@count=\count284
-\pgfmath@box=\box98
+\pgfmath@dimen=\dimen189
+\pgfmath@count=\count293
+\pgfmath@box=\box106
 \pgfmath@toks=\toks33
 \pgfmath@stack@operand=\toks34
 \pgfmath@stack@operation=\toks35
@@ -731,58 +795,58 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count285
+\c@pgfmathroundto@lastzeros=\count294
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen184
-\pgf@picmaxx=\dimen185
-\pgf@picminy=\dimen186
-\pgf@picmaxy=\dimen187
-\pgf@pathminx=\dimen188
-\pgf@pathmaxx=\dimen189
-\pgf@pathminy=\dimen190
-\pgf@pathmaxy=\dimen191
-\pgf@xx=\dimen192
-\pgf@xy=\dimen193
-\pgf@yx=\dimen194
-\pgf@yy=\dimen195
-\pgf@zx=\dimen196
-\pgf@zy=\dimen197
+\pgf@picminx=\dimen190
+\pgf@picmaxx=\dimen191
+\pgf@picminy=\dimen192
+\pgf@picmaxy=\dimen193
+\pgf@pathminx=\dimen194
+\pgf@pathmaxx=\dimen195
+\pgf@pathminy=\dimen196
+\pgf@pathmaxy=\dimen197
+\pgf@xx=\dimen198
+\pgf@xy=\dimen199
+\pgf@yx=\dimen256
+\pgf@yy=\dimen257
+\pgf@zx=\dimen258
+\pgf@zy=\dimen259
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
 code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen198
-\pgf@path@lasty=\dimen199
+\pgf@path@lastx=\dimen260
+\pgf@path@lasty=\dimen261
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
 .tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen256
-\pgf@shorten@start@additional=\dimen257
+\pgf@shorten@end@additional=\dimen262
+\pgf@shorten@start@additional=\dimen263
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
 x
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box99
-\pgf@hbox=\box100
-\pgf@layerbox@main=\box101
-\pgf@picture@serial@count=\count286
+\pgfpic=\box107
+\pgf@hbox=\box108
+\pgf@layerbox@main=\box109
+\pgf@picture@serial@count=\count295
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen258
+\pgflinewidth=\dimen264
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
 s.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen259
-\pgf@pt@y=\dimen260
-\pgf@pt@temp=\dimen261
+\pgf@pt@x=\dimen265
+\pgf@pt@y=\dimen266
+\pgf@pt@temp=\dimen267
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -798,13 +862,13 @@ File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
 x
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen262
+\pgfarrowsep=\dimen268
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen263
-\pgf@sys@shading@range@num=\count287
-\pgf@shadingcount=\count288
+\pgf@max=\dimen269
+\pgf@sys@shading@range@num=\count296
+\pgf@shadingcount=\count297
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
@@ -812,7 +876,7 @@ File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
 tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box102
+\pgfexternal@startupbox=\box110
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
 x
@@ -831,15 +895,15 @@ File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box103
+\pgfnodeparttextbox=\box111
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
 .sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen264
-\pgf@nodesepend=\dimen265
+\pgf@nodesepstart=\dimen270
+\pgf@nodesepend=\dimen271
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
 .sty
@@ -853,8 +917,8 @@ Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen266
-\pgffor@skip=\dimen267
+\pgffor@iter=\dimen272
+\pgffor@skip=\dimen273
 \pgffor@stack=\toks36
 \pgffor@toks=\toks37
 ))
@@ -864,33 +928,33 @@ Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count289
-\pgfplotmarksize=\dimen268
+\pgf@plot@mark@count=\count298
+\pgfplotmarksize=\dimen274
 )
-\tikz@lastx=\dimen269
-\tikz@lasty=\dimen270
-\tikz@lastxsaved=\dimen271
-\tikz@lastysaved=\dimen272
-\tikz@lastmovetox=\dimen273
-\tikz@lastmovetoy=\dimen274
-\tikzleveldistance=\dimen275
-\tikzsiblingdistance=\dimen276
-\tikz@figbox=\box104
-\tikz@figbox@bg=\box105
-\tikz@tempbox=\box106
-\tikz@tempbox@bg=\box107
-\tikztreelevel=\count290
-\tikznumberofchildren=\count291
-\tikznumberofcurrentchild=\count292
-\tikz@fig@count=\count293
+\tikz@lastx=\dimen275
+\tikz@lasty=\dimen276
+\tikz@lastxsaved=\dimen277
+\tikz@lastysaved=\dimen278
+\tikz@lastmovetox=\dimen279
+\tikz@lastmovetoy=\dimen280
+\tikzleveldistance=\dimen281
+\tikzsiblingdistance=\dimen282
+\tikz@figbox=\box112
+\tikz@figbox@bg=\box113
+\tikz@tempbox=\box114
+\tikz@tempbox@bg=\box115
+\tikztreelevel=\count299
+\tikznumberofchildren=\count300
+\tikznumberofcurrentchild=\count301
+\tikz@fig@count=\count302
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count294
-\pgfmatrixcurrentcolumn=\count295
-\pgf@matrix@numberofcolumns=\count296
+\pgfmatrixcurrentrow=\count303
+\pgfmatrixcurrentcolumn=\count304
+\pgf@matrix@numberofcolumns=\count305
 )
-\tikz@expandcount=\count297
+\tikz@expandcount=\count306
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -903,9 +967,9 @@ Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
 \t@pgfplots@toka=\toks38
 \t@pgfplots@tokb=\toks39
 \t@pgfplots@tokc=\toks40
-\pgfplots@tmpa=\dimen277
-\c@pgfplots@coordindex=\count298
-\c@pgfplots@scanlineindex=\count299
+\pgfplots@tmpa=\dimen283
+\c@pgfplots@coordindex=\count307
+\c@pgfplots@scanlineindex=\count308
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -930,13 +994,13 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count300
+\c@pgfplotsarray@tmp=\count309
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count301
+\c@pgfplotstable@counta=\count310
 \t@pgfplotstable@a=\toks41
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
@@ -949,7 +1013,7 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count302
+\c@pgfplotslibrarysurf@no=\count311
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
 shading.pgfsys-luatex.def)))
@@ -976,16 +1040,16 @@ e.tex)
 zlibrarydecorations.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
 e.tex
-\pgfdecoratedcompleteddistance=\dimen278
-\pgfdecoratedremainingdistance=\dimen279
-\pgfdecoratedinputsegmentcompleteddistance=\dimen280
-\pgfdecoratedinputsegmentremainingdistance=\dimen281
-\pgf@decorate@distancetomove=\dimen282
-\pgf@decorate@repeatstate=\count303
-\pgfdecorationsegmentamplitude=\dimen283
-\pgfdecorationsegmentlength=\dimen284
+\pgfdecoratedcompleteddistance=\dimen284
+\pgfdecoratedremainingdistance=\dimen285
+\pgfdecoratedinputsegmentcompleteddistance=\dimen286
+\pgfdecoratedinputsegmentremainingdistance=\dimen287
+\pgf@decorate@distancetomove=\dimen288
+\pgf@decorate@repeatstate=\count312
+\pgfdecorationsegmentamplitude=\dimen289
+\pgfdecorationsegmentlength=\dimen290
 )
-\tikz@lib@dec@box=\box108
+\tikz@lib@dec@box=\box116
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarydecorations.pathmorphing.code.tex
@@ -995,13 +1059,13 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count304
-\pgfplots@xmin@reg=\dimen285
-\pgfplots@xmax@reg=\dimen286
-\pgfplots@ymin@reg=\dimen287
-\pgfplots@ymax@reg=\dimen288
-\pgfplots@zmin@reg=\dimen289
-\pgfplots@zmax@reg=\dimen290
+\pgfplots@numplots=\count313
+\pgfplots@xmin@reg=\dimen291
+\pgfplots@xmax@reg=\dimen292
+\pgfplots@ymin@reg=\dimen293
+\pgfplots@ymax@reg=\dimen294
+\pgfplots@zmin@reg=\dimen295
+\pgfplots@zmax@reg=\dimen296
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryplotmarks.code.tex
@@ -1020,13 +1084,13 @@ Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.colt
 ype.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen291
-\ar@mcellbox=\box109
-\extrarowheight=\dimen292
+\col@sep=\dimen297
+\ar@mcellbox=\box117
+\extrarowheight=\dimen298
 \NC@list=\toks42
-\extratabsurround=\skip56
-\backup@length=\skip57
-\ar@cellbox=\box110
+\extratabsurround=\skip77
+\backup@length=\skip78
+\ar@cellbox=\box118
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
@@ -1039,8 +1103,8 @@ File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box111
-\pgf@layerboxsaved@background=\box112
+\pgf@layerbox@background=\box119
+\pgf@layerboxsaved@background=\box120
 )
 \openout3 = master.auxlock
 
@@ -1091,26 +1155,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box113
-\pgfnodeparttwobox=\box114
-\pgfnodepartthreebox=\box115
-\pgfnodepartfourbox=\box116
-\pgfnodeparttwentybox=\box117
-\pgfnodepartnineteenbox=\box118
-\pgfnodeparteighteenbox=\box119
-\pgfnodepartseventeenbox=\box120
-\pgfnodepartsixteenbox=\box121
-\pgfnodepartfifteenbox=\box122
-\pgfnodepartfourteenbox=\box123
-\pgfnodepartthirteenbox=\box124
-\pgfnodeparttwelvebox=\box125
-\pgfnodepartelevenbox=\box126
-\pgfnodeparttenbox=\box127
-\pgfnodepartninebox=\box128
-\pgfnodeparteightbox=\box129
-\pgfnodepartsevenbox=\box130
-\pgfnodepartsixbox=\box131
-\pgfnodepartfivebox=\box132
+\pgfnodepartlowerbox=\box121
+\pgfnodeparttwobox=\box122
+\pgfnodepartthreebox=\box123
+\pgfnodepartfourbox=\box124
+\pgfnodeparttwentybox=\box125
+\pgfnodepartnineteenbox=\box126
+\pgfnodeparteighteenbox=\box127
+\pgfnodepartseventeenbox=\box128
+\pgfnodepartsixteenbox=\box129
+\pgfnodepartfifteenbox=\box130
+\pgfnodepartfourteenbox=\box131
+\pgfnodepartthirteenbox=\box132
+\pgfnodeparttwelvebox=\box133
+\pgfnodepartelevenbox=\box134
+\pgfnodeparttenbox=\box135
+\pgfnodepartninebox=\box136
+\pgfnodeparteightbox=\box137
+\pgfnodepartsevenbox=\box138
+\pgfnodepartsixbox=\box139
+\pgfnodepartfivebox=\box140
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1119,7 +1183,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen293
+\arrowsize=\dimen299
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarysnakes.code.tex
@@ -1144,9 +1208,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count305
-\pgfplots@group@current@row=\count306
-\pgfplots@group@current@column=\count307
+\pgfplots@group@current@plot=\count314
+\pgfplots@group@current@row=\count315
+\pgfplots@group@current@column=\count316
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1157,7 +1221,7 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count308
+\etb@tempcnta=\count317
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -1165,23 +1229,23 @@ Package: expl3 2020-02-14 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count309
-\l__pdf_internal_box=\box133
+\l__kernel_color_stack_int=\count318
+\l__pdf_internal_box=\box141
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count310
-\g__xparse_grabber_int=\count311
-\l__xparse_m_args_int=\count312
-\l__xparse_v_nesting_int=\count313
+\l__xparse_current_arg_int=\count319
+\g__xparse_grabber_int=\count320
+\l__xparse_m_args_int=\count321
+\l__xparse_v_nesting_int=\count322
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count314
-\decimalpart=\count315
+\integerpart=\count323
+\decimalpart=\count324
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box134
+\tikzscale@measuredSize=\box142
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1196,26 +1260,27 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+Package cleveref Info: `algorithm2e' support loaded on input line 3147.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen294
-\lightrulewidth=\dimen295
-\cmidrulewidth=\dimen296
-\belowrulesep=\dimen297
-\belowbottomsep=\dimen298
-\aboverulesep=\dimen299
-\abovetopsep=\dimen300
-\cmidrulesep=\dimen301
-\cmidrulekern=\dimen302
-\defaultaddspace=\dimen303
-\@cmidla=\count316
-\@cmidlb=\count317
-\@aboverulesep=\dimen304
-\@belowrulesep=\dimen305
-\@thisruleclass=\count318
-\@lastruleclass=\count319
-\@thisrulewidth=\dimen306
+\heavyrulewidth=\dimen300
+\lightrulewidth=\dimen301
+\cmidrulewidth=\dimen302
+\belowrulesep=\dimen303
+\belowbottomsep=\dimen304
+\aboverulesep=\dimen305
+\abovetopsep=\dimen306
+\cmidrulesep=\dimen307
+\cmidrulekern=\dimen308
+\defaultaddspace=\dimen309
+\@cmidla=\count325
+\@cmidlb=\count326
+\@aboverulesep=\dimen310
+\@belowrulesep=\dimen311
+\@thisruleclass=\count327
+\@lastruleclass=\count328
+\@thisrulewidth=\dimen312
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -1225,44 +1290,44 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 58.
-LaTeX Info: Redefining \a1 on input line 59.
-LaTeX Info: Redefining \a2 on input line 60.
-LaTeX Info: Redefining \a3 on input line 61.
+LaTeX Info: Redefining \L2 on input line 60.
+LaTeX Info: Redefining \a1 on input line 61.
+LaTeX Info: Redefining \a2 on input line 62.
+LaTeX Info: Redefining \a3 on input line 63.
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip58
-\f@nch@O@elh=\skip59
-\f@nch@O@erh=\skip60
-\f@nch@O@olh=\skip61
-\f@nch@O@orh=\skip62
-\f@nch@O@elf=\skip63
-\f@nch@O@erf=\skip64
-\f@nch@O@olf=\skip65
-\f@nch@O@orf=\skip66
+\f@nch@headwidth=\skip79
+\f@nch@O@elh=\skip80
+\f@nch@O@erh=\skip81
+\f@nch@O@olh=\skip82
+\f@nch@O@orh=\skip83
+\f@nch@O@elf=\skip84
+\f@nch@O@erf=\skip85
+\f@nch@O@olf=\skip86
+\f@nch@O@orf=\skip87
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box135
-\beforetitleunit=\skip67
-\aftertitleunit=\skip68
-\ttl@plus=\dimen307
-\ttl@minus=\dimen308
+\ttl@box=\box143
+\beforetitleunit=\skip88
+\aftertitleunit=\skip89
+\ttl@plus=\dimen313
+\ttl@minus=\dimen314
 \ttl@toksa=\toks43
-\titlewidth=\dimen309
-\titlewidthlast=\dimen310
-\titlewidthfirst=\dimen311
+\titlewidth=\dimen315
+\titlewidthlast=\dimen316
+\titlewidthfirst=\dimen317
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen312
+\ttl@leftsep=\dimen318
 ))
 \@input{other/metadata.aux}
 
 \openout2 = other/metadata.aux
 (./other/metadata.tex)
-\tikzscale@accuracy=\skip69
+\tikzscale@accuracy=\skip90
 
 
 LaTeX Warning: Unused global option(s):
@@ -1314,16 +1379,16 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen313
-\scratchbox=\box136
-\nofMPsegments=\count321
-\nofMParguments=\count322
+\scratchcounter=\count329
+\scratchdimen=\dimen319
+\scratchbox=\box144
+\nofMPsegments=\count330
+\nofMParguments=\count331
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen314
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
+\MPscratchCnt=\count332
+\MPscratchDim=\dimen320
+\MPnumerator=\count333
+\makeMPintoPDFobject=\count334
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1334,7 +1399,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box137
+\AtBeginShipoutBox=\box145
 Package hyperref Info: Link coloring OFF on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1346,7 +1411,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count326
+\c@section@level=\count335
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1595,89 +1660,106 @@ Chapter 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 50.
  [9] [10<./Figures/master-figure7.pdf>]
-(./Figures/Reduced_Order_Algorithms/Training.tex
+(./Figures/Reduced_Order_Algorithms/Sing_expample.tex
 ===== Image 'Figures/master-figure8' is up-to-date. ======
 )
-Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--78
+Underfull \hbox (badness 1622) in paragraph at lines 84--84
+\T1/lmr/m/n/9 one hid-den node be-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--98
+
+ []
+
+[11<./Figures/master-figure8.pdf>]
+Overfull \hbox (17.0pt too wide) detected at line 125
+[][] 
+ []
+
+(./Figures/Reduced_Order_Algorithms/Training.tex
+===== Image 'Figures/master-figure9' is up-to-date. ======
+)
+Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--129
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 2.645pt on input line 80.
+LaTeX Warning: Float too large for page by 1.54489pt on input line 131.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--83
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
-[11] [12<./Figures/master-figure8.pdf>]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 93
-.
+[12] [13<./Figures/master-figure9.pdf>]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 14
+3.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 93.
+LaTeX Warning: Citation `bibid' on page 14 undefined on input line 143.
 
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 93.
+LaTeX Warning: Citation `bibid' on page 14 undefined on input line 143.
 
 
-LaTeX Warning: Citation `bibid' on page 13 undefined on input line 97.
+LaTeX Warning: Citation `bibid' on page 14 undefined on input line 147.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 13 undefined on input line 97.
+LaTeX Warning: Citation `Pytorch website' on page 14 undefined on input line 147
+.
 
-
-[13]
+[14]
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 1
-16.
+66.
  (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
-LaTeX Warning: Citation `bibid' on page 14 undefined on input line 118.
+LaTeX Warning: Citation `bibid' on page 15 undefined on input line 168.
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 127
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 177
 .
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 128
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 178
 .
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 145.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 195.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-145.
+195.
 
-[14]) [15]
+[15]) [16]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
 (./Figures/MOR/flow.tex
-===== Image 'Figures/master-figure9' is up-to-date. ======
-) (./Figures/MOR/flow_red.tex
 ===== Image 'Figures/master-figure10' is up-to-date. ======
+) (./Figures/MOR/flow_red.tex
+===== Image 'Figures/master-figure11' is up-to-date. ======
 )
 Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
  []
 
-[16
+[17
 
 
 
-<./Figures/master-figure9.pdf><./Figures/master-figure10.pdf>]
+<./Figures/master-figure10.pdf><./Figures/master-figure11.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 42--84
 
  []
 
-[17] (./Figures/SVD/CumSum_Hydro.tex
-===== Image 'Figures/master-figure11' is up-to-date. ======
+[18] (./Figures/SVD/CumSum_Hydro.tex
+===== Image 'Figures/master-figure12' is up-to-date. ======
 )
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--102
 [][]
@@ -1689,7 +1771,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--102
  []
 
 (./Figures/SVD/CumSum_Rare.tex
-===== Image 'Figures/master-figure12' is up-to-date. ======
+===== Image 'Figures/master-figure13' is up-to-date. ======
 
 Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
 [][] 
@@ -1700,10 +1782,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--112
 
  []
 
-[18] (./Figures/Results/Var_iv.tex
-===== Image 'Figures/master-figure13' is up-to-date. ======
-) [19<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf>]) [20<./Figu
-res/master-figure13.pdf>] [21]
+[19] (./Figures/Results/Var_iv.tex
+===== Image 'Figures/master-figure14' is up-to-date. ======
+) [20<./Figures/master-figure12.pdf><./Figures/master-figure13.pdf>]) [21<./Figu
+res/master-figure14.pdf>] [22]
 \openout2 = chapters/Results.aux
  (./chapters/Results.tex
 Chapter 5.
@@ -1718,25 +1800,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--24
  []
 
 (./Figures/Results/ErrTime.tex
-===== Image 'Figures/master-figure14' is up-to-date. ======
-) (./Figures/Results/ErrWorst.tex
 ===== Image 'Figures/master-figure15' is up-to-date. ======
+) (./Figures/Results/ErrWorst.tex
+===== Image 'Figures/master-figure16' is up-to-date. ======
 )
 Underfull \hbox (badness 10000) in paragraph at lines 2--34
 
  []
 
-[22
+[23
 
 
 
 ] (./Figures/Results/MacroError.tex
-===== Image 'Figures/master-figure16' is up-to-date. ======
-) [23<./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
-(./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure17' is up-to-date. ======
-) [24<./Figures/master-figure16.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+) [24<./Figures/master-figure15.pdf><./Figures/master-figure16.pdf>]
+(./Figures/Results/Conservation.tex
 ===== Image 'Figures/master-figure18' is up-to-date. ======
+) [25<./Figures/master-figure17.pdf>] (./Figures/Results/Code2D_hy_FCNN.tex
+===== Image 'Figures/master-figure19' is up-to-date. ======
 )
 Overfull \hbox (12.08813pt too wide) in paragraph at lines 2--57
 [][]
@@ -1748,29 +1830,29 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--57
  []
 
 (./Figures/Results/Hy_Int.tex
-===== Image 'Figures/master-figure19' is up-to-date. ======
-) (./Figures/Results/Hydro/MacroCode10.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
-) (./Figures/Results/Hydro/MacroCode20.tex
+) (./Figures/Results/Hydro/MacroCode10.tex
 ===== Image 'Figures/master-figure21' is up-to-date. ======
-) (./Figures/Results/Hydro/PODConvCode.tex
+) (./Figures/Results/Hydro/MacroCode20.tex
 ===== Image 'Figures/master-figure22' is up-to-date. ======
-) (./Figures/Results/Rare/Code.tex
+) (./Figures/Results/Hydro/PODConvCode.tex
 ===== Image 'Figures/master-figure23' is up-to-date. ======
+) (./Figures/Results/Rare/Code.tex
+===== Image 'Figures/master-figure24' is up-to-date. ======
 )
 Overfull \hbox (38.6866pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
-[25<./Figures/master-figure17.pdf>]
+[26<./Figures/master-figure18.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 79.
 
-) [26] [27<./Figures/master-figure18.pdf><./Figures/master-figure19.pdf>]
-[28<./Figures/master-figure20.pdf><./Figures/master-figure21.pdf>] [29<./Figures
-/master-figure22.pdf>] [30<./Figures/master-figure23.pdf>]
-(./appendix/appendixA.tex [31
+) [27] [28<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf>]
+[29<./Figures/master-figure21.pdf><./Figures/master-figure22.pdf>] [30<./Figures
+/master-figure23.pdf>] [31<./Figures/master-figure24.pdf>]
+(./appendix/appendixA.tex [32
 
 ]
 Appendix A.
@@ -1791,18 +1873,18 @@ LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
 
 LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 
-[32
+[33
 
-] [33] [34] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
-===== Image 'Figures/master-figure24' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
+] [34] [35] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure25' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure26' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex
 ===== Image 'Figures/master-figure27' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex
 ===== Image 'Figures/master-figure28' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
+===== Image 'Figures/master-figure29' is up-to-date. ======
 )
 Underfull \hbox (badness 5403) in paragraph at lines 123--128
 [][] []
@@ -1817,15 +1899,15 @@ Underfull \hbox (badness 5403) in paragraph at lines 123--128
 LaTeX Warning: Float too large for page by 18.69234pt on input line 130.
 
 (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex
-===== Image 'Figures/master-figure29' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex
 ===== Image 'Figures/master-figure30' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex
 ===== Image 'Figures/master-figure31' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex
 ===== Image 'Figures/master-figure32' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex
 ===== Image 'Figures/master-figure33' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
+===== Image 'Figures/master-figure34' is up-to-date. ======
 )
 Underfull \hbox (badness 5403) in paragraph at lines 134--139
 [][] []
@@ -1840,17 +1922,17 @@ Underfull \hbox (badness 5403) in paragraph at lines 134--139
 LaTeX Warning: Float too large for page by 18.6905pt on input line 141.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
-===== Image 'Figures/master-figure34' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
 ===== Image 'Figures/master-figure35' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
 ===== Image 'Figures/master-figure36' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
 ===== Image 'Figures/master-figure37' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
 ===== Image 'Figures/master-figure38' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
 ===== Image 'Figures/master-figure39' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
+===== Image 'Figures/master-figure40' is up-to-date. ======
 )
 Underfull \hbox (badness 5622) in paragraph at lines 145--151
 [][] []
@@ -1865,19 +1947,19 @@ Underfull \hbox (badness 5578) in paragraph at lines 145--151
 LaTeX Warning: Float too large for page by 12.94238pt on input line 153.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
-===== Image 'Figures/master-figure40' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
 ===== Image 'Figures/master-figure41' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
 ===== Image 'Figures/master-figure42' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
 ===== Image 'Figures/master-figure43' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
 ===== Image 'Figures/master-figure44' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
 ===== Image 'Figures/master-figure45' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
 ===== Image 'Figures/master-figure46' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
+===== Image 'Figures/master-figure47' is up-to-date. ======
 )
 Underfull \hbox (badness 5622) in paragraph at lines 165--170
 [][] []
@@ -1892,21 +1974,21 @@ Underfull \hbox (badness 5622) in paragraph at lines 165--170
 LaTeX Warning: Float too large for page by 12.93878pt on input line 172.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
-===== Image 'Figures/master-figure47' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
 ===== Image 'Figures/master-figure48' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
 ===== Image 'Figures/master-figure49' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
 ===== Image 'Figures/master-figure50' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
 ===== Image 'Figures/master-figure51' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
 ===== Image 'Figures/master-figure52' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
 ===== Image 'Figures/master-figure53' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
 ===== Image 'Figures/master-figure54' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+===== Image 'Figures/master-figure55' is up-to-date. ======
 )
 Underfull \hbox (badness 5403) in paragraph at lines 184--190
 [][] []
@@ -1921,21 +2003,21 @@ Underfull \hbox (badness 5403) in paragraph at lines 184--190
 LaTeX Warning: Float too large for page by 1.26204pt on input line 192.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure55' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
 ===== Image 'Figures/master-figure56' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
 ===== Image 'Figures/master-figure57' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
 ===== Image 'Figures/master-figure58' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
 ===== Image 'Figures/master-figure59' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
 ===== Image 'Figures/master-figure60' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
 ===== Image 'Figures/master-figure61' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
 ===== Image 'Figures/master-figure62' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
+===== Image 'Figures/master-figure63' is up-to-date. ======
 )
 Underfull \hbox (badness 5403) in paragraph at lines 203--209
 [][] []
@@ -1950,61 +2032,61 @@ Underfull \hbox (badness 5403) in paragraph at lines 203--209
 LaTeX Warning: Float too large for page by 1.26112pt on input line 211.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure63' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
 ===== Image 'Figures/master-figure64' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
 ===== Image 'Figures/master-figure65' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
+===== Image 'Figures/master-figure66' is up-to-date. ======
 )
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
 tex
-===== Image 'Figures/master-figure66' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
 ===== Image 'Figures/master-figure67' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
+===== Image 'Figures/master-figure68' is up-to-date. ======
 )
 Underfull \hbox (badness 5490) in paragraph at lines 223--226
 [][] []
  []
 
-[35] [36<./Figures/master-figure24.pdf><./Figures/master-figure25.pdf><./Figures
-/master-figure26.pdf><./Figures/master-figure27.pdf><./Figures/master-figure28.p
-df>] [37<./Figures/master-figure29.pdf><./Figures/master-figure30.pdf><./Figures
-/master-figure31.pdf><./Figures/master-figure32.pdf><./Figures/master-figure33.p
-df>] [38<./Figures/master-figure34.pdf><./Figures/master-figure35.pdf><./Figures
-/master-figure36.pdf><./Figures/master-figure37.pdf><./Figures/master-figure38.p
-df><./Figures/master-figure39.pdf>] [39<./Figures/master-figure40.pdf><./Figures
-/master-figure41.pdf>] [40<./Figures/master-figure42.pdf><./Figures/master-figur
-e43.pdf><./Figures/master-figure44.pdf><./Figures/master-figure45.pdf><./Figures
-/master-figure46.pdf>] [41<./Figures/master-figure47.pdf><./Figures/master-figur
-e48.pdf>] [42<./Figures/master-figure49.pdf><./Figures/master-figure50.pdf><./Fi
-gures/master-figure51.pdf><./Figures/master-figure52.pdf><./Figures/master-figur
-e53.pdf><./Figures/master-figure54.pdf>] [43<./Figures/master-figure55.pdf><./Fi
-gures/master-figure56.pdf>] [44<./Figures/master-figure57.pdf><./Figures/master-
-figure58.pdf><./Figures/master-figure59.pdf><./Figures/master-figure60.pdf><./Fi
-gures/master-figure61.pdf><./Figures/master-figure62.pdf>]
-[45<./Figures/master-figure63.pdf><./Figures/master-figure64.pdf>] [46<./Figures
-/master-figure65.pdf><./Figures/master-figure66.pdf><./Figures/master-figure67.p
+[36] [37<./Figures/master-figure25.pdf><./Figures/master-figure26.pdf><./Figures
+/master-figure27.pdf><./Figures/master-figure28.pdf><./Figures/master-figure29.p
+df>] [38<./Figures/master-figure30.pdf><./Figures/master-figure31.pdf><./Figures
+/master-figure32.pdf><./Figures/master-figure33.pdf><./Figures/master-figure34.p
+df>] [39<./Figures/master-figure35.pdf><./Figures/master-figure36.pdf><./Figures
+/master-figure37.pdf><./Figures/master-figure38.pdf><./Figures/master-figure39.p
+df><./Figures/master-figure40.pdf>] [40<./Figures/master-figure41.pdf><./Figures
+/master-figure42.pdf>] [41<./Figures/master-figure43.pdf><./Figures/master-figur
+e44.pdf><./Figures/master-figure45.pdf><./Figures/master-figure46.pdf><./Figures
+/master-figure47.pdf>] [42<./Figures/master-figure48.pdf><./Figures/master-figur
+e49.pdf>] [43<./Figures/master-figure50.pdf><./Figures/master-figure51.pdf><./Fi
+gures/master-figure52.pdf><./Figures/master-figure53.pdf><./Figures/master-figur
+e54.pdf><./Figures/master-figure55.pdf>] [44<./Figures/master-figure56.pdf><./Fi
+gures/master-figure57.pdf>] [45<./Figures/master-figure58.pdf><./Figures/master-
+figure59.pdf><./Figures/master-figure60.pdf><./Figures/master-figure61.pdf><./Fi
+gures/master-figure62.pdf><./Figures/master-figure63.pdf>]
+[46<./Figures/master-figure64.pdf><./Figures/master-figure65.pdf>] [47<./Figures
+/master-figure66.pdf><./Figures/master-figure67.pdf><./Figures/master-figure68.p
 df>]
 Appendix B.
 (./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-===== Image 'Figures/master-figure68' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
 ===== Image 'Figures/master-figure69' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
+) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
 ===== Image 'Figures/master-figure70' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
+) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
 ===== Image 'Figures/master-figure71' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
+===== Image 'Figures/master-figure72' is up-to-date. ======
 )
 Underfull \hbox (badness 5652) in paragraph at lines 238--241
 [][] []
  []
 
 (./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-===== Image 'Figures/master-figure72' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
 ===== Image 'Figures/master-figure73' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
+) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
 ===== Image 'Figures/master-figure74' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
+===== Image 'Figures/master-figure75' is up-to-date. ======
 )
 
 LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
@@ -2013,14 +2095,14 @@ LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 249.
 
-) [47
+) [48
 
-<./Figures/master-figure68.pdf>] [48<./Figures/master-figure69.pdf><./Figures/ma
-ster-figure70.pdf><./Figures/master-figure71.pdf>] [49<./Figures/master-figure72
-.pdf><./Figures/master-figure73.pdf><./Figures/master-figure74.pdf>]
-(./master.bbl [50
+<./Figures/master-figure69.pdf>] [49<./Figures/master-figure70.pdf><./Figures/ma
+ster-figure71.pdf><./Figures/master-figure72.pdf>] [50<./Figures/master-figure73
+.pdf><./Figures/master-figure74.pdf><./Figures/master-figure75.pdf>]
+(./master.bbl [51
 
-]) [51] (./back/acknowledgement.tex) [52
+]) [52] (./back/acknowledgement.tex) [53
 
 ]
 (./back/declaration.tex
@@ -2028,7 +2110,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [53]
+) [54]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2037,7 +2119,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: A3AE692D8C7FDF4E92255366AAEDD4EF;4115.
+(rerunfilecheck)             Checksum: 16372FB53E8D697F1F93840030C0B330;4115.
 
 
 LaTeX Warning: There were undefined references.
@@ -2049,16 +2131,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43278 strings out of 481365
- 125011,10205817 words of node,token memory allocated
- 927 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 133 attribute
-, 62 glue_spec, 68 attribute_list, 2 write nodes
-   avail lists: 1:3,2:2351,3:373,4:83,5:614,6:51,7:13205,8:72,9:762,10:30,11:758
+ 44469 strings out of 481365
+ 125007,10205817 words of node,token memory allocated
+ 1041 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 141 attribute
+, 80 glue_spec, 72 attribute_list, 2 write nodes
+   avail lists: 1:2,2:2354,3:373,4:84,5:614,6:51,7:13205,8:72,9:762,10:30,11:758
 
- 56773 multiletter control sequences out of 65536+600000
+ 57892 multiletter control sequences out of 65536+600000
  124 fonts using 10472211 bytes
- 81i,14n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,16n,138p,2435b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -2066,23 +2148,22 @@ ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1
 /public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi9.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm
-/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss10.pfb
-></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/publi
-c/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb>
-Output written on master.pdf (56 pages, 7822349 bytes).
+hare/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/sha
+re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/
+lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
+ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (57 pages, 7858103 bytes).
 
-PDF statistics: 2821 PDF objects out of 2984 (max. 8388607)
- 2284 compressed objects within 23 object streams
- 196 named destinations out of 1000 (max. 131072)
+PDF statistics: 2849 PDF objects out of 2984 (max. 8388607)
+ 2307 compressed objects within 24 object streams
+ 205 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

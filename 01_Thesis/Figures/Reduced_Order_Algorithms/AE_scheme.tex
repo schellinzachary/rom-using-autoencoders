@@ -54,9 +54,9 @@
 \draw [draw=none] (13,3.5) -- (5.7,3.5) node [midway,below,draw=none,red] 
 {Decoder: g(\Phi)=$\tilde{\Pi}$};
 %%forpass
-%\draw[arrow,thin] (0,3.6)--(12,3.6)node [midway,above]{\footnotesize Forward Pass};
-%%bckpass
-%\draw[arrow,thin] (12,4.1)--(0,4.1)node [midway,above]{\footnotesize Backward Pass};
+\draw[arrow,thick] (0,3.6)--(12,3.6)node [near start,above]{\footnotesize Forward Pass};
+%bckpass
+\draw[arrow,thick] (12,4.1)--(0,4.1)node [near start,above]{\footnotesize Backward Pass};
 
 \draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (-.3,-.3) -- (.3,-.3) node [midway, below = 4pt,draw=none] {\footnotesize Input Layer};
 \draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (2.7,0) -- (3.3,0) node [midway,below = 6pt,draw=none] 

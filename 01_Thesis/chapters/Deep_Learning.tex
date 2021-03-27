@@ -12,9 +12,9 @@ Dimensionality reduction algorithms lie at the heart of any reduced order model 
 %POD
 The solution of PDEs, precisely \(f(x,v,t)\), can be approximated either through a discretization into a system of ODEs as described in \cref{Ch:BGK}, or alternatively through a separation of variables ansatz
 \begin{equation}
-	f(t,v,x) = \sum_n a_n(t)\Phi_n(x,v)\mathrm{,}
+	f(t,v,x) = \sum_{i=1}^n a_i(t)\Phi_i(x,v)\mathrm{,}
 \end{equation}  
-as descried in \cite{Kutz}. Temporal dependence rendered through \(a_n(t)\) is independent from the spatial information carried in \(\Phi_n(x,v)\). Here \(\Phi_n(x,v)\) is called the \(n\)-th basis mode. With increasing \(n\), the accuracy of the solution consequently increases as well, which is similar to increasing the spatial resolution in finite difference methods outlined in \cref{Ch:BGK}. The essence of dimensionality reduction algorithms is now to find an optimal basis \(\Phi_n(x,v)\). Optimality here means capturing the dynamic answer to a given geometry and inital conditions thus permitting to exploit a minimal number \(n\) of basis modes to reconstruct the dynamics.\\
+as descried in \cite{Kutz}. Temporal dependence rendered through \(a_i(t)\) is independent from the spatial information carried in \(\Phi_i(x,v)\). Here \(\Phi_i(x,v)\) is called the \(i\)-th basis mode. With increasing \(i\), the accuracy of the solution consequently increases as well, which is similar to increasing the spatial resolution in finite difference methods outlined in \cref{Ch:BGK}. The essence of dimensionality reduction algorithms is now to find optimal basis modes \(\Phi_i(x,v)\). Optimality here means capturing the dynamic answer to a given geometry and inital conditions thus permitting to exploit a minimal number \(n\) of basis modes to reconstruct the dynamics.\\
 An optimal basis can be provided by POD. It leverages a physically interpretable spatio-temporal decomposition of the input data \cite{Kutz}. At first this data needs to be preprocessed in a fashion, that seperates the temporal and spatial axis. Each temporal state is called snapshot and is stacked in a matrix \(\Pi\) such that
 \begin{equation}
 	\Pi=\left[ \mathbf{u}_1,\mathbf{u}_2,\dots,\mathbf{u}_n \right] \qquad \mathrm{with}\qquad \mathbf{u}_i=\left[f(v_1,x_1),\dots,f(v_k,x_1),f(v_1,x_2)\dots,f(v_k,x_j)\right]^T \mathrm{,}
@@ -43,7 +43,7 @@ Vectors in \(\Phi\) are orthogonal to each other and in that way provide a coord
 %Autoencoder
 
 Another way to obtain an optimal basis is to employ a machine learning architecture called autoencoders. An autoencoder is a feed forward neural network, that is trained to learn salient features of it's input by compressing it and successively reconstructing it back from the compressed version. In that way one could say that an autoencoder simply copies it's input to it's output \cite{Goodfellow}. \Cref{Fig:Autoencoder} shows a schematic representation of the architecture for a deep undercomplete autoencoder and the necessary terminology used to describe it's components. For the moment we ignore the difference between an undercomplete and overcomplete autoencoder, and come back to that when talking about regularization.\\
-The biggest allocation unit in autoencoders is the distinction of a decoder and a encoder part, which are seperated at central code layer. The encoder is a mapping \(h\). The encoder maps the input \(\Pi\) to the code \(\Phi\) while compressing it, which is written as \(h(\Pi)=\Phi\). Hence the encoder consists of the input layer, a variable number of hidden layers and the code layer, which is the left side of the schematic autoencoder in \cref{Fig:Autoencoder}. The decoder mirrors the encoder, which is not a necessity but often chosen that way, see the right side of \cref{Fig:Autoencoder}. Hence it comprises the same code layer, a variable number of hidden layers and the output layer. Similarily it is a mapping \(g\) which maps \(\Phi\) to \(\tilde{\Pi}\), an approximation to the initial \(\Pi\), and is written as \(g(\Phi)=\tilde{\Pi}\). The second largest allocation unit in autoencoders (and in general neural networks) are the layers. Each layer is a vector, a matrix or a three dimensional tensor. For simplicity we choose each layer to be vector valued in the following. Therefore the input layer can be an input vector like \(\mathbf{u_1}\subseteq \Pi\) with \(\mathbf{u_1} \in \mathbb{R}^2\). The vectors in the hidden layers are abstractions of the input. The term hidden stems from the fact, that one usually does not look at them as the interest mainly lies in the code -and output layer. The code layer is of main interest, as is holds the compressed abstraction of the input. Coming to the smallest allocation unit, the nodes. Each node refers to an entry in the vector/layer and is dispalyed as a circle in \cref{Fig:Autoencoder}. Two nodes are connected in a forward pass through solving \(O=I*w+b\), which is represented as a computational graph in \cref{Fig:Autoencoder}. Here the input is \(I\), which is multiplied with a weight \(w\) and by adding a bias \(b\), one obtains the output \(O\). Hence every connection between nodes contains two free parameters: a weight \(w\) and a bias \(b\). A forward pass in this sense refers to the flow of information from the left side of the encoder to the right side of the decoder in \cref{Fig:Autoencoder}. All of the aforementioned can be found in \cite{Goodfellow}.\\
+The biggest allocation unit in autoencoders is the distinction of a decoder and a encoder part, which are seperated at central code layer. The encoder is a mapping \(h\). The encoder maps the input \(\Pi\) to the code \(\Phi\) while compressing it, which is written as \(h(\Pi)=\Phi\). Hence the encoder consists of the input layer, a variable number of hidden layers and the code layer, which is the left side of the schematic autoencoder in \cref{Fig:Autoencoder}. The decoder mirrors the encoder, which is not a necessity but often chosen that way, see the right side of \cref{Fig:Autoencoder}. Hence it comprises the same code layer, a variable number of hidden layers and the output layer. Similarily it is a mapping \(g\) which maps \(\Phi\) to \(\tilde{\Pi}\), an approximation to the initial \(\Pi\), and is written as \(g(\Phi)=\tilde{\Pi}\). The second largest allocation unit in autoencoders (and in general neural networks) are the layers. Each layer is a vector, a matrix or a three dimensional tensor. For simplicity we choose each layer to be vector valued in the following. Therefore the input layer can be an input vector like \(\mathbf{u_1}\subseteq \Pi\) with \(\mathbf{u_1} \in \mathbb{R}^2\). The vectors in the hidden layers are abstractions of the input. The term hidden stems from the fact, that one usually does not look at them as the interest mainly lies in the code -and output layer. The code layer is of main interest, as is holds the compressed abstraction of the input. Coming to the smallest allocation unit, the nodes. Each node refers to an entry in the vector/layer and is dispalyed as a circle in \cref{Fig:Autoencoder}. Two nodes are connected in a forward pass through solving \(O=I*w+b\), which is represented as a computational graph in \cref{Fig:Autoencoder}. Here the input is \(I\), which is multiplied with a weight \(w\) and by adding a bias \(b\), one obtains the output \(O\). Hence every connection between nodes contains two free parameters: a weight \(w\) and a bias \(b\). Hence the whole network holds a set of parameters which we call \(\frepar \in \mathbb{R}\) in the following. A forward pass in this sense refers to the flow of information from the left side of the encoder to the right side of the decoder in \cref{Fig:Autoencoder}. All of the aforementioned can be found in \cite{Goodfellow}.\\
 \begin{figure}
 	\centering
 	\input{Figures/Reduced_Order_Algorithms/AE_scheme.tex}
@@ -55,30 +55,80 @@ The biggest allocation unit in autoencoders is the distinction of a decoder and 
 
 In a feed forward neural network, as the autoencoder used in this thesis, the information flows forward from input to output layer when we want to perform an evaluation as in \(AE(\Pi) = g(h(\Pi)) =\tilde{\Pi}\). In that way the layer structure in \cref{Fig:Autoencoder} can be viewed as evaluating a composition of functions
 \begin{equation}
-	l^{(4)}(l^{(3)}(l^{(2)}(l^{(1)}(l^{(0)}(\Pi))))) = AE(\Pi) = \tilde{\Pi}\mathrm{,}
+	l^{(4)}(l^{(3)}(l^{(2)}(l^{(1)}(l^{(0)}(\Pi))))) = g(h(\Pi)) = AE(\Pi) = \tilde{\Pi}\mathrm{,}
+	\label{Eq:Composition}
 \end{equation}
 where every function represents one layer. Here \(h_{input}\) and \(g_{ouput}\) are input layer and output layer, \(h_{hidden}\) and \(g_{hidden}\) the hidden layers in encoder and decoder with \(g_{code}\) the bottleneck layer. The evaluation of one layer or function is a linear transformation of the incoming data with
 \begin{equation}
 \tilde{\mathbf{u}}_1 = \mathbf{u}_1W + \mathbf{b}\mathrm{.} \label{Eq. Linear Transformation}
 \end{equation}
-Here \(\mathbf{u}_1\) is as in \cref{Eq:PiPOD}, \(W\) is the weight matrix and \(\mathbf{b}\) a bias vector, which is the same equation as shown in the computational graph in \cref{Fig:Autoencoder}. Therefore the whole network holds a set of free parameters, weights and biases of the whole network, which we call \(\frepar \in \mathbb{R}\). It is self evident, that \(\frepar\) does not minimize the cost function \(J(\frepar)\) from the start with
+Here \(\mathbf{u}_1\) is as in \cref{Eq:PiPOD}, \(W\) is the weight matrix and \(\mathbf{b}\) a bias vector, which is the same equation as shown in the computational graph in \cref{Fig:Autoencoder}. It is self evident, that \(\frepar\) does not minimize the cost function \(J(\frepar)\) from the start with
 \begin{equation}
 	J(\frepar) := \frac{1}{n}\sum_{i=1}^n (\mathbf{u}_i - AE(\frepar;\mathbf{u}_i))^2\mathrm{,}
+	\label{Eq:Cost}
 \end{equation}
 and needs to be found through a learning process, which is called training. The training will be discussed in the following.\\
-Note that the cost function \(J(\theta)\) comprises the mean squared error over all snapshots \(\mathbf{u}_i\), which we will write as \(L(\mathbf{u},\tilde{\mathbf{u}})\) with
+Note that the cost function \(J(\theta)\) comprises the mean squared error over all snapshots \(\mathbf{u}_i\), which we will write as \(L(\mathbf{u},\tilde{\mathbf{u}})\) the so called loss with
 \begin{equation}
 	L(\mathbf{u},\tilde{\mathbf{u}}) := \frac{1}{n}\sum_{i=1}^n(\mathbf{u}_i - \tilde{\mathbf{u}}_i)^2 = E \mathrm{,}
 \end{equation}
-where \(E\) is the scalar error and \(L\) is called the loss function.
-In order to minimize \(J(\frepar)\), 
+when specifically referring to \(E\) the distance between \(\mathbf{u}\) and $\tilde{\mathbf{u}}$. In order to minimize \(J(\frepar)\) we compute the gradient of \(J(\frepar)\) with respect to the free parameters \(\frepar\) written as \(\nabla_{\frepar}J\). Specifically we need to compute the derivative of the network with respect to the free parameters as senn in \cref{Eq:Cost}. Then we move in the opposite direction of the gradient, which yields an update of \(\frepar\) as
+\begin{equation}
+	\frepar \leftarrow \frepar - \epsilon\grd\mathrm{,} \qquad\mathrm{where}\qquad \grd:= \nabla_{\frepar}J\mathrm{.}
+\end{equation}
+\begin{wrapfigure}{r}{.2\textwidth}
+	\centering
+	\vspace{-10pt}
+	\input{Figures/Reduced_Order_Algorithms/Sing_expample.tex}
+	\vspace{-5pt}
+	\caption{\footnotesize A single node network with one hidden node between input and output node.}
+	\label{Fig:Sing_example}
+\end{wrapfigure}
+The computation of the gradient \(\grd\) is done in the so called backpropagation. As the name implies the information flows backwards through the network, from output to input layer, and propagates \(E\) backwards through the network. Responsible for this backward motion is the recursive application of the chain rule of calculus. Considering as a simple illustrative example \cref{Fig:Sing_example} with \(y=g(z,b)=g(f(x,a))\), a single node connection from input \(x\) to output \(y\) with a single hidden node. Then \(a\) is a weighting constant of the first node and \(b\) a weighting consant of the hidden node. Backpropagating the distance \(E\) with \(E = \frac{1}{2}(y_0 -y)^2\) between the output and the ground truth \(y_0\) though the network yields
+\begin{align}
+	\frac{\partial E}{\partial a} &= -(y_0 - y)\frac{\partial y}{\partial z}\frac{\partial z}{\partial a}\qquad \mathrm{and}\\
+	\frac{\partial E}{\partial b} &= -(y_0 - y)\frac{\partial y}{\partial b}\mathrm{,}
+\end{align}
+which requires \(\frac{\partial E}{\partial a} = -(y_0 - y)\frac{\partial y}{\partial z}\frac{\partial z}{\partial a} = 0\) to minimize \(E\). The update rule is then given by
+\begin{equation}
+	a_{k+1} = a_k + \epsilon \frac{\partial E}{\partial a_k} \qquad\mathrm{and}\qquad
+	b_{k+1} = b_k + \epsilon \frac{\partial E}{\partial b_k}\mathrm{.}
+\end{equation}
+This example is taken from \cite{Kutz} and shows the manner in which the chain rule of calculus provides the backwards direction when deriving the gradients of each layer with respect to the free parameters.\\
+
+The selection of starting values for \(\frepar\) is of crucial importance for the success of any neural network to learn something useful i.e that \(J(\frepar)\) converges to a minimum.     
+an updated version of the stochastic gradient descent algorithm (SGD) is used. SGD is derived from the common gradient decent method, where only a small portion of snapshots is used per iteration to compute the gradient for an update of \(\frepar\) in the opposite direction of the gradient. \\
+\begin{algorithm}[H]
+	\begin{algorithmic}
+		\SetAlgoLined
+		\REQUIRE Step size $\epsilon$
+		\REQUIRE Exponential decay rates from moment estimates $d_1$ and $d_2$ in \([0,1)\)\\
+		(Suggested defaults: 0.9 and 0.999 respectively)
+		\REQUIRE Small constant $\delta$ used for numerial stabilization (Suggested default: $10^{-8}$)
+		\REQUIRE Initial parameters $\frepar$\\
+		Initialization 1st and 2nd moment variables \(\mathbf{s}=0\) and \(\mathbf{r}=0\)\;
+		Initialize time step t = 0\;
+		\While{stopping criterion not met}{
+			Sample a minibatch $\minib_i$ containing  \(m\) examples from the training set \(\btch_{train}\)\;
+			Compute gradient: \(\grd\ \leftarrow \frac{1}{m} \nabla_{\frepar} \sum_{i=0}^m L(\minib_i - AE(\frepar;\minib_i)\)\;
+			\(t\leftarrow t + 1\)\;
+			Update biased first moment estimate: $\mathbf{s} \leftarrow d_1\mathbf{s} + (1-d_2)\grd$\;
+			Update biased second moment estimate: $\mathbf{r} \leftarrow d_2\mathbf{r} + (1-d_2) \grd\circ\grd$\;
+			Correct bias in first moment: $\hat{\mathbf{s}} \leftarrow \frac{\mathbf{s}}{1-d_1^t}$\;
+			Correct bias in second moment: $\hat{\mathbf{r}} \leftarrow \frac{\mathbf{r}}{1-d_2^t}$\;
+			Compute update: $\Delta\frepar = -\epsilon \frac{\hat{\mathbf{s}}}{\sqrt{\mathbf{\hat{\mathbf{r}}+\delta}}}$ (operations applied element-wise)\;
+			Apply update: $\frepar \leftarrow \frepar + \Delta\frepar$
+		}
+	\end{algorithmic}
+		\caption{The Adam algorithm}
+		\label{Alg:Adam}
+\end{algorithm} 
 \begin{figure}
 	\centering
 	\input{Figures/Reduced_Order_Algorithms/Training.tex}
-	\caption{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\Pi\) for training is split up into a training \(\Pi_{train}\) and a validation \(\Pi_{val}\) set with a \(80/20\) ratio (a). The \(\Pi_{train}\) set is equally devided into \(N\) minibatches (b). The network will be trained over \(H\) epochs and \(N\) minibatches. First the weights \(w\) are randomly initialized (c). A successive evaluation of the first minibatch using random weights with \(AE(\Pi_{B_n})=\tilde{\Pi}_{B_n}\) takes place in (d). The mean squared error between \(\Pi_{B_n}\) and \(\tilde{\Pi}_{B_n}\) yields the error \(E_{B_n}\). Thereafter \(E_{B_n}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with  \(Adam\), an optimization algorithm, (g). In the fashion of using (d) to (g) all \(N\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde{\Pi}_{val}\), which it has not seen before, in (h) with \(AE(\Pi_{val})=\tilde{\Pi}_{val}\). Subsequently, the evaluation of the mean squared error between \(\Pi_{val}\) and \(\tilde{\Pi}_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{B_n}\) is taken. This produces \(\overline{E}_B\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(\overline{E}_B\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.}
+	\caption{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch\) for training is split up into a training \(\btch_{train}\) and a validation \(\btch_{val}\) set with a \(80/20\) ratio (a). The \(\btch_{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are Kaiming initialized \cite{he2015} (c). A successive evaluation of the first minibatch using Kaiming weights with \(AE(\minib_{i})=\tilde{\minib}_{i}\) takes place in (d). The mean squared error between \(\minib_{i}\) and \(\tilde{\minib}_{i}\) yields the error \(E_{i}\). Thereafter \(E_{i}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with  \(Adam\), an optimization algorithm seen in \cref{Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde{\btch}_{val}\), which it has not seen before, in (h) with \(AE(\btch_{val})=\tilde{\btch}_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch_{val}\) and \(\tilde{\btch}_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{i}\) is taken. This produces \(E\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(E\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.}
 	\label{Fig:Training}
 \end{figure}
-\\
 In order to satisfy the objective of learning an optimal basis in the code layer, autoencoders need to be regularized. Regularization is defined in \cite{Goodfellow} as any modification made to a learning algorithm that is intended to reduce its generalization error but not it's training error. As already mentioned Autoencoders have a central hidden layer between the equally sized input -and output layer. In undercomplete autoencoders the central hidden layer is also called bottleneck layer, because it's size is smaller than the input. Thus the undercomplete autoencoder is forced to decide which information to copy and by that measure is regularized. Overcomplete autoencoders on the other hand have the central hidden layer greater or of the same size as the input, hence making it indispencable to use additional regularization, which, necessary to add, can be also fruitful in undercomplete autoencoders. Note that an undercomplete autoencoder as shown in \cref{Fig:Autoencoder} will be used in this thesis. Regularization is always advantageous when the capacity of an autoencoder is too big. The capacity of any neural network can be altered through the number of free parameters available for the model to fit the input data.\\
 
 %The term deep learning situated around the much broader field of artificial intelligence stems from the use of deep feed forward networks also called multi layer perceptrons (MLP) or feed forward neural networks. Deep recurrent neural networks (RNN) are also used in this field but won't be covered in this thesis. In contrast to RNNs, information flows forward through these networks, which explains the name feed foward. In the following I will use the abbreviation MLP when talking about the aforementioned algorithm. Network refers to the typical composition of many different functions.\\The task of any MLP is to approximate a function \(f^\star(\mathbf{x};\mathbf{\Theta}) \approx f(\mathbf{x})\) through learning the values of the parameters \(\mathbf{\Theta}\). As mentioned before  \(f^\star\) is a composition of functions eg. \cref{Eq. Composition}.
