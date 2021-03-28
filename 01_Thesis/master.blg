@@ -6,56 +6,58 @@ A level-1 auxiliary file: front/title.aux
 A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/BGK_model.aux
 A level-1 auxiliary file: chapters/Deep_Learning.aux
-White space in argument---line 55 of file chapters/Deep_Learning.aux
+White space in argument---line 61 of file chapters/Deep_Learning.aux
  : \citation{Pytorch
  :                   website}
 I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/Reduced_order_Modeling.aux
 A level-1 auxiliary file: chapters/Results.aux
 Database file #1: other/references.bib
+Warning--entry type for "torch_ini" isn't style-file defined
+--line 169 of file other/references.bib
 Warning--I didn't find a database entry for "bibid"
 Warning--empty publisher in Franz
 Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
-You've used 20 entries,
+You've used 22 entries,
             2189 wiz_defined-function locations,
-            638 strings with 6456 characters,
-and the built_in function-call counts, 3466 in all, are:
-= -- 289
-> -- 238
+            647 strings with 6669 characters,
+and the built_in function-call counts, 3799 in all, are:
+= -- 312
+> -- 257
 < -- 0
-+ -- 71
-- -- 51
-* -- 246
-:= -- 548
-add.period$ -- 24
-call.type$ -- 20
-change.case$ -- 16
++ -- 77
+- -- 55
+* -- 264
+:= -- 589
+add.period$ -- 26
+call.type$ -- 22
+change.case$ -- 18
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 140
-empty$ -- 309
-format.name$ -- 51
-if$ -- 848
+cite$ -- 25
+duplicate$ -- 160
+empty$ -- 358
+format.name$ -- 55
+if$ -- 936
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 53
-newline$ -- 68
-num.names$ -- 20
-pop$ -- 60
+int.to.str$ -- 22
+missing$ -- 54
+newline$ -- 74
+num.names$ -- 21
+pop$ -- 80
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 63
+skip$ -- 68
 stack$ -- 0
 substring$ -- 75
-swap$ -- 28
+swap$ -- 29
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 27
-width$ -- 22
-write$ -- 152
+while$ -- 28
+width$ -- 24
+write$ -- 166
 (There was 1 error message)

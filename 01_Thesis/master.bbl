@@ -65,9 +65,16 @@ G.~A. {Sod}, \emph{{Review. A Survey of Several Finite Difference Methods for
 J.~Reiss, \emph{Skript zu cfd 1},
   \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
 
+\bibitem{LeCun98}
+Y.~LeCun, L.~Bottou, G.~Orr and K.~M{\"u}ller, \emph{Efficient backprop},  in
+  \emph{Neural Networks: Tricks of the Trade}, 2012.
+
 \bibitem{he2015}
 K.~He, X.~Zhang, S.~Ren and J.~Sun, \emph{Delving deep into rectifiers:
   Surpassing human-level performance on imagenet classification},  2015.
+
+\bibitem{torch_ini}
+``{torch.nn.init}.'' \url{https://pytorch.org/docs/stable/nn.init.html}.
 
 \bibitem{Hornik1989}
 K.~Hornik, M.~Stinchcombe and H.~White, \emph{Multilayer feedforward networks
