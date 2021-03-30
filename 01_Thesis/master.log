@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  28 MAR 2021 19:36
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  30 MAR 2021 19:59
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -2135,7 +2135,7 @@ Here is how much of LuaTeX's memory you used:
  1041 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 141 attribute
 , 80 glue_spec, 72 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2354,3:373,4:84,5:614,6:51,7:13205,8:72,9:762,10:30,11:758
+   avail lists: 1:1,2:2354,3:373,4:84,5:614,6:50,7:13205,8:72,9:762,10:30,11:758
 
  57895 multiletter control sequences out of 65536+600000
  124 fonts using 10472211 bytes
@@ -2159,7 +2159,7 @@ pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
 ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (58 pages, 7863043 bytes).
+Output written on master.pdf (58 pages, 7863710 bytes).
 
 PDF statistics: 2862 PDF objects out of 2984 (max. 8388607)
  2319 compressed objects within 24 object streams
