@@ -49,12 +49,16 @@
 \@writefile{loa}{\contentsline {algocf}{\numberline {1}{\ignorespaces The Adam algorithm\relax }}{13}{algocf.1}\protected@file@percent }
 \newlabel{Alg:Adam}{{1}{13}{Training}{algocf.1}{}}
 \newlabel{Alg:Adam@cref}{{[algorithm][1][]1}{[1][11][]13}}
+\citation{bushaev_2017}
+\citation{kingma2017adam}
 \citation{LeCun98}
 \citation{LeCun98}
 \citation{Goodfellow}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \footnotesize  Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch  \) for training is split up into a training \(\btch  _{train}\) and a validation \(\btch  _{val}\) set with a \(80/20\) ratio (a). The \(\btch  _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite  {LeCun98} (c). A successive evaluation of the first minibatch using Kaiming weights with \(AE(\minib  _{i})=\tilde  {\minib  }_{i}\) takes place in (d). The mean squared error between \(\minib  _{i}\) and \(\tilde  {\minib  }_{i}\) yields the error \(E_{i}\). Thereafter \(E_{i}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref  {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde  {\btch  }_{val}\), which it has not seen before, in (h) with \(AE(\btch  _{val})=\tilde  {\btch  }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch  _{val}\) and \(\tilde  {\btch  }_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{i}\) is taken. This produces \(E\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(E\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }}{15}{figure.caption.9}\protected@file@percent }
-\newlabel{Fig:Training}{{3.3}{15}{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch \) for training is split up into a training \(\btch _{train}\) and a validation \(\btch _{val}\) set with a \(80/20\) ratio (a). The \(\btch _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite {LeCun98} (c). A successive evaluation of the first minibatch using Kaiming weights with \(AE(\minib _{i})=\tilde {\minib }_{i}\) takes place in (d). The mean squared error between \(\minib _{i}\) and \(\tilde {\minib }_{i}\) yields the error \(E_{i}\). Thereafter \(E_{i}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde {\btch }_{val}\), which it has not seen before, in (h) with \(AE(\btch _{val})=\tilde {\btch }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch _{val}\) and \(\tilde {\btch }_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{i}\) is taken. This produces \(E\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(E\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }{figure.caption.9}{}}
-\newlabel{Fig:Training@cref}{{[figure][3][3]3.3}{[1][14][]15}}
+\newlabel{Eq: fm}{{3.14}{14}{Training}{equation.3.2.14}{}}
+\newlabel{Eq: fm@cref}{{[equation][14][3]3.14}{[1][14][]14}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \footnotesize  Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch  \) for training is split up into a training \(\btch  _{train}\) and a validation \(\btch  _{val}\) set with a \(80/20\) ratio (a). The \(\btch  _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite  {LeCun98} (c). A successive evaluation of the first minibatch using Kaiming weights with \(AE(\minib  _{i})=\tilde  {\minib  }_{i}\) takes place in (d). The mean squared error between \(\minib  _{i}\) and \(\tilde  {\minib  }_{i}\) yields the error \(E_{i}\). Thereafter \(E_{i}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref  {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde  {\btch  }_{val}\), which it has not seen before, in (h) with \(AE(\btch  _{val})=\tilde  {\btch  }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch  _{val}\) and \(\tilde  {\btch  }_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{i}\) is taken. This produces \(E\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(E\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }}{16}{figure.caption.9}\protected@file@percent }
+\newlabel{Fig:Training}{{3.3}{16}{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch \) for training is split up into a training \(\btch _{train}\) and a validation \(\btch _{val}\) set with a \(80/20\) ratio (a). The \(\btch _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite {LeCun98} (c). A successive evaluation of the first minibatch using Kaiming weights with \(AE(\minib _{i})=\tilde {\minib }_{i}\) takes place in (d). The mean squared error between \(\minib _{i}\) and \(\tilde {\minib }_{i}\) yields the error \(E_{i}\). Thereafter \(E_{i}\) is backpropagated through the network (f) yielding a gradient of the loss function \(L\). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(w\) and \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\tilde {\btch }_{val}\), which it has not seen before, in (h) with \(AE(\btch _{val})=\tilde {\btch }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch _{val}\) and \(\tilde {\btch }_{val}\), produces the error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{i}\) is taken. This produces \(E\) and concludes the first epoch. When the maximum number of epochs \(H\) is reached, \(E\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }{figure.caption.9}{}}
+\newlabel{Fig:Training@cref}{{[figure][3][3]3.3}{[1][14][]16}}
 \citation{Hornik1989}
 \citation{Goodfellow}
 \citation{bibid}
@@ -66,36 +70,36 @@
 \citation{Pytorch website}
 \citation{dumoulin2018guide}
 \citation{Goodfellow}
-\newlabel{Eq. Convolution}{{3.15}{16}{Training}{equation.3.2.15}{}}
-\newlabel{Eq. Convolution@cref}{{[equation][15][3]3.15}{[1][16][]16}}
-\newlabel{Eq. Discrete Convolution}{{3.16}{16}{Training}{equation.3.2.16}{}}
-\newlabel{Eq. Discrete Convolution@cref}{{[equation][16][3]3.16}{[1][16][]16}}
-\newlabel{Eq. Discrete Convolution Flip}{{3.17}{16}{Training}{equation.3.2.17}{}}
-\newlabel{Eq. Discrete Convolution Flip@cref}{{[equation][17][3]3.17}{[1][16][]16}}
-\newlabel{Eq. Discrete Cross Correlation}{{3.18}{16}{Training}{equation.3.2.18}{}}
-\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][18][3]3.18}{[1][16][]16}}
-\newlabel{Eq:Downsampling}{{3.19}{16}{Training}{equation.3.2.19}{}}
-\newlabel{Eq:Downsampling@cref}{{[equation][19][3]3.19}{[1][16][]16}}
+\newlabel{Eq. Convolution}{{3.19}{17}{Training}{equation.3.2.19}{}}
+\newlabel{Eq. Convolution@cref}{{[equation][19][3]3.19}{[1][17][]17}}
+\newlabel{Eq. Discrete Convolution}{{3.20}{17}{Training}{equation.3.2.20}{}}
+\newlabel{Eq. Discrete Convolution@cref}{{[equation][20][3]3.20}{[1][17][]17}}
+\newlabel{Eq. Discrete Convolution Flip}{{3.21}{17}{Training}{equation.3.2.21}{}}
+\newlabel{Eq. Discrete Convolution Flip@cref}{{[equation][21][3]3.21}{[1][17][]17}}
+\newlabel{Eq. Discrete Cross Correlation}{{3.22}{17}{Training}{equation.3.2.22}{}}
+\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][22][3]3.22}{[1][17][]17}}
+\newlabel{Eq:Downsampling}{{3.23}{17}{Training}{equation.3.2.23}{}}
+\newlabel{Eq:Downsampling@cref}{{[equation][23][3]3.23}{[1][17][]17}}
 \citation{bibid}
 \citation{dumoulin2018guide}
 \citation{Goodfellow}
 \citation{Goodfellow}
-\newlabel{Eq. Cross correlation stride channel}{{3.20}{17}{Training}{equation.3.2.20}{}}
-\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][20][3]3.20}{[1][17][]17}}
-\newlabel{Eq: Transposed convolution}{{3.21}{17}{Training}{equation.3.2.21}{}}
-\newlabel{Eq: Transposed convolution@cref}{{[equation][21][3]3.21}{[1][17][]17}}
-\newlabel{Eq. Backpropagation3}{{3.22}{17}{Training}{equation.3.2.22}{}}
-\newlabel{Eq. Backpropagation3@cref}{{[equation][22][3]3.22}{[1][17][]17}}
-\newlabel{Eq. Backpropagation2}{{3.23}{17}{Training}{equation.3.2.23}{}}
-\newlabel{Eq. Backpropagation2@cref}{{[equation][23][3]3.23}{[1][17][]17}}
-\newlabel{Eq. Backpropagation1}{{3.24}{17}{Training}{equation.3.2.24}{}}
-\newlabel{Eq. Backpropagation1@cref}{{[equation][24][3]3.24}{[1][17][]17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{17}{subsection.3.2.2}\protected@file@percent }
-\newlabel{f_Conv}{{3.25}{18}{Autoencoders}{equation.3.2.25}{}}
-\newlabel{f_Conv@cref}{{[equation][25][3]3.25}{[1][18][]18}}
+\newlabel{Eq. Cross correlation stride channel}{{3.24}{18}{Training}{equation.3.2.24}{}}
+\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][24][3]3.24}{[1][18][]18}}
+\newlabel{Eq: Transposed convolution}{{3.25}{18}{Training}{equation.3.2.25}{}}
+\newlabel{Eq: Transposed convolution@cref}{{[equation][25][3]3.25}{[1][18][]18}}
+\newlabel{Eq. Backpropagation3}{{3.26}{18}{Training}{equation.3.2.26}{}}
+\newlabel{Eq. Backpropagation3@cref}{{[equation][26][3]3.26}{[1][18][]18}}
+\newlabel{Eq. Backpropagation2}{{3.27}{18}{Training}{equation.3.2.27}{}}
+\newlabel{Eq. Backpropagation2@cref}{{[equation][27][3]3.27}{[1][18][]18}}
+\newlabel{Eq. Backpropagation1}{{3.28}{18}{Training}{equation.3.2.28}{}}
+\newlabel{Eq. Backpropagation1@cref}{{[equation][28][3]3.28}{[1][18][]18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{18}{subsection.3.2.2}\protected@file@percent }
+\newlabel{f_Conv}{{3.29}{19}{Autoencoders}{equation.3.2.29}{}}
+\newlabel{f_Conv@cref}{{[equation][29][3]3.29}{[1][19][]19}}
 \@setckpt{chapters/Deep_Learning}{
-\setcounter{page}{19}
-\setcounter{equation}{25}
+\setcounter{page}{20}
+\setcounter{equation}{29}
 \setcounter{enumi}{13}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}

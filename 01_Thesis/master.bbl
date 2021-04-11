@@ -71,10 +71,18 @@ Y.~LeCun, L.~Bottou, G.~Orr and K.~M{\"u}ller, \emph{Efficient backprop},  in
 
 \bibitem{he2015}
 K.~He, X.~Zhang, S.~Ren and J.~Sun, \emph{Delving deep into rectifiers:
-  Surpassing human-level performance on imagenet classification},  2015.
+  Surpassing human-level performance on imagenet classification},
+  \href{https://arxiv.org/abs/1502.01852}{{\ttfamily 1502.01852}}.
 
 \bibitem{torch_ini}
-``{torch.nn.init}.'' \url{https://pytorch.org/docs/stable/nn.init.html}.
+T.~Contributors, \emph{torch.nn.init¶},  2019.
+
+\bibitem{bushaev_2017}
+V.~Bushaev, \emph{Stochastic gradient descent with momentum},  Dec, 2017.
+
+\bibitem{kingma2017adam}
+D.~P. Kingma and J.~Ba, \emph{Adam: A method for stochastic optimization},
+  \href{https://arxiv.org/abs/1412.6980}{{\ttfamily 1412.6980}}.
 
 \bibitem{Hornik1989}
 K.~Hornik, M.~Stinchcombe and H.~White, \emph{Multilayer feedforward networks
