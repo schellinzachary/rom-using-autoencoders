@@ -27,15 +27,15 @@ every join/.style={norm},   % Default linetype for connecting boxes
 	\node [proc,join] (ini) {Initialize weights};
 	\node [test,join] (t1) {\(E_i \leq E_{H}\)};
 	\node [test,join] (t2) {\(B_i\leq B_{n}\)};
-	\node [proc,join] (p1) {Evaluate:\\ \(AE(\minib_i)=\tilde{\minib}_i\)};
-	\node [proc,join] (p2) {Evaluate:\\ \(L(\minib_i,\tilde{\minib}_i)=E_i\)};
-	\node [proc,join] (p3) {Backpropagate\\ \(E_i\)};
-	\node [proc,join] (p4) {Optimize \(w\) and \(b\):\\\(Adam(w_n,b_n)=(w_{n+1},b_{n+1})\)};
+	\node [proc,join] (p1) {Forward propagation:\\ \(AE(\minib_i)=\tilde{\minib}_i\)};
+	\node [proc,join] (p2) {Compute loss:\\ \(L(\minib_i,\tilde{\minib}_i)=E_{B_i}\)};
+	\node [proc,join] (p3) {Backpropagation:\\ \(\nabla_{\frepar} J = \grd\) };
+	\node [proc,join] (p4) {Optimize \(\frepar\):\\\(\frepar_{i+1} = \frepar_i + \Delta\frepar\)};
 	\node [proc,join] (Bplus) {\(B_{i+1} = B_i + 1\)};
 	%side nodes	
 	\node [proc,right =of mb] (tv) {Partition \(\btch\) into training and validation set:\\ \(\btch = \{\btch_{train},\btch_{val}\}\)};
-	\node [proc, right=of t2] (p5) {Evaluate:\\ \(AE(\btch_{val})=\tilde{\btch}_{val}\)};
-	\node [proc, right=of p1,join] (p6) {Evaluate:\\ \(L(\btch_{val},\tilde{\btch}_{val})=E_{val}\)};
+	\node [proc, right=of t2] (p5) {Forward propagation:\\ \(AE(\btch_{val})=\tilde{\btch}_{val}\)};
+	\node [proc, right=of p1,join] (p6) {Compute loss:\\ \(L(\btch_{val},\tilde{\btch}_{val})=E_{val}\)};
 	\node [proc, right=of p2,join] (aveMSE) {\(\frac{1}{N} \sum_n E_{B_n} =\overline{E}_B\)} ;
 	\node [proc, right=of p3,join] (Eplus) {\(E_{i+1} =E_i + 1\)} ;
     \node [term,left=of t1] (fini) {finish};
