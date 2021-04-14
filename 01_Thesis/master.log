@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  13 APR 2021 19:54
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  14 APR 2021 19:18
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1678,22 +1678,14 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [11<./Figures/master-figure8.pdf>]
 [12] [13] (./Figures/Reduced_Order_Algorithms/Training.tex
-\openout3 = Figures/master-figure9.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure9" "\def\tikzextern
-alrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure9' is up-to-date. ======
 )
 Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--149
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 1.8942pt on input line 151.
+LaTeX Warning: Float too large for page by 13.09496pt on input line 151.
 
 [14]
 Underfull \hbox (badness 10000) in paragraph at lines 153--155
@@ -2133,13 +2125,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44502 strings out of 481365
- 156263,10205817 words of node,token memory allocated
+ 44495 strings out of 481365
+ 156269,10205817 words of node,token memory allocated
  1053 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 145 attribute
 , 80 glue_spec, 74 attribute_list, 2 write nodes
-   avail lists: 1:1,2:2354,3:373,4:83,5:1034,6:50,7:16648,8:74,9:762,10:45,11:10
-01
+   avail lists: 1:1,2:2354,3:373,4:83,5:1040,6:50,7:16883,8:74,9:762,10:45,11:10
+12
  57906 multiletter control sequences out of 65536+600000
  124 fonts using 10472211 bytes
  81i,16n,138p,2655b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -2148,25 +2140,26 @@ Here is how much of LuaTeX's memory you used:
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
-/usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1
-/public/lm/lmex10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/public/
-lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf
-/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fonts/typ
-e1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr7.pfb></usr/sha
-re/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/
-lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fo
-nts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr
-/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (60 pages, 7900068 bytes).
+/usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/p
+ublic/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/sh
+are/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmmi5.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf
+/fonts/type1/public/lm/lmmi7.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.p
+fb></usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/l
+m/lmr7.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fo
+nts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb>
+</usr/share/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on master.pdf (60 pages, 7922879 bytes).
 
-PDF statistics: 2900 PDF objects out of 2984 (max. 8388607)
- 2353 compressed objects within 24 object streams
+PDF statistics: 2908 PDF objects out of 2984 (max. 8388607)
+ 2359 compressed objects within 24 object streams
  217 named destinations out of 1000 (max. 131072)
  208 words of extra memory for PDF output out of 10000 (max. 100000000)
 

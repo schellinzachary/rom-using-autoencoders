@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  13 APR 2021 19:54
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  14 APR 2021 18:11
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -2640,7 +2640,7 @@ Here is how much of LuaTeX's memory you used:
  1053 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 145 attribute
 , 80 glue_spec, 74 attribute_list, 2 write nodes
-   avail lists: 1:2,2:3988,3:579,4:83,5:947,6:38,7:15784,8:71,9:773,10:47,11:951
+   avail lists: 1:2,2:3991,3:581,4:83,5:947,6:38,7:15784,8:71,9:773,10:47,11:951
  58260 multiletter control sequences out of 65536+600000
  127 fonts using 10718763 bytes
  83i,16n,140p,2676b,1061s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -2653,7 +2653,7 @@ usr/share/texmf/fonts/type1/public/lm/lmmi6.pfb></usr/share/texmf/fonts/type1/pu
 blic/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm/lmr6.pfb></usr/share/t
 exmf/fonts/type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy
 9.pfb>
-Output written on Figures/master-figure9.pdf (1 page, 92557 bytes).
+Output written on Figures/master-figure9.pdf (1 page, 93475 bytes).
 
 PDF statistics: 55 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream
