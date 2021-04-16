@@ -13,8 +13,8 @@
 \contentsline {chapter}{\numberline {3}Dimensionality reduction algorithms}{8}{chapter.3}%
 \contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Autoencoders}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Training}{10}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{18}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.1}Training}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{19}{subsection.3.2.2}%
 \contentsline {chapter}{\numberline {4}Model Order Reduction}{20}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Offline Phase}{21}{section.4.1}%
 \contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{21}{subsection.4.1.1}%
@@ -25,5 +25,5 @@
 \contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{36}{appendix.A}%
 \contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{51}{appendix.B}%
 \contentsline {subsection}{\numberline {B.0.1}Appendix B}{51}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{54}{appendix*.47}%
+\contentsline {chapter}{Bibliography}{54}{appendix*.48}%
 \contentsfinish 
