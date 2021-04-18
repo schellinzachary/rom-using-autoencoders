@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 APR 2021 17:54
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 APR 2021 11:53
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1797,143 +1797,127 @@ Algorithms/Tanh.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (1819.55331pt too wide) in alignment at lines 167--189
-[][][][][]
+Overfull \hbox (1803.55331pt too wide) in alignment at lines 167--189
+[] [] [] [] []
  []
 
 
-LaTeX Warning: Citation `Hornik1989' on page 16 undefined on input line 192.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 192.
-
-
 LaTeX Warning: Citation `bibid' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `bibid' on page 16 undefined on input line 194.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Reference `Eq. Linear Transformation' on page 1 undefined on inpu
-t line 194.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `bibid' on page 16 undefined on input line 198.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 198.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 198.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 198
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
 .
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 198.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 198
+LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 194
 .
 
 
 LaTeX Warning: Reference `Eq. Convolution' on page 16 undefined on input line 19
-8.
+4.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 198.
+ line 194.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 198
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
 .
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 198.
+ line 194.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 204.
+ line 200.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 204.
+input line 200.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 204.
+ input line 200.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-15.
+11.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 215.
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 211.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 215.
+ input line 211.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 2
-17.
+13.
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 219.
+ned on input line 215.
 
 
-LaTeX Warning: Citation `bibid' on page 17 undefined on input line 219.
+LaTeX Warning: Citation `bibid' on page 17 undefined on input line 215.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-21.
+17.
 
 
 LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 221.
+ut line 217.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 221.
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 217.
 
 
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 221
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 217
 .
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 228
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 224
 .
 
 
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 229
+LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 225
 .
 
 
 LaTeX Warning: Reference `Eq. Backpropagation1' on page 1 undefined on input lin
-e 229.
+e 225.
 
 
 LaTeX Warning: Reference `Eq. Backpropagation3' on page 1 undefined on input lin
-e 229.
+e 225.
 
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 246.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 242.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-246.
+242.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 247.
+LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 243.
 
 
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 247.
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 243.
 
 
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 250.
+LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 246.
 
 ) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2672,18 +2656,18 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43594 strings out of 481365
+ 43597 strings out of 481365
  156265,4921788 words of node,token memory allocated
- 1065 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 149 attribute
-, 80 glue_spec, 76 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2251,3:312,4:83,5:968,6:38,7:16085,8:71,9:773,10:47,11:962
- 58236 multiletter control sequences out of 65536+600000
+ 1053 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 145 attribute
+, 80 glue_spec, 74 attribute_list, 2 write nodes
+   avail lists: 1:2,2:2251,3:312,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
+ 58239 multiletter control sequences out of 65536+600000
  127 fonts using 10718763 bytes
- 83i,20n,140p,2820b,2241s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,20n,140p,2788b,2247s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pub
 lic/lm/lmr10.pfb>
-Output written on Figures/master-figure14.pdf (1 page, 22476 bytes).
+Output written on Figures/master-figure14.pdf (1 page, 22894 bytes).
 
 PDF statistics: 21 PDF objects out of 1000 (max. 8388607)
  16 compressed objects within 1 object stream

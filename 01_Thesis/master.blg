@@ -6,7 +6,7 @@ A level-1 auxiliary file: front/title.aux
 A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/BGK_model.aux
 A level-1 auxiliary file: chapters/Deep_Learning.aux
-White space in argument---line 71 of file chapters/Deep_Learning.aux
+White space in argument---line 68 of file chapters/Deep_Learning.aux
  : \citation{Pytorch
  :                   website}
 I'm skipping whatever remains of this command
@@ -17,45 +17,45 @@ Warning--I didn't find a database entry for "bibid"
 Warning--empty publisher in Franz
 Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
-You've used 24 entries,
+You've used 23 entries,
             2189 wiz_defined-function locations,
-            661 strings with 6905 characters,
-and the built_in function-call counts, 4063 in all, are:
-= -- 334
-> -- 276
+            654 strings with 6858 characters,
+and the built_in function-call counts, 3668 in all, are:
+= -- 293
+> -- 258
 < -- 0
-+ -- 83
-- -- 59
-* -- 287
-:= -- 638
-add.period$ -- 28
-call.type$ -- 24
-change.case$ -- 20
++ -- 78
+- -- 55
+* -- 256
+:= -- 580
+add.period$ -- 27
+call.type$ -- 23
+change.case$ -- 19
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 168
-empty$ -- 378
-format.name$ -- 59
-if$ -- 996
+cite$ -- 26
+duplicate$ -- 151
+empty$ -- 346
+format.name$ -- 55
+if$ -- 898
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 60
-newline$ -- 80
-num.names$ -- 24
-pop$ -- 82
+int.to.str$ -- 23
+missing$ -- 56
+newline$ -- 77
+num.names$ -- 22
+pop$ -- 79
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 70
+skip$ -- 56
 stack$ -- 0
-substring$ -- 75
-swap$ -- 29
+substring$ -- 43
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 31
-width$ -- 26
-write$ -- 181
+while$ -- 26
+width$ -- 25
+write$ -- 172
 (There was 1 error message)

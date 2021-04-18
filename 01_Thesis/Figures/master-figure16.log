@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 APR 2021 17:10
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 APR 2021 22:04
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1182,10 +1182,10 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 60.
-LaTeX Info: Redefining \a1 on input line 61.
-LaTeX Info: Redefining \a2 on input line 62.
-LaTeX Info: Redefining \a3 on input line 63.
+LaTeX Info: Redefining \L2 on input line 61.
+LaTeX Info: Redefining \a1 on input line 62.
+LaTeX Info: Redefining \a2 on input line 63.
+LaTeX Info: Redefining \a3 on input line 64.
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
@@ -1792,902 +1792,127 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (1865.30193pt too wide) in alignment at lines 167--177
+Overfull \hbox (1820.84918pt too wide) in alignment at lines 167--189
 [] [] [] [] []
  []
 
 
-LaTeX Warning: Citation `Hornik1989' on page 16 undefined on input line 180.
+LaTeX Warning: Citation `torch_ini' on page 16 undefined on input line 193.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 180.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `bibid' on page 16 undefined on input line 182.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `bibid' on page 16 undefined on input line 182.
-
-
-LaTeX Warning: Reference `Eq. Linear Transformation' on page 1 undefined on inpu
-t line 182.
-
-
-LaTeX Warning: Citation `bibid' on page 16 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 186.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 186.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 186
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
 .
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 186.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 186
+LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 194
 .
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 16 undefined on input line 18
-6.
+LaTeX Warning: Reference `Eq. Convolution' on page 16 undefined on input line 19
+4.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 186.
+ line 194.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 186
+LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
 .
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 186.
+ line 194.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 192.
+ line 200.
 
 
 LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 192.
+input line 200.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 192.
+ input line 200.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-03.
+11.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 203.
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 211.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 203.
+ input line 211.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 2
-05.
+13.
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 207.
+ned on input line 215.
 
 
-LaTeX Warning: Citation `bibid' on page 17 undefined on input line 207.
+LaTeX Warning: Citation `bibid' on page 17 undefined on input line 215.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-09.
+17.
 
 
 LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 209.
+ut line 217.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 209.
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 217.
 
 
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 209
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 217
 .
 
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 216
-.
-
-
-LaTeX Warning: Reference `Eq. Composition' on page 1 undefined on input line 217
-.
-
-
-LaTeX Warning: Reference `Eq. Backpropagation1' on page 1 undefined on input lin
-e 217.
-
-
-LaTeX Warning: Reference `Eq. Backpropagation3' on page 1 undefined on input lin
-e 217.
-
-
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 234.
-
-
-LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-234.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 235.
-
-
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 235.
-
-
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 238.
-
-) (./chapters/Reduced_order_Modeling.tex
-Chapter 4.
-
-LaTeX Warning: Citation `Bernard' on page 20 undefined on input line 9.
-
-
-LaTeX Warning: Citation `Carlberg' on page 20 undefined on input line 9.
-
-
-LaTeX Warning: Citation `ohlberger2015reduced' on page 20 undefined on input lin
-e 9.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation `ohlberger2015reduced' on page 20 undefined on input lin
-e 10.
-
-
-LaTeX Warning: Citation `Carlberg' on page 20 undefined on input line 10.
-
-(./Figures/MOR/flow.tex
+(./Figures/Reduced_Order_Algorithms/Kernel.tex
 \openout4 = Figures/master-figure16.dpth
- [20
 
-\providecommand \oddpage@label [2]{}
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 15.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 15.
-
-(./Figures/MOR/flow_red.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 20.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 20.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 8--23
-
- []
-
-
-LaTeX Warning: Citation `ohlberger2015reduced' on page 21 undefined on input lin
-e 29.
-
-
-LaTeX Warning: Citation `Carlberg' on page 21 undefined on input line 29.
-
-
-LaTeX Warning: Reference `Sec: POD' on page 1 undefined on input line 29.
-
-
-LaTeX Warning: Reference `Sec:AE' on page 1 undefined on input line 29.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 34.
-
-
-LaTeX Warning: Citation `ohlberger2015reduced' on page 21 undefined on input lin
-e 39.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 39.
-
-
-LaTeX Warning: Reference `Tab:Setup' on page 1 undefined on input line 42.
-
-
-LaTeX Warning: Reference `Fig:SodProbSetup' on page 1 undefined on input line 42
-.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 42.
-
-
-LaTeX Warning: Citation `schaaf' on page 21 undefined on input line 56.
-
-
-LaTeX Warning: Citation `NumaKUL' on page 21 undefined on input line 56.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 56.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Reference `Eq:AE_matrix' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Reference `Eq:CNN_matrix' on page 1 undefined on input line 57.
-
-
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 83.
-
-
-LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 83.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 42--84
-
- []
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Fig:CUSUM-e' on page 1 undefined on input line 97.
-
-
-LaTeX Warning: Reference `Eq:Kolmogorov' on page 1 undefined on input line 98.
-
-
-LaTeX Warning: Reference `Eq:KolmoAdv' on page 1 undefined on input line 98.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 98.
-
-(./Figures/SVD/CumSum_Hydro.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/SVD/CumSum_Rare.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 85--112
-
- []
-
-
-LaTeX Warning: Citation `BGK' on page 23 undefined on input line 113.
-
-
-LaTeX Warning: Citation `Bernard' on page 23 undefined on input line 113.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 114.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 23 undefined on input line 114.
-
-(./Figures/Results/Var_iv.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
-
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 120.
-
-
-LaTeX Warning: Citation `Carlberg' on page 23 undefined on input line 120.
-
-
-LaTeX Warning: Reference `Eq:EckardYoung' on page 1 undefined on input line 120.
-
-
-
-LaTeX Warning: Citation `Kutz' on page 23 undefined on input line 120.
-
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 121.
-
-
-LaTeX Warning: Reference `Fig:IntVar' on page 1 undefined on input line 122.
-
-
-LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 123.
-
-
-LaTeX Warning: Citation `Bernard' on page 24 undefined on input line 125.
-
-
-LaTeX Warning: Citation `Carlberg' on page 24 undefined on input line 125.
-
-
-LaTeX Warning: Citation `Carlberg' on page 24 undefined on input line 125.
-
-
-LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 125.
-
-) (./chapters/Results.tex
-Chapter 5.
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 7.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Reference `Tab:L2' on page 1 undefined on input line 9.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 25 undefined on input line 23.
-
-
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 23.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 9--24
-
- []
-
-
-LaTeX Warning: Reference `Fig:ErrTime' on page 1 undefined on input line 25.
-
-(./Figures/Results/ErrTime.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 31.
-
-(./Figures/Results/ErrWorst.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 37.
-
-
-LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 38.
-
-
-LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 39.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 39.
-
-(./Figures/Results/MacroError.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 45.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 45.
-
-
-LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 45.
-
-(./Figures/Results/Conservation.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 51.
-
-
-LaTeX Warning: Reference `Fig:Conservation' on page 1 undefined on input line 51
-.
-
-(./Figures/Results/Code2D_hy_FCNN.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Hy_Int.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Hydro/MacroCode10.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Hydro/MacroCode20.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Hydro/PODConvCode.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Results/Rare/Code.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 79.
-
-
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 80.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 80.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 81.
-
-) (./appendix/appendixA.tex
-Appendix A.
-
-LaTeX Warning: Reference `Tab:First Guess' on page 1 undefined on input line 14.
-
-
-
-LaTeX Warning: Reference `Sec:Deep Learning' on page 1 undefined on input line 2
-5.
-
-
-LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 25.
-
-
-LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
- 25.
-
-
-LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
-
-
-LaTeX Warning: Reference `Tab:Layer Size' on page 1 undefined on input line 25.
-
-
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
-
-
-LaTeX Warning: Reference `Fig:Depth Rare' on page 1 undefined on input line 43.
-
-
-LaTeX Warning: Reference `Tab:Hidden Units' on page 1 undefined on input line 44
-.
-
-
-LaTeX Warning: Reference `Tab:Batch Size Hydro' on page 1 undefined on input lin
-e 59.
-
-
-LaTeX Warning: Reference `Tab:Batch Size Rare' on page 1 undefined on input line
- 59.
-
-
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 59.
-
-
-LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
-ne 80.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 80.
-
-
-LaTeX Warning: Citation `BGK' on page 30 undefined on input line 108.
-
-
-LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
-line 108.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 109.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare' on page 1 undefined on input lin
-e 109.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 109.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 109.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare 2nd3rd' on page 1 undefined on in
-put line 109.
-
-(./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 123--128
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--151
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 157--159
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 165--170
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 176--178
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 184--190
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--190
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--190
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--190
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--190
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 203--209
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--209
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--209
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--209
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 203--209
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 215--217
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
-tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 223--226
-[]
- []
-
-Appendix B.
-(./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 238--241
-[]
- []
-
-(./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 249.
-
-)
-No file Figures/master-figure16.bbl.
-(./back/acknowledgement.tex) (./back/declaration.tex
-Underfull \hbox (badness 10000) in paragraph at lines 7--9
-
- []
-
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 73.
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
-)
+<Figures/Reduced_Order_Algorithms/ExamplesSOD-005.png, id=7, 144.54pt x 28.908pt
+>
+File: Figures/Reduced_Order_Algorithms/ExamplesSOD-005.png Graphic file (type pn
+g)
+<use Figures/Reduced_Order_Algorithms/ExamplesSOD-005.png>
+Package luatex.def Info: Figures/Reduced_Order_Algorithms/ExamplesSOD-005.png  u
+sed on input line 7.
+(luatex.def)             Requested size: 71.13177pt x 28.45401pt.
+
+! Package tikz Error: A node must have a (possibly empty) label text.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.69 	\node (1) at (10,1.7);
+                          
 
 Here is how much of LuaTeX's memory you used:
- 43258 strings out of 481365
- 156265,4921788 words of node,token memory allocated
- 1065 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 sub_mlist, 1 glyph, 149 attribute
-, 80 glue_spec, 76 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2251,3:312,4:83,5:968,6:38,7:16085,8:71,9:773,10:47,11:962
- 57900 multiletter control sequences out of 65536+600000
- 127 fonts using 10718763 bytes
- 83i,16n,140p,2820b,1019s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/tex
-mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi
-8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb>
-Output written on Figures/master-figure16.pdf (1 page, 31893 bytes).
-
-PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
- 2 named destinations out of 1000 (max. 131072)
- 16 words of extra memory for PDF output out of 10000 (max. 100000000)
-
+ 42403 strings out of 481365
+ 156265,1648299 words of node,token memory allocated
+ 10831 words of node memory still in use:
+   62 hlist, 7 vlist, 6 rule, 18 disc, 2 local_par, 6 dir, 12 math, 217 glue, 30
+ kern, 9 penalty, 242 glyph, 1442 attribute, 95 glue_spec, 725 attribute_list, 7
+ temp, 2 if_stack, 1 shape, 6 write, 487 pdf_literal, 3 pdf_dest, 2 pdf_colorsta
+ck, 1 pdf_setmatrix, 1 pdf_save, 1 pdf_restore nodes
+   avail lists: 1:1,2:7,3:1,4:65,5:906,6:25,7:15551,8:68,9:577,10:47,11:944
+ 57677 multiletter control sequences out of 65536+600000
+ 120 fonts using 10139827 bytes
+ 83i,19n,140p,2788b,837s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!

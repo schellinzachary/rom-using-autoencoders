@@ -61,55 +61,45 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces \footnotesize  Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch  \) for training is split up into a training \(\btch  _{train}\) and a validation \(\btch  _{val}\) set with a \(80/20\) ratio (a). The \(\btch  _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite  {LeCun98} and biases set to zero (c). A successive evaluation of the first minibatch with \(AE(\minib  _{i})=\tilde  {\minib  }_{i}\) called forward propagation takes place in (d). The mean squared error between \(\minib  _{i}\) and \(\tilde  {\minib  }_{i}\) yields the average error over one minibatch \(E_{B_i}\). Thereafter \(E_{B_i}\) is backpropagated through the network (f) yielding the gradient \(\grd  \). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref  {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(\frepar  \) which are weights \(w\) and biases \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\btch  _{val}\), which it has not seen before, in (h) with \(AE(\btch  _{val})=\tilde  {\btch  }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch  _{val}\) and \(\tilde  {\btch  }_{val}\), produces the validation error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{B_i}\) is taken. This produces \(\overline  {E}_B\) and concludes the first epoch. The maximum number of epochs \(H\) is reached when \(E_B\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }}{16}{figure.caption.9}\protected@file@percent }
 \newlabel{Fig:Training}{{3.3}{16}{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch \) for training is split up into a training \(\btch _{train}\) and a validation \(\btch _{val}\) set with a \(80/20\) ratio (a). The \(\btch _{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite {LeCun98} and biases set to zero (c). A successive evaluation of the first minibatch with \(AE(\minib _{i})=\tilde {\minib }_{i}\) called forward propagation takes place in (d). The mean squared error between \(\minib _{i}\) and \(\tilde {\minib }_{i}\) yields the average error over one minibatch \(E_{B_i}\). Thereafter \(E_{B_i}\) is backpropagated through the network (f) yielding the gradient \(\grd \). This gradient is then used to optimize weights \(w\) and biases \(b\) with \(Adam\), an optimization algorithm seen in \cref {Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(\frepar \) which are weights \(w\) and biases \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\btch _{val}\), which it has not seen before, in (h) with \(AE(\btch _{val})=\tilde {\btch }_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch _{val}\) and \(\tilde {\btch }_{val}\), produces the validation error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{B_i}\) is taken. This produces \(\overline {E}_B\) and concludes the first epoch. The maximum number of epochs \(H\) is reached when \(E_B\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.\relax }{figure.caption.9}{}}
 \newlabel{Fig:Training@cref}{{[figure][3][3]3.3}{[1][14][]16}}
-\citation{Hornik1989}
+\citation{torch_ini}
 \citation{Goodfellow}
-\citation{bibid}
-\citation{bibid}
+\citation{Goodfellow}
+\citation{Goodfellow}
+\citation{Pytorch website}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \footnotesize  Figurative example of how capacity influences the evolution of training and validation error. With increasing capacity the model i.e. autoencoder is able to fit the training and validation set thus training and validation error decreases. Typically the training error is less than the validation error. Yet both errors are too high and the model is underfitting. Further increasing the capacity leads to an increase of the validation error while the training error further decreases. The gap between training- and validation error is called the generalization gap. Once the generalization gap dominates the decrease in training error the model is overfitting and capacity passed the point of optimal capacity. Optimal capacity is the point where both optimization and generalization are in balance.\relax }}{17}{figure.caption.10}\protected@file@percent }
 \newlabel{Fig:Capacity}{{3.4}{17}{\footnotesize Figurative example of how capacity influences the evolution of training and validation error. With increasing capacity the model i.e. autoencoder is able to fit the training and validation set thus training and validation error decreases. Typically the training error is less than the validation error. Yet both errors are too high and the model is underfitting. Further increasing the capacity leads to an increase of the validation error while the training error further decreases. The gap between training- and validation error is called the generalization gap. Once the generalization gap dominates the decrease in training error the model is overfitting and capacity passed the point of optimal capacity. Optimal capacity is the point where both optimization and generalization are in balance.\relax }{figure.caption.10}{}}
 \newlabel{Fig:Capacity@cref}{{[figure][4][3]3.4}{[1][14][]17}}
 \newlabel{Eq:Non-Linear Transformation}{{3.18}{17}{Training}{equation.3.2.18}{}}
 \newlabel{Eq:Non-Linear Transformation@cref}{{[equation][18][3]3.18}{[1][17][]17}}
-\citation{bibid}
+\citation{dumoulin2018guide}
 \citation{Goodfellow}
-\citation{Goodfellow}
-\citation{Goodfellow}
-\citation{Pytorch website}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \footnotesize  Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha \) is typically, and also in this thesis set to \(\alpha =0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm  {sig}(x)= \frac  {1}{2}(1+\qopname  \relax o{tanh}(\frac  {x}{2}))\) and it's variant SiLU. The functions are shown exemplary between -1 and 1.\relax }}{18}{table.caption.11}\protected@file@percent }
 \newlabel{Tab:Non-lin-func}{{3.1}{18}{\footnotesize Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha \) is typically, and also in this thesis set to \(\alpha =0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm {sig}(x)= \frac {1}{2}(1+\tanh (\frac {x}{2}))\) and it's variant SiLU. The functions are shown exemplary between -1 and 1.\relax }{table.caption.11}{}}
 \newlabel{Tab:Non-lin-func@cref}{{[table][1][3]3.1}{[1][17][]18}}
-\newlabel{Eq. Convolution}{{3.20}{18}{Training}{equation.3.2.20}{}}
-\newlabel{Eq. Convolution@cref}{{[equation][20][3]3.20}{[1][18][]18}}
-\newlabel{Eq. Discrete Convolution}{{3.21}{18}{Training}{equation.3.2.21}{}}
-\newlabel{Eq. Discrete Convolution@cref}{{[equation][21][3]3.21}{[1][18][]18}}
-\newlabel{Eq. Discrete Convolution Flip}{{3.22}{18}{Training}{equation.3.2.22}{}}
-\newlabel{Eq. Discrete Convolution Flip@cref}{{[equation][22][3]3.22}{[1][18][]18}}
-\newlabel{Eq. Discrete Cross Correlation}{{3.23}{18}{Training}{equation.3.2.23}{}}
-\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][23][3]3.23}{[1][18][]18}}
-\citation{dumoulin2018guide}
-\citation{Goodfellow}
+\newlabel{Eq. Convolution}{{3.19}{18}{Training}{equation.3.2.19}{}}
+\newlabel{Eq. Convolution@cref}{{[equation][19][3]3.19}{[1][18][]18}}
+\newlabel{Eq. Discrete Convolution}{{3.20}{18}{Training}{equation.3.2.20}{}}
+\newlabel{Eq. Discrete Convolution@cref}{{[equation][20][3]3.20}{[1][18][]18}}
+\newlabel{Eq. Discrete Convolution Flip}{{3.21}{18}{Training}{equation.3.2.21}{}}
+\newlabel{Eq. Discrete Convolution Flip@cref}{{[equation][21][3]3.21}{[1][18][]18}}
+\newlabel{Eq. Discrete Cross Correlation}{{3.22}{18}{Training}{equation.3.2.22}{}}
+\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][22][3]3.22}{[1][18][]18}}
+\newlabel{Eq:Downsampling}{{3.23}{18}{Training}{equation.3.2.23}{}}
+\newlabel{Eq:Downsampling@cref}{{[equation][23][3]3.23}{[1][18][]18}}
 \citation{bibid}
 \citation{dumoulin2018guide}
 \citation{Goodfellow}
 \citation{Goodfellow}
-\newlabel{Eq:Downsampling}{{3.24}{19}{Training}{equation.3.2.24}{}}
-\newlabel{Eq:Downsampling@cref}{{[equation][24][3]3.24}{[1][18][]19}}
-\newlabel{Eq. Cross correlation stride channel}{{3.25}{19}{Training}{equation.3.2.25}{}}
-\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][25][3]3.25}{[1][19][]19}}
-\newlabel{Eq: Transposed convolution}{{3.26}{19}{Training}{equation.3.2.26}{}}
-\newlabel{Eq: Transposed convolution@cref}{{[equation][26][3]3.26}{[1][19][]19}}
-\newlabel{Eq. Backpropagation3}{{3.27}{19}{Training}{equation.3.2.27}{}}
-\newlabel{Eq. Backpropagation3@cref}{{[equation][27][3]3.27}{[1][19][]19}}
-\newlabel{Eq. Backpropagation2}{{3.28}{19}{Training}{equation.3.2.28}{}}
-\newlabel{Eq. Backpropagation2@cref}{{[equation][28][3]3.28}{[1][19][]19}}
-\newlabel{Eq. Backpropagation1}{{3.29}{19}{Training}{equation.3.2.29}{}}
-\newlabel{Eq. Backpropagation1@cref}{{[equation][29][3]3.29}{[1][19][]19}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{20}{subsection.3.2.2}\protected@file@percent }
-\newlabel{f_Conv}{{3.30}{20}{Autoencoders}{equation.3.2.30}{}}
-\newlabel{f_Conv@cref}{{[equation][30][3]3.30}{[1][20][]20}}
+\newlabel{Eq. Cross correlation stride channel}{{3.24}{19}{Training}{equation.3.2.24}{}}
+\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][24][3]3.24}{[1][18][]19}}
+\newlabel{Eq: Transposed convolution}{{3.25}{19}{Training}{equation.3.2.25}{}}
+\newlabel{Eq: Transposed convolution@cref}{{[equation][25][3]3.25}{[1][19][]19}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{19}{subsection.3.2.2}\protected@file@percent }
+\newlabel{f_Conv}{{3.26}{20}{Autoencoders}{equation.3.2.26}{}}
+\newlabel{f_Conv@cref}{{[equation][26][3]3.26}{[1][20][]20}}
 \@setckpt{chapters/Deep_Learning}{
 \setcounter{page}{21}
-\setcounter{equation}{30}
+\setcounter{equation}{26}
 \setcounter{enumi}{13}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
@@ -138,7 +128,7 @@
 \setcounter{ALC@line}{0}
 \setcounter{ALC@rem}{0}
 \setcounter{ALC@depth}{0}
-\setcounter{caption@flags}{2}
+\setcounter{caption@flags}{0}
 \setcounter{continuedfloat}{0}
 \setcounter{subfigure}{0}
 \setcounter{subtable}{0}

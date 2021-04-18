@@ -75,20 +75,17 @@ K.~He, X.~Zhang, S.~Ren and J.~Sun, \emph{Delving deep into rectifiers:
   \href{https://arxiv.org/abs/1502.01852}{{\ttfamily 1502.01852}}.
 
 \bibitem{torch_ini}
-T.~Contributors, \emph{torch.nn.init¶},  2019.
+``Pytroch documentation.'' \url{https://pytorch.org/docs/stable/index.html},
+  2019.
 
 \bibitem{bushaev_2017}
-V.~Bushaev, \emph{Stochastic gradient descent with momentum},  Dec, 2017.
+V.~Bushaev, ``Stochastic gradient descent with momentum.''
+  \url{https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d},
+  Dec, 2017.
 
 \bibitem{kingma2017adam}
 D.~P. Kingma and J.~Ba, \emph{Adam: A method for stochastic optimization},
   \href{https://arxiv.org/abs/1412.6980}{{\ttfamily 1412.6980}}.
-
-\bibitem{Hornik1989}
-K.~Hornik, M.~Stinchcombe and H.~White, \emph{Multilayer feedforward networks
-  are universal approximators},
-  \href{http://dx.doi.org/10.1016/0893-6080(89)90020-8}{\emph{Neural Networks}
-  {\bfseries 2} (Jan., 1989) 359--366}.
 
 \bibitem{dumoulin2018guide}
 V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep
