@@ -1,0 +1,53 @@
+\begin{tikzpicture}
+	%stride 2
+	%kernel
+	\draw [thick, draw=black, fill=black!40!white,scale = .45] (0,6) rectangle (2,8) grid (0,6);
+	%kernel label
+	\draw [scale=.45,below] node at (1,6)  {\footnotesize Kernel};
+	%kernel components
+	\draw [scale=.45] node at (0.5,7.5) {v};
+	\draw [scale=.45] node at (0.5,6.5) {w};
+	\draw [scale=.45] node at (1.5,7.5) {x};
+	\draw [scale=.45] node at (1.5,6.5) {y};
+	%step 1 equation
+	\draw [scale=.45] node [text width=2cm,align=center] at (5.5,6.5) {\footnotesize \(i=\mathbf{a}*v+\mathbf{b}*w+\mathbf{c}*x+\mathbf{d}*y\)};
+	%step 2 equation
+	\draw [scale=.45] node [text width=2cm,align=center] at (13.5,6.5) {\footnotesize \(j=\mathbf{e}*v+\mathbf{f}*w+\mathbf{g}*x+\mathbf{h}*y\)};
+	\draw [thick, draw=black, fill=black!40!white,scale = .45] (0,2) rectangle  (2,4);
+	\draw [thick, draw=black,scale = .45] (0,0) grid  (4,4) node at (2,0)[below] {\footnotesize Input};;
+	\draw [thick, draw=black, fill=black!40!white,scale = .45] (5,1) rectangle  (6,2);
+	\draw [thick, draw=black,scale = .45] (5,0) grid  (7,2) node at (6.1,0) [below,text width=1.5cm,align= center] {\footnotesize Feature map};;
+	%
+	\draw [thick, draw=black, fill=black!40!white,scale = .45] (11,2) rectangle  (13,4);
+	\draw [thick, draw=black,scale = .45] (9,0) grid  (13,4) node at (11,0) [below] {\footnotesize Input};;
+	\draw [thick, draw=black, fill=black!40!white,scale = .45] (15,1) rectangle  (16,2);
+	\draw [thick, draw=black,scale = .45] (14,0) grid  (16,2) node at (15.1,0) [below, text width=1.5cm,align=center] {\footnotesize Feature map};;
+	%draw arrows
+	\draw [scale=.45,thick,arrow] (1,4)  to [bend angle=70, bend left] (5.5,2);
+	\draw [scale=.45,thick,arrow] (12,4)  to [bend angle=70, bend left] (15.5,2);
+	%draw step
+	\draw [scale=.45] node[rotate=-30]   at (5,4.1) {\footnotesize Step 1};
+ 	\draw [scale=.45] node[rotate=-30]   at (15,4.1) {\footnotesize Step 2};
+	%draw abc step 1
+	\draw [scale=.45] node at (0.5,3.5) {a};
+	\draw [scale=.45] node at (1.5,3.5) {c};
+	\draw [scale=.45] node at (0.5,2.5) {b};
+	\draw [scale=.45] node at (1.5,2.5) {d};
+	\draw [scale=.45] node at (2.5,3.5) {e};
+	\draw [scale=.45] node at (2.5,2.5) {f};
+	\draw [scale=.45] node at (3.5,3.5) {g};
+	\draw [scale=.45] node at (3.5,2.5) {h};
+	\draw [scale=.45] node at (5.5,1.5) {i};
+	\draw [scale=.45] node at (6.5,1.5) {j};
+	%draw abc step 2
+	\draw [scale=.45] node at (9.5,3.5)  {a};
+	\draw [scale=.45] node at (10.5,3.5) {c};
+	\draw [scale=.45] node at (9.5,2.5)  {b};
+	\draw [scale=.45] node at (10.5,2.5) {d};
+	\draw [scale=.45] node at (11.5,3.5) {e};
+	\draw [scale=.45] node at (11.5,2.5) {f};
+	\draw [scale=.45] node at (12.5,3.5) {g};
+	\draw [scale=.45] node at (12.5,2.5) {h};
+	\draw [scale=.45] node at (14.5,1.5) {i};
+	\draw [scale=.45] node at (15.5,1.5) {j};
+\end{tikzpicture}

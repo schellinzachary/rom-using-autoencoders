@@ -163,7 +163,7 @@ The flowchart in \cref{Fig:Training} shows how the generalization query, weight 
 \textbf{Activations:} Non-linar activations typically used for neural networks are summarized in \cref{Tab:Non-lin-func}. In this thesis these are also the activations used in the final network design or during hyperparameter search. We use two classes of activations. One is of type rectifier, which are linear for positive inputs and are zero, or decay below linear for negative inputs. The other is the tangens hyperbolicus (Tanh) and the Sigmoid-weighted linear unit (SiLU). Tanh and sigmoid share a similar "S"-shaped curve hence are put in one class. SiLU can be written as \(\textrm{SiLU}=\frac{1}{2}x(1+\tanh(\frac{x}{2}))\). Note that Tanh saturates for input values exceeding the range \([-2,2]\) which leads to a so called vanishing gradient. In the most severe case all updates can be zero. However in this thesis a vanishing gradient was not encountered. Theoretically it is possible to take any function as an activation. Though indispensable is their differentiability, which reduces to partly differentiable for rectifiers, to allow backpropagation. Activations \(\nla\) and where in the network to place them is yet another hyperparameter.
 \begin{table}[htp]
 	\centering
-	\caption{\footnotesize Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha\) is typically, and also in this thesis set to \(\alpha=0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm{sig}(x)= \frac{1}{2}(1+\tanh(\frac{x}{2}))\) and it's variant SiLU. The functions are shown exemplary between -1 and 1.}
+	\caption{\footnotesize Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha\) is typically, and also in this thesis set to \(\alpha=0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm{sig}(x)= \frac{1}{2}(1+\tanh(\frac{x}{2}))\) and it's variant SiLU. The functions are shown over an illustrative domain.}
 	\begin{tabular*}{16cm}{ @{\extracolsep{-4pt}} c c c c c @{} }
 		\toprule
 		ReLU & LeakyReLU & ELU & SiLU & Tanh \\   
@@ -223,6 +223,21 @@ For autoencoders the necessity to perform a transposition of the applied layers 
 \begin{figure}
 	\centering
 	\input{Figures/Reduced_Order_Algorithms/Kernel.tex}
+	\label{Fig: Kernel}
+	\caption{\footnotesize Schematic representation of typical components and their structural set-up in a convolutional neural network (CNN). Shown is the convolutional operations and the associated kernel, the flattening and successive fully connected operation. First a kernel moves over the one dimensional input performing convolutional operations, which yields the components of a feature map in the successive hidden layer. One channel in a hidden layer can alwell be called feature map. Here the input has just one channel, but four different kernels move over the input which produces four feature maps in the first hidden layer. Hence the first hidden layer comprises four channels or feature maps. Whenever one layer has different channels, the kernel moves with different parameters over all channels at the same time. Therefore we can think of it in this case as a three dimensional kernel. Note that for simplicity this is not depicted in this figure. While the width and height of the input decreases over the hidden layers, the number of channels typically increases . The last hidden layer is flattend and successively connected to the code layer through a fully connected operation.}
+\end{figure}
+\begin{figure}[htbp!]
+	\begin{subfigure}{.459\textwidth}
+		\centering
+		\input{Figures/Reduced_Order_Algorithms/Stride_01.tex}
+		\subcaption{Two dimensional example of of a \textbf{one} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors. The resulting feature map is a \(3\times 3\) matrix, as we downsampled the input by a factor of \(0.75\).}
+	\end{subfigure}\hfill
+	\begin{subfigure}{.441\textwidth}
+		\centering
+		\input{Figures/Reduced_Order_Algorithms/Stride_02.tex}
+		\subcaption{Two dimensional example of of a \textbf{two} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors.. The resulting feature map is a \(2\times 2\) matrix, as we downsampled the input by a factor of \(0.5\).}
+	\end{subfigure}
+	\caption{Outline of the correlation between the FOM solution and the approximation obtained from the ROM.}
 \end{figure}
 \subsection{Autoencoders}
 Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both $\hy$ and $\rare$.\\
