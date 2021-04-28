@@ -63,47 +63,44 @@
 \newlabel{Fig:Training@cref}{{[figure][3][3]3.3}{[1][14][]16}}
 \citation{torch_ini}
 \citation{Goodfellow}
-\citation{Goodfellow}
-\citation{Goodfellow}
 \citation{Pytorch website}
 \@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces \footnotesize  Figurative example of how capacity influences the evolution of training and validation error. With increasing capacity the model i.e. autoencoder is able to fit the training and validation set thus training and validation error decreases. Typically the training error is less than the validation error. Yet both errors are too high and the model is underfitting. Further increasing the capacity leads to an increase of the validation error while the training error further decreases. The gap between training- and validation error is called the generalization gap. Once the generalization gap dominates the decrease in training error the model is overfitting and capacity passed the point of optimal capacity. Optimal capacity is the point where both optimization and generalization are in balance.\relax }}{17}{figure.caption.10}\protected@file@percent }
 \newlabel{Fig:Capacity}{{3.4}{17}{\footnotesize Figurative example of how capacity influences the evolution of training and validation error. With increasing capacity the model i.e. autoencoder is able to fit the training and validation set thus training and validation error decreases. Typically the training error is less than the validation error. Yet both errors are too high and the model is underfitting. Further increasing the capacity leads to an increase of the validation error while the training error further decreases. The gap between training- and validation error is called the generalization gap. Once the generalization gap dominates the decrease in training error the model is overfitting and capacity passed the point of optimal capacity. Optimal capacity is the point where both optimization and generalization are in balance.\relax }{figure.caption.10}{}}
 \newlabel{Fig:Capacity@cref}{{[figure][4][3]3.4}{[1][14][]17}}
 \newlabel{Eq:Non-Linear Transformation}{{3.18}{17}{Training}{equation.3.2.18}{}}
 \newlabel{Eq:Non-Linear Transformation@cref}{{[equation][18][3]3.18}{[1][17][]17}}
-\citation{dumoulin2018guide}
 \citation{Goodfellow}
 \@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces \footnotesize  Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha \) is typically, and also in this thesis set to \(\alpha =0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm  {sig}(x)= \frac  {1}{2}(1+\qopname  \relax o{tanh}(\frac  {x}{2}))\) and it's variant SiLU. The functions are shown over an illustrative domain.\relax }}{18}{table.caption.11}\protected@file@percent }
 \newlabel{Tab:Non-lin-func}{{3.1}{18}{\footnotesize Non-linear activation functions of type rectifier are the rectified linear unit (ReLU), it's leaky variant LeakyReLU, the exponential version ELU. The negaive slope of LeakyReLU below zero \(\alpha \) is typically, and also in this thesis set to \(\alpha =0.001\). Activations based on tangens hyperbolicus (Tanh) are the sigmoid function with \(\mathrm {sig}(x)= \frac {1}{2}(1+\tanh (\frac {x}{2}))\) and it's variant SiLU. The functions are shown over an illustrative domain.\relax }{table.caption.11}{}}
 \newlabel{Tab:Non-lin-func@cref}{{[table][1][3]3.1}{[1][17][]18}}
-\newlabel{Eq. Convolution}{{3.19}{18}{Training}{equation.3.2.19}{}}
-\newlabel{Eq. Convolution@cref}{{[equation][19][3]3.19}{[1][18][]18}}
-\newlabel{Eq. Discrete Convolution}{{3.20}{18}{Training}{equation.3.2.20}{}}
-\newlabel{Eq. Discrete Convolution@cref}{{[equation][20][3]3.20}{[1][18][]18}}
-\newlabel{Eq. Discrete Convolution Flip}{{3.21}{18}{Training}{equation.3.2.21}{}}
-\newlabel{Eq. Discrete Convolution Flip@cref}{{[equation][21][3]3.21}{[1][18][]18}}
-\newlabel{Eq. Discrete Cross Correlation}{{3.22}{18}{Training}{equation.3.2.22}{}}
-\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][22][3]3.22}{[1][18][]18}}
-\newlabel{Eq:Downsampling}{{3.23}{18}{Training}{equation.3.2.23}{}}
-\newlabel{Eq:Downsampling@cref}{{[equation][23][3]3.23}{[1][18][]18}}
+\newlabel{Eq. Discrete Cross Correlation}{{3.19}{18}{Training}{equation.3.2.19}{}}
+\newlabel{Eq. Discrete Cross Correlation@cref}{{[equation][19][3]3.19}{[1][18][]18}}
+\citation{dumoulin2018guide}
+\citation{Goodfellow}
 \citation{bibid}
 \citation{dumoulin2018guide}
 \citation{Goodfellow}
 \citation{Goodfellow}
-\newlabel{Fig: Kernel}{{\caption@xref {Fig: Kernel}{ on input line 226}}{19}{Training}{figure.caption.12}{}}
-\newlabel{Fig: Kernel@cref}{{[subsection][1][3,2]3.2.1}{[1][19][]19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces \footnotesize  Schematic representation of typical components and their structural set-up in a convolutional neural network (CNN). Shown is the convolutional operations and the associated kernel, the flattening and successive fully connected operation. First a kernel moves over the one dimensional input performing convolutional operations, which yields the components of a feature map in the successive hidden layer. One channel in a hidden layer can alwell be called feature map. Here the input has just one channel, but four different kernels move over the input which produces four feature maps in the first hidden layer. Hence the first hidden layer comprises four channels or feature maps. Whenever one layer has different channels, the kernel moves with different parameters over all channels at the same time. Therefore we can think of it in this case as a three dimensional kernel. Note that for simplicity this is not depicted in this figure. While the width and height of the input decreases over the hidden layers, the number of channels typically increases . The last hidden layer is flattend and successively connected to the code layer through a fully connected operation.\relax }}{19}{figure.caption.12}\protected@file@percent }
-\newlabel{Eq. Cross correlation stride channel}{{3.24}{19}{Training}{equation.3.2.24}{}}
-\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][24][3]3.24}{[1][18][]19}}
-\newlabel{Eq: Transposed convolution}{{3.25}{19}{Training}{equation.3.2.25}{}}
-\newlabel{Eq: Transposed convolution@cref}{{[equation][25][3]3.25}{[1][19][]19}}
+\newlabel{Eq:Downsampling}{{3.20}{19}{Training}{equation.3.2.20}{}}
+\newlabel{Eq:Downsampling@cref}{{[equation][20][3]3.20}{[1][19][]19}}
+\newlabel{Eq. Cross correlation stride channel}{{3.21}{19}{Training}{equation.3.2.21}{}}
+\newlabel{Eq. Cross correlation stride channel@cref}{{[equation][21][3]3.21}{[1][19][]19}}
+\newlabel{Eq: Transposed convolution}{{3.22}{19}{Training}{equation.3.2.22}{}}
+\newlabel{Eq: Transposed convolution@cref}{{[equation][22][3]3.22}{[1][19][]19}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Autoencoders}{19}{subsection.3.2.2}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Outline of the correlation between the FOM solution and the approximation obtained from the ROM.\relax }}{20}{figure.caption.13}\protected@file@percent }
-\newlabel{f_Conv}{{3.26}{20}{Autoencoders}{equation.3.2.26}{}}
-\newlabel{f_Conv@cref}{{[equation][26][3]3.26}{[1][20][]20}}
+\newlabel{Fig: Kernel}{{\caption@xref {Fig: Kernel}{ on input line 221}}{20}{Training}{figure.caption.12}{}}
+\newlabel{Fig: Kernel@cref}{{[subsection][1][3,2]3.2.1}{[1][19][]20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces \footnotesize  Schematic representation of typical components and their structural set-up in a convolutional neural network (CNN). Shown is the convolutional operation and the associated kernel, the flattening and successive fully connected operation. First a kernel moves over the one dimensional input performing convolutional operations, which yields the components of a feature map in the successive hidden layer. One channel in a hidden layer can aswell be called feature map. Here the input has just one channel, but four different kernels move over the input which produces four feature maps in the first hidden layer. Hence the first hidden layer comprises four channels or feature maps. Whenever one layer has different channels, the kernel moves with different parameters over all channels at the same time. Therefore we can think of it in this case as a three dimensional kernel tensor. Note that for simplicity this is not depicted in this figure. While the width and height of the input decreases over the hidden layers, the number of channels typically increases . The last hidden layer is flattend and successively connected to the code layer through a fully connected operation.\relax }}{20}{figure.caption.12}\protected@file@percent }
+\newlabel{Fig:Downsampling}{{\caption@xref {Fig:Downsampling}{ on input line 228}}{20}{Training}{figure.caption.13}{}}
+\newlabel{Fig:Downsampling@cref}{{[subsection][1][3,2]3.2.1}{[1][19][]20}}
+\newlabel{sub@Fig:Downsampling}{{}{20}{Training}{figure.caption.13}{}}
+\newlabel{sub@Fig:Downsampling@cref}{{[subsection][1][3,2]3.2.1}{[1][19][]20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Comparison of a one strided convolution (a) and a two strided convolution (b). Illustrated are two steps of a kernel matrix moving over an input matrix. The two strided convolution yields an increased downscaling compared to the one strided convolution.\relax }}{20}{figure.caption.13}\protected@file@percent }
+\newlabel{f_Conv}{{3.23}{21}{Autoencoders}{equation.3.2.23}{}}
+\newlabel{f_Conv@cref}{{[equation][23][3]3.23}{[1][21][]21}}
 \@setckpt{chapters/Deep_Learning}{
-\setcounter{page}{21}
-\setcounter{equation}{26}
+\setcounter{page}{22}
+\setcounter{equation}{23}
 \setcounter{enumi}{13}
 \setcounter{enumii}{0}
 \setcounter{enumiii}{0}
