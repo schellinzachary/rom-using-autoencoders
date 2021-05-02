@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  25 APR 2021 13:15
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  2 MAY 2021 10:15
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1800,86 +1800,58 @@ Overfull \hbox (1820.84918pt too wide) in alignment at lines 167--189
 LaTeX Warning: Citation `torch_ini' on page 16 undefined on input line 193.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
+LaTeX Warning: Reference `Fig: Kernel' on page 1 undefined on input line 194.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 195.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
+LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 195
 .
-
-
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
-
-
-LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 194
-.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 16 undefined on input line 19
-4.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 194.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
-.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 194.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 200.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 200.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 200.
+ input line 195.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 200.
+
+
+LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
+05.
+
+
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 205.
+
+
+LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
+ input line 205.
+
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 2
+07.
+(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
+ned on input line 209.
+
+
+LaTeX Warning: Citation `bibid' on page 17 undefined on input line 209.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
 11.
 
 
+LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
+ut line 211.
+
+
 LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 211.
 
 
-LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 211.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 2
-13.
-(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 215.
-
-
-LaTeX Warning: Citation `bibid' on page 17 undefined on input line 215.
-
-
-LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-17.
-
-
-LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 217.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 217.
-
-
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 217
+LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 211
 .
 
 (./Figures/Reduced_Order_Algorithms/Kernel.tex
@@ -1902,20 +1874,20 @@ Missing character: There is no ; (U+003B) in font nullfont!
 Missing character: There is no ; (U+003B) in font nullfont!
 ])
 
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 248.
+LaTeX Warning: Reference `labellist' on page 1 undefined on input line 243.
 
 
 LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-248.
+243.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 249.
+LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 244.
 
 
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 249.
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 244.
 
 
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 252.
+LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 247.
 
 ) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2654,13 +2626,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43310 strings out of 481365
+ 43307 strings out of 481365
  156265,4921788 words of node,token memory allocated
  1044 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 143 attribute, 80 glue_spe
 c, 73 attribute_list, 2 write nodes
-   avail lists: 1:2,2:3186,3:599,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
- 57924 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:3282,3:604,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
+ 57921 multiletter control sequences out of 65536+600000
  128 fonts using 10801459 bytes
  83i,19n,140p,2788b,1016s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
