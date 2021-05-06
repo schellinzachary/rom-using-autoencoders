@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 APR 2021 17:23
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  6 MAY 2021 18:12
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1800,128 +1800,62 @@ Overfull \hbox (1820.84918pt too wide) in alignment at lines 167--189
 LaTeX Warning: Citation `torch_ini' on page 16 undefined on input line 193.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
+LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 1
+94.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
+LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 1
+94.
 
 
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 195.
+
+
+LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 195
 .
 
 
-LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 194.
+LaTeX Warning: Citation `Goodfellow' on page 16 undefined on input line 195.
 
 
-LaTeX Warning: Citation `Pytorch website' on page 16 undefined on input line 194
-.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 16 undefined on input line 19
-4.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 194.
-
-
-LaTeX Warning: Reference `Eq. Convolution' on page 1 undefined on input line 194
-.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 194.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution' on page 1 undefined on input
- line 200.
-
-
-LaTeX Warning: Reference `Eq. Discrete Convolution Flip' on page 1 undefined on 
-input line 200.
+LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
+ input line 195.
 
 
 LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
  input line 200.
 
 
-LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-11.
+LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 2
+00.
 
-
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 211.
-
-
-LaTeX Warning: Reference `Eq. Discrete Cross Correlation' on page 1 undefined on
- input line 211.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 2
-13.
-(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+(./Figures/Reduced_Order_Algorithms/Stride_01.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Reduced_Order_Algorithms/Stride_02.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
 )
 
-LaTeX Warning: Reference `Eq. Cross correlation stride channel' on page 1 undefi
-ned on input line 215.
+LaTeX Warning: Reference `Fig: Kernel' on page 1 undefined on input line 215.
 
 
-LaTeX Warning: Citation `bibid' on page 17 undefined on input line 215.
+LaTeX Warning: Reference `Fig: Kernel' on page 1 undefined on input line 215.
 
 
-LaTeX Warning: Citation `dumoulin2018guide' on page 17 undefined on input line 2
-17.
-
-
-LaTeX Warning: Reference `Eq: Transposed convolution' on page 1 undefined on inp
-ut line 217.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 217.
-
-
-LaTeX Warning: Reference `Eq:Downsampling' on page 1 undefined on input line 217
+LaTeX Warning: Reference `Fig:Autoencoder' on page 1 undefined on input line 215
 .
 
 (./Figures/Reduced_Order_Algorithms/Kernel.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Reduced_Order_Algorithms/Stride_01.tex
+) (./Figures/Reduced_Order_Algorithms/TransStride_01.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 233.
-
-
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 233.
-
-(./Figures/Reduced_Order_Algorithms/Stride_02.tex
+) (./Figures/Reduced_Order_Algorithms/TransStride_02.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 238.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 238.
-
-
-LaTeX Warning: Reference `labellist' on page 1 undefined on input line 248.
-
-
-LaTeX Warning: Reference `Sec: Data Sampling' on page 1 undefined on input line 
-248.
-
-
-LaTeX Warning: Citation `Goodfellow' on page 18 undefined on input line 249.
-
-
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 249.
-
-
-LaTeX Warning: Reference `f_Conv' on page 1 undefined on input line 252.
-
-) (./chapters/Reduced_order_Modeling.tex
+)) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
 
 LaTeX Warning: Citation `Bernard' on page 20 undefined on input line 9.
@@ -2517,17 +2451,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 184--190
  []
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 196--198
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
 \openout4 = Figures/master-figure67.dpth
 
 Package pgfplots info on input line 20: Using 'lua backend=false' for axis: ymod
@@ -2538,7 +2461,18 @@ e=log unsupported (yet).
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
-/Fully_Connected/Activations/Rare/ELU.tex
+/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 196--198
+[][]
+ []
+
+(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
@@ -2666,22 +2600,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43680 strings out of 481365
+ 43655 strings out of 481365
  195333,4921788 words of node,token memory allocated
- 1044 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 143 attribute, 80 glue_spe
-c, 73 attribute_list, 2 write nodes
-   avail lists: 1:2,2:15829,3:4688,4:84,5:953,6:38,7:16019,8:71,9:775,10:47,11:9
+ 996 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 127 attribute, 80 glue_spe
+c, 65 attribute_list, 2 write nodes
+   avail lists: 1:2,2:15781,3:4687,4:84,5:953,6:38,7:16019,8:71,9:775,10:47,11:9
 62
- 58295 multiletter control sequences out of 65536+600000
- 127 fonts using 10718763 bytes
- 83i,22n,140p,2788b,2403s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 58265 multiletter control sequences out of 65536+600000
+ 121 fonts using 10222523 bytes
+ 83i,22n,140p,2788b,2414s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure67.pdf (1 page, 90794 bytes).
+Output written on Figures/master-figure67.pdf (1 page, 91500 bytes).
 
 PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
  30 compressed objects within 1 object stream
