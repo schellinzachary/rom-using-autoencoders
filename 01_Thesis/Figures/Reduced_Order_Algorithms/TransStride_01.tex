@@ -1,45 +1,50 @@
 \begin{tikzpicture}
 \begin{scope}[transparency group]
 \begin{scope}[blend mode=multiply]
-	%stride 1
-	%kernel
-	\draw [thick, draw=black, fill=black!40!white,scale = .45] (-1,6) rectangle (1,8) grid (-1,6);
-	%kernel label
-	\draw [scale=.45,below] node at (0,6)  {\footnotesize Kernel};
-	%kernel components
-	\draw [scale=.45] node at (-0.5,7.5) {v};
-	\draw [scale=.45] node at (-0.5,6.5) {w};
-	\draw [scale=.45] node at (0.5,7.5)  {x};
-	\draw [scale=.45] node at (0.5,6.5)  {y};
-	%step 1 equation
-	\draw [scale=.45] node [text width=2cm,align=center] at (6,7) {\footnotesize \(o=0*v+0*w+0*x+\mathbf{a}*y\)};
-	%step 2 equation
-	\draw [scale=.45] node [text width=2cm,align=center] at (12.5,7) {\footnotesize \(p=0*v+\mathbf{a}*w+0*x+0*y\)};
-	%step 1 input & featuremap
-	\draw [thick, draw=black, fill=black!40!white,scale = .45] (-1,2) rectangle (1,4);
-	\draw [thick, draw=black, fill=black!40!white,scale = .45] (0,2) rectangle (2,4);
-	\draw [thick, draw=black,scale=.45] (0,0) grid  (3,3);
-	\draw [dashed, draw=black,scale=.45] (-1,-1) grid  (4,4) node at (2,-1)[below] {\footnotesize Input};
-	\draw [thick, draw=black, fill=black!40!white,scale = .45] (5,2) rectangle  (6,3);
-	\draw [thick, draw=black,scale = .45] (5,-1) grid  (9,3) node at (7,-1) [below,text width=2cm,align= center] {\footnotesize Feature map at step 1};
-	%step 2 featuremap
-	\draw [thick, draw=black, fill=black!40!white,scale = .45] (11,2) rectangle  (12,3);
-	\draw [thick, draw=black,scale = .45] (10,-1) grid  (14,3) node at (12,-1) [below,text width=2cm,align= center] {\footnotesize Feature map at step 1};
-	%draw arrows
-	\draw [scale=.45,thick,arrow] (0,4)  to [bend angle=70, bend left] (5.5,3);
-	\draw [scale=.45,thick,arrow] (1,4)  to [bend angle=40, bend left] (11.5,3);
+%stride 1
+%kernel
+\draw [thick, draw=black, fill=black!40!white,scale = .45] (-1,6) rectangle (1,8) grid (-1,6);
+%kernel label
+\draw [scale=.45,below] node at (0,6)  {\footnotesize Kernel};
+%kernel components
+\draw [scale=.45] node at (-0.5,7.5) {v};
+\draw [scale=.45] node at (-0.5,6.5) {w};
+\draw [scale=.45] node at (0.5,7.5)  {x};
+\draw [scale=.45] node at (0.5,6.5)  {y};
+%step 1 equation
+\draw [scale=.45] node [text width=2cm,align=center] at (6,7) {\footnotesize \(o=(\mathbf{a}*v+0*w+0*x+0*y\)};
+%step 2 equation
+\draw [scale=.45] node [text width=2cm,align=center] at (12.5,7) {\footnotesize \(p=0*v+0*w+\mathbf{d}*x+0*y\)};
+% input
+\draw [thick, draw=black, fill=black!40!white,scale = .45] (-1,2) rectangle (1,4);
+\draw [thick, draw=black, fill=black!40!white,scale = .45] (0,2) rectangle (2,4);
+\draw [thick, draw=black,scale=.45] (-1,-1) grid  (4,4) node at (1.5,-1)[below] {\footnotesize Input};
+% step 1 featuremap
+\draw [thick, draw=black, fill=black!40!white,scale = .45] (5,2) rectangle  (6,3);
+\draw [thick, draw=black,scale = .45] (5,-1) grid  (9,3) node at (7,-1) [below,text width=2cm,align= center] {\footnotesize Feature map at step 1};
+%step 2 featuremap
+\draw [thick, draw=black, fill=black!40!white,scale = .45] (11,2) rectangle  (12,3);
+\draw [thick, draw=black,scale = .45] (10,-1) grid  (14,3) node at (12,-1) [below,text width=2cm,align= center] {\footnotesize Feature map at step 1};
+%draw arrows
+\draw [scale=.45,thick,arrow] (0,4)  to [bend angle=70, bend left] (5.5,3);
+\draw [scale=.45,thick,arrow] (1,4)  to [bend angle=40, bend left] (11.5,3);
 %	%draw step
-	\draw [scale=.45] node[rotate=-40]   at (5.3,4.4) {\footnotesize Step 1};
-	\draw [scale=.45] node[rotate=-40]   at (10.7,4.4) {\footnotesize Step 2};
-	%draw abc step 1
-	\draw [scale=.45] node at (0.5,2.5) {a};
-	\draw [scale=.45] node at (0.5,0.5) {b};
-	\draw [scale=.45] node at (2.5,2.5) {c};
-	\draw [scale=.45] node at (2.5,0.5) {d};
-	\draw [scale=.45] node at (5.5,2.5) {o};
-	%draw abc step 2
-	\draw [scale=.45] node at (10.5,2.5) {o};
-	\draw [scale=.45] node at (11.5,2.5) {p};
+\draw [scale=.45] node[rotate=-40]   at (5.3,4.4) {\footnotesize Step 1};
+\draw [scale=.45] node[rotate=-40]   at (10.7,4.4) {\footnotesize Step 2};
+%draw abc step 1
+\draw [scale=.45] node at (-.5,3.5) {a};
+\draw [scale=.45] node at (-.5,1.5) {b};
+\draw [scale=.45] node at (-.5,-.5) {c};
+\draw [scale=.45] node at (1.5,3.5) {d};
+\draw [scale=.45] node at (1.5,1.5) {e};
+\draw [scale=.45] node at (1.5,-.5) {f};
+\draw [scale=.45] node at (3.5,3.5) {g};
+\draw [scale=.45] node at (3.5,1.5) {h};
+\draw [scale=.45] node at (3.5,-.5) {i};
+\draw [scale=.45] node at (5.5,2.5) {o};
+%draw abc step 2
+\draw [scale=.45] node at (10.5,2.5) {o};
+\draw [scale=.45] node at (11.5,2.5) {p};
 
 \end{scope}
 \end{scope}
