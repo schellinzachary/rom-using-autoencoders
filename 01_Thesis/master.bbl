@@ -87,9 +87,6 @@ V.~Bushaev, ``Stochastic gradient descent with momentum.''
 D.~P. Kingma and J.~Ba, \emph{Adam: A method for stochastic optimization},
   \href{https://arxiv.org/abs/1412.6980}{{\ttfamily 1412.6980}}.
 
-\bibitem{singh}
-V.~Singh, ``﻿basics of convolutional neural networks.''
-
 \bibitem{dumoulin2018guide}
 V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep
   learning},  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
