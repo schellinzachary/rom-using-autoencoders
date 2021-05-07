@@ -221,12 +221,12 @@ There $M_{m,n}$ represents a point on a feature map, where $m$ and $n$ refer to 
 \end{figure}\noindent
 Fully connected layers are able to down- and upsample making them applicable for the decoder and encoder in autoencoders. Convolutional layers on the other hand are not able to upsample a given input. Therefore transposed convolutional layers are applied called \texttt{ConvTranspose1d}, \texttt{ConvTranspose2d} and \texttt{ConvTranspose3d} in \texttt{pyTroch}. 
 \begin{figure}[htbp!]
-	\begin{subfigure}{.459\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\input{Figures/Reduced_Order_Algorithms/TransStride_01.tex}
 		\subcaption{Two dimensional example of of a \textbf{one} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors. The resulting feature map is a \(3\times 3\) matrix, as we downsampled the input by a factor of \(0.75\).}
 	\end{subfigure}\hfill
-	\begin{subfigure}{.441\textwidth}
+	\begin{subfigure}{.48\textwidth}
 		\centering
 		\input{Figures/Reduced_Order_Algorithms/TransStride_02.tex}
 		\subcaption{Two dimensional example of of a \textbf{two} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors.. The resulting feature map is a \(2\times 2\) matrix, as we downsampled the input by a factor of \(0.5\).}

@@ -12,9 +12,9 @@
 \draw [scale=.45] node at (0.5,7.5)  {x};
 \draw [scale=.45] node at (0.5,6.5)  {y};
 %step 1 equation
-\draw [scale=.45] node [text width=2cm,align=center] at (6,7) {\footnotesize \(o=0*v+0*w+0*x+\mathbf{a}*y\)};
+\draw [scale=.45] node [text width=2cm,align=center] at (6,7) {\footnotesize \(o=(\mathbf{a}*v+0*w+0*x+0*y\)};
 %step 2 equation
-\draw [scale=.45] node [text width=2cm,align=center] at (12.5,7) {\footnotesize \(p=0*v+\mathbf{a}*w+0*x+0*y\)};
+\draw [scale=.45] node [text width=2cm,align=center] at (12.5,7) {\footnotesize \(p=0*v+0*w+\mathbf{d}*x+0*y\)};
 % input
 \draw [thick, draw=black, fill=black!40!white,scale = .45] (-1,2) rectangle (1,4);
 \draw [thick, draw=black, fill=black!40!white,scale = .45] (0,2) rectangle (2,4);
@@ -32,10 +32,15 @@
 \draw [scale=.45] node[rotate=-40]   at (5.3,4.4) {\footnotesize Step 1};
 \draw [scale=.45] node[rotate=-40]   at (10.7,4.4) {\footnotesize Step 2};
 %draw abc step 1
-\draw [scale=.45] node at (0.5,2.5) {a};
-\draw [scale=.45] node at (0.5,0.5) {b};
-\draw [scale=.45] node at (2.5,2.5) {c};
-\draw [scale=.45] node at (2.5,0.5) {d};
+\draw [scale=.45] node at (-.5,3.5) {a};
+\draw [scale=.45] node at (-.5,1.5) {b};
+\draw [scale=.45] node at (-.5,-.5) {c};
+\draw [scale=.45] node at (1.5,3.5) {d};
+\draw [scale=.45] node at (1.5,1.5) {e};
+\draw [scale=.45] node at (1.5,-.5) {f};
+\draw [scale=.45] node at (3.5,3.5) {g};
+\draw [scale=.45] node at (3.5,1.5) {h};
+\draw [scale=.45] node at (3.5,-.5) {i};
 \draw [scale=.45] node at (5.5,2.5) {o};
 %draw abc step 2
 \draw [scale=.45] node at (10.5,2.5) {o};

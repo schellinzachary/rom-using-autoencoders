@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 MAY 2021 15:16
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 MAY 2021 15:47
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1735,25 +1735,12 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--210
 ) (./Figures/Reduced_Order_Algorithms/TransStride_01.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
 ) (./Figures/Reduced_Order_Algorithms/TransStride_02.tex
-\openout3 = Figures/master-figure20.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure20" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
-)
-Overfull \hbox (2.0122pt too wide) in paragraph at lines 1--232
- [][] 
- []
-
-[18<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/mast
-er-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
- [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>]) [20<./Figur
-es/master-figure18.pdf>] [21<./Figures/master-figure19.pdf><./Figures/master-fig
-ure20.pdf>]
+===== Image 'Figures/master-figure20' is up-to-date. ======
+) [18<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/ma
+ster-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>
+] [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>])
+[20<./Figures/master-figure18.pdf>] [21<./Figures/master-figure19.pdf><./Figures
+/master-figure20.pdf>]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2148,7 +2135,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44690 strings out of 481365
+ 44683 strings out of 481365
  156267,10205817 words of node,token memory allocated
  1008 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 129 attribute, 80 glue_spe
@@ -2179,7 +2166,7 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (62 pages, 8395252 bytes).
+Output written on master.pdf (62 pages, 8400422 bytes).
 
 PDF statistics: 3084 PDF objects out of 3580 (max. 8388607)
  2491 compressed objects within 25 object streams
