@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  9 MAY 2021 19:53
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  10 MAY 2021 19:42
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -2655,21 +2655,25 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43268 strings out of 481365
+ 43292 strings out of 481365
  156265,4921788 words of node,token memory allocated
  1008 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 80 glue_spe
 c, 67 attribute_list, 2 write nodes
-   avail lists: 1:2,2:2251,3:396,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
- 57878 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:3561,3:707,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
+ 57902 multiletter control sequences out of 65536+600000
  121 fonts using 10222523 bytes
- 83i,19n,140p,2788b,1170s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pub
-lic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb>
-Output written on Figures/master-figure19.pdf (1 page, 49741 bytes).
+ 83i,19n,140p,2788b,1172s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/tex
+mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr
+/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on Figures/master-figure19.pdf (1 page, 79226 bytes).
 
-PDF statistics: 27 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
+ 32 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  26 words of extra memory for PDF output out of 10000 (max. 100000000)
 
