@@ -87,6 +87,13 @@ V.~Bushaev, ``Stochastic gradient descent with momentum.''
 D.~P. Kingma and J.~Ba, \emph{Adam: A method for stochastic optimization},
   \href{https://arxiv.org/abs/1412.6980}{{\ttfamily 1412.6980}}.
 
+\bibitem{lane_2018}
+T.~Lane, \emph{Transposed convolutions explained with… ms excel!},  Nov,
+  2018.
+
+\bibitem{divyanshu_2020}
+M.~Divyanshu, \emph{Transposed convolution demystified},  Mar, 2020.
+
 \bibitem{dumoulin2018guide}
 V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep
   learning},  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.

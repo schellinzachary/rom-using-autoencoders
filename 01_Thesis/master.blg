@@ -21,36 +21,36 @@ Warning--I didn't find a database entry for "bibid"
 Warning--empty publisher in Franz
 Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
-You've used 23 entries,
+You've used 25 entries,
             2189 wiz_defined-function locations,
-            654 strings with 6858 characters,
-and the built_in function-call counts, 3668 in all, are:
-= -- 293
-> -- 258
+            665 strings with 7062 characters,
+and the built_in function-call counts, 3930 in all, are:
+= -- 313
+> -- 268
 < -- 0
-+ -- 78
-- -- 55
-* -- 256
-:= -- 580
-add.period$ -- 27
-call.type$ -- 23
-change.case$ -- 19
++ -- 82
+- -- 57
+* -- 268
+:= -- 614
+add.period$ -- 29
+call.type$ -- 25
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 26
-duplicate$ -- 151
-empty$ -- 346
-format.name$ -- 55
-if$ -- 898
+cite$ -- 28
+duplicate$ -- 161
+empty$ -- 386
+format.name$ -- 57
+if$ -- 966
 int.to.chr$ -- 0
-int.to.str$ -- 23
+int.to.str$ -- 25
 missing$ -- 56
-newline$ -- 77
-num.names$ -- 22
-pop$ -- 79
+newline$ -- 83
+num.names$ -- 24
+pop$ -- 97
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 56
+skip$ -- 62
 stack$ -- 0
 substring$ -- 43
 swap$ -- 20
@@ -59,7 +59,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 26
-width$ -- 25
-write$ -- 172
+while$ -- 28
+width$ -- 27
+write$ -- 186
 (There were 2 error messages)

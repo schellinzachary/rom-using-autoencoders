@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  10 MAY 2021 19:41
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAY 2021 21:35
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1851,36 +1851,27 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
+LaTeX Warning: Citation `Goodfellow' on page 17 undefined on input line 224.
+
+
 LaTeX Warning: Reference `Fig: Upsampling(a)' on page 1 undefined on input line 
 224.
 
 
-LaTeX Warning: Reference `Fig: Upsampling(b)' on page 1 undefined on input line 
+LaTeX Warning: Reference `Fig: Upsampling(a)' on page 1 undefined on input line 
 224.
 
 
-LaTeX Warning: Reference `Fig: Downsampling(a)' on page 1 undefined on input lin
-e 224.
-
-
-LaTeX Warning: Reference `Fig: Downsampling(b)' on page 1 undefined on input lin
-e 224.
-
-
-LaTeX Warning: Reference `Fig: Downsampling(b)' on page 1 undefined on input lin
-e 224.
-
-
-LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 2
+LaTeX Warning: Reference `Fig: Upsamping(b)' on page 1 undefined on input line 2
 24.
 
 
-LaTeX Warning: Reference `Fig: Upsampling(b)' on page 1 undefined on input line 
-224.
+LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 2
+25.
 
 
 LaTeX Warning: Citation `dumoulin2018guide' on page 19 undefined on input line 2
-28.
+29.
 
 (./Figures/Reduced_Order_Algorithms/Transpose_even.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -1895,27 +1886,27 @@ sable this.
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
 LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 2
-42.
+43.
 
 
 LaTeX Warning: Reference `Fig: Downsampling(a)' on page 1 undefined on input lin
-e 242.
+e 243.
 
 
-LaTeX Warning: Reference `Fig: Downsampling(b)' on page 1 undefined on input lin
-e 242.
+LaTeX Warning: Reference `Fig: Upsampling(b)' on page 1 undefined on input line 
+243.
 
 
 LaTeX Warning: Reference `Fig: Downsampling' on page 1 undefined on input line 2
-42.
+43.
 
 
 LaTeX Warning: Reference `Fig: Downsampling(a)' on page 1 undefined on input lin
-e 242.
+e 243.
 
 
-LaTeX Warning: Reference `Fig: Downsampling(b)' on page 1 undefined on input lin
-e 242.
+LaTeX Warning: Reference `Fig: Upsampling(b)' on page 1 undefined on input line 
+243.
 
 ) (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2654,13 +2645,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 43293 strings out of 481365
+ 43294 strings out of 481365
  156265,4921788 words of node,token memory allocated
  1008 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 80 glue_spe
 c, 67 attribute_list, 2 write nodes
-   avail lists: 1:2,2:3636,3:725,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
- 57903 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:3330,3:671,4:83,5:953,6:38,7:16019,8:71,9:773,10:47,11:962
+ 57904 multiletter control sequences out of 65536+600000
  121 fonts using 10222523 bytes
  83i,19n,140p,2788b,1170s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2669,7 +2660,7 @@ mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Figures/master-figure20.pdf (1 page, 79234 bytes).
+Output written on Figures/master-figure20.pdf (1 page, 79977 bytes).
 
 PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream

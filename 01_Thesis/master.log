@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAY 2021 19:47
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAY 2021 23:13
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1726,18 +1726,27 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--211
 
 (./Figures/Reduced_Order_Algorithms/Kernel.tex
 ===== Image 'Figures/master-figure18' is up-to-date. ======
-) [18<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/ma
-ster-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>
-] [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>] [20<./Figur
-es/master-figure18.pdf>]
-(./Figures/Reduced_Order_Algorithms/Transpose_even.tex
+) (./Figures/Reduced_Order_Algorithms/Transpose_even.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
 ) (./Figures/Reduced_Order_Algorithms/Transpose_uneven.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
-)) [21<./Figures/master-figure19.pdf><./Figures/master-figure20.pdf>]
-\openout2 = chapters/Reduced_order_Modeling.aux
+)
+Underfull \hbox (badness 10000) in paragraph at lines 199--270
 
-(./chapters/Reduced_order_Modeling.tex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--270
+
+ []
+
+[18<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/mast
+er-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
+ [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>] [20<./Figure
+s/master-figure18.pdf>]) [21<./Figures/master-figure19.pdf><./Figures/master-fig
+ure20.pdf>]
+\openout2 = chapters/Reduced_order_Modeling.aux
+ (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
 (./Figures/MOR/flow.tex
 ===== Image 'Figures/master-figure21' is up-to-date. ======
@@ -2101,7 +2110,9 @@ ster-figure82.pdf><./Figures/master-figure83.pdf>] [55<./Figures/master-figure84
 .pdf><./Figures/master-figure85.pdf><./Figures/master-figure86.pdf>]
 (./master.bbl [56
 
-]) [57] (./back/acknowledgement.tex) [58
+]) [57
+Missing character: There is no … (U+2026) in font ec-lmri10!
+] (./back/acknowledgement.tex) [58
 
 ]
 (./back/declaration.tex
@@ -2130,14 +2141,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44700 strings out of 481365
- 156260,10205817 words of node,token memory allocated
- 1020 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 80 glue_spe
-c, 68 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:2351,3:373,4:83,5:792,6:49,7:14083,8:91,9:762,10:45,11:953
+ 44705 strings out of 481365
+ 156265,10205817 words of node,token memory allocated
+ 1032 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 137 attribute, 80 glue_spe
+c, 70 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:3,2:2351,3:373,4:83,5:797,6:49,7:14675,8:91,9:762,10:45,11:953
 
- 57897 multiletter control sequences out of 65536+600000
+ 57899 multiletter control sequences out of 65536+600000
  118 fonts using 9975971 bytes
  81i,19n,138p,2767b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
@@ -2161,10 +2172,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (62 pages, 8409560 bytes).
+Output written on master.pdf (62 pages, 8412160 bytes).
 
-PDF statistics: 3094 PDF objects out of 3580 (max. 8388607)
- 2498 compressed objects within 25 object streams
- 213 named destinations out of 1000 (max. 131072)
+PDF statistics: 3092 PDF objects out of 3580 (max. 8388607)
+ 2499 compressed objects within 25 object streams
+ 216 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
