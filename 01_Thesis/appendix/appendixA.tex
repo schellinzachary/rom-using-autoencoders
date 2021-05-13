@@ -10,32 +10,33 @@
 \label{Ch:ApA}
 %\pagenumbering{arabic}
 
-
-To start with a working model a guess is needed to be made about the initial design of the architecture. Here the hyperparameters already found are used as a starting point and shown in \Cref{Tab:First Guess}.\\
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c| }
+The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions.\\ 
+To start with a working model first a guess about the some initial hyperparameters is done. These are summarize in \Cref{Tab:First Guess}.
+\begin{table}[htp]
+	\centering
+	\caption{Initial selection for batch size, bottleneck size, number of epochs, learning rate and applied activation functions.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c @{} }
+		\toprule
+		Mini-batch size   & Intrinsic dimensions &   Epochs &Learning rate &activation code/rest \\   
 		\hline
-		Mini batch size & Intrinsic dimensions& Epochs & Learing rate & activation code/rest\\ [.5ex]
-		\hline
-		16 & 3 & 2000& 1e-4 & Tanh/LeakyreLU\\ \hline
-	\end{tabular}
-	\caption{Initial hyperparameter selection}
-	\label{Tab:First Guess}
+		16 		&	3/5 &     2000&	    1e-4 &LeakyReLU\\
+		\bottomrule
+	\end{tabular*} \label{Tab:First Guess}
 \end{table}
-To start with the number of layers or depth as described in \cref{Sec:Deep Learning} is determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c| }
+The experimentation design for finding the optimal number of layers i.e. depth is shown in \cref{Tab:Layer Size}. determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
+\begin{table}[htp]
+	\centering
+	\caption{www}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c @{} }
+		\toprule
+		Number of layers &  Reduction per layer & Validation loss\\ [.5ex]
 		\hline
-		Number of layers & Reduction per layer \\ [.5ex]
-		\hline
-		10 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 5 \(\rightarrow\) 3\\ \hline
-		8 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 10 \(\rightarrow\) 3\\ \hline
-		6 & 40 \(\rightarrow\) 40 \(\rightarrow\) 20  \(\rightarrow\) 3\\ \hline
-		4 & 40 \(\rightarrow\) 40 \(\rightarrow\) 3\\ \hline
-		2 & 40 \(\rightarrow\) 3\\ \hline
-	\end{tabular}
-	\caption{Initial hyperparameter selection}
-	\label{Tab:Layer Size}
+		10 & 40, 40, 20, 10, 5, 3/5, 5, 10, 20, 40, 40 \\ \hline
+		8 & 40, 40, 20 , 10, 3/5, 10, 20, 40, 40\\ \hline
+		6 & 40, 40, 20 , 3/5, 20, 40, 40\\ \hline
+		4 & 40, 40, 3/5, 40, 40\\ \hline
+		2 & 40, 3/5, 40\\ \hline
+	\end{tabular*}\label{Tab:Layer Size}
 \end{table}
 For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
 The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\

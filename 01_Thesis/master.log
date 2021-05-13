@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  12 MAY 2021 23:13
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  13 MAY 2021 21:45
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1728,23 +1728,37 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--211
 ===== Image 'Figures/master-figure18' is up-to-date. ======
 ) (./Figures/Reduced_Order_Algorithms/Transpose_even.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
-) (./Figures/Reduced_Order_Algorithms/Transpose_uneven.tex
+)
+Underfull \hbox (badness 1442) in paragraph at lines 242--242
+[]\T1/lmr/m/n/10 (a) |Mech-a-nism of a two di-men-sional \T1/lmr/bx/n/10 two
+ []
+
+(./Figures/Reduced_Order_Algorithms/Transpose_uneven.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 199--270
+Underfull \hbox (badness 1546) in paragraph at lines 248--248
+[]\T1/lmr/m/n/10 (b) |Mech-a-nism of a two di-men-sional \T1/lmr/bx/n/10 three
+ []
+
+
+LaTeX Warning: Reference `Sec: AppendixB' on page 1 undefined on input line 254.
+
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 199--40
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--270
+Underfull \hbox (badness 10000) in paragraph at lines 199--40
 
  []
 
 [18<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/mast
 er-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
  [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>] [20<./Figure
-s/master-figure18.pdf>]) [21<./Figures/master-figure19.pdf><./Figures/master-fig
-ure20.pdf>]
+s/master-figure18.pdf>] [21<./Figures/master-figure19.pdf><./Figures/master-figu
+re20.pdf>]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -1865,21 +1879,17 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 ]
 Appendix A.
 
-LaTeX Warning: Reference `Sec:Deep Learning' on page 1 undefined on input line 2
-5.
-
-
-LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 25.
+LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 26.
 
 
 LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
- 25.
+ 26.
 
 
-LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 25.
+LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 26.
 
 
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
+LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 44.
 
 [38
 
@@ -1894,17 +1904,17 @@ LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 43.
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
 ===== Image 'Figures/master-figure40' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 123--128
+Underfull \hbox (badness 5403) in paragraph at lines 124--129
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 123--128
+Underfull \hbox (badness 5403) in paragraph at lines 124--129
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 18.69234pt on input line 130.
+LaTeX Warning: Float too large for page by 18.69234pt on input line 131.
 
 (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex
 ===== Image 'Figures/master-figure41' is up-to-date. ======
@@ -1917,17 +1927,17 @@ LaTeX Warning: Float too large for page by 18.69234pt on input line 130.
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
 ===== Image 'Figures/master-figure45' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 134--139
+Underfull \hbox (badness 5403) in paragraph at lines 135--140
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 134--139
+Underfull \hbox (badness 5403) in paragraph at lines 135--140
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 18.6905pt on input line 141.
+LaTeX Warning: Float too large for page by 18.6905pt on input line 142.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
 ===== Image 'Figures/master-figure46' is up-to-date. ======
@@ -1942,17 +1952,17 @@ LaTeX Warning: Float too large for page by 18.6905pt on input line 141.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
 ===== Image 'Figures/master-figure51' is up-to-date. ======
 )
-Underfull \hbox (badness 5622) in paragraph at lines 145--151
+Underfull \hbox (badness 5622) in paragraph at lines 146--152
 [][] []
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 145--151
+Underfull \hbox (badness 5578) in paragraph at lines 146--152
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 12.94238pt on input line 153.
+LaTeX Warning: Float too large for page by 12.94238pt on input line 154.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
 ===== Image 'Figures/master-figure52' is up-to-date. ======
@@ -1969,17 +1979,17 @@ LaTeX Warning: Float too large for page by 12.94238pt on input line 153.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
 ===== Image 'Figures/master-figure58' is up-to-date. ======
 )
-Underfull \hbox (badness 5622) in paragraph at lines 165--170
+Underfull \hbox (badness 5622) in paragraph at lines 166--171
 [][] []
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 165--170
+Underfull \hbox (badness 5622) in paragraph at lines 166--171
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 12.93878pt on input line 172.
+LaTeX Warning: Float too large for page by 12.93878pt on input line 173.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
 ===== Image 'Figures/master-figure59' is up-to-date. ======
@@ -1998,17 +2008,17 @@ LaTeX Warning: Float too large for page by 12.93878pt on input line 172.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
 ===== Image 'Figures/master-figure66' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 184--190
+Underfull \hbox (badness 5403) in paragraph at lines 185--191
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 184--190
+Underfull \hbox (badness 5403) in paragraph at lines 185--191
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26204pt on input line 192.
+LaTeX Warning: Float too large for page by 1.26204pt on input line 193.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
 ===== Image 'Figures/master-figure67' is up-to-date. ======
@@ -2027,17 +2037,17 @@ LaTeX Warning: Float too large for page by 1.26204pt on input line 192.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
 ===== Image 'Figures/master-figure74' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 203--209
+Underfull \hbox (badness 5403) in paragraph at lines 204--210
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 203--209
+Underfull \hbox (badness 5403) in paragraph at lines 204--210
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26112pt on input line 211.
+LaTeX Warning: Float too large for page by 1.26112pt on input line 212.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
 ===== Image 'Figures/master-figure75' is up-to-date. ======
@@ -2052,7 +2062,7 @@ tex
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
 ===== Image 'Figures/master-figure79' is up-to-date. ======
 )
-Underfull \hbox (badness 5490) in paragraph at lines 223--226
+Underfull \hbox (badness 5490) in paragraph at lines 224--227
 [][] []
  []
 
@@ -2085,7 +2095,7 @@ Appendix B.
 ) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
 ===== Image 'Figures/master-figure83' is up-to-date. ======
 )
-Underfull \hbox (badness 5652) in paragraph at lines 238--241
+Underfull \hbox (badness 5652) in paragraph at lines 239--242
 [][] []
  []
 
@@ -2097,11 +2107,11 @@ Underfull \hbox (badness 5652) in paragraph at lines 238--241
 ===== Image 'Figures/master-figure86' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 72.03581pt on input line 248.
+LaTeX Warning: Float too large for page by 72.03581pt on input line 249.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 249.
+(hyperref)                than one, level fixed on input line 250.
 
 ) [53
 
@@ -2142,12 +2152,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  44705 strings out of 481365
- 156265,10205817 words of node,token memory allocated
+ 156269,10205817 words of node,token memory allocated
  1032 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 137 attribute, 80 glue_spe
 c, 70 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:2351,3:373,4:83,5:797,6:49,7:14675,8:91,9:762,10:45,11:953
-
+   avail lists: 1:2,2:2348,3:378,4:83,5:863,6:51,7:16100,8:91,9:735,10:45,11:105
+4
  57899 multiletter control sequences out of 65536+600000
  118 fonts using 9975971 bytes
  81i,19n,138p,2767b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -2172,10 +2182,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (62 pages, 8412160 bytes).
+Output written on master.pdf (62 pages, 8413366 bytes).
 
-PDF statistics: 3092 PDF objects out of 3580 (max. 8388607)
- 2499 compressed objects within 25 object streams
+PDF statistics: 3096 PDF objects out of 3580 (max. 8388607)
+ 2502 compressed objects within 26 object streams
  216 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

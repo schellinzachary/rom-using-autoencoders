@@ -233,54 +233,22 @@ Obviously transposed convolutional layers comprise the same hyperparameters as c
 		o = (i-1)s - 2p + k
 	\end{equation}
 \end{minipage}\\\\
-respectively. Here $o$ is 
+respectively. Here all variables are linked to one dimension only like the width of an image for example. Hence $o$ refers to the output size in one dimension, $i$ to the input size in one dimension, $2p$ to the padding size for both edges in one direction, $k$ refers to the kernel size in one dimension and $s$ to the stride size in one direction. 
 A detailed description of what Dumoulin et. al call convolutional arithmetric can be found \cite{dumoulin2018guide}.  
 \begin{figure}[htbp!]
 	\begin{subfigure}{.435\textwidth}
 		\centering
 		\input{Figures/Reduced_Order_Algorithms/Transpose_even.tex}
-		\subcaption{Visualization of a two dimensional \textbf{two} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. Upsampled by a factor of \(2.33\) produces a \(7\times 7\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is not divisible by the stride width. Uneven overlapping procude a checkerboard like structure.}
+		\subcaption{Mechanism of a two dimensional \textbf{two} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. Upsampled by a factor of \(2.33\) produces a \(7\times 7\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is not divisible by the stride width. Uneven overlapping procude a checkerboard like structure.}
 		\label{Fig: Upsampling(a)}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.455\textwidth}
 		\centering
 		\input{Figures/Reduced_Order_Algorithms/Transpose_uneven.tex}
-		\subcaption{Visualization of a two dimensional \textbf{three} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. The resulting output upsampled by a factor of \(3\) is a \(9\times 9\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is identical to the stride width. Overlaps and checkerboard like structures are avoided.}
+		\subcaption{Mechanism of a two dimensional \textbf{three} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. The resulting output upsampled by a factor of \(3\) is a \(9\times 9\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is identical to the stride width. Overlaps and checkerboard like structures are avoided.}
 		\label{Fig: Upsampling(b)}
 	\end{subfigure}
-	\caption{}
+	\caption{Visualization of the mechanism in transposed convolutional layers. Shown is pixelation, a common problem with transposed convolutional layers (a) and a possible solution, mitigating the pixelation effect.}
 	\label{Fig: Upsampling}
-\end{figure}
-%In the discrete cross correlation in \cref{Eq. Discrete Cross Correlation} The given equation for the discrete cross correlation in two dimensions (excluding channels) illustrate the movement of a kernel over a two dimensional input. First is the so called stride of the kernel, which results in a increased down sampling with increased stride size. Considering strides of the kernel along one dimension of the input results in a shrinkage of that dimension by 
-%\begin{equation}\label{Eq:Downsampling}
-%	o = \frac{i -k}{s} + 1.
-%\end{equation} 
-%Here \(o\), \(i\), \(s\) and \(k\) are the output, input, stride and kernel size of one dimension respectively \cite{dumoulin2018guide}. Second are the so called channels, which allow convolutional layers to extract a different feature for every channel from the same input. For a two dimensional input like images this could be different features for the same location on the image, like edges and color in the RGB color space \cite{Goodfellow}. Adding strides and kernel to \cref{Eq. Discrete Cross Correlation} yields
-%\begin{equation}
-%	\mathsf{S}_{i,j,k} = c(\mathsf{K},\mathsf{I},s)_{i,j,k}\sum_{l,m,n}\left[\mathsf{I}_{l,(j-1)\times s+m,(k -1)\times s+n}\mathsf{K}_{i,l,m,n}\right]. \label{Eq. Cross correlation stride channel}
-%\end{equation}
-%The kernel \(\mathsf{K}\) is a four dimensional tensor with \(i\) indexing into the output channels of \(S\), \(l\) indexing into the input channels of \(I\), \(m\) and \(n\) indexing into the rows and colums. The input \(\mathsf{I}\) and output \(S\) are three dimensional tensors with \(j\) and \(k\) indexing into the rows and columns. Note that in \texttt{PyTorch} \cref{Eq. Cross correlation stride channel} is a so called valid cross correlation (valid convolution) \cite{bibid} meaning the kernel will only move over input units for which  all \(m\) and \(n\) are inside the rows and columns of the input. Zero padding the input can prevent the kernel from omitting corners in that case.
-%\\
-%For autoencoders the necessity to perform a transposition of the applied layers arises, which is straight forward for fully connected layers. Convolutional layers with strides greater than unity on the other hand  the transposition needs the kernel to be padded with zeros to realize an upsampling of the input data \cite{dumoulin2018guide}. Note that the padding of the kernel with zeros is only used to illustrate how the upsampling works. In \cref{Eq: Transposed convolution} taken from \cite{Goodfellow} multiplications with zero are omitted. The size of one dimension during upsampling can be calculated with the transposition of \cref{Eq:Downsampling}.
-%\begin{equation}\label{Eq: Transposed convolution}
-%	t(\mathsf{K},\mathsf{H},s)_{i,j,k} = \sum_{\substack{l,m\\s.t\\(l-1)\times s+m=j}}
-%												  \sum_{\substack{n,p\\s.t\\(n-1)\times s+p=k}}
-%												  \sum_q \mathsf{K}_{q,i,m,p}\mathsf{H}_{q,l,n} 
-%\end{equation}
-
-
-%\subsection{Autoencoders}
-%Autoencoders have many hyperparameters determining their capability for compression and subsequent reconstruction. These parameters include : \textit{depth}, \textit{width of layers}, \textit{activation functions}, \textit{batch-size}, \textit{learning rate}, \textit{number of filters}, \textit{stride width}, \textit{kernel size}. Their finding is discussed in this section, for both $\hy$ and $\rare$.\\
-%For the fully connected autoencoder the order of determining the hyperparameters is as follows:
-%Depth $\rightarrow$ Hidden Units $\rightarrow$ Batch Size $\rightarrow$  Activation Fuctions.
-%For the convolutional autoencoder the order of determining the hyperparameters is as follows:
-%Depth $\rightarrow$ Channels $\rightarrow$ Batch Size $\rightarrow$ Activation Functions.
-%Both models are evaluated on the course of the training. Figures showing the training process for all experiments are provided in the appendix. After training the L2-Error\cref{labellist} is evaluated on the unshuffled, complete dataset as described in \cref{Sec: Data Sampling}.\\
-%Important to mention is that the difficulty of finding the right set of hyperparameters for MLPs led to an intensive search prior to the creation of this contribution. The difficulty lies in the fact that there is little systematic knowledge about how the hyperparameters interact in the model and answer to a variety of input data. Goodfellow et al. point out that with a combination of intuition, certain methods and first of all experience practitioners find hyperparameters that work well \cite{Goodfellow}. As for this thesis a list of the prior search is provided in \cref{Sec:AppendixA}. This list does not claim to cover the complete search and can by no means give enough insight to enable reproducability by another person.\\
-%For this reason an insight into the methods employed to find the set of hyperparameters used in this contribution are described in the following. 
-%
-%The convolutional autoencoder architecture 1.1 is a composition of six convolutional and three fully conected layers, \cref{f_Conv}.
-%\begin{equation}
-%y_p = f_{C}^9(f_{C}^8(f_{C}^7(f_{F}^6(f_{F}^5(f_{F}^4(f_{C}^3(f_{C}^2(f_{C}^1(y_0)))))))))
-%\label{f_Conv}
-%\end{equation}
+\end{figure}\\
+Neural netwroks and hence also autoencoders have many hyperparameters determining their capability for learning which were introduced in this section. There is little systematic knowledge about how the hyperparameters interact in the model. Goodfellow et al. point out that with a combination of intuition, certain methods and first of all experience practitioners find hyperparameters that work well \cite{Goodfellow}. As for this thesis a detailed description of the hyperparameter search for a fully connected- and convolutional autoencoder is provided in \cref{Sec:AppendixA} and \cref{Sec: AppendixB} respectively.
