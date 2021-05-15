@@ -1,9 +1,19 @@
+
+
+from pathlib import Path
+from os.path import join
+home = str(Path.home())
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
+
 import numpy as np
+import matplotlib.pyplot as plt
+
 import torch
 import torch.nn as nn
 from torch.optim import Adam
 import torch.tensor as tensor
-import matplotlib.pyplot as plt
+
+
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -18,7 +28,7 @@ class params():
 
 class data():
     #load data
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = np.load(join(home,loc_data))
     f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):

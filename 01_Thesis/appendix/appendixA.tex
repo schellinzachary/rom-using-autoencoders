@@ -5,41 +5,50 @@
 	{\sffamily \bfseries\Large Appendix}\\
 \end{center}%\hspace*{\fill}\\[1.5cm]
 \vspace{1cm}
-
 \chapter{Hyperparameters for the Fully Connected Autoencoder}
 \label{Ch:ApA}
 %\pagenumbering{arabic}
 
-The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions.\\ 
-To start with a working model first a guess about the some initial hyperparameters is done. These are summarize in \Cref{Tab:First Guess}.
-\begin{table}[htp]
+The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training.\\ 
+To start with a working model first a guess about the some initial hyperparameters is done, which are summarized in \Cref{Tab:First Guess}. These include a mini-batch size of 16, the width of the bottleneck layer is 3 and 5  for \(\hy\) and \(\rare\) respectively, a learning rate of 0.0001, activations LeakyReLU and Tanh for the hidden layers and code layer respectively as well as 2000 initial number of epochs. Note that 2000 epochs might seem exaggerated, but is justified by a fast training.
+\begin{table}[H]
 	\centering
 	\caption{Initial selection for batch size, bottleneck size, number of epochs, learning rate and applied activation functions.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c @{} }
 		\toprule
 		Mini-batch size   & Intrinsic dimensions &   Epochs &Learning rate &activation code/rest \\   
 		\hline
-		16 		&	3/5 &     2000&	    1e-4 &LeakyReLU\\
+		16 		&	3/5 &     2000&	    0.0001 & Tanh/LeakyReLU\\
 		\bottomrule
 	\end{tabular*} \label{Tab:First Guess}
 \end{table}
-The experimentation design for finding the optimal number of layers i.e. depth is shown in \cref{Tab:Layer Size}. determined, as they set a consequential part of the representational capacity of the model and therefore can initiate over- and underfitting at an early stage of the parameter search. \cref{Fig:Layer_Size} and \cref{Fig:Layer Size Rare} in \cref{AppendixA} show the training and validation error for five designs shown in \cref{Tab:Layer Size}.\\
+Five designs for finding an optimal number of layers i.e. depth are run. The hidden layers are designed to halve the input at each step. Not within this scope is the bottlenck layer which has a fixed size of 5 and 3 for $\rare$ and $\hy$ respectively and the first and last hidden layer (after the input layer and before the output layer). Those should provide an abstraction without shrinking the incoming data. Note that this design feature was validated in an initial exploration cycle which is not included in this thesis. The five designs range from 10 layers in (a) to 2 layers in (e) always taking one layer away from encoder and decoder hence decreasing by two layers and are as follows:     
+\begin{enumerate}
+	\item 10 layers with layer widths: 40, 40, 20, 10, 5, 3/5, 5, 10, 20, 40, 40.
+	\item 8 layers with layer widths: 40, 40, 20 , 10, 3/5, 10, 20, 40, 40.
+	\item 6 layers with layer widths: 40, 40, 20 , 3/5, 20, 40, 40.
+	\item 4 layers with layer widths: 40, 40, 3/5, 40, 40.
+	\item 2 layers with layer widths: 40, 3/5, 40.
+	\end{enumerate}
+The model's depth is determined in a primary step, as it sets a consequential part of the model's representational capacity and therefore can initiate over- and underfitting at an early stage in the hyperparameter search. The results of the experimentation are shown in \cref{Fig:Layer_Size} for both rarefaction levels.
 \begin{table}[htp]
 	\centering
-	\caption{www}
-	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c @{} }
+	\caption{Minimum values of training and validation error as well as the \(\L2\) defined in \cref{Ch:ROM}. The minima where reached around the last 50 epochs.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
-		Number of layers &  Reduction per layer & Validation loss\\ [.5ex]
+		Depth & \multicolumn{2}{c}{Minimum training error} & \multicolumn{2}{c}{Minimum validation error} & \multicolumn{2}{c}{\(\L2\) }\\ [.5ex]
+		 & \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\
 		\hline
-		10 & 40, 40, 20, 10, 5, 3/5, 5, 10, 20, 40, 40 \\ \hline
-		8 & 40, 40, 20 , 10, 3/5, 10, 20, 40, 40\\ \hline
-		6 & 40, 40, 20 , 3/5, 20, 40, 40\\ \hline
-		4 & 40, 40, 3/5, 40, 40\\ \hline
-		2 & 40, 3/5, 40\\ \hline
+		10& \num{1.53e-7} & \num{5.96e-7} & \num{2.22e-7} & \num{5.19e-7} & 0.0048 & 0.0091\\ \hline
+		8 & \num{1.17e-7 }& \num{2.05e-7} & \num{1.58e-7} & \num{2.32e-7} & 0.0041 & 0.0054\\ \hline
+		6 & \num{9.76e-8} & \num{1.40e-7} & \num{1.49e-7} & \num{1.72e-7} & 0.0038 & 0.0045\\ \hline
+		4 & \num{6.29e-8} & \num{1.52e-7} & \num{7.74e-8} & \num{1.61e-7} & 0.0031 & 0.0048 \\ \hline
+		2 & \num{1.29e-6} & \num{3.29e-6} & \num{1.37e-6} & \num{3.42e-6} & 0.0136 & 0.0217\\ \hline
 	\end{tabular*}\label{Tab:Layer Size}
 \end{table}
-For the hydrodynamic regime a number of layers greater than four results in a slight overfitting at an early stage of training (at around 100 epochs). Below four layers an underfitting can be observed. Hence yielding the conclusion, that four layers result in the best perfoming net at this early stage. Overfitting occurs only after the 1000th epoch and is less than with the other three nets that show overfitting. Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
+For \(\hy\) a minimum validation error of \num{7.74e-8} and an \(\L2\) of 0.0031 is reached with 4 layers, hence constitutes the best performing design out of the five. Additionally, as seen in \cref{Fig:Depth Hydro}, does a design exceeding 4 layers results in a slight overfitting after around 500 epochs. Less than 4 layers do not reach the validation error and \(\L2\) of the other designs, yielding the conclusion, that the capacity is too low. Overfitting occurs with 4 layers only after the 1000th epoch and is less than with the other three nets that show overfitting.\\
 The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
+Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
 In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
 Training duration is raised form 2000 epochs to 5000, as training did now converge completely as seen in \cref{Fig:Depth Hy} and \cref{Fig:Depth Rare}.\\
 In the following the width of the hidden layer will be analysed. There are two available hidden layers for the autoencoder. But as the architecture of the decoder mirrors that of the encoder only one parameter needs to be varied. For both the hydrodynamic and the rarefied regime five experiments are conducted, varying the hidden units from ten to fifty. Results for \(\Pi_h\) and \(\Pi_r\) are shown in \cref{Tab:Hidden Units}.

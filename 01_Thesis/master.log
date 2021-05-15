@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  13 MAY 2021 21:45
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  15 MAY 2021 23:47
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1092,6 +1092,71 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \backup@length=\skip78
 \ar@cellbox=\box118
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count314
+\l__pdf_internal_box=\box119
+))
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count315
+\g__xparse_grabber_int=\count316
+\l__xparse_m_args_int=\count317
+\l__xparse_v_nesting_int=\count318
+)
+Package: siunitx 2020/01/15 v2.7u A comprehensive (SI) units package
+
+(/usr/share/texlive/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
+)
+\l__siunitx_tmp_box=\box120
+\l__siunitx_tmp_dim=\dimen299
+\l__siunitx_tmp_int=\count319
+\l__siunitx_number_mantissa_length_int=\count320
+\l__siunitx_number_uncert_length_int=\count321
+\l__siunitx_round_int=\count322
+\l__siunitx_process_decimal_int=\count323
+\l__siunitx_process_uncertainty_int=\count324
+\l__siunitx_process_fixed_int=\count325
+\l__siunitx_process_integer_min_int=\count326
+\l__siunitx_process_precision_int=\count327
+\l__siunitx_group_min_int=\count328
+\l__siunitx_angle_marker_box=\box121
+\l__siunitx_angle_unit_box=\box122
+\l__siunitx_angle_marker_dim=\dimen300
+\l__siunitx_angle_unit_dim=\dimen301
+\l__siunitx_unit_int=\count329
+\l__siunitx_unit_denominator_int=\count330
+\l__siunitx_unit_numerator_int=\count331
+\l__siunitx_unit_prefix_int=\count332
+\l__siunitx_unit_prefix_base_int=\count333
+\l__siunitx_unit_prefix_gram_int=\count334
+\l__siunitx_number_product_int=\count335
+\c__siunitx_one_fill_skip=\skip79
+\l__siunitx_table_unit_align_skip=\skip80
+\l__siunitx_table_exponent_dim=\dimen302
+\l__siunitx_table_integer_dim=\dimen303
+\l__siunitx_table_mantissa_dim=\dimen304
+\l__siunitx_table_marker_dim=\dimen305
+\l__siunitx_table_result_dim=\dimen306
+\l__siunitx_table_uncert_dim=\dimen307
+\l__siunitx_table_fill_pre_dim=\dimen308
+\l__siunitx_table_fill_post_dim=\dimen309
+\l__siunitx_table_fill_mid_dim=\dimen310
+\l__siunitx_table_pre_box=\box123
+\l__siunitx_table_post_box=\box124
+\l__siunitx_table_mantissa_box=\box125
+\l__siunitx_table_result_box=\box126
+\l__siunitx_table_number_align_skip=\skip81
+\l__siunitx_table_text_align_skip=\skip82
+
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
+))
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -1103,8 +1168,8 @@ File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box119
-\pgf@layerboxsaved@background=\box120
+\pgf@layerbox@background=\box127
+\pgf@layerboxsaved@background=\box128
 )
 \openout3 = master.auxlock
 
@@ -1155,26 +1220,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box121
-\pgfnodeparttwobox=\box122
-\pgfnodepartthreebox=\box123
-\pgfnodepartfourbox=\box124
-\pgfnodeparttwentybox=\box125
-\pgfnodepartnineteenbox=\box126
-\pgfnodeparteighteenbox=\box127
-\pgfnodepartseventeenbox=\box128
-\pgfnodepartsixteenbox=\box129
-\pgfnodepartfifteenbox=\box130
-\pgfnodepartfourteenbox=\box131
-\pgfnodepartthirteenbox=\box132
-\pgfnodeparttwelvebox=\box133
-\pgfnodepartelevenbox=\box134
-\pgfnodeparttenbox=\box135
-\pgfnodepartninebox=\box136
-\pgfnodeparteightbox=\box137
-\pgfnodepartsevenbox=\box138
-\pgfnodepartsixbox=\box139
-\pgfnodepartfivebox=\box140
+\pgfnodepartlowerbox=\box129
+\pgfnodeparttwobox=\box130
+\pgfnodepartthreebox=\box131
+\pgfnodepartfourbox=\box132
+\pgfnodeparttwentybox=\box133
+\pgfnodepartnineteenbox=\box134
+\pgfnodeparteighteenbox=\box135
+\pgfnodepartseventeenbox=\box136
+\pgfnodepartsixteenbox=\box137
+\pgfnodepartfifteenbox=\box138
+\pgfnodepartfourteenbox=\box139
+\pgfnodepartthirteenbox=\box140
+\pgfnodeparttwelvebox=\box141
+\pgfnodepartelevenbox=\box142
+\pgfnodeparttenbox=\box143
+\pgfnodepartninebox=\box144
+\pgfnodeparteightbox=\box145
+\pgfnodepartsevenbox=\box146
+\pgfnodepartsixbox=\box147
+\pgfnodepartfivebox=\box148
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1183,7 +1248,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen299
+\arrowsize=\dimen311
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarysnakes.code.tex
@@ -1208,9 +1273,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count314
-\pgfplots@group@current@row=\count315
-\pgfplots@group@current@column=\count316
+\pgfplots@group@current@plot=\count336
+\pgfplots@group@current@row=\count337
+\pgfplots@group@current@column=\count338
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1221,31 +1286,16 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count317
-)
-(/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2020-02-14 L3 programming layer (loader) 
-
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count318
-\l__pdf_internal_box=\box141
-))
-Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count319
-\g__xparse_grabber_int=\count320
-\l__xparse_m_args_int=\count321
-\l__xparse_v_nesting_int=\count322
+\etb@tempcnta=\count339
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count323
-\decimalpart=\count324
+\integerpart=\count340
+\decimalpart=\count341
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box142
+\tikzscale@measuredSize=\box149
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1264,23 +1314,23 @@ Package cleveref Info: `algorithm2e' support loaded on input line 3147.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen300
-\lightrulewidth=\dimen301
-\cmidrulewidth=\dimen302
-\belowrulesep=\dimen303
-\belowbottomsep=\dimen304
-\aboverulesep=\dimen305
-\abovetopsep=\dimen306
-\cmidrulesep=\dimen307
-\cmidrulekern=\dimen308
-\defaultaddspace=\dimen309
-\@cmidla=\count325
-\@cmidlb=\count326
-\@aboverulesep=\dimen310
-\@belowrulesep=\dimen311
-\@thisruleclass=\count327
-\@lastruleclass=\count328
-\@thisrulewidth=\dimen312
+\heavyrulewidth=\dimen312
+\lightrulewidth=\dimen313
+\cmidrulewidth=\dimen314
+\belowrulesep=\dimen315
+\belowbottomsep=\dimen316
+\aboverulesep=\dimen317
+\abovetopsep=\dimen318
+\cmidrulesep=\dimen319
+\cmidrulekern=\dimen320
+\defaultaddspace=\dimen321
+\@cmidla=\count342
+\@cmidlb=\count343
+\@aboverulesep=\dimen322
+\@belowrulesep=\dimen323
+\@thisruleclass=\count344
+\@lastruleclass=\count345
+\@thisrulewidth=\dimen324
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -1290,44 +1340,44 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 61.
-LaTeX Info: Redefining \a1 on input line 62.
-LaTeX Info: Redefining \a2 on input line 63.
-LaTeX Info: Redefining \a3 on input line 64.
+LaTeX Info: Redefining \L2 on input line 62.
+LaTeX Info: Redefining \a1 on input line 63.
+LaTeX Info: Redefining \a2 on input line 64.
+LaTeX Info: Redefining \a3 on input line 65.
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip79
-\f@nch@O@elh=\skip80
-\f@nch@O@erh=\skip81
-\f@nch@O@olh=\skip82
-\f@nch@O@orh=\skip83
-\f@nch@O@elf=\skip84
-\f@nch@O@erf=\skip85
-\f@nch@O@olf=\skip86
-\f@nch@O@orf=\skip87
+\f@nch@headwidth=\skip83
+\f@nch@O@elh=\skip84
+\f@nch@O@erh=\skip85
+\f@nch@O@olh=\skip86
+\f@nch@O@orh=\skip87
+\f@nch@O@elf=\skip88
+\f@nch@O@erf=\skip89
+\f@nch@O@olf=\skip90
+\f@nch@O@orf=\skip91
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box143
-\beforetitleunit=\skip88
-\aftertitleunit=\skip89
-\ttl@plus=\dimen313
-\ttl@minus=\dimen314
+\ttl@box=\box150
+\beforetitleunit=\skip92
+\aftertitleunit=\skip93
+\ttl@plus=\dimen325
+\ttl@minus=\dimen326
 \ttl@toksa=\toks43
-\titlewidth=\dimen315
-\titlewidthlast=\dimen316
-\titlewidthfirst=\dimen317
+\titlewidth=\dimen327
+\titlewidthlast=\dimen328
+\titlewidthfirst=\dimen329
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen318
+\ttl@leftsep=\dimen330
 ))
 \@input{other/metadata.aux}
 
 \openout2 = other/metadata.aux
 (./other/metadata.tex)
-\tikzscale@accuracy=\skip90
+\tikzscale@accuracy=\skip94
 
 
 LaTeX Warning: Unused global option(s):
@@ -1379,16 +1429,16 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count329
-\scratchdimen=\dimen319
-\scratchbox=\box144
-\nofMPsegments=\count330
-\nofMParguments=\count331
+\scratchcounter=\count346
+\scratchdimen=\dimen331
+\scratchbox=\box151
+\nofMPsegments=\count347
+\nofMParguments=\count348
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count332
-\MPscratchDim=\dimen320
-\MPnumerator=\count333
-\makeMPintoPDFobject=\count334
+\MPscratchCnt=\count349
+\MPscratchDim=\dimen332
+\MPnumerator=\count350
+\makeMPintoPDFobject=\count351
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1399,7 +1449,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box145
+\AtBeginShipoutBox=\box152
 Package hyperref Info: Link coloring OFF on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1411,7 +1461,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count335
+\c@section@level=\count352
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1428,8 +1478,72 @@ Package pgfplots notification 'compat/show suggested version=true': document has
  been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
+-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
+File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6.
+
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6.
+
+
+(/usr/share/texmf/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 6
+.
+
+(/usr/share/texmf/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 6
+.
+
+(/usr/share/texmf/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 6.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 6
+.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
+File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 6
+.
+
+(/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 \openout2 = front/title.aux
-(./front/title.tex)
+ (./front/title.tex)
 Package epstopdf Info: Source file: <Figures/TUBlogo.eps>
 (epstopdf)                    date: 2021-02-24 09:58:11
 (epstopdf)                    size: 440902 bytes
@@ -1446,53 +1560,8 @@ File: Figures/TUBlogo-eps-converted-to.pdf Graphic file (type pdf)
 Package luatex.def Info: Figures/TUBlogo-eps-converted-to.pdf  used on input lin
 e 13.
 (luatex.def)             Requested size: 142.26378pt x 79.5112pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 13
-.
- (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 13
-.
-
-(/usr/share/texmf/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 1
-3.
-
-(/usr/share/texmf/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 1
-3.
-
-(/usr/share/texmf/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 13.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 13.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 13.
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 13.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for U+msa on input line 13.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 13.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 13.
  [1
 
 
@@ -1879,21 +1948,14 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 ]
 Appendix A.
 
-LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 26.
+LaTeX Warning: Reference `Fig:Layer_Size' on page 1 undefined on input line 33.
 
 
-LaTeX Warning: Reference `Fig:Layer Size Rare' on page 1 undefined on input line
- 26.
-
-
-LaTeX Warning: Reference `AppendixA' on page 1 undefined on input line 26.
-
-
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 44.
+LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 53.
 
 [38
 
-] [39] [40] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
+] [39] [40] [41] (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex
 ===== Image 'Figures/master-figure36' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex
 ===== Image 'Figures/master-figure37' is up-to-date. ======
@@ -1904,17 +1966,17 @@ LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 44.
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex
 ===== Image 'Figures/master-figure40' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 124--129
+Underfull \hbox (badness 5403) in paragraph at lines 133--138
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 124--129
+Underfull \hbox (badness 5403) in paragraph at lines 133--138
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 18.69234pt on input line 131.
+LaTeX Warning: Float too large for page by 18.69234pt on input line 140.
 
 (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex
 ===== Image 'Figures/master-figure41' is up-to-date. ======
@@ -1927,17 +1989,17 @@ LaTeX Warning: Float too large for page by 18.69234pt on input line 131.
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
 ===== Image 'Figures/master-figure45' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 135--140
+Underfull \hbox (badness 5403) in paragraph at lines 144--149
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 135--140
+Underfull \hbox (badness 5403) in paragraph at lines 144--149
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 18.6905pt on input line 142.
+LaTeX Warning: Float too large for page by 18.6905pt on input line 151.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
 ===== Image 'Figures/master-figure46' is up-to-date. ======
@@ -1952,17 +2014,17 @@ LaTeX Warning: Float too large for page by 18.6905pt on input line 142.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
 ===== Image 'Figures/master-figure51' is up-to-date. ======
 )
-Underfull \hbox (badness 5622) in paragraph at lines 146--152
+Underfull \hbox (badness 5622) in paragraph at lines 155--161
 [][] []
  []
 
 
-Underfull \hbox (badness 5578) in paragraph at lines 146--152
+Underfull \hbox (badness 5578) in paragraph at lines 155--161
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 12.94238pt on input line 154.
+LaTeX Warning: Float too large for page by 12.94238pt on input line 163.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
 ===== Image 'Figures/master-figure52' is up-to-date. ======
@@ -1979,17 +2041,17 @@ LaTeX Warning: Float too large for page by 12.94238pt on input line 154.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
 ===== Image 'Figures/master-figure58' is up-to-date. ======
 )
-Underfull \hbox (badness 5622) in paragraph at lines 166--171
+Underfull \hbox (badness 5622) in paragraph at lines 175--180
 [][] []
  []
 
 
-Underfull \hbox (badness 5622) in paragraph at lines 166--171
+Underfull \hbox (badness 5622) in paragraph at lines 175--180
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 12.93878pt on input line 173.
+LaTeX Warning: Float too large for page by 12.93878pt on input line 182.
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
 ===== Image 'Figures/master-figure59' is up-to-date. ======
@@ -2008,17 +2070,17 @@ LaTeX Warning: Float too large for page by 12.93878pt on input line 173.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
 ===== Image 'Figures/master-figure66' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 185--191
+Underfull \hbox (badness 5403) in paragraph at lines 194--200
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 185--191
+Underfull \hbox (badness 5403) in paragraph at lines 194--200
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26204pt on input line 193.
+LaTeX Warning: Float too large for page by 1.26204pt on input line 202.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
 ===== Image 'Figures/master-figure67' is up-to-date. ======
@@ -2037,17 +2099,17 @@ LaTeX Warning: Float too large for page by 1.26204pt on input line 193.
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
 ===== Image 'Figures/master-figure74' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 204--210
+Underfull \hbox (badness 5403) in paragraph at lines 213--219
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 204--210
+Underfull \hbox (badness 5403) in paragraph at lines 213--219
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26112pt on input line 212.
+LaTeX Warning: Float too large for page by 1.26112pt on input line 221.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
 ===== Image 'Figures/master-figure75' is up-to-date. ======
@@ -2062,27 +2124,27 @@ tex
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
 ===== Image 'Figures/master-figure79' is up-to-date. ======
 )
-Underfull \hbox (badness 5490) in paragraph at lines 224--227
+Underfull \hbox (badness 5490) in paragraph at lines 233--236
 [][] []
  []
 
-[41] [42<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf><./Figures
+[42] [43<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf><./Figures
 /master-figure38.pdf><./Figures/master-figure39.pdf><./Figures/master-figure40.p
-df>] [43<./Figures/master-figure41.pdf><./Figures/master-figure42.pdf><./Figures
+df>] [44<./Figures/master-figure41.pdf><./Figures/master-figure42.pdf><./Figures
 /master-figure43.pdf><./Figures/master-figure44.pdf><./Figures/master-figure45.p
-df>] [44<./Figures/master-figure46.pdf><./Figures/master-figure47.pdf><./Figures
+df>] [45<./Figures/master-figure46.pdf><./Figures/master-figure47.pdf><./Figures
 /master-figure48.pdf><./Figures/master-figure49.pdf><./Figures/master-figure50.p
-df><./Figures/master-figure51.pdf>] [45<./Figures/master-figure52.pdf><./Figures
-/master-figure53.pdf>] [46<./Figures/master-figure54.pdf><./Figures/master-figur
+df><./Figures/master-figure51.pdf>] [46<./Figures/master-figure52.pdf><./Figures
+/master-figure53.pdf>] [47<./Figures/master-figure54.pdf><./Figures/master-figur
 e55.pdf><./Figures/master-figure56.pdf><./Figures/master-figure57.pdf><./Figures
-/master-figure58.pdf>] [47<./Figures/master-figure59.pdf><./Figures/master-figur
-e60.pdf>] [48<./Figures/master-figure61.pdf><./Figures/master-figure62.pdf><./Fi
+/master-figure58.pdf>] [48<./Figures/master-figure59.pdf><./Figures/master-figur
+e60.pdf>] [49<./Figures/master-figure61.pdf><./Figures/master-figure62.pdf><./Fi
 gures/master-figure63.pdf><./Figures/master-figure64.pdf><./Figures/master-figur
-e65.pdf><./Figures/master-figure66.pdf>] [49<./Figures/master-figure67.pdf><./Fi
-gures/master-figure68.pdf>] [50<./Figures/master-figure69.pdf><./Figures/master-
+e65.pdf><./Figures/master-figure66.pdf>] [50<./Figures/master-figure67.pdf><./Fi
+gures/master-figure68.pdf>] [51<./Figures/master-figure69.pdf><./Figures/master-
 figure70.pdf><./Figures/master-figure71.pdf><./Figures/master-figure72.pdf><./Fi
 gures/master-figure73.pdf><./Figures/master-figure74.pdf>]
-[51<./Figures/master-figure75.pdf><./Figures/master-figure76.pdf>] [52<./Figures
+[52<./Figures/master-figure75.pdf><./Figures/master-figure76.pdf>] [53<./Figures
 /master-figure77.pdf><./Figures/master-figure78.pdf><./Figures/master-figure79.p
 df>]
 Appendix B.
@@ -2095,7 +2157,7 @@ Appendix B.
 ) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
 ===== Image 'Figures/master-figure83' is up-to-date. ======
 )
-Underfull \hbox (badness 5652) in paragraph at lines 239--242
+Underfull \hbox (badness 5652) in paragraph at lines 248--251
 [][] []
  []
 
@@ -2107,22 +2169,22 @@ Underfull \hbox (badness 5652) in paragraph at lines 239--242
 ===== Image 'Figures/master-figure86' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 72.03581pt on input line 249.
+LaTeX Warning: Float too large for page by 72.03581pt on input line 258.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 250.
+(hyperref)                than one, level fixed on input line 259.
 
-) [53
+) [54
 
-<./Figures/master-figure80.pdf>] [54<./Figures/master-figure81.pdf><./Figures/ma
-ster-figure82.pdf><./Figures/master-figure83.pdf>] [55<./Figures/master-figure84
+<./Figures/master-figure80.pdf>] [55<./Figures/master-figure81.pdf><./Figures/ma
+ster-figure82.pdf><./Figures/master-figure83.pdf>] [56<./Figures/master-figure84
 .pdf><./Figures/master-figure85.pdf><./Figures/master-figure86.pdf>]
-(./master.bbl [56
+(./master.bbl [57
 
-]) [57
+]) [58
 Missing character: There is no … (U+2026) in font ec-lmri10!
-] (./back/acknowledgement.tex) [58
+] (./back/acknowledgement.tex) [59
 
 ]
 (./back/declaration.tex
@@ -2130,7 +2192,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [59]
+) [60]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2151,16 +2213,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 44705 strings out of 481365
+ 47113 strings out of 481365
  156269,10205817 words of node,token memory allocated
- 1032 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 137 attribute, 80 glue_spe
-c, 70 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:2,2:2348,3:378,4:83,5:863,6:51,7:16100,8:91,9:735,10:45,11:105
-4
- 57899 multiletter control sequences out of 65536+600000
- 118 fonts using 9975971 bytes
- 81i,19n,138p,2767b,627s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 1046 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 135 attribute, 84 glue_spe
+c, 69 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:2,2:3206,3:344,4:104,5:864,6:50,7:16100,8:91,9:956,10:45,11:10
+54
+ 60236 multiletter control sequences out of 65536+600000
+ 134 fonts using 11295395 bytes
+ 81i,19n,138p,2767b,908s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -2182,10 +2244,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (62 pages, 8413366 bytes).
+Output written on master.pdf (63 pages, 8416344 bytes).
 
-PDF statistics: 3096 PDF objects out of 3580 (max. 8388607)
- 2502 compressed objects within 26 object streams
- 216 named destinations out of 1000 (max. 131072)
+PDF statistics: 3106 PDF objects out of 3580 (max. 8388607)
+ 2510 compressed objects within 26 object streams
+ 222 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

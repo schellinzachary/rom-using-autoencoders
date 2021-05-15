@@ -1,14 +1,24 @@
 '''
-Parameterstudy_01_Layer_Size
+Parameterstudy, Depth
 '''
 
+from pathlib import Path
+from os.path import join
+home = str(Path.home())
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
+
 import numpy as np
+import matplotlib.pyplot as plt
+import scipy.io as sio
+import pandas as pd
+#import tikzplotlib
+
+
 import torch
 import torch.nn as nn
 import torch.tensor as tensor
-import matplotlib.pyplot as plt
-import scipy.io as sio
-import tikzplotlib
+
+
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -17,8 +27,14 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 class data():
     #load data
-    f = np.load('/home/fusilly/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+    f = np.load(join(home,loc_data))
     f = tensor(f, dtype=torch.float).to(device)
+
+train_losses = []
+val_losses = []
+l2_losses = []
+depth = [10,8,6,4,2]
+min_idx = []
 
 for g in range(5):
     #g=4
@@ -89,25 +105,36 @@ for g in range(5):
     checkpoint = torch.load('Results/LS_{}.pt'.format(g))
 
     model.load_state_dict(checkpoint['model_state_dict'])
-    train_losses = checkpoint['train_losses']
-    test_losses = checkpoint['test_losses']
+    train_loss = checkpoint['train_losses']
+    val_loss = checkpoint['test_losses']
     N_EPOCHS = checkpoint['epoch']
 
     rec = model(data.f)
 
-    l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-    print(l2_error)
-    print(len(test_losses))
-    print(N_EPOCHS)
-
-    plt.semilogy(train_losses,'k''--',label='Train')
-    plt.semilogy(test_losses,'k''-',label='Test')
+    l2_loss = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+    
+    train_losses.append(np.min(train_loss))
+    val_losses.append(np.min(val_loss))
+    l2_losses.append(l2_loss)
+    min_idx.append(val_loss.index(min(val_loss)))
+    plt.figure()
+    plt.semilogy(train_loss,'k''--',label='Train')
+    plt.semilogy(val_loss,'k''-',label='Test')
     plt.xlabel('Epoch')
     plt.ylabel('MSE Loss')
     ax = plt.gca()
     i = [10,8,6,4,2]
     plt.title('{} Layer'.format(i[g]))
     plt.legend()
-    tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
-    plt.show()
+    #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
 
+#plt.show()
+loss_dict = {"Depth":depth,
+    "train_loss": train_losses,
+    "val_loss": val_losses,
+    "l2_loss": l2_losses,
+    "epoch val min": min_idx
+    }
+loss_dict = pd.DataFrame(loss_dict,dtype=float)
+
+print(loss_dict)
