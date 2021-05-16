@@ -136,7 +136,7 @@ loss_dict = {"Depth":depth,
     "val_loss": val_losses,
     "l2_loss": l2_losses,
     "epoch val min": min_idx
-    }
+    }4
 loss_dict = pd.DataFrame(loss_dict,dtype=float)
 
 print(loss_dict)

@@ -7,16 +7,21 @@ legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!bl
 log basis y={10},
 tick align=outside,
 tick pos=left,
-title={6 Layer},
+title={6 Layer $\hy$},
+title style={at={(0.45,0.85)},anchor=north},
 x grid style={white!69.0196078431373!black},
 xlabel={Epoch},
+x label style={yshift=10pt},
 xmin=-99.95, xmax=2098.95,
 xtick style={color=black},
+xtick = {0,500,1500,2000},
 y grid style={white!69.0196078431373!black},
 ylabel={MSE Loss},
-ymin=5.37091096203214e-08, ymax=0.0275010317181831,
+ymin=5.37091096203214e-08, ymax=1e-5,
 ymode=log,
-ytick style={color=black}
+ytick style={color=black},
+width=.45\textwidth,
+height=.25\textwidth
 ]
 \addplot [semithick, black, dashed]
 table {%

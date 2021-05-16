@@ -9,7 +9,7 @@
 \label{Ch:ApA}
 %\pagenumbering{arabic}
 
-The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training.\\ 
+The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training. The experiments are evaluated through the validation error which estimates the model's ability to generalize, the training error which estimates the optimization to training data and the $\L2$ as described in \cref{Ch:ROM}. Both validation- and training error are described in \cref{Ch:DimRedAl} and provide information about under- and overfitting. Moreover the validation error is the essential metric for validating a model's performance. The $\L2$ on the other hand gives an estimate of how well the model performs on the whole dataset hence is used as a comparative metric against POD.\\ 
 To start with a working model first a guess about the some initial hyperparameters is done, which are summarized in \Cref{Tab:First Guess}. These include a mini-batch size of 16, the width of the bottleneck layer is 3 and 5  for \(\hy\) and \(\rare\) respectively, a learning rate of 0.0001, activations LeakyReLU and Tanh for the hidden layers and code layer respectively as well as 2000 initial number of epochs. Note that 2000 epochs might seem exaggerated, but is justified by a fast training.
 \begin{table}[H]
 	\centering
@@ -30,10 +30,10 @@ Five designs for finding an optimal number of layers i.e. depth are run. The hid
 	\item 4 layers with layer widths: 40, 40, 3/5, 40, 40.
 	\item 2 layers with layer widths: 40, 3/5, 40.
 	\end{enumerate}
-The model's depth is determined in a primary step, as it sets a consequential part of the model's representational capacity and therefore can initiate over- and underfitting at an early stage in the hyperparameter search. The results of the experimentation are shown in \cref{Fig:Layer_Size} for both rarefaction levels.
+The model's depth is determined in a primary step, as it sets a consequential part of the model's representational capacity and therefore can initiate over- and underfitting at an early stage in the hyperparameter search. The results of the experimentation are shown in \cref{Fig:Depth} and \cref{Tab:Depth} for both rarefaction levels.\\
 \begin{table}[htp]
 	\centering
-	\caption{Minimum values of training and validation error as well as the \(\L2\) defined in \cref{Ch:ROM}. The minima where reached around the last 50 epochs.}
+	\caption{Results for the variation of depth. Given are minimum values of training and validation error as well as the \(\L2\). The minima where reached around the last 50 epochs of the training.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
 		Depth & \multicolumn{2}{c}{Minimum training error} & \multicolumn{2}{c}{Minimum validation error} & \multicolumn{2}{c}{\(\L2\) }\\ [.5ex]
@@ -44,26 +44,43 @@ The model's depth is determined in a primary step, as it sets a consequential pa
 		6 & \num{9.76e-8} & \num{1.40e-7} & \num{1.49e-7} & \num{1.72e-7} & 0.0038 & 0.0045\\ \hline
 		4 & \num{6.29e-8} & \num{1.52e-7} & \num{7.74e-8} & \num{1.61e-7} & 0.0031 & 0.0048 \\ \hline
 		2 & \num{1.29e-6} & \num{3.29e-6} & \num{1.37e-6} & \num{3.42e-6} & 0.0136 & 0.0217\\ \hline
-	\end{tabular*}\label{Tab:Layer Size}
-\end{table}
-For \(\hy\) a minimum validation error of \num{7.74e-8} and an \(\L2\) of 0.0031 is reached with 4 layers, hence constitutes the best performing design out of the five. Additionally, as seen in \cref{Fig:Depth Hydro}, does a design exceeding 4 layers results in a slight overfitting after around 500 epochs. Less than 4 layers do not reach the validation error and \(\L2\) of the other designs, yielding the conclusion, that the capacity is too low. Overfitting occurs with 4 layers only after the 1000th epoch and is less than with the other three nets that show overfitting.\\
-The analysis of the number of layers for the rarefied regime is not showing overfitting as obvious as before. The network with two layers underfits in contrast to the other nets whereas nets with more than two layers reach a similar train - and test loss. Networks with more than 4 layers, again show an unstable training compared to the net with four layers. Train and test loss show a diverging behaviour after around the 100th epoch.\\
-Note, that contrary to expected results, the train error is lower than the test error. The random shuffling during preprocessing might be taken into account here. Nonetheless solely overfitting is defined by differences between train and test loss. In Addition four layers and lower show a stable training in relation to the rest.\\
-In conclusion the net with four layers performs best for both the hydrodynamic and the rarefied regime.\\
+	\end{tabular*}\label{Tab:Depth}
+\end{table}\noindent
+For \(\hy\) the lowest validation error of \num{7.74e-8} and an \(\L2\) of 0.0031 is reached with 4 layers, hence constitutes the best performing design out of the five. Additionally, as seen in \cref{Fig:Depth}(left), does a design exceeding 4 layers results in a slight overfitting after around 500 epochs. Less than 4 layers do not reach the validation error and \(\L2\) of the other designs, yielding the conclusion, that the capacity is too low. Overfitting occurs with 4 layers only after the 1000th epoch and is less than with the other three models that show overfitting.\\
+For \(\rare\) the lowest validation error of \num{1.61e-7} is reached again with 4 layers. On the other hand the lowest \(\L2\) of 0.0031 and the lowest training error of \num{1.40e-7} are reached with 6 layers. Contrary to the afore discussed case the training error and \(\L2\) are of lower magnitude for 6 layers, except for the validation error. Looking at \cref{Fig:Depth}(right), we observe that the model with 6 layers starts to overfit after the 1500 epochs, yielding a decreasing training error and a stagnating validation error. Hence the model improved in the optimization task which additionally improves the \(\L2\). It's generalization ability, measured by the validation error, did not improve and is greater than the validation error reached with 4 layers. This concludes, a model with 4 layers constitutes the best performing design out of the five.
+Qualitatively the overall training for both rafefaction levels is very stable. Training and validation error do not diverge exessively and converge early in training. Separation of training and validation error occurs prominently for the hydrodynamic solution. This is thought to be connected to the emersion of sharp shock fronts towards the end of the simulation. This increases variance in the whole dataset and therefore also in the training- and validation set.
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex}\hfill
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex}\hfill
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex}\hfill
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex}\hfill
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex}\hfill
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex}
+		\caption{Five experiments over the different depth with $\hy$ left and $\rare$ right. The number of layers used for every experiment are given. Training and validation loss are shown over 2000 epochs.}
+		\label{Fig:Depth}
+	\end{figure}
+\end{center}
 Training duration is raised form 2000 epochs to 5000, as training did now converge completely as seen in \cref{Fig:Depth Hy} and \cref{Fig:Depth Rare}.\\
 In the following the width of the hidden layer will be analysed. There are two available hidden layers for the autoencoder. But as the architecture of the decoder mirrors that of the encoder only one parameter needs to be varied. For both the hydrodynamic and the rarefied regime five experiments are conducted, varying the hidden units from ten to fifty. Results for \(\Pi_h\) and \(\Pi_r\) are shown in \cref{Tab:Hidden Units}.
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c| }
+\begin{table}[htp]
+	\centering
+	\caption{Minimum values of training and validation error as well as the \(\L2\) defined in \cref{Ch:ROM}. The minima where reached around the last 50 epochs.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
+		\toprule
+		Hidden units & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} & \multicolumn{2}{c}{Shrinkage factor}\\ [.5ex]
+		& \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\
 		\hline
-		Hidden units & 10 & 20 & 30  & 40 & 50 \\ [.5ex]
-		\hline
-		Error for \(\Pi_h\) & 0.0054 & 0.0027 & 0.0036 & 0.0017 & 0.0032\\ \hline
-		Shrinkage factor for $\hy$ & 0.3 & 0.1 & 0.015 & 0.075 & 0.06\\ \hline
-		Error for \(\Pi_r\)& 0.0078 & 0.0027 & 0.0022 & 0.0015 & 0.0025\\ \hline
-		Shrinkage factor for $\rare$ & 0.5 & 0.25 & 0.01$\overline{6}$\ & 0.0125 & 0.01\\ \hline
-	\end{tabular}
-	\caption{L2-Error for different number of hidden units for \(\Pi_h\) and \(\Pi_r\).}
-	\label{Tab:Hidden Units}
+		50 & \num{3.93e-8} & \num{5.05e-8} & \num{3.2e-3}  & \num{2.5e-3} & 0.06  & 0.01\\ \hline
+		40 & \num{2.25e-8} & \num{1.65e-8} & \num{11.7e-3} & \num{1.5e-3} & 0.075 & 0.125\\ \hline
+		30 & \num{1.06e-7} & \num{3.40e-8} & \num{3.6e-6}  & \num{2.2e-3} & 0.015 & 0.0167\\ \hline
+		20 & \num{5.23e-8} & \num{5.25e-8} & \num{2.7e-3}  & \num{2.7e-3} & 0.1   & 0.25 \\ \hline
+		10 & \num{3.05e-7} & \num{3.97e-7} & \num{5.4e-3}  & \num{7.8e-3} & 0.3   & 0.5\\ \hline
+	\end{tabular*}\label{Tab:Hidden Units}
 \end{table}
 For $\hy$ and $\rare$ forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for $\hy$ and \(0.0125\) for $\rare$. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
 Next the mini-batch size is analysed. Results are displayed in \cref{Tab:Batch Size Hydro} for $\hy$  and in \cref{Tab:Batch Size Rare} for $\rare$. Additionally \cref{Sec:AppendixA} shows the training for both in put data $\hy$ and $\rare$. For both input data experiments are first conducted with mini-batch sizes in the range of : \([2,4,8,16,32]\).\\ The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for $\hy$. Likewise the results of the L2-Error for $\rare$ show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for $\hy$ with mini-batch sizes of: \([10,12,24]\). Two additional experiments for $\rare$ with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for $\hy$ and $\rare$. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
@@ -128,63 +145,31 @@ To continue with $\rare$  the L2-Error is again observed in \cref{Tab:Activation
 	\caption{L2-Error different activation functions and combinations for $\hy$.}
 	\label{Tab:Activations Rare 2nd}
 \end{table}
+
+
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex}}
-		\caption{Experiments with five different depth on $\hy$. Training and test loss are shown over 2000 epochs.}
-		\label{Fig:Depth Hydro}
-	\end{figure}
-\end{center}
-\begin{center}
-	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex}}
-		\caption{Experiments with five different depth on $\rare$. Training and test loss are shown over 2000 epochs.}
-		\label{Fig:Depth Rare}
-	\end{figure}
-\end{center}
-\begin{center}
-	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex}}
-		\caption{Training with different mini-batch sizes for $\hy$. Train -and test loss is shown over 5000 epochs.}
-		\label{Fig:Batch Hy}
-	\end{figure}
-\end{center}
-\begin{center}
-	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex}}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex}
 		\caption{Training with different mini-batch sizes for $\hy$. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}
 \end{center}
 \begin{center}
 	\begin{figure}[htbp!]
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex}}
-		\caption{Training with different mini-batch sizes for $\rare$. Train -and test loss is shown over 5000 epochs.}
-		\label{Fig:Batch Rare}
-	\end{figure}
-\end{center}
-\begin{center}
-	\begin{figure}[htbp!]\ContinuedFloat
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex}}
-		\scalebox{.9}{\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex}}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex}
 		\caption{Training with different mini-batch sizes for $\rare$. Train -and test loss is shown over 5000 epochs.}
 		\label{}
 	\end{figure}

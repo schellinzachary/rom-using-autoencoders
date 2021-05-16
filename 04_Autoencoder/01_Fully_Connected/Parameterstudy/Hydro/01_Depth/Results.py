@@ -1,5 +1,5 @@
 '''
-Parameterstudy, Depth
+Parameterstudy, Depth, Hydro
 '''
 
 from pathlib import Path
@@ -117,6 +117,8 @@ for g in range(5):
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss)
     min_idx.append(val_loss.index(min(val_loss)))
+
+    
     plt.figure()
     plt.semilogy(train_loss,'k''--',label='Train')
     plt.semilogy(val_loss,'k''-',label='Test')

@@ -1,4 +1,6 @@
-
+'''
+Parameterstudy, Width, Hydro
+'''
 
 from pathlib import Path
 from os.path import join
@@ -7,10 +9,13 @@ loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00
 
 import numpy as np
 import matplotlib.pyplot as plt
+import scipy.io as sio
+import pandas as pd
+#import tikzplotlib
+
 
 import torch
 import torch.nn as nn
-from torch.optim import Adam
 import torch.tensor as tensor
 
 
@@ -21,10 +26,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 class params():
     BATCH_SIZE = 16
     INPUT_DIM = 40
-    H_SIZES = 40
+    H_SIZES = [50,40,30,20,10]
     LATENT_DIM = 3
-
-
 
 class data():
     #load data
@@ -32,31 +35,29 @@ class data():
     f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):
-    def __init__(self):
+    def __init__(self,h_size):
         super(Encoder, self).__init__()
-        self.add_module('layer_1', torch.nn.Linear(in_features=params.INPUT_DIM,out_features=params.H_SIZES))
+        self.h_size = h_size
+        self.add_module('layer_1', torch.nn.Linear(params.INPUT_DIM,self.h_size))
         self.add_module('activ_1', nn.LeakyReLU())
-        self.add_module('layer_c',nn.Linear(in_features=params.H_SIZES, out_features=params.LATENT_DIM))
+        self.add_module('layer_c',nn.Linear(self.h_size, params.LATENT_DIM))
         self.add_module('activ_c', nn.Tanh())
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
         return x
 
-
-
 class Decoder(nn.Module):
-    def __init__(self):
+    def __init__(self,h_size):
         super(Decoder, self).__init__()
-        self.add_module('layer_c',nn.Linear(in_features=params.LATENT_DIM, out_features=params.H_SIZES))
+        self.h_size = h_size
+        self.add_module('layer_c',nn.Linear(params.LATENT_DIM, self.h_size))
         self.add_module('activ_c', nn.LeakyReLU())
-        self.add_module('layer_4', nn.Linear(in_features=params.H_SIZES,out_features=params.INPUT_DIM))
+        self.add_module('layer_4', nn.Linear(self.h_size, params.INPUT_DIM))
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
         return x
-
-
 
 class Autoencoder(nn.Module):
     def __init__(self, enc, dec):
@@ -69,34 +70,58 @@ class Autoencoder(nn.Module):
         predicted = self.dec(z)
         return predicted
 
-#encoder
-encoder = Encoder()
 
-#decoder
-decoder = Decoder()
+train_losses = []
+val_losses = []
+l2_losses = []
+width = []
+min_idx = []
 
-#Autoencoder
-model = Autoencoder(encoder, decoder).to(device)
 
-checkpoint = torch.load('Results/10.pt')
+for i in params.H_SIZES:
+    #encoder
+    encoder = Encoder(i)
 
-model.load_state_dict(checkpoint['model_state_dict'])
-train_losses = checkpoint['train_losses']
-test_losses = checkpoint['test_losses']
-N_EPOCHS = checkpoint['epoch']
+    #decoder
+    decoder = Decoder(i)
 
-rec = model(data.f)
+    #Autoencoder
+    model = Autoencoder(encoder, decoder).to(device)
 
-l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-print(l2_error)
+    checkpoint = torch.load('Results/%s.pt'%i)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    train_loss = checkpoint['train_losses']
+    val_loss = checkpoint['test_losses']
+    N_EPOCHS = checkpoint['epoch']
 
-plt.semilogy(train_losses,'k''--',label='Train')
-plt.semilogy(test_losses,'k''-',label='Test')
-plt.xlabel('Epoch')
-plt.ylabel('MSE Loss')
-ax = plt.gca()
-i = [10,8,6,4,2]
-#plt.title('{} Layer'.format(i[g]))
-plt.legend()
-#tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
+    rec = model(data.f)
+    l2_loss = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+
+    train_losses.append(np.min(train_loss))
+    val_losses.append(np.min(val_loss))
+    l2_losses.append(l2_loss)
+    min_idx.append(val_loss.index(min(val_loss)))
+    width.append(i)
+    
+  
+    plt.figure()
+    plt.semilogy(train_loss,'k''--',label='Train')
+    plt.semilogy(val_loss,'k''-',label='Test')
+    plt.xlabel('Epoch')
+    plt.ylabel('MSE Loss')
+    ax = plt.gca()
+    plt.title('%s Nodes'%i)
+    plt.legend()
+    #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
+
 plt.show()
+
+loss_dict = {"Width":width,
+    "train_loss": train_losses,
+    "val_loss": val_losses,
+    "l2_loss": l2_losses,
+    "epoch val min": min_idx
+    }
+loss_dict = pd.DataFrame(loss_dict,dtype=float)
+
+print(loss_dict)
