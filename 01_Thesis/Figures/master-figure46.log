@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  16 MAY 2021 23:34
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 MAY 2021 19:55
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -2333,14 +2333,7 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Reference `Fig:Depth Rare' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Reference `Tab:Hidden Units' on page 1 undefined on input line 69
-.
+LaTeX Warning: Reference `Tab:Width' on page 1 undefined on input line 69.
 
 
 LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 72.
@@ -2348,64 +2341,79 @@ LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 72.
 
 LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 72.
 
-
-LaTeX Warning: Reference `Tab:Batch Size Hydro' on page 1 undefined on input lin
-e 86.
-
-
-LaTeX Warning: Reference `Tab:Batch Size Rare' on page 1 undefined on input line
- 86.
-
-
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 86.
-
-
-LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
-ne 107.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 107.
-
-
-LaTeX Warning: Citation `BGK' on page 33 undefined on input line 135.
-
-
-LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
-line 135.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 136.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare' on page 1 undefined on input lin
-e 136.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 136.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 136.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare 2nd3rd' on page 1 undefined on in
-put line 136.
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
+(./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
 \openout4 = Figures/master-figure46.dpth
 
-Package pgfplots info on input line 25: Using 'lua backend=false' for axis: ymod
+Package pgfplots info on input line 21: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
-[35
+Package pgfplots info on input line 147: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+Package pgfplots info on input line 273: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+Package pgfplots info on input line 399: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+Package pgfplots info on input line 525: Using 'lua backend=false' for axis: ymo
+de=log unsupported (yet).
+[32
 
 \providecommand \oddpage@label [2]{}
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
-/Fully_Connected/Batch_Size/Hydro/4.tex
+/Fully_Connected/Width/rare_width.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+
+LaTeX Warning: Reference `Tab:Batch Size Hydro' on page 1 undefined on input lin
+e 94.
+
+
+LaTeX Warning: Reference `Tab:Batch Size Rare' on page 1 undefined on input line
+ 94.
+
+
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 94.
+
+
+LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
+ne 115.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
+e 115.
+
+
+LaTeX Warning: Citation `BGK' on page 34 undefined on input line 143.
+
+
+LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
+line 143.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
+e 144.
+
+
+LaTeX Warning: Reference `Fig:Activations Rare' on page 1 undefined on input lin
+e 144.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
+ line 144.
+
+
+LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
+ line 144.
+
+
+LaTeX Warning: Reference `Fig:Activations Rare 2nd3rd' on page 1 undefined on in
+put line 144.
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
@@ -2420,43 +2428,13 @@ sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 152--158
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--158
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--158
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--158
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--158
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 164--166
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
@@ -2496,27 +2474,27 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--191
+Underfull \hbox (badness 10000) in paragraph at lines 187--193
 []
  []
 
@@ -2527,7 +2505,7 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 197--199
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
 [][]
  []
 
@@ -2550,27 +2528,27 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 []
  []
 
@@ -2581,7 +2559,7 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 216--218
+Underfull \hbox (badness 10000) in paragraph at lines 218--220
 [][]
  []
 
@@ -2597,12 +2575,12 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 224--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--227
+Underfull \hbox (badness 10000) in paragraph at lines 226--229
 []
  []
 
@@ -2620,12 +2598,12 @@ sable this.
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 239--242
+Underfull \hbox (badness 10000) in paragraph at lines 241--244
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--242
+Underfull \hbox (badness 10000) in paragraph at lines 241--244
 []
  []
 
@@ -2641,7 +2619,7 @@ sable this.
 )
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 250.
+(hyperref)                than one, level fixed on input line 252.
 
 )
 No file Figures/master-figure46.bbl.
@@ -2662,25 +2640,24 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46057 strings out of 481365
- 244168,4921788 words of node,token memory allocated
+ 46141 strings out of 481365
+ 195334,4921788 words of node,token memory allocated
  1040 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 135 attribute, 84 glue_spe
 c, 69 attribute_list, 2 write nodes
-   avail lists: 1:2,2:32068,3:10289,4:118,5:954,6:34,7:16019,8:71,9:766,10:47,11
+   avail lists: 1:2,2:12561,3:2192,4:117,5:954,6:28,7:16019,8:71,9:1211,10:47,11
 :1038
- 60602 multiletter control sequences out of 65536+600000
+ 60668 multiletter control sequences out of 65536+600000
  137 fonts using 11541947 bytes
- 83i,22n,140p,2788b,2407s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,21n,140p,2788b,2643s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure46.pdf (1 page, 130060 bytes).
+/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/tex
+mf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Figures/master-figure46.pdf (1 page, 59807 bytes).
 
-PDF statistics: 38 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+PDF statistics: 33 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 

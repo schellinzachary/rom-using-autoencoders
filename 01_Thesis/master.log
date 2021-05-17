@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 MAY 2021 10:01
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  17 MAY 2021 20:02
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1796,30 +1796,14 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--211
 (./Figures/Reduced_Order_Algorithms/Kernel.tex
 ===== Image 'Figures/master-figure18' is up-to-date. ======
 ) (./Figures/Reduced_Order_Algorithms/Transpose_even.tex
-\openout3 = Figures/master-figure19.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure19" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure19' is up-to-date. ======
 )
 Underfull \hbox (badness 1442) in paragraph at lines 242--242
 []\T1/lmr/m/n/10 (a) |Mech-a-nism of a two di-men-sional \T1/lmr/bx/n/10 two
  []
 
 (./Figures/Reduced_Order_Algorithms/Transpose_uneven.tex
-\openout3 = Figures/master-figure20.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure20" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure20' is up-to-date. ======
 )
 Underfull \hbox (badness 1546) in paragraph at lines 248--248
 []\T1/lmr/m/n/10 (b) |Mech-a-nism of a two di-men-sional \T1/lmr/bx/n/10 three
@@ -1985,200 +1969,218 @@ Appendix A.
 ===== Image 'Figures/master-figure44' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex
 ===== Image 'Figures/master-figure45' is up-to-date. ======
-) [39]
-
-LaTeX Warning: Reference `Fig:Depth Hy' on page 1 undefined on input line 68.
-
-
-LaTeX Warning: Reference `Fig:Depth Rare' on page 1 undefined on input line 68.
-
-[40<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf><./Figures/mast
-er-figure38.pdf><./Figures/master-figure39.pdf><./Figures/master-figure40.pdf><.
-/Figures/master-figure41.pdf><./Figures/master-figure42.pdf><./Figures/master-fi
-gure43.pdf><./Figures/master-figure44.pdf><./Figures/master-figure45.pdf>]
-[41] [42] (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
-===== Image 'Figures/master-figure46' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
-===== Image 'Figures/master-figure47' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
-===== Image 'Figures/master-figure48' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
-===== Image 'Figures/master-figure49' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
-===== Image 'Figures/master-figure50' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
-===== Image 'Figures/master-figure51' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
-===== Image 'Figures/master-figure52' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
-===== Image 'Figures/master-figure53' is up-to-date. ======
 )
-Underfull \hbox (badness 5954) in paragraph at lines 2--160
+Underfull \hbox (badness 5847) in paragraph at lines 2--65
 [][]  []
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 2--160
+Underfull \hbox (badness 5847) in paragraph at lines 2--65
 []  []
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 2--160
+Underfull \hbox (badness 5847) in paragraph at lines 2--65
+[]  []
+ []
+
+
+Underfull \hbox (badness 5847) in paragraph at lines 2--65
+[]  []
+ []
+
+[39] [40<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf><./Figures
+/master-figure38.pdf><./Figures/master-figure39.pdf><./Figures/master-figure40.p
+df><./Figures/master-figure41.pdf><./Figures/master-figure42.pdf><./Figures/mast
+er-figure43.pdf><./Figures/master-figure44.pdf><./Figures/master-figure45.pdf>]
+ (./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
+===== Image 'Figures/master-figure46' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex
+===== Image 'Figures/master-figure47' is up-to-date. ======
+) [41] [42<./Figures/master-figure46.pdf><./Figures/master-figure47.pdf>]
+[43] (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
+===== Image 'Figures/master-figure48' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
+===== Image 'Figures/master-figure49' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
+===== Image 'Figures/master-figure50' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
+===== Image 'Figures/master-figure51' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
+===== Image 'Figures/master-figure52' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
+===== Image 'Figures/master-figure53' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
+===== Image 'Figures/master-figure54' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
+===== Image 'Figures/master-figure55' is up-to-date. ======
+)
+Underfull \hbox (badness 5954) in paragraph at lines 2--168
+[][]  []
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 2--168
+[]  []
+ []
+
+
+Underfull \hbox (badness 5954) in paragraph at lines 2--168
 []  []
  []
 
 (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
-===== Image 'Figures/master-figure54' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
-===== Image 'Figures/master-figure55' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
 ===== Image 'Figures/master-figure56' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
 ===== Image 'Figures/master-figure57' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
 ===== Image 'Figures/master-figure58' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
 ===== Image 'Figures/master-figure59' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
 ===== Image 'Figures/master-figure60' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
+===== Image 'Figures/master-figure61' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
+===== Image 'Figures/master-figure62' is up-to-date. ======
 )
-Underfull \hbox (badness 5954) in paragraph at lines 2--173
+Underfull \hbox (badness 5954) in paragraph at lines 2--181
 [][]  []
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 2--173
+Underfull \hbox (badness 5954) in paragraph at lines 2--181
 []  []
  []
 
 
-Underfull \hbox (badness 5954) in paragraph at lines 2--173
+Underfull \hbox (badness 5954) in paragraph at lines 2--181
 []  []
  []
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
-===== Image 'Figures/master-figure61' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
-===== Image 'Figures/master-figure62' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
 ===== Image 'Figures/master-figure63' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
 ===== Image 'Figures/master-figure64' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
 ===== Image 'Figures/master-figure65' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
 ===== Image 'Figures/master-figure66' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
+===== Image 'Figures/master-figure67' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+===== Image 'Figures/master-figure68' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 179--185
+Underfull \hbox (badness 5403) in paragraph at lines 187--193
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 179--185
+Underfull \hbox (badness 5403) in paragraph at lines 187--193
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26204pt on input line 187.
+LaTeX Warning: Float too large for page by 1.26204pt on input line 195.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure67' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-===== Image 'Figures/master-figure68' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
 ===== Image 'Figures/master-figure69' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
 ===== Image 'Figures/master-figure70' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
 ===== Image 'Figures/master-figure71' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
 ===== Image 'Figures/master-figure72' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
 ===== Image 'Figures/master-figure73' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
 ===== Image 'Figures/master-figure74' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
+===== Image 'Figures/master-figure75' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
+===== Image 'Figures/master-figure76' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 198--204
+Underfull \hbox (badness 5403) in paragraph at lines 206--212
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 198--204
+Underfull \hbox (badness 5403) in paragraph at lines 206--212
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26112pt on input line 206.
+LaTeX Warning: Float too large for page by 1.26112pt on input line 214.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure75' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
-===== Image 'Figures/master-figure76' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
 ===== Image 'Figures/master-figure77' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
+===== Image 'Figures/master-figure78' is up-to-date. ======
+) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
+===== Image 'Figures/master-figure79' is up-to-date. ======
 )
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
 tex
-===== Image 'Figures/master-figure78' is up-to-date. ======
+===== Image 'Figures/master-figure80' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
-===== Image 'Figures/master-figure79' is up-to-date. ======
+===== Image 'Figures/master-figure81' is up-to-date. ======
 )
-Underfull \hbox (badness 5490) in paragraph at lines 218--221
+Underfull \hbox (badness 5490) in paragraph at lines 226--229
 [][] []
  []
 
-[43] [44<./Figures/master-figure46.pdf><./Figures/master-figure47.pdf><./Figures
-/master-figure48.pdf><./Figures/master-figure49.pdf><./Figures/master-figure50.p
-df><./Figures/master-figure51.pdf><./Figures/master-figure52.pdf><./Figures/mast
-er-figure53.pdf>] [45<./Figures/master-figure54.pdf><./Figures/master-figure55.p
-df><./Figures/master-figure56.pdf><./Figures/master-figure57.pdf><./Figures/mast
-er-figure58.pdf><./Figures/master-figure59.pdf><./Figures/master-figure60.pdf>]
- [46<./Figures/master-figure61.pdf><./Figures/master-figure62.pdf><./Figures/mas
-ter-figure63.pdf><./Figures/master-figure64.pdf><./Figures/master-figure65.pdf><
-./Figures/master-figure66.pdf>] [47<./Figures/master-figure67.pdf><./Figures/mas
-ter-figure68.pdf>] [48<./Figures/master-figure69.pdf><./Figures/master-figure70.
-pdf><./Figures/master-figure71.pdf><./Figures/master-figure72.pdf><./Figures/mas
-ter-figure73.pdf><./Figures/master-figure74.pdf>] [49<./Figures/master-figure75.
-pdf><./Figures/master-figure76.pdf>] [50<./Figures/master-figure77.pdf><./Figure
-s/master-figure78.pdf><./Figures/master-figure79.pdf>]
+[44] [45<./Figures/master-figure48.pdf><./Figures/master-figure49.pdf><./Figures
+/master-figure50.pdf><./Figures/master-figure51.pdf><./Figures/master-figure52.p
+df><./Figures/master-figure53.pdf><./Figures/master-figure54.pdf><./Figures/mast
+er-figure55.pdf>] [46<./Figures/master-figure56.pdf><./Figures/master-figure57.p
+df><./Figures/master-figure58.pdf><./Figures/master-figure59.pdf><./Figures/mast
+er-figure60.pdf><./Figures/master-figure61.pdf><./Figures/master-figure62.pdf>]
+ [47<./Figures/master-figure63.pdf><./Figures/master-figure64.pdf><./Figures/mas
+ter-figure65.pdf><./Figures/master-figure66.pdf><./Figures/master-figure67.pdf><
+./Figures/master-figure68.pdf>] [48<./Figures/master-figure69.pdf><./Figures/mas
+ter-figure70.pdf>] [49<./Figures/master-figure71.pdf><./Figures/master-figure72.
+pdf><./Figures/master-figure73.pdf><./Figures/master-figure74.pdf><./Figures/mas
+ter-figure75.pdf><./Figures/master-figure76.pdf>] [50<./Figures/master-figure77.
+pdf><./Figures/master-figure78.pdf>] [51<./Figures/master-figure79.pdf><./Figure
+s/master-figure80.pdf><./Figures/master-figure81.pdf>]
 Appendix B.
 (./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-===== Image 'Figures/master-figure80' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
-===== Image 'Figures/master-figure81' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
 ===== Image 'Figures/master-figure82' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
+) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
 ===== Image 'Figures/master-figure83' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
+===== Image 'Figures/master-figure84' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
+===== Image 'Figures/master-figure85' is up-to-date. ======
 )
-Underfull \hbox (badness 5652) in paragraph at lines 233--236
+Underfull \hbox (badness 5652) in paragraph at lines 241--244
 [][] []
  []
 
 (./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-===== Image 'Figures/master-figure84' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
-===== Image 'Figures/master-figure85' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
 ===== Image 'Figures/master-figure86' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
+===== Image 'Figures/master-figure87' is up-to-date. ======
+) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
+===== Image 'Figures/master-figure88' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 72.03581pt on input line 243.
+LaTeX Warning: Float too large for page by 72.03581pt on input line 251.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 244.
+(hyperref)                than one, level fixed on input line 252.
 
-) [51
+) [52
 
-<./Figures/master-figure80.pdf>] [52<./Figures/master-figure81.pdf><./Figures/ma
-ster-figure82.pdf><./Figures/master-figure83.pdf>] [53<./Figures/master-figure84
-.pdf><./Figures/master-figure85.pdf><./Figures/master-figure86.pdf>]
-(./master.bbl [54
+<./Figures/master-figure82.pdf>] [53<./Figures/master-figure83.pdf><./Figures/ma
+ster-figure84.pdf><./Figures/master-figure85.pdf>] [54<./Figures/master-figure86
+.pdf><./Figures/master-figure87.pdf><./Figures/master-figure88.pdf>]
+(./master.bbl [55
 
-]) [55
+]) [56
 Missing character: There is no … (U+2026) in font ec-lmri10!
-] (./back/acknowledgement.tex) [56
+] (./back/acknowledgement.tex) [57
 
 ]
 (./back/declaration.tex
@@ -2186,7 +2188,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [57]
+) [58]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2195,7 +2197,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 51307A79935124529B88A8F083580BD7;3993.
+(rerunfilecheck)             Checksum: F17E310E1B7D3A56259733386DA2821E;3993.
 
 
 LaTeX Warning: There were undefined references.
@@ -2207,14 +2209,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 47115 strings out of 481365
+ 47147 strings out of 481365
  156269,10205817 words of node,token memory allocated
  1052 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 137 attribute, 84 glue_spe
 c, 70 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:2,2:2629,3:235,4:117,5:864,6:47,7:16100,8:91,9:771,10:45,11:10
+   avail lists: 1:2,2:2536,3:236,4:116,5:864,6:47,7:16100,8:91,9:745,10:45,11:10
 54
- 60230 multiletter control sequences out of 65536+600000
+ 60232 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
  81i,19n,138p,2767b,908s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
@@ -2238,10 +2240,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (60 pages, 8453757 bytes).
+Output written on master.pdf (61 pages, 8576500 bytes).
 
-PDF statistics: 3135 PDF objects out of 3580 (max. 8388607)
- 2532 compressed objects within 26 object streams
- 216 named destinations out of 1000 (max. 131072)
+PDF statistics: 3183 PDF objects out of 3580 (max. 8388607)
+ 2571 compressed objects within 26 object streams
+ 218 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 

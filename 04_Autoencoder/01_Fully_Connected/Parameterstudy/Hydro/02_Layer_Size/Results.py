@@ -6,12 +6,13 @@ from pathlib import Path
 from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
+loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex"
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-#import tikzplotlib
+import tikzplotlib
 
 
 import torch
@@ -77,8 +78,9 @@ l2_losses = []
 width = []
 min_idx = []
 
+fig, ax  = plt.subplots(5)
 
-for i in params.H_SIZES:
+for idx, i in enumerate(params.H_SIZES):
     #encoder
     encoder = Encoder(i)
 
@@ -93,7 +95,7 @@ for i in params.H_SIZES:
     train_loss = checkpoint['train_losses']
     val_loss = checkpoint['test_losses']
     N_EPOCHS = checkpoint['epoch']
-
+    print(N_EPOCHS)
     rec = model(data.f)
     l2_loss = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
 
@@ -102,18 +104,17 @@ for i in params.H_SIZES:
     l2_losses.append(l2_loss)
     min_idx.append(val_loss.index(min(val_loss)))
     width.append(i)
-    
+    print(len(train_loss))
   
-    plt.figure()
-    plt.semilogy(train_loss,'k''--',label='Train')
-    plt.semilogy(val_loss,'k''-',label='Test')
-    plt.xlabel('Epoch')
-    plt.ylabel('MSE Loss')
-    ax = plt.gca()
-    plt.title('%s Nodes'%i)
-    plt.legend()
-    #tikzplotlib.save('/home/fusilly/ROM_using_Autoencoders/Bachelorarbeit/Figures/Layer_Sizes/{}.tex'.format(g))
-
+    
+    ax[idx].semilogy(np.linspace(0,4000,50),train_loss[::40],'k''--',label='Train')
+    ax[idx].semilogy(np.linspace(0,4000,50),val_loss[::40],'k''-',label='Test')
+    ax[idx].set_xlabel('Epoch')
+    ax[idx].set_ylabel('MSE Loss')
+    ax[idx].set_title('%s Nodes'%i)
+    ax[idx].set_ylim(ymax=1e-5)
+    ax[idx].legend()
+#tikzplotlib.save(join(home,loc_plot))
 plt.show()
 
 loss_dict = {"Width":width,
