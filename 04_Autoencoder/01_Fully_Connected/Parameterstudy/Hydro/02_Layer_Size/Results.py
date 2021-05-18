@@ -12,7 +12,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-import tikzplotlib
+#import tikzplotlib
 
 
 import torch
@@ -90,7 +90,7 @@ for idx, i in enumerate(params.H_SIZES):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint = torch.load('Results/%s.pt'%i)
+    checkpoint = torch.load('Results/P%s.pt'%i)
     model.load_state_dict(checkpoint['model_state_dict'])
     train_loss = checkpoint['train_losses']
     val_loss = checkpoint['test_losses']
@@ -107,8 +107,8 @@ for idx, i in enumerate(params.H_SIZES):
     print(len(train_loss))
   
     
-    ax[idx].semilogy(np.linspace(0,4000,50),train_loss[::40],'k''--',label='Train')
-    ax[idx].semilogy(np.linspace(0,4000,50),val_loss[::40],'k''-',label='Test')
+    ax[idx].semilogy(train_loss,'k''--',label='Train')
+    ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
     ax[idx].set_title('%s Nodes'%i)

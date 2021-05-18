@@ -13,7 +13,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-import tikzplotlib
+#import tikzplotlib
 
 
 import torch
@@ -108,15 +108,15 @@ for idx, i in enumerate(params.H_SIZES):
     width.append(i)
 
   
-    ax[idx].semilogy(np.linspace(0,4000,50),train_loss[::40],'k''--',label='Train')
-    ax[idx].semilogy(np.linspace(0,4000,50),val_loss[::40],'k''-',label='Test')
+    ax[idx].semilogy(train_loss,'k''--',label='Train')
+    ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
     ax[idx].set_title('%s Nodes'%i)
     ax[idx].set_ylim(ymax=1e-5)
     #ax[idx].set_xticks((0,500,1500,2000))
     ax[idx].legend()
-tikzplotlib.save(join(home,loc_plot))
+#tikzplotlib.save(join(home,loc_plot))
 plt.show()
 
 loss_dict = {"Width":width,

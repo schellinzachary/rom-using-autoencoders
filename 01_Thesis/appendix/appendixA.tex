@@ -49,68 +49,57 @@ The model's depth is determined in a primary step, as it sets a consequential pa
 For \(\hy\) the lowest validation error of \num{7.74e-8} and an \(\L2\) of 0.0031 is reached with 4 layers, hence constitutes the best performing design out of the five. Additionally, as seen in \cref{Fig:Depth}(left), does a design exceeding 4 layers results in a slight overfitting after around 500 epochs. Less than 4 layers do not reach the validation error and \(\L2\) of the other designs, yielding the conclusion, that the capacity is too low. Overfitting occurs with 4 layers only after the 1000th epoch and is less than with the other three models that show overfitting.\\
 For \(\rare\) the lowest validation error of \num{1.61e-7} is reached again with 4 layers. On the other hand the lowest \(\L2\) of 0.0031 and the lowest training error of \num{1.40e-7} are reached with 6 layers. Contrary to the afore discussed case the training error and \(\L2\) are of lower magnitude for 6 layers, except for the validation error. Looking at \cref{Fig:Depth}(right), we observe that the model with 6 layers starts to overfit after the 1500 epochs, yielding a decreasing training error and a stagnating validation error. Hence the model improved in the optimization task which additionally improves the \(\L2\). It's generalization ability, measured by the validation error, did not improve and is greater than the validation error reached with 4 layers. This concludes, a model with 4 layers constitutes the best performing design out of the five.\\
 Qualitatively the overall training for both rarefaction levels is very stable. Training and validation error do not diverge exessively and converge early in training. Separation of training and validation error occurs prominently for the hydrodynamic solution. This is thought to be connected to the emersion of sharp shock fronts towards the end of the simulation. This increases variance in the whole dataset and therefore also in the training- and validation set.\\
-The number of epochs is now raised to 5000 epochs because the lowest validation error was achieved towards the end of the training in the previous experiments. Again this is justifiable as one epoch takes less than 1s to finish. 
+The number of epochs is now doubled to 4000 epochs because the lowest validation error was achieved towards the end of the training in the previous experiments. Again this is justifiable as one epoch takes less than 1s to finish and no prominent overfitting is observed. 
 \begin{center}
 	\begin{figure}[htbp!]
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/0.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/0.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/1.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/1.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/2.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/2.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/3.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/3.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Hydro/4.tex}
-		\input{Figures/Parameterstudy/Fully_Connected/Depth/Rare/4.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex}
+		\input{Figures/Parameterstudy/Fully_Connected/Depth/rare_depth.tex}
 		\caption{Five experiments over the different depth with $\hy$ left and $\rare$ right. The number of layers used for every experiment are given. Training and validation loss are shown over 2000 epochs.}
 		\label{Fig:Depth}
 	\end{figure}
 \end{center}
-The width of the two remaining hidden layers is examind in the following. For both the hydrodynamic and the rarefied regime five experiments are conducted, varying the hidden units of the hidden layers from ten to fifty. Note that the decoder is choosen to be structurally a reflection of the encoder. Therefore only one parameter is changed. Results for \(\hy\) and \(\rare\) are shown in \cref{Tab:Width}.
-\begin{table}[htp]
+\begin{table}[htpb!]
 	\centering
-	\caption{Minimum values of training and validation error as well as the \(\L2\) defined in \cref{Ch:ROM}. The minima where reached around the last 50 epochs.}
+	\caption{Results for the variation of width. Given are minimum values of training and validation error as well as the \(\L2\). The minima where reached around the last 50 epochs of the training.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
 		Hidden units & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} & \multicolumn{2}{c}{Shrinkage factor}\\ [.5ex]
 		& \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\
 		\hline
-		50 & \num{3.93e-8} & \num{5.05e-8} & \num{3.2e-3}  & \num{2.5e-3} & 0.06  & 0.01\\ \hline
-		40 & \num{2.25e-8} & \num{1.65e-8} & \num{1.7e-3} & \num{1.5e-3} & 0.075 & 0.125\\ \hline
-		30 & \num{1.06e-7} & \num{3.40e-8} & \num{3.6e-6}  & \num{2.2e-3} & 0.015 & 0.0167\\ \hline
-		20 & \num{5.23e-8} & \num{5.25e-8} & \num{2.7e-3}  & \num{2.7e-3} & 0.1   & 0.25 \\ \hline
-		10 & \num{3.05e-7} & \num{3.97e-7} & \num{5.4e-3}  & \num{7.8e-3} & 0.3   & 0.5\\ \hline
+		50 & \num{1.91e-8} & \num{5.05e-8} & \num{1.5e-3}  & \num{2.5e-3} & 0.06  & 0.01\\ \hline
+		40 & \num{2.65e-08} & \num{1.65e-8} & \num{1.8e-3} & \num{1.4e-3} & 0.075 & 0.125\\ \hline
+		30 & \num{1.77e-08} & \num{3.40e-8} & \num{1.5e-3}  & \num{2.1e-3} & 0.015 & 0.0167\\ \hline
+		20 & \num{2.50e-08} & \num{5.25e-8} & \num{1.7e-3}  & \num{2.7e-3} & 0.1   & 0.25 \\ \hline
+		10 & \num{5.11e-08} & \num{3.97e-7} & \num{2.5e-3}  & \num{7.7e-3} & 0.3   & 0.5\\ \hline
 	\end{tabular*}\label{Tab:Width}
 \end{table}
+The width of the two remaining hidden layers is examind in the following. For both the hydrodynamic and the rarefied regime five experiments are conducted, lowering the hidden units of the hidden layers from fifty to ten. Note that the decoder is chosen to be structurally a reflection of the encoder. Therefore only one parameter is changed. Results for \(\hy\) and \(\rare\) are shown in \cref{Tab:Width}. Note that the contribution of over- and underfitting is negligible and therefore is omitted. A model with 30 hidden units in encoder and decoder performs best with \(\hy\) and reaches a validation error of \(\num{1.77e-08}\). The corresponding \(\L2 = \num{1.5e-3}\) with a shrinkage factor of 0.015.\\
 \begin{center}
-	\begin{figure}
+	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex}
 		\input{Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex}
 		\label{Fig:Width}
-		\caption{Width}
+		\caption{Five experiments over different width with $\hy$ left and $\rare$ right. The number of nodes used for every experiment are given. Training and validation loss are shown over 4000 epochs.}
 	\end{figure}
 \end{center}
-For $\hy$ and $\rare$ forty hidden units performs best with an error around \(1e^{-3}\) and a shrinkage factor of \(0.075\) for $\hy$ and \(0.0125\) for $\rare$. The combination of representational capacity set by the number of hidden units and shrinkage factor has an optimum here.  When decreasing the number of hidden units, the representational capacity of the model also decreases. At the same time the shrinkage factor increases, therefore less information needs to be compressed in one step. The error increases with deceasing the number of hidden units from forty. This can be explained by the lower representational capacity. When increasing the number of hidden units to fifty the error also increases though, the representational capacity grows. Here the decreased shrinkage factor could be responsible for that.\\
 Next the mini-batch size is analysed. Results are displayed in \cref{Tab:Batch Size Hydro} for $\hy$  and in \cref{Tab:Batch Size Rare} for $\rare$. Additionally \cref{Sec:AppendixA} shows the training for both in put data $\hy$ and $\rare$. For both input data experiments are first conducted with mini-batch sizes in the range of : \([2,4,8,16,32]\).\\ The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for $\hy$. Likewise the results of the L2-Error for $\rare$ show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for $\hy$ with mini-batch sizes of: \([10,12,24]\). Two additional experiments for $\rare$ with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for $\hy$ and $\rare$. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+\begin{table}[htp]
+	\centering
+	\caption{Minimum values of training and validation error as well as the \(\L2\) defined in \cref{Ch:ROM}. The minima where reached around the last 50 epochs.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c @{} }
+		\toprule
+		Batch Size & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$}\\ [.5ex]
+		& \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\
 		\hline
-		Batch Size & 2 & 4 & 8 & 10 & 12 & 14 & 16 & 32 \\ [.5ex]
-		\hline
-		Error for \(\Pi_h\) & 0.0011 & 0.0011 & 0.0011 & 0.0029 & 0.0018& 0.0018 & 0.0013 & 0.0030 \\ \hline
-	\end{tabular}
-	\caption{L2-Error for different mini-batch sizes for \(\Pi_h\).}
-	\label{Tab:Batch Size Hydro}
-\end{table}
-\begin{table}[!htbp]\centering
-	\begin{tabular}{ |c|c|c|c|c|c|c|c| }
-		\hline
-		Batch Size & 2 & 4 & 6 & 8 & 10 & 16 & 32 \\ [.5ex]
-		\hline
-		Error for \(\Pi_r\)& 0.0014 & 0.0010 & 0.0012 & 0.0012 & 0.0014 & 0.0017 & 0.0017\\ \hline
-	\end{tabular}
-	\caption{L2-Error for different mini-batch sizes for \(\Pi_r\).}
-	\label{Tab:Batch Size Rare}
+		32 & \num{3.93e-8} & \num{5.05e-8} & \num{0.0030}  & \num{0.0017}\\ \hline
+		16 & \num{2.25e-8} & \num{1.65e-8} & \num{0.0013} & \num{0.0017}\\ \hline
+		14 & \num{1.06e-7} & \num{3.40e-8} & \num{0.0018}  & -\\ \hline
+		12 & \num{5.23e-8} & \num{5.25e-8} & \num{0.0018}  & -\\ \hline
+		10 & \num{3.05e-7} & \num{3.97e-7} & \num{0.0029}  & \num{0.0014}\\ \hline
+		8 & \num{3.05e-7} & \num{3.97e-7} & \num{0.0011}  & \num{0.0012}\\ \hline
+		4 & \num{3.05e-7} & \num{3.97e-7} & \num{0.0011}  & \num{0.0010}\\ \hline
+		2 & \num{3.05e-7} & \num{3.97e-7} & \num{0.0011}  & \num{0.0014}\\ \hline
+	\end{tabular*}\label{Tab:Batch}
 \end{table}
 Together with the mini-batch sizes, activations are examined. Hence experiments with different activation functions are performed with the innitially used mini-batch size of 16. Besides the mini-batch size, epochs are as well taken from the inital selection of hyperparameters as 2000 epochs. Unlike the previous two examinations the selection of activation functions shows early in training if a acceptable level of perfomance can be achieved. This is a personal observation made throughout working on this thesis. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables is activated with a different function than the remaining layers. Results can be observed in \cref{Tab:Activations Hydro} and \cref{Tab:Activations Rare}.
 \begin{table}[!htbp]\centering

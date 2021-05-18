@@ -10,7 +10,8 @@ import torch.tensor as tensor
 from torch.utils.data import DataLoader
 import scipy.io as sio
 import sys
-
+from tqdm import tqdm
+print("urright")
 def progressBar(value, endvalue, bar_length=20):
 
         percent = float(value) / endvalue
@@ -21,21 +22,22 @@ def progressBar(value, endvalue, bar_length=20):
 
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 list_a = []
 list_b = []
-for i in [2,3,4,5,6,7,8,9,10]:
+for i in [50, 40, 30, 20, 10]:
 
     class params():
         N_EPOCHS = 4000
         BATCH_SIZE = 16
         INPUT_DIM = 40
-        H_SIZES = 40
-        LATENT_DIM = i
+        H_SIZES = i
+        LATENT_DIM = 3
         lr = 1e-4
 
     class data():
         #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D.npy')
+        f = np.load('/home/zachi/rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D.npy')
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
@@ -152,7 +154,7 @@ for i in [2,3,4,5,6,7,8,9,10]:
     # test_losses = checkpoint['test_losses']
 
 
-    for epoch in range(params.N_EPOCHS):
+    for epoch in tqdm(range(params.N_EPOCHS)):
         train_loss = train()
         test_loss = test()
 
@@ -170,16 +172,18 @@ for i in [2,3,4,5,6,7,8,9,10]:
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/intrinsic_%s.pt'%i)
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-    f = tensor(f, dtype=torch.float).to(device)
-    rec = model(f)
-    l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-    list_a.append(l2_error.cpu().detach().numpy())
-    list_b.append(params.LATENT_DIM)
-    a = list(zip(list_a,list_b))
+        },'Results/P%s.pt'%i)
 
 
-a = np.array(a)
+   # f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
+   # f = tensor(f, dtype=torch.float).to(device)
+    #rec = model(f)
+    #l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
+    #list_a.append(l2_error.cpu().detach().numpy())
+    #list_b.append(params.LATENT_DIM)
+    #a = list(zip(list_a,list_b))
 
-np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Intrinsic Variables')
+
+#a = np.array(a)
+
+#np.savetxt('Results/README.txt',a,fmt='%1.9f',header='Error  Intrinsic Variables')
