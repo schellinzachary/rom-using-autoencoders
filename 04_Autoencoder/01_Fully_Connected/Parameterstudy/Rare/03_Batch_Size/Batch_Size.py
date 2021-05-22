@@ -2,41 +2,40 @@
 Parameterstudy_01_Layer_Size
 '''
 
-import numpy as np
-import torch
+
 import torch.nn as nn
 from torch.optim import Adam
 import torch.tensor as tensor
 from torch.utils.data import DataLoader
-import scipy.io as sio
-import sys
 
-def progressBar(value, endvalue, bar_length=20):
+import numpy as np
+import torch
 
-        percent = float(value) / endvalue
-        arrow = '-' * int(round(percent * bar_length)-1) + '>'
-        spaces = ' ' * (bar_length - len(arrow))
-        sys.stdout.write("\rPercent: [{0}] {1}%".format(arrow + spaces, int(round(percent * 100))))
-        sys.stdout.flush()
 
+from pathlib import Path
+from os.path import join
+home = str(Path.home())
+
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
+loc_models = "Results"
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = 'cpu'
 
-batch_s = []
-listing = []
-for i in [6,10]:
+batch_s = [2,4,8,16,32]
+
+for idx, batch in enumerate(batch_s):
 
     class params():
         N_EPOCHS = 5000
-        BATCH_SIZE = i
+        BATCH_SIZE = batch
         INPUT_DIM = 40
         H_SIZES = 40
         LATENT_DIM = 5
         lr = 1e-4
     class data():
         #load data
-        f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p01_2D.npy')
+        f = np.load(join(home,loc_data))
         f = tensor(f, dtype=torch.float).to(device)
 
         train_in = f[0:3999]
