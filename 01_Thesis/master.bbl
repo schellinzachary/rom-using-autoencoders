@@ -4,6 +4,15 @@
 \bibitem{BGK}
 Bhatnagar, Gross and Krook, \emph{A model for collision processes in gases}, .
 
+\bibitem{Carlberg}
+K.~Lee and K.~T. Carlberg, \emph{Model reduction of dynamical systems on
+  nonlinear manifolds using deep convolutional autoencoders}, .
+
+\bibitem{bukka2020assessment}
+S.~R. Bukka, R.~Gupta, A.~R. Magee and R.~K. Jaiman, \emph{Assessment of
+  unsteady flow predictions using hybrid deep learning based reduced order
+  models},  2020.
+
 \bibitem{Franz}
 T.~Franz, \emph{Reduced-order modeling of steady transonic flows via manifold
   learning}.
@@ -16,10 +25,6 @@ S.~L. Brunton and J.~N. Kutz, \emph{Data driven science and engineering}.
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
   equation based on pod and optimal transport}, .
-
-\bibitem{Carlberg}
-K.~Lee and K.~T. Carlberg, \emph{Model reduction of dynamical systems on
-  nonlinear manifolds using deep convolutional autoencoders}, .
 
 \bibitem{Goodfellow}
 I.~J. Goodfellow, Y.~Bengio and A.~Courville, \emph{Deep Learning}.

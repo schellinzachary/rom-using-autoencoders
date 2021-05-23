@@ -33,7 +33,7 @@ Five designs for finding an optimal number of layers i.e. depth are run. The hid
 The model's depth is determined in a primary step, as it sets a consequential part of the model's representational capacity and therefore can initiate over- and underfitting at an early stage in the hyperparameter search. The results of the experimentation are shown in \cref{Fig:Depth} and \cref{Tab:Depth} for both rarefaction levels.\\
 \begin{table}[htp]
 	\centering
-	\caption{Results for the variation of depth. Given are minimum values of training and validation error as well as the \(\L2\). The minima where reached around the last 50 epochs of the training.}
+	\caption{Results for the variation of depth. Given are minimum values of training and validation error as well as the \(\L2\). The minima where reached around the last 50 epochs of the training. The \(\L2\) is evaluated with the model at the last epoch.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
 		Depth & \multicolumn{2}{c}{Minimum training error} & \multicolumn{2}{c}{Minimum validation error} & \multicolumn{2}{c}{\(\L2\) }\\ [.5ex]
@@ -78,14 +78,14 @@ The width of the two remaining hidden layers is examined in the following. For b
 	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex}
 		\input{Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex}
-		\label{Fig:Width}
 		\caption{Five experiments over different width with $\hy$ left and $\rare$ right. The number of nodes used for every experiment are given. Training and validation loss are shown over 4000 epochs.}
+		\label{Fig:Width}
 	\end{figure}
 \end{center}
-Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as training- nd validation error did not fully converge for \(\rare\) as seen in \cref{Fig:Width}. Results are displayed in \cref{Tab:Batch} for $\hy$  and  $\rare$. For both input data experiments are conducted with mini-batch sizes of 2,4,8,16,32.
+Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as training- and validation error show potential to decrease further as seen in \cref{Fig:Width} for \(\rare\) with 40 hidden nodes. Results for $\hy$  and  $\rare$ are displayed in \cref{Tab:Batch}. Experiments are conducted with mini-batch sizes of 2, 4, 8, 16, 32. Batch sizes to the power of 2 are typically chosen as to fully exploit computational capabilities of a GPU i.e. aligning the batch size with the way memory is structured within a GPU. The smallest batch size of 2 yields the lowest validation error of \(\num{1.15e-8}\) with corresponding \(\L2 = 0.0012\) at epoch 4956. The lowest validation error with \(\num{6.30e-9}\) is achieved for \(\rare\) at epoch 4534 with a batch size of 4. The corresponding \(\L2 = 0.001\). Small batch sizes have a regularizing effect on training as described in \cref{Ch:DimRedAl} and therefore are beneficial to generalization. At the same time, the lower the batch sizes are, the more unstable is the training as observed in \cref{Fig:Batch}. The oscillations which begin with batch sizes of 8 and lower, which make the training unstable, can be battled with a lower learning rate as soon as training starts to tremble. Additionally small batch sizes drastically increase training time. In conclusion a batch size of 2 is omitted and for both input data a batch size of 4 is chosen. Furthermore a reduction of the learning rate from \(\num{1e-4}\) to \(\num{1e-5}\) is applied after the 3000th epoch.\\
 \begin{table}[htp]
 	\centering
-	\caption{Results for the variation of batch sizes. Given is the minimum value of validation error as well as the the corresponding epoch. The \(\L2\) is also given but evaluated with the model at the last epoch. }
+	\caption{Results for the variation of batch sizes. Given is the minimum value of validation error as well as the the corresponding epoch. The \(\L2\) is also given but evaluated with the model at the last epoch.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
 		Batch Size & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} &\multicolumn{2}{c}{Epoch}\\ [.5ex]
@@ -98,15 +98,12 @@ Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as tr
 		2 & \num{1.15e-8} & \num{9.18e-9} & \num{0.0012}  & \num{0.0013}&4956&4872\\ \hline
 	\end{tabular*}\label{Tab:Batch}
 \end{table}
- 
-%The results of the L2-Error show best performance between a mini-batch size of 8 and 16 for $\hy$. Likewise the results of the L2-Error for $\rare$ show best perfomance between mini-batch sizes of 4 and 16. Therefore additional experiments are conducted. Three additional experiments for $\hy$ with mini-batch sizes of: \([10,12,24]\). Two additional experiments for $\rare$ with mini-batch sizes of: \([6,10]\). The training reveals that smaller batch sizes lead to oscillating traing and test errors. This can be overcome by a smaller learning rate, but also leads to increased computational time as more epochs are needed to achieve a comparable training and test loss at the last epoch. A mini-batch size of 8 is bordering the zone where the oscillations of training and test loss subside. At the same time a mini-batch size of 8 to 10 indicate also a growth of the L2-Error. In conclusion a mini-batch size of 8 is chosen to continue to working with for $\hy$ and $\rare$. The osccilations which make the training instable can be battled with a lower learning rate as soon as training starts to tremble.\\
-
 \begin{center}
 	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex}
 		\input{Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex}
-		\label{key}
 		\caption{Five experiments over different batch sizes with $\hy$ left and $\rare$ right. The batch size used for every experiment is given. Training and validation loss are shown over 5000 epochs.}
+		\label{Fig:batch}
 	\end{figure}
 \end{center}
 Together with the mini-batch sizes, activations are examined. Hence experiments with different activation functions are performed with the innitially used mini-batch size of 16. Besides the mini-batch size, epochs are as well taken from the inital selection of hyperparameters as 2000 epochs. Unlike the previous two examinations the selection of activation functions shows early in training if a acceptable level of perfomance can be achieved. This is a personal observation made throughout working on this thesis. First five activations are applied to all the four layers. Second a combination of activation functions is studied, where the intrinsic variables is activated with a different function than the remaining layers. Results can be observed in \cref{Tab:Activations Hydro} and \cref{Tab:Activations Rare}.

@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  22 MAY 2021 23:15
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  23 MAY 2021 21:41
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1385,14 +1385,7 @@ LaTeX Warning: Unused global option(s):
 
 (./master.aux (./front/title.aux) (./chapters/introduction.aux)
 (./chapters/BGK_model.aux) (./chapters/Deep_Learning.aux)
-(./chapters/Reduced_order_Modeling.aux) (./chapters/Results.aux)
-
-LaTeX Warning: Label `' multiply defined.
-
-
-LaTeX Warning: Label `@cref' multiply defined.
-
-)
+(./chapters/Reduced_order_Modeling.aux) (./chapters/Results.aux))
 \openout1 = master.aux
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -1406,7 +1399,8 @@ LaTeX Font Info:    ... okay on input line 6.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 6.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 6.
 
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 6.
@@ -1584,22 +1578,26 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 \openout2 = chapters/introduction.aux
  (./chapters/introduction.tex
 Chapter 1.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 11
+.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
+
+)
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 [1
 
 
-]
-
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
-
-
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
-
-
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
-
-) [2]
+] [2]
 \openout2 = chapters/BGK_model.aux
  (./chapters/BGK_model.tex
 Chapter 2.
@@ -1735,12 +1733,7 @@ Overfull \hbox (17.0pt too wide) detected at line 127
 [][] 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12
-9.
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [12] [13]
-(./Figures/Reduced_Order_Algorithms/Training.tex
+[12] [13] (./Figures/Reduced_Order_Algorithms/Training.tex
 ===== Image 'Figures/master-figure9' is up-to-date. ======
 )
 Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--149
@@ -1952,245 +1945,97 @@ Appendix A.
 ===== Image 'Figures/master-figure38' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex
 ===== Image 'Figures/master-figure39' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
+)
+
+LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 85.
+
+(./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
 ===== Image 'Figures/master-figure40' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex
 ===== Image 'Figures/master-figure41' is up-to-date. ======
 )
 
 LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
-ne 112.
+ne 109.
 
 
 LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 112.
+e 109.
 
 
 LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 133.
+e 130.
 
 [41] [42<./Figures/master-figure38.pdf><./Figures/master-figure39.pdf>]
 [43<./Figures/master-figure40.pdf><./Figures/master-figure41.pdf>] [44]
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
-\openout3 = Figures/master-figure42.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure42" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure42' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
-\openout3 = Figures/master-figure43.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure43" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure43' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
-\openout3 = Figures/master-figure44.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure44" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure44' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
-\openout3 = Figures/master-figure45.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure45" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure45' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
-\openout3 = Figures/master-figure46.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure46" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure46' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
-\openout3 = Figures/master-figure47.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure47" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure47' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 147--153
+Underfull \hbox (badness 5403) in paragraph at lines 144--150
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 147--153
+Underfull \hbox (badness 5403) in paragraph at lines 144--150
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26204pt on input line 155.
+LaTeX Warning: Float too large for page by 1.26204pt on input line 152.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-\openout3 = Figures/master-figure48.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure48" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure48' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-\openout3 = Figures/master-figure49.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure49" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure49' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
-\openout3 = Figures/master-figure50.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure50" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure50' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
-\openout3 = Figures/master-figure51.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure51" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure51' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
-\openout3 = Figures/master-figure52.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure52" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure52' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
-\openout3 = Figures/master-figure53.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure53" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure53' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
-\openout3 = Figures/master-figure54.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure54" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure54' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
-\openout3 = Figures/master-figure55.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure55" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure55' is up-to-date. ======
 )
-Underfull \hbox (badness 5403) in paragraph at lines 166--172
+Underfull \hbox (badness 5403) in paragraph at lines 163--169
 [][] []
  []
 
 
-Underfull \hbox (badness 5403) in paragraph at lines 166--172
+Underfull \hbox (badness 5403) in paragraph at lines 163--169
 [] []
  []
 
 
-LaTeX Warning: Float too large for page by 1.26112pt on input line 174.
+LaTeX Warning: Float too large for page by 1.26112pt on input line 171.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-\openout3 = Figures/master-figure56.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure56" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure56' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
-\openout3 = Figures/master-figure57.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure57" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure57' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
-\openout3 = Figures/master-figure58.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure58" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure58' is up-to-date. ======
 )
 (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
 tex
-\openout3 = Figures/master-figure59.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure59" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure59' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
-\openout3 = Figures/master-figure60.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure60" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure60' is up-to-date. ======
 )
-Underfull \hbox (badness 5490) in paragraph at lines 186--189
+Underfull \hbox (badness 5490) in paragraph at lines 183--186
 [][] []
  []
 
@@ -2204,87 +2049,31 @@ e56.pdf><./Figures/master-figure57.pdf>] [50<./Figures/master-figure58.pdf><./Fi
 gures/master-figure59.pdf><./Figures/master-figure60.pdf>]
 Appendix B.
 (./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-\openout3 = Figures/master-figure61.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure61" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure61' is up-to-date. ======
 ) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
-\openout3 = Figures/master-figure62.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure62" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure62' is up-to-date. ======
 ) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
-\openout3 = Figures/master-figure63.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure63" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure63' is up-to-date. ======
 ) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
-\openout3 = Figures/master-figure64.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure64" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure64' is up-to-date. ======
 )
-Underfull \hbox (badness 5652) in paragraph at lines 201--204
+Underfull \hbox (badness 5652) in paragraph at lines 198--201
 [][] []
  []
 
 (./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-\openout3 = Figures/master-figure65.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure65" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure65' is up-to-date. ======
 ) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
-\openout3 = Figures/master-figure66.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure66" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure66' is up-to-date. ======
 ) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
-\openout3 = Figures/master-figure67.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure67" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+===== Image 'Figures/master-figure67' is up-to-date. ======
 )
 
-LaTeX Warning: Float too large for page by 72.03581pt on input line 211.
+LaTeX Warning: Float too large for page by 72.03581pt on input line 208.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 212.
+(hyperref)                than one, level fixed on input line 209.
 
 ) [51
 
@@ -2311,40 +2100,28 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 (./chapters/Reduced_order_Modeling.aux) (./chapters/Results.aux))
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
+Package rerunfilecheck Info: File `master.out' has not changed.
+(rerunfilecheck)             Checksum: 95612BB0CD0FCBE82C1A6D4448F2F66E;3993.
 
-
-Package rerunfilecheck Warning: File `master.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `master.out':
-(rerunfilecheck)             Before: 5DA18F97FA041B86AE95FBC400ABE1D4;3993
-(rerunfilecheck)             After:  C5F573677DD72B56B8B6572E421C59BE;3993.
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
 
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46864 strings out of 481365
+ 46670 strings out of 481365
  156269,12246980 words of node,token memory allocated
- 1052 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 137 attribute, 84 glue_spe
-c, 70 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:2,2:3476,3:256,4:138,5:864,6:47,7:16100,8:91,9:854,10:45,11:10
-54
- 60211 multiletter control sequences out of 65536+600000
+ 1040 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 84 glue_spe
+c, 68 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 2:3668,3:258,4:140,5:864,6:47,7:16100,8:92,9:906,10:45,11:1054
+ 60213 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
- 81i,19n,138p,2767b,908s stack positions out of 5000i,500n,10000p,200000b,100000s
-
-warning  (pdf backend): unreferenced destination with name 'appendix*.48'
+ 81i,19n,138p,2767b,910s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
+/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
+/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 ex.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/font
 s/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmbx9.pfb></usr/share/texmf/fonts/type1/p
@@ -2363,10 +2140,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (60 pages, 7782410 bytes).
+Output written on master.pdf (60 pages, 7784799 bytes).
 
-PDF statistics: 2617 PDF objects out of 2984 (max. 8388607)
- 2117 compressed objects within 22 object streams
- 215 named destinations out of 1000 (max. 131072)
+PDF statistics: 2613 PDF objects out of 2984 (max. 8388607)
+ 2113 compressed objects within 22 object streams
+ 201 named destinations out of 1000 (max. 131072)
  200 words of extra memory for PDF output out of 10000 (max. 100000000)
 
