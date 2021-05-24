@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 20:52
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 22:55
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1975,9 +1975,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--91
 LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 92.
 
 
-Overfull \hbox (12.01216pt too wide) in paragraph at lines 92--111
+Overfull \hbox (12.01216pt too wide) in paragraph at lines 92--112
 \T1/lmr/m/n/10.95 Eight ex-per-i-ments with dif-fer-ent ac-ti-va-tion func-tion
 s namely ReLU, ELU, Tanh, SiLU and LeakyReLU
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--112
+
  []
 
 [41] (./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
@@ -2029,7 +2034,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 2997FF931855C7954D93C36B3182E4E2;3879.
+(rerunfilecheck)             Checksum: 7A70D6BC283D63DE12A7AD9ACDC003A8;3879.
 
 
 LaTeX Warning: There were undefined references.
@@ -2038,14 +2043,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46306 strings out of 481365
+ 46311 strings out of 481365
  156265,14696376 words of node,token memory allocated
  1060 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 88 glue_spe
 c, 68 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:3085,3:264,4:148,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
+   avail lists: 1:3,2:3085,3:270,4:150,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
 53
- 60288 multiletter control sequences out of 65536+600000
+ 60292 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
  81i,19n,138p,2767b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
@@ -2069,10 +2074,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (55 pages, 6257882 bytes).
+Output written on master.pdf (55 pages, 6260278 bytes).
 
-PDF statistics: 2042 PDF objects out of 2073 (max. 8388607)
- 1653 compressed objects within 17 object streams
- 189 named destinations out of 1000 (max. 131072)
+PDF statistics: 2046 PDF objects out of 2073 (max. 8388607)
+ 1657 compressed objects within 17 object streams
+ 190 named destinations out of 1000 (max. 131072)
  192 words of extra memory for PDF output out of 10000 (max. 100000000)
 

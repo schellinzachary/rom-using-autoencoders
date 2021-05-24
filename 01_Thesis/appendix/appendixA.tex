@@ -90,7 +90,8 @@ The width of the two remaining hidden layers is examined in the following. For b
 	\end{tabular*}\label{Tab:Batch}
 \end{table}
 Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as training- and validation error show potential to decrease further as seen in \cref{Fig:Width} for \(\rare\) with 40 hidden nodes. Results for $\hy$  and  $\rare$ are displayed in \cref{Tab:Batch}. Experiments are conducted with mini-batch sizes of 2, 4, 8, 16, 32. Batch sizes to the power of 2 are typically chosen as to fully exploit computational capabilities of a GPU i.e. aligning the batch size with the way memory is structured within a GPU. The smallest batch size of 2 yields the lowest validation error of \(\num{1.15e-8}\) with corresponding \(\L2 = 0.0012\) at epoch 4956 for \(\hy\). The lowest validation error with \(\num{6.30e-9}\) is achieved for \(\rare\) at epoch 4534 with a batch size of 4. The corresponding \(\L2 = 0.001\). Compared to a batch size of 16 in the previous experiments we can observe that small batch sizes have a regularizing effect on training as described in \cref{Ch:DimRedAl} and therefore are beneficial to generalization. At the same time, the lower the batch sizes are, the more unstable is the training as seen in \cref{Fig:Batch}. The oscillations which begin with batch sizes of 8 and lower, which make the training unstable, can be battled with a lower learning rate as soon as training starts to tremble. Additionally small batch sizes drastically increase training time which is why a batch size as low as 2 will not be used for the next experiments. In conclusion a batch size of 2 is omitted and for both input data a batch size of 4 is chosen. Furthermore a reduction of the learning rate from \(\num{1e-4}\) to \(\num{1e-5}\) is applied after the 3000th epoch.\\
-Eight experiments with different activation functions namely ReLU, ELU, Tanh, SiLU and LeakyReLU are performed. The experiment designs and results are given in \cref{Tab:activations} for hidden and code layer. For 
+Eight experiments with different activation functions namely ReLU, ELU, Tanh, SiLU and LeakyReLU are performed. The experiment designs and results are given in \cref{Tab:activations} for hidden and code activations. With \(\hy\) a combination of ELU and ELU for hidden and code activation yields the best results in validation error with \num{44.e-9} and a corresponding \(\L2 = 0.0008\). These values are achieved at the last epoch. For \(\rare\) a combination of ReLU and ReLU for hidden and code activation produces a validation error of \num{7.18e-9} and a corresponding \(\L2 = 0.0009\). Both values are also reached close to the last epoch. Note that all models reach their lowest loss at or very close to the last epoch. The reason is the stable training after the 3000th epoch, where the learning rate is lowered to \num{1e-5} as seen in \cref{Fig:Activations}. This measure shows in all experiments an immediate success for learning. Both validation and training error fall at the 3001st epoch and only decrease slightly thereafter. This behavior clearly shows that the updates to the free parameters \(\frepar\) were too big which prohibitively slowed down or even prevented the learning process. Small updates to \(\frepar\) made all models quickly reach a minimum. Therefore 3000 epochs or even less could have been enough to reach similar results with a lower learning rate.\\
+If the learning rate could have been reduced whilst producing similar results remains unanswered here as the results are satisfactory. Note that for \(\rare\) in the previous experiment a validation error of \num{6.30e-9} was achieved which is slightly lower than the current result. Nonetheless it is decided to take the current model as the final result.\\
 \begin{table}[H]
 	\centering
 	\caption{Results for the variation of activations for hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\) all evaluated with the best performing model.}
@@ -108,7 +109,19 @@ Eight experiments with different activation functions namely ReLU, ELU, Tanh, Si
 		LeakyReLU/Tanh     & \num{1.00e-8} & \num{1.42e-8} & \num{0.0010}  & \num{0.0012}&4997 &4992\\ \hline
 		ELU/SiLU           & \num{8.11e-9} & \num{1.93e-8} & \num{0.0011}  & \num{0.0015}&5000 &5000\\ \hline
 	\end{tabular*}\label{Tab:activations}
-\end{table}   
+\end{table} 
+The final hyperparameters for both input data are summarized below in \cref{Tab:Final}.
+\begin{table}[H]
+	\centering
+	\caption{Summary of the final hyperparameters for both input data.}
+	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
+		\toprule
+		Input data & Act. hidden/code & Batch size & Width & Depth & Learning rate & Epochs\\ [.5ex]
+		\hline
+		$\hy$ &  ELU/ELU & 4 & 30 & 4 & \num{1e-4}/\num{1e-5} & $\approx 3000$\\ \hline
+		$\rare$ & ReLU/ReLU & 4 & 40 & 4 & \num{1e-4}/\num{1e-5} & $\approx 3000$\\ \hline
+	\end{tabular*}\label{Tab:Final}
+\end{table}
 \begin{center}
 	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex}
@@ -143,7 +156,7 @@ Eight experiments with different activation functions namely ReLU, ELU, Tanh, Si
 	\input{Figures/Parameterstudy/Fully_Connected/Activations/hydro_act2.tex}
 	\input{Figures/Parameterstudy/Fully_Connected/Activations/rare_act2.tex}
 		\caption{Five experiments over different batch sizes with $\hy$ left and $\rare$ right. The batch size used for every experiment is given. Training and validation loss are shown over 5000 epochs.}
-\end{figure}
+\end{figure}\label{Fig:Activations}
 %\newpage
 \chapter{Hyperparameters for the Convolutional Autoencoder}
 \label{Ch:ApB}
