@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  18 MAY 2021 20:57
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 19:47
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -1051,7 +1051,24 @@ Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
 \l__siunitx_table_text_align_skip=\skip82
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
-))
+)) (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip83
+\LTright=\skip84
+\LTpre=\skip85
+\LTpost=\skip86
+\LTchunksize=\count336
+\LTcapwidth=\dimen311
+\LT@head=\box127
+\LT@firsthead=\box128
+\LT@foot=\box129
+\LT@lastfoot=\box130
+\LT@cols=\count337
+\LT@rows=\count338
+\c@LT@tables=\count339
+\c@LT@chunks=\count340
+\LT@p@ftn=\toks43
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -1063,8 +1080,8 @@ File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box127
-\pgf@layerboxsaved@background=\box128
+\pgf@layerbox@background=\box131
+\pgf@layerboxsaved@background=\box132
 )
 No auxiliary output files.
 
@@ -1117,26 +1134,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box129
-\pgfnodeparttwobox=\box130
-\pgfnodepartthreebox=\box131
-\pgfnodepartfourbox=\box132
-\pgfnodeparttwentybox=\box133
-\pgfnodepartnineteenbox=\box134
-\pgfnodeparteighteenbox=\box135
-\pgfnodepartseventeenbox=\box136
-\pgfnodepartsixteenbox=\box137
-\pgfnodepartfifteenbox=\box138
-\pgfnodepartfourteenbox=\box139
-\pgfnodepartthirteenbox=\box140
-\pgfnodeparttwelvebox=\box141
-\pgfnodepartelevenbox=\box142
-\pgfnodeparttenbox=\box143
-\pgfnodepartninebox=\box144
-\pgfnodeparteightbox=\box145
-\pgfnodepartsevenbox=\box146
-\pgfnodepartsixbox=\box147
-\pgfnodepartfivebox=\box148
+\pgfnodepartlowerbox=\box133
+\pgfnodeparttwobox=\box134
+\pgfnodepartthreebox=\box135
+\pgfnodepartfourbox=\box136
+\pgfnodeparttwentybox=\box137
+\pgfnodepartnineteenbox=\box138
+\pgfnodeparteighteenbox=\box139
+\pgfnodepartseventeenbox=\box140
+\pgfnodepartsixteenbox=\box141
+\pgfnodepartfifteenbox=\box142
+\pgfnodepartfourteenbox=\box143
+\pgfnodepartthirteenbox=\box144
+\pgfnodeparttwelvebox=\box145
+\pgfnodepartelevenbox=\box146
+\pgfnodeparttenbox=\box147
+\pgfnodepartninebox=\box148
+\pgfnodeparteightbox=\box149
+\pgfnodepartsevenbox=\box150
+\pgfnodepartsixbox=\box151
+\pgfnodepartfivebox=\box152
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1145,7 +1162,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen311
+\arrowsize=\dimen312
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarysnakes.code.tex
@@ -1169,9 +1186,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count336
-\pgfplots@group@current@row=\count337
-\pgfplots@group@current@column=\count338
+\pgfplots@group@current@plot=\count341
+\pgfplots@group@current@row=\count342
+\pgfplots@group@current@column=\count343
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1180,15 +1197,15 @@ File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count339
+\etb@tempcnta=\count344
 ) (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty (/usr/share/te
 xlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count340
-\decimalpart=\count341
+\integerpart=\count345
+\decimalpart=\count346
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box149
+\tikzscale@measuredSize=\box153
 ) (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
 Package cleveref Info: `hyperref' support loaded on input line 2370.
@@ -1205,23 +1222,23 @@ LaTeX Info: Redefining \labelcpageref on input line 2370.
 Package cleveref Info: `algorithm2e' support loaded on input line 3147.
 ) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen312
-\lightrulewidth=\dimen313
-\cmidrulewidth=\dimen314
-\belowrulesep=\dimen315
-\belowbottomsep=\dimen316
-\aboverulesep=\dimen317
-\abovetopsep=\dimen318
-\cmidrulesep=\dimen319
-\cmidrulekern=\dimen320
-\defaultaddspace=\dimen321
-\@cmidla=\count342
-\@cmidlb=\count343
-\@aboverulesep=\dimen322
-\@belowrulesep=\dimen323
-\@thisruleclass=\count344
-\@lastruleclass=\count345
-\@thisrulewidth=\dimen324
+\heavyrulewidth=\dimen313
+\lightrulewidth=\dimen314
+\cmidrulewidth=\dimen315
+\belowrulesep=\dimen316
+\belowbottomsep=\dimen317
+\aboverulesep=\dimen318
+\abovetopsep=\dimen319
+\cmidrulesep=\dimen320
+\cmidrulekern=\dimen321
+\defaultaddspace=\dimen322
+\@cmidla=\count347
+\@cmidlb=\count348
+\@aboverulesep=\dimen323
+\@belowrulesep=\dimen324
+\@thisruleclass=\count349
+\@lastruleclass=\count350
+\@thisrulewidth=\dimen325
 ) (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
@@ -1236,31 +1253,31 @@ LaTeX Info: Redefining \a3 on input line 65.
 (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip83
-\f@nch@O@elh=\skip84
-\f@nch@O@erh=\skip85
-\f@nch@O@olh=\skip86
-\f@nch@O@orh=\skip87
-\f@nch@O@elf=\skip88
-\f@nch@O@erf=\skip89
-\f@nch@O@olf=\skip90
-\f@nch@O@orf=\skip91
+\f@nch@headwidth=\skip87
+\f@nch@O@elh=\skip88
+\f@nch@O@erh=\skip89
+\f@nch@O@olh=\skip90
+\f@nch@O@orh=\skip91
+\f@nch@O@elf=\skip92
+\f@nch@O@erf=\skip93
+\f@nch@O@olf=\skip94
+\f@nch@O@orf=\skip95
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box150
-\beforetitleunit=\skip92
-\aftertitleunit=\skip93
-\ttl@plus=\dimen325
-\ttl@minus=\dimen326
-\ttl@toksa=\toks43
-\titlewidth=\dimen327
-\titlewidthlast=\dimen328
-\titlewidthfirst=\dimen329
+\ttl@box=\box154
+\beforetitleunit=\skip96
+\aftertitleunit=\skip97
+\ttl@plus=\dimen326
+\ttl@minus=\dimen327
+\ttl@toksa=\toks44
+\titlewidth=\dimen328
+\titlewidthlast=\dimen329
+\titlewidthfirst=\dimen330
 ) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen330
+\ttl@leftsep=\dimen331
 )) (./other/metadata.tex)
-\tikzscale@accuracy=\skip94
+\tikzscale@accuracy=\skip98
 
 LaTeX Warning: Unused global option(s):
     [pagesize].
@@ -1293,17 +1310,17 @@ LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen331
-\scratchbox=\box151
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen332
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count351
+\scratchdimen=\dimen332
+\scratchbox=\box155
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen333
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -1312,7 +1329,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box152
+\AtBeginShipoutBox=\box156
 Package hyperref Info: Link coloring OFF on input line 6.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1321,12 +1338,16 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count352
+\c@section@level=\count357
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
 LaTeX Info: Redefining \nameref on input line 6.
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: longtable package is loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document has
@@ -1402,47 +1423,74 @@ Chapter 1.
 LaTeX Warning: Citation `BGK' on page 1 undefined on input line 8.
 
 
-LaTeX Warning: Citation `Franz' on page 2 undefined on input line 28.
+LaTeX Warning: Citation `Carlberg' on page 1 undefined on input line 8.
 
 
-LaTeX Warning: Citation `Kutz' on page 2 undefined on input line 28.
+LaTeX Warning: Citation `bukka2020assessment' on page 1 undefined on input line 
+8.
 
 
-LaTeX Warning: Citation `Bernard' on page 2 undefined on input line 32.
+LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `Carlberg' on page 2 undefined on input line 32.
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 2 undefined on input line 32.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `Rumelhart' on page 2 undefined on input line 32.
+LaTeX Warning: Reference `Ch:Results' on page 1 undefined on input line 11.
 
 
-LaTeX Warning: Citation `Ballard' on page 2 undefined on input line 32.
+LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 11.
+
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 11
+.
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Warning: Citation `Franz' on page 1 undefined on input line 15.
 
 
-LaTeX Warning: Citation `Rifai2011' on page 2 undefined on input line 32.
+LaTeX Warning: Citation `Kutz' on page 1 undefined on input line 15.
 
 
-LaTeX Warning: Citation `Rifai2011' on page 2 undefined on input line 32.
+LaTeX Warning: Citation `Bernard' on page 1 undefined on input line 16.
 
 
-LaTeX Warning: Citation `Rifai_2011a' on page 2 undefined on input line 32.
+LaTeX Warning: Citation `Carlberg' on page 1 undefined on input line 16.
 
 
-LaTeX Warning: Citation `rifai2012generative' on page 2 undefined on input line 
-32.
+LaTeX Warning: Citation `Goodfellow' on page 1 undefined on input line 16.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
+LaTeX Warning: Citation `Rumelhart' on page 1 undefined on input line 16.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
+LaTeX Warning: Citation `Ballard' on page 1 undefined on input line 16.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 33.
+LaTeX Warning: Citation `Rifai2011' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Citation `Rifai2011' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Citation `Rifai_2011a' on page 1 undefined on input line 16.
+
+
+LaTeX Warning: Citation `rifai2012generative' on page 1 undefined on input line 
+16.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 17.
 
 ) (./chapters/BGK_model.tex
 Chapter 2.
@@ -1745,11 +1793,6 @@ LaTeX Warning: Citation `Goodfellow' on page 11 undefined on input line 129.
 
 LaTeX Warning: Citation `LeCun98' on page 11 undefined on input line 129.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12
-9.
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 
 LaTeX Warning: Citation `he2015' on page 11 undefined on input line 129.
 
@@ -2289,313 +2332,93 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 12.
 LaTeX Warning: Reference `Tab:First Guess' on page 1 undefined on input line 13.
 
 
-
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Reference `Tab:Depth' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 49.
-
-
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 50.
-
-(./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
+(./Figures/Parameterstudy/Fully_Connected/Activations/act_scheme.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Depth/rare_depth.tex
+)
+
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `Tab:Depth' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 52.
+
+
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 53.
+
+
+LaTeX Warning: Reference `Tab:Width' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 71.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--86
+
+ []
+
+
+LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Tab:Batch' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 87.
+
+(./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
 \openout4 = Figures/master-figure37.dpth
 
 Package pgfplots info on input line 27: Using 'lua backend=false' for axis: ymod
 e=log unsupported (yet).
-Package pgfplots info on input line 4040: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 4041: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
-Package pgfplots info on input line 8053: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 8054: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
-Package pgfplots info on input line 12066: Using 'lua backend=false' for axis: y
+Package pgfplots info on input line 12067: Using 'lua backend=false' for axis: y
 mode=log unsupported (yet).
-Package pgfplots info on input line 16079: Using 'lua backend=false' for axis: y
+Package pgfplots info on input line 16080: Using 'lua backend=false' for axis: y
 mode=log unsupported (yet).
-[32
+[34
 
 \providecommand \oddpage@label [2]{}
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-
-LaTeX Warning: Reference `Tab:Width' on page 1 undefined on input line 61.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 64.
-
-
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 64.
-
-(./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
+/Fully_Connected/Depth/rare_depth.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-LaTeX Warning: Reference `Tab:Batch Size Hydro' on page 1 undefined on input lin
-e 86.
-
-
-LaTeX Warning: Reference `Tab:Batch Size Rare' on page 1 undefined on input line
- 86.
-
-
-LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 86.
-
-
-LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
-ne 107.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 107.
-
-
-LaTeX Warning: Citation `BGK' on page 33 undefined on input line 135.
-
-
-LaTeX Warning: Reference `Fig:Activations Hydro 1' on page 1 undefined on input 
-line 135.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 136.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare' on page 1 undefined on input lin
-e 136.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 136.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare 2nd' on page 1 undefined on input
- line 136.
-
-
-LaTeX Warning: Reference `Fig:Activations Rare 2nd3rd' on page 1 undefined on in
-put line 136.
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/2.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/4.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/8.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/10.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/12.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act2.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/14.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/16.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Hydro/32.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/2.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/4.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/6.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/8.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/10.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/16.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/Rare/32.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act2.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 191--193
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
-[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 198--204
-[]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 210--212
-[][]
- []
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
-tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 218--221
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 218--221
-[]
- []
-
 Appendix B.
-(./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
-[]
- []
-
-(./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 244.
-
 )
 No file Figures/master-figure37.bbl.
 (./back/acknowledgement.tex) (./back/declaration.tex
@@ -2615,25 +2438,25 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46053 strings out of 481365
- 381518,4921788 words of node,token memory allocated
- 1040 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 135 attribute, 84 glue_spe
-c, 69 attribute_list, 2 write nodes
-   avail lists: 1:3,2:68904,3:21445,4:117,5:954,6:28,7:16019,8:71,9:897,10:47,11
+ 45795 strings out of 481365
+ 381518,7087374 words of node,token memory allocated
+ 1048 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 88 glue_spe
+c, 67 attribute_list, 2 write nodes
+   avail lists: 1:4,2:69396,3:21496,4:149,5:954,6:27,7:16019,8:71,9:939,10:47,11
 :1038
- 60652 multiletter control sequences out of 65536+600000
+ 60686 multiletter control sequences out of 65536+600000
  137 fonts using 11541947 bytes
- 83i,21n,140p,2788b,2664s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,21n,140p,2788b,2661s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure37.pdf (1 page, 237527 bytes).
+Output written on Figures/master-figure37.pdf (1 page, 235965 bytes).
 
-PDF statistics: 42 PDF objects out of 1000 (max. 8388607)
+PDF statistics: 44 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)

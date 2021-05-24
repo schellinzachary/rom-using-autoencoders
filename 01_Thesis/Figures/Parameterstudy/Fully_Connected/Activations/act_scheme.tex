@@ -1,0 +1,12 @@
+\begin{tikzpicture}[align=center,node distance=4.5cm]
+	\node [circ,minimum size=.9cm] (input) {\footnotesize in};
+	%\node [circ,right of = input] (act1) {act. a};
+	\node [circ,minimum size=.9cm,right of = input] (hid1) {\footnotesize h 1};
+	%\node [circ,right of = hid1] (act2) {act. b};
+	\node [circ,minimum size=.9cm,right of = hid1] (hid2) {\footnotesize h 2};
+	%\node [circ,right of = hid2] (act3) {act. a};
+	\node [circ,minimum size=.9cm,right of = hid2] (output) {\footnotesize out};
+	\draw [arrow,thick] (input)--(hid1) node [midway,yshift=1ex] {act. a};
+	\draw [arrow,thick] (hid1)--(hid2) node [midway,yshift=1ex] {act. b};
+	\draw [arrow,thick] (hid2)--(output) node [midway,yshift=1ex] {act. a};
+\end{tikzpicture}

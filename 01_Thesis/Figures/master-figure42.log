@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 14:42
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 19:48
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -2332,17 +2332,44 @@ LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 12.
 LaTeX Warning: Reference `Tab:First Guess' on page 1 undefined on input line 13.
 
 
+(./Figures/Parameterstudy/Fully_Connected/Activations/act_scheme.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Reference `Tab:Depth' on page 1 undefined on input line 33.
-
-
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 49.
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 36.
 
 
-LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 50.
+LaTeX Warning: Reference `Tab:Depth' on page 1 undefined on input line 36.
+
+
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 52.
+
+
+LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 53.
+
+
+LaTeX Warning: Reference `Tab:Width' on page 1 undefined on input line 71.
+
+
+LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 71.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--86
+
+ []
+
+
+LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Tab:Batch' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 87.
+
+
+LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 87.
 
 (./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -2350,39 +2377,16 @@ sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/rare_depth.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-LaTeX Warning: Reference `Tab:Width' on page 1 undefined on input line 76.
-
-
-LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 76.
-
-(./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
+) (./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-
-LaTeX Warning: Reference `Fig:Width' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Tab:Batch' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 85.
-
-
-LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 85.
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex
 \openout4 = Figures/master-figure42.dpth
 
 Package pgfplots info on input line 27: Using 'lua backend=false' for axis: ymod
@@ -2395,15 +2399,22 @@ Package pgfplots info on input line 30066: Using 'lua backend=false' for axis: y
 mode=log unsupported (yet).
 Package pgfplots info on input line 40079: Using 'lua backend=false' for axis: y
 mode=log unsupported (yet).
-Package pgfplots info on input line 50092: Using 'lua backend=false' for axis: y
-mode=log unsupported (yet).
 [34
 
 \providecommand \oddpage@label [2]{}
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
-/Fully_Connected/Activations/rare_act.tex
+/Fully_Connected/Activations/hydro_act.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act2.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act2.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
@@ -2427,23 +2438,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45777 strings out of 481365
- 745158,7087374 words of node,token memory allocated
+ 45797 strings out of 481365
+ 745164,7087374 words of node,token memory allocated
  1048 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 88 glue_spe
 c, 67 attribute_list, 2 write nodes
-   avail lists: 1:5,2:192885,3:62059,4:149,5:954,6:27,7:16019,8:71,9:1320,10:47,
+   avail lists: 1:3,2:160296,3:51685,4:149,5:954,6:27,7:16019,8:71,9:1026,10:47,
 11:1038
- 60695 multiletter control sequences out of 65536+600000
+ 60688 multiletter control sequences out of 65536+600000
  137 fonts using 11541947 bytes
- 83i,21n,140p,2788b,2667s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,21n,140p,2788b,2665s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb><
 /usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure42.pdf (1 page, 532776 bytes).
+Output written on Figures/master-figure42.pdf (1 page, 473209 bytes).
 
 PDF statistics: 44 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream

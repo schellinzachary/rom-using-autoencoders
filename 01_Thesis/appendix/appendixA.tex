@@ -10,15 +10,23 @@
 %\pagenumbering{arabic}
 
 The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training. The experiments are evaluated through the validation error which estimates the model's ability to generalize, the training error which estimates the optimization to training data and the $\L2$ as described in \cref{Ch:ROM}. Both validation- and training error are described in \cref{Ch:DimRedAl} and provide information about under- and overfitting. Moreover the validation error is the essential metric for validating a model's performance. The $\L2$ on the other hand gives an estimate of how well the model performs on the whole dataset hence is used as a comparative metric against POD.\\ 
-To start with a working model first a guess about the some initial hyperparameters is done, which are summarized in \Cref{Tab:First Guess}. These include a mini-batch size of 16, the width of the bottleneck layer is 3 and 5  for \(\hy\) and \(\rare\) respectively, a learning rate of 0.0001, activations LeakyReLU and Tanh for the hidden layers and code layer respectively as well as 2000 initial number of epochs. Note that 2000 epochs might seem exaggerated, but is justified by a fast training.
+To start with a working model first a guess about the some initial hyperparameters is done, which are summarized in \Cref{Tab:First Guess}. These include a mini-batch size of 16, the width of the bottleneck layer is 3 and 5  for \(\hy\) and \(\rare\) respectively and a learning rate of 0.0001. Activation LeakyReLU is applied for the outputs of the input- and  any hidden layer which does not output the code, referred to as activations hidden. Tanh is applied for the output of the last hidden layer in the encoder which outputs the code, referred to as activation code. A visualization of the activation scheme is provided in \cref{Fig:ActScheme}. Moreover 2000 initial number of epochs are used. This might seem exaggerated but is justified by the little amount of input data and the small size of the network which yiels a fast training.
+\begin{center}
+	\begin{figure}[H]
+		\centering
+		\input{Figures/Parameterstudy/Fully_Connected/Activations/act_scheme.tex}
+		\caption{\footnotesize Scheme of a network with four layers showing where the activations are placed. Activation act. a activates the output of the input layer as well as the output of any other hidden layer except the output of the last hidden layer in the encoder which is activated through act.b and outputs the code.}
+		\label{Fig:ActScheme}
+		\end{figure}
+\end{center}
 \begin{table}[H]
 	\centering
 	\caption{Initial selection for batch size, bottleneck size, number of epochs, learning rate and applied activation functions.}
-	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c @{} }
+	\begin{tabular*}{15.5cm}{ @{\extracolsep{\fill}} c c c c c @{} }
 		\toprule
-		Mini-batch size   & Intrinsic dimensions &   Epochs &Learning rate &activation code/rest \\   
+		Mini-batch size   & Intrinsic dimensions &   Epochs &Learning rate & Activations hidden/code \\   
 		\hline
-		16 		&	3/5 &     2000&	    0.0001 & Tanh/LeakyReLU\\
+		16 		&	3/5 &     2000&	    0.0001 & LeakyReLU/Tanh\\
 		\bottomrule
 	\end{tabular*} \label{Tab:First Guess}
 \end{table}
@@ -82,12 +90,13 @@ The width of the two remaining hidden layers is examined in the following. For b
 	\end{tabular*}\label{Tab:Batch}
 \end{table}
 Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as training- and validation error show potential to decrease further as seen in \cref{Fig:Width} for \(\rare\) with 40 hidden nodes. Results for $\hy$  and  $\rare$ are displayed in \cref{Tab:Batch}. Experiments are conducted with mini-batch sizes of 2, 4, 8, 16, 32. Batch sizes to the power of 2 are typically chosen as to fully exploit computational capabilities of a GPU i.e. aligning the batch size with the way memory is structured within a GPU. The smallest batch size of 2 yields the lowest validation error of \(\num{1.15e-8}\) with corresponding \(\L2 = 0.0012\) at epoch 4956 for \(\hy\). The lowest validation error with \(\num{6.30e-9}\) is achieved for \(\rare\) at epoch 4534 with a batch size of 4. The corresponding \(\L2 = 0.001\). Compared to a batch size of 16 in the previous experiments we can observe that small batch sizes have a regularizing effect on training as described in \cref{Ch:DimRedAl} and therefore are beneficial to generalization. At the same time, the lower the batch sizes are, the more unstable is the training as seen in \cref{Fig:Batch}. The oscillations which begin with batch sizes of 8 and lower, which make the training unstable, can be battled with a lower learning rate as soon as training starts to tremble. Additionally small batch sizes drastically increase training time which is why a batch size as low as 2 will not be used for the next experiments. In conclusion a batch size of 2 is omitted and for both input data a batch size of 4 is chosen. Furthermore a reduction of the learning rate from \(\num{1e-4}\) to \(\num{1e-5}\) is applied after the 3000th epoch.\\
-\begin{table}[htp]
+Eight experiments with different activation functions namely ReLU, ELU, Tanh, SiLU and LeakyReLU are performed. The experiment designs and results are given in \cref{Tab:activations} for hidden and code layer. For 
+\begin{table}[H]
 	\centering
-	\caption{Results for the variation of activations in hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\) all evaluated with the best performing model.}
-	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
+	\caption{Results for the variation of activations for hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\) all evaluated with the best performing model.}
+	\begin{tabular*}{15.5cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
-		Activations & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} &\multicolumn{2}{c}{Epoch}\\ [.5ex]
+		Activations hidden/code & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} &\multicolumn{2}{c}{Epoch}\\ [.5ex]
 		& \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\
 		\hline
 		ReLU/ReLU 	       & \num{9.79e-9} & \num{7.18e-9} & \num{0.0010}  & \num{0.0009}&5000 &4998\\ \hline
@@ -99,8 +108,7 @@ Next the mini-batch size is analysed. Epochs are increased by 1000 epochs, as tr
 		LeakyReLU/Tanh     & \num{1.00e-8} & \num{1.42e-8} & \num{0.0010}  & \num{0.0012}&4997 &4992\\ \hline
 		ELU/SiLU           & \num{8.11e-9} & \num{1.93e-8} & \num{0.0011}  & \num{0.0015}&5000 &5000\\ \hline
 	\end{tabular*}\label{Tab:activations}
-\end{table}
-dfdfdfdfdfd
+\end{table}   
 \begin{center}
 	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex}
