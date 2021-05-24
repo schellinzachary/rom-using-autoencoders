@@ -1,52 +1,70 @@
+'''
+Activations, Rare
+'''
+
+from pathlib import Path
+from os.path import join
+home = str(Path.home())
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
+loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex"
+
+
 import numpy as np
-import torch
-import torch.nn as nn
-from torch.optim import Adam
-import torch.tensor as tensor
 import matplotlib.pyplot as plt
+import scipy.io as sio
+import pandas as pd
+from tqdm import tqdm
 import tikzplotlib
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-device = 'cpu'
+
+import torch
+import torch.nn as nn
+import torch.tensor as tensor
+from torch.optim import Adam
+from torch.utils.data import DataLoader
+from torch.optim.lr_scheduler import StepLR
 
 
-class params():
-    INPUT_DIM = 40
-    H_SIZES = 40
-    LATENT_DIM = 3
+#device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device='cpu'
+print(device)
+
+#set variables
+activations = {
+    'relu': nn.ReLU(),
+    'elu': nn.ELU(),
+    'silu': nn.SiLU(),
+    'tanh': nn.Tanh(),
+    'leaky': nn.LeakyReLU() 
+}
 
 
-class data():
-    #load data
-    f = np.load('/home/zachi/ROM_using_Autoencoders/Neural_Network/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy')
-    f = tensor(f, dtype=torch.float).to(device)
+#load data
+f = np.load(join(home,loc_data))
+f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):
-    def __init__(self):
+    def __init__(self, a, c):
         super(Encoder, self).__init__()
-        self.add_module('layer_1', torch.nn.Linear(in_features=params.INPUT_DIM,out_features=params.H_SIZES))
-        self.add_module('activ_1', nn.LeakyReLU())
-        self.add_module('layer_c',nn.Linear(in_features=params.H_SIZES, out_features=params.LATENT_DIM))
-        self.add_module('activ_c', nn.LeakyReLU())
+        self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=30))
+        self.add_module('activ_1', a)
+        self.add_module('layer_c',nn.Linear(in_features=30, out_features=3))
+        self.add_module('activ_c', c)
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
         return x
-
-
 
 class Decoder(nn.Module):
-    def __init__(self):
+    def __init__(self,a):
         super(Decoder, self).__init__()
-        self.add_module('layer_c',nn.Linear(in_features=params.LATENT_DIM, out_features=params.H_SIZES))
-        self.add_module('activ_c', nn.LeakyReLU())
-        self.add_module('layer_4', nn.Linear(in_features=params.H_SIZES,out_features=params.INPUT_DIM))
+        self.add_module('layer_c',nn.Linear(in_features=3, out_features=30))
+        self.add_module('activ_c', a)
+        self.add_module('layer_4', nn.Linear(in_features=30,out_features=40))
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
         return x
-
-
 
 class Autoencoder(nn.Module):
     def __init__(self, enc, dec):
@@ -59,34 +77,87 @@ class Autoencoder(nn.Module):
         predicted = self.dec(z)
         return predicted
 
-#encoder
-encoder = Encoder()
 
-#decoder
-decoder = Decoder()
+experiments = (
+    ('relu','relu'),
+    ('elu','elu'),
+    ('tanh','tanh'),
+    ('silu','silu'),
+    ('leaky','leaky'),
+    ('elu','tanh'),
+    ('leaky','tanh'),
+    ('elu','silu')
+    )
 
-#Autoencoder
-model = Autoencoder(encoder, decoder).to(device)
+best_models = (
+    "('relu', 'relu')-epoch4989-val_loss9.800E-09",
+    "('elu', 'elu')-epoch4990-val_loss4.454E-09",
+    "('tanh', 'tanh')-epoch4990-val_loss7.835E-09",
+    "('silu', 'silu')-epoch4990-val_loss7.693E-09",
+    "('leaky', 'leaky')-epoch4990-val_loss1.867E-08",
+    "('elu', 'tanh')-epoch4990-val_loss5.503E-09",
+    "('leaky', 'tanh')-epoch4990-val_loss1.004E-08",
+    "('elu', 'silu')-epoch4990-val_loss8.115E-09"   
+    )
 
-checkpoint = torch.load('Results/LeakyReLU.pt')
 
-model.load_state_dict(checkpoint['model_state_dict'])
-train_losses = checkpoint['train_losses']
-test_losses = checkpoint['test_losses']
-N_EPOCHS = checkpoint['epoch']
 
-rec = model(data.f)
 
-l2_error = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
-print(l2_error)
+train_losses = []
+val_losses = []
+l2_losses = []
+act = []
+min_idx = []
 
-plt.semilogy(train_losses,'k''--',label='Train')
-plt.semilogy(test_losses,'k''-',label='Test')
-plt.xlabel('Epoch')
-plt.ylabel('MSE Loss')
-ax = plt.gca()
-i = [10,8,6,4,2]
-plt.title('LeakyReLU')
-plt.legend()
-tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/Parameterstudy/Activations/Hydro/LeakyReLU.tex')
+fig, ax = plt.subplots(8,1)
+
+for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
+    a, c = ac_combo
+    a = activations[a]
+    c = activations[c]
+    #encoder
+    encoder = Encoder(a,c)
+
+    #decoder
+    decoder = Decoder(a)
+
+    #Autoencoder
+    model = Autoencoder(encoder, decoder).to(device)
+
+    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
+    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo))
+    model.load_state_dict(checkpoint_model['model_state_dict'][0])
+    train_loss = checkpoint_loss['train_losses']
+    val_loss = checkpoint_loss['test_losses']
+
+
+    rec = model(f)
+    l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+
+    train_losses.append(np.min(train_loss))
+    val_losses.append(np.min(val_loss))
+    l2_losses.append(l2_loss.detach().numpy())
+    min_idx.append(val_loss.index(min(val_loss)))
+    act.append(ac_combo)
+    
+    ax[idx].semilogy(train_loss,'k''--',label='Train')
+    ax[idx].semilogy(val_loss,'k''-',label='Test')
+    ax[idx].set_xlabel('Epoch')
+    ax[idx].set_ylabel('MSE Loss')
+    ax[idx].set_title('{} '.format(ac_combo))
+    ax[idx].set_ylim(ymax=1e-5)
+    ax[idx].legend()
+
+tikzplotlib.save(join(home,loc_plot))
+
+
+loss_dict = {"act":act,
+    "train_loss": train_losses,
+    "val_loss": val_losses,
+    "l2_loss": l2_losses,
+    "epoch val min": min_idx
+    }
+loss_dict = pd.DataFrame(loss_dict)
+
+print(loss_dict)
 plt.show()

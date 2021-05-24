@@ -22,7 +22,6 @@
 \contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{32}{subsection.5.0.1}%
 \contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{38}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{51}{appendix.B}%
-\contentsline {subsection}{\numberline {B.0.1}Appendix B}{51}{subsection.B.0.1}%
-\contentsline {chapter}{Bibliography}{54}{appendix*.47}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{47}{appendix.B}%
+\contentsline {chapter}{Bibliography}{48}{appendix*.40}%
 \contentsfinish 

@@ -113,7 +113,7 @@ for idx, batch in enumerate([32,16,8,4,2]):
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
 
-4tikzplotlib.save(join(home,loc_plot))
+#tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {"Batch Size":batch_s,

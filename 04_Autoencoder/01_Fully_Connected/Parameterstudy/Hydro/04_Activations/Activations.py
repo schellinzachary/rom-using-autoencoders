@@ -49,8 +49,7 @@ val_dataset = DataLoader(val_in, batch_size = int(len(f)*0.2))
 def save_checkpoint(k_models,ac_combo):
     k_models = np.array(k_models)
     k_models = k_models[k_models[:,0].argsort()]
-    if k_models[0,1] % 1000 == 0:
-            print("Top 3 Models are from epochs %s" %k_models[:3,0])       
+
     return np.ndarray.tolist(k_models[:3])
 
 
@@ -99,8 +98,7 @@ experiments = (('relu','relu'),
     ('elu','silu')
     )
 
-N_EPOCHS = 5000
-
+N_EPOCHS = 2
 for idx, ac_combo in enumerate(experiments):
     a, c = ac_combo
     a = activations[a]
@@ -196,13 +194,15 @@ for idx, ac_combo in enumerate(experiments):
         )
         if (epoch > 1) and(epoch % 10 == 0):
             k_models = save_checkpoint(k_models, ac_combo)
+        #if epoch % 1000 == 0:
+            #print("Top 3 Models are from epochs %s" %k_models[:3,1]) 
         
     #save top 3 models
     for i in range(3):
         k_models = np.array(k_models)
         torch.save({
     'epoch': k_models[i,1],
-    'model_state_dict':k_models[:,2],
+    'model_state_dict':k_models[i,2],
     },'Results/{}-epoch{}-val_loss{:.3E}.pt'.format(ac_combo,
         k_models[i,1],
         k_models[i,0]))

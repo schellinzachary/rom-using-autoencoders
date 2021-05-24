@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  23 MAY 2021 21:41
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 15:15
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1157,6 +1157,24 @@ Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
 (/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty
 Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
+\LTleft=\skip83
+\LTright=\skip84
+\LTpre=\skip85
+\LTpost=\skip86
+\LTchunksize=\count336
+\LTcapwidth=\dimen311
+\LT@head=\box127
+\LT@firsthead=\box128
+\LT@foot=\box129
+\LT@lastfoot=\box130
+\LT@cols=\count337
+\LT@rows=\count338
+\c@LT@tables=\count339
+\c@LT@chunks=\count340
+\LT@p@ftn=\toks43
+)
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
 yexternal.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
@@ -1168,8 +1186,8 @@ File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarybackgrounds.code.tex
 File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@layerbox@background=\box127
-\pgf@layerboxsaved@background=\box128
+\pgf@layerbox@background=\box131
+\pgf@layerboxsaved@background=\box132
 )
 \openout3 = master.auxlock
 
@@ -1220,26 +1238,26 @@ File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
 s.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodepartlowerbox=\box129
-\pgfnodeparttwobox=\box130
-\pgfnodepartthreebox=\box131
-\pgfnodepartfourbox=\box132
-\pgfnodeparttwentybox=\box133
-\pgfnodepartnineteenbox=\box134
-\pgfnodeparteighteenbox=\box135
-\pgfnodepartseventeenbox=\box136
-\pgfnodepartsixteenbox=\box137
-\pgfnodepartfifteenbox=\box138
-\pgfnodepartfourteenbox=\box139
-\pgfnodepartthirteenbox=\box140
-\pgfnodeparttwelvebox=\box141
-\pgfnodepartelevenbox=\box142
-\pgfnodeparttenbox=\box143
-\pgfnodepartninebox=\box144
-\pgfnodeparteightbox=\box145
-\pgfnodepartsevenbox=\box146
-\pgfnodepartsixbox=\box147
-\pgfnodepartfivebox=\box148
+\pgfnodepartlowerbox=\box133
+\pgfnodeparttwobox=\box134
+\pgfnodepartthreebox=\box135
+\pgfnodepartfourbox=\box136
+\pgfnodeparttwentybox=\box137
+\pgfnodepartnineteenbox=\box138
+\pgfnodeparteighteenbox=\box139
+\pgfnodepartseventeenbox=\box140
+\pgfnodepartsixteenbox=\box141
+\pgfnodepartfifteenbox=\box142
+\pgfnodepartfourteenbox=\box143
+\pgfnodepartthirteenbox=\box144
+\pgfnodeparttwelvebox=\box145
+\pgfnodepartelevenbox=\box146
+\pgfnodeparttenbox=\box147
+\pgfnodepartninebox=\box148
+\pgfnodeparteightbox=\box149
+\pgfnodepartsevenbox=\box150
+\pgfnodepartsixbox=\box151
+\pgfnodepartfivebox=\box152
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryarrows.code.tex
@@ -1248,7 +1266,7 @@ File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
 tex
 File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\arrowsize=\dimen311
+\arrowsize=\dimen312
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarysnakes.code.tex
@@ -1273,9 +1291,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count336
-\pgfplots@group@current@row=\count337
-\pgfplots@group@current@column=\count338
+\pgfplots@group@current@plot=\count341
+\pgfplots@group@current@row=\count342
+\pgfplots@group@current@column=\count343
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1286,16 +1304,16 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count339
+\etb@tempcnta=\count344
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count340
-\decimalpart=\count341
+\integerpart=\count345
+\decimalpart=\count346
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
-\tikzscale@measuredSize=\box149
+\tikzscale@measuredSize=\box153
 )
 (/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
 Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
@@ -1314,23 +1332,23 @@ Package cleveref Info: `algorithm2e' support loaded on input line 3147.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
-\heavyrulewidth=\dimen312
-\lightrulewidth=\dimen313
-\cmidrulewidth=\dimen314
-\belowrulesep=\dimen315
-\belowbottomsep=\dimen316
-\aboverulesep=\dimen317
-\abovetopsep=\dimen318
-\cmidrulesep=\dimen319
-\cmidrulekern=\dimen320
-\defaultaddspace=\dimen321
-\@cmidla=\count342
-\@cmidlb=\count343
-\@aboverulesep=\dimen322
-\@belowrulesep=\dimen323
-\@thisruleclass=\count344
-\@lastruleclass=\count345
-\@thisrulewidth=\dimen324
+\heavyrulewidth=\dimen313
+\lightrulewidth=\dimen314
+\cmidrulewidth=\dimen315
+\belowrulesep=\dimen316
+\belowbottomsep=\dimen317
+\aboverulesep=\dimen318
+\abovetopsep=\dimen319
+\cmidrulesep=\dimen320
+\cmidrulekern=\dimen321
+\defaultaddspace=\dimen322
+\@cmidla=\count347
+\@cmidlb=\count348
+\@aboverulesep=\dimen323
+\@belowrulesep=\dimen324
+\@thisruleclass=\count349
+\@lastruleclass=\count350
+\@thisrulewidth=\dimen325
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
@@ -1347,37 +1365,37 @@ LaTeX Info: Redefining \a3 on input line 65.
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
-\f@nch@headwidth=\skip83
-\f@nch@O@elh=\skip84
-\f@nch@O@erh=\skip85
-\f@nch@O@olh=\skip86
-\f@nch@O@orh=\skip87
-\f@nch@O@elf=\skip88
-\f@nch@O@erf=\skip89
-\f@nch@O@olf=\skip90
-\f@nch@O@orf=\skip91
+\f@nch@headwidth=\skip87
+\f@nch@O@elh=\skip88
+\f@nch@O@erh=\skip89
+\f@nch@O@olh=\skip90
+\f@nch@O@orh=\skip91
+\f@nch@O@elf=\skip92
+\f@nch@O@erf=\skip93
+\f@nch@O@olf=\skip94
+\f@nch@O@orf=\skip95
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2019/10/16 v2.13 Sectioning titles
-\ttl@box=\box150
-\beforetitleunit=\skip92
-\aftertitleunit=\skip93
-\ttl@plus=\dimen325
-\ttl@minus=\dimen326
-\ttl@toksa=\toks43
-\titlewidth=\dimen327
-\titlewidthlast=\dimen328
-\titlewidthfirst=\dimen329
+\ttl@box=\box154
+\beforetitleunit=\skip96
+\aftertitleunit=\skip97
+\ttl@plus=\dimen326
+\ttl@minus=\dimen327
+\ttl@toksa=\toks44
+\titlewidth=\dimen328
+\titlewidthlast=\dimen329
+\titlewidthfirst=\dimen330
 )
 (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titletoc.sty
 Package: titletoc 2019/10/16 v2.13 TOC entries
-\ttl@leftsep=\dimen330
+\ttl@leftsep=\dimen331
 ))
 \@input{other/metadata.aux}
 
 \openout2 = other/metadata.aux
 (./other/metadata.tex)
-\tikzscale@accuracy=\skip94
+\tikzscale@accuracy=\skip98
 
 
 LaTeX Warning: Unused global option(s):
@@ -1417,17 +1435,17 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count346
-\scratchdimen=\dimen331
-\scratchbox=\box151
-\nofMPsegments=\count347
-\nofMParguments=\count348
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count349
-\MPscratchDim=\dimen332
-\MPnumerator=\count350
-\makeMPintoPDFobject=\count351
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count351
+\scratchdimen=\dimen332
+\scratchbox=\box155
+\nofMPsegments=\count352
+\nofMParguments=\count353
+\everyMPshowfont=\toks45
+\MPscratchCnt=\count354
+\MPscratchDim=\dimen333
+\MPnumerator=\count355
+\makeMPintoPDFobject=\count356
+\everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
@@ -1437,7 +1455,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\AtBeginShipoutBox=\box152
+\AtBeginShipoutBox=\box156
 Package hyperref Info: Link coloring OFF on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -1449,7 +1467,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count352
+\c@section@level=\count357
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -1460,8 +1478,14 @@ LaTeX Info: Redefining \nameref on input line 6.
 
 \openout4 = master.out
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: longtable package is loaded.
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
+)
 Package caption Info: End \AtBeginDocument code.
- ABD: EveryShipout initializing macros
+
+ABD: EveryShipout initializing macros
 Package pgfplots notification 'compat/show suggested version=true': document has
  been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
@@ -1542,7 +1566,7 @@ Package epstopdf Info: Source file: <Figures/TUBlogo.eps>
 d-to.pdf Figures/TUBlogo.eps>
 (epstopdf)             \includegraphics on input line 13.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/TUBlogo-eps-converted-to.pdf, id=99, 366.36874pt x 204.765pt>
+<Figures/TUBlogo-eps-converted-to.pdf, id=95, 366.36874pt x 204.765pt>
 File: Figures/TUBlogo-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/TUBlogo-eps-converted-to.pdf>
 Package luatex.def Info: Figures/TUBlogo-eps-converted-to.pdf  used on input lin
@@ -1797,6 +1821,9 @@ Underfull \hbox (badness 1546) in paragraph at lines 248--248
  []
 
 
+LaTeX Warning: Reference `Sec:AppendixA' on page 1 undefined on input line 254.
+
+
 LaTeX Warning: Reference `Sec: AppendixB' on page 1 undefined on input line 254.
 
 
@@ -1934,157 +1961,50 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 ]
 Appendix A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 33--83
+
+ []
+
 [38
 
-] (./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
+] [39]
+
+LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 84.
+
+[40] (./Figures/Parameterstudy/Fully_Connected/Depth/hydro_depth.tex
 ===== Image 'Figures/master-figure36' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Depth/rare_depth.tex
 ===== Image 'Figures/master-figure37' is up-to-date. ======
-) [39] [40<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf>]
-(./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
+) (./Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex
 ===== Image 'Figures/master-figure38' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex
 ===== Image 'Figures/master-figure39' is up-to-date. ======
-)
-
-LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 85.
-
-(./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
+) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/hydro_batch.tex
 ===== Image 'Figures/master-figure40' is up-to-date. ======
 ) (./Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex
 ===== Image 'Figures/master-figure41' is up-to-date. ======
-)
-
-LaTeX Warning: Reference `Tab:Activations Hydro' on page 1 undefined on input li
-ne 109.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 109.
-
-
-LaTeX Warning: Reference `Tab:Activations Rare' on page 1 undefined on input lin
-e 130.
-
-[41] [42<./Figures/master-figure38.pdf><./Figures/master-figure39.pdf>]
-[43<./Figures/master-figure40.pdf><./Figures/master-figure41.pdf>] [44]
-(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ReLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex
 ===== Image 'Figures/master-figure42' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act.tex
 ===== Image 'Figures/master-figure43' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/Tanh.tex
+) [41] [42<./Figures/master-figure36.pdf><./Figures/master-figure37.pdf>]
+[43<./Figures/master-figure38.pdf><./Figures/master-figure39.pdf>] [44<./Figures
+/master-figure40.pdf><./Figures/master-figure41.pdf>] [45<./Figures/master-figur
+e42.pdf><./Figures/master-figure43.pdf>]
+(./Figures/Parameterstudy/Fully_Connected/Activations/hydro_act2.tex
 ===== Image 'Figures/master-figure44' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/SiLU.tex
+) (./Figures/Parameterstudy/Fully_Connected/Activations/rare_act2.tex
 ===== Image 'Figures/master-figure45' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU.tex
-===== Image 'Figures/master-figure46' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_Tanh.tex
-===== Image 'Figures/master-figure47' is up-to-date. ======
-)
-Underfull \hbox (badness 5403) in paragraph at lines 144--150
-[][] []
- []
-
-
-Underfull \hbox (badness 5403) in paragraph at lines 144--150
-[] []
- []
-
-
-LaTeX Warning: Float too large for page by 1.26204pt on input line 152.
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure48' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Hydro/ELU_SiLU.tex
-===== Image 'Figures/master-figure49' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ReLU.tex
-===== Image 'Figures/master-figure50' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU.tex
-===== Image 'Figures/master-figure51' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/Tanh.tex
-===== Image 'Figures/master-figure52' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/SiLU.tex
-===== Image 'Figures/master-figure53' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU.tex
-===== Image 'Figures/master-figure54' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh.tex
-===== Image 'Figures/master-figure55' is up-to-date. ======
-)
-Underfull \hbox (badness 5403) in paragraph at lines 163--169
-[][] []
- []
-
-
-Underfull \hbox (badness 5403) in paragraph at lines 163--169
-[] []
- []
-
-
-LaTeX Warning: Float too large for page by 1.26112pt on input line 171.
-
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh.tex
-===== Image 'Figures/master-figure56' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_SiLU.tex
-===== Image 'Figures/master-figure57' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_test.tex
-===== Image 'Figures/master-figure58' is up-to-date. ======
-)
-(./Figures/Parameterstudy/Fully_Connected/Activations/Rare/LeakyReLU_Tanh_test.
-tex
-===== Image 'Figures/master-figure59' is up-to-date. ======
-) (./Figures/Parameterstudy/Fully_Connected/Activations/Rare/ELU_Tanh_test.tex
-===== Image 'Figures/master-figure60' is up-to-date. ======
-)
-Underfull \hbox (badness 5490) in paragraph at lines 183--186
-[][] []
- []
-
-[45] [46<./Figures/master-figure42.pdf><./Figures/master-figure43.pdf><./Figures
-/master-figure44.pdf><./Figures/master-figure45.pdf><./Figures/master-figure46.p
-df><./Figures/master-figure47.pdf>] [47<./Figures/master-figure48.pdf><./Figures
-/master-figure49.pdf>] [48<./Figures/master-figure50.pdf><./Figures/master-figur
-e51.pdf><./Figures/master-figure52.pdf><./Figures/master-figure53.pdf><./Figures
-/master-figure54.pdf><./Figures/master-figure55.pdf>] [49<./Figures/master-figur
-e56.pdf><./Figures/master-figure57.pdf>] [50<./Figures/master-figure58.pdf><./Fi
-gures/master-figure59.pdf><./Figures/master-figure60.pdf>]
+) [46<./Figures/master-figure44.pdf><./Figures/master-figure45.pdf>]
 Appendix B.
-(./Figures/Parameterstudy/Convolutional/Convolutions/Scheme_Rounds.tex
-===== Image 'Figures/master-figure61' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/2Layer.tex
-===== Image 'Figures/master-figure62' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/3Layer.tex
-===== Image 'Figures/master-figure63' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Layers/4Layer.tex
-===== Image 'Figures/master-figure64' is up-to-date. ======
-)
-Underfull \hbox (badness 5652) in paragraph at lines 198--201
-[][] []
- []
+) [47
 
-(./Figures/Parameterstudy/Convolutional/Channels/L2R.tex
-===== Image 'Figures/master-figure65' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L3R.tex
-===== Image 'Figures/master-figure66' is up-to-date. ======
-) (./Figures/Parameterstudy/Convolutional/Channels/L4R.tex
-===== Image 'Figures/master-figure67' is up-to-date. ======
-)
+] (./master.bbl [48
 
-LaTeX Warning: Float too large for page by 72.03581pt on input line 208.
-
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 209.
-
-) [51
-
-<./Figures/master-figure61.pdf>] [52<./Figures/master-figure62.pdf><./Figures/ma
-ster-figure63.pdf><./Figures/master-figure64.pdf>] [53<./Figures/master-figure65
-.pdf><./Figures/master-figure66.pdf><./Figures/master-figure67.pdf>]
-(./master.bbl [54
-
-]) [55
+]) [49
 Missing character: There is no … (U+2026) in font ec-lmri10!
-] (./back/acknowledgement.tex) [56
+] (./back/acknowledgement.tex) [50
 
 ]
 (./back/declaration.tex
@@ -2092,7 +2012,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [57]
+) [51]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2101,7 +2021,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 95612BB0CD0FCBE82C1A6D4448F2F66E;3993.
+(rerunfilecheck)             Checksum: F91972B4866BE4AA17A0434CCBDCC59C;3879.
 
 
 LaTeX Warning: There were undefined references.
@@ -2110,15 +2030,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46670 strings out of 481365
- 156269,12246980 words of node,token memory allocated
- 1040 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 84 glue_spe
+ 46280 strings out of 481365
+ 156265,14696376 words of node,token memory allocated
+ 1060 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 88 glue_spe
 c, 68 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 2:3668,3:258,4:140,5:864,6:47,7:16100,8:92,9:906,10:45,11:1054
- 60213 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:3367,3:264,4:148,5:863,6:45,7:16083,8:92,9:848,10:45,11:10
+53
+ 60285 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
- 81i,19n,138p,2767b,910s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,19n,138p,2767b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -2140,10 +2061,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (60 pages, 7784799 bytes).
+Output written on master.pdf (54 pages, 6210724 bytes).
 
-PDF statistics: 2613 PDF objects out of 2984 (max. 8388607)
- 2113 compressed objects within 22 object streams
- 201 named destinations out of 1000 (max. 131072)
- 200 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2022 PDF objects out of 2073 (max. 8388607)
+ 1637 compressed objects within 17 object streams
+ 187 named destinations out of 1000 (max. 131072)
+ 192 words of extra memory for PDF output out of 10000 (max. 100000000)
 
