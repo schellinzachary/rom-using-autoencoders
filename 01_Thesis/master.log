@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  24 MAY 2021 22:55
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  26 MAY 2021 00:37
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -2074,7 +2074,7 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (55 pages, 6260278 bytes).
+Output written on master.pdf (55 pages, 6260584 bytes).
 
 PDF statistics: 2046 PDF objects out of 2073 (max. 8388607)
  1657 compressed objects within 17 object streams

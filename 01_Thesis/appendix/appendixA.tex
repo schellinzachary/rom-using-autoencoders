@@ -9,7 +9,7 @@
 \label{Ch:ApA}
 %\pagenumbering{arabic}
 
-The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training. The experiments are evaluated through the validation error which estimates the model's ability to generalize, the training error which estimates the optimization to training data and the $\L2$ as described in \cref{Ch:ROM}. Both validation- and training error are described in \cref{Ch:DimRedAl} and provide information about under- and overfitting. Moreover the validation error is the essential metric for validating a model's performance. The $\L2$ on the other hand gives an estimate of how well the model performs on the whole dataset hence is used as a comparative metric against POD.\\ 
+The finding of appropriate hyperparameters for the fully connected autoencoder is described here. The hyperparameters include number of layers i.e. depth, number of nodes per hidden layer i.e. width, batch size and non-linear activation functions, number of epochs for training and learning rate. The experiments are evaluated through the validation error which estimates the model's ability to generalize, the training error which estimates the optimization to training data and the $\L2$ as described in \cref{Ch:ROM}. Both validation- and training error are described in \cref{Ch:DimRedAl} and provide information about under- and overfitting. Moreover the validation error is the essential metric for validating a model's performance. The $\L2$ on the other hand gives an estimate of how well the model performs on the whole dataset hence is used as a comparative metric against POD.\\ 
 To start with a working model first a guess about the some initial hyperparameters is done, which are summarized in \Cref{Tab:First Guess}. These include a mini-batch size of 16, the width of the bottleneck layer is 3 and 5  for \(\hy\) and \(\rare\) respectively and a learning rate of 0.0001. Activation LeakyReLU is applied for the outputs of the input- and  any hidden layer which does not output the code, referred to as activations hidden. Tanh is applied for the output of the last hidden layer in the encoder which outputs the code, referred to as activation code. A visualization of the activation scheme is provided in \cref{Fig:ActScheme}. Moreover 2000 initial number of epochs are used. This might seem exaggerated but is justified by the little amount of input data and the small size of the network which yiels a fast training.
 \begin{center}
 	\begin{figure}[H]
@@ -160,4 +160,7 @@ The final hyperparameters for both input data are summarized below in \cref{Tab:
 %\newpage
 \chapter{Hyperparameters for the Convolutional Autoencoder}
 \label{Ch:ApB}
+
+The finding of appropriate hyperparameters for the convolutional autoencoder is described here. The hyperparameters include number of layers i.e. depth, kernel size and stride width, number of channels per layer, batch size, non-linear activation functions, number of epochs for training and learning rate.
+
 
