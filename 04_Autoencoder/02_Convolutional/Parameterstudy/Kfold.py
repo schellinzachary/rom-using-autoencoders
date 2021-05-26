@@ -23,15 +23,13 @@ from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import MultiStepLR
 
 from sklearn.model_selection import KFold
+
 torch.manual_seed(42)
-torch.backends.cudnn.deterministic = True
-#torch.use_deterministic_algorithms(True)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 def save_checkpoint(k_models,ac_combo):
     k_models = np.array(k_models)
     k_models = k_models[k_models[:,0].argsort()]
-
     return np.ndarray.tolist(k_models[:3])
 
 def weight_reset(m):
@@ -46,21 +44,12 @@ kf = KFold(n_splits=5)
 
 BATCH_SIZE = 2
 lr = 1e-4
-N_EPOCHS = 500
-for idx, (train_idx, test_idx) in enumerate(kf.split(f)):
-    print('Fold:', idx)
-    print("TRAIN:", train_idx, "TEST:", test_idx)
-    print()
-    fourth_fold = (train_idx,test_idx)
-
-
+N_EPOCHS = 1000
 
 for idx, (train, test) in enumerate(kf.split(f)):
 
-    # train_in = f[train]
-    # val_in = f[test]
-    train_in = f[fourth_fold[0]]
-    val_in = f[fourth_fold[1]]
+    train_in = f[train]
+    val_in = f[test]
 
     train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
     test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
@@ -197,13 +186,13 @@ for idx, (train, test) in enumerate(kf.split(f)):
         if (epoch > 1) and(epoch % 10 == 0):
             k_models = save_checkpoint(k_models,idx)
   
-    #save top 3 models
+    #save top 3 models4
     for i in range(3):
         k_models = np.array(k_models)
         torch.save({
     'epoch': k_models[i,1],
     'model_state_dict':k_models[i,2],
-    },'Results/lr/fold{}-epoch{}-val_loss{:.3E}.pt'.format(idx,
+    },'Results/fold{}-epoch{}-val_loss{:.3E}s.pt'.format(idx,
         k_models[i,1],
         k_models[i,0]))
     #save last model
@@ -213,7 +202,7 @@ for idx, (train, test) in enumerate(kf.split(f)):
         'optimizer_state_dict': optimizer.state_dict(),
         'train_losses':train_losses,
         'test_losses': test_losses
-        },'Results/lr/last-fold-{}.pt'.format(idx))
+        },'Results/last-fold-{}.pt'.format(idx))
 
 
 

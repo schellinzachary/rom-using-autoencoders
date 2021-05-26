@@ -70,21 +70,13 @@ class Autoencoder(nn.Module):
         x = self.dec(z)
         return x
 
-#without lr adjustement
-# best_models = (
-#     "fold0-epoch1951-val_loss2.336E-05",
-#     "fold1-epoch1723-val_loss1.017E-05",
-#     "fold2-epoch2-val_loss1.033E-02",
-#     "fold3-epoch2-val_loss7.619E-03",
-#     "fold4-epoch1966-val_loss1.551E-05", 
-#     )
-#with lr adjustement
+
 best_models = (
-    "fold0-epoch1989-val_loss2.857E-04",
-    "fold1-epoch2-val_loss5.809E-03",
-    "fold2-epoch2-val_loss1.033E-02",
-    "fold3-epoch1987-val_loss1.109E-05",
-    "fold4-epoch2-val_loss1.777E-03", 
+    "fold0-epoch990-val_loss4.527E-05",
+    "fold1-epoch989-val_loss1.268E-05",
+    "fold2-epoch989-val_loss4.958E-05",
+    "fold3-epoch990-val_loss1.491E-05",
+    "fold4-epoch988-val_loss4.234E-05", 
     )
 
 train_losses = []
@@ -93,7 +85,7 @@ l2_losses = []
 var = []
 min_idx = []
 
-fig, ax = plt.subplots(5,1)
+fig, ax = plt.subplots(1,5)
 
 for idx, best_model in enumerate(best_models):
 
@@ -104,8 +96,8 @@ for idx, best_model in enumerate(best_models):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('Results/lr/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/lr/last-fold-{}.pt'.format(idx))
+    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
+    checkpoint_loss = torch.load('Results/last-fold-{}.pt'.format(idx))
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
     val_loss = checkpoint_loss['test_losses']
@@ -125,10 +117,10 @@ for idx, best_model in enumerate(best_models):
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
     ax[idx].set_title('fold{} '.format(idx))
-    #ax[idx].set_ylim(ymax=1e-5)
+    ax[idx].set_ylim(ymax=1e-2)
     ax[idx].legend()
 
-#tikzplotlib.save(join(home,loc_plot))
+tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {
