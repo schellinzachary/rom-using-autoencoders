@@ -162,22 +162,46 @@ The final hyperparameters for both input data are summarized below in \cref{Tab:
 \label{Ch:ApB}
 
 The finding of appropriate hyperparameters for the convolutional autoencoder is described here. The hyperparameters include  batch size, non-linear activation functions, number of epochs for training and learning rate and number of layers i.e. depth. Depth comprises kernel size, stride width as well as number of channels per layer.\\
-This analysis follows the prior finding of hyperparameters for the fully connected autoencoder, hence utilizes insights thereof. Additionally this analysis follows a slightly different scheme than before, as there are solely 40 examples for training and testing for both rarefaction levels \(\hy\) and \(\rare\). Hence it is tried to find a combined model that performs well on both rarefaction levels. With this measure datasets for both rarefaction levels are concatenated to one dataset of 80 examples for training and testing. Furthermore this approach gives an answer to how well a model can generalize about the BGK model for different rarefaction levels.\\
-Again we start with a small model which comprises hyperparameters summarized in \cref{Tab:small}.
+This analysis follows the prior finding of hyperparameters for the fully connected autoencoder, hence utilizes insights thereof. Additionally this analysis follows a slightly different scheme than before, as there are solely 40 examples for training and validation for both rarefaction levels \(\hy\) and \(\rare\). Hence it is tried to find a combined model that performs well on both rarefaction levels. With this measure datasets for both rarefaction levels are concatenated to one dataset of 80 examples for training and validation. Furthermore this approach gives an answer to how well a model can generalize about the BGK model for different rarefaction levels in Sod's shock tube.\\
+Again we start with a small model which architecture and hyperparameters are summarized in \cref{Tab:small}.
 \begin{table}[H]
 \centering
-\caption{Initial selection of hyperparameters. The learning rate is switched from \num{e-4} to \num{e-4} at the 500th epoch. Depth counts the number of convolutional layers and excludes all fully connected layers.}
+\caption{Initial selection of hyperparameters for training and architecture. The initial model compirses 6 layers, of which 4 are either convolutional (Conv.) or transposed convolutional (Tr.Conv.). The learning rate is switched from \num{e-4} to \num{e-4} at the 500th epoch as in \cref{Ch:ApA}. Depth counts the number of convolutional/transposed concolutional layers and excludes the fully connected layers.}
+\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+	\toprule
+	\multicolumn{4}{c}{Encoder} & \multicolumn{4}{c}{Decoder}\\ [.5ex]
+	Layer & Type & Channels & Output size & Layer & Type & Channels & Output size \\ 
+	\hline
+	1 & Conv  & 8  & $5\times 40$ & 4 & Lin.     & -  & 128            \\ \hline
+	2 & Conv. & 16 & $1\times 8$  & 5 & Tr.Conv. & 16 & $1\times 8$    \\ \hline
+	3 & Lin.  & -  & 5		      & 6 & Tr.Conv. & 8  & $25\times 200$ \\ 		
+\end{tabular*}
 \begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 	\toprule
 	Epochs & Act. hidden/code & Batch size & Depth & Kernel size & Stride width & Learning rate\\ [.5ex]
 	\hline
-	1000 &  ReLU/ReLU & 2 & 4 & \(5\times 5\) & \(5\times 5\) &\num{e-4}/\num{e-5}\\ \hline
+	1000 &  ReLU/ReLU  & 2 & 4 & \(5\times 5\) & \(5\times 5\) & \num{e-4}/\num{e-5} \\ \hline
 \end{tabular*}\label{Tab:small}
-\end{table}   
+\end{table} 
+The activations and learning rate stem from the experience made in \cref{Ch:ApA}. Kernel size and stride width are chosen as to circumvent checkerboard artefacts as described in \cref{Ch:DimRedAl}. The number of channels is inspired by the architecture chosen in \cite{Carlberg}.\\
+As mentioned before, is the number of available examples for training and validation limited. Therefor the split in training and validation sets encompasses the risk of a bias in one of the sets. For instance, if out of the 40 examples, a few of them ,maybe 5 , contain considerable variance to the other examples and all of them are found in the training set, then the validation error could not estimate the model's ability to generalize. Therefore the k-fold algorithm described in \cite{Goodfellow} is adopted. The k-fold algorithm provides from the complete shuffled dataset, k independent splits into training and validation set with which the model is trained. By that, each example gets the chance to be either in the training or validation set once. For an 80/20 split as used in this thesis and described in \cref{Ch:DimRedAl}, five independent fold can be obtained. Hence with 80 available examples the training set \(\btch_{train}\) consists of 74 examples and the validation set \(\btch_{val}\) of the remaining 16 examples. The results of said preliminary experiment are summarized in \cref{Tab:kFold} and \cref{Fig:kFold}.
+\begin{table}[H]
+	\centering
+	\caption{}
+	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+		\toprule
+		\multicolumn{4}{c}{Encoder} & \multicolumn{4}{c}{Decoder}\\ [.5ex]
+		Layer & Type & Channels & Output size & Layer & Type & Channels & Output size \\ 
+		\hline
+		1 & Conv  & 8  & $5\times 40$ & 4 & Lin.     & -  & 128            \\ \hline
+		2 & Conv. & 16 & $1\times 8$  & 5 & Tr.Conv. & 16 & $1\times 8$    \\ \hline
+		3 & Lin.  & -  & 5		      & 6 & Tr.Conv. & 8  & $25\times 200$ \\ 		
+	\end{tabular*}\label{Tab:kFold}
+\end{table}    
 \begin{center}
 	\begin{figure}[H]
 		\input{Figures/Parameterstudy/Convolutional/kfold.tex}
-		\label{Fig:Kfold}
+		\label{Fig:kFold}
 		\caption{Five folds}
 	\end{figure}
 \end{center}

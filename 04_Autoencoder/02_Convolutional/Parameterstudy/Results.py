@@ -11,7 +11,7 @@ loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutiona
 
 import pandas as pd
 import numpy as np
-import tikzplotlib
+#import tikzplotlib
 import matplotlib.pyplot as plt
 
 import torch
@@ -82,7 +82,7 @@ best_models = (
 train_losses = []
 val_losses = []
 l2_losses = []
-var = []
+variable = []
 min_idx = []
 
 fig, ax = plt.subplots(1,5)
@@ -110,8 +110,12 @@ for idx, best_model in enumerate(best_models):
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
-    var.append(idx)
+    variable.append(idx)
     
+    std = np.std(val_losses)
+    var = np.var(val_losses)
+
+
     ax[idx].semilogy(train_loss,'k''--',label='Train')
     ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
@@ -120,11 +124,11 @@ for idx, best_model in enumerate(best_models):
     ax[idx].set_ylim(ymax=1e-2)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+#tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {
-    "flod":var,
+    "fold":variable,
     "train_loss": train_losses,
     "val_loss": val_losses,
     "l2_loss": l2_losses,
@@ -133,4 +137,8 @@ loss_dict = {
 loss_dict = pd.DataFrame(loss_dict)
 
 print(loss_dict)
+print()
+print("Variance of val loss:",var)
+print()
+print("Standard deviation of val loss:", std)
 plt.show()
