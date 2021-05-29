@@ -94,7 +94,7 @@ Eight experiments with different activation functions namely ReLU, ELU, Tanh, Si
 If the learning rate could have been reduced whilst producing similar results remains unanswered here as the results are satisfactory. Note that for \(\rare\) in the previous experiment a validation error of \num{6.30e-9} was achieved which is slightly lower than the current result. Nonetheless it is decided to take the current model as the final result.\\
 \begin{table}[H]
 	\centering
-	\caption{Results for the variation of activations for hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\) all evaluated with the best performing model.}
+	\caption{Results for the variation of activations for hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\). The \(\L2\) is evaluated with the models saved when the minimum validation error was achieved during training.}
 	\begin{tabular*}{15.5cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
 		Activations hidden/code & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{$\L2$} &\multicolumn{2}{c}{Epoch}\\ [.5ex]
@@ -187,22 +187,31 @@ The activations and learning rate stem from the experience made in \cref{Ch:ApA}
 As mentioned before, is the number of available examples for training and validation limited. Therefor the split in training and validation sets encompasses the risk of a bias in one of the sets. For instance, if out of the 40 examples, a few of them ,maybe 5 , contain considerable variance to the other examples and all of them are found in the training set, then the validation error could not estimate the model's ability to generalize. Therefore the k-fold algorithm described in \cite{Goodfellow} is adopted. The k-fold algorithm provides from the complete shuffled dataset, k independent splits into training and validation set with which the model is trained. By that, each example gets the chance to be either in the training or validation set once. For an 80/20 split as used in this thesis and described in \cref{Ch:DimRedAl}, five independent fold can be obtained. Hence with 80 available examples the training set \(\btch_{train}\) consists of 74 examples and the validation set \(\btch_{val}\) of the remaining 16 examples. The results of said preliminary experiment are summarized in \cref{Tab:kFold} and \cref{Fig:kFold}.
 \begin{table}[H]
 	\centering
-	\caption{}
-	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+	\caption{Results for the k-fold experiments. Minimum values of training- and validation error as well as the epoch of the minimum validation error and the \(\L2\) are given. The \(\L2\) is evaluated with the models saved when the minimum validation error was achieved during training. The mean and standard deviation of the validation error are \num{3.55e-5} and \num{2.13e-5} respectively with a corresponding variance of \num{4.56e-10}.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
 		\toprule
-		\multicolumn{4}{c}{Encoder} & \multicolumn{4}{c}{Decoder}\\ [.5ex]
-		Layer & Type & Channels & Output size & Layer & Type & Channels & Output size \\ 
+		Fold & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
 		\hline
-		1 & Conv  & 8  & $5\times 40$ & 4 & Lin.     & -  & 128            \\ \hline
-		2 & Conv. & 16 & $1\times 8$  & 5 & Tr.Conv. & 16 & $1\times 8$    \\ \hline
-		3 & Lin.  & -  & 5		      & 6 & Tr.Conv. & 8  & $25\times 200$ \\ 		
+		 1   & \num{2.4e-5}           & \num{7.0e-5}             & 0.053   & 498  \\  
+		\hline
+		2    & \num{1.4e-5}           & \num{1.3e-5}             & 0.044   & 1000\\
+		\hline
+		3    & \num{1.7e-5}           & \num{5.0e-5}             & 0.057   & 1000\\
+		\hline
+		4    & \num{1.7e-5}           & \num{1.8e-5}             & 0.039   & 997\\
+		\hline
+		5    & \num{1.6e-5}           & \num{2.7e-5}             & 0.053  & 1000\\
+		\hline
 	\end{tabular*}\label{Tab:kFold}
-\end{table}    
+\end{table}
+The lowest validation error of \num{1.3e-5} is achieved with the second fold at the last epoch. The corresponding \(L2 = 0.044\). As training error is lower than validation error it is assumed, that the \say{difficult} examples are within the training set. Therefore the training set is biased. The second lowest validation error of \num{1.8e-5} and a corresponding \(\L2=0.039\) is achieved with fold 4 at the 997th epoch. For both folds training and validation error evolve in unison and get instable even before the 500th epoch. The instability is eliminated by lowering the learning rate at said epoch, but the training does not improve thereafter as in \cref{Ch:ApA}. For the other folds a seperation of training and validation error can be observed and less instability. The mean validation error of \num{3.55e-5} gives an estimate of the models performance with standard deviation of \num{2.13e-5} and variance of \num{4.56e-10}. For the continuation of experiments fold 4 is used, as it provides a balanced split in training- and validation split which also manifests in the lowest \(\L2\) of all folds.
+
+
 \begin{center}
 	\begin{figure}[H]
 		\input{Figures/Parameterstudy/Convolutional/kfold.tex}
 		\label{Fig:kFold}
-		\caption{Five folds}
+		\caption{Training- and validation error over epochs for the five folds.}
 	\end{figure}
 \end{center}
 

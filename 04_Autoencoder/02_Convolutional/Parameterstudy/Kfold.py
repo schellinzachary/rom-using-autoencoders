@@ -48,6 +48,11 @@ N_EPOCHS = 1000
 
 for idx, (train, test) in enumerate(kf.split(f)):
 
+    print("Train:", train)
+    print("TEST:", test)
+    
+    continue
+
     train_in = f[train]
     val_in = f[test]
 

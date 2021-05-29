@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 MAY 2021 15:46
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  29 MAY 2021 23:11
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1092,21 +1092,25 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \backup@length=\skip78
 \ar@cellbox=\box118
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+\c@dirtytalk@qdepth=\count314
+)
 (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx.sty
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count314
+\l__kernel_color_stack_int=\count315
 \l__pdf_internal_box=\box119
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count315
-\g__xparse_grabber_int=\count316
-\l__xparse_m_args_int=\count317
-\l__xparse_v_nesting_int=\count318
+\l__xparse_current_arg_int=\count316
+\g__xparse_grabber_int=\count317
+\l__xparse_m_args_int=\count318
+\l__xparse_v_nesting_int=\count319
 )
 Package: siunitx 2020/01/15 v2.7u A comprehensive (SI) units package
 
@@ -1115,27 +1119,27 @@ Package: l3keys2e 2020-02-14 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box120
 \l__siunitx_tmp_dim=\dimen299
-\l__siunitx_tmp_int=\count319
-\l__siunitx_number_mantissa_length_int=\count320
-\l__siunitx_number_uncert_length_int=\count321
-\l__siunitx_round_int=\count322
-\l__siunitx_process_decimal_int=\count323
-\l__siunitx_process_uncertainty_int=\count324
-\l__siunitx_process_fixed_int=\count325
-\l__siunitx_process_integer_min_int=\count326
-\l__siunitx_process_precision_int=\count327
-\l__siunitx_group_min_int=\count328
+\l__siunitx_tmp_int=\count320
+\l__siunitx_number_mantissa_length_int=\count321
+\l__siunitx_number_uncert_length_int=\count322
+\l__siunitx_round_int=\count323
+\l__siunitx_process_decimal_int=\count324
+\l__siunitx_process_uncertainty_int=\count325
+\l__siunitx_process_fixed_int=\count326
+\l__siunitx_process_integer_min_int=\count327
+\l__siunitx_process_precision_int=\count328
+\l__siunitx_group_min_int=\count329
 \l__siunitx_angle_marker_box=\box121
 \l__siunitx_angle_unit_box=\box122
 \l__siunitx_angle_marker_dim=\dimen300
 \l__siunitx_angle_unit_dim=\dimen301
-\l__siunitx_unit_int=\count329
-\l__siunitx_unit_denominator_int=\count330
-\l__siunitx_unit_numerator_int=\count331
-\l__siunitx_unit_prefix_int=\count332
-\l__siunitx_unit_prefix_base_int=\count333
-\l__siunitx_unit_prefix_gram_int=\count334
-\l__siunitx_number_product_int=\count335
+\l__siunitx_unit_int=\count330
+\l__siunitx_unit_denominator_int=\count331
+\l__siunitx_unit_numerator_int=\count332
+\l__siunitx_unit_prefix_int=\count333
+\l__siunitx_unit_prefix_base_int=\count334
+\l__siunitx_unit_prefix_gram_int=\count335
+\l__siunitx_number_product_int=\count336
 \c__siunitx_one_fill_skip=\skip79
 \l__siunitx_table_unit_align_skip=\skip80
 \l__siunitx_table_exponent_dim=\dimen302
@@ -1163,16 +1167,16 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip84
 \LTpre=\skip85
 \LTpost=\skip86
-\LTchunksize=\count336
+\LTchunksize=\count337
 \LTcapwidth=\dimen311
 \LT@head=\box127
 \LT@firsthead=\box128
 \LT@foot=\box129
 \LT@lastfoot=\box130
-\LT@cols=\count337
-\LT@rows=\count338
-\c@LT@tables=\count339
-\c@LT@chunks=\count340
+\LT@cols=\count338
+\LT@rows=\count339
+\c@LT@tables=\count340
+\c@LT@chunks=\count341
 \LT@p@ftn=\toks43
 )
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
@@ -1291,9 +1295,9 @@ File: tikzlibrarymatrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
 oupplots.code.tex
-\pgfplots@group@current@plot=\count341
-\pgfplots@group@current@row=\count342
-\pgfplots@group@current@column=\count343
+\pgfplots@group@current@plot=\count342
+\pgfplots@group@current@row=\count343
+\pgfplots@group@current@column=\count344
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarycalc.code.tex
@@ -1304,12 +1308,12 @@ Package: tikzscale 2013/05/22 v0.2.6 tikzscale LaTeX package
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count344
+\etb@tempcnta=\count345
 )
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
 (/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
-\integerpart=\count345
-\decimalpart=\count346
+\integerpart=\count346
+\decimalpart=\count347
 )
 Package: xstring 2019/02/06 v1.83 String manipulations (CT)
 )
@@ -1342,12 +1346,12 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen320
 \cmidrulekern=\dimen321
 \defaultaddspace=\dimen322
-\@cmidla=\count347
-\@cmidlb=\count348
+\@cmidla=\count348
+\@cmidlb=\count349
 \@aboverulesep=\dimen323
 \@belowrulesep=\dimen324
-\@thisruleclass=\count349
-\@lastruleclass=\count350
+\@thisruleclass=\count350
+\@lastruleclass=\count351
 \@thisrulewidth=\dimen325
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tocbibind/tocbibind.sty
@@ -1358,10 +1362,10 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 62.
-LaTeX Info: Redefining \a1 on input line 63.
-LaTeX Info: Redefining \a2 on input line 64.
-LaTeX Info: Redefining \a3 on input line 65.
+LaTeX Info: Redefining \L2 on input line 63.
+LaTeX Info: Redefining \a1 on input line 64.
+LaTeX Info: Redefining \a2 on input line 65.
+LaTeX Info: Redefining \a3 on input line 66.
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
@@ -1435,16 +1439,16 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count351
+\scratchcounter=\count352
 \scratchdimen=\dimen332
 \scratchbox=\box155
-\nofMPsegments=\count352
-\nofMParguments=\count353
+\nofMPsegments=\count353
+\nofMParguments=\count354
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count354
+\MPscratchCnt=\count355
 \MPscratchDim=\dimen333
-\MPnumerator=\count355
-\makeMPintoPDFobject=\count356
+\MPnumerator=\count356
+\makeMPintoPDFobject=\count357
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1467,7 +1471,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count357
+\c@section@level=\count358
 )
 LaTeX Info: Redefining \ref on input line 6.
 LaTeX Info: Redefining \pageref on input line 6.
@@ -2015,19 +2019,19 @@ Appendix B.
 
 ] (./Figures/Parameterstudy/Convolutional/kfold.tex
 ===== Image 'Figures/master-figure47' is up-to-date. ======
-)) [49<./Figures/master-figure47.pdf>] (./master.bbl [50
+) [49]) [50<./Figures/master-figure47.pdf>] (./master.bbl [51
 
-]) [51
+]) [52
 Missing character: There is no … (U+2026) in font ec-lmri10!
 ]
-(./back/acknowledgement.tex) [52
+(./back/acknowledgement.tex) [53
 
 ] (./back/declaration.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [53]
+) [54]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2045,14 +2049,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46343 strings out of 481365
+ 46375 strings out of 481365
  156265,14696376 words of node,token memory allocated
- 1060 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 88 glue_spe
-c, 68 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:3085,3:277,4:151,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
+ 1054 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 88 glue_spe
+c, 67 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:3,2:3088,3:289,4:160,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
 53
- 60299 multiletter control sequences out of 65536+600000
+ 60323 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
  81i,19n,138p,2767b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips
@@ -2076,10 +2080,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
 s/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
 msbm10.pfb>
-Output written on master.pdf (56 pages, 6391482 bytes).
+Output written on master.pdf (57 pages, 6393893 bytes).
 
-PDF statistics: 2092 PDF objects out of 2487 (max. 8388607)
- 1696 compressed objects within 17 object streams
- 194 named destinations out of 1000 (max. 131072)
+PDF statistics: 2097 PDF objects out of 2487 (max. 8388607)
+ 1700 compressed objects within 17 object streams
+ 195 named destinations out of 1000 (max. 131072)
  192 words of extra memory for PDF output out of 10000 (max. 100000000)
 
