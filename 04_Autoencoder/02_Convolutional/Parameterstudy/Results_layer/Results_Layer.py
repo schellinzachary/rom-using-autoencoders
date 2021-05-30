@@ -22,35 +22,28 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import MultiStepLR
 
+
 torch.manual_seed(42)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-#best fold
-Train_fold = [ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23,
- 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47,
- 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79]
-Test_fold = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63]
+#Scaler
+class TorchStandardScaler:
+  def fit(self, x):
+    self.mean = x.mean(0, keepdim=True)
+    self.std = x.std(0, unbiased=False, keepdim=True)
+  def transform(self, x):
+    x -= self.mean
+    x /= (self.std)
+    return x
 
-
-#checkpointing
-def save_checkpoint(k_models,ac_combo):
-    k_models = np.array(k_models)
-    k_models = k_models[k_models[:,0].argsort()]
-    return np.ndarray.tolist(k_models[:3])
-
-#weight resetting if needed
-def weight_reset(m):
-    if isinstance(m, nn.Conv2d) or isinstance(m, nn.Linear):
-        m.reset_parameters()
-
-#load & scale data
+#load data
 f = np.load(join(home,loc_data))
 f = tensor(f, dtype=torch.float).to(device)
 
+# scaler = TorchStandardScaler()
+# scaler.fit(f)
+# f = scaler.transform(f)
 
-BATCH_SIZE = 4
-lr = 1e-4
-N_EPOCHS = 2000
 
 class Encoder_2(nn.Module):
     def __init__(self):
@@ -243,6 +236,16 @@ class Decoder_4(nn.Module):
         x = self.convD4(x)
         return x
 
+class Autoencoder(nn.Module):
+    def __init__(self, enc, dec):
+        super().__init__()
+        self.enc = enc
+        self.dec = dec
+
+    def forward(self, x):
+        x = self.enc(x)
+        x = self.dec(x)
+        return x
 
 enc_dict = [
     Encoder_2(),
@@ -255,131 +258,79 @@ dec_dict = [
     Decoder_4()
 ]
 
+best_models = (
+    # "model3-epoch1399-val_loss7.762E-03-exp-1",
+    # "model4-epoch1094-val_loss1.474E-01-exp-1",
+    # "model3-epoch1975-val_loss1.537E-05-exp-2",
+    # "model4-epoch1924-val_loss8.178E-04-exp-2"
+    # "model2-epoch1969-val_loss8.009E-06-exp-3",
+    # "model3-epoch1980-val_loss1.326E-05-exp-3",
+    # "model4-epoch109-val_loss6.976E-03-exp-3"
+    "model2-epoch1-val_loss7.619E-03-exp-4",
+    "model3-epoch1944-val_loss1.068E-05-exp-4",
+    "model4-epoch1969-val_loss9.496E-06-exp-4"
+    )
+
+train_losses = []
+val_losses = []
+l2_losses = []
+variable = []
+min_idx = []
+
+fig, ax = plt.subplots(3,1)
+
 for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
-    train_in = f[Train_fold]
-    val_in = f[Test_fold]
 
-    train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
-    test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
-
-
-
-    class Autoencoder(nn.Module):
-        def __init__(self, enc, dec):
-            super().__init__()
-            self.enc = enc
-            self.dec = dec
-
-        def forward(self, x):
-            x = self.enc(x)
-            x = self.dec(x)
-            return x
-
+    best_model = best_models[idx]
     #encoder
     encoder = encoder
-
-
     #decoder
     decoder = decoder
-
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    #decoder.apply(weight_reset)
-    #encoder.apply(weight_reset)
+    checkpoint_model = torch.load('{}.pt'.format(best_model))
+    checkpoint_loss = torch.load('last-model-{}exp-4.pt'.format(idx+2))
 
-    optimizer = Adam(params=model.parameters(), lr=lr)
-    #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[500], gamma=0.1)
-
-    loss_crit = nn.MSELoss()
-    train_losses = []
-    val_losses = []
+    model.load_state_dict(checkpoint_model['model_state_dict'])
+    train_loss = checkpoint_loss['train_losses']
+    val_loss = checkpoint_loss['test_losses']
 
 
-    def train():
+    rec = model(f)
 
-        model.train()
+    l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+    l2_loss = l2_loss.to('cpu')
 
-        train_loss = 0.0
+    train_losses.append(np.min(train_loss))
+    val_losses.append(np.min(val_loss))
+    l2_losses.append(l2_loss.detach().numpy())
+    min_idx.append(val_loss.index(min(val_loss)))
+    variable.append(idx+2)
+    
 
-        for batch_ndx, x in enumerate(train_iterator):
+    ax[idx].semilogy(train_loss,'k''--',label='Train')
+    ax[idx].semilogy(val_loss,'k''-',label='Test')
+    ax[idx].set_xlabel('Epoch')
+    ax[idx].set_ylabel('MSE Loss')
+    ax[idx].set_title('fold{} '.format(idx))
+    ax[idx].set_ylim(ymax=1e-2)
+    ax[idx].legend()
 
-            x = x.to(device)
-
-            optimizer.zero_grad()
-
-            predicted = model(x)
-
-            loss = loss_crit(x,predicted)
-
-            loss.backward()
-            train_loss += loss.item()
-
-            optimizer.step()
-
-        return train_loss
-
-    def test():
-
-        model.eval()
-
-        test_loss = 0
-
-        with torch.no_grad():
-            for i, x in enumerate(test_iterator):
-
-                x = x.to(device)
-
-                predicted = model(x)
-
-                loss = loss_crit(x,predicted)
-                test_loss += loss.item()
-
-            return test_loss
+#tikzplotlib.save(join(home,loc_plot))
 
 
-    train_losses = []
-    test_losses = []
-    k_models = []
+loss_dict = {
+    "Model":variable,
+    "train_loss": train_losses,
+    "val_loss": val_losses,
+    "l2_loss": l2_losses,
+    "epoch val min": min_idx
+    }
+loss_dict = pd.DataFrame(loss_dict)
 
-    for epoch in tqdm(range(N_EPOCHS)):
-        train_loss = train()
-        test_loss = test()
-
-        train_loss /= len(train_iterator)
-
-        train_losses.append(train_loss)
-        test_losses.append(test_loss)
-
-        #scheduler.step()
-
-        k_models.append((
-            test_loss,
-            epoch,
-            model.state_dict())
-        )
-
-        if (epoch > 1) and(epoch % 10 == 0):
-            k_models = save_checkpoint(k_models,idx)
-  
-    #save top 3 models
-    for i in range(3):
-        k_models = np.array(k_models)
-        torch.save({
-    'epoch': k_models[i,1],
-    'model_state_dict':k_models[i,2],
-    },'Results_layer/model{}-epoch{}-val_loss{:.3E}-exp-4.pt'.format(idx+2,
-        k_models[i,1],
-        k_models[i,0]))
-    #save last model
-    torch.save({
-        'epoch': epoch,
-        'model_state_dict':model.state_dict(),
-        'optimizer_state_dict': optimizer.state_dict(),
-        'train_losses':train_losses,
-        'test_losses': test_losses
-        },'Results_layer/last-model-{}exp-4.pt'.format(idx+2))
-
+print(loss_dict)
+plt.show()
 
 
 
