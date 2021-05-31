@@ -205,13 +205,65 @@ As mentioned before, is the number of available examples for training and valida
 	\end{tabular*}\label{Tab:kFold}
 \end{table}
 The lowest validation error of \num{1.3e-5} is achieved with the second fold at the last epoch. The corresponding \(L2 = 0.044\). As training error is lower than validation error it is assumed, that the \say{difficult} examples are within the training set. Therefore the training set is biased. The second lowest validation error of \num{1.8e-5} and a corresponding \(\L2=0.039\) is achieved with fold 4 at the 997th epoch. For both folds training and validation error evolve in unison and get instable even before the 500th epoch. The instability is eliminated by lowering the learning rate at said epoch, but the training does not improve thereafter as in \cref{Ch:ApA}. For the other folds a seperation of training and validation error can be observed and less instability. The mean validation error of \num{3.55e-5} gives an estimate of the models performance with standard deviation of \num{2.13e-5} and variance of \num{4.56e-10}. For the continuation of experiments fold 4 is used, as it provides a balanced split in training- and validation split which also manifests in the lowest \(\L2\) of all folds.
-
-
 \begin{center}
 	\begin{figure}[H]
 		\input{Figures/Parameterstudy/Convolutional/kfold.tex}
 		\label{Fig:kFold}
-		\caption{Training- and validation error over epochs for the five folds.}
+		\caption{Training- and validation error over epochs for five independent folds.}
 	\end{figure}
 \end{center}
 
+\begin{table}
+	\setlength{\tabcolsep}{1pt}
+	\footnotesize
+	\caption{Architecture and hyperparameters for the models with three and four convolutional layers.}
+	\begin{minipage}{.5\textwidth}
+		\begin{tabular*}{.9\textwidth}{ @{\extracolsep{\fill}} c c c c c @{} }
+			\toprule
+			\multicolumn{4}{c}{Encoder} \\ [.5ex]
+			Layer & Type & Channels & Padding & Output  \\ 
+			\hline
+			1 & Conv  & 4  & in: 1/1 & $9\times 67$  \\ \hline
+			2 & Conv. & 8  & in: 0/1 & $3\times 23$  \\ \hline
+			3 & Conv. & 16 & in: 0/1 & $1\times 8$   \\ \hline
+			4 & Lin.  & -  & -   & 5		      	 \\ 
+			\toprule
+			\multicolumn{4}{c}{Decoder}		\\ [.5ex]
+			Layer & Type & Channels & Padding & Output \\
+			\hline
+			5 & Lin.     & -  & - & 128       	 		        \\ \hline
+			6 & Tr.Conv. & 16 & in: 0/1 out: 0/1 & $1\times 8$  \\ \hline
+			7 & Tr.Conv. & 8  & in: 0/1 out: 0/1 & $3\times 23$ \\ \hline
+			8 & Tr.Conv. & 1  & in: 0/1 & $25\times 200$        \\ \hline   
+		\end{tabular*}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\begin{tabular*}{.9\textwidth}{ @{\extracolsep{\fill}} c c c c c @{} }
+			\toprule
+			\multicolumn{4}{c}{Encoder} \\ [.5ex]
+			Layer & Type & Channels & Padding & Out  \\ 
+			\hline
+			1 & Conv  & 2  & in: 3/2 & $10\times 67$ \\ \hline
+			2 & Conv. & 4  & in: 3/2 & $5\times 24$  \\ \hline
+			3 & Conv. & 8  & in: 3/2 & $3\times 8$   \\ \hline
+			4 & Conv. & 16 & in: 3/3 & $1\times 3$   \\ \hline
+			5 & Lin.  & -  & & 5		      \\  
+			\toprule
+			\multicolumn{4}{c}{Decoder}		\\ [.5ex]
+			Layer & Type & Channels & Padding & Out \\
+			\hline
+			6  & Lin.     & -  & - & 128       	 \\ \hline
+			7  & Tr.Conv. & 16 & - & $1\times 3$   \\ \hline
+			8  & Tr.Conv. & 8  & in: 2/2 out: 0/1 & $3\times 8$   \\ \hline
+			9  & Tr.Conv. & 4  & in: 3/2 & $10\times 67$   \\ \hline
+			10 & Tr.Conv. & 1  & in: 1/2 & $25\times 200$ \\ \hline   
+		\end{tabular*}
+	\end{minipage}
+\end{table}
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/Layer.tex}
+		\label{Fig:Layer}
+		\caption{Training- and validation error over epochs for two models with three and four convolutional layers. All hyperparameters are as in the previous small model. For channelsa  maximum number of 16 in the last layer of encoder and decoder is applied.}
+	\end{figure}
+\end{center}
