@@ -1,23 +1,30 @@
 % This file was created by tikzplotlib v0.9.6.
 \begin{tikzpicture}
 
-\begin{groupplot}[group style={group size=2 by 1}]
-\nextgroupplot[
+\begin{groupplot}[
+group style={group size=2 by 3,horizontal sep=2.5cm},
 legend cell align={left},
-legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black},
+legend style={fill opacity=1, draw opacity=1, text opacity=1, draw=white},
 log basis y={10},
 tick align=outside,
 tick pos=left,
-title={Model3 },
+title style={at={(0.43,0.85)},anchor=north},
 x grid style={white!69.0196078431373!black},
 xlabel={Epoch},
-xmin=-99.95, xmax=2098.95,
+x label style={yshift=13pt},
+xmin=-49.95, xmax=2048.95,
 xtick style={color=black},
+xtick = {0,500,1500,2000},
 y grid style={white!69.0196078431373!black},
 ylabel={MSE Loss},
-ymin=8.88664867882007e-06, ymax=0.01,
 ymode=log,
-ytick style={color=black}
+ytick style={color=black},
+width=.45\textwidth,
+height=.25\textwidth
+]
+\nextgroupplot[
+title={3 Layer},
+ymin=8.88664867882007e-06, ymax=0.01,
 ]
 \addplot [semithick, black, dashed]
 table {%
@@ -4029,21 +4036,8 @@ table {%
 \addlegendentry{Test}
 
 \nextgroupplot[
-legend cell align={left},
-legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=white!80!black},
-log basis y={10},
-tick align=outside,
-tick pos=left,
-title={Model4 },
-x grid style={white!69.0196078431373!black},
-xlabel={Epoch},
-xmin=-99.95, xmax=2098.95,
-xtick style={color=black},
-y grid style={white!69.0196078431373!black},
-ylabel={MSE Loss},
+title={4 Layer},
 ymin=0.000567045165310798, ymax=0.01,
-ymode=log,
-ytick style={color=black}
 ]
 \addplot [semithick, black, dashed]
 table {%

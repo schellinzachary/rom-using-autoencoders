@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  31 MAY 2021 21:11
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  1 JUN 2021 23:22
  system commands enabled.
 **master.tex master.tex
 (./master.tex
@@ -1975,10 +1975,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--91
  []
 
 [39] [40]
-
-LaTeX Warning: Reference `Fig:Batch' on page 1 undefined on input line 92.
-
-
 Overfull \hbox (12.01216pt too wide) in paragraph at lines 92--112
 \T1/lmr/m/n/10.95 Eight ex-per-i-ments with dif-fer-ent ac-ti-va-tion func-tion
 s namely ReLU, ELU, Tanh, SiLU and LeakyReLU
@@ -2019,35 +2015,42 @@ Appendix B.
 
 ] (./Figures/Parameterstudy/Convolutional/kfold.tex
 ===== Image 'Figures/master-figure47' is up-to-date. ======
-) [49] (./Figures/Parameterstudy/Convolutional/Layer.tex
-\openout3 = Figures/master-figure48.md5
-
-\openout3 = master.auxlock
-
-===== 'mode=convert with system call': Invoking 'lualatex -shell-escape -halt-on
--error -interaction=batchmode -jobname "Figures/master-figure48" "\def\tikzexter
-nalrealjob{master}\input{master}"' ========
-
-\openout3 = master.auxlock
+) [49] [50<./Figures/master-figure47.pdf>]
+(./Figures/Parameterstudy/Convolutional/Layer.tex
+===== Image 'Figures/master-figure48' is up-to-date. ======
 )
-Overfull \hbox (5.15825pt too wide) in paragraph at lines 2--267
+Underfull \hbox (badness 10000) in paragraph at lines 2--282
 [][]
  []
 
-[50<./Figures/master-figure47.pdf>]) [51<./Figures/master-figure48.pdf>]
-(./master.bbl [52
+(./Figures/Parameterstudy/Convolutional/Batch.tex
+===== Image 'Figures/master-figure49' is up-to-date. ======
+)
+Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--289
+[][]
+ []
 
-]) [53
+[51<./Figures/master-figure48.pdf><./Figures/master-figure49.pdf>]
+(./Figures/Parameterstudy/Convolutional/Channels.tex
+===== Image 'Figures/master-figure50' is up-to-date. ======
+)
+Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--313
+[][]
+ []
+
+) [52<./Figures/master-figure50.pdf>] (./master.bbl [53
+
+]) [54
 Missing character: There is no … (U+2026) in font ec-lmri10!
-] (./back/acknowledgement.tex) [54
-
 ]
-(./back/declaration.tex
+(./back/acknowledgement.tex) [55
+
+] (./back/declaration.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [55]
+) [56]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2056,7 +2059,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: A2AB7241E33427B709207D3341237800;3879.
+(rerunfilecheck)             Checksum: 4DA22759382B9CE95749936A3F09F55A;3879.
 
 
 LaTeX Warning: There were undefined references.
@@ -2065,14 +2068,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46409 strings out of 481365
+ 46461 strings out of 481365
  156265,14696376 words of node,token memory allocated
- 1054 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 131 attribute, 88 glue_spe
-c, 67 attribute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:3088,3:289,4:160,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
+ 1060 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 133 attribute, 88 glue_spe
+c, 68 attribute_list, 2 write, 1 pdf_action nodes
+   avail lists: 1:3,2:3085,3:305,4:160,5:863,6:45,7:16083,8:92,9:778,10:45,11:10
 53
- 60326 multiletter control sequences out of 65536+600000
+ 60337 multiletter control sequences out of 65536+600000
  134 fonts using 11295395 bytes
  81i,19n,138p,2767b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2096,10 +2099,10 @@ share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public
 /lm/lmsy9.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (58 pages, 6523601 bytes).
+Output written on master.pdf (59 pages, 6816881 bytes).
 
-PDF statistics: 2134 PDF objects out of 2487 (max. 8388607)
- 1729 compressed objects within 18 object streams
- 198 named destinations out of 1000 (max. 131072)
+PDF statistics: 2204 PDF objects out of 2487 (max. 8388607)
+ 1786 compressed objects within 18 object streams
+ 204 named destinations out of 1000 (max. 131072)
  192 words of extra memory for PDF output out of 10000 (max. 100000000)
 

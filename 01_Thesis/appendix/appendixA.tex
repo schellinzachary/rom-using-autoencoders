@@ -169,7 +169,7 @@ Again we start with a small model which architecture and hyperparameters are sum
 \caption{Initial selection of hyperparameters for training and architecture. The initial model compirses 6 layers, of which 4 are either convolutional (Conv.) or transposed convolutional (Tr.Conv.). The learning rate is switched from \num{e-4} to \num{e-4} at the 500th epoch as in \cref{Ch:ApA}. Depth counts the number of convolutional/transposed concolutional layers and excludes the fully connected layers.}
 \begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
 	\toprule
-	\multicolumn{4}{c}{Encoder} & \multicolumn{4}{c}{Decoder}\\ [.5ex]
+	\multicolumn{4}{c}{Encoder} & \multicolumn{4}{c}{Decoder}\\ [.5ex] \hline
 	Layer & Type & Channels & Output size & Layer & Type & Channels & Output size \\ 
 	\hline
 	1 & Conv  & 8  & $5\times 40$ & 4 & Lin.     & -  & 128            \\ \hline
@@ -209,61 +209,122 @@ The lowest validation error of \num{1.3e-5} is achieved with the second fold at 
 	\begin{figure}[H]
 		\input{Figures/Parameterstudy/Convolutional/kfold.tex}
 		\label{Fig:kFold}
-		\caption{Training- and validation error over epochs for five independent folds.}
+		\caption{Training- and validation error over 1000 epochs for five independent folds.}
 	\end{figure}
 \end{center}
 
 \begin{table}
 	\setlength{\tabcolsep}{1pt}
 	\footnotesize
-	\caption{Architecture and hyperparameters for the models with three and four convolutional layers.}
+	\caption{Architecture and hyperparameters for the models with three and four convolutional layers. Kernel size and stride width for both models are \(3\times 3\)}
 	\begin{minipage}{.5\textwidth}
 		\begin{tabular*}{.9\textwidth}{ @{\extracolsep{\fill}} c c c c c @{} }
 			\toprule
-			\multicolumn{4}{c}{Encoder} \\ [.5ex]
+			\multicolumn{4}{c}{Encoder} \\ [.5ex]\hline
 			Layer & Type & Channels & Padding & Output  \\ 
 			\hline
 			1 & Conv  & 4  & in: 1/1 & $9\times 67$  \\ \hline
 			2 & Conv. & 8  & in: 0/1 & $3\times 23$  \\ \hline
 			3 & Conv. & 16 & in: 0/1 & $1\times 8$   \\ \hline
 			4 & Lin.  & -  & -   & 5		      	 \\ 
+			\\
 			\toprule
-			\multicolumn{4}{c}{Decoder}		\\ [.5ex]
+			\multicolumn{4}{c}{Decoder}		\\ [.5ex]\hline
 			Layer & Type & Channels & Padding & Output \\
 			\hline
 			5 & Lin.     & -  & - & 128       	 		        \\ \hline
 			6 & Tr.Conv. & 16 & in: 0/1 out: 0/1 & $1\times 8$  \\ \hline
 			7 & Tr.Conv. & 8  & in: 0/1 out: 0/1 & $3\times 23$ \\ \hline
-			8 & Tr.Conv. & 1  & in: 0/1 & $25\times 200$        \\ \hline   
+			8 & Tr.Conv. & 1  & in: 0/1 & $25\times 200$        \\ \hline
+			\\
 		\end{tabular*}
 	\end{minipage}%
 	\begin{minipage}{.5\textwidth}
 		\begin{tabular*}{.9\textwidth}{ @{\extracolsep{\fill}} c c c c c @{} }
 			\toprule
-			\multicolumn{4}{c}{Encoder} \\ [.5ex]
+			\multicolumn{4}{c}{Encoder} \\ [.5ex]\hline
 			Layer & Type & Channels & Padding & Out  \\ 
 			\hline
-			1 & Conv  & 2  & in: 3/2 & $10\times 67$ \\ \hline
+			1 & Conv  & 2  & in: 3/2 & $10\times 68$ \\ \hline
 			2 & Conv. & 4  & in: 3/2 & $5\times 24$  \\ \hline
-			3 & Conv. & 8  & in: 3/2 & $3\times 8$   \\ \hline
+			3 & Conv. & 8  & in: 3/2 & $3\times 9$   \\ \hline
 			4 & Conv. & 16 & in: 3/3 & $1\times 3$   \\ \hline
 			5 & Lin.  & -  & & 5		      \\  
 			\toprule
-			\multicolumn{4}{c}{Decoder}		\\ [.5ex]
+			\multicolumn{4}{c}{Decoder}		\\ [.5ex]\hline
 			Layer & Type & Channels & Padding & Out \\
 			\hline
 			6  & Lin.     & -  & - & 128       	 \\ \hline
-			7  & Tr.Conv. & 16 & - & $1\times 3$   \\ \hline
-			8  & Tr.Conv. & 8  & in: 2/2 out: 0/1 & $3\times 8$   \\ \hline
-			9  & Tr.Conv. & 4  & in: 3/2 & $10\times 67$   \\ \hline
+			7  & Tr.Conv. & 16 & - & $3\times 9$   \\ \hline
+			8  & Tr.Conv. & 8  & in: 2/2 out: 0/1 & $5\times 24$   \\ \hline
+			9  & Tr.Conv. & 4  & in: 3/2 & $9\times 68$   \\ \hline
 			10 & Tr.Conv. & 1  & in: 1/2 & $25\times 200$ \\ \hline   
 		\end{tabular*}
 	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\centering
+	\caption{}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+		\toprule
+		Layer & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
+		\hline
+		3   & \num{1.4e-5}           & \num{1.5e-5}             & 0.044   & 1975  \\  
+		\hline
+		4    & \num{7.3e-4}           & \num{8.1e-4}             & 0.327   & 1995\\
+		\hline
+	\end{tabular*}\label{Tab:Layer}
 \end{table}
 \begin{center}
 	\begin{figure}[H]
 		\input{Figures/Parameterstudy/Convolutional/Layer.tex}
 		\label{Fig:Layer}
-		\caption{Training- and validation error over epochs for two models with three and four convolutional layers. All hyperparameters are as in the previous small model. For channelsa  maximum number of 16 in the last layer of encoder and decoder is applied.}
+		\caption{Training- and validation error over 2000 epochs for two models with three and four convolutional layers. Channels are chosen to reach a  maximum of 16 in the last layer of encoder. Kernel size and stride width are both \(3\times 3\).}
 	\end{figure}
 \end{center}
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/Batch.tex}
+		\label{Fig:Batch}
+		\caption{Training- and validation error over 2000 epochs for the small model with two convolutional layers in encoder and decoder as well as the models with two three and four convolutional layers. All three models are trained with a batch size of 4.}
+	\end{figure}
+\end{center}
+
+\begin{table}[H]
+\centering
+\caption{}
+\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+	\toprule
+	Layer & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
+	\hline
+	2   & \num{6.0e-6}             & \num{8.0e-6}             & 0.030   & 1999  \\
+	\hline  
+	3   & \num{1.0e-5}              & \num{1.3e-5}            & 0.038   & 1965  \\  
+	\hline
+	4    & \num{6.0e-3}            & \num{6.9e-3}             & 0.94   	& 109\\
+	\hline
+\end{tabular*}\label{Tab:Batch4}
+\end{table}
+
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/Channels.tex}
+		\label{Fig:Channels}
+		\caption{Training- and validation error over 2000 epochs for the small model with two convolutional layers in encoder and decoder as well as the models with two three and four convolutional layers. All three models are trained with a batch size of 4.}
+	\end{figure}
+\end{center}
+\begin{table}[H]
+	\centering
+	\caption{}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+		\toprule
+		Layer & Minimum training error & Minimum validation error & \(\L2\) & Epoch \\ [.5ex]
+		\hline
+		2   & \num{6.8e-3}             & \num{7.6e-3}             & 1.0     & 0     \\
+		\hline  
+		3   & \num{9.0e6}              & \num{1.1e-5}             & 0.037   & 1985  \\  
+		\hline
+		4    & \num{7.0e-6}            & \num{9.0e-6}             & 0.033   & 1953  \\
+		\hline
+	\end{tabular*}\label{Tab:Channels}
+\end{table}

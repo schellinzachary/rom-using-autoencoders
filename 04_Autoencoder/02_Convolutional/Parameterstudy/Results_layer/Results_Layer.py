@@ -6,7 +6,7 @@ from pathlib import Path
 from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
-loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/Layer.tex"
+loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/Batch.tex"
 
 
 import numpy as np
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+#import tikzplotlib
 
 
 import torch
@@ -33,9 +33,6 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 f = np.load(join(home,loc_data))
 f = tensor(f, dtype=torch.float).to(device)
 
-# scaler = TorchStandardScaler()
-# scaler.fit(f)
-# f = scaler.transform(f)
 
 
 class Encoder_2(nn.Module):
@@ -229,15 +226,10 @@ class Decoder_4(nn.Module):
         x = self.linearD1(x)
         dim = x.shape[0]
         x = torch.reshape(x,[dim,16,1,3])
-        print(x.shape)
         x = self.act(self.convD1(x))
-        print(x.shape)
         x = self.act(self.convD2(x))
-        print(x.shape)
         x = self.act(self.convD3(x))
-        print(x.shape)
         x = self.convD4(x)
-        print(x.shape)
         return x
 
 class Autoencoder(nn.Module):
@@ -252,27 +244,27 @@ class Autoencoder(nn.Module):
         return x
 
 enc_dict = [
-    #Encoder_2(),
+    Encoder_2(),#only for Exp. No. 3
     Encoder_3(),
     Encoder_4()
 ]
 dec_dict = [
-    #Decoder_2(),
+    Decoder_2(),#only for Exp. No. 3
     Decoder_3(),
     Decoder_4()
 ]
 
 best_models = (
+    # scaled data not working
     # "model3-epoch1399-val_loss7.762E-03-exp-1",
     # "model4-epoch1094-val_loss1.474E-01-exp-1",
-    "model3-epoch1975-val_loss1.537E-05-exp-2",
-    "model4-epoch1924-val_loss8.178E-04-exp-2"
-    # "model2-epoch1969-val_loss8.009E-06-exp-3",
-    # "model3-epoch1980-val_loss1.326E-05-exp-3",
-    # "model4-epoch109-val_loss6.976E-03-exp-3"
-    # "model2-epoch1-val_loss7.619E-03-exp-4",
-    # "model3-epoch1944-val_loss1.068E-05-exp-4",
-    # "model4-epoch1969-val_loss9.496E-06-exp-4"
+    # non scaled working
+    # "model3-epoch1975-val_loss1.537E-05-exp-2",
+    # "model4-epoch1924-val_loss8.178E-04-exp-2"
+    # increased batch size    
+    "model2-epoch1969-val_loss8.009E-06-exp-3",
+    "model3-epoch1980-val_loss1.326E-05-exp-3",
+    "model4-epoch109-val_loss6.976E-03-exp-3"     
     )
 
 train_losses = []
@@ -283,7 +275,7 @@ min_idx = []
 
 
 
-fig, ax = plt.subplots(1,2)
+fig, ax = plt.subplots(1,3)#Change to 3 for Exp. No. 3
 
 for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
 
@@ -296,7 +288,8 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     model = Autoencoder(encoder, decoder).to(device)
 
     checkpoint_model = torch.load('{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('last-model-{}exp-2.pt'.format(idx+3))
+    checkpoint_loss = torch.load('last-model-{}exp-3.pt'.format(idx+2))#Change "exp-" to 3 for Exp. No. 3
+                                                                       #and "idx+" to 2 for Exp. No. 3                             
 
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
@@ -319,11 +312,11 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
-    ax[idx].set_title('Model{} '.format(idx+3))
+    ax[idx].set_title('Model{} '.format(idx+3))#Change to 3 for Exp. No. 3
     ax[idx].set_ylim(ymax=1e-2)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+#tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {
