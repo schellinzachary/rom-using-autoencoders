@@ -109,8 +109,11 @@ class Encoder_3(nn.Module):
 
     def forward(self, x):
         x = self.act(self.convE1(x))
+        print(x.shape)
         x = self.act(self.convE2(x))
+        print(x.shape)
         x = self.act(self.convE3(x))
+        print(x.shape)
         original_size = x.size()
         x = x.view(original_size[0],-1)
         x = self.linearE1(x)
@@ -147,7 +150,9 @@ class Decoder_3(nn.Module):
         dim = x.shape[0]
         x = torch.reshape(x,[dim,16,1,8])
         x = self.act(self.convD1(x))
+        print(x.shape)
         x = self.act(self.convD2(x))
+        print(x.shape)
         x = self.convD3(x)
         return x
 

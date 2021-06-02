@@ -14,14 +14,14 @@
 \contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{8}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Autoencoders}{9}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Training}{11}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}Model Order Reduction}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Offline Phase}{23}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{23}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Contructing the mapping}{24}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4.1.3}Online Phase}{27}{subsection.4.1.3}%
-\contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{32}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{38}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{48}{appendix.B}%
-\contentsline {chapter}{Bibliography}{53}{appendix*.52}%
+\contentsline {chapter}{\numberline {4}Model Order Reduction}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Offline Phase}{24}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Full order BGK-model}{24}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Contructing the mapping}{25}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Online Phase}{28}{subsection.4.1.3}%
+\contentsline {chapter}{\numberline {5}Results}{29}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{33}{subsection.5.0.1}%
+\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{39}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{49}{appendix.B}%
+\contentsline {chapter}{Bibliography}{55}{appendix*.52}%
 \contentsfinish 
