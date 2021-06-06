@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+#import tikzplotlib
 
 
 import torch
@@ -42,14 +42,19 @@ def weight_reset(m):
 f = np.load(join(home,loc_data))
 f = tensor(f, dtype=torch.float)#.to(device)
 
+
 #Augment data with flipping and rotating
 f_rotate = rotate(f,angle=180)
 f_flip = vflip(f)
 f = torch.cat((f,f_rotate,f_flip))
 
+
 #shuffle again
 idx = torch.randperm(f.shape[0])
 f = f[idx].view(f.size())
+
+train_in = f[:192]
+val_in = f[192:240]
 
 BATCH_SIZE = 4
 lr = 1e-4
@@ -132,7 +137,7 @@ class Encoder_4(nn.Module):
         self.linearE1 = nn.Linear(in_features=192,
             out_features=5
             )
-        self.add_module('act_a', nn.ELU())
+        self.add_module('act_a', nn.SiLU())
         self.add_module('act_c', nn.SiLU())
 
 
@@ -175,7 +180,7 @@ class Decoder_4(nn.Module):
             stride=(3,3),
             padding=(1,2)
             )
-        self.add_module('act_a', nn.ELU())
+        self.add_module('act_a', nn.SiLU())
 
 
     def forward(self, x):
@@ -200,9 +205,6 @@ dec_dict = [
 ]
 
 for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
-
-    train_in = f[:192]
-    val_in = f[192:240]
 
     train_iterator = DataLoader(train_in, batch_size = BATCH_SIZE)
     test_iterator = DataLoader(val_in, batch_size = int(len(f)*0.2))
@@ -234,7 +236,7 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     #encoder.apply(weight_reset)
 
     optimizer = Adam(params=model.parameters(), lr=lr)
-    #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[500], gamma=0.1)
+    #scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones=[1250], gamma=0.1)
 
     loss_crit = nn.MSELoss()
     train_losses = []

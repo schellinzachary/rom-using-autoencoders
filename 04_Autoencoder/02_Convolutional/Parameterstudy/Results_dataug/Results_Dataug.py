@@ -1,12 +1,12 @@
 '''
-K-Fold to find best fold
+Results Data Augmentation
 '''
 
 from pathlib import Path
 from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
-loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/Batch.tex"
+loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/DatAug.tex"
 
 
 import numpy as np
@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-#import tikzplotlib
+import tikzplotlib
 
 
 import torch
@@ -112,7 +112,7 @@ class Encoder_4(nn.Module):
         self.linearE1 = nn.Linear(in_features=192,
             out_features=5
             )
-        self.add_module('act_a', nn.ELU())
+        self.add_module('act_a', nn.SiLU())
         self.add_module('act_c', nn.SiLU())
 
 
@@ -155,7 +155,7 @@ class Decoder_4(nn.Module):
             stride=(3,3),
             padding=(1,2)
             )
-        self.add_module('act_a', nn.ELU())
+        self.add_module('act_a', nn.SiLU())
 
 
     def forward(self, x):
@@ -189,10 +189,14 @@ dec_dict = [
 ]
 
 best_models = (
-    # 2 Layer
-    "model0-epoch1990-val_loss5.725E-05",
-    # 4 Layer
-    "model1-epoch1989-val_loss1.184E-05",
+    # # # 2 Layer
+    # "model0-epoch1989-val_loss1.413E-05",
+    # # 4 Layer
+    # "model1-epoch1988-val_loss1.572E-05",
+    # 2 Layer with scheduler
+    "model0-sched-epoch1988-val_loss2.190E-05",
+    # 4 Layer with scheduler
+    "model1-sched-epoch1988-val_loss1.854E-05",
 
   
     )
@@ -218,7 +222,8 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     model = Autoencoder(encoder, decoder).to(device)
 
     checkpoint_model = torch.load('{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('last-model-{}.pt'.format(idx))           
+    #checkpoint_loss = torch.load('last-model-{}.pt'.format(idx))
+    checkpoint_loss = torch.load('last-model-{}_sched.pt'.format(idx)) #uncomment for lr schedules results           
 
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
@@ -242,7 +247,7 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
     ax[idx].set_title('Model{} '.format(idx+3))#Change to 3 for Exp. No. 3
-    ax[idx].set_ylim(ymax=1e-4)
+    ax[idx].set_ylim(ymax=1e-3)
     ax[idx].legend()
 
 #tikzplotlib.save(join(home,loc_plot))

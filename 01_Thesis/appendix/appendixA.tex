@@ -164,7 +164,7 @@ The final hyperparameters for both input data are summarized below in \cref{Tab:
 The finding of appropriate hyperparameters for the convolutional autoencoder is described here. The hyperparameters include  batch size, non-linear activation functions, number of epochs for training and learning rate and number of layers i.e. depth. Depth comprises kernel size, stride width as well as number of channels per layer.\\
 This analysis follows the prior finding of hyperparameters for the fully connected autoencoder, hence utilizes insights thereof. Additionally this analysis follows a slightly different scheme than before, as there are solely 40 examples for training and validation for both rarefaction levels \(\hy\) and \(\rare\). Hence it is tried to find a combined model that performs well on both rarefaction levels. With this measure datasets for both rarefaction levels are concatenated to one dataset of 80 examples for training and validation. Furthermore this approach gives an answer to how well a model can generalize about the BGK model for different rarefaction levels in Sod's shock tube.\\
 Again we start with a small model which architecture and hyperparameters are summarized in \cref{Tab:small}.
-\begin{table}[H]
+\begin{table}[htbp!]
 \centering
 \caption{Initial selection of hyperparameters for training and architecture. The initial model compirses 6 layers, of which 4 are either convolutional (Conv.) or transposed convolutional (Tr.Conv.). The learning rate is switched from \num{e-4} to \num{e-4} at the 500th epoch as in \cref{Ch:ApA}. Depth counts the number of convolutional/transposed concolutional layers and excludes the fully connected layers.}
 \begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
@@ -185,9 +185,9 @@ Again we start with a small model which architecture and hyperparameters are sum
 \end{table} 
 The activations and learning rate stem from conclusions made in \cref{Ch:ApA}. The application of activation functions follows the same sheme as described in \cref{Ch:ApA} seen in \cref{Fig:ActScheme}. Kernel size and stride width are chosen as to circumvent checkerboard artefacts as described in \cref{Ch:DimRedAl}. The number of channels is inspired by the architecture chosen in \cite{Carlberg}.\\
 The number of available examples for training and validation limited as previously stated . Therefor the split in training and validation sets encompasses the risk of a bias in one of the sets. For instance, if out of the 40 examples, a few of them ,maybe 5 , contain considerable variance to the other examples and all of them are found in the training set, then the validation error could not estimate the model's ability to generalize. Therefore the k-fold algorithm described in \cite{Goodfellow} is adopted. The k-fold algorithm provides from the complete shuffled dataset, k independent splits into training and validation set with which the model is trained. By that, each example gets the chance to be either in the training or validation set once. For an 80/20 split as used in this thesis and described in \cref{Ch:DimRedAl}, five independent folds can be obtained. Hence with 80 available examples the training set \(\btch_{train}\) consists of 74 examples and the validation set \(\btch_{val}\) of the remaining 16 examples. The results of said preliminary experiment are summarized in \cref{Tab:kFold} and \cref{Fig:kFold}.
-\begin{table}[H]
+\begin{table}[htbp!]
 	\centering
-	\caption{Results for the k-fold experiments. Minimum values of training- and validation error as well as the epoch of the minimum validation error and the \(\L2\) are given. The \(\L2\) is evaluated with the models saved when the minimum validation error was achieved during training. The mean and standard deviation of the validation error are \num{3.55e-5} and \num{2.13e-5} respectively with a corresponding variance of \num{4.56e-10}.}
+	\caption{Training of five independent folds. Summary of minimum training- and minimum validation error for a small model with two convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached. The mean and standard deviation of the validation error are \num{3.55e-5} and \num{2.13e-5} respectively with a corresponding variance of \num{4.56e-10}.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
 		\toprule
 		Fold & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
@@ -208,18 +208,17 @@ The lowest validation error of \num{1.3e-5} is achieved with the second fold at 
 Next the capacity of the model is increased by successively adding convolutional layers, thus obtaining two additional models. One encompasses three convolutional layers, the other four convolutional layers in encoder and decoder. An exact description of both architectures is summarized in \cref{Tab:Layer}. The maximum number of channels for this analysis is kept at 16. This measure decreases the growth rate of channels per layer, which is quadratic for the first model and now scales to linear in order to increase capacity rather smooth. Note that it is also possible to keep the growth rate constant while adding layers. Here this is done in the following steps.\\
 Kernel size and stride width shrink the input as described in \cref{Ch:DimRedAl}. In the previous model shrinkage evolved with a pace of \(\frac{1}{5}\). This reduction rate is able to reduce the input size over two succesive layers to unity. Hence the same kernel size and stride width can only be adopted by using excessive zero padding between successive convolutional layers. To overcome this issue a balance between zero padding, which cannot be omitted for four convolutional layers with the given input dimensions, and kernel size and stride width needs to be found. Here both features are chosen to have sizes \(3\times 3\). Extra padding, which is needed for one to reduce the shrinkage rate per layer in the encoder and for the other to transpose the shrinkage of the encoder in the decoder, is summarized in \cref{Tab:Layer}. In \texttt{pytorch}'s implementation of transposed convolutional layers a handy parameter can be used called output padding. This parameter provides a measure to effectively increase the output size by one, left or at the bottom of the output, to resolve the ambiguity when \(\text{stride}>1\). Then the respective convolutional layer maps multiple input sizes to the same output size. Taking for example the second and sixth layer of the model with three convolutional layers in encoder and decoder. Here the convolutional layer maps a size of 23 to 8. But the respective transposed convolutional layer maps size 8 to size 22. In this case output padding resolves the issue by increasing the output size by one.         
 \begin{center}
-	\begin{figure}[H]
+	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Convolutional/kfold.tex}
 		\label{Fig:kFold}
 		\caption{Training- and validation error over 1000 epochs for five independent folds.}
 	\end{figure}
 \end{center}
-Results for both models are summarized in \cref{Tab:Layer}. Training- and validation error for the model with three convolutinal layers achieve slightly better results as the small model. On the contrary does the \(\L2\) not achieve the resuls of the small model with \(\L2=0.044\). In \cref{Fig:Layer} the evolution of training- and validation error is depicted over 2000 epochs. The model with three convolutional layers shows an unstable training after the 500th epoch, which is ignored for now. It can be observed that the model with four convolutional layers is underfitting and does not achieve comparable reults to the small model.\\  
- 
-\begin{table}
+Results for both models are summarized in \cref{Tab:Layer}. Training- and validation error for the model with three convolutinal layers achieve slightly better results as the small model. On the contrary does the \(\L2\) not achieve the resuls of the small model with \(\L2=0.044\). In \cref{Fig:Layer} the evolution of training- and validation error is depicted over 2000 epochs. The model with three convolutional layers shows an unstable training after the 500th epoch, which is ignored for now. It can be observed that the model with four convolutional layers is underfitting and does not achieve comparable results to the small model. 
+\begin{table}[htbp!]
 	\setlength{\tabcolsep}{1pt}
 	\footnotesize
-	\caption{Architecture for the models with three (left) and four (ricght) convolutional layers in encoder and decoder. Kernel size and stride width are \(3\times 3\) for both features and models.}
+	\caption{Architecture for the models with three (left) and four (right) convolutional layers in encoder and decoder. Kernel size and stride width are \(3\times 3\) for both features and models.}
 	\begin{minipage}{.5\textwidth}
 		\begin{tabular*}{.9\textwidth}{ @{\extracolsep{\fill}} c c c c c @{} }
 			\toprule
@@ -264,11 +263,10 @@ Results for both models are summarized in \cref{Tab:Layer}. Training- and valida
 			10 & Tr.Conv. & 1  & in: 1/2 & $25\times 200$ \\ \hline   
 		\end{tabular*}
 	\end{minipage}
-\end{table}
-Next the batch size is increased from two to four. The initial batch size was chosen so small as the limited available data permits reasonable training time. The results for all three models are shown in \cref{Tab:Batch4}. The models with two and three convolutional layers benefit from increasing the batch size. The small model reaches the best training- and validation error with \num{6.0e-6} and \num{8.0e-6} respectively and \(\L2=0.03\). In \cref{Fig:Batch} it can be observed, that the increased batch size results in a stable training for both shallow models. The underfitting of the deep model with four convolutional layers in encoder and decoder is increased.  
-\begin{table}[H]
+\end{table} 
+\begin{table}[htbp!]
 	\centering
-	\caption{}
+	\caption{Results for increasing number of layers. Summary of minimum training- and minimum validation error for a model with three and a model with convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
 		\toprule
 		Layer & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
@@ -278,79 +276,65 @@ Next the batch size is increased from two to four. The initial batch size was ch
 		4    & \num{7.3e-4}           & \num{8.1e-4}             & 0.327   & 1995\\
 		\hline
 	\end{tabular*}\label{Tab:Layer}
-\end{table}
+\end{table} 
 \begin{center}
-	\begin{figure}[H]
+	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Convolutional/Layer.tex}
 		\label{Fig:Layer}
-		\caption{Training- and validation error over 2000 epochs for two models with three and four convolutional layers. Channels are chosen to reach a  maximum of 16 in the last layer of encoder. Kernel size and stride width are both \(3\times 3\).}
+		\caption{Increasing the number of layers. Shown are training- and validation error over 2000 epochs a model with two and a model with three convolutional layers in the encoder. Channels are chosen to reach a  maximum of 16 in the last layer of encoder. Kernel size and stride width are both \(3\times 3\).}
 	\end{figure}
 \end{center}
+Next the batch size is increased from two to four. The initial batch size was chosen so small as the limited available data permits reasonable training time. The results for all three models are shown in \cref{Tab:Batch4}. The models with two and three convolutional layers benefit from increasing the batch size. The small model reaches the best training- and validation error with \num{6.0e-6} and \num{8.0e-6} respectively and \(\L2=0.03\). In \cref{Fig:Batch} it can be observed, that the increased batch size results in a stable training for both shallow models. The underfitting of the deep model with four convolutional layers in encoder and decoder is increased.
+\begin{table}[htbp!]
+	\centering
+	\caption{Increasing the batch size to four. Summary of minimum training- and minimum validation error for the models with two, three and four convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
+		\toprule
+		Layer & Min. training error & Min. validation error & \(\L2\) & Epoch\\ [.5ex]
+		\hline
+		2   & \num{6.0e-6}             & \num{8.0e-6}             & 0.030   & 1999  \\
+		\hline  
+		3   & \num{1.0e-5}              & \num{1.3e-5}            & 0.038   & 1965  \\  
+		\hline
+		4    & \num{6.0e-3}            & \num{6.9e-3}             & 0.94   	& 109\\
+		\hline
+	\end{tabular*}\label{Tab:Batch4}
+\end{table}
 \begin{center}
-	\begin{figure}[H]
+	\begin{figure}[htbp!]
 		\input{Figures/Parameterstudy/Convolutional/Batch.tex}
 		\label{Fig:Batch}
-		\caption{Training- and validation error over 2000 epochs for the small model with two convolutional layers in encoder and decoder as well as the models with three and four convolutional layers. All three models are trained with a batch size of 4.}
+		\caption{Increasing the batch size to four. Shown are training- and validation error over 2000 epochs for the models with two, three and four convolutional layers in the encoder.}
 	\end{figure}
 \end{center}
-
-\begin{table}[H]
-\centering
-\caption{Results for the models with two, three and four convolutional layers in encoder and decoder with a batch size of 4.}
-\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
-	\toprule
-	Layer & Minimum training error & Minimum validation error & \(\L2\) & Epoch\\ [.5ex]
-	\hline
-	2   & \num{6.0e-6}             & \num{8.0e-6}             & 0.030   & 1999  \\
-	\hline  
-	3   & \num{1.0e-5}              & \num{1.3e-5}            & 0.038   & 1965  \\  
-	\hline
-	4    & \num{6.0e-3}            & \num{6.9e-3}             & 0.94   	& 109\\
-	\hline
-\end{tabular*}\label{Tab:Batch4}
-\end{table}
-The underfitting of the deepest model is now tackled with increasing te capacity of the model by raising the channel growth rate to quadratic, as it is found in \cite{Carlberg}. The same is performed for the model with three convolutional layers in encoder and decoder. Additionally the channel sizes of the small model are increased. The results and available channel sizes in order of appearance in the encoder are summarized in \cref{Tab:Channels}. Note that the decoder mirrors the channel sizes of the encoder. The small model does not learn at all as seen in \cref{Fig:Channels}. The training was repeated several times, but no improvement could be produced. The reason for this behavior is not known and can't be classified as underfitting and overfitting, as there is no change in training- and validation error observed. On the other hand does the deep network with four convolutional layers achieve comparable results to the small model in the previous experiment. The model with three convolutional layers improves slightly. In conclusion, the quadratic growth rate of the channels starting from eight channels is suitable for the following experiments.     
-\begin{center}
-	\begin{figure}[H]
-		\input{Figures/Parameterstudy/Convolutional/Channels.tex}
-		\label{Fig:Channels}
-		\caption{Training- and validation error over 2000 epochs for the small model with two convolutional layers in encoder and decoder as well as the models with two three and four convolutional layers. Channel sizes for the small model are increased. Growth rate for the models with three and four convolutional layers in encoder and decoder is quadratic.}
-	\end{figure}
-\end{center}
-\begin{table}[H]
+The underfitting of the deepest model is now tackled with increasing te capacity of the model by raising the channel growth rate to quadratic, as it is found in \cite{Carlberg}. The same is performed for the model with three convolutional layers in encoder and decoder. Additionally the channel sizes of the small model are increased. The results and available channel sizes in order of appearance in the encoder are summarized in \cref{Tab:Channels}. Note that the decoder mirrors the channel sizes of the encoder. The small model does not learn at all as seen in \cref{Fig:Channels}. The training was repeated several times, but no improvement could be produced. The reason for this behavior is not known and can't be classified as underfitting and overfitting, as there is no change in training- and validation error observed. On the other hand does the deep network with four convolutional layers achieve comparable results to the small model in the previous experiment. The model with three convolutional layers improves slightly. In conclusion, the quadratic growth rate of the channels starting from eight channels is suitable for the following experiments, for which the three layer model is discarded as the other models reach the lowest validation error so far. 
+\begin{table}[htbp!]
 	\centering
-	\caption{Results for the small model with two convolutional layers in encoder and decoder as well as the models with two three and four convolutional layers. Channel sizes for the small model are increased. Growth rate for the models with three and four convolutional layers in encoder and decoder is quadratic.}
+	\caption{Increasing the channel growth rate to quadratic. Summary of minimum training- and minimum validation error for the models with two, three and four convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached. Note that the channel sizes of the two layer model are only increased, the growth rate has already been quadratic.}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c c c c c @{} }
 		\toprule
 		Layer & Channels  & Minimum training error & Minimum validation error & \(\L2\) & Epoch \\ [.5ex]
 		\hline
 		2    & 16,32   	  & \num{6.8e-3}           & \num{7.6e-3}             & 1.0     & 0     \\
 		\hline  
-		3    & 8,16,32    & \num{9.0e6}            & \num{1.1e-5}             & 0.037   & 1985  \\  
+		3    & 8,16,32    & \num{9.0e-6}            & \num{1.1e-5}             & 0.037   & 1985  \\  
 		\hline
 		4    & 8,16,32,64 & \num{7.0e-6}           & \num{9.0e-6}             & 0.033   & 1953  \\
 		\hline
 	\end{tabular*}\label{Tab:Channels}
-\end{table}
-The variation of activation functions follows the same scheme as already outlined in \cref{Ch:ApA}. Eight experiments are conducted using ReLU, ELU, Tanh, SiLU and LeakyReLU in different combinations for the hidden convolutional layers and the code layer. Results are summarized in \cref{Tab:Activations}. Training and validation error over 200 epochs are displayed in \cref{Fig:ActivationsC}. 
+\end{table}   
 \begin{center}
-	\begin{figure}[H]
-		\input{Figures/Parameterstudy/Convolutional/2l_activations.tex}
-		\input{Figures/Parameterstudy/Convolutional/4l_activations.tex}
+	\begin{figure}[htbp!]
+		\input{Figures/Parameterstudy/Convolutional/Channels.tex}
+		\label{Fig:Channels}
+		\caption{Increasing the channel growth rate to quadratic. Shown are training- and validation error over 2000 epochs for the model with two, three and four convolutional layers in the encoder.}
 	\end{figure}
 \end{center}
-\begin{center}
-	\begin{figure}[H]
-		\input{Figures/Parameterstudy/Convolutional/2l_2_activations.tex}
-		\input{Figures/Parameterstudy/Convolutional/4l_2_activations.tex}
-				\label{Fig:ActivationsC}
-		\caption{Eight experiments with different combinations of activation functions for the model with two convolutional layers in encoder and decoder (left) and four convolutional layers in encoder and decoder (right). Shown are training- and validation error over 2000 epochs.}
-	\end{figure}
-\end{center}
-\begin{table}[H]
+The variation of activation functions follows the same scheme as already outlined in \cref{Ch:ApA}. Eight experiments are conducted using ReLU, ELU, Tanh, SiLU and LeakyReLU in different combinations for the hidden convolutional layers and the code layer. Results are summarized in \cref{Tab:Activations}. Training- and validation error over 2000 epochs are displayed in \cref{Fig:ActivationsC}. For both models the validation error reaches the region of \num{e-6} using combinations of ELU, SiLU and Tanh. With applying rectifiers, the validation error stays in the region of \num{e-5}. Especially, with utilizing SiLU/SiLU for the four layer model, the validation error reaches a minimum of \num{6.0e-6}. Utilizing the combinations ELU/SiLU and ELU/Tanh for the two layer model also yields a minimum validation error of \num{6.0e-6}. In addition, this combination produces the smallest \(\L2\) with \(\L2=0.024\) applying ELU/SiLU for the four layer model and applying ELU/Tanh for the two layer model produces \(\L2=0.023\). These values correspond to the minimum training error which is \num{4.0e-6} and \num{3.0e-6} respectively. Here the four layer model overfits after the 500th epoch which produces, compared to the other models, a significant generalization gap. The same logic applies to the two layer model with ELU/Tanh, but yields a smaller generalization gap. In general, specifically the training of the four layer model is instable for all combinations of activation functions. The greater amount of free parameters, compared to the two layer model, requires a smaller learning rate or a greater batch size to stabilize the training. Finally, the combination of SiLU/SiLU is chosen for the four layer model and ELU/SiLU for the two layer model. Both choices lead to the lowest validation error, while maintaining the generalization gap small.\\
+\begin{table}[htbp!]
 	\setlength{\tabcolsep}{.01pt}
 	\centering
-	\caption{Results for the variation of activations for hidden-/code layers. Given is the minimum value of validation error as well as the the corresponding epoch and the \(\L2\). The \(\L2\) is evaluated with the models saved when the minimum validation error was achieved during training.}
+	\caption{Variation of activations for hidden-/code layers. Summary of minimum training- and minimum validation error for the models with two and four convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached.}
 	\begin{tabular*}{17cm}{ @{\extracolsep{\fill}} c c c c c c c c c @{} }
 		\toprule
 		Act. hid./code & \multicolumn{2}{c}{Min. training error}&\multicolumn{2}{c}{Min. validation error} & \multicolumn{2}{c}{$\L2$} &\multicolumn{2}{c}{Epoch}\\ [.5ex]
@@ -365,4 +349,72 @@ The variation of activation functions follows the same scheme as already outline
 		SiLU/SiLU        &\num{6.0e-6} &\num{6.0e-6} &\num{8.0e-6} & \num{6.0e-6} & \num{0.030}  & \num{0.035}&1972  &1550\\ \hline
 		Tanh/Tanh        &\num{8.0e-6} &\num{5.0e-6} &\num{8.0e-6} & \num{8.0e-6} & \num{0.033}  & \num{0.030}&1999  &975 \\ \hline
 	\end{tabular*}\label{Tab:Activations}
+\end{table}
+A comparison with the validation loss of the fully connected model suggests, that the two- and three layer model gets stuck at a local minimum of  \(\min J(\frepar)\). Therefore the input data is augmentated for the following experiments. All examples in the training- and validation set are rotated around their center by \(180\degree\) and flipped about their central vertical axes. These methods add examples the input data without altering the information about the flow field present in each example. In \cref{Fig:DataAug} is an example in its original, rotated and flipped version. The flow field stays the same, just the direction in which it evlves has been altered. Using this method, available examples for training and testing triple from 80 to 240 examples.\\
+\begin{center}
+	\begin{figure}[htbp!]
+		\input{Figures/Parameterstudy/Convolutional/ExpDatAug.tex}
+		\caption{Rotated and flipped version of one original example from the dataset showing \(v\) over \(x\) and \(t\).}
+		\label{Fig:DataAug}
+	\end{figure}
+\end{center}
+Results for using augmented data are summarized in \cref{Tab:DataAug}. Two experiments are conducted for each model. One with learning rate adjustment, which decreases from \num{1e-4} to \num{1e-5} after the 1250th epoch, and one without. The minimum validation error ranges between \num{2.2e-5} and \num{1.4e-5}. Therefore data augmentation could not decrease the validation error further. Instead it increases. But, as seen in \cref{Fig:DatAug} and \cref{Fig:DatAugSched}, the training is stabilized compared to the previous experiments. In addition overfitting cannot be obeserved for the two layer model. The four layer model overfits after the around the 1150th epoch. Furthermore both models benefit from reducing the learning rate. A drop in training- and validation error can be observed after the 1250th epoch for both models.
+\begin{table}[htbp!]
+	\centering
+	\caption{Data augmentation with and without learning rate adjustement after the 1250th epoch. Summary of minimum training- and minimum validation error for the models with two and four convolutional layers in the encoder as well as the corresponding \(\L2\) and the epoch in which those values are reached.}
+	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c @{} }
+		\toprule
+		Layer   & Min. training error & Min. validation error & \(\L2\) & Epoch \\ [.5ex]
+		\hline
+		2      & \num{1.5e-5}            & \num{1.4e-5}             & 0.048     & 2000  \\
+		\hline  
+		2 (lr adjusted)  & \num{2.2e-5}  & \num{2.2e-5}              & 0.064    & 2000  \\  
+		\hline
+		4       & \num{7.0e-6}           & \num{1.6e-5}              & 0.034    & 1991  \\
+		\hline
+		4 (lr adjusted)  & \num{1.1e-5}  & \num{1.9e-5}             & 0.045     & 2000  \\  
+		\hline
+	\end{tabular*}\label{Tab:DataAug}
+\end{table}    
+\begin{center}
+	\begin{figure}[htbp!]
+		\input{Figures/Parameterstudy/Convolutional/DatAug.tex}
+		\caption{Using augumented data. Shown are training- and validation error over 2000 epochs for the model with two and four convolutional layers in the encoder.}
+		\label{Fig:DatAug}
+		\vspace{-1cm}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/DatAugSchedule.tex}
+		\caption{Learning rate adjustment with augmented data. Shown are training- and validation error over 2000 epochs for the model with two and four convolutional layers in the encoder.}
+		\label{Fig:DatAugSched}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/2l_activations.tex}
+		\input{Figures/Parameterstudy/Convolutional/4l_activations.tex}
+	\end{figure}
+\end{center}
+\begin{center}
+	\begin{figure}[H]
+		\input{Figures/Parameterstudy/Convolutional/2l_2_activations.tex}
+		\input{Figures/Parameterstudy/Convolutional/4l_2_activations.tex}
+		\caption{Eight experiments with different combinations of activation functions for the model with two (left) and four (right) convolutional layers in encoder. Shown are training- and validation error over 2000 epochs.}
+		\label{Fig:ActivationsC}
+	\end{figure}
+\end{center}
+To this end the finding of hyperparameters for a convolutional autoencoder using both rarefaction levels as input data failed to produce comparable results to those obtained by the fully connected autoencoders using both rarefaction levels as separate datasets. The analysis stops here out of brevity, but is far from an end. Changing the kernel size and especially the stride width, which yields non overlapping kernel positions in all models, changing the loss function to for example \texttt{pyTorch}'s BCEWithLogitsLoss or even adding more layers and so forth are still not analyzed, but are proposed for further investigations. As a final model the two layer model trained without data augmentation is chosen. This model encompasses the smallest number of free parameters while achieving the lowest validation error.
+\begin{table}[htbp!]
+	\centering
+	\caption{Final model.}
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c c c @{} }
+		\toprule
+		Layer & Channels  & Activations & Batch size & Learning rate & Num. Epochs \\ [.5ex]
+		\hline
+		2    & 8,16   	  & ELU/SiLU    & 4           & \num{1e-4} & 2000 \\
+		\hline
+	\end{tabular*}\label{Tab:FinalC}
 \end{table} 
+  

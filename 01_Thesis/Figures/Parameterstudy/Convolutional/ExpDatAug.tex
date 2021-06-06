@@ -1,0 +1,51 @@
+% This file was created by tikzplotlib v0.9.6.
+\pgfplotsset{scaled y ticks=false}
+\begin{tikzpicture}
+\begin{groupplot}[
+group style={group size=3 by 1,horizontal sep=1.5cm},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ytick style={color=black},
+ytick={0,0.12},
+%yticklabels={0,0.12},
+xtick={0.2,0.8},
+%xticklabels={0,0.8},
+xlabel={\(x\)},
+ylabel={\(t\)},
+xmin=0.0025, xmax=0.9975,
+ymin=0, ymax=0.12,
+height=.19\textwidth,
+width=.32\textwidth,
+clip=false,
+axis lines=box,
+x label style={yshift=.5cm},
+y label style={yshift=-.9cm}
+]
+\nextgroupplot[
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0.0025, xmax=0.9975, ymin=0, ymax=0.12] {Figures/Parameterstudy/Convolutional/ExpDatAug-003.png};
+\node [draw,fill=white] at (0.5,0.11) {\footnotesize original};
+\nextgroupplot[
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0.0025, xmax=0.9975, ymin=0, ymax=0.12] {Figures/Parameterstudy/Convolutional/ExpDatAug-004.png};
+\node [draw,fill=white] at (0.5,0.11) {\footnotesize rotated};
+\nextgroupplot[
+colorbar,
+colorbar style={
+ylabel={$v$},
+ytick={0.05,.25},
+yticklabels={0.05,0.25},
+y label style={yshift=1.6cm}
+},
+colormap/blackwhite,
+point meta max=0.296770393848419,
+point meta min=0.0158924162387848,
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=0.0025, xmax=0.9975, ymin=0, ymax=0.12] {Figures/Parameterstudy/Convolutional/ExpDatAug-005.png};
+\node [draw,fill=white] at (0.5,0.11) {\footnotesize flipped};
+\end{groupplot}
+
+\end{tikzpicture}
