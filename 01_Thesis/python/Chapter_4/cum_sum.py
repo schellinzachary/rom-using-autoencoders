@@ -10,7 +10,7 @@ import scipy.io as sio
 import numpy as np
 from numpy.linalg import norm as norm
 import matplotlib.pyplot as plt
-import tikzplotlib
+#import tikzplotlib
 from pathlib import Path
 home = str(Path.home())
 
@@ -41,16 +41,16 @@ def POD(c):
 
 #Calculate the difference in derivatives for hy and rare sing. val.
 ##################################################################
-# c_r = load_data("hy")
-# c_h = load_data("rare")
-# s_r, ls_r = POD(c_r)
-# s_h, ls_h = POD(c_h)
-# k = range(1,len(s_h)+1)
+c_r = load_data("hy")
+c_h = load_data("rare")
+s_r, ls_r = POD(c_r)
+s_h, ls_h = POD(c_h)
+k = range(1,len(s_h)+1)
 
-# grad_h = np.gradient(s_h[0:10])
-# grad_r = np.gradient(s_r[0:10])
+grad_h = np.gradient(s_h[0:10])
+grad_r = np.gradient(s_r[0:10])
 
-# print("Diff in grad:", np.linalg.norm(grad_h - grad_r)/np.linalg.norm(grad_h))
+print("Diff in grad:", np.linalg.norm(grad_h - grad_r)/np.linalg.norm(grad_h))
 
 
 
