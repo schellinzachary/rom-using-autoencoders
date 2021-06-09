@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+#import tikzplotlib
 
 
 import torch
@@ -123,9 +123,12 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
+    print(model)
 
-    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo))
+    checkpoint_model = torch.load('Results/{}.pt'.format(best_model),
+        map_location="cpu")
+    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo),
+        map_location="cpu")
     model.load_state_dict(checkpoint_model['model_state_dict'][0])
     train_loss = checkpoint_loss['train_losses']
     val_loss = checkpoint_loss['test_losses']
@@ -133,7 +136,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
 
     rec = model(f)
     l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
-
+    print(best_model)
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss.detach().numpy())
@@ -148,7 +151,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+#tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {"act":act,

@@ -1,12 +1,12 @@
 '''
-Different Activations
+Intrinsic Variales Variation
 '''
 
 from pathlib import Path
 from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
-loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/4l_activations.tex"
+#loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/4l_activations.tex"
 
 
 import numpy as np
@@ -26,8 +26,9 @@ torch.manual_seed(42)
 device = 'cpu'
 
 class Encoder_2(nn.Module):
-    def __init__(self, a=None, c=None):
+    def __init__(self, iv):
         super(Encoder_2, self).__init__()
+        self.iv = iv
         self.convE1 = nn.Conv2d(
             1,8,(5,5),
             stride=(5,5)
@@ -36,9 +37,9 @@ class Encoder_2(nn.Module):
             8,16,(5,5),
             stride=(5,5)
             )
-        self.linearE1 = nn.Linear(in_features=128,out_features=5)
-        self.add_module('act_a', a)
-        self.add_module('act_c', c)
+        self.linearE1 = nn.Linear(in_features=128,out_features=self.iv)
+        self.add_module('act_a', nn.ELU())
+        self.add_module('act_c', nn.SiLU())
 
 
     def forward(self, x):
@@ -50,10 +51,11 @@ class Encoder_2(nn.Module):
         return x
 
 class Decoder_2(nn.Module):
-    def __init__(self, a=None):
+    def __init__(self, iv):
         super(Decoder_2, self).__init__()
+        self.iv = iv
         self.linearD1 = nn.Linear(
-            in_features=5,
+            in_features=self.iv,
             out_features=128
             )
         self.convD1 = nn.ConvTranspose2d(
@@ -64,9 +66,7 @@ class Decoder_2(nn.Module):
             8,1,(5,5),
             stride=(5,5)
             )
-        self.add_module('act_a', a)
-
-
+        self.add_module('act_a', nn.ELU())
 
 
     def forward(self, x):
@@ -77,73 +77,6 @@ class Decoder_2(nn.Module):
         x = self.convD2(x)
         return x
 
-class Encoder_3(nn.Module):
-    def __init__(self,a, c):
-        super(Encoder_3, self).__init__()
-        self.convE1 = nn.Conv2d(
-            1,8,(3,3),
-            stride=(3,3),
-            padding=(1,1)
-            )
-        self.convE2 = nn.Conv2d(
-            8,16,(3,3),
-            stride=(3,3),
-            padding=(0,1)
-            )
-        self.convE3 = nn.Conv2d(
-            16,32,(3,3),
-            stride=(3,3),
-            padding=(0,1)
-            )
-        self.linearE1 = nn.Linear(in_features=256,
-            out_features=5)
-        self.add_module('act_a', a)
-        self.add_module('act_c', c)
-
-
-    def forward(self, x):
-        x = self.act_a(self.convE1(x))
-        x = self.act_a(self.convE2(x))
-        x = self.act_a(self.convE3(x))
-        original_size = x.size()
-        x = x.view(original_size[0],-1)
-        x = self.act_c(self.linearE1(x))
-        return x
-
-class Decoder_3(nn.Module):
-    def __init__(self, a):
-        super(Decoder_3, self).__init__()
-        self.linearD1 = nn.Linear(in_features=5,
-            out_features=256
-            )
-        self.convD1 = nn.ConvTranspose2d(
-            32,16,(3,3),
-            stride=(3,3),
-            padding=(0,1),
-            output_padding=(0,1)
-            )
-        self.convD2 = nn.ConvTranspose2d(
-            16,8,(3,3),
-            stride=(3,3),
-            padding=(0,1),
-            output_padding=(0,1)
-            )
-        self.convD3 = nn.ConvTranspose2d(
-            8,1,(3,3),
-            stride=(3,3),
-            padding=(1,2)
-            )
-        self.add_module('act_a', a)
-
-
-    def forward(self, x):
-        x = self.act_a(self.linearD1(x))
-        dim = x.shape[0]
-        x = torch.reshape(x,[dim,32,1,8])
-        x = self.act_a(self.act(self.convD1(x)))
-        x = self.act_a(self.act(self.convD2(x)))
-        x = self.convD3(x)
-        return x
 
 class Encoder_4(nn.Module):
     def __init__(self,a=None ,c=None):
@@ -239,48 +172,19 @@ class Autoencoder(nn.Module):
         return x  
 
 
-#set variables
-activations = {
-    'relu': nn.ReLU(),
-    'elu': nn.ELU(),
-    'silu': nn.SiLU(),
-    'tanh': nn.Tanh(),
-    'leaky': nn.LeakyReLU() 
+
+
+#uncomment for models for 2 Layer Autoencoder
+models = {
+    1 : "model0-int1-epoch1554-val_loss2.010E-04.pt",
+    2 : "model0-int2-epoch1990-val_loss7.078E-05.pt",
+    3 : "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06.pt",
+    4 : "model0-int4-epoch1734-val_loss6.353E-06.pt",
+    8 : "model0-int8-epoch1752-val_loss6.601E-06.pt",
+    16: "model0-int16-epoch1661-val_loss6.285E-06.pt",
+    32: "model0-int32-epoch1741-val_loss6.148E-06.pt"
 }
 
-#variable combinations
-experiments = (
-    ('elu','elu'),
-    ('elu','silu'),
-    ('elu','tanh'),
-    ('leaky','leaky'),
-    ('leaky','tanh'),
-    ('relu','relu'),
-    ('silu','silu'),
-    ('tanh','tanh')
-    )
-
-
-best_models = (
-	#uncomment for models for 2 Layer Autoencoder
-    # "model0-act-('elu', 'elu')-epoch1969-val_loss6.500E-06",
-    # "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06",
-    # "model0-act-('elu', 'tanh')-epoch1970-val_loss5.939E-06",
-    # "model0-act-('leaky', 'leaky')-epoch1976-val_loss1.093E-05",
-    # "model0-act-('leaky', 'tanh')-epoch1974-val_loss6.591E-06",
-    # "model0-act-('relu', 'relu')-epoch1984-val_loss1.319E-05",
-    # "model0-act-('silu', 'silu')-epoch1972-val_loss7.856E-06",
-    # "model0-act-('tanh', 'tanh')-epoch1909-val_loss7.762E-06"
-    #uncomment models for 4 Layer Autoencoder
-    "model1-act-('elu', 'elu')-epoch1365-val_loss6.916E-06",
-    "model1-act-('elu', 'silu')-epoch1808-val_loss7.532E-06",
-    "model1-act-('elu', 'tanh')-epoch1498-val_loss9.252E-06",
-    "model1-act-('leaky', 'leaky')-epoch1971-val_loss9.615E-06",
-    "model1-act-('leaky', 'tanh')-epoch1722-val_loss9.401E-06",
-    "model1-act-('relu', 'relu')-epoch1985-val_loss1.073E-05",
-    "model1-act-('silu', 'silu')-epoch1550-val_loss6.497E-06",
-    "model1-act-('tanh', 'tanh')-epoch975-val_loss8.390E-06"
-    )
 
 #load data
 f = np.load(join(home,loc_data))
@@ -293,28 +197,22 @@ l2_losses = []
 act = []
 min_idx = []
 
-fig, ax = plt.subplots(8,1)
-fig2, ax2 = plt.subplots(8,1)
+fig, ax = plt.subplots(6,1)
+fig2, ax2 = plt.subplots(6,1)
 
-for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
+for idx, iv in enumerate([1,2,4,8,16,32]):
     
-    idx_model = 1 # for 2 Layer and 1 for 4 Layer
-
-    a, c = ac_combo
-    a = activations[a]
-    c = activations[c]
     #encoder
-    encoder = Encoder_4(a,c) #change to Encoder_4(a,c)
+    encoder = Encoder_2(iv) #change to Encoder_4(a,c)
 
     #decoder
-    decoder = Decoder_4(a) #change to Decoder_4(a)
+    decoder = Decoder_2(iv) #change to Decoder_4(a)
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location="cpu")
-    checkpoint_loss = torch.load('last-model-{}-act-{}.pt'.format(idx_model,
-    	ac_combo),
+    checkpoint_model = torch.load('noaugment/%s'%models[iv],map_location="cpu")
+    checkpoint_loss = torch.load('noaugment/last-model-0-int-%s.pt'%iv,
         map_location="cpu")
     model.load_state_dict(checkpoint_model['model_state_dict'])
     #model.load_state_dict(checkpoint_loss['model_state_dict'])
@@ -329,13 +227,13 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
-    act.append(ac_combo)
+    act.append(iv)
     
     ax[idx].semilogy(train_loss,'k''--',label='Train')
     ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
-    ax[idx].set_title('{} '.format(ac_combo))
+    ax[idx].set_title('%s '%iv)
     ax[idx].set_ylim(ymax=1e-3)
     ax[idx].legend()
 
