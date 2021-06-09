@@ -35,11 +35,15 @@ f = tensor(f, dtype=torch.float).to(device)
 #split data
 train_in = f[0:3999]
 val_in = f[4000:4999]
-train_dataset = DataLoader(train_in, batch_size = 4)
-val_dataset = DataLoader(val_in, batch_size = int(len(f)*0.2))
+train_dataset = DataLoader(train_in,
+    batch_size = 4
+    )
+val_dataset = DataLoader(val_in, 
+    batch_size = int(len(f)*0.2),
+    )
 
 
-def save_checkpoint(k_models,ac_combo):
+def save_checkpoint(k_models):
     k_models = np.array(k_models)
     k_models = k_models[k_models[:,0].argsort()]
 
@@ -50,9 +54,9 @@ class Encoder(nn.Module):
     def __init__(self,int_var=None):
         super(Encoder, self).__init__()
         self.int_var = int_var
-        self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=30))
+        self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=40))
         self.add_module('activ_1', nn.ReLU())
-        self.add_module('layer_c',nn.Linear(in_features=30, out_features=self.int_var))
+        self.add_module('layer_c',nn.Linear(in_features=40, out_features=self.int_var))
         self.add_module('activ_c', nn.ReLU())
     def forward(self, x):
         for _, method in self.named_children():
@@ -63,9 +67,9 @@ class Decoder(nn.Module):
     def __init__(self,int_var=None):
         super(Decoder, self).__init__()
         self.int_var = int_var
-        self.add_module('layer_c',nn.Linear(in_features=self.int_var, out_features=30))
+        self.add_module('layer_c',nn.Linear(in_features=self.int_var, out_features=40))
         self.add_module('activ_c', nn.ReLU())
-        self.add_module('layer_4', nn.Linear(in_features=30,out_features=40))
+        self.add_module('layer_4', nn.Linear(in_features=40,out_features=40))
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
@@ -83,7 +87,7 @@ class Autoencoder(nn.Module):
         return predicted
 
 
-N_EPOCHS = 10
+N_EPOCHS = 5000
 for int_var in int_vars:
     #encoder
     encoder = Encoder(int_var)
@@ -111,7 +115,7 @@ for int_var in int_vars:
 
         for batch_ndx, x in enumerate(train_dataset):
 
-            x = x.to(device)
+            #x = x.to(device)
 
             optimizer.zero_grad()
 
@@ -134,7 +138,7 @@ for int_var in int_vars:
         with torch.no_grad():
             for i, x in enumerate(val_dataset):
 
-                x = x.to(device)
+                #x = x.to(device)
 
                 predicted = model(x)
 
@@ -179,6 +183,7 @@ for int_var in int_vars:
     },'Results/int_var-{}-epoch{}-val_loss{:.3E}.pt'.format(int_var,
         k_models[i,1],
         k_models[i,0]))
+
     #save last model
     torch.save({
         'epoch': epoch,

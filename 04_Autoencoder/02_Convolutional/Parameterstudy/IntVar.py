@@ -21,14 +21,14 @@ import torch.tensor as tensor
 from torch.optim import Adam
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import MultiStepLR
-from torchvision.transforms.functional import rotate, vflip
+
 
 torch.manual_seed(42)
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 
 #checkpointing
-def save_checkpoint(k_models,ac_combo):
+def save_checkpoint(k_models):
     k_models = np.array(k_models)
     k_models = k_models[k_models[:,0].argsort()]
     return np.ndarray.tolist(k_models[:3])
@@ -212,7 +212,7 @@ class Autoencoder(nn.Module):
         x = self.dec(x)
         return x
 
-int_vars = [8,16,32,64]
+int_vars = [1,2,4,8,16,32]
 
 for idx in range(2):
     for int_var in int_vars:
@@ -306,7 +306,7 @@ for idx in range(2):
             )
 
             if (epoch > 1) and(epoch % 10 == 0):
-                k_models = save_checkpoint(k_models,idx)
+                k_models = save_checkpoint(k_models)
   
         #save top 3 models
         for i in range(3):

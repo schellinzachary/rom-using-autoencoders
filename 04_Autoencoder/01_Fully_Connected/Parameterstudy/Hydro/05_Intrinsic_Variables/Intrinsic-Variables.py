@@ -35,11 +35,15 @@ f = tensor(f, dtype=torch.float).to(device)
 #split data
 train_in = f[0:3999]
 val_in = f[4000:4999]
-train_dataset = DataLoader(train_in, batch_size = 4)
-val_dataset = DataLoader(val_in, batch_size = int(len(f)*0.2))
+train_dataset = DataLoader(train_in,
+    batch_size=4
+    )
+val_dataset = DataLoader(val_in, 
+    batch_size = int(len(f)*0.2)
+    )
 
 
-def save_checkpoint(k_models,ac_combo):
+def save_checkpoint(k_models):
     k_models = np.array(k_models)
     k_models = k_models[k_models[:,0].argsort()]
 
@@ -83,7 +87,7 @@ class Autoencoder(nn.Module):
         return predicted
 
 
-N_EPOCHS = 10
+N_EPOCHS = 5000
 for int_var in int_vars:
     #encoder
     encoder = Encoder(int_var)
@@ -179,6 +183,7 @@ for int_var in int_vars:
     },'Results/int_var-{}-epoch{}-val_loss{:.3E}.pt'.format(int_var,
         k_models[i,1],
         k_models[i,0]))
+
     #save last model
     torch.save({
         'epoch': epoch,
