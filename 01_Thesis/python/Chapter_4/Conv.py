@@ -74,19 +74,28 @@ class Autoencoder(nn.Module):
         z = self.enc(x)
         predicted = self.dec(z)
         return predicted
-
+models = {
+    1 : "model0-int1-epoch1554-val_loss2.010E-04.pt",
+    2 : "model0-int2-epoch1990-val_loss7.078E-05.pt",
+    5 : "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06.pt",
+    4 : "model0-int4-epoch1734-val_loss6.353E-06.pt",
+    8 : "model0-int8-epoch1752-val_loss6.601E-06.pt",
+    16: "model0-int16-epoch1661-val_loss6.285E-06.pt",
+    32: "model0-int32-epoch1741-val_loss6.148E-06.pt"
+}
 
 #Load & evaluate models for intrinsic variables variation
-def intr_eval(c,iv):
+def intr_eval(c,iv,level):
     c = tensor(c,dtype=torch.float)
-    encoder = Encoder(level,iv)
-    decoder = Decoder(level,iv)
+    encoder = Encoder_2(iv)
+    decoder = Decoder_2(iv)
     model   = Autoencoder(encoder, decoder).to(device)
     
-    torch.load("Models/('elu', 'elu')-epoch4989-val_loss4.454E-09.pt",
+    checkpoint = torch.load("Models/Convolutional/%s"%models[iv],
             map_location=torch.device('cpu'))
-    model.load_state_dict(checkpoint['model_state_dict'][0])
+    model.load_state_dict(checkpoint['model_state_dict'])
 
-    rec,code = model(c)
+    rec = model(c)
     l2 = torch.norm((c - rec).flatten())/torch.norm(c.flatten()) # calculatre L2-Norm Error
     return(l2.detach().numpy())
+

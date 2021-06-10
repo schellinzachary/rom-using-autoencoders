@@ -1,42 +1,25 @@
 '''
-Activations, Rare
+Intrinsic Variables, Rare
 '''
 
 from pathlib import Path
 from os.path import join
 home = str(Path.home())
-loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
-loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex"
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
+#loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex"
 
 
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.io as sio
 import pandas as pd
-from tqdm import tqdm
-import tikzplotlib
 
+#import tikzplotlib
 
 import torch
 import torch.nn as nn
 import torch.tensor as tensor
-from torch.optim import Adam
-from torch.utils.data import DataLoader
-from torch.optim.lr_scheduler import StepLR
 
-
-#device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device='cpu'
-print(device)
-
-#set variables
-activations = {
-    'relu': nn.ReLU(),
-    'elu': nn.ELU(),
-    'silu': nn.SiLU(),
-    'tanh': nn.Tanh(),
-    'leaky': nn.LeakyReLU() 
-}
 
 
 #load data
@@ -44,23 +27,25 @@ f = np.load(join(home,loc_data))
 f = tensor(f, dtype=torch.float).to(device)
 
 class Encoder(nn.Module):
-    def __init__(self, a, c):
+    def __init__(self, iv):
         super(Encoder, self).__init__()
-        self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=30))
-        self.add_module('activ_1', a)
-        self.add_module('layer_c',nn.Linear(in_features=30, out_features=3))
-        self.add_module('activ_c', c)
+        self.iv = iv
+        self.add_module('layer_1', torch.nn.Linear(in_features=40,out_features=40))
+        self.add_module('activ_1', nn.ReLU())
+        self.add_module('layer_c',nn.Linear(in_features=40, out_features=self.iv))
+        self.add_module('activ_c', nn.ReLU())
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
         return x
 
 class Decoder(nn.Module):
-    def __init__(self,a):
+    def __init__(self,iv):
         super(Decoder, self).__init__()
-        self.add_module('layer_c',nn.Linear(in_features=3, out_features=30))
-        self.add_module('activ_c', a)
-        self.add_module('layer_4', nn.Linear(in_features=30,out_features=40))
+        self.iv = iv
+        self.add_module('layer_c',nn.Linear(in_features=self.iv, out_features=40))
+        self.add_module('activ_c', nn.ReLU())
+        self.add_module('layer_4', nn.Linear(in_features=40,out_features=40))
     def forward(self, x):
         for _, method in self.named_children():
             x = method(x)
@@ -78,28 +63,16 @@ class Autoencoder(nn.Module):
         return predicted
 
 
-experiments = (
-    ('relu','relu'),
-    ('elu','elu'),
-    ('tanh','tanh'),
-    ('silu','silu'),
-    ('leaky','leaky'),
-    ('elu','tanh'),
-    ('leaky','tanh'),
-    ('elu','silu')
-    )
 
-best_models = (
-    "('relu', 'relu')-epoch4989-val_loss9.800E-09",
-    "('elu', 'elu')-epoch4990-val_loss4.454E-09",
-    "('tanh', 'tanh')-epoch4990-val_loss7.835E-09",
-    "('silu', 'silu')-epoch4990-val_loss7.693E-09",
-    "('leaky', 'leaky')-epoch4990-val_loss1.867E-08",
-    "('elu', 'tanh')-epoch4990-val_loss5.503E-09",
-    "('leaky', 'tanh')-epoch4990-val_loss1.004E-08",
-    "('elu', 'silu')-epoch4990-val_loss8.115E-09"   
-    )
-
+models = {
+    1 : "int_var-1-epoch1387-val_loss2.350E-03.pt",
+    2 : "int_var-2-epoch4988-val_loss2.051E-07.pt",
+    3 : "('relu', 'relu')-epoch4987-val_loss7.191E-09.pt",
+    4 : "int_var-4-epoch1-val_loss2.350E-03.pt",
+    8 : "int_var-8-epoch4986-val_loss4.791E-07.pt",
+    16: "int_var-16-epoch4990-val_loss9.933E-10.pt",
+    32: "int_var-32-epoch4990-val_loss1.116E-09.pt"
+    }
 
 
 
@@ -109,49 +82,54 @@ l2_losses = []
 act = []
 min_idx = []
 
-fig, ax = plt.subplots(8,1)
+fig, ax = plt.subplots(6,1)
+fig2, ax2 = plt.subplots(6,1)
 
-for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
-    a, c = ac_combo
-    a = activations[a]
-    c = activations[c]
+for idx, iv in enumerate([1,2,4,8,16,32]):
+    
     #encoder
-    encoder = Encoder(a,c)
+    encoder = Encoder(iv)
 
     #decoder
-    decoder = Decoder(a)
+    decoder = Decoder(iv)
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo))
-    model.load_state_dict(checkpoint_model['model_state_dict'][0])
+    checkpoint_model = torch.load('Results/%s'%models[iv],map_location="cpu")
+    checkpoint_loss = torch.load('Results/last-%s.pt'%iv,
+        map_location="cpu")
+    model.load_state_dict(checkpoint_model['model_state_dict'])
+    #model.load_state_dict(checkpoint_loss['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
     val_loss = checkpoint_loss['test_losses']
 
 
     rec = model(f)
+    print(torch.sum(rec))
     l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
 
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
-    act.append(ac_combo)
+    act.append(iv)
     
     ax[idx].semilogy(train_loss,'k''--',label='Train')
     ax[idx].semilogy(val_loss,'k''-',label='Test')
     ax[idx].set_xlabel('Epoch')
     ax[idx].set_ylabel('MSE Loss')
-    ax[idx].set_title('{} '.format(ac_combo))
-    ax[idx].set_ylim(ymax=1e-5)
+    ax[idx].set_title('%s '%iv)
+    ax[idx].set_ylim(ymax=1e1)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+    #ax2[idx].imshow(rec[0,:,:].squeeze().detach().numpy())
+    #ax2[idx].set_titĺe('{}'.format(ac_combo))
+
+#tikzplotlib.save(join(home,loc_plot))
 
 
-loss_dict = {"act":act,
+loss_dict = {"iv":act,
     "train_loss": train_losses,
     "val_loss": val_losses,
     "l2_loss": l2_losses,
