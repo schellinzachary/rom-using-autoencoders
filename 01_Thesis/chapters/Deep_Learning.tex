@@ -46,7 +46,7 @@ Another way to obtain an optimal basis is to employ a machine learning architect
 The biggest allocation unit in autoencoders is the distinction of a decoder and a encoder part, which are seperated at central code layer. The encoder is a mapping \(h\). The encoder maps the input \(\btch\) to the code \(\Phi\) while compressing it, which is written as \(h(\btch)=\Phi\). Hence the encoder consists of the input layer, a variable number of hidden layers and the code layer, which is the left side of the schematic autoencoder in \cref{Fig:Autoencoder}. The decoder mirrors the encoder, which is not a necessity but often chosen that way, see the right side of \cref{Fig:Autoencoder}. It comprises the same code layer, a variable number of hidden layers and the output layer. Similarily it is a mapping \(g\) which maps \(\Phi\) to \(\tilde{\btch}\), an approximation to the initial \(\btch\), and is written as \(g(\Phi)=\tilde{\btch}\). The number of hidden layers in encoder and decoder is the first of the so called hyperparameters that can be tuned to improve performance of the autoencoder. Note that we refer to autoencoders with more than one hidden layer, the code layer, as deep autoencoders. The reverse is a shallow autoencoder. The second largest allocation unit in autoencoders (and in general neural networks) are the layers. Each layer can be vector, a matrix or a three dimensional tensor. For the time beeing we choose each layer to be vector valued in the following. Therefore the input layer can be an input vector like \(\mathbf{u_1}\subseteq \btch\). The vectors in the hidden layers are abstractions of the input. The term hidden stems from the fact, that one usually does not look at them as the interest mainly lies in the code -and output layer. The code layer is of main interest, as is holds the compressed abstraction of the input. Coming to the smallest allocation unit, the nodes. Each node refers to an entry in the vector/layer and is dispalyed as a circle in \cref{Fig:Autoencoder}. The number of nodes per hidden layer is a second hyperparameter. Two nodes are connected in a forward pass through solving \(O=I*w+b\), which is represented as a computational graph in \cref{Fig:Autoencoder}. Here the input is \(I\), which is multiplied with a weight \(w\) and by adding a bias \(b\), one obtains the output \(O\). Hence every connection between nodes contains two free parameters: a weight \(w\) and a bias \(b\). Hence the whole network holds a set of parameters which we call \(\frepar \in \mathbb{R}\) in the following. A forward pass in this sense refers to the flow of information from the left side of the encoder to the right side of the decoder in \cref{Fig:Autoencoder}. All of the aforementioned can be found in \cite{Goodfellow}.\\
 \begin{figure}
 	\centering
-	\input{Figures/Reduced_Order_Algorithms/AE_scheme.tex}
+	\input{Figures/Chapter_3/AE_scheme.tex}
 	\caption{\footnotesize Scheme of an undercomplete autoencoder with five fully connected layers. Input layer, output layer, the code or bottleneck layer and two hidden layers. Every layer is made up of nodes, which are represented as circles. The more hidden layers are added to the architecture the deeper is the autoencoder and the greater the capacity of the model. Not shown are possible activations for each layer. Labelled is decoder and encoder. The decoder is a mapping \(g(\Phi)=\tilde{\btch}\), taking \(\Phi\) as input and outputs an approximation \(\tilde{\btch}\) of \(\btch\). Similarily the encoder is a mapping \(h(\btch)=\Phi\), taking \(\Phi\) as input and outputs the code \(\Phi\). The box left of the autoencoder shows a computational graph for the feed forward connection of two nodes. The input of a node is \(I\) which is multiplied with \(w\) a weight. A bias \(b\) is added to the result \(I^*\) which yields the output \(O\), input of a node right of the inital node.}
 	\label{Fig:Autoencoder}
 \end{figure}
@@ -80,7 +80,7 @@ when specifically referring to \(E\) the distance between \(\btch\) and $\tilde{
 \begin{wrapfigure}{r}{.2\textwidth}
 	\centering
 	\vspace{-10pt}
-	\input{Figures/Reduced_Order_Algorithms/Sing_expample.tex}
+	\input{Figures/Chapter_3/Sing_expample.tex}
 	\vspace{-5pt}
 	\caption{\footnotesize A single node network with one hidden node between input and output node.}
 	\label{Fig:Sing_example}
@@ -145,14 +145,14 @@ we see that by combining and simplifying the three updates yields
 Note that this entanglement of the updates is taken from \cite{bushaev_2017}. Obviously the contributions to the current gradient vanish exponentially over iterations. This leads to a moving average of past and current gradients. Now taking into account that if \cref{Eq: fm} computes the moment of the first iteration, there are no previous gradients available which leads to a biased first computation. Hence we divide \(\mathbf{s}_i\) by \((1-d_1^i)\) for the bias correction of the first moment in \cref{Alg:Adam} which yields \(\hat{\mathbf{s}}\). In consecutive iterations obviously the bias correction approaches zero. All the same steps does the second biased moment estimate \(\mathbf{r}\) take. The second moment estimate is nothing more than the squared past gradients gradients written as \(\grd \circ\grd\) in \cref{Alg:Adam}. Together they from the parameter update \(\Delta\frepar\). Without going into further details, it can be shown that the parameter updates have an approximate upper bound of \(\Delta\frepar\lessapprox \epsilon\), see \cite{kingma2017adam}. This upper bound is a necessary criteria for the updates, as the learning rate \(\epsilon\) is a specifically tuned hyperparameter that should not be exceeded during training. The ratio \(\frac{\hat{\mathbf{s}}}{\sqrt{\hat{\mathbf{r}}}+\delta}\) is called signal to noise ratio (SNR) in \cite{kingma2017adam}, which evolves towards zero as an optimum is reached. Furthermore, the updates are invariant to the scale of the gradients as a factor \(a\) is always canceled out with \((a\cdot\hat{\mathbf{s}})/\sqrt{(a^2\cdot\hat{\mathbf{r}})}=\hat{\mathbf{s}}/\sqrt{\hat{\mathbf{r}}}\). To sum up, using first and second momentum we can accelerate training as the moving average gradient smooths the noisy updates and in turn is a better estimate of the true gradient, the bias in the first iteration is corrected and we stay invariant to gradient scaling.\\       
 \begin{figure}[htbp!]
 	\centering
-	\input{Figures/Reduced_Order_Algorithms/Training.tex}
+	\input{Figures/Chapter_3/Training.tex}
 	\caption{\footnotesize Flowchart of the training process used in this thesis for an autoencoder. The data set \(\btch\) for training is split up into a training \(\btch_{train}\) and a validation \(\btch_{val}\) set with a \(80/20\) ratio (a). The \(\btch_{train}\) set is equally devided into \(n\) minibatches (b). The network will be trained over \(H\) epochs and \(n\) minibatches. First the weights \(w\) are initialized as in \cite{LeCun98} and biases set to zero (c). A successive evaluation of the first minibatch with \(AE(\minib_{i})=\tilde{\minib}_{i}\) called forward propagation takes place in (d). The mean squared error between \(\minib_{i}\) and \(\tilde{\minib}_{i}\) yields the average error over one minibatch \(E_{B_i}\). Thereafter \(E_{B_i}\) is backpropagated through the network (f) yielding the gradient \(\grd\). This gradient is then used to optimize weights \(w\) and biases \(b\) with  \(Adam\), an optimization algorithm seen in \cref{Alg:Adam}, (g). In the fashion of using (d) to (g) all \(n\) minibatches are shown to the network and lead to an optimization of the network's free parameters \(\frepar\) which are weights \(w\) and biases \(b\). After all minibatches are shown to the network a validation step is taken. Hence the network evaluates \(\btch_{val}\), which it has not seen before, in (h) with \(AE(\btch_{val})=\tilde{\btch}_{val}\). Subsequently, the evaluation of the mean squared error between \(\btch_{val}\) and \(\tilde{\btch}_{val}\), produces the validation error \(E_{val}\) in (i). Afterwards the arithemtric mean of all minibatch errors \(E_{B_i}\) is taken. This produces \(\overline{E}_B\) and concludes the first epoch. The maximum number of epochs \(H\) is reached when \(E_B\) and \(E_{val}\), have dropped to a satisfactory value and the training finishes.}
 	\label{Fig:Training}
 \end{figure}\noindent
 The flowchart in \cref{Fig:Training} shows how the generalization query, weight initialization, backpropagation and the integration of Adam into the training procedure is carried out within this thesis. The network is trained in two loops, where the outer runs over so called epochs and the inner over all minibatches. One epoch is completed after all minibatches are shown to the network and the validation error is calculated as well as the train error, for which we take the average over all minibatches. The number of epochs \(H\) is determined based on over- and underfitting as well as on how many epochs are needed for Adam to converge and is another hyperparameter. In the following capacity, regularization, over- and underfitting is described.\\
 \begin{figure}[htbp!]
 	\centering
-	\input{Figures/Reduced_Order_Algorithms/Capacity.tex}
+	\input{Figures/Chapter_3/Capacity.tex}
 	\caption{\footnotesize Figurative example of how capacity influences the evolution of training and validation error. With increasing capacity the model i.e. autoencoder is able to fit the training and validation set thus training and validation error decreases. Typically the training error is less than the validation error. Yet both errors are too high and the model is underfitting. Further increasing the capacity leads to an increase of the validation error while the training error further decreases. The gap between training- and validation error is called the generalization gap. Once the generalization gap dominates the decrease in training error the model is overfitting and capacity passed the point of optimal capacity. Optimal capacity is the point where both optimization and generalization are in balance.}
 	\label{Fig:Capacity}
 \end{figure}\noindent
@@ -182,9 +182,9 @@ The flowchart in \cref{Fig:Training} shows how the generalization query, weight 
 		\end{cases}$&
 		\small$\nla=x \mathrm{sig}(x)$&
 		\small$\nla=\tanh(x)$ \\
-		\input{Figures/Reduced_Order_Algorithms/ReLU.tex}& 		\input{Figures/Reduced_Order_Algorithms/LeakyReLU.tex}&  \input{Figures/Reduced_Order_Algorithms/ELU.tex} &
-		\input{Figures/Reduced_Order_Algorithms/SiLU.tex}&
-		\input{Figures/Reduced_Order_Algorithms/Tanh.tex}\\
+		\input{Figures/Chapter_3/ReLU.tex}& 		\input{Figures/Chapter_3/LeakyReLU.tex}&  \input{Figures/Chapter_3/ELU.tex} &
+		\input{Figures/Chapter_3/SiLU.tex}&
+		\input{Figures/Chapter_3/Tanh.tex}\\
 		\bottomrule
 	\end{tabular*} \label{Tab:Non-lin-func}
 \end{table}
@@ -201,13 +201,13 @@ There $M_{m,n}$ represents a point on a feature map, where $m$ and $n$ refer to 
 \begin{figure}[htbp!]
 	\begin{subfigure}{.459\textwidth}
 		\centering
-		\input{Figures/Reduced_Order_Algorithms/Stride_01.tex}
+		\input{Figures/Chapter_3/Stride_01.tex}
 		\subcaption{Two dimensional example of of a \textbf{one} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors. The resulting feature map is a \(3\times 3\) matrix, as we downsampled the input by a factor of \(0.75\).}
 		\label{Fig: Downsampling(a)}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.441\textwidth}
 		\centering
-		\input{Figures/Reduced_Order_Algorithms/Stride_02.tex}
+		\input{Figures/Chapter_3/Stride_02.tex}
 		\subcaption{Two dimensional example of of a \textbf{two} strided convolution over a \(4\times 4\) input matrix with a \(2\times 2\) kernel matrix. The equations for obtaining the components \(i\) and \(j\) of the feature map are given. Note that all biases are omitted for simplicity and bold symbols should help readability and do not represent vectors.. The resulting feature map is a \(2\times 2\) matrix, as we downsampled the input by a factor of \(0.5\).}
 		\label{Fig: Downsampling(b)}
 	\end{subfigure}
@@ -217,7 +217,7 @@ There $M_{m,n}$ represents a point on a feature map, where $m$ and $n$ refer to 
 \\Next, if we want more feature maps, because we may assume many features are present in the input, we can specify more than one kernel to move over the input, each yielding a different feature map. In \cref{Fig: Kernel} an illustrative example of a convolutional neural network with four convolutional layers, which downsamples the width and height of the input in every layer while at the same time adds channels (feature maps) in every layer. When arriving at the last convolutional layer, the featuremaps are flattened and fully connected to the code layer. A comparable scheme for the encoder side of a convolutional autoencoder is used in this thesis. When the encoder in \cref{Fig: Kernel} is mirrored at the code layer and additionally all convolutional layers are replaced with transposed convolutional layers, we get the decoder and by that arrive at the typical autoencoder architecture as in \cref{Fig:Autoencoder}. In conclusion, up to now we have identified four more hyperparameters for a single convolutional layer: kernel width and height, number of kernels i.e. feature maps, which are usually called output channels and stride.\\
 \begin{figure}
 	\centering
-	\input{Figures/Reduced_Order_Algorithms/Kernel.tex}
+	\input{Figures/Chapter_3/Kernel.tex}
 	\caption{\footnotesize Schematic representation of typical components and their structural set-up in a convolutional neural network (CNN). Shown is the convolutional operation and the associated kernel, the flattening and successive fully connected operation. First a kernel moves over the one dimensional input performing convolutional operations, which yields the components of a feature map in the successive hidden layer. One channel in a hidden layer can aswell be called feature map. Here the input has just one channel, but four different kernels move over the input which produces four feature maps in the first hidden layer. Hence the first hidden layer comprises four channels or feature maps. Whenever one layer has different channels, the kernel moves with different parameters over all channels at the same time. Therefore we can think of it in this case as a three dimensional kernel tensor. Note that for simplicity this is not depicted in this figure. While the width and height of the input decreases over the hidden layers, the number of channels typically increases . The last hidden layer is flattend and successively connected to the code layer through a fully connected operation.}
 	\label{Fig: Kernel}
 \end{figure}\noindent
@@ -237,13 +237,13 @@ respectively. Here all variables are linked to one dimension only like the width
 \begin{figure}[htbp!]
 	\begin{subfigure}{.435\textwidth}
 		\centering
-		\input{Figures/Reduced_Order_Algorithms/Transpose_even.tex}
+		\input{Figures/Chapter_3/Transpose_even.tex}
 		\subcaption{Mechanism of a two dimensional \textbf{two} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. Upsampled by a factor of \(2.33\) produces a \(7\times 7\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is not divisible by the stride width. Uneven overlapping procude a checkerboard like structure.}
 		\label{Fig: Upsampling(a)}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.455\textwidth}
 		\centering
-		\input{Figures/Reduced_Order_Algorithms/Transpose_uneven.tex}
+		\input{Figures/Chapter_3/Transpose_uneven.tex}
 		\subcaption{Mechanism of a two dimensional \textbf{three} strided transposed convolution over a \(3\times 3\) input matrix with a \(3\times 3\) kernel matrix. The resulting output upsampled by a factor of \(3\) is a \(9\times 9\) matrix. Three kernel locations on the output are indicated with step 1, step 2 and step 3. The extent of the kernel is identical to the stride width. Overlaps and checkerboard like structures are avoided.}
 		\label{Fig: Upsampling(b)}
 	\end{subfigure}
