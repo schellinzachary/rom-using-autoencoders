@@ -26,8 +26,8 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 print(device)
 
 #set variables
-int_vars = [1,2,4,8,16,32]
-
+#int_vars = [1,2,4,8,16,32]
+int_vars = [4]
 
 #load data
 f = np.load(join(home,loc_data))
