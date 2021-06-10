@@ -147,7 +147,7 @@ def intr_eval(c,iv,level):
         model.load_state_dict(checkpoint['model_state_dict'][0])
     else:
         model.load_state_dict(checkpoint['model_state_dict'])
-    print(hydro_models[iv])
+    print(rare_models[iv])
     print(model)
 
     rec = model(c)
@@ -160,7 +160,7 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
 c = np.load(join(home,loc_data))
-l2 = intr_eval(c,3,"hy")
+l2 = intr_eval(c,5,"rare")
 print(l2)
 
 

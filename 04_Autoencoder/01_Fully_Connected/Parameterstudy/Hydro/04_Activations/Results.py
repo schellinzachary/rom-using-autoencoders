@@ -30,14 +30,21 @@ device='cpu'
 print(device)
 
 #set variables
-activations = {
-    'relu': nn.ReLU(),
-    'elu': nn.ELU(),
-    'silu': nn.SiLU(),
-    'tanh': nn.Tanh(),
-    'leaky': nn.LeakyReLU() 
-}
+# activations = {
+#     'relu': nn.ReLU(),
+#     'elu': nn.ELU(),
+#     'silu': nn.SiLU(),
+#     'tanh': nn.Tanh(),
+#     'leaky': nn.LeakyReLU() 
+# }
 
+activations = nn.ModuleList([
+    nn.ReLU(),
+    nn.ELU(),
+    nn.SiLU(),
+    nn.Tanh(),
+    nn.LeakyReLU()
+    ])
 
 #load data
 f = np.load(join(home,loc_data))
@@ -52,6 +59,7 @@ class Encoder(nn.Module):
         self.add_module('activ_c', c)
     def forward(self, x):
         for _, method in self.named_children():
+            print(method)
             x = method(x)
         return x
 
@@ -113,8 +121,11 @@ fig, ax = plt.subplots(8,1)
 
 for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     a, c = ac_combo
-    a = activations[a]
-    c = activations[c]
+
+    a = activations[0]
+    c = activations[0]
+    print(a)
+    print(c)
     #encoder
     encoder = Encoder(a,c)
 
@@ -123,6 +134,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
+    print(best_model)
     print(model)
 
     checkpoint_model = torch.load('Results/{}.pt'.format(best_model),
@@ -150,7 +162,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     ax[idx].set_title('{} '.format(ac_combo))
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
-
+    break
 #tikzplotlib.save(join(home,loc_plot))
 
 
@@ -164,3 +176,20 @@ loss_dict = pd.DataFrame(loss_dict)
 
 print(loss_dict)
 plt.show()
+a = activations[0]
+c = activations[0]
+# a = nn.ReLU()
+# c = nn.ReLU()
+encoder = Encoder(a,c)
+decoder = Decoder(c)
+
+autoencoder = Autoencoder(encoder,decoder)
+
+
+checkpoint_model = torch.load("Results/('relu', 'relu')-epoch4989-val_loss9.800E-09.pt",
+        map_location="cpu")
+autoencoder.load_state_dict(checkpoint_model["model_state_dict"][0])
+
+rec = autoencoder(f)
+l2 = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+print("test",l2)
