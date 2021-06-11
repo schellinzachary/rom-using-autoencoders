@@ -21,25 +21,25 @@ To sum up, the idea that every high dimensional dynamical-state space \(W\), als
 	\end{subfigure}
 	\caption{Outline of the correlation between the FOM solution and the approximation obtained from the ROM.}
 \end{figure}
-MOR is partitioned into two successive phases called the \textit{offline} - and the \textit{online} phase. During the offline phase \textit{snapshots} of a dynamical-system are generated through experiments or simulations of the full order model (FOM). The snapshots \(F = \{f(t_1),...,f(t_n)\}\) are created once, each representing one moment in time of the dynamical system. Thus in our case one needs a snapshot database of solutions \(f(x,v,t)\) of the BKG-model in the Sod shock tube. Next a mapping \(Q\) is constructed such that \(\tilde{f} = Q(f)\), for which \(f(t_i) \approx \tilde{f}(t_i)\), reducing the dimensionality of the FOM solution as outlined before. During the online phase the reduced order model is evaluated and the error is estimated by 
+MOR is partitioned into two successive phases called the \textit{offline} - and the \textit{online} phase. During the offline phase \textit{snapshots} of a dynamical-system are generated through experiments or simulations of the full order model (FOM). The snapshots \(F = \{f(t_1),...,f(t_n)\}\) are created once, each representing one moment in time of the dynamical system. Thus in our case one needs a snapshot database of solutions \(f(x,v,t)\) of the BKG-model in Sod's shock tube. Next the mapping \(Q\) is constructed such that \(\tilde{f} = Q(f)\), for which \(f(t_i) \approx \tilde{f}(t_i)\), reducing the dimensionality of the FOM solution as outlined before. During the online phase the reduced order model is evaluated and the error is estimated by 
 \begin{equation}
 	\L2 = \frac{||f - \tilde{f} ||_2}{||f||_2}
 \end{equation}
 which is called the relative \(\L2\)-Error norm. The abbreviation \(\L2\)-Error is used from here on. Therefore the online phase may be described as a stage of independence from the full order model.
-Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD \cref{Sec: POD}, depends on a rapidly decaying Kolmogorov N-width. In particular advection dominated problems exhibit a slow decay of the Kolmogorov N-width. Thus yielding a need for non-linear methods like autoencoders described in \cref{Sec:AE}. The Kolmogorov N-width is given by
+Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD \cref{Sec: POD}, depends on a rapidly decaying Kolmogorov N-width. In particular advection dominated problems exhibit a slow decay of the Kolmogorov N-width as described in \cite{ohlberger2015reduced}. Thus yielding a need for non-linear methods like autoencoders described in \cref{Sec:AE}. The Kolmogorov N-width is given by
 \begin{equation}
 	d_{V}(W):= \sup_{f \in W} \inf_{\tilde{f} \in V} ||f-\tilde{f}||
 	\label{Eq:Kolmogorov}
 \end{equation}
-and gives the worst best approximation error for elements of \(W\). The convergence behaviour of the Kolmogorov N-width for advection dominated problems, especially when jump conditions are involved as in the Sod shock tube \cref{Ch:BGK}, decays with
+and gives the worst best approximation error for elements of \(W\). The convergence behaviour of the Kolmogorov N-width for advection dominated problems, especially when jump conditions are involved as in Sod's shock tube \cref{Ch:BGK}, decays with
 \begin{equation}
-	d_n(W) \leq \frac{1}{2} n^{-1/2},
+	d_p(W) \leq \frac{1}{2} p^{-1/2},
 	\label{Eq:KolmoAdv}
 \end{equation}
-where \(n\) denotes the number of RB or intrinsic variables. Note that hereafter we will solely use the term intrinsic variables\cite{ohlberger2015reduced}. The relevance of using non-linear reduction methods for MOR is often formulated in terms of a slow decaying Kolmogorov N-width. Altough BGK-model in the sod shock tube describes an advection problem with jump discontinuities \cref{Ch:BGK} implies that linear reduction methods should fail. But we will see in the following that this is only partly true for this study.
-\section{Offline Phase}
-\subsection{Full order BGK-model}\label{Sec: FOM}
-The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. The Sod shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}. Details about the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.
+where \(p\) denotes the number of RB or intrinsic variables. Further insight in provided in \cite{ohlberger2015reduced}.\\
+Note that hereafter we will solely use the term intrinsic variables. The relevance of using non-linear reduction methods for MOR is often formulated in terms of a slow decaying Kolmogorov N-width. And even tough the BGK-model in Sod's shock tube describes an advection problem with jump discontinuities implies that linear reduction methods should fail, we will see in the following that this is only partly true in this case.
+\section{Offline Phase}\label{Sec: FOM}
+The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. Sod's shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}. Details about the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.
 \begin{table}[htp]
 	\centering
 	\caption{Problem setup for the BGK model in the Sod shock tube. The diaphragm is positioned at \(x_d=0.5025\). For \(x<x_d\) the gas is present, for \(x\geq x_d\) particles are absent.}

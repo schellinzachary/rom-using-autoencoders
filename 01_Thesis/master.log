@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  10 JUN 2021 23:39
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  11 JUN 2021 12:50
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1458,7 +1458,7 @@ Package epstopdf Info: Source file: <Figures/TUBlogo.eps>
 d-to.pdf Figures/TUBlogo.eps>
 (epstopdf)             \includegraphics on input line 13.
 Package epstopdf Info: Output file is already uptodate.
-<Figures/TUBlogo-eps-converted-to.pdf, id=95, 366.36874pt x 204.765pt>
+<Figures/TUBlogo-eps-converted-to.pdf, id=91, 366.36874pt x 204.765pt>
 File: Figures/TUBlogo-eps-converted-to.pdf Graphic file (type pdf)
 <use Figures/TUBlogo-eps-converted-to.pdf>
 Package luatex.def Info: Figures/TUBlogo-eps-converted-to.pdf  used on input lin
@@ -1973,7 +1973,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: 4B280BBB1063BDAF55B4C3E25C44D4C8;3879.
+(rerunfilecheck)             Checksum: 9FF078FD20E2ECF5DAB8C0DA52981ACE;3711.
 
 
 LaTeX Warning: There were undefined references.
@@ -1982,14 +1982,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46593 strings out of 481365
+ 46591 strings out of 481365
  156263,14696376 words of node,token memory allocated
  896 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 65 attribute, 88 glue_spec, 65 attr
 ibute_list, 2 write, 1 pdf_action nodes
    avail lists: 1:3,2:2067,3:373,4:160,5:894,6:47,7:16762,8:92,9:776,10:42,11:10
 99
- 60306 multiletter control sequences out of 65536+600000
+ 60305 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2756b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2014,10 +2014,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (64 pages, 7933823 bytes).
+Output written on master.pdf (64 pages, 7933441 bytes).
 
-PDF statistics: 2455 PDF objects out of 2487 (max. 8388607)
- 1988 compressed objects within 20 object streams
- 217 named destinations out of 1000 (max. 131072)
- 192 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 2450 PDF objects out of 2487 (max. 8388607)
+ 1983 compressed objects within 20 object streams
+ 216 named destinations out of 1000 (max. 131072)
+ 184 words of extra memory for PDF output out of 10000 (max. 100000000)
 
