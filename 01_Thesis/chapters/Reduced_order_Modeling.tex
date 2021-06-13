@@ -39,10 +39,10 @@ and gives the worst best approximation error for elements of \(W\). The converge
 where \(p\) denotes the number of RB or intrinsic variables. Further insight in provided in \cite{ohlberger2015reduced}.\\
 Note that hereafter we will solely use the term intrinsic variables. The relevance of using non-linear reduction methods for MOR is often formulated in terms of a slow decaying Kolmogorov N-width. And even tough the BGK-model in Sod's shock tube describes an advection problem with jump discontinuities implies that linear reduction methods should fail, we will see in the following that this is only partly true in this case.
 \section{Offline Phase}\label{Sec: FOM}
-The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. Sod's shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}. Details about the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.
+The FOM is the 1D BGK-model in Sod's shock tube for two levels of rarefaction, gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen. Sod's shock tube is discretized in space \(x\) with 100 nodes, in velocity \(v\) with 40 nodes for 25 time steps in time \(t\), as presented in \cref{Tab:Setup} and \cref{Fig:SodProbSetup}.
 \begin{table}[htp]
 	\centering
-	\caption{Problem setup for the BGK model in the Sod shock tube. The diaphragm is positioned at \(x_d=0.5025\). For \(x<x_d\) the gas is present, for \(x\geq x_d\) particles are absent.}
+	\caption{Problem setup for the BGK model in Sod's shock tube. The diaphragm is positioned at \(x_d=0.5025\). For the initial condition with \(t=0\) the gas is present at \(x<x_d\) and absent for \(x\geq x_d\).}
 	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c @{} }
 		\toprule
 		Variable   & Number of nodes \(i\)&   Domain extension& Step size (uniform)\\   
@@ -53,11 +53,13 @@ The FOM is the 1D BGK-model in the Sod shock tube for two levels of rarefaction,
 		\bottomrule
 	\end{tabular*} \label{Tab:Setup}
 \end{table}
-One can be viewed as a slip flow \cite{schaaf} with \(\Kn=0.01\), hereafter referred to as \(\rare\). The dilution up to this level of rarefaction is little though leading to inaccuracies when employing the common Navier Stokes equations. Therefore the NFS-equations (Navier-Stokes-Fourrier) could be used \cite{NumaKUL}. The other is situated in the continuum flow regime with \(\Kn=0.00001\) for which the Navier-Stokes equations can be utilized without hesitation. A detailed description can be found in \cref{Ch:BGK}. Hereafter the continuum flow will be referred to as \(\hy\). Note that both \(\hy\) and \(\rare\) are three dimensional tensors containing \(f(x,v,t)\).\\
-The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct reshaping of the input data before they can be used. The preprocessed matrix for the FCNN, \(\mae\), is shown in \cref{Eq:AE_matrix}. Each row of \(\mae\) contains a sample shown to the FCNN. In turn we aquire \(x_it_i=5000\) samples. The preprocessed matrix for the CNN, \(\mconv\), is shown in \cref{Eq:CNN_matrix}. We obtain \(v_i=40\) samples, each containing a matrix \(\pi_{CNN}^{x_i\times t_i}\) holding the information about \(f(x,t)\) for a fixed point in \(v\). POD uses the \(\mae\) matrix or its transposition.\\
-\begin{minipage}{.55\linewidth}
-	\begin{equation}
-	\mae = \begin{bmatrix}
+One level can be viewed as a slip flow \cite{schaaf} with \(\Kn=0.01\), hereafter referred to as \(\rare\). The dilution up to this level of rarefaction is little though leading to inaccuracies when employing the common Navier Stokes equations. Therefore the NFS-equations (Navier-Stokes-Fourrier) could be used \cite{NumaKUL}. The other is situated in the continuum flow regime with \(\Kn=0.00001\) for which the Navier-Stokes equations can be utilized without hesitation. An in-depth description of the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.\\
+Hereafter the continuum flow will be referred to as \(\hy\). Note that both \(\hy\) and \(\rare\) are three dimensional tensors comprising solutions \(f(x,v,t)\).\\
+The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct reshaping of the input data before they can be used. The preprocessed matrix for the FCNN as one batch  \(\btchfc\), is shown in \cref{Eq:AE_matrix}. Each row of \(\btchfc\) represents \(\btchfc_{,l}=f(v,t_i,x_j)\), an example, that can be fed to the FCNN. Hence \(x_jt_i=5000\) samples can be acquired.\\
+The preprocessed matrix for the CNN, \(\btchcn\), is shown in \cref{Eq:CNN_matrix} with \(\btchcn_{,l} = f(x,t,v_k)\). Hence \(v_k=40\) examples can be obtained to be fed into the FCNN. POD can use \(\btchfc\) as well as \(P^T_{FCNN}\) it's transposition as input. In the following, a distinction between \(\btchcn\) and \(\btchfc\) is omitted, when referring to the preprocessed matrices\\
+\begin{minipage}{.45\linewidth}
+	\begin{gather}
+	\btchfc = \begin{bmatrix}
 	f(v_1,t_1,x_1)&\cdots &f(v_n,t_1,x_1) \\
 	f(v_1,t_1,x_2)&\cdots &f(v_n,t_1,x_2) \\
 	\vdots& \vdots & \vdots\\
@@ -66,25 +68,26 @@ The reduction algorithms, introduced in \cref{Ch:DimRedAl}, require a distinct r
 	\vdots & \vdots & \vdots\\
 	f(v_1,t_n,x_n)&\cdots &f(v_n,t_n,x_n)
 	\end{bmatrix}
+	%\raisetag{15pt}
 	\label{Eq:AE_matrix}
-	\end{equation}
-\end{minipage}%
-\begin{minipage}{.45\linewidth}
-	\begin{equation}
-	\mconv= \begin{bmatrix}
+	\end{gather}
+\end{minipage},\qquad%
+\begin{minipage}{.35\linewidth}
+	\begin{gather}
+	\btchcn= \begin{bmatrix}
 	n_{Filters},&f(v_1,\textbf{t},\textbf{x})\\
 	n_{Filters},&f(v_2,\textbf{t},\textbf{x})\\
 	\vdots&\vdots\\
 	n_{Filters},&f(v_n,\textbf{t},\textbf{x})
 	\end{bmatrix}
 	\label{Eq:CNN_matrix}
-	\end{equation}
-\end{minipage}\\\\
-In the following a distinction between \(\mconv\) and \(\mae\) is omitted, when referring to the preprocessed matrices. However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter. This designation is mainly used in \cref{Ch:ApB} and \cref{Ch:ApA}.
+	\end{gather}
+\end{minipage}\textrm{.}\\\\
+%However a distinction between the levels of rarefaction, namely \(\hy\) and \(\rare\), will be utilized as \(\mhy\) for the former and \(\mrare\) for the latter. This designation is mainly used in \cref{Ch:ApB} and \cref{Ch:ApA}.
 \subsection{Contructing the mapping}
-With the FOM solution at hand it is possible to construct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). For \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. The selection of hyperparameters and training for the FCNN and the CNN is discussed in \cref{Ch:ApA} and \cref{Ch:ApB}. Hence the availability of fully trained and tuned FCNN and CNN is given from now on. Since this thesis focuses on the use of neural networks, POD acts as a benchmark.\\
-To continue, the intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\). The former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
-In order to contrast the number \(p\) of intrinsic variables in the autoencoders (sizes of \(\idhy\) and \(\idrare\)) we will utilize POD as a reference framework. Therefore the singular values \(\sigma\), as well as, the cumulative energy (cusum-e)\\
+With the FOM solution at hand it is possible to construct a mapping \(Q\) such that \(Q(f)\approx \tilde{f}\). Again, for \(Q\), POD and two autoencoders, based on a fully connected neural network (FCNN) and a convolutional neural network (CNN), are employed, see \cref{Ch:DimRedAl}. With considering \cref{Ch:ApA} and \cref{Ch:ApB}, the selection of hyperparameters and training for the FCNN and the CNN is already discussed. Hence the availability of fully trained and tuned FCNN and CNN is given from now on.\\
+Note that since this thesis focuses on the use of neural networks, POD acts as a benchmark. Consequently, in oder to contrast the number \(p\) of intrinsic variables of the autoencoders (sizes of the code layer) we will utilize POD as a reference framework. The intrinsic variables obtained from POD, the FCNN and the CNN, will be referred as \(\idhy\) and \(\idrare\), where the former describes the intrinsic variables when reducing \(\hy\) and the latter when reducing \(\rare\).\\
+A first step is to perform a POD with \(\hy\) and \(\rare\) distinctively. The obtained singular values \(\sigma\), as well as the cumulative energy (cusum-e), which is defined as\\
 \noindent \begin{minipage}{.3\linewidth}
 	\begin{equation}
 	\textrm{cusum-e} = \frac{\textrm{cusum}}{\sum_i \sigma_i}
@@ -94,9 +97,9 @@ In order to contrast the number \(p\) of intrinsic variables in the autoencoders
 	\begin{equation}
 			\textrm{with} \qquad\qquad(\textrm{cusum})_i =(\text{cusum})_{i-1} + \sigma_{i}
 	\end{equation}
-\end{minipage}\\\\
-over the singular values, are employed. A comparison for both levels of rarefaction is provided in \cref{Fig:CUSUM-e}. With a total of \(p=4\) intrinsic variables, a cumulative energy of over \(99\%\) can be achieved for \(\hy\). The fourth singular value measures to a value of \(\sigma_4 = 0.706\). The cumulative energy of the singular values of \(\rare\) arrives above \(99\%\) with \(p=6\) singular values. The sixth value is at \(\sigma_6 = 0.275\). The rate at which the singular values drop is exponential in \(\hy\) and in \(\rare\), with a difference of \(\L2 = 0.025\) in the \(\L2\)-Error when comparing the gradients of the first \(p=10\) singular values. This should highlight the different characteristics when being reduced between both data sets.\\
-We can link the decay of the Kolmogorov N-width in \cref{Eq:Kolmogorov} with the decay of the singular values, which invalidates the application of \cref{Eq:KolmoAdv} for the FOM solution. For both \(\hy\) and \(\rare\) the singular values and in turn the Kolmogorov N-width decay rapidly, which in turn leads to the assumption that advection and sharp shock fronts do not appear predominantly. Moreover the dissimilarly decay rate is a manifestation of the differing rarefaction levels. With a decreasing number of particles present, the lesser the probability of a single bulk macroscopic velocity emerges, see a full survey in \cref{Ch:BGK}. Therefore \(\idhy\) can always be chosen smaller than \(\idrare\), written as \(\idhy < \idrare\), which is also evident with the FCNN and the CNN as discussed in the following.   
+\end{minipage},\\\\
+over the singular values, are shown in \cref{Fig:CUSUM-e}. With a total of \(p=4\) intrinsic variables, a cumulative energy of over \(99\%\) can be achieved for \(\hy\). The fourth singular value measures to a value of \(\sigma_4 = 0.706\). The cumulative energy of the singular values of \(\rare\) arrives above \(99\%\) with \(p=6\) singular values. The sixth value is at \(\sigma_6 = 0.275\). Thus a slight difference can be observed for both datasets when emplying POD.\\
+We can link the decay of the Kolmogorov N-width in \cref{Eq:Kolmogorov} with the decay of the singular values, which invalidates the application of \cref{Eq:KolmoAdv} for the FOM solutions.  The rate at which the singular values drop is approximately exponential in \(\hy\) and in \(\rare\) and in turn indicates a rapid decay of the Kolmogorov N-width. Hence supports the  assumption that advection and sharp shock fronts do not appear predominantly. Moreover the eventough small, but dissimilar, decay rate at which cusum-e drops is a manifestation of the different rarefaction levels. With a decreasing number of particles present, the lesser the probability of a single bulk macroscopic velocity emerges as seen in the full survey of the BGK model in \cref{Ch:BGK}. 
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
 		\input{Figures/Chapter_4/CumSum_Hydro.tex}

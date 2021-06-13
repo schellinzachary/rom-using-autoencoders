@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 home = str(Path.home())
 
-qty = "hy" #["hy" or "rare"]
+#qty = "hy" #["hy" or "rare"]
 
 
 #Load Data
@@ -34,34 +34,16 @@ def POD(c):
 	S = np.diagflat(s)
 	for i in range(len(s)):
 		rec = u[:,:i]@S[:i,:i]@vh[:i,:]
-		l2 = np.linalg.norm((c.T - rec).flatten())/np.linalg.norm(c.T.flatten()) # calculatre L2-Norm Error
-		ls.append(l2)
-	return s, ls
-
-
-#Calculate the difference in derivatives for hy and rare sing. val.
-##################################################################
-c_r = load_data("hy")
-c_h = load_data("rare")
-s_r, ls_r = POD(c_r)
-s_h, ls_h = POD(c_h)
-k = range(1,len(s_h)+1)
-
-grad_h = np.gradient(s_h[0:10])
-grad_r = np.gradient(s_r[0:10])
-
-print("Diff in grad:", np.linalg.norm(grad_h - grad_r)/np.linalg.norm(grad_h))
-
+	return s
 
 
 #Plot cumultative energy and singular values
 ############################################
 c_h = load_data("hy")
 c_r = load_data("rare")
-s_r, ls_r = POD(c_r)
-s_h, ls_h = POD(c_h)
-print("hy:",ls_h)
-print("rare:",ls_r)
+s_r = POD(c_r)
+s_h = POD(c_h)
+
 k = range(1,len(s_h)+1)
 fig, ax = plt.subplots(1,2)
 figs, axs = plt.subplots(1,2)
@@ -69,7 +51,6 @@ lvl = ["hy","rare"]
 labels = ["o-","-v"]
 
 ax[0].semilogy(k,s_h,labels[0],label='%s'%lvl[0])
-ax[0].semilogy(k,ls_h,labels[0],label='%s'%lvl[0])
 ax[0].set_ylabel('sigma')
 ax[0].set_xlabel('k')
 ax[1].plot(k,np.cumsum(s_h)/np.sum(s_h),labels[0],label='%s'%lvl[0])
@@ -80,7 +61,6 @@ ax[1].legend()
 ### tikzplotlib.save('%s/rom-using-autoencoders/01_Thesis/Figures/SVD/CumSum_test_hy.tex'%home)
 
 axs[0].semilogy(k,s_r,labels[1],label='%s'%lvl[1])
-axs[0].semilogy(k,ls_r,labels[1],label='%s'%lvl[1])
 axs[0].set_ylabel('sigma')
 axs[0].set_xlabel('k')
 axs[1].plot(k,np.cumsum(s_r)/np.sum(s_r),labels[1],label='%s'%lvl[1])

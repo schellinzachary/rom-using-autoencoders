@@ -53,47 +53,40 @@ pagesize,oneside,% for thesis use :
 \bibliographystyle{JHEP}
 
 %%%%%%%%%%%%%%%%%%%%New Commands%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%misc
+\DeclareMathOperator*{\cumu}{\Epsilon} %cumulative energy POD
+\DeclareMathOperator*{\base}{\Phi} %basis as matrix or vector
+\DeclareMathOperator*{\snp}{u} %snapshot as matrix or vector
+\DeclareMathOperator*{\mbs}{\kappa} %snapshot as matrix or vector
 
-\DeclareMathOperator*{\argmin}{\arg\!\min}
+%BGK and rarefaction levels
+\DeclareMathOperator*{\Kn}{\mathit{Kn}}
 \DeclareMathOperator*{\hy}{\textbf{\textsf{H}}}
 \DeclareMathOperator*{\rare}{\textbf{\textsf{R}}}
+
+% intrinsic variables
 \DeclareMathOperator*{\idhy}{\textbf{\textsf{h}}}
 \DeclareMathOperator*{\idrare}{\textbf{\textsf{r}}}
-\DeclareMathOperator*{\pstar}{p^{\star}}
-\DeclareMathOperator*{\Kn}{\mathit{Kn}}
-\DeclareMathOperator*{\L2}{L_2}
 \DeclareMathOperator*{\a1}{\alpha_{1}}
 \DeclareMathOperator*{\a2}{\alpha_{2}}
 \DeclareMathOperator*{\a3}{\alpha_{3}}
-\DeclareMathOperator*{\mae}{\Pi_{FCNN}}
-\DeclareMathOperator*{\mconv}{\Pi_{CNN}}
-\DeclareMathOperator*{\mrare}{\Pi_{r}}
-\DeclareMathOperator*{\mhy}{\Pi_{h}}
-\DeclareMathOperator*{\cumu}{\Epsilon}
-\DeclareMathOperator*{\base}{\Phi} %basis as matrix or vector
-\DeclareMathOperator*{\frepar}{\theta} %set
-\DeclareMathOperator*{\grd}{\mathbf{g}}
+
+%Metric
+\DeclareMathOperator*{\L2}{L_2}
+
+% Neural networks
+\DeclareMathOperator*{\frepar}{\theta} %set of weights and biases
+\DeclareMathOperator*{\grd}{\mathbf{g}} %gradient for backprop
 \DeclareMathOperator*{\btch}{P} %batch is matrix or tensor
 \DeclareMathOperator*{\minib}{P_t} %minibatch is matrix or tensor
-\DeclareMathOperator*{\snp}{u} %snapshot as matrix or vector
-\DeclareMathOperator*{\mbs}{\kappa} %snapshot as matrix or vector
+\DeclareMathOperator*{\btchfc}{P_{FCNN}} %batch spec. FCNN
+\DeclareMathOperator*{\btchcn}{P_{CNN}} %batch spec. CNN
 \DeclareMathOperator*{\nla}{\sigma} %non linear activation
 
-
-
-
-
-
+%math convenience
 \newcommand{\colvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
-%\newcommand{\pod1}{\(\gamma_1\)}
-%\newcommand{\pod2}{\(\gamma_2\)}
-%\newcommand{\pod3}{\(\gamma_3\)}
-%\newcommand{\1pod}{\(\delta_1\)}
-%\newcommand{\2pod}{\(\delta_2\)}
-%\newcommand{\3pod}{\(\delta_3\)}
-%\newcommand{\conv1}{\(\beta_1\)}
-%\newcommand{\conv2}{\(\beta_2\)}
-%\newcommand{\conv2}{\(\beta_3\)}
+\DeclareMathOperator*{\argmin}{\arg\!\min} %eckhard young theorem
+
 
 %%%%%%%%%%%%%%%%%Tikz Styles%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -132,7 +125,7 @@ text width=5em, text centered, rounded corners, minimum height=4em]
 \setlength\parindent{0pt}
 
 %some extra space for tables and lists with alpha numeric labeling
- \renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumi}{(\alph{enumi})}
 \setlength\extrarowheight{1.5pt}
 
 

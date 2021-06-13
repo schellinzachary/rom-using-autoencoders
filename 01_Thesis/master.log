@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  11 JUN 2021 12:50
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  12 JUN 2021 17:25
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1246,10 +1246,10 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
 )
-LaTeX Info: Redefining \L2 on input line 64.
-LaTeX Info: Redefining \a1 on input line 65.
-LaTeX Info: Redefining \a2 on input line 66.
-LaTeX Info: Redefining \a3 on input line 67.
+LaTeX Info: Redefining \a1 on input line 70.
+LaTeX Info: Redefining \a2 on input line 71.
+LaTeX Info: Redefining \a3 on input line 72.
+LaTeX Info: Redefining \L2 on input line 75.
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
 
@@ -1733,19 +1733,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 <./Figures/master-figure21.pdf><./Figures/master-figure22.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 42--84
+Underfull \hbox (badness 10000) in paragraph at lines 42--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--87
 
  []
 
 [23] (./Figures/Chapter_4/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure23' is up-to-date. ======
 )
-Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--103
+Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--106
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2--103
+Underfull \hbox (badness 10000) in paragraph at lines 2--106
 
  []
 
@@ -1757,7 +1762,12 @@ Overfull \hbox (3.81065pt too wide) in paragraph at lines 2--136
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 85--113
+Overfull \hbox (3.04163pt too wide) in paragraph at lines 88--116
+[]$$[]$\T1/lmr/m/n/10.95 , 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 88--116
 
  []
 
@@ -1982,14 +1992,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46591 strings out of 481365
+ 46585 strings out of 481365
  156263,14696376 words of node,token memory allocated
- 896 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 65 attribute, 88 glue_spec, 65 attr
+ 880 words of node memory still in use:
+   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 61 attribute, 88 glue_spec, 61 attr
 ibute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:2067,3:373,4:160,5:894,6:47,7:16762,8:92,9:776,10:42,11:10
-99
- 60305 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:2067,3:373,4:160,5:896,6:47,7:16829,8:92,9:776,10:42,11:11
+02
+ 60299 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2756b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2014,10 +2024,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (64 pages, 7933441 bytes).
+Output written on master.pdf (64 pages, 7932961 bytes).
 
-PDF statistics: 2450 PDF objects out of 2487 (max. 8388607)
- 1983 compressed objects within 20 object streams
+PDF statistics: 2447 PDF objects out of 2487 (max. 8388607)
+ 1980 compressed objects within 20 object streams
  216 named destinations out of 1000 (max. 131072)
  184 words of extra memory for PDF output out of 10000 (max. 100000000)
 
