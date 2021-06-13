@@ -2,7 +2,7 @@
 \begin{tikzpicture}
 \definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 
-\begin{groupplot}[group style={group size=2 by 1,horizontal sep=1.8cm}]
+\begin{groupplot}[group style={group size=2 by 1,horizontal sep=2cm}]
 \nextgroupplot[
 legend cell align={left},
 legend style={draw=none,at={(0.03,0.03)}, anchor=south west},
@@ -29,7 +29,7 @@ clip=false,
 y label style={yshift=-.7em},
 max space between ticks=20
 ]
-\addplot [semithick, red, mark=o, mark size=2, mark options={solid}, dashed]
+\addplot [thick, red, mark=o, mark size=2, mark options={solid}, dashed]
 table {%
 1 0.188112310801957
 2 0.0750338979596223
@@ -40,7 +40,7 @@ table {%
 32 2.23530701528268e-15
 };
 \addlegendentry{POD}
-\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, only marks]
+\addplot [thick, color0, mark=pentagon, mark size=2, mark options={solid}, only marks]
 table {%
 1 0.00663323979824781
 2 0.00234045716933906
@@ -51,7 +51,7 @@ table {%
 32 0.000206562195671722
 };
 \addlegendentry{FCNN}
-\addplot [semithick, green!50!black, mark=triangle, mark size=2, mark options={solid,rotate=180}, only marks]
+\addplot [thick, green!50!black, mark=triangle, mark size=2, mark options={solid,rotate=180}, only marks]
 table {%
 1 0.176033899188042
 2 0.0960375890135765
@@ -90,7 +90,7 @@ clip=false,
 y label style={yshift=-.7em},
 max space between ticks=20
 ]
-\addplot [semithick, red, mark=o, mark size=2, mark options={solid}, dashed]
+\addplot [thick, red, mark=o, mark size=2, mark options={solid}, dashed]
 table {%
 1 0.176637499442346
 2 0.0853532495802733
@@ -101,18 +101,18 @@ table {%
 32 7.90549608414532e-15
 };
 \addlegendentry{POD}
-\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, only marks]
+\addplot [thick, color0, mark=pentagon, mark size=2, mark options={solid}, only marks]
 table {%
 1 0.58092600107193
 2 0.00492882402613759
-4 0.580920994281769
+4 0.0029036
 5 0.0009
 8 0.00873616803437471
 16 0.000355097494320944
 32 0.000395381561247632
 };
 \addlegendentry{FCNN}
-\addplot [semithick, green!50!black, mark=triangle, mark size=2, mark options={solid,rotate=180}, only marks]
+\addplot [thick, green!50!black, mark=triangle, mark size=2, mark options={solid,rotate=180}, only marks]
 table {%
 1 0.160851925611496
 2 0.0912962183356285
