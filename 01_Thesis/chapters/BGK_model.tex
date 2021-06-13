@@ -15,7 +15,7 @@ The BGK model is valid for a broad range of rarefaction levels. Ranging from con
 \end{equation}
 where \(\lambda\) is the mean free path of a particle and \(l\), some domain specific length as the diameter of a tube for example. \Cref{Fig:ExpKN} shows a possible partitioning of \(\Kn\) into specific regimes, which is quiet comfortable. Though no clear cut can be applied to different values of \(\Kn\). The boundaries are particularly blurry \cite{schaaf}.
 \begin{figure}[H]
-	\input{Figures/BGK/Kn.tex}
+	\input{Figures/Chapter_2/Kn.tex}
 	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. The Euler equations can be used up to approximately \(\Kn < 0.01\) and describe a \glqq continuum flow\grqq{}. A \grqq slip flow\grqq{} can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourrier equations yield accurate results. From \(\Kn > 0.1\) onwards (transition regime, kinetic regime and free flight) the rarefaction increases steadily and only kinetic gas models deliver reasonable computations. The BGK model can be used for all rarefaction levels.}
 	\label{Fig:ExpKN}
 \end{figure}
@@ -46,7 +46,7 @@ To continue let's consider \(K\) to be the number of gridpoints in velocity and 
 A closer look on the discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations.\\  
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
-	\scalebox{.9}{\input{Figures/BGK/Boltzmann.tex}}
+	\scalebox{.9}{\input{Figures/Chapter_2/Boltzmann.tex}}
 	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
 	\vspace{-70pt}
 	\label{Fig:Demo Macro}
@@ -85,7 +85,7 @@ Nonlinear conservation laws in a simple shock tube can be solved analytically an
 The problem setup for a shock tube at \(t=0\) is shown in \cref{Fig:SodProbSetup} and \cref{Fig:SodTime}, which is split into two regions (region 1 and region 5) via a diaphragm. Here the initial conditions for two fluids at rest are \(\rho_0 = 1\) and \(\rho_5=0.125\) for the density, \(p_0=1\) and \(p_5=0.1\) for the pressure and \(u_0=u_5=0\) for the macroscopic velocity \cite{Sod}.
 \begin{figure}[H]
 	\centering
-	\input{Figures/BGK/Sod.tex}
+	\input{Figures/Chapter_2/Sod.tex}
 	\caption{Problem setup for Sod's shock tube in 1D translated for the BGK model in velocity \(v\) and space \(x\). A diaphragm is positioned at \(x_d\), seperating the whole domain in two regions (region 1 and region 5). Initial conditions for density \(\rho\), pressure \(p\) and macroscopic velocity \(u\) are indicated.}
 	\label{Fig:SodProbSetup}
 \end{figure}
@@ -94,25 +94,25 @@ Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} i
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
 		\centering
-		\input{Figures/BGK/Sod_time0.tex}
+		\input{Figures/Chapter_2/Sod_time0.tex}
 		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding initial conditions for pressure \(p\), density \(\rho\) and macroscopic velocity \(u\). Position of the diaphragm is labeled as \(x_d\).\\ \\ \\}
 		\label{Fig:SodTime}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.45\textwidth}
 		\centering
-		\input{Figures/BGK/Sod_time.tex}
+		\input{Figures/Chapter_2/Sod_time.tex}
 		\caption{Sod's shock tube at \(t>0\). Shown are pressure \(p\), denisty \(\rho\)  and macroscoppic velocity \(u\). Five regions can be identified marked out with \(x_1\) and \(x_2\) as head and tail of the rarefaction wave, \(x_3\) as the contact discontinuity and \(x_4\) as the position of the shock wave. The position of the initial diaphragm is labeled \(x_d\). A particle that traveled from \(x_d\) during \(\Delta t\) will be located at \(x_3\).}
 		\label{Fig:SodTime0}
 	\end{subfigure}\\ \vfill
 	\begin{subfigure}{\textwidth}
 		\centering
-		\input{Figures/BGK/ExamplesSod.tex}
+		\input{Figures/Chapter_2/ExamplesSod.tex}
 		\vspace{-10pt}
 		\caption{Two solutions of the BGK model \(f(t_i,v,x)\) in Sod's shock tube with \(\Kn=0.00001\) (top row) and \(\Kn=0.01\) (bottom row) for a fixed time \(t_i\). Solutions are presented for \(t_0=0s\), \(t_1=0.06s\) and \(t_2=0.12s\).}
 		\label{Fig:ExamplesSod}
 	\end{subfigure}\\%\vspace{5pt}
 	\begin{subfigure}{\textwidth}
-		\input{Figures/BGK/MacroFOMhyvsrare.tex}
+		\input{Figures/Chapter_2/MacroFOMhyvsrare.tex}
 		\caption{Macroscopic quantities \(\rho(x,t_i)\), \(\rho u(x,t_i)\) and \(E(x,t_i)\) in the SOD schock tube at \(t_i=0.12s\). Displayed are the quantities for \(\Kn=0.00001\) and for \(\Kn=0.01\), where the former is abbreviated with \(\hy\) and the latter with \(\rare\). The locations of head and tail of rarefaction wave \(x_1\) and \(x_2\), contact discontinuity \(x_3\) and shockwave \(x_4\) are labeled.}
 		\label{Fig:SODHyRare}
 	\end{subfigure}\caption{BGK model in Sod's shock tube: Initial conditions and their evolution after \(\Delta t\) are shown in (a) and (b). Two solutions of differing rarefaction levels are presented in (c). Macroscopic quantities of (c) at \(t=0.12s\) are shown in (d).}

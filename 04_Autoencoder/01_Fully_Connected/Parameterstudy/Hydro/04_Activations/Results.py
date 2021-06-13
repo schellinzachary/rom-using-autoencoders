@@ -113,8 +113,10 @@ fig, ax = plt.subplots(8,1)
 
 for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     a, c = ac_combo
+
     a = activations[a]
     c = activations[c]
+
     #encoder
     encoder = Encoder(a,c)
 
@@ -123,7 +125,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
-    print(model)
+
 
     checkpoint_model = torch.load('Results/{}.pt'.format(best_model),
         map_location="cpu")
@@ -136,7 +138,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
 
     rec = model(f)
     l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
-    print(best_model)
+    
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
     l2_losses.append(l2_loss.detach().numpy())

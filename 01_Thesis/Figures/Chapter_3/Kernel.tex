@@ -1,0 +1,95 @@
+%Convolutional operations with channels 
+
+\begin{tikzpicture}[]
+	%input
+	\draw (-2,0) rectangle (0.5,1) node[midway]{\includegraphics[width=2.5cm,height=1cm]{Figures/Reduced_Order_Algorithms/ExamplesSOD-005.png}};
+	%1stKernel
+	\draw [thick,draw=white] (0,0.05) rectangle (0.4,.45);
+	%1st featuremaps
+	\draw[fill=color0,draw=black] (2.25,0.75) rectangle (3.25,1.75);
+	\draw[fill=color0,draw=black] (2,0.5) rectangle (3,1.5);
+	\draw[fill=color0,draw=black] (1.75,0.25) rectangle (2.75,1.25);
+	\draw[fill=color0,draw=black] (1.5,0) rectangle (2.5,1);
+	%1stlines
+	\draw [thick,draw=black] (.4,0.05) -- (1.9,0.2) node (conv) [midway,above] {};
+	\draw [thick,draw=black] (.4,0.45) -- (1.9,0.2);
+	%Kernel
+	\draw [thick,draw=black] (1.55,.7) rectangle (1.8,.95) node[midway,below](kernel){};
+	%2nd featuremaps
+	\draw[fill=color0,draw=black] (5,1.25) rectangle (5.75,2);
+	\draw[fill=color0,draw=black] (4.75,1) rectangle (5.5,1.75);
+	\draw[fill=color0,draw=black] (4.5,0.75) rectangle (5.25,1.5);
+	\draw[fill=color0,draw=black] (4.25,0.5) rectangle (5,1.25);
+	\draw[fill=color0,draw=black] (4,0.25) rectangle (4.75,1);
+	\draw[fill=color0,draw=black] (3.75,0) rectangle (4.5,0.75);
+	%lines
+	\draw [thick,draw=black] (1.8,.7) -- (4,0.25);
+	\draw [thick,draw=black] (1.8,.95) -- (4,0.25);
+	%2nd Kernel
+	\draw [thick,draw=black] (4.1,.5) rectangle (4.3,.7);
+	%3rd feature maps	
+	\draw[fill=color0,draw=black] (7.5,1.75) rectangle (8.0,2.25);
+	\draw[fill=color0,draw=black] (7.25,1.5) rectangle (7.75,2.0);
+	\draw[fill=color0,draw=black] (7,1.25) rectangle (7.5,1.75);
+	\draw[fill=color0,draw=black] (6.75,1) rectangle (7.25,1.5);
+	\draw[fill=color0,draw=black] (6.5,0.75) rectangle (7.0,1.25);
+	\draw[fill=color0,draw=black] (6.25,0.5) rectangle (6.75,1.0);
+	\draw[fill=color0,draw=black] (6,0.25) rectangle (6.5,.75);
+	\draw[fill=color0,draw=black] (5.75,0) rectangle (6.25,0.5);
+	%lines
+	\draw [thick,draw=black] (4.3,.5) -- (6.1,.2);
+	\draw [thick,draw=black] (4.3,.7) -- (6.1,0.2);
+	%3rd Kernel
+	\draw [thick,draw=black] (6,.2) rectangle (6.2,.4);
+	%4th feature maps	
+	\draw[fill=color0,draw=black] (9,1.75) rectangle (9.3,2.05);
+	\draw[fill=color0,draw=black] (8.75,1.5) rectangle (9.05,1.8);
+	\draw[fill=color0,draw=black] (8.5,1.25) rectangle (8.8,1.55);
+	\draw[fill=color0,draw=black] (8.25,1) rectangle (8.55,1.3);
+	\draw[fill=color0,draw=black] (8,0.75) rectangle (8.3,1.05);
+	\draw[fill=color0,draw=black] (7.75,0.5) rectangle (8.05,0.8);
+	\draw[fill=color0,draw=black] (7.5,0.25) rectangle (7.8,0.55);
+	\draw[fill=color0,draw=black] (7.25,0) rectangle (7.55,0.3);
+	%lines
+	\draw [thick,draw=black] (6.2,.2) -- (7.4,.2);
+	\draw [thick,draw=black] (6.2,.4) -- (7.4,.2);
+	%lines to flatten
+	\draw [thick,draw=black,dashed] (7.55,0) -- (8.75,0);
+	\draw [thick,draw=black,dashed] (9.3,1.75) -- (10.25,1.75) node [midway,above=-5pt] (flatten) {};
+	\draw[fill=black,draw=black,opacity=0.5] (8.5,0) -- (9,0) -- (10.5,1.75) -- (10,1.75) -- (8.5,0);
+	
+	%draw flatten nodes
+	\node (1) at (10,1.7){};
+	\node (2) at (9.85,1.5){};
+	\node (3) at (9.6,1.2){};
+	\node (4) at (9.3,.8){};
+	\node (5) at (9,0.4){};
+	\node (6) at (8.8,0.1){};
+	%draw code nodes
+	\node (7) at (11.4,1.2){};
+	\node (8) at (11.2,.95){};
+	\node (9) at (11,0.7){};
+	%draw fully connected
+	\foreach \x in {1,...,6}
+	\foreach \y in {7,...,9}
+		\draw [thick](\x.center) -- (\y.center);
+	
+	\draw[fill=black,draw=black,opacity=0.5] (10.5,0.5) -- (11,0.5) -- (11.65,1.25) -- (11.15,1.25) -- (10.5,0.5);
+	%draw labeling of operations
+	%label convolutional operation
+	\draw [<-] (conv)--++(0,1.5cm)node[left]{\footnotesize Convolutional operation};
+	%label flatteing operation
+	\draw [<-] (flatten)--++(0,.7cm)node[left]{\footnotesize Flatten};
+	%label fully connected operation
+	\draw [] (1) -- (7) node[midway,above=-5pt] (fc){};
+	\draw [<-] (fc)--++(0,1.5cm)node[left]{\footnotesize Fully conencted operation};
+	%label kernel
+	\draw [<-] (kernel)--++(0,1.7cm)node[left]{\footnotesize Kernel};
+	%draw abelinig of stages
+	%label input stage
+	\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (-2,-.1) -- (.5,-.1) node [midway,below = 6pt,draw=none] {\footnotesize Input};
+	%label hidden stages
+	\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (1.5,-.1) -- (7.55,-.1) node [midway,below = 6pt,draw=none] {\footnotesize 4 Hidden layers each with feature maps};
+	%label hidden stages
+	\draw [thick,decorate,decoration={brace,mirror, amplitude=3pt}] (8.5,-.1) -- (11.65,-.1) node [midway,below = 6pt,draw=none] {\footnotesize Flattened- \& code layer};
+\end{tikzpicture}

@@ -32,7 +32,7 @@ class Encoder_2(nn.Module):
         x = self.act_a(self.convE2(x))
         original_size = x.size()
         x = x.view(original_size[0],-1)
-        x = self.act_a(self.linearE1(x))
+        x = self.act_c(self.linearE1(x))
         return x
 
 class Decoder_2(nn.Module):
@@ -77,7 +77,6 @@ class Autoencoder(nn.Module):
 models = {
     1 : "model0-int1-epoch1554-val_loss2.010E-04.pt",
     2 : "model0-int2-epoch1990-val_loss7.078E-05.pt",
-    5 : "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06.pt",
     4 : "model0-int4-epoch1734-val_loss6.353E-06.pt",
     8 : "model0-int8-epoch1752-val_loss6.601E-06.pt",
     16: "model0-int16-epoch1661-val_loss6.285E-06.pt",

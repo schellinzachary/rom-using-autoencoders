@@ -67,7 +67,6 @@ class Autoencoder(nn.Module):
 models = {
     1 : "int_var-1-epoch1387-val_loss2.350E-03.pt",
     2 : "int_var-2-epoch4988-val_loss2.051E-07.pt",
-    3 : "('relu', 'relu')-epoch4987-val_loss7.191E-09.pt",
     4 : "int_var-4-epoch1-val_loss2.350E-03.pt",
     8 : "int_var-8-epoch4986-val_loss4.791E-07.pt",
     16: "int_var-16-epoch4990-val_loss9.933E-10.pt",
