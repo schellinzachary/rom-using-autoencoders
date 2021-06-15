@@ -82,7 +82,7 @@ rare_models = {
     1 : "int_var-1-epoch1387-val_loss2.350E-03.pt",
     2 : "int_var-2-epoch4988-val_loss2.051E-07.pt",
     4 : "int_var-4-epoch4988-val_loss7.083E-08.pt",
-    8 : "int_var-8-epoch4986-val_loss4.791E-07.pt",
+    8 : "int_var-8-epoch4985-val_loss1.168E-08.pt",
     16: "int_var-16-epoch4990-val_loss9.933E-10.pt",
     32: "int_var-32-epoch4990-val_loss1.116E-09.pt"
 }
