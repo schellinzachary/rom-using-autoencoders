@@ -5,7 +5,7 @@ Different Activations
 from pathlib import Path
 from os.path import join
 home = str(Path.home())
-loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
+loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_4D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/4l_activations.tex"
 
 
@@ -263,23 +263,23 @@ experiments = (
 
 best_models = (
 	#uncomment for models for 2 Layer Autoencoder
-    # "model0-act-('elu', 'elu')-epoch1969-val_loss6.500E-06",
-    # "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06",
-    # "model0-act-('elu', 'tanh')-epoch1970-val_loss5.939E-06",
-    # "model0-act-('leaky', 'leaky')-epoch1976-val_loss1.093E-05",
-    # "model0-act-('leaky', 'tanh')-epoch1974-val_loss6.591E-06",
-    # "model0-act-('relu', 'relu')-epoch1984-val_loss1.319E-05",
-    # "model0-act-('silu', 'silu')-epoch1972-val_loss7.856E-06",
-    # "model0-act-('tanh', 'tanh')-epoch1909-val_loss7.762E-06"
+    "model0-act-('elu', 'elu')-epoch1969-val_loss6.500E-06",
+    "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06",
+    "model0-act-('elu', 'tanh')-epoch1970-val_loss5.939E-06",
+    "model0-act-('leaky', 'leaky')-epoch1976-val_loss1.093E-05",
+    "model0-act-('leaky', 'tanh')-epoch1974-val_loss6.591E-06",
+    "model0-act-('relu', 'relu')-epoch1984-val_loss1.319E-05",
+    "model0-act-('silu', 'silu')-epoch1972-val_loss7.856E-06",
+    "model0-act-('tanh', 'tanh')-epoch1909-val_loss7.762E-06"
     #uncomment models for 4 Layer Autoencoder
-    "model1-act-('elu', 'elu')-epoch1365-val_loss6.916E-06",
-    "model1-act-('elu', 'silu')-epoch1808-val_loss7.532E-06",
-    "model1-act-('elu', 'tanh')-epoch1498-val_loss9.252E-06",
-    "model1-act-('leaky', 'leaky')-epoch1971-val_loss9.615E-06",
-    "model1-act-('leaky', 'tanh')-epoch1722-val_loss9.401E-06",
-    "model1-act-('relu', 'relu')-epoch1985-val_loss1.073E-05",
-    "model1-act-('silu', 'silu')-epoch1550-val_loss6.497E-06",
-    "model1-act-('tanh', 'tanh')-epoch975-val_loss8.390E-06"
+    # "model1-act-('elu', 'elu')-epoch1365-val_loss6.916E-06",
+    # "model1-act-('elu', 'silu')-epoch1808-val_loss7.532E-06",
+    # "model1-act-('elu', 'tanh')-epoch1498-val_loss9.252E-06",
+    # "model1-act-('leaky', 'leaky')-epoch1971-val_loss9.615E-06",
+    # "model1-act-('leaky', 'tanh')-epoch1722-val_loss9.401E-06",
+    # "model1-act-('relu', 'relu')-epoch1985-val_loss1.073E-05",
+    # "model1-act-('silu', 'silu')-epoch1550-val_loss6.497E-06",
+    # "model1-act-('tanh', 'tanh')-epoch975-val_loss8.390E-06"
     )
 
 #load data
@@ -298,16 +298,16 @@ fig2, ax2 = plt.subplots(8,1)
 
 for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     
-    idx_model = 1 # for 2 Layer and 1 for 4 Layer
+    idx_model = 0 # for 2 Layer and 1 for 4 Layer
 
     a, c = ac_combo
     a = activations[a]
     c = activations[c]
     #encoder
-    encoder = Encoder_4(a,c) #change to Encoder_4(a,c)
+    encoder = Encoder_2(a,c) #change to Encoder_4(a,c)
 
     #decoder
-    decoder = Decoder_4(a) #change to Decoder_4(a)
+    decoder = Decoder_2(a) #change to Decoder_4(a)
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
@@ -339,7 +339,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     ax[idx].set_ylim(ymax=1e-3)
     ax[idx].legend()
 
-    ax2[idx].imshow(rec[0,:,:].squeeze().detach().numpy())
+    ax2[idx].imshow(rec[30,:,:].squeeze().detach().numpy())
     #ax2[idx].set_titĺe('{}'.format(ac_combo))
 
 #tikzplotlib.save(join(home,loc_plot))

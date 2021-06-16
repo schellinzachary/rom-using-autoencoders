@@ -3,20 +3,19 @@
 \chapter{Results}
 \label{Ch:Results}
 %\pagenumbering{arabic}
-
-During the offline phase solutions obtained from the FOM, in this case $\hy$ and $\rare$, are reduced to their intrinsic dimension, as discussed in \cref{Ch:ROM}. From the thereby obtained intrinsic variables which define a reduced basis namely $\idhy$ and $\idrare$, the solution can be reconstructed yielding a loss of information. Hence, before buiding a ROM, the reconstruction of $\hy$ and $\rare$ needs to be evaluated. If the reduction and subsequent reconstruction fails to sustain "important" information, then the reduction algorithm is not suited for building a ROM. What these "important" qualities for the BGK model in the test case are and how they can be measured, as well as methods to compare the FOM solution against it's reconstruction is discussed in this section. For the dimensionality reduction the proper orthogonal decomposition (POD), a fully connected neural network (FCNN) and a convolutional neural network (CNN) is used.\\
-
+This chapter covers the evaluation of reconstructions \(\tilde{f}\) obtained from the FCNN and the CNN through a comparison against reconstructions obtained from POD. Additionally, an analysis of the interpretability of the intrinsic variables \(\idhy\) and \(\idrare\) is provided. This chapter concludes with the attempt to create new states of the FOM with the FCNN and the CNN, which can be viewed as an online phase of MOR.\\ 
+ 
 A first measure of how much information gets lost is obtained through one of our performance metrics during neural network training: the MSE over the validation set. Yet, this metric solely applies to neural networks. To be able to compare the POD to it's neural network counterparts another metric is in use: the error over the $\L2$-Norm here referred to as thr $\L2$-Error , already introduced in \cref{Ch:DimRedAl}. In \cref{Tab:L2}, the $\L2$-Error for all three algorithms on both input data is provided.
 \begin{table}[htp]
 	\centering
 	\caption{Comparison of the $\L2$-Error over the reconstructions obtained by POD, FCNN and CNN. The CNN was trained using the k-fold algorithm, therefore the mean $\mu$ over $k=5$ folds, marked with superscript asterix, is given. Variance $\sigma^2$ for $\hy$ is $\sigma^2_{\hy}=2.25\times 10^{-5}$ and for $\rare$ is $\sigma^2_{\rare}=3.61 \times 10^{-5}$. Parenthesised values are obtained from the best fold.}
-	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c @{} }
+	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c@{} }
 		\toprule
-		Algorithm       &$\L2$-Error for $\hy$     &$\L2$-Error for $\rare$  \\   
+		Algorithm & Number of parameters \(\frepar\)&$\L2$-Error for $\hy$ &$\L2$-Error for $\rare$  \\   
 		\hline
-		POD             &0.0205   &0.0087 \\
-		FCNN 			&0.0017   &0.0019 \\
-		CNN   			&0.0142* (0.0095)   &0.0178* (0.0097) \\
+		POD     &       &0.0205   &0.0087 \\
+		FCNN 	&		&0.0008   &0.0009 \\
+		CNN   	&		&0.026    &0.026\\
 		\bottomrule
 	\end{tabular*} \label{Tab:L2}
 \end{table}
@@ -24,13 +23,13 @@ The FCNN performs best out of the three both for $\hy$ and $\rare$ and even drop
 
 The "important" qualities, mentioned in the beginning, become visible when looking at the worst reconstructions. Those can be determined with the $\L2$-Error over time for all three models as seen in \cref{Fig:ErrTime}.
 \begin{figure}[htbp!]
-	\input{Figures/Results/ErrTime.tex}
+	\input{Figures/Chapter_5/ErrTime.tex}
 	\caption{Relative Error over time for POD, FCNN and CNN. Results for $\hy$ are displayed on the left, the results for $\rare$ are displayed on the right.}
 	\label{Fig:ErrTime}
 \end{figure}
 For POD and the CNN the last timestep at $t=0.12s$ in both cases $\hy$ and $\rare$ is the most rich in the $L2$-Error. While performing best, the FCNN in contrast has troubles in the beginning around $t=0.01s$ for $\hy$ and $\rare$. A detailed comparison of the models, reconstructions of $f(x,v)$ at $t=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}.
 \begin{figure}[H]
-	\input{Figures/Results/ErrWorst.tex}
+	\input{Figures/Chapter_5/ErrWorst.tex}
 	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displayed in the top row, $\rare$ in the bottom row. }
 	\label{Fig:ErrWorst}
 \end{figure}
@@ -38,13 +37,13 @@ A presentation of the FOM in $f(x,v)$ was already introduced in \cref{Ch:BGK}. F
 Top row in \cref{Fig:ErrWorst} show reconstructions for $\hy$ and the bottom row for $\rare$ with FOM solution as paradigm. Starting with \(\hy\) one observers, that a restored \(f(x,v)\) from \(x=120\), the point around which dilution initiates, gets defective for POD and the CNN. Here the probability distribution is thinner as the original with POD and smeared around the borders with the CNN. This in turn leads to errors in velocities gas particles can have once passing \(x=120\). In contrast the FCNN reproduces the FOM solution almost exactly.\\
 Continuing with a row further down of \cref{Fig:ErrWorst} and therefore \(\rare\), in place of a pronounced separation in a dense and rare region, stands bifurcation of \(f(x,v)\) into two probability distribution functions as outlined in \cref{Ch:BGK}. POD and the FCNN reproduce the FOM solution without any visible drawback. On the other hand the CNN reproduces smeared corners as in \(\hy\).   
 \begin{figure}[H]
-	\input{Figures/Results/MacroError.tex}
+	\input{Figures/Chapter_5/MacroError.tex}
 	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. Top row shows results for \(\hy\), bottom row for \(\rare\). CNN is displayed with marks only because of trembles in the signal.}
 	\label{Fig:ErrMacro}
 \end{figure}
 Loss of information described above can unfold in severe mistakes in \(\rho\), \(\rho u\) and \(E\), the macroscopic quantities, as displayed in \cref{Fig:ErrMacro}. In the following, features of the macroscopic quantities are expressed in terms of rarefaction wave, contact discontinuity and height as well as position of the shockfront. For a detailed elaboration see \cref{Ch:BGK}. Following the structure in the preceding figures, macroscopic quantities of \(\hy\) are displayed in the top row and for \(\rare\) in the bottom row of \cref{Fig:ErrMacro}. First the reproduction of the macroscopic quantities \(\rho\), \(\rho u\) and \(E\), obtained by the FCNN is exact for both cases \(\hy\) and \(\rare\). In particular the density \(\rho\) matches with results from the FOM exactly for the neural networks in both cases \(\hy\) and \(\rare\). Second the CNN produces trembles in \(\rho u\) and especially in \(E\) which is why it's shown with marks only. Results from the CNN are similar for \(\hy\) and \(\rare\). The momentum \(\rho u\) holds errors for the tail of the rarefaction wave as well as the contact discontinuity and the position and height of the shockwave. Third POD performs better on \(\rare\), holding only small deviations in the contact discontinuity and position and height of the shockwave for the momentum \(\rho u\) and the total energy \(E\). The density \(\rho\) matches with the FOM solution exact. Distinct deviations from the FOM solution occur using POD on \(\hy\). The density \(\rho\) holds errors in the  height of the shockwave. The momentum \(\rho u\) holds errors in the tail of the rarefaction wave, the contact discontinuity and the height of the shockwave. Hence in the total energy \(E\) errors occur in the rarefaction wave, especially the tail, the contact discontinuity and the height of the shockwave.
 \begin{figure}[H]
-	\input{Figures/Results/Conservation.tex}
+	\input{Figures/Chapter_5/Conservation.tex}
 	\caption{Comparison of the conservative properties of reconstructions obatined from POD, the FCNN and the CNN against the conservative properties of the FOM solution using the temporal mean.}
 	\label{Fig:Conservation}
 \end{figure}
@@ -52,28 +51,31 @@ Conservative properties of the FOM are discussed in \cref{Ch:BGK}. Now we want t
 Conservation of mass is met using the FCNN, except for small deviations at the outset for both cases \(\hy\) and \(\rare\). Similarly, does POD meet conservation of mass for \(\rare\). The erroneous \(\hy\) case shows deviations from conservation with POD. Conservation of momentum meets the FOM solution after \(t=0.03s\) using the FCNN for both cases \(\hy\) and \(\rare\). POD conserves momentum close to the FOM solution, but deviations are similarly present for \(\hy\) and \(\rare\). Next conservation of total energy is met for \(\hy\) and \(\rare\) using POD and the FCNN. Finally the reconstructions of the CNN do not conserve mass, momentum nor total energy. All conservative properties behave comparable to a sawtooth wave. A gain and loss of either of the quantities can be observed.\\
 In conclusion the error over time for the CNN is disordered, showing gain and subsequent loss of information from one timestep to another. The CNN performs slighly better with \(\hy\) than with \(\rare\). What is hidden when looking at reconstructions becomes visible when verifying over the macroscopic quantities. Reconstructions obtained from the CNN show oscillations in the momentum \(\rho u\) and the total energy \(E\). On top of that the CNN does not meet conservation in any of the conservative properties. All of this together makes the CNN with this setup, especially the access to only 40 samples, unsuited for building a ROM. Next POD shows a noticeable increase in loss of information over time for both cases \(\hy\) and \(\rare\). Reconstructions of the last timestep as well as the macroscopic quantities at that time reveal that the POD is unsuited for building a ROM with the \(\hy\)case. However, with \(\rare\) POD shows only slight deviations from the FOM solution. Taking conservative properties of the reconstructions obtained from POD into consideration only underlines aforementioned findings. Ultimately POD could be taken for building a ROM with \(\rare\). Finally the the FCNN is the best performing model out of the three for both cases \(\hy\) and \(\rare\), while the performance for \(\hy\) is slightly better than that for \(\rare\). The error over time reveals a constant low loss. Only at the first time steps a noticeable loss of information is observed. Reconstructions of the last time step and the macroscopic quantities at that time are close to exact to the FOM solution for both cases \(\hy\) and \(\rare\). The conservation of the macroscopic quantites only emphasize the proximity to the FOM solution. In total the FCNN is suited for building a ROM with both cases \(\hy\) and \(\rare\) and will be taken further into the online phase.\\
 We now reached the online phase where we want to be independent from the FOM solution. A first ROM relying on pure interpolation in the intrinsic variables is performed for \(\hy\). The intrinsic variables of the FCNN for \(\hy\) are shown in ... . 
-\begin{figure}
-	\input{Figures/Results/Code2D_hy_FCNN.tex}
+
+With POD one usually exploits the intrinsic variables within a Galerkin framework as in \cite{Bernard} to produce new states. The same can be done with the intrinsic variables obtained from autoencoders as in \cite{Carlberg}. Both won't be discussed in this contribution. Rather new states are obtained by interpolating \(\idhy\) and \(\idrare\) in time \(t\). This approach tests a different kind of generalization about the FOM solution. Therefore this kind of generalization ability of the proposed autoencoder architectures will be analyzed.
+
+\begin{figure}[H]
+	\input{Figures/Chapter_5/Code2D_hy_FCNN.tex}
 	\caption{\(\alpha_1\), \(\alpha_2\) and \(\alpha_3\), the reduced basis \(\idhy\) obtained from the FCNN.}
 \end{figure}
-\begin{figure}
-	\input{Figures/Results/Hy_Int.tex}
+\begin{figure}[H]
+	\input{Figures/Chapter_5/Hy_Int.tex}
 	\caption{Interpoaltionin in time for \(\hy\) from 25 snapshots to 241 snapshots with cubic splines using the FCNN.}
 \end{figure}
-\begin{figure}[!htbp]
-	\scalebox{1}{\input{Figures/Results/Hydro/MacroCode10.tex}}
+\begin{figure}[H]
+	\scalebox{1}{\input{Figures/Chapter_5/Hydro/MacroCode10.tex}}
 	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.05s\).}
 \end{figure}
-\begin{figure}[!htbp]
-	\scalebox{1}{\input{Figures/Results/Hydro/MacroCode20.tex}}
+\begin{figure}[H]
+	\scalebox{1}{\input{Figures/Chapter_5/Hydro/MacroCode20.tex}}
 	\caption{Code variables \(c_1\), \(c_2\) and \(c_3\) (dashed lines - -) and macroscopic quantities \(\rho\), \(E\), \(\rho u\) (full lines --) for \(t=0.099s\).}
 \end{figure}
-\begin{figure}[!htbp]
-	\scalebox{.6}{\input{Figures/Results/Hydro/PODConvCode.tex}}
+\begin{figure}[H]
+	\scalebox{.6}{\input{Figures/Chapter_5/Hydro/PODConvCode.tex}}
 	\caption{Comparison of the intrinsic variables generated by POD \(\gamma_1\), \(\gamma_2\) and \(\gamma_3\) with the intrinsic variables of the convolutional autoencoder \(\beta_1\), \(\beta_2\) and \(\beta_3\).}
 \end{figure}
-\begin{figure}[!hp]
-	\scalebox{0.9}{\input{Figures/Results/Rare/Code.tex}}
+\begin{figure}[H]
+	\scalebox{0.9}{\input{Figures/Chapter_5/Rare/Code.tex}}
 	\caption{Intrinsic Variables of $\rare$}
 \end{figure}
 \subsection{Discussion and Outlook}

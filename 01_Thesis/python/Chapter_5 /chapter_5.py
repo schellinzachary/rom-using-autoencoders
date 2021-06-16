@@ -204,59 +204,7 @@ plt.show()
 
 
 
-#Plot mistakes over time and worst mistakes
-###########################################
 
-# train = "No"
-# fig,axs = plt.subplots(1,2)
-# figg,axxs = plt.subplots(2,4)
-# i=0
-# for level in ["hy", "rare"]:
-#     #For POD
-#     ########
-#     method = "POD"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from POD import pod 
-#     rec_pod, code = pod.load(level,c)
-#     rec_pod = shapeback_field(rec_pod)
-#     c = shapeback_field(c)
-#     err_pod = norm((rec_pod - c),axis =(1,2)) / norm(c,axis=(1,2))
-#     #For Fully
-#     ##########
-#     method = "Fully"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from FullyConnected import fully
-#     c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-#     rec_fully, code = fully.load(level,c)
-#     c = c.detach().numpy()
-#     rec_fully = rec_fully.detach().numpy()
-#     rec_fully = shapeback_field(rec_fully)
-#     c = shapeback_field(c)
-#     err_fully = norm((rec_fully - c),axis =(1,2)) / norm(c,axis=(1,2))
-#     #For Conv
-#     #########
-#     method = "Conv"
-#     x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-#     from Convolutional import conv
-#     c = tensor(c,dtype=torch.float)
-#     rec_conv, code = conv.load(level,c)
-#     c = c.detach().numpy()
-#     rec_conv = rec_conv.detach().numpy()
-#     rec_conv = rec_conv.squeeze()
-#     c = c.squeeze()
-#     err_conv = norm((rec_conv - c),axis =(0,2)) / norm(c,axis=(0,2))
-
-#     axs[i].plot(t,err_pod,'k''-x',label="POD")
-#     axs[i].plot(t,err_fully,'r''-o',label="Fully")
-#     axs[i].plot(t,err_conv,'g''-v',label="Conv")
-#     axs[i].legend()
-#     axxs[i,0].imshow(c[:,-1,75:150],'gray',label="FOM")
-#     axxs[i,1].imshow(rec_pod[-1,:,75:150],'gray',label="POD")
-#     axxs[i,2].imshow(rec_fully[-1,:,75:150],'gray',label="Fully")
-#     axxs[i,3].imshow(rec_conv[:,-1,75:150],'gray',label="Conv")
-#     i+=1
-# #### tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/ErrTime_test.tex')
-# plt.show()
 
 #Calculate macroscopic quantities from FOM and reconstructions and plot them
 ############################################################################

@@ -30,10 +30,12 @@ def load_data(qty):
 ############
 def POD(c):
 	ls = []
-	u, s, vh = np.linalg.svd(c.T,full_matrices=False) #s Singularvalues
+	u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
 	S = np.diagflat(s)
 	for i in range(len(s)):
-		rec = u[:,:i]@S[:i,:i]@vh[:i,:]
+		xx = u[:,:i]@S[:i,:i]@vh[:i,:]
+		l2 = np.linalg.norm((c - xx).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
+		print(i,l2)
 	return s
 
 
@@ -41,8 +43,8 @@ def POD(c):
 ############################################
 c_h = load_data("hy")
 c_r = load_data("rare")
-s_r = POD(c_r)
 s_h = POD(c_h)
+s_r = POD(c_r)
 
 k = range(1,len(s_h)+1)
 fig, ax = plt.subplots(1,2)

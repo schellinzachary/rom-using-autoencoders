@@ -1,25 +1,33 @@
 import numpy as np
 
+#POD class
 
-class pod(object):
-    def __init__(self,c,level):
-        self.level = level
-        self.c = c
-    def load(c, level):
-        if level == "hy":
-            level = 3
-        else:
-            level = 5
-        print(level)
-        u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
-        S = np.diagflat(s)
-        xx = u[:,:level]@S[:level,:level]@vh[:level,:]
-        return xx, s
+# class evaluate():
+#     def __init__(self, c=None, level=None):
+#         self.c = c
+#         if level == "hy":
+#             self.level = 3
+#         else: 
+#             self.level = 5
+
+#     def pod(self):
+
+#         u, s, vh = np.linalg.svd(self.c,full_matrices=False) #s Singularvalues
+#         S = np.diagflat(s)
+#         xx = u[:,:self.level]@S[:self.level,:level]@vh[:self.level,:]
+#         return xx
 
 
-#Compute POD for intrinsic variables variation
-###############################################
-def intr_eval(c,iv):
-    rec, s = pod.load(c,iv)
-    l2 = np.linalg.norm((c - rec).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
-    return(l2)
+
+def pod(c, level):
+    if level == "hy":
+        level = 3
+    else: 
+        level = 5
+    
+    u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
+    S = np.diagflat(s)
+    xx = u[:,:level]@S[:level,:level]@vh[:level,:]
+    l2 = np.linalg.norm((c - xx).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
+    print(l2)
+    return xx
