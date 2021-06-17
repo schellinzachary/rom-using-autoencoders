@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  16 JUN 2021 23:03
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  17 JUN 2021 15:22
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2521,7 +2521,7 @@ mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure26.pdf (1 page, 65053 bytes).
+Output written on Figures/master-figure26.pdf (1 page, 65643 bytes).
 
 PDF statistics: 44 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream

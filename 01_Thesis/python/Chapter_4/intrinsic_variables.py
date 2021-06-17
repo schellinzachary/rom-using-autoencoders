@@ -59,6 +59,5 @@ for idx, level in enumerate(["hy","rare"]):
     axs[idx].set_title("%s"%level)
     axs[idx].grid(True,which="both")
     axs[idx].legend()
-    print(level,fully)
 ###tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_4/Var_iv.tex'))
 plt.show()

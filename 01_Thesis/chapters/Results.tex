@@ -4,33 +4,33 @@
 \label{Ch:Results}
 %\pagenumbering{arabic}
 This chapter covers the evaluation of reconstructions \(\tilde{f}\) obtained from the FCNN and the CNN through a comparison against reconstructions obtained from POD. Additionally, an analysis of the interpretability of the intrinsic variables \(\idhy\) and \(\idrare\) is provided. This chapter concludes with the attempt to create new states of the FOM with the FCNN and the CNN, which can be viewed as an online phase of MOR.\\ 
- 
-A first measure of how much information gets lost is obtained through one of our performance metrics during neural network training: the MSE over the validation set. Yet, this metric solely applies to neural networks. To be able to compare the POD to it's neural network counterparts another metric is in use: the error over the $\L2$-Norm here referred to as thr $\L2$-Error , already introduced in \cref{Ch:DimRedAl}. In \cref{Tab:L2}, the $\L2$-Error for all three algorithms on both input data is provided.
+To begin with the benchmarking of POD and neural networks, the number of parameters to obtain \(\tilde{f}\) is contrasted. Beforehand solely the number of trainable parameters that compose both neural networks were called \(\frepar\). For this comparison, \(\frepar\) is extended to also include all elements of the left and right singular vectors as well as the singular values of POD. Additionally the amount of intrinsic variables used for reconstruction is set to \(p=3\) and \(p=5\) for \(\hy\) and \(\rare\) respectively. An exception is the CNN, that uses \(p=5\) independent from rarefaction level. A summary is provided in \cref{Tab: Parameters}.   
 \begin{table}[htp]
 	\centering
-	\caption{Comparison of the $\L2$-Error over the reconstructions obtained by POD, FCNN and CNN. The CNN was trained using the k-fold algorithm, therefore the mean $\mu$ over $k=5$ folds, marked with superscript asterix, is given. Variance $\sigma^2$ for $\hy$ is $\sigma^2_{\hy}=2.25\times 10^{-5}$ and for $\rare$ is $\sigma^2_{\rare}=3.61 \times 10^{-5}$. Parenthesised values are obtained from the best fold.}
-	\begin{tabular*}{15cm}{ @{\extracolsep{\fill}} c c c c@{} }
+	\caption{Amount of parameters \(\frepar\) used to reconstruct \(f\), number  of intrinsic variables \(p\) and the corresponding $\L2$-Error for POD, FCNN and CNN.}
+	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
-		Algorithm & Number of parameters \(\frepar\)&$\L2$-Error for $\hy$ &$\L2$-Error for $\rare$  \\   
+		Algorithm & \multicolumn{2}{c}{Parameters \(\frepar\)} & \multicolumn{2}{c}{Int. variables \(p\)}& \multicolumn{2}{c}{$\L2$-Error} \\ [.5ex]
+		 & \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\   
 		\hline
-		POD     &       &0.0205   &0.0087 \\
-		FCNN 	&		&0.0008   &0.0009 \\
-		CNN   	&		&0.026    &0.026\\
+		POD     & 15129 & 25225 & 3 & 5 & 0.0205 & 0.0087 \\
+		FCNN 	& 2683 & 3725 & 3 & 5 & 0.0008 & 0.0009 \\
+		CNN   	& 8246 & 8246 & 5 & 5 &	0.025 & 0.027\\
 		\bottomrule
-	\end{tabular*} \label{Tab:L2}
+	\end{tabular*} \label{Tab: Parameters}
 \end{table}
-The FCNN performs best out of the three both for $\hy$ and $\rare$ and even drops about one decade compared to POD and CNN for $\hy$. Slightly better is the result for $\hy$ than for $\rare$ using both neural network designs. Yet the performance of FCNN and CNN doesn't seem to change a lot with changing $\hy$ and $\rare$. In contrast, the POD performs better for $\rare$ than for $\hy$. The reasons will be discussed hereafter. Note that the CNN is trained with the k-fold algorithm due to a lack of training samples as suggested in \cite{Goodfellow}. The k-fold algorithm is provided in \cref{Ch:ApB}. The mean $\mu$ over all folds gives an estimate of the models performance. Nonetheless the best performing fold is used in the subsequent analysis, yielding a better performance of the CNN.\\
+POD uses with 15129 and 25225 parameters to reconstruct \(\hy\) and \(\rare\) respectively the largest amount of parameters of all three algorithms. These yield \(\L2\)-errors of 0.0205 and 0.0087 respectively. Interestingly, the elevation of \(p\) amounts to an increase of paramters by approximately 1.7 which is comparable to the FCNN with an approximate increase of 1.4. The FCNN, which holds the best \(\L2\)-errors of 0.0008 and 0.0009 for \(\hy\) and \(\rare\) respectively, does so with the least amount of parameters. For reconstructing \(\hy\) solely 2683 and for the reconstruction of \(\rare\) solely 3725 parameters are used, which is a fraction of the need for POD. The second most populous alhorithm is the CNN which uses 8246 parameters for both rarefaction levels. The resulting \(\L2\)-errors with 0.025 for \(\hy\) and 0.027 for \(\rare\) of all algorithms. \\
 
-The "important" qualities, mentioned in the beginning, become visible when looking at the worst reconstructions. Those can be determined with the $\L2$-Error over time for all three models as seen in \cref{Fig:ErrTime}.
-\begin{figure}[htbp!]
+Next a qualitative analysis with actual reconstructions is presented. For this purpose the \(\L2\)-error over time \(t\), seen in \cref{Fig:ErrTime}, is used.\\  
+\begin{figure}[tp!]
 	\input{Figures/Chapter_5/ErrTime.tex}
 	\caption{Relative Error over time for POD, FCNN and CNN. Results for $\hy$ are displayed on the left, the results for $\rare$ are displayed on the right.}
 	\label{Fig:ErrTime}
 \end{figure}
-For POD and the CNN the last timestep at $t=0.12s$ in both cases $\hy$ and $\rare$ is the most rich in the $L2$-Error. While performing best, the FCNN in contrast has troubles in the beginning around $t=0.01s$ for $\hy$ and $\rare$. A detailed comparison of the models, reconstructions of $f(x,v)$ at $t=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}.
-\begin{figure}[H]
+With POD and the CNN the last timestep at $t=0.12s$ for both rarefaction levels is the most rich in the $L2$-Error. In contrast, the FCNN does not show a distinct time dependence of the \(\L2\)-error. Nonetheless, struggles at the onset at around $t=0.005s$ with $\hy$ and around \(t=0.005s\) and \(t=0.0115\) (in the beginning and at the end) with $\rare$ can be observed for the FCNN. Examples of reconstructions $\tilde{f}(x,v,t_i)$ with $t_i=0.12s$ and $x \in [75cm,150cm]$ are given in \cref{Fig:ErrWorst}.
+\begin{figure}[tp!]
 	\input{Figures/Chapter_5/ErrWorst.tex}
-	\caption{Comparison of FOM with three reconstructions obtained from POD, FCNN and CNN. The BGK-model in Sod's shock tube at time \(t=0.12s\) and \(x\in [75\textrm{cm}, 150\textrm{cm}]\) of the tube, is most difficult to reconstruct by the aforementioned algorithms. Case $\hy$ is displayed in the top row, $\rare$ in the bottom row. }
+	\caption{Comparison of the FOM solution \(f\) with three reconstructions \(\tilde{f}\) obtained from POD, the FCNN and the CNN. Case $\hy$ is displayed in the top row, $\rare$ in the bottom row. The colobars reference \(f\) and \(\tilde{f}\).}
 	\label{Fig:ErrWorst}
 \end{figure}
 A presentation of the FOM in $f(x,v)$ was already introduced in \cref{Ch:BGK}. For clarity, $f(x_0,v)$ is a probability distribution for a gas having a velocity $v$ at point $x_0$ in space at one moment $t_i$ in time.\\

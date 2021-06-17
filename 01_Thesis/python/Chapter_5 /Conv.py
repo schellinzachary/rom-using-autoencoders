@@ -6,8 +6,10 @@ import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
-torch.manual_seed(42)
 device = 'cpu'
+
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
 
 class Encoder_2(nn.Module):
     def __init__(self, a=None, c=None):
@@ -92,6 +94,11 @@ def conv(c):
     model.load_state_dict(checkpoint['model_state_dict'])
 
     rec = model(c)
+    paramcount = count_parameters(model)
+    print(paramcount)
+
+    l2 = torch.norm(c-rec) / torch.norm(c)
+    print(l2)
 
     return rec 
 

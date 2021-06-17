@@ -7,6 +7,9 @@ import torch.tensor as tensor
 
 device = 'cpu'
 
+def count_parameters(model):
+    return sum(p.numel() for p in model.parameters() if p.requires_grad)
+
 class Autoencoder(nn.Module):
     def __init__(self, enc, dec):
         super().__init__()
@@ -75,8 +78,10 @@ def fully(c,level):
     model.load_state_dict(checkpoint['model_state_dict'][0])
 
     rec = model(c)
+    paramcount = count_parameters(model)
+    print(paramcount)
 
-    return c
+    return rec
 
 
 

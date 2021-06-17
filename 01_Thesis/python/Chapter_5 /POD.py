@@ -17,7 +17,8 @@ import numpy as np
 #         xx = u[:,:self.level]@S[:self.level,:level]@vh[:self.level,:]
 #         return xx
 
-
+def count_parameters(u,S,vh):
+    return(u.size+S.size+vh.size)
 
 def pod(c, level):
     if level == "hy":
@@ -28,6 +29,6 @@ def pod(c, level):
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
     S = np.diagflat(s)
     xx = u[:,:level]@S[:level,:level]@vh[:level,:]
-    l2 = np.linalg.norm((c - xx).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
-    print(l2)
+    paramcount = count_parameters(u[:,:level],S[:level,:level],vh[:level,:])
+    print(paramcount)
     return xx
