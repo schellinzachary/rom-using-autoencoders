@@ -13,12 +13,16 @@ Macroscopic quantities
 
 #load Data
 
-kn0p01 = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
-kn0p00001 = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/f.mat')
-v = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/v.mat')
-kn0p01 = kn0p01['f']
-kn0p00001 = kn0p00001['f']
-v = v['v']
+#kn0p01 = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p01/f.mat')
+#kn0p00001 = sio.loadmat('/home/zachi/Documents/ROM_using_Autoencoders/data_sod/sod25Kn0p00001/f.mat')
+v = sio.loadmat('/home/zachary/rom-using-autoencoders/02_data_sod/sod25Kn0p00001/v.mat')
+#kn0p01 = kn0p01['f']
+#kn0p00001 = kn0p00001['f']
+v=v['v']
+for idx in range(39):
+	print(v[idx] - v[idx+1])
+print(v[-3] - v[-4])
+exit()
 
 #def macroscopic calculations
 def macroscopic(f,v):

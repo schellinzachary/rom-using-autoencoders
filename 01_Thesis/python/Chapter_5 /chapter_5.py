@@ -158,49 +158,49 @@ def load_BGK_241():
 #Plot the results of the variation of intrinsic variables
 ########################################################
 
-train = "No"
-fig,axs = plt.subplots(1,2)
-i = 0
-for level in ["hy", "rare"]:
-    pod = []
-    fully = []
-    conv = []
-    for iv in [1,2,4,8,16,32]:
-        print(iv)
+# train = "No"
+# fig,axs = plt.subplots(1,2)
+# i = 0
+# for level in ["hy", "rare"]:
+#     pod = []
+#     fully = []
+#     conv = []
+#     for iv in [1,2,4,8,16,32]:
+#         print(iv)
         
-        #For POD
-        ########
-        method = "POD"
-        x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-        from POD import intr_eval
-        l2_pod = intr_eval(c,iv)
-        pod.append(l2_pod)
-        #For Fully
-        ##########
-        method = "Fully"
-        x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-        from FullyConnected import intr_eval
-        c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
-        l2_fully = intr_eval(c,iv,level)
-        fully.append(l2_fully)
-        #For Conv
-        #########
-        method = "Conv"
-        x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
-        from Convolutional import intr_eval
-        c = tensor(c,dtype=torch.float)
-        l2_conv = intr_eval(c,iv,level)
-        conv.append(l2_conv)
+#         #For POD
+#         ########
+#         method = "POD"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from POD import intr_eval
+#         l2_pod = intr_eval(c,iv)
+#         pod.append(l2_pod)
+#         #For Fully
+#         ##########
+#         method = "Fully"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from FullyConnected import intr_eval
+#         c = tensor(c,dtype=torch.float)  # make input data "c" a tensor
+#         l2_fully = intr_eval(c,iv,level)
+#         fully.append(l2_fully)
+#         #For Conv
+#         #########
+#         method = "Conv"
+#         x,v,t,c = load_BGKandMethod() # load FOM data for evaluation
+#         from Convolutional import intr_eval
+#         c = tensor(c,dtype=torch.float)
+#         l2_conv = intr_eval(c,iv,level)
+#         conv.append(l2_conv)
         
-    axs[i].semilogy([1,2,4,8,16,32],pod,'k''x',label="POD")
-    axs[i].semilogy([1,2,4,8,16,32],fully,'r''o',label="Fully")
-    axs[i].semilogy([1,2,4,8,16,32],conv,'g''v',label="Conv")
-    axs[i].grid(True,which="both")
-    print(level)
-    axs[i].legend()
-    i+=1
-#tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Var_iv.tex')
-plt.show()
+#     axs[i].semilogy([1,2,4,8,16,32],pod,'k''x',label="POD")
+#     axs[i].semilogy([1,2,4,8,16,32],fully,'r''o',label="Fully")
+#     axs[i].semilogy([1,2,4,8,16,32],conv,'g''v',label="Conv")
+#     axs[i].grid(True,which="both")
+#     print(level)
+#     axs[i].legend()
+#     i+=1
+# #tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/01_Thesis/Figures/Results/Var_iv.tex')
+# plt.show()
 
 
 

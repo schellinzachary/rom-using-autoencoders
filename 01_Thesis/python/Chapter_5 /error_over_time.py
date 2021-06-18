@@ -9,7 +9,7 @@ from os.path import join
 from pathlib import Path
 home = Path.home()
 
-from POD import pod
+
 
 #load the full order BGK data
 def load_BGKandMethod(method, level):
@@ -48,6 +48,7 @@ for idx, level in enumerate(["hy", "rare"]):
     #POD
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
+    from POD import pod
     rec_pod = pod(c,level)
     rec_pod = shapeback_field(rec_pod)
     c = shapeback_field(c)

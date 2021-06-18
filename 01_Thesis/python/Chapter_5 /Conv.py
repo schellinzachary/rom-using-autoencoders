@@ -97,8 +97,5 @@ def conv(c):
     paramcount = count_parameters(model)
     print(paramcount)
 
-    l2 = torch.norm(c-rec) / torch.norm(c)
-    print(l2)
-
     return rec 
 

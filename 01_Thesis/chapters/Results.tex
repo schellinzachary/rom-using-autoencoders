@@ -37,7 +37,7 @@ The FOM solution viewed as $f(x,v,t_i)$ has been introduced in \cref{Ch:BGK}. Th
 With this in mind, a qualitative comparison between the three algorithms can be made considering the rendition of the velocity probabilities. Starting with \(\hy\), seen in the top row of \cref{Fig: ErrWorst} one can observe that \(\tilde{f}(x,v,t_i)\) starting around \(x=0.6\) gets defective for POD and the CNN. Noteworthy, here the probability distribution is thinner as the original with POD. This in turn leads to errors in the temperature \(T\) once passing \(x\approx 0.6\). Prominent qualitative deviations using the CNN are especially blurriness/pixelation of \(\tilde{f}(x,v,t_i)\) after \(x\approx 0.6\). In contrast the FCNN seems to reproduce the FOM solution almost exactly.\\
 Continuing with a row further down in \cref{Fig: ErrWorst} and therefore \(\rare\). The FCNN seems to reproduce the FOM solution without any visible drawback. Also POD seems to reproduce all important structures, except after \(x\approx 0.7\) around the contact discontinuity, some values for velocities with \(v>0\) appear to be missing. Again the CNN struggles with blurriness making \(\tilde{f}\) for both rarefaction levels look largely similar.    
 \begin{figure}[H]
-	\input{Figures/Chapter_5/MacroError.tex}
+	\input{Figures/Chapter_5/MacroError_test.tex}
 	\caption{Matching of macroscopic quantities \(\rho\), \(\rho u\) and \(E\) reproduced by POD, FCNN, and CNN with FOM macroscopic quantities. Top row shows results for \(\hy\), bottom row for \(\rare\). CNN is displayed with marks only because of trembles in the signal.}
 	\label{Fig:ErrMacro}
 \end{figure}
