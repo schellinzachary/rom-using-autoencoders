@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  17 JUN 2021 22:07
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  18 JUN 2021 18:44
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2153,26 +2153,26 @@ LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 30.
 (./Figures/Chapter_5/ErrWorst.tex
 \openout4 = Figures/master-figure27.dpth
 
-Package pgfplots info on input line 24: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
 Package pgfplots info on input line 28: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 32: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 36: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 51: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 44: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 54: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 67: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 55: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 70: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 59: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 75: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 63: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 83: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 82: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 91: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 84: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 114: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 116: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
 [25
 
 \providecommand \oddpage@label [2]{}
@@ -2187,7 +2187,7 @@ Figures/Chapter_5/ErrWorst-007.png>])
 LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 36.
 
 
-LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 37.
+LaTeX Warning: Reference `Fig: ErrWorst' on page 1 undefined on input line 37.
 
 
 LaTeX Warning: Reference `Fig:ErrWorst' on page 1 undefined on input line 38.
@@ -2530,22 +2530,22 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46087 strings out of 481365
- 195340,7087374 words of node,token memory allocated
+ 46088 strings out of 481365
+ 195333,7087374 words of node,token memory allocated
  870 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 60 attribute, 88 glue_spec, 60 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:8638,3:2210,4:167,5:954,6:27,7:16220,8:71,9:1164,10:47,11:
+   avail lists: 1:2,2:8644,3:2212,4:167,5:954,6:27,7:16220,8:71,9:1166,10:47,11:
 1085
- 60736 multiletter control sequences out of 65536+600000
+ 60737 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
- 83i,19n,140p,2788b,3101s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,19n,140p,2788b,3099s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share
+/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr9.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Figures/master-figure27.pdf (1 page, 66720 bytes).
+Output written on Figures/master-figure27.pdf (1 page, 66980 bytes).
 
 PDF statistics: 60 PDF objects out of 1000 (max. 8388607)
  32 compressed objects within 1 object stream

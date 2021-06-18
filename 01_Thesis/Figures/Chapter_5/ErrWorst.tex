@@ -8,10 +8,10 @@ group style={group size=4 by 2,
 tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
-xmin=75.5, xmax=150.5,
+xmin=0.375, xmax=0.75,
 xtick style={color=black},
 y grid style={white!69.0196078431373!black},
-ymin=-20.5, ymax=20.5,
+ymin=-10, ymax=10,
 ytick style={color=black},
 height=.26\textwidth,
 width=.26\textwidth,
@@ -21,16 +21,28 @@ y label style={yshift=-1.4em}
 ]
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=74.5, xmax=150.5, ymin=-20.5, ymax=20.5] {Figures/Chapter_5/ErrWorst-000.png};
-\node[fill=white] at (axis cs:130,15) {FOM};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-000.png};
+\node[fill=white] at (axis cs:0.65,15) {FOM};
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.55] {Figures/Chapter_5/ErrWorst-001.png};
-\node[fill=white] at (axis cs:130,15) {POD};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-001.png};
+\node[fill=white] at (axis cs:0.65,15) {POD};
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.55] {Figures/Chapter_5/ErrWorst-002.png};
-\node[fill=white] at (axis cs:130,15) {FCNN};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-002.png};
+\node[fill=white] at (axis cs:0.65,15) {FCNN};
 \nextgroupplot[
 colorbar,
 colorbar style={
@@ -48,20 +60,36 @@ colormap/blackwhite,
 point meta max=0.397007430832041,
 point meta min=8.50982895819395e-73,
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.55] {Figures/Chapter_5/ErrWorst-003.png};
-\node[fill=white] at (axis cs:130,15) {CNN};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-003.png};
+\node[fill=white] at (axis cs:0.65,15) {CNN};
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.55] {Figures/Chapter_5/ErrWorst-004.png};
-\node[fill=white] at (axis cs:130,15) {FOM};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-004.png};
+\node[fill=white] at (axis cs:0.65,15) {FOM};
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.5] {Figures/Chapter_5/ErrWorst-005.png};
-\node[fill=white] at (axis cs:130,15) {POD};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-005.png};
+\node[fill=white] at (axis cs:0.65,15) {POD};
 \nextgroupplot[
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.5] {Figures/Chapter_5/ErrWorst-006.png};
-\node[fill=white] at (axis cs:130,15) {FCNN};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-006.png};
+\node[fill=white] at (axis cs:0.65,15) {FCNN};
 \nextgroupplot[
 colorbar,
 colorbar style={
@@ -79,8 +107,12 @@ colormap/blackwhite,
 point meta max=0.406101604565777,
 point meta min=1.26406789996295e-34
 ]
-\addplot graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ymin=-20.5, ymax=20.5] {Figures/Chapter_5/ErrWorst-007.png};
-\node[fill=white] at (axis cs:130,15) {CNN};
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/Chapter_5/ErrWorst-007.png};
+\node[fill=white] at (axis cs:0.65,15) {CNN};
 \end{groupplot}
 
 \end{tikzpicture}

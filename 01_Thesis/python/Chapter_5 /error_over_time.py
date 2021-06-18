@@ -3,7 +3,7 @@ from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
 import tikzplotlib
-from mpl_toolkits.axes_grid1 import AxesGrid
+from matplotlib import cm
 
 from os.path import join
 from pathlib import Path
@@ -44,7 +44,7 @@ def l2_time(org, rec):
 figg,axxs = plt.subplots(2,4)
 im = ["im1","im2"]
 
-for idx, level in enumerate(["rare", "hy"]):
+for idx, level in enumerate(["hy", "rare"]):
     #POD
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
@@ -72,27 +72,46 @@ for idx, level in enumerate(["rare", "hy"]):
     err_conv = norm((rec_conv - c),axis=(0,2)) / norm(c,axis=(0,2))
 
     t = np.linspace(start=0,stop=0.12,num=25,endpoint=True)
+    x = np.linspace(start=0,stop=0.995,num=200)
+    v = np.linspace(start=-10,stop=10,num=40)
+    print(x[130],x[15])
     # axs[idx].plot(t,err_pod,'k''-x',label="POD")
     # axs[idx].plot(t,err_fully,'r''-o',label="Fully")
     # axs[idx].plot(t,err_conv,'g''-v',label="Conv")
     # axs[idx].legend()
-    for n_bin, ax in zip(n_bins, axxs.ravel()):
-    # Create the colormap
-    cm = LinearSegmentedColormap.from_list(
-        cmap_name, colors, N=n_bin)
-        # Fewer bins will result in "coarser" colomap interpolation
-        im = ax.imshow(Z, interpolation='nearest', origin='lower', cmap=cm)
-        ax.set_title("N bins: %s" % n_bin)
-        fig.colorbar(im, ax=ax) 
-    axxs[idx,0].imshow(c[:,-1,75:150],'gray',label="FOM")
-    axxs[idx,1].imshow(rec_pod[-1,:,75:150],'gray',label="POD")
-    axxs[idx,2].imshow(rec_fully[-1,:,75:150],'gray',label="Fully")
-    im[idx] = axxs[idx,3].imshow(rec_conv[:,-1,75:150],'gray',label="Conv")
 
-cax,kw = matplotlib.colorbar.make_axes([ax for ax in axxs.flat])
-plt.colorbar(im[idx], cax=cax, **kw)
+    im = axxs[idx,0].imshow(c[:,-1,75:150],
+        cmap='gray',label="FOM",
+        extent=[x[75],x[150],v[0],v[-1]],
+        aspect="auto",
+        origin="lower"
+        )
+    axxs[idx,1].imshow(rec_pod[-1,:,75:150],
+        cmap='gray',label="POD",
+        vmin=np.min(c),
+        vmax=np.max(c),
+        extent=[x[75],x[150],v[0],v[-1]],
+        aspect="auto",
+        origin="lower"
+        )
+    axxs[idx,2].imshow(rec_fully[-1,:,75:150],
+        'gray',label="Fully",
+        vmin=np.min(c),
+        vmax=np.max(c),
+        extent=[x[75],x[150],v[0],v[-1]],
+        aspect="auto",
+        origin="lower"
+        )
+    axxs[idx,3].imshow(rec_conv[:,-1,75:150],
+        'gray',label="Conv",
+        vmin=np.min(c),
+        vmax=np.max(c),
+        extent=[x[75],x[150],v[0],v[-1]],
+        aspect="auto",
+        origin="lower"
+        )
 
-
+    figg.colorbar(im, ax=axxs[idx])
 ##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrTime_test.tex'))
-##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrWorst_test.tex'))
+tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrWorst_test.tex'))
 plt.show()
