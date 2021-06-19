@@ -49,7 +49,7 @@ for idx, level in enumerate(["hy", "rare"]):
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from POD import pod
-    rec_pod = pod(c,level)
+    rec_pod, z = pod(c,level)
     rec_pod = shapeback_field(rec_pod)
     c = shapeback_field(c)
     err_pod = l2_time(c, rec_pod)
@@ -57,7 +57,7 @@ for idx, level in enumerate(["hy", "rare"]):
     method = "Fully"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from FullyConnected import fully
-    rec_fully = fully(c, level)
+    rec_fully, z = fully(c, level)
     rec_fully = rec_fully.detach().numpy()
     rec_fully = shapeback_field(rec_fully)
     c = shapeback_field(c)
@@ -66,7 +66,7 @@ for idx, level in enumerate(["hy", "rare"]):
     method = "Conv"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from Conv import conv
-    rec_conv = conv(c)
+    rec_conv, z = conv(c)
     rec_conv = rec_conv.detach().numpy()
     rec_conv = rec_conv.squeeze()
     c = c.squeeze()

@@ -29,6 +29,7 @@ def pod(c, level):
     u, s, vh = np.linalg.svd(c,full_matrices=False) #s Singularvalues
     S = np.diagflat(s)
     xx = u[:,:level]@S[:level,:level]@vh[:level,:]
+
     paramcount = count_parameters(u[:,:level],S[:level,:level],vh[:level,:])
     print(paramcount)
-    return xx
+    return xx, u[:,:level]

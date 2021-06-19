@@ -19,7 +19,7 @@ class Autoencoder(nn.Module):
     def forward(self, x):
         z = self.enc(x)
         predicted = self.dec(z)
-        return predicted
+        return predicted, z
 
 class Encoder(nn.Module):
     def __init__(self, act_h, act_c, hid, code):
@@ -77,11 +77,11 @@ def fully(c,level):
     model   = Autoencoder(encoder, decoder).to(device)
     model.load_state_dict(checkpoint['model_state_dict'][0])
 
-    rec = model(c)
+    rec, z = model(c)
     paramcount = count_parameters(model)
     print(paramcount)
 
-    return rec
+    return rec, z
 
 
 

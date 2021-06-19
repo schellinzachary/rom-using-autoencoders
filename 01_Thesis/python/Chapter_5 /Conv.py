@@ -72,7 +72,7 @@ class Autoencoder(nn.Module):
     def forward(self, x):
         z = self.enc(x)
         predicted = self.dec(z)
-        return predicted
+        return predicted, z
 
 activations = {
     'silu': nn.SiLU(),
@@ -93,9 +93,9 @@ def conv(c):
             map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['model_state_dict'])
 
-    rec = model(c)
+    rec, z = model(c)
     paramcount = count_parameters(model)
-    print(paramcount)
+    #print(paramcount)
 
-    return rec 
+    return rec, z
 
