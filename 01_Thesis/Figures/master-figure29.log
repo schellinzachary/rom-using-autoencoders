@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  19 JUN 2021 14:25
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  19 JUN 2021 18:41
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2163,7 +2163,7 @@ LaTeX Warning: Reference `Fig: ErrWorst' on page 1 undefined on input line 37.
 
 LaTeX Warning: Reference `Fig: ErrWorst' on page 1 undefined on input line 38.
 
-(./Figures/Chapter_5/MacroError_test.tex
+(./Figures/Chapter_5/MacroError.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
@@ -2176,7 +2176,7 @@ LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 44.
 
 LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 44.
 
-(./Figures/Chapter_5/Conservation_test.tex
+(./Figures/Chapter_5/Conservation.tex
 \openout4 = Figures/master-figure29.dpth
  [26
 
@@ -2185,17 +2185,14 @@ LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 44.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
-LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 50.
-
-
-LaTeX Warning: Reference `Fig:Conservation' on page 1 undefined on input line 50
+LaTeX Warning: Reference `Fig:Conservation' on page 1 undefined on input line 54
 .
 
 
-LaTeX Warning: Citation `Bernard' on page 27 undefined on input line 55.
+LaTeX Warning: Citation `Bernard' on page 28 undefined on input line 59.
 
 
-LaTeX Warning: Citation `Carlberg' on page 27 undefined on input line 55.
+LaTeX Warning: Citation `Carlberg' on page 28 undefined on input line 59.
 
 (./Figures/Chapter_5/Code2D_hy_FCNN.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -2218,16 +2215,16 @@ sable this.
 )
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 81.
+(hyperref)                than one, level fixed on input line 85.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 82.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 86.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 82.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 86.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 83.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 87.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2359,10 +2356,10 @@ LaTeX Warning: Reference `Fig:ActScheme' on page 1 undefined on input line 186.
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 186.
 
 
-LaTeX Warning: Citation `Carlberg' on page 36 undefined on input line 186.
+LaTeX Warning: Citation `Carlberg' on page 37 undefined on input line 186.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 36 undefined on input line 187.
+LaTeX Warning: Citation `Goodfellow' on page 37 undefined on input line 187.
 
 
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 187.
@@ -2410,7 +2407,7 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Citation `Carlberg' on page 39 undefined on input line 310.
+LaTeX Warning: Citation `Carlberg' on page 40 undefined on input line 310.
 
 
 LaTeX Warning: Reference `Tab:Channels' on page 1 undefined on input line 310.
@@ -2504,10 +2501,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 Here is how much of LuaTeX's memory you used:
  45957 strings out of 481365
  195333,7087374 words of node,token memory allocated
- 857 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 59 attribute, 88 glue_spec, 59 attr
+ 865 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 61 attribute, 88 glue_spec, 61 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:10708,3:3452,4:295,5:954,6:27,7:16220,8:71,9:1041,10:47,11
+   avail lists: 1:2,2:10732,3:3453,4:295,5:954,6:27,7:16220,8:71,9:1051,10:47,11
 :1085
  60726 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes

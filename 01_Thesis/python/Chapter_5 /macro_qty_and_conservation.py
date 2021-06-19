@@ -40,7 +40,7 @@ def macro(f):
 
 def conservation(macro):
     rho, rhou, E = macro
-
+    print(rho.shape)
     dtrho = np.gradient(np.sum(rho,axis=1))
     dtrhou = np.gradient(np.sum(rhou,axis=1))
     dtE = np.gradient(np.sum(E,axis=1))
@@ -160,5 +160,5 @@ for idx, level in enumerate(["hy","rare"]):
 
 #tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/MacroError_test.tex'))###
 
-tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/Conservation_test.tex'))###
+##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/Conservation_test.tex'))###
 plt.show()
