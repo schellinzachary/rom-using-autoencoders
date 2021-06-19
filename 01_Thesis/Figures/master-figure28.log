@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  18 JUN 2021 23:29
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  19 JUN 2021 14:29
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2180,7 +2180,7 @@ LaTeX Warning: Reference `Ch:BGK' on page 1 undefined on input line 44.
 
 LaTeX Warning: Reference `Fig:ErrMacro' on page 1 undefined on input line 44.
 
-(./Figures/Chapter_5/Conservation.tex
+(./Figures/Chapter_5/Conservation_test.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
@@ -2503,11 +2503,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  45965 strings out of 481365
- 244169,7087374 words of node,token memory allocated
+ 244168,7087374 words of node,token memory allocated
  870 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 60 attribute, 88 glue_spec, 60 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:18976,3:7351,4:343,5:954,6:27,7:16220,8:71,9:1176,10:47,11
+   avail lists: 1:2,2:18924,3:7338,4:343,5:954,6:27,7:16220,8:71,9:1169,10:47,11
 :1085
  60734 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
@@ -2516,7 +2516,7 @@ ibute_list, 2 write nodes
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
 mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 0.pfb>
-Output written on Figures/master-figure28.pdf (1 page, 65972 bytes).
+Output written on Figures/master-figure28.pdf (1 page, 65919 bytes).
 
 PDF statistics: 31 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream
