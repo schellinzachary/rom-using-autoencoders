@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 15:24
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 17:34
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2232,23 +2232,26 @@ mac_rare-002.png><./Figures/Chapter_5/fom_mac_rare-003.png><./Figures/Chapter_5/
 fom_mac_rare-004.png>]) (./Figures/Chapter_5/code_hydro.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
+) (./Figures/Chapter_5/code_rare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
+Underfull \hbox (badness 10000) in paragraph at lines 98--99
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 94.
+(hyperref)                than one, level fixed on input line 99.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 95.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 100.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 95.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 100.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 96.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 101.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2523,20 +2526,20 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46090 strings out of 481365
+ 46101 strings out of 481365
  195334,7087374 words of node,token memory allocated
  878 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 62 attribute, 88 glue_spec, 62 attr
 ibute_list, 2 write nodes
    avail lists: 1:2,2:14375,3:4801,4:225,5:954,6:27,7:16220,8:71,9:1176,10:47,11
 :1085
- 60811 multiletter control sequences out of 65536+600000
+ 60813 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
  83i,19n,140p,2788b,3117s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share
 /texmf/fonts/type1/public/lm/lmr10.pfb>
-Output written on Figures/master-figure31.pdf (1 page, 60614 bytes).
+Output written on Figures/master-figure31.pdf (1 page, 60638 bytes).
 
 PDF statistics: 48 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

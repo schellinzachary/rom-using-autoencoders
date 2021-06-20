@@ -57,7 +57,8 @@ activations = {
 
 #Load & evaluate models for intrinsic variables variation
 def fully(c,level):
-    c = tensor(c,dtype=torch.float)
+    c = tensor(c, dtype=torch.float)
+
 
     if level == "hy":
         act_h = activations["elu"]
@@ -77,11 +78,36 @@ def fully(c,level):
     model   = Autoencoder(encoder, decoder).to(device)
     model.load_state_dict(checkpoint['model_state_dict'][0])
 
+
     rec, z = model(c)
     paramcount = count_parameters(model)
     print(paramcount)
 
     return rec, z
+
+def decoder(c, level):
+    c = tensor(c, dtype=torch.float)
+
+    if level == "hy":
+        act_h = activations["elu"]
+        decoder = Decoder(act_h, 30, 3)
+        checkpoint = torch.load("Models/FullyConnected/Hydro/%s"%hydro_model,
+            map_location=torch.device('cpu'))
+
+    state_dict = checkpoint['model_state_dict'][0]
+    with torch.no_grad():
+        decoder.layer_c.weight.copy_(state_dict['dec.layer_c.weight'])
+        decoder.layer_c.bias.copy_(state_dict['dec.layer_c.bias'])
+        decoder.layer_4.weight.copy_(state_dict['dec.layer_4.weight'])
+        decoder.layer_4.bias.copy_(state_dict['dec.layer_4.bias'])
+
+    rec = decoder(c)
+    return rec
+
+
+
+
+
 
 
 

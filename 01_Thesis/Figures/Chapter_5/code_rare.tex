@@ -3,7 +3,7 @@
 
 \begin{groupplot}[
 group style={group size=5 by 3,
-	horizontal sep=1.5cm,
+	horizontal sep=1.4cm,
 %vertical sep=1cm
 },
 x tick label style={/pgf/number format/fixed},
@@ -23,7 +23,7 @@ colorbar style={xtick={-0.1379664093256,0.16521643102169},
 	anchor=south,
 	xticklabel pos=upper,
 	height=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
-	tick pos=rig
+	tick pos=right
 },
 colormap/blackwhite,
 minor xtick={},
@@ -55,7 +55,7 @@ colorbar style={xtick={-0.10020612180233,0.155585333704948},
 	anchor=south,
 	xticklabel pos=upper,
 	height=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
-	tick pos=rig
+	tick pos=right
 },
 colormap/blackwhite,
 minor xtick={},
@@ -87,7 +87,7 @@ colorbar style={xtick={-0.0112405344843864,0.156611829996109},
 	anchor=south,
 	xticklabel pos=upper,
 	height=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
-	tick pos=rig
+	tick pos=right
 },
 colormap/blackwhite,
 minor xtick={},
@@ -119,7 +119,7 @@ colorbar style={xtick={-0.108655221760273,0.294203132390976},
 	anchor=south,
 	xticklabel pos=upper,
 	height=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
-	tick pos=rig
+	tick pos=right
 },
 colormap/blackwhite,
 minor xtick={},
@@ -151,7 +151,7 @@ colorbar style={xtick={-0.316409736871719,-0.0237041935324669},
 	anchor=south,
 	xticklabel pos=upper,
 	height=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
-	tick pos=rig
+	tick pos=right
 },
 colormap/blackwhite,
 minor xtick={},
@@ -849,7 +849,7 @@ ymin=-0.128624464944005, ymax=0.314337748661637,
 ytick style={color=black},
 ytick={-0.108489818871021,0.294203102588654}
 ]
-\addplot [[thick, color0]
+\addplot [thick, color0]
 table {%
 0.0025 0.294203102588654
 0.0075 0.294203102588654
@@ -2374,10 +2374,4 @@ table {%
 };
 \end{groupplot}
 
-\draw ({$(current bounding box.south west)!0.5!(current bounding box.south east)$}|-{$(current bounding box.south west)!0.98!(current bounding box.north west)$}) node[
-  scale=0.6,
-  anchor=north,
-  text=black,
-  rotate=0.0
-]{Code FCNN & CNN  rare};
 \end{tikzpicture}

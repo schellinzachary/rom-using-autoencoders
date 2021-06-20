@@ -2,7 +2,7 @@ import numpy as np
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
-import tikzplotlib
+##import tikzplotlib
 from matplotlib import cm
 
 from os.path import join
@@ -40,7 +40,7 @@ def shapeback_field(c):  #Shape the reconstruction from 5000x40 bach to 25x40x20
 def l2_time(org, rec):
     return(norm((rec - org),axis=(1,2)) / norm(org,axis=(1,2)))
 
-#fig,axs = plt.subplots(1,2)
+fig,axs = plt.subplots(1,2)
 figg,axxs = plt.subplots(2,4)
 im = ["im1","im2"]
 
@@ -75,11 +75,11 @@ for idx, level in enumerate(["hy", "rare"]):
     t = np.linspace(start=0,stop=0.12,num=25,endpoint=True)
     x = np.linspace(start=0,stop=0.995,num=200)
     v = np.linspace(start=-10,stop=10,num=40)
-    print(x[130],x[15])
-    # axs[idx].plot(t,err_pod,'k''-x',label="POD")
-    # axs[idx].plot(t,err_fully,'r''-o',label="Fully")
-    # axs[idx].plot(t,err_conv,'g''-v',label="Conv")
-    # axs[idx].legend()
+
+    axs[idx].plot(t,err_pod,'k''-x',label="POD")
+    axs[idx].plot(t,err_fully,'r''-o',label="Fully")
+    axs[idx].plot(t,err_conv,'g''-v',label="Conv")
+    axs[idx].legend()
 
     im = axxs[idx,0].imshow(c[:,-1,75:150],
         cmap='gray',label="FOM",
@@ -114,5 +114,5 @@ for idx, level in enumerate(["hy", "rare"]):
 
     figg.colorbar(im, ax=axxs[idx])
 ##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrTime_test.tex'))
-tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrWorst_test.tex'))
+##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrWorst_test.tex'))
 plt.show()

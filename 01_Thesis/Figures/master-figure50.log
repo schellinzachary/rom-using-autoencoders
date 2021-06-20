@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 15:54
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 20:11
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2207,23 +2207,29 @@ sable this.
 ) (./Figures/Chapter_5/code_rare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
+) (./Figures/Chapter_5/code_cnn_pod.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Chapter_5/Hy_Int.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
+Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 101.
+(hyperref)                than one, level fixed on input line 83.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 102.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 84.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 102.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 84.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 103.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 85.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2420,9 +2426,20 @@ Overfull \hbox (6.88399pt too wide) in alignment at lines 314--324
  []
 
 (./Figures/Parameterstudy/Convolutional/Channels.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
+\openout4 = Figures/master-figure50.dpth
+
+Package pgfplots info on input line 28: Using 'lua backend=false' for axis: ymod
+e=log unsupported (yet).
+Package pgfplots info on input line 4041: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+Package pgfplots info on input line 8054: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+[39
+
+\providecommand \oddpage@label [2]{}
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 
 LaTeX Warning: Reference `Ch:ApA' on page 1 undefined on input line 333.
 
@@ -2462,19 +2479,9 @@ LaTeX Warning: Reference `Fig:DatAugSched' on page 1 undefined on input line 361
 .
 
 (./Figures/Parameterstudy/Convolutional/DatAug.tex
-\openout4 = Figures/master-figure50.dpth
-
-Package pgfplots info on input line 29: Using 'lua backend=false' for axis: ymod
-e=log unsupported (yet).
-Package pgfplots info on input line 4042: Using 'lua backend=false' for axis: ym
-ode=log unsupported (yet).
-[41
-
-\providecommand \oddpage@label [2]{}
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Parameterstudy
-/Convolutional/DatAugSchedule.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Parameterstudy/Convolutional/DatAugSchedule.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ) (./Figures/Parameterstudy/Convolutional/2l_activations.tex
@@ -2508,25 +2515,26 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45874 strings out of 481365
- 244170,7087374 words of node,token memory allocated
+ 45916 strings out of 481365
+ 244169,7087374 words of node,token memory allocated
  878 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 62 attribute, 88 glue_spec, 62 attr
 ibute_list, 2 write nodes
-   avail lists: 1:3,2:19555,3:8656,4:158,5:954,6:27,7:16220,8:71,9:774,10:47,11:
-1085
- 60661 multiletter control sequences out of 65536+600000
+   avail lists: 1:3,2:27989,3:13062,4:158,5:954,6:27,7:16220,8:71,9:774,10:47,11
+:1085
+ 60685 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
- 83i,21n,140p,2788b,2656s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,21n,140p,2788b,2662s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
-/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
-mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
-/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Figures/master-figure50.pdf (1 page, 125110 bytes).
+/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/tex
+mf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
+10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></us
+r/share/texmf/fonts/type1/public/lm/lmsy8.pfb>
+Output written on Figures/master-figure50.pdf (1 page, 147668 bytes).
 
-PDF statistics: 40 PDF objects out of 1000 (max. 8388607)
- 30 compressed objects within 1 object stream
+PDF statistics: 44 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
