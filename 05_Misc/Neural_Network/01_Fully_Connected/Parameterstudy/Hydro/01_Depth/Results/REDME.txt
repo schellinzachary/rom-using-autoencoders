@@ -1,5 +1,0 @@
-LS_0 10 Layers 
-LS_1 8 Layers
-LS_2 6 Layers
-LS_3 4 Layers
-LS_4 2 Layer

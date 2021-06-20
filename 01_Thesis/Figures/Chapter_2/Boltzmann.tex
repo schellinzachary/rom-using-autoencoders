@@ -14,10 +14,10 @@ y grid style={white!69.0196078431373!black},
 ylabel={\(f\)},
 ymin=-0.0978129180007683, ymax=2.39285680307655,
 ytick style={color=black},
-%width=1.\textwidth,
-%height=.2\textwidth
+width=.45\textwidth,
+height=.45\textwidth,
+x label style={yshift=.5cm}
 ]
-
 \addplot [semithick, black]
 table {%
 	-0.5 0.00176297841183723
@@ -226,9 +226,6 @@ table {%
 --(axis cs:1,0.00176297841183723)
 --cycle;
 \addlegendimage{area legend, draw=none, fill=white!41.1764705882353!black}
-
-
-
 
 \draw [dashed,|<->|] (axis cs:0,2.1) -- (axis cs:0.5,2.1);
 \draw [] (axis cs:0.25,2.1) node[above] {\(T\)};

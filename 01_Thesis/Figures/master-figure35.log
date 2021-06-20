@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 20:07
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 22:27
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2190,10 +2190,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 53--56
  []
 
 
-LaTeX Warning: Citation `Bernard' on page 27 undefined on input line 59.
+LaTeX Warning: Citation `fan2021interpretability' on page 27 undefined on input 
+line 57.
 
 
-LaTeX Warning: Citation `Carlberg' on page 27 undefined on input line 59.
+LaTeX Warning: Citation `Kutz' on page 27 undefined on input line 57.
+
+
+LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 57.
 
 (./Figures/Chapter_5/fom_mac_hy.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
@@ -2210,7 +2214,14 @@ sable this.
 ) (./Figures/Chapter_5/code_cnn_pod.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-) (./Figures/Chapter_5/Hy_Int.tex
+)
+
+LaTeX Warning: Citation `Bernard' on page 28 undefined on input line 80.
+
+
+LaTeX Warning: Citation `Carlberg' on page 28 undefined on input line 80.
+
+(./Figures/Chapter_5/Hy_Intt.tex
 \openout4 = Figures/master-figure35.dpth
  [28
 
@@ -2218,22 +2229,22 @@ sable this.
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
+Underfull \hbox (badness 10000) in paragraph at lines 85--86
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 83.
+(hyperref)                than one, level fixed on input line 86.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 84.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 87.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 84.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 87.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 85.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 88.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2365,10 +2376,10 @@ LaTeX Warning: Reference `Fig:ActScheme' on page 1 undefined on input line 186.
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 186.
 
 
-LaTeX Warning: Citation `Carlberg' on page 36 undefined on input line 186.
+LaTeX Warning: Citation `Carlberg' on page 37 undefined on input line 186.
 
 
-LaTeX Warning: Citation `Goodfellow' on page 36 undefined on input line 187.
+LaTeX Warning: Citation `Goodfellow' on page 37 undefined on input line 187.
 
 
 LaTeX Warning: Reference `Ch:DimRedAl' on page 1 undefined on input line 187.
@@ -2416,7 +2427,7 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 
-LaTeX Warning: Citation `Carlberg' on page 39 undefined on input line 310.
+LaTeX Warning: Citation `Carlberg' on page 40 undefined on input line 310.
 
 
 LaTeX Warning: Reference `Tab:Channels' on page 1 undefined on input line 310.
@@ -2513,16 +2524,16 @@ Here is how much of LuaTeX's memory you used:
  878 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 62 attribute, 88 glue_spec, 62 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:7233,3:3008,4:158,5:954,6:27,7:16220,8:71,9:772,10:47,11:1
+   avail lists: 1:2,2:7288,3:3011,4:158,5:954,6:27,7:16220,8:71,9:772,10:47,11:1
 085
  60670 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
- 83i,21n,140p,2788b,2676s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,22n,140p,2788b,2686s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/share/tex
 mf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr1
 0.pfb>
-Output written on Figures/master-figure35.pdf (1 page, 43409 bytes).
+Output written on Figures/master-figure35.pdf (1 page, 43432 bytes).
 
 PDF statistics: 31 PDF objects out of 1000 (max. 8388607)
  23 compressed objects within 1 object stream

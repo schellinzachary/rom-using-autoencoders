@@ -13,7 +13,7 @@ I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/Reduced_order_Modeling.aux
 A level-1 auxiliary file: chapters/Results.aux
 Database file #1: other/references.bib
-Repeated entry---line 123 of file other/references.bib
+Repeated entry---line 131 of file other/references.bib
  : @misc{dumoulin2018guide
  :                        ,
 I'm skipping whatever remains of this entry
@@ -21,36 +21,36 @@ Warning--I didn't find a database entry for "bibid"
 Warning--empty publisher in Franz
 Warning--empty publisher in Kutz
 Warning--can't use both author and editor fields in Rifai_2011a
-You've used 26 entries,
+You've used 27 entries,
             2189 wiz_defined-function locations,
-            669 strings with 7265 characters,
-and the built_in function-call counts, 4109 in all, are:
-= -- 324
-> -- 286
+            674 strings with 7417 characters,
+and the built_in function-call counts, 4288 in all, are:
+= -- 335
+> -- 304
 < -- 0
-+ -- 87
-- -- 61
-* -- 279
-:= -- 640
-add.period$ -- 30
-call.type$ -- 26
-change.case$ -- 22
++ -- 92
+- -- 65
+* -- 290
+:= -- 666
+add.period$ -- 31
+call.type$ -- 27
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 29
-duplicate$ -- 166
-empty$ -- 406
-format.name$ -- 61
-if$ -- 1011
+cite$ -- 30
+duplicate$ -- 171
+empty$ -- 426
+format.name$ -- 65
+if$ -- 1056
 int.to.chr$ -- 0
-int.to.str$ -- 26
+int.to.str$ -- 27
 missing$ -- 56
-newline$ -- 86
-num.names$ -- 25
-pop$ -- 105
+newline$ -- 89
+num.names$ -- 26
+pop$ -- 113
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 66
+skip$ -- 70
 stack$ -- 0
 substring$ -- 43
 swap$ -- 20
@@ -59,7 +59,7 @@ text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 3
-while$ -- 29
-width$ -- 28
-write$ -- 193
+while$ -- 30
+width$ -- 29
+write$ -- 200
 (There were 2 error messages)

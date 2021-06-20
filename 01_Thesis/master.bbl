@@ -112,4 +112,8 @@ M.~Ohlberger and S.~Rave, \emph{Reduced basis methods: Success, limitations and
 J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
   equations.'' 2020.
 
+\bibitem{fan2021interpretability}
+F.~Fan, J.~Xiong, M.~Li and G.~Wang, \emph{On interpretability of artificial
+  neural networks: A survey},  2021.
+
 \end{thebibliography}\endgroup

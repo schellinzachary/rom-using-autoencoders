@@ -13,6 +13,7 @@ home = Path.home()
 
 v = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/v.mat"))
 x = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/x.mat"))
+
 v = v['v']
 x = x['x'].squeeze()
 

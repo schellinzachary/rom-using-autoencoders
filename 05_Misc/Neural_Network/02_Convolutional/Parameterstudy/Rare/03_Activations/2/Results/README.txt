@@ -1,2 +1,0 @@
--Activation function analysis for 2 layers,
--nll-Version is without activation of outputlayer

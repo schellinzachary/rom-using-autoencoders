@@ -5,11 +5,8 @@
 \label{Ch:BGK}
 %\pagenumbering{arabic}
 
-
-
-
-This chapter covers the kinetic gas model, the BGK model, on which a model order reduction will be performed in the following. In addition the SOD-shocktube, on which the BGK model will be tested is discussed.\\
-The BGK model is valid for a broad range of rarefaction levels. Ranging from continuum flows, where the Navier-Stokes equations can be utilized to highly rarefied regimes. Rarefaction levels are labeled with the so called Knudsen number \(\Kn\) first introduced by danish physicist Martin Knudsen \cite{Bernard}. the Knudsen number is given by
+This chapter covers the BGK model, a kinetic gas model in Sod's shock tube. Sod's shock tube serves here as a test case for which solutions of the BGK model were made available for this thesis.\\
+The BGK model is valid for a broad range of rarefaction levels. Ranging from continuum flows, where the Navier-Stokes equations can be utilized to highly rarefied regimes. Rarefaction levels are labeled with the so called Knudsen number \(\Kn\) first introduced by danish physicist Martin Knudsen \cite{Bernard}. The Knudsen number is given by
 \begin{equation}
 	\Kn = \frac{\lambda}{l}, 
 \end{equation}
@@ -42,23 +39,45 @@ The fruitfullness of performing a model order reduction on the BGK model becomes
 	\label{Eq:Discrete BGK}
 \end{equation}
 found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^i = i \Delta t\), \(i \in \mathbb{N}\) on which \(f_{j,k} = f(t,v_k,x_j)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
+
 To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3J^3\) first order differential equations. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together motivate for a reduced order model.\\
 A closer look on the discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations.\\  
+
+Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity space which can be obtained with\\
+\begin{minipage}{.25\textwidth}
+	\begin{equation}
+		\rho(x,t) = \int\! f \,\mathrm{d}v\label{Eq:Moments1} 
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{.35\textwidth}
+	\begin{equation}
+			\mathrm{,}\quad\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v\label{Eq:Moments2}
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{.35\textwidth}
+	\begin{equation}
+	\mathrm{and}\quad E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v\mathrm{,}\label{Eq:Moments3}
+	\end{equation}
+\end{minipage}\\\\
+as explained in  \cite{puppo2019kinetic}. Additionally the temperature \(T\) and the pressure \(p\) can be obtained with\\
+\begin{minipage}{0.45\textwidth}
+	\begin{equation}
+		T = \frac{2E}{3\rho} - \frac{||u||^2}{3}
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{.45\textwidth}
+	\begin{equation}
+		\mathrm{and}\quad p = \rho T
+	\end{equation}
+\end{minipage}\\\\
+With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.\\
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
-	\scalebox{.9}{\input{Figures/Chapter_2/Boltzmann.tex}}
+	\input{Figures/Chapter_2/Boltzmann.tex}
 	\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
-	\vspace{-70pt}
+	%\vspace{-70pt}
 	\label{Fig:Demo Macro}
 \end{wrapfigure}
-Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity spacewhich can be obtained with
-	\begin{align} 
-	\rho(x,t) &= \int\! f \,\mathrm{d}v  \mathrm{,}\label{Eq:Moments1}\\
-	\rho(x,t) u(x,t) &= \int\! v f \,\mathrm{d}v \mathrm{,}\label{Eq:Moments2}\\
-	E(x,t) &= \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \mathrm{,}\label{Eq:Moments3}
-	\end{align}
-as explained in  \cite{puppo2019kinetic}. With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.\\
-
 Again the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Now by multiplying the equilibrium solution (left hand side of \cref{Eq:BGK} substituting \(f=M_f\)) by \(\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics using the equation of state of the gas as in \cite{puppo2019kinetic}. These are
 \begin{align}
 	\partial_t&\rho + \partial_x(\rho u) = 0 \mathrm{,}\label{Eq:Conservation1} \\
