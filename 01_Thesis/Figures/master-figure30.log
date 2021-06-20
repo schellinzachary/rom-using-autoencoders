@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  19 JUN 2021 23:53
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 10:43
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2198,17 +2198,17 @@ LaTeX Warning: Citation `Carlberg' on page 27 undefined on input line 59.
 (./Figures/Chapter_5/code_hy.tex
 \openout4 = Figures/master-figure30.dpth
 
-Package pgfplots info on input line 41: Using 'lua backend=false' for plot 0 (ty
-pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 62: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 42: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
 Package pgfplots info on input line 63: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 84: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 64: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
 Package pgfplots info on input line 85: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
-Package pgfplots info on input line 92: Using 'lua backend=false' for plot 0 (ty
+Package pgfplots info on input line 86: Using 'lua backend=false' for plot 0 (ty
+pe 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 93: Using 'lua backend=false' for plot 0 (ty
 pe 'graphics'): plot handler does not support LUA.
 [27
 
@@ -2513,17 +2513,17 @@ Here is how much of LuaTeX's memory you used:
  878 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 62 attribute, 88 glue_spec, 62 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:6422,3:1770,4:158,5:954,6:27,7:16220,8:71,9:784,10:47,11:1
+   avail lists: 1:2,2:6420,3:1770,4:158,5:954,6:27,7:16220,8:71,9:784,10:47,11:1
 085
  60729 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
- 83i,19n,140p,2788b,3093s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 83i,19n,140p,2788b,3097s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips
 /lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/tex
 mf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi
 10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts
 /type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Figures/master-figure30.pdf (1 page, 65823 bytes).
+Output written on Figures/master-figure30.pdf (1 page, 65889 bytes).
 
 PDF statistics: 52 PDF objects out of 1000 (max. 8388607)
  33 compressed objects within 1 object stream

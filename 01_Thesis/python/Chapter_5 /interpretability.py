@@ -12,7 +12,9 @@ from pathlib import Path
 home = Path.home()
 
 v = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/v.mat"))
+x = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/x.mat"))
 v = v['v']
+x = x['x'].squeeze()
 
 #load the full order BGK data
 def load_BGKandMethod(method, level):
@@ -72,9 +74,15 @@ def shape_AE_code(g):
           n += 200
     return(c)
 
-fig_h, hyax = plt.subplots(2,3)
-#fig_r, rarax = plt.subplots(2,5)
-#fig_f, fomax = plt.subplots(1,5)
+fig_h, hyax = plt.subplots(4,3,tight_layout=True)
+fig_r, rarax = plt.subplots(4,5,tight_layout=True)
+fig_fr, fomarx = plt.subplots(3,5,tight_layout=True)
+fig_fh, fomahx = plt.subplots(3,5,tight_layout=True)
+
+fig_fh.suptitle("FOM Macro. qty hydro")
+fig_fr.suptitle("FOM Macro. qty rare")
+fig_h.suptitle("Code FCNN & CNN  hydro")
+fig_r.suptitle("Code FCNN & CNN  rare")
 
 for idx, level in enumerate(["hy","rare"]):
 
@@ -105,8 +113,68 @@ for idx, level in enumerate(["hy","rare"]):
     names = ["rho","rhou","E","T","p"]
     
     m_fom = macro(c_fom)
-    
+    if level == "hy":
+        for i in range(5):
+            fom = fomahx[0,i].imshow(m_fom[i],
+                cmap='gray',label="FCNN",
+                extent=[0,1,0,0.12],
+                aspect="auto",
+                origin="lower",
+                )
+            fomahx[0,i].set_xlabel("\(x\)")
+            fomahx[0,i].set_ylabel("\(t\)")
+            fomahx[0,i].set_yticks([0,0.12])
+            fomahx[0,i].set_xticks([0,1])
+            fom_bar = fig_fh.colorbar(fom, ax=fomahx[0,i],
+                orientation="horizontal",
+                location="top",
+                ticks=[np.min(m_fom[i]), np.max(m_fom[i])]
+                )
+            fom_bar.set_label("\(z_%s\)"%i)
 
+            fomahx[1,i].plot(x,m_fom[i][11,:])
+            fomahx[1,i].set_xlabel("\(x\)")
+            fomahx[1,i].set_ylabel("\(%s\)"%names[i])
+            fomahx[1,i].set_yticks([np.min(m_fom[i][11,:]),np.max(m_fom[i][11,:])])
+            fomahx[1,i].set_xticks([0,1])
+
+            fomahx[2,i].plot(x,m_fom[i][-1,:])
+            fomahx[2,i].set_xlabel("\(x\)")
+            fomahx[2,i].set_ylabel("\(%s\)"%names[i])
+            fomahx[2,i].set_yticks([np.min(m_fom[i][-1,:]),np.max(m_fom[i][-1,:])])
+            fomahx[2,i].set_xticks([0,1])
+        tikzplotlib.save(join(home,"0.tex"))
+    if level == "rare":
+        for i in range(5):
+            fom = fomarx[0,i].imshow(m_fom[i],
+                cmap='gray',label="FCNN",
+                extent=[0,1,0,0.12],
+                aspect="auto",
+                origin="lower"
+                )
+            fomarx[0,i].set_xlabel("\(x\)")
+            fomarx[0,i].set_ylabel("\(t\)")
+            fomarx[0,i].set_yticks([0,0.12])
+            fomarx[0,i].set_xticks([0,1])
+            fom_bar = fig_fr.colorbar(fom, ax=fomarx[0,i],
+                #orientation="horizontal",
+                location="top",
+                ticks=[np.min(m_fom[i]), np.max(m_fom[i])]
+                )
+            fom_bar.set_label("\(z_%s\)"%i)
+
+            fomarx[1,i].plot(x,m_fom[i][11,:])
+            fomarx[1,i].set_xlabel("\(x\)")
+            fomarx[1,i].set_ylabel("\(%s\)"%names[i])
+            fomarx[1,i].set_yticks([np.min(m_fom[i][11,:]),np.max(m_fom[i][11,:])])
+            fomarx[1,i].set_xticks([0,1])
+
+            fomarx[2,i].plot(x,m_fom[i][-1,:])
+            fomarx[2,i].set_xlabel("\(x\)")
+            fomarx[2,i].set_ylabel("\(%s\)"%names[i])
+            fomarx[2,i].set_yticks([np.min(m_fom[i][-1,:]),np.max(m_fom[i][-1,:])])
+            fomarx[2,i].set_xticks([0,1])
+        tikzplotlib.save(join(home,"1.tex"))
     if level == "hy":
         for i in range(3):
             hy = hyax[0,i].imshow(z_fcnn[:,i,:],
@@ -117,50 +185,75 @@ for idx, level in enumerate(["hy","rare"]):
                 )
             hyax[0,i].set_xlabel("\(x\)")
             hyax[0,i].set_ylabel("\(t\)")
+            hyax[0,i].set_yticks([0,0.12])
+            hyax[0,i].set_xticks([0,1])
             h_bar = fig_h.colorbar(hy, ax=hyax[0,i],
                 #orientation="horizontal",
-                location="top"
+                location="top",
+                ticks=[np.min(z_fcnn[:,i,:]), np.max(z_fcnn[:,i,:])]
                 )
             h_bar.set_label("\(z_%s\)"%i)
 
-            hyax[1,i].plot(v,z_cnn[:,i])
-            hyax[1,i].set_xlabel("\(v\)")
+            hyax[1,i].plot(x,z_fcnn[11,i,:])
+            hyax[1,i].set_xlabel("\(x\)")
             hyax[1,i].set_ylabel("\(z_%s\)"%i)
-tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/code_hy.tex"))
-plt.show()
-    # if level == "rare":
-    #     exit()
-    #     for i in range(5):
-    #         fc = rarax[0,i].imshow(z_fcnn[:,i,:],
-    #             cmap='gray',label="FCNN",
-    #             extent=[0,1,0,0.12],
-    #             aspect="auto",
-    #             origin="lower"
-    #             )
-    #         rarax[0,i].set_xlabel("\(x\)")
-    #         rarax[0,i].set_ylabel("\(t\)")
-    #         rar_bar = fig_r.colorbar(fc, ax=rarax[0,i],
-    #             #orientation="horizontal",
-    #             location="top"
-    #             )
-    #         rar_bar.set_label("\(z_%s\)"%i)
-    #         rarax[1,i].plot(z_cnn[:,i])
-    #         rarax[1,i].set_xlabel("\(v\)")
-    #         rarax[1,i].set_ylabel("\(z_%s\)"%i)
+            hyax[1,i].set_yticks([np.min(z_fcnn[11,i,:]),np.max(z_fcnn[11,i,:])])
+            hyax[1,i].set_xticks([0,1])
 
-    #         fom = fomax[i].imshow(m_fom[i],
-    #             cmap='gray',label="FCNN",
-    #             extent=[0,1,0,0.12],
-    #             aspect="auto",
-    #             origin="lower"
-    #             )
-    #         fomax[i].set_xlabel("\(x\)")
-    #         fomax[i].set_ylabel("\(t\)")
-    #         fom_bar = fig_f.colorbar(fom, ax=fomax[i],
-    #             orientation="horizontal",
-    #             location="top"
-    #             )
-    #         fom_bar.set_label("\(z_%s\)"%i)
+            hyax[2,i].plot(x,z_fcnn[-1,i,:])
+            hyax[2,i].set_xlabel("\(x\)")
+            hyax[2,i].set_ylabel("\(z_%s\)"%i)
+            hyax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
+            hyax[2,i].set_xticks([0,1])
+
+            hyax[3,i].plot(v,z_cnn[:,i])
+            hyax[3,i].set_xlabel("\(v\)")
+            hyax[3,i].set_ylabel("\(z_%s\)"%i)
+            hyax[3,i].set_yticks([np.min(z_cnn[:,i]),np.max(z_cnn[:,i])])
+            hyax[3,i].set_xticks([-10,10])
+
+
+    if level == "rare":
+        #exit()
+        for i in range(5):
+            fc = rarax[0,i].imshow(z_fcnn[:,i,:],
+                cmap='gray',label="FCNN",
+                extent=[0,1,0,0.12],
+                aspect="auto",
+                origin="lower"
+                )
+            rarax[0,i].set_xlabel("\(x\)")
+            rarax[0,i].set_ylabel("\(t\)")
+            rarax[0,i].set_yticks([0,0.12])
+            rarax[0,i].set_xticks([0,1])
+            rar_bar = fig_r.colorbar(fc, ax=rarax[0,i],
+                #orientation="horizontal",
+                location="top",
+                ticks=[np.min(z_fcnn[:,i,:]), np.max(z_fcnn[:,i,:])]
+                )
+            rar_bar.set_label("\(z_%s\)"%i)
+
+            rarax[1,i].plot(x,z_fcnn[11,i,:])
+            rarax[1,i].set_xlabel("\(x\)")
+            rarax[1,i].set_ylabel("\(z_%s\)"%i)
+            rarax[1,i].set_yticks([np.min(z_fcnn[11,i,:]),np.max(z_fcnn[11,i,:])])
+            rarax[1,i].set_xticks([0,1])
+
+            rarax[2,i].plot(x,z_fcnn[-1,i,:])
+            rarax[2,i].set_xlabel("\(x\)")
+            rarax[2,i].set_ylabel("\(z_%s\)"%i)
+            rarax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
+            rarax[2,i].set_xticks([0,1])
+
+            rarax[3,i].plot(v,z_cnn[:,i])
+            rarax[3,i].set_xlabel("\(v\)")
+            rarax[3,i].set_ylabel("\(z_%s\)"%i)
+            rarax[3,i].set_yticks([np.min(z_cnn[:,i]),np.max(z_cnn[:,i])])
+            rarax[3,i].set_xticks([-10,10])
+
+
+
+plt.show()
 
 
 
