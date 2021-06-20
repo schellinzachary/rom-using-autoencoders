@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  19 JUN 2021 22:53
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  20 JUN 2021 15:24
  system commands enabled.
 **\def\tikzexternalrealjob{master}\input{master}
 [\directlua]:1: module 'luaotfload-main' not found:
@@ -2195,26 +2195,60 @@ LaTeX Warning: Citation `Bernard' on page 27 undefined on input line 59.
 
 LaTeX Warning: Citation `Carlberg' on page 27 undefined on input line 59.
 
-(./Figures/Chapter_5/code_hy.tex
+(./Figures/Chapter_5/fom_mac_hy.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Chapter_5/fom_mac_rare.tex
+\openout4 = Figures/master-figure31.dpth
+
+Package pgfplots info on input line 46: Using 'lua backend=false' for plot 0 (ty
+pe 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 77: Using 'lua backend=false' for plot 0 (ty
+pe 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 78: Using 'lua backend=false' for plot 0 (ty
+pe 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 109: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 110: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 141: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 142: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 173: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 174: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+Package pgfplots info on input line 191: Using 'lua backend=false' for plot 0 (t
+ype 'graphics'): plot handler does not support LUA.
+[27
+
+\providecommand \oddpage@label [2]{}
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./Figures/Chapter_5/fom_mac_
+rare-000.png><./Figures/Chapter_5/fom_mac_rare-001.png><./Figures/Chapter_5/fom_
+mac_rare-002.png><./Figures/Chapter_5/fom_mac_rare-003.png><./Figures/Chapter_5/
+fom_mac_rare-004.png>]) (./Figures/Chapter_5/code_hydro.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 59--88
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 88.
+(hyperref)                than one, level fixed on input line 94.
 
 
-LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 89.
+LaTeX Warning: Reference `Ch:ApB' on page 1 undefined on input line 95.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 89.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 95.
 
 
-LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 90.
+LaTeX Warning: Reference `Ch:ROM' on page 1 undefined on input line 96.
 
 ) (./appendix/appendixA.tex
 Appendix A.
@@ -2232,13 +2266,9 @@ LaTeX Warning: Reference `Tab:First Guess' on page 1 undefined on input line 13.
 LaTeX Warning: Reference `Fig:ActScheme' on page 1 undefined on input line 13.
 
 (./Figures/Parameterstudy/Fully_Connected/Activations/act_scheme.tex
-\openout4 = Figures/master-figure31.dpth
- [30
-
-\providecommand \oddpage@label [2]{}
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
 
 LaTeX Warning: Reference `Fig:Depth' on page 1 undefined on input line 41.
 
@@ -2493,22 +2523,23 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 45459 strings out of 481365
- 156265,7087374 words of node,token memory allocated
+ 46090 strings out of 481365
+ 195334,7087374 words of node,token memory allocated
  878 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 62 attribute, 88 glue_spec, 62 attr
 ibute_list, 2 write nodes
-   avail lists: 1:2,2:2017,3:333,4:158,5:954,6:27,7:16220,8:71,9:772,10:47,11:10
-85
- 60273 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:14375,3:4801,4:225,5:954,6:27,7:16220,8:71,9:1176,10:47,11
+:1085
+ 60811 multiletter control sequences out of 65536+600000
  140 fonts using 7923363 bytes
- 83i,19n,140p,2788b,956s stack positions out of 5000i,500n,10000p,200000b,100000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}</usr/share/texmf/fonts/type1/pub
-lic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr9.pfb>
-Output written on Figures/master-figure31.pdf (1 page, 46154 bytes).
+ 83i,19n,140p,2788b,3117s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share
+/texmf/fonts/type1/public/lm/lmr10.pfb>
+Output written on Figures/master-figure31.pdf (1 page, 60614 bytes).
 
-PDF statistics: 27 PDF objects out of 1000 (max. 8388607)
- 19 compressed objects within 1 object stream
+PDF statistics: 48 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  2 named destinations out of 1000 (max. 131072)
- 16 words of extra memory for PDF output out of 10000 (max. 100000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 100000000)
 
