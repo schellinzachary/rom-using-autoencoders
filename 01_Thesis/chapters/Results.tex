@@ -65,32 +65,37 @@ Following the deduction, that \(\hy\) can be completely described in terms of th
 	\begin{equation}
 		\mathrm{and}\quad[r_0(x,t),r_1(x,t),z_2(x,t),r_3(x,t),r_4(x,t)] = \idrare \mathrm{,}
 	\end{equation}
-\end{minipage}\\\\
-extracted from the FCNN depicted in \cref{Fig: Code_hy} and \cref{Fig: Code_rare} respectively.\\
-Strikingly, all intrinsic variables appear to be a sort of linear combination of the five intrinsic variables. For example do the rarefaction wave, shock wave and contact discontinutity, that can be identified in \(h_0\) reflect a combination of those found in the density \(\rho\) and the total energy \(E\). Furthermore does \(h_1\) seem to be a mirror image of the momentum \(\rho u\), where beginning end values are inspired by the temperature \(T\). Then again \(T\) plays a more pronounced role in \(h_2\), where it's zero passage appears. The peak of \(h_2\) could be guessed from the peak of the macroscopic velocity \(u\) at \(t=0.12\).      
-\begin{figure}[tp!]
+\end{minipage}\\\\\
+extracted from the FCNN, depicted in \cref{Fig: Code_hy} and \cref{Fig: Code_rare} respectively.\\
+Strikingly, most intrinsic variables appear to be a sort of linear combination of the five intrinsic variables. In particular \(\idhy\). For example do the rarefaction wave, shock wave and contact discontinutity, that can be identified in \(h_0\) reflect a combination of those found in the density \(\rho\) and the total energy \(E\). Furthermore does \(h_1\) seem to be a mirror image of the momentum \(\rho u\), where beginning end values are inspired by the temperature \(T\). Then again \(T\) plays a more pronounced role in \(h_2\), where it's fluctuation appears. The peak of \(h_2\) could be guessed from the peak of the macroscopic velocity \(u\) with it's bump at \(t=0.12\).\\
+A clear identification of macroscopic quantities that can be seen in \(\idrare\) is possible for \(r_3\), which reflects the shape of the density \(\rho\). Moreover, the peak of the velocity \(u\) can be rediscovered in the through of \(r_0\). For other intrinsic variables of \(\idrare\) namely \(r_1\), \(r_2\) and \(r_3\) a clear discernability of macroscopic quantities is not observed. It seems rather that those constitute abstract information about the rarefied flow. Nonetheless it can't be verified, that also those can be created through linear combinations of the intrinsic variables.\\
+   
+\begin{figure}[htp!]
 	\input{Figures/Chapter_5/fom_mac_hy.tex}
 	\caption{Macroscopic quantities of \(\hy\). Density \(\rho\), momentum \(\rho u\), total energy \(E\), teperature \(T\) and velocity \(u\) over time \(t\) and space \(x\) in the top row and specifically at \(t_i=0.055s\) and \(t_i=0.12\) in the middle and bottom row respectively.}
 	\label{Fig: Macro_hy}
 \end{figure}
-\begin{figure}[bp!]
+\begin{figure}[hbp!]
 	\input{Figures/Chapter_5/fom_mac_rare.tex}
 		\caption{Macroscopic quantities of \(\rare\). Density \(\rho\), momentum \(\rho u\), total energy \(E\), teperature \(T\) and velocity \(u\) over time \(t\) and space \(x\) in the top row and specifically at \(t_i=0.055s\) and \(t_i=0.12\) in the middle and bottom row respectively.}
 	\label{Fig: Macro_rare}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[htp!]
 	\centering
 	\input{Figures/Chapter_5/code_hydro.tex}
 	\caption{Intrinsic variables \(h_0(x,t)\), \(h_1(x,t)\) and \(h_2(x,t)\) of \(\hy\) obtained from the FCNN. Top row depicts \(\idhy\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
 	\label{Fig: Code_hy}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[hbp!]
 	\input{Figures/Chapter_5/code_rare.tex}
 	\caption{Intrinsic variables \(z_0(x,t)\), \(z_1(x,t)\), \(z_2(x,t)\), \(z_3(x,t)\) and \(z_4(x,t)\) of \(\rare\) obtained from the FCNN. Top row depicts \(\idrare\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
 	\label{Fig: Code_rare}
 \end{figure}
+The intrinsic variables extracted from the CNN and POD are shown in \cref{Fig: CNNPOD}. With POD the intrinsic variables are found in the left singular vectors stored in \(U\).  
 \begin{figure}
 	\input{Figures/Chapter_5/code_cnn_pod.tex}
+	\caption{}
+	\label{Fig: CNNPOD}
 \end{figure}
 We now reached the online phase where we want to be independent from the FOM solution. A first ROM relying on pure interpolation in the intrinsic variables is performed for \(\hy\). The intrinsic variables of the FCNN for \(\hy\) are shown in ... . 
 

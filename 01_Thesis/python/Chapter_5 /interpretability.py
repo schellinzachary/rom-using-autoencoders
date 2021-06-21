@@ -69,18 +69,23 @@ fig_fr, fomarx = plt.subplots(3,5,tight_layout=True)
 fig_fh, fomahx = plt.subplots(3,5,tight_layout=True)
 fig_cnp, cnpax = plt.subplots(4,5,tight_layout=True)
 
+
 fig_fh.suptitle("FOM Macro. qty hydro")
 fig_fr.suptitle("FOM Macro. qty rare")
 fig_h.suptitle("Code FCNN  hydro")
 fig_r.suptitle("Code FCNN  rare")
 fig_cnp.suptitle("Code CNN and POD hy&rare")
 
+
 for idx, level in enumerate(["hy","rare"]):
 
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from POD import pod
-    rec_pod, z_pod = pod(c.T,level)
+    rec_pod, z_pod = pod(c,level)
+    print(z_pod.shape)
+    z_pod = shapeback_code(z_pod)
+
 
 
     method = "Fully"
@@ -90,6 +95,8 @@ for idx, level in enumerate(["hy","rare"]):
     z = z.detach().numpy()
     z_fcnn = shapeback_code(z)
     c_fom = shapeback_field(c)
+
+    z_fcnn = z_pod
 
 
     method = "Conv"
@@ -199,7 +206,7 @@ for idx, level in enumerate(["hy","rare"]):
             hyax[2,i].set_ylabel("\(z_%s\)"%i)
             hyax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
             hyax[2,i].set_xticks([0,1])
-
+            continue
             cnpax[2,i].plot(v,z_pod[:,i])
             cnpax[2,i].set_xlabel("\(v\)")
             cnpax[2,i].set_ylabel("\(z_%s\)"%i)
@@ -247,6 +254,7 @@ for idx, level in enumerate(["hy","rare"]):
             rarax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
             rarax[2,i].set_xticks([0,1])
 
+            continue
             cnpax[1,i].plot(v,z_cnn[:,i])
             cnpax[1,i].set_xlabel("\(v\)")
             cnpax[1,i].set_ylabel("\(z_%s\)"%i)
@@ -266,13 +274,6 @@ for idx, level in enumerate(["hy","rare"]):
 
 
 plt.show()
-
-
-
-
-
-
-
 
 #tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/code_rare.tex"))
 #tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/macro_all.tex'))
