@@ -54,14 +54,14 @@ The physical consistency of \(\tilde{f}\), in terms of conservation of mass mome
 of the macroscopic quantities is employed. \Cref{Fig:Conservation} shows the conservation of mass, momentum and total energy as a temporal mean for \(\hy\) in the top row and for \(\rare\) in the bottom row.\\
 Conservation of mass is met using the FCNN, except for small deviations at the outset for both cases \(\hy\) and \(\rare\). Similarly, does POD meet conservation of mass for \(\rare\). The erroneous \(\hy\) case losses mass at the onset and gains mass towards the end with POD. Conservation of momentum meets the FOM solution, except for minor gains and losses, after \(t\approx 0.03s\) using the FCNN for both cases \(\hy\) and \(\rare\). POD gains momentum of 0.13 for \(\hy\) and 0.07 for \(\rare\). The conservation of total energy is met for \(\hy\) and \(\rare\) using POD and the FCNN. Finally the reconstructions of the CNN do not conserve mass, momentum nor total energy. All conservative properties behave comparable to a sawtooth wave. A gain and loss of either of the quantities can be observed.\\
 
-Because of their black-box nature the question of interpretability often arises when working with them \cite{fan2021interpretability}. Especially benchmarking neural networks for model order reduction with POD asks for the evaluation of the interpretability of the intrinsic variables. Owing to the tremendous quality of POD, which lies in "the physically interpretable decomposition"\cite{Kutz}[p.375] of the input data, as stated in \cref{Ch:DimRedAl}. \\
-Following the deduction, that \(\hy\) can be completely described in terms of three macroscopic quantities and that \(\rare\) is describable in a similar way, it is put to test if the intrinsic variables \(\idhy\) and \(\idrare\) show any similarities, if not match the any intrinsic variable. To this end five macroscopic variables  
-\begin{figure}[H]
+Because of the black-box nature of neural networks the question of interpretability often arises when working with them \cite{fan2021interpretability}. Especially benchmarking neural networks for model order reduction with POD asks for the evaluation of the interpretability of the intrinsic variables. Owing to the tremendous quality of POD, which lies in "the physically interpretable decomposition"\cite{Kutz}[p.375] of the input data, as stated in \cref{Ch:DimRedAl}.\\
+Following the deduction, that \(\hy\) can be completely described in terms of three macroscopic quantities and that \(\rare\) is describable in a similar way, it is put to test if the intrinsic variables \(\idhy\) and \(\idrare\) show any similarities, if not match the any intrinsic variable. To this end two supplementary macroscopic quantities namely the temperature \(T\) and macroscopic velocity \(u\) are added to the three macroscopic variables. In \cref{Fig: Macro_hy} and \cref{Fig: Macro_rare} those are depicted first over the whole domain of \(x,t\) and for two specific timesteps \(t=0.055s\) and \(t=0.12s\) for \(\hy\) and \(\rare\) respectively. Similarily 
+\begin{figure}[tp!]
 	\input{Figures/Chapter_5/fom_mac_hy.tex}
 	\caption{Macroscopic quantities of \(\hy\). Density \(\rho\), momentum \(\rho u\), total energy \(E\), teperature \(T\) and velocity \(u\) over time \(t\) and space \(x\) in the top row and specifically at \(t_i=0.055s\) and \(t_i=0.12\) in the middle and bottom row respectively.}
 	\label{Fig: Macro_hy}
 \end{figure}
-\begin{figure}[H]
+\begin{figure}[bp!]
 	\input{Figures/Chapter_5/fom_mac_rare.tex}
 		\caption{Macroscopic quantities of \(\rare\). Density \(\rho\), momentum \(\rho u\), total energy \(E\), teperature \(T\) and velocity \(u\) over time \(t\) and space \(x\) in the top row and specifically at \(t_i=0.055s\) and \(t_i=0.12\) in the middle and bottom row respectively.}
 	\label{Fig: Macro_rare}
@@ -69,9 +69,13 @@ Following the deduction, that \(\hy\) can be completely described in terms of th
 \begin{figure}[H]
 	\centering
 	\input{Figures/Chapter_5/code_hydro.tex}
+	\caption{Intrinsic variables \(z_0(x,t)\), \(z_1(x,t)\) and \(z_2(x,t)\) of \(\hy\) obtained from the FCNN. Top row depicts \(\idhy\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
+	\label{Fig: Code_hy}
 \end{figure}
 \begin{figure}[H]
 	\input{Figures/Chapter_5/code_rare.tex}
+	\caption{Intrinsic variables \(z_0(x,t)\), \(z_1(x,t)\), \(z_2(x,t)\), \(z_3(x,t)\) and \(z_4(x,t)\) of \(\rare\) obtained from the FCNN. Top row depicts \(\idrare\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
+	\label{Fig: Code_rare}
 \end{figure}
 \begin{figure}
 	\input{Figures/Chapter_5/code_cnn_pod.tex}
