@@ -55,7 +55,19 @@ of the macroscopic quantities is employed. \Cref{Fig:Conservation} shows the con
 Conservation of mass is met using the FCNN, except for small deviations at the outset for both cases \(\hy\) and \(\rare\). Similarly, does POD meet conservation of mass for \(\rare\). The erroneous \(\hy\) case losses mass at the onset and gains mass towards the end with POD. Conservation of momentum meets the FOM solution, except for minor gains and losses, after \(t\approx 0.03s\) using the FCNN for both cases \(\hy\) and \(\rare\). POD gains momentum of 0.13 for \(\hy\) and 0.07 for \(\rare\). The conservation of total energy is met for \(\hy\) and \(\rare\) using POD and the FCNN. Finally the reconstructions of the CNN do not conserve mass, momentum nor total energy. All conservative properties behave comparable to a sawtooth wave. A gain and loss of either of the quantities can be observed.\\
 
 Because of the black-box nature of neural networks the question of interpretability often arises when working with them \cite{fan2021interpretability}. Especially benchmarking neural networks for model order reduction with POD asks for the evaluation of the interpretability of the intrinsic variables. Owing to the tremendous quality of POD, which lies in "the physically interpretable decomposition"\cite{Kutz}[p.375] of the input data, as stated in \cref{Ch:DimRedAl}.\\
-Following the deduction, that \(\hy\) can be completely described in terms of three macroscopic quantities and that \(\rare\) is describable in a similar way, it is put to test if the intrinsic variables \(\idhy\) and \(\idrare\) show any similarities, if not match the any intrinsic variable. To this end two supplementary macroscopic quantities namely the temperature \(T\) and macroscopic velocity \(u\) are added to the three macroscopic variables. In \cref{Fig: Macro_hy} and \cref{Fig: Macro_rare} those are depicted first over the whole domain of \(x,t\) and for two specific timesteps \(t=0.055s\) and \(t=0.12s\) for \(\hy\) and \(\rare\) respectively. Similarily 
+Following the deduction, that \(\hy\) can be completely described in terms of three macroscopic quantities and that \(\rare\) is describable in a similar way, it is put to test if the intrinsic variables \(\idhy\) and \(\idrare\) show any similarities, if not match any macroscopic quantity. To this end two supplementary macroscopic quantities namely the temperature \(T\) and macroscopic velocity \(u\) are added to the three macroscopic variables. In \cref{Fig: Macro_hy} and \cref{Fig: Macro_rare} those are depicted first over the whole domain of \(x\) and \(t\) and for two specific timesteps \(t=0.055s\) and \(t=0.12s\) for \(\hy\) and \(\rare\) respectively. Similarily are the intrinsic variables \(\idhy\) and \(\idrare\) with\\
+\begin{minipage}{0.38\textwidth}
+	\begin{equation}
+		[h_0(x,t),h_1(x,t),h_2(x,t)] = \idhy
+	\end{equation}
+\end{minipage}%
+\begin{minipage}{0.6\textwidth}
+	\begin{equation}
+		\mathrm{and}\quad[r_0(x,t),r_1(x,t),z_2(x,t),r_3(x,t),r_4(x,t)] = \idrare \mathrm{,}
+	\end{equation}
+\end{minipage}\\\\
+extracted from the FCNN depicted in \cref{Fig: Code_hy} and \cref{Fig: Code_rare} respectively.\\
+Strikingly, all intrinsic variables appear to be a sort of linear combination of the five intrinsic variables. For example do the rarefaction wave, shock wave and contact discontinutity, that can be identified in \(h_0\) reflect a combination of those found in the density \(\rho\) and the total energy \(E\). Furthermore does \(h_1\) seem to be a mirror image of the momentum \(\rho u\), where beginning end values are inspired by the temperature \(T\). Then again \(T\) plays a more pronounced role in \(h_2\), where it's zero passage appears. The peak of \(h_2\) could be guessed from the peak of the macroscopic velocity \(u\) at \(t=0.12\).      
 \begin{figure}[tp!]
 	\input{Figures/Chapter_5/fom_mac_hy.tex}
 	\caption{Macroscopic quantities of \(\hy\). Density \(\rho\), momentum \(\rho u\), total energy \(E\), teperature \(T\) and velocity \(u\) over time \(t\) and space \(x\) in the top row and specifically at \(t_i=0.055s\) and \(t_i=0.12\) in the middle and bottom row respectively.}
@@ -69,7 +81,7 @@ Following the deduction, that \(\hy\) can be completely described in terms of th
 \begin{figure}[H]
 	\centering
 	\input{Figures/Chapter_5/code_hydro.tex}
-	\caption{Intrinsic variables \(z_0(x,t)\), \(z_1(x,t)\) and \(z_2(x,t)\) of \(\hy\) obtained from the FCNN. Top row depicts \(\idhy\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
+	\caption{Intrinsic variables \(h_0(x,t)\), \(h_1(x,t)\) and \(h_2(x,t)\) of \(\hy\) obtained from the FCNN. Top row depicts \(\idhy\) over the whole \((x,t)\) domain, middle and bottom row for \(t=0.055\) and \(t=0.12\) respectively.}
 	\label{Fig: Code_hy}
 \end{figure}
 \begin{figure}[H]
