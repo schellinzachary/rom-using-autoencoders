@@ -15,9 +15,11 @@ home = Path.home()
 v = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/v.mat"))
 x = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/x.mat"))
 t = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/t.mat"))
+tnew = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod241Kn0p00001/t.mat"))
 v = v['v']
 x = x['x'].squeeze()
 t = t['treport'].squeeze()
+tnew = tnew['treport'].squeeze()
 
 #load the full order BGK data
 def load_BGKandMethod(method, level):
@@ -82,7 +84,7 @@ fig, axs = plt.subplots(1,3)
 figg, axxs = plt.subplots(1,3)
 
 ti=241
-tnew=np.linspace(0.0,0.12,num=ti)
+#tnew=np.linspace(0.0,0.12,num=ti)
 
 
 from FullyConnected import fully, decoder
