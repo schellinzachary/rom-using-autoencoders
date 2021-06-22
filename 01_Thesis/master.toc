@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {4.1}Offline phase and number of intrinsic variables}{23}{section.4.1}%
 \contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
 \contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{36}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{38}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{48}{appendix.B}%
-\contentsline {chapter}{Bibliography}{58}{appendix*.60}%
+\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{39}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{49}{appendix.B}%
+\contentsline {chapter}{Bibliography}{59}{appendix*.60}%
 \contentsfinish 

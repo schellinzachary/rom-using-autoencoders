@@ -206,7 +206,7 @@ for idx, level in enumerate(["hy","rare"]):
             hyax[2,i].set_ylabel("\(z_%s\)"%i)
             hyax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
             hyax[2,i].set_xticks([0,1])
-            continue
+
             cnpax[2,i].plot(v,z_pod[:,i])
             cnpax[2,i].set_xlabel("\(v\)")
             cnpax[2,i].set_ylabel("\(z_%s\)"%i)
@@ -254,7 +254,7 @@ for idx, level in enumerate(["hy","rare"]):
             rarax[2,i].set_yticks([np.min(z_fcnn[-1,i,:]),np.max(z_fcnn[-1,i,:])])
             rarax[2,i].set_xticks([0,1])
 
-            continue
+            
             cnpax[1,i].plot(v,z_cnn[:,i])
             cnpax[1,i].set_xlabel("\(v\)")
             cnpax[1,i].set_ylabel("\(z_%s\)"%i)
