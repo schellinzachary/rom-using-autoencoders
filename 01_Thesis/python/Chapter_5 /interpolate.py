@@ -4,7 +4,7 @@ from scipy import interpolate
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
-import tikzplotlib
+##import tikzplotlib
 
 #plt.style.use("seaborn")
 
@@ -34,6 +34,7 @@ def load_BGKandMethod(method, level):
         c = np.load('Preprocessed_Data/sod25Kn0p01_4D_unshuffled.npy')   
 
     return c
+
 def load_BGK_241():
     c = np.load('Data/sod241Kn0p00001_2D_unshuffled.npy')
     return(c)
@@ -77,44 +78,83 @@ def shape_AE_code(g):
           n += 200
     return(c)
 
-for idx, level in enumerate(["hy"]):
-
-	method="Fully"
-	c = load_BGKandMethod(method, level) # load FOM data for evaluation
-	from FullyConnected import fully
-
-	rec, code = fully(c, level)
-	code = code.detach().numpy()
-	code = shapeback_code(code)
-
-	ti=241
-	iv=3
-	cnew=np.empty([ti,iv,200])
-	tnew=np.linspace(0.0,0.12,num=ti)
-
-	for i in range(iv):
-	    f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='cubic')
-	    cnew[:,i,:]=f(tnew)
-	#print(np.sum(np.abs(cnew)-np.abs(code)))
-
-
-
-	codenew = shape_AE_code(cnew)
-	#codenew=tensor(codenew,dtype=torch.float)
-
-	from FullyConnected import decoder
-	fnew = decoder(codenew, level)
-	fnew=fnew.detach().numpy()
-	fnew = shapeback_field(fnew)
-	#fold = c.detach().numpy()
-	fold = np.load('Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy')
-	fold = shapeback_field(fold)
-	l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
-	print('Interpolation L2 Error:',l2)
-
-m_old = macro(fold)
-m_new = macro(fnew)
 fig, axs = plt.subplots(1,3)
+figg, axxs = plt.subplots(1,3)
+
+ti=241
+tnew=np.linspace(0.0,0.12,num=ti)
+
+
+from FullyConnected import fully, decoder
+
+for idx, level in enumerate(["hy", "rare"]):
+
+    if level == "hy":
+        iv = 3
+        method = "Fully"
+        c = load_BGKandMethod(method, level)
+
+
+        #from FullyConnected import fully, decoder
+        rec, code = fully(c, level)
+        code = code.detach().numpy()
+        code = shapeback_code(code)
+
+        cnew=np.empty([ti,iv,200])
+        for i in range(iv):
+            f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='cubic')
+            cnew[:,i,:]=f(tnew)
+
+
+        codenew = shape_AE_code(cnew)
+
+        fnew = decoder(codenew, level)
+        fnew=fnew.detach().numpy()
+        fnew = shapeback_field(fnew)
+        #fold = c.detach().numpy()
+        fold = np.load('Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy')
+        fold = shapeback_field(fold)
+        l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
+        print('Interpolation L2 Error:',l2)
+
+        m_old = macro(fold)
+        m_new = macro(fnew)
+
+    if level == "rare":
+        iv = 5
+        method = "Fully"
+        c = load_BGKandMethod(method, level)
+
+
+        #from FullyConnected import fully, decoder
+        rec, code = fully(c, level)
+        code = code.detach().numpy()
+        code = shapeback_code(code)
+
+        cnew=np.empty([ti,iv,200])
+        for i in range(iv):
+            f = interpolate.interp1d(t[::1],code[::1,i,:],axis=0,kind='cubic')
+            cnew[:,i,:]=f(tnew)
+
+
+        codenew = shape_AE_code(cnew)
+
+        fnew = decoder(codenew, level)
+        fnew=fnew.detach().numpy()
+        fnew = shapeback_field(fnew)
+        #fold = c.detach().numpy()
+        fold = np.load('Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy')
+        fold = shapeback_field(fold)
+        l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
+        print('Interpolation L2 Error:',l2)
+
+        mr_old = macro(fold)
+        mr_new = macro(fnew)
+
+
+
+
+
 
 axs[0].plot(x,m_new[0][-1],'-o',label='prediction')
 axs[0].plot(x,m_old[0][-1],'k+',label='ground truth')
@@ -131,5 +171,21 @@ axs[2].plot(x,m_old[2][-1],'k+',label='ground truth')
 axs[2].set_xlabel('\(x\)')
 axs[2].set_ylabel('\(E\)')
 axs[2].legend()
-tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/Hy_Intt.tex"))
+
+axxs[0].plot(x,mr_new[0][-1],'-o',label='prediction')
+axxs[0].plot(x,mr_old[0][-1],'k+',label='ground truth')
+axxs[0].set_xlabel('\(x\)')
+axxs[0].set_ylabel('\(\rho\)')
+axxs[0].legend()
+axxs[1].plot(x,mr_new[1][-1],'-o',label='prediction')
+axxs[1].plot(x,mr_old[1][-1],'k+',label='ground truth')
+axxs[1].set_xlabel('\(x\)')
+axxs[1].set_ylabel('\(\rho u\)')
+axxs[1].legend()
+axxs[2].plot(x,mr_new[2][-1],'-o',label='prediction')
+axxs[2].plot(x,mr_old[2][-1],'k+',label='ground truth')
+axxs[2].set_xlabel('\(x\)')
+axxs[2].set_ylabel('\(E\)')
+axxs[2].legend()
+###tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/Hy_Intt.tex"))
 plt.show()

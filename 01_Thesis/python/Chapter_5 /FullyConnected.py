@@ -94,6 +94,12 @@ def decoder(c, level):
         checkpoint = torch.load("Models/FullyConnected/Hydro/%s"%hydro_model,
             map_location=torch.device('cpu'))
 
+    if level == "rare":
+        act_h = activations["relu"]
+        decoder = Decoder(act_h, 40, 5)
+        checkpoint = torch.load("Models/FullyConnected/Rare/%s"%rare_model,
+            map_location=torch.device('cpu'))
+
     state_dict = checkpoint['model_state_dict'][0]
     with torch.no_grad():
         decoder.layer_c.weight.copy_(state_dict['dec.layer_c.weight'])
