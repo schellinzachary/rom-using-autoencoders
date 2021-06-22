@@ -3,7 +3,7 @@ import scipy.io as sio
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
-import tikzplotlib
+##import tikzplotlib
 
 
 from os.path import join
@@ -35,7 +35,7 @@ def macro(f):
     rhou = f * v
     rhou = np.sum((rhou),axis = 1) * dv
     E = f * ((v**2) * .5) 
-    E = np.sum(E, axis = 1) * dv
+    E = np.sum(E, axis = 1) * dv 
     return(rho, rhou, E)
 
 def conservation(macro):
@@ -56,9 +56,8 @@ def shapeback_field(c):  #Shape the reconstruction from 5000x40 bach to 25x40x20
         n += 200
     return(f)
 
-fig,ax = plt.subplots(2,3) # for macroscopic quantities
-figg,axxs = plt.subplots(2,3) # for conservation
-
+fig,ax = plt.subplots(2,3,tight_layout=True) # for macroscopic quantities
+figg,axxs = plt.subplots(2,3,tight_layout=True) # for conservation
 
 for idx, level in enumerate(["hy","rare"]):
 

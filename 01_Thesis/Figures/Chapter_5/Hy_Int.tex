@@ -225,7 +225,9 @@ table {%
 0.9975 0.124995080209968
 };
 \addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,%only marks,
+mark repeat=5]
 table {%
 0.0025 0.999999994499998
 0.0075 0.999999994499989
@@ -639,7 +641,8 @@ table {%
 0.9975 7.87138405539246e-05
 };
 \addlegendentry{pred.}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,
+mark repeat=5]
 table {%
 0.0025 6.30909939231123e-15
 0.0075 2.52743809394443e-14
@@ -1054,7 +1057,7 @@ table {%
 0.9975 0.0159247248240804
 };
 \addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid}, only marks,mark repeat=5]
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
 table {%
 0.0025 0.499999997249975
 0.0075 0.499999997249952
