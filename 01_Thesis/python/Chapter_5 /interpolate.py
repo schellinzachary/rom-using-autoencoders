@@ -1,6 +1,7 @@
 import numpy as np
 import scipy.io as sio
 from scipy import interpolate
+from scipy.interpolate import BarycentricInterpolator
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
