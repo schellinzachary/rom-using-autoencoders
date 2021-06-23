@@ -13,7 +13,7 @@
 %
 %\addcontentsline{toc}{chapter}{Abstract}
 %\setcounter{page}{2} % Nach Bedarf anpassen!
-Autoencoders for model order reduction (MOR) in rarefied gasdynamics are tested on the BGK model in Sod's shock tube for two levels of rarefaction with proper orthogonal decomposition (POD) as a benchmark. Therefor, a convolutional neural network (CNN) as well as a fully connected neural network (FCNN) are designed in terms of finding appropriate hyperparameters for the given task. The FCNN supersedes POD only in the number of parameters used to achieve a reconstruction loss above \num{1e-2} for the two rarefaction levels. The CNN fails to reproduce usable results, giving rise to further insight into chosen hyperparameters. Interpretabillity of the intrinsic variables extracted from the FCNN is given to a certain extend. Similarities with macroscopic quantities are present for both flows, though only entangled.         
+In this thesis autoencoders for model order reduction (MOR) in rarefied gasdynamics are tested on the BGK model in Sod's shock tube for a continuum- and a slightly rarefied gas using proper orthogonal decomposition (POD) as a benchmark. Therefor, a convolutional neural network (CNN) as well as a fully connected neural network (FCNN) are designed. To this end finding of appropriate hyperparameters for the given task is discussed. The FCNN surpasses POD only in the number of parameters used to achieve reconstruction losses of \num{8e-4} and \num{9e-4} for the two flows. The CNN fails to reproduce usable results, giving rise to further insight into chosen hyperparameters. The similarity between macroscopic quantities and intrinsic variables extracted from the FCNN demonstrate interpretabillity. In addition it is possible to generate new timesteps of the flow using the decoder of the FCNN through interpoltion in the intrinsic variables.         
 \vspace{1.5cm}
 
 %-deutsche Zusammenfassung----------------------------------------
@@ -23,8 +23,7 @@ Autoencoders for model order reduction (MOR) in rarefied gasdynamics are tested 
 \end{center}%\hspace*{\fill}\\[1.5cm]
 \vspace{1cm}
 %
-%\setcounter{page}{3} % Nach Bedarf anpassen!
-german abstrac here
+Diese Bachelorarbeit behandelt die Erprobung von autoencodern im Rahmen der Modellreduktion (MOR) von verdünnten Gasen. Hierfür wird eine leicht verdünnte Gleitströmung und eine Kontinuitätsströmung in Sod's Stoßrohr betrachtet. Die proper orthogonal decomposition, kurz POD, wird als Benchmark herangezogen um damit ein convolutional neural network (CNN) und ein fully connected neural network bewerten zu können. Es wird das Finden hyperparametern für beide neuronale netzte diskutiert.   
 % hier werden die deutsche Schlagwörter aus Metadaten übernommen
 %\dckeywordsde
 
