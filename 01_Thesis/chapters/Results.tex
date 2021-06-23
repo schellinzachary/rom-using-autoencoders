@@ -121,27 +121,7 @@ For this thesis an additional solution \(\hy^*\) of the BGK model in Sod's shock
 The generated snapshots match the macroscopic quantities almost exactly, similar to the results obtained without interpolation. Nonetheless, the resulting \(\L2\)-error for \(\widetilde{\hy}^*\) increases to \(\L2=0.0012\), which is 1.5 times higher than the original \(\L2\)-error.\\
 
 In summary, the reconstructions obtained from the CNN do not meet conservation of mass, momentum and total energy, which devalues their physical applicableness. Nonetheless, the CNN uses with 8246, the second highest amount of parameters. The attempt to learn both levels of rarefaction with the CNN subsequently also failed. Specifically, did the CNN reconstruct \(\hy\) from \(\rare\) as input. In addition, the intrinsic variables of the CNN show, to some degree, similarities to POD basis modes. \\
-The FCNN uses with 2683 to 3725 parameters the least amount, while achieving the lowest \(\L2\)-error in the range of \num{8e-4} to \num{9e-4}. Conservation of mass momentum and total energy is met, hence macroscopic quantities of considerable accuracy can be obtained which show a good fit to the FOM solution's. The question of the interpretability of the intrinsic variables is up to discussion owing to their entangled nature, especially for \(\rare\). Generalization was successfully tested, by generating new snapshots of \(\hy\) but at the same time increasing the \(\L2\)-error to \num{1.2e-3}.\\
-Both neural networks are tested against POD. By fixing \(p\) the algorithm is artificially limited and performs under it's abilities. Though, POD uses with this adjustement 5 to six times more parameters than the FCNN. It's determinstic character enables POD to achieve any possible accuracy, which was not observed with the neural networks.    
+The FCNN uses with 2683 to 3725 parameters the least amount, while achieving the lowest \(\L2\)-error in the range of \num{8e-4} to \num{9e-4}. At the same time for \(\hy\) less parameters than for \(\rare\) are needed to achieve comparable results using the FCNN. Conservation of mass momentum and total energy is met, hence macroscopic quantities of considerable accuracy can be obtained which show a good fit to the FOM solution's. The question of the interpretability of the intrinsic variables is up to discussion owing to their entangled nature, especially for \(\rare\). Generalization was successfully tested, by generating new snapshots of \(\hy\) but at the same time increasing the \(\L2\)-error to \num{1.2e-3}.\\
+Both neural networks are tested against POD. By fixing \(p\) the algorithm is artificially limited and performs under it's abilities. Though, POD uses with this adjustement five to six times more parameters than the FCNN. It's determinstic character enables POD to achieve any possible accuracy, which was not observed with the neural networks.    
 \subsection{Discussion and Outlook}
-
-- conservation in loss einbauen
-- no of parmameters not most importnt for NN but for POD
-- NN can learn more "powerfull" parameters
-- rare braucht mehr parameter in fcnn
-- training hard / easy ???
-- lin gleichungssystem lösen zum disentangln
-- where is the grenze um interpolieren zu können ?
-
-
-- why cnn bad
-- Tuning of cnn is given to future work
-- fcnn easier to tune, less hyperparameters
-- One model with FCNN also trying 
-- number of parameters vs not going below 1e-2 -> usecase?
-- what is the treshold of error one needs
-- interpretability is given, but int vars entangled -> variational autoencoder or WAE
-- going away from autoencoder architecture and replace BGK model with Transformer or CPC
-- for this is a lot of data needed of gases in different sites and rarities
-One reason of the lacking ability of the CNN is the small number of samples, as described in \cref{Ch:ApB} and \cref{Ch:ROM}. The resulting trembles of the signal when calculating the macroscopic quantities is due the kernel approach of the CNN. During reconstruction the resolution of the output image is bounded by the size of the kernel, which leads to pixelation.\\
-What we see here is the known drawback of POD. Sharp fronts and especially advection dominated problems lead to a fast decaying kogolomorov n-width. These problems need a nonlienar ansatz, as described in \cref{Ch:ROM}.
+In the second chapter the difference between the two flows in terms of the Knudsen number \(\Kn\) was introduced. Consequently the slip flow 

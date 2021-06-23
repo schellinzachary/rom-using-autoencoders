@@ -9,15 +9,15 @@
 \contentsline {chapter}{\numberline {2}The BGK Model}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Space and Velocity Discretization, Moments and Conservation}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Sod's shock tube as a test case for the BGK model}{6}{section.2.2}%
-\contentsline {chapter}{\numberline {3}Dimensionality reduction algorithms}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{8}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Autoencoders}{9}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Training}{11}{subsection.3.2.1}%
-\contentsline {chapter}{\numberline {4}Model Order Reduction}{22}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Offline phase and number of intrinsic variables}{23}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{28}{chapter.5}%
-\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{37}{subsection.5.0.1}%
-\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{39}{appendix.A}%
-\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{49}{appendix.B}%
-\contentsline {chapter}{Bibliography}{59}{appendix*.60}%
+\contentsline {chapter}{\numberline {3}Dimensionality reduction algorithms}{9}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Proper orthogonal decomposition (POD)}{9}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Autoencoders}{10}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Training}{12}{subsection.3.2.1}%
+\contentsline {chapter}{\numberline {4}Model Order Reduction}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Offline phase and number of intrinsic variables}{24}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Results}{29}{chapter.5}%
+\contentsline {subsection}{\numberline {5.0.1}Discussion and Outlook}{38}{subsection.5.0.1}%
+\contentsline {chapter}{\numberline {A}Hyperparameters for the Fully Connected Autoencoder}{40}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Hyperparameters for the Convolutional Autoencoder}{50}{appendix.B}%
+\contentsline {chapter}{Bibliography}{60}{appendix*.60}%
 \contentsfinish 
