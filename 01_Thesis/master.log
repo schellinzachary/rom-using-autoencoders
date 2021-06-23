@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  22 JUN 2021 23:45
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  23 JUN 2021 18:15
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1872,19 +1872,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--113
 ) [35
 
 <./Figures/master-figure34.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 121--123
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 124--125
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 [36<./Figures/master-figure35.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 125.
+(hyperref)                than one, level fixed on input line 127.
 
 ) [37] (./appendix/appendixA.tex [38
 
@@ -2042,7 +2037,7 @@ Here is how much of LuaTeX's memory you used:
  960 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 81 attribute, 88 glue_spec, 81 attr
 ibute_list, 2 write, 1 pdf_action nodes
-   avail lists: 1:3,2:2067,3:373,4:160,5:896,6:47,7:16829,8:92,9:776,10:42,11:11
+   avail lists: 1:3,2:2067,3:376,4:160,5:896,6:47,7:16829,8:92,9:776,10:42,11:11
 02
  60332 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
@@ -2069,10 +2064,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (65 pages, 7964972 bytes).
+Output written on master.pdf (65 pages, 7966421 bytes).
 
-PDF statistics: 2457 PDF objects out of 2487 (max. 8388607)
- 1963 compressed objects within 20 object streams
+PDF statistics: 2456 PDF objects out of 2487 (max. 8388607)
+ 1962 compressed objects within 20 object streams
  222 named destinations out of 1000 (max. 131072)
  160 words of extra memory for PDF output out of 10000 (max. 100000000)
 

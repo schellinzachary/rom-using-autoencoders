@@ -36,7 +36,8 @@ def macro(f):
     rhou = np.sum((rhou),axis = 1) * dv
     E = f * ((v**2) * .5) 
     E = np.sum(E, axis = 1) * dv 
-    return(rho, rhou, E)
+    E = rhou / rho
+    return(rho, rhou, E,)
 
 def conservation(macro):
     rho, rhou, E = macro
