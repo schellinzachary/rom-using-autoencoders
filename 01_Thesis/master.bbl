@@ -4,6 +4,11 @@
 \bibitem{BGK}
 Bhatnagar, Gross and Krook, \emph{A model for collision processes in gases}, .
 
+\bibitem{rarefiedGDapplc}
+J.~Fan, \emph{Rarefied gas dynamics: Advances and applications},
+  \href{http://dx.doi.org/10.6052/1000-0992-13-018}{\emph{Advances in
+  Mechanics} {\bfseries 43} (03, 2013) 185--201}.
+
 \bibitem{Carlberg}
 K.~Lee and K.~T. Carlberg, \emph{Model reduction of dynamical systems on
   nonlinear manifolds using deep convolutional autoencoders}, .
@@ -56,6 +61,10 @@ S.~A. {Schaaf}, \emph{{Mechanics of Rarefied Gases}},
   \href{http://dx.doi.org/10.1007/978-3-662-10109-4_5}{\emph{Handbuch der
   Physik} {\bfseries 3} (Jan., 1963) 591--624}.
 
+\bibitem{NumaKUL}
+J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
+  equations.'' 2020.
+
 \bibitem{puppo2019kinetic}
 G.~Puppo, \emph{Kinetic models of bgk type and their numerical integration},
   \href{https://arxiv.org/abs/1902.08311}{{\ttfamily 1902.08311}}.
@@ -107,10 +116,6 @@ V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep
 M.~Ohlberger and S.~Rave, \emph{Reduced basis methods: Success, limitations and
   future challenges},  \href{https://arxiv.org/abs/1511.02021}{{\ttfamily
   1511.02021}}.
-
-\bibitem{NumaKUL}
-J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
-  equations.'' 2020.
 
 \bibitem{fan2021interpretability}
 F.~Fan, J.~Xiong, M.~Li and G.~Wang, \emph{On interpretability of artificial
