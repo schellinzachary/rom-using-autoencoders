@@ -36,9 +36,22 @@ S.~Rifai, P.~Vincent, X.~Muller, X.~Glorot and Y.~Bengio, \emph{Contractive
 \bibitem{kingma2014autoencoding}
 D.~P. Kingma and M.~Welling, \emph{Auto-encoding variational bayes},  2014.
 
+\bibitem{tolstikhin2019wasserstein}
+I.~Tolstikhin, O.~Bousquet, S.~Gelly and B.~Schoelkopf, \emph{Wasserstein
+  auto-encoders},  2019.
+
 \bibitem{HochSchm97}
 S.~Hochreiter and J.~Schmidhuber, \emph{Long short-term memory}, {\emph{Neural
   Computation} {\bfseries 9} (1997) 1735--1780}.
+
+\bibitem{vaswani2017attention}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez et~al.,
+  \emph{Attention is all you need},  2017.
+
+\bibitem{dosovitskiy2021image}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
+  T.~Unterthiner et~al., \emph{An image is worth 16x16 words: Transformers for
+  image recognition at scale},  2021.
 
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
