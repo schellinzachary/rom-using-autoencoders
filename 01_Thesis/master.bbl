@@ -18,15 +18,6 @@ S.~R. Bukka, R.~Gupta, A.~R. Magee and R.~K. Jaiman, \emph{Assessment of
   unsteady flow predictions using hybrid deep learning based reduced order
   models},  2020.
 
-\bibitem{Bernard}
-F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
-  equation based on pod and optimal transport}, .
-
-\bibitem{eivazi2021recurrent}
-H.~Eivazi, L.~Guastoni, P.~Schlatter, H.~Azizpour and R.~Vinuesa,
-  \emph{Recurrent neural networks and koopman-based frameworks for temporal
-  predictions in a low-order model of turbulence},  2021.
-
 \bibitem{Goodfellow}
 I.~J. Goodfellow, Y.~Bengio and A.~Courville, \emph{Deep Learning}.
 \newblock MIT Press, Cambridge, MA, USA, 2016.
@@ -42,15 +33,21 @@ D.~H. Ballard, \emph{Modular learning in neural networks}, .
 S.~Rifai, P.~Vincent, X.~Muller, X.~Glorot and Y.~Bengio, \emph{Contractive
   auto-encoders: Explicit invariance during feature extraction}, .
 
-\bibitem{Rifai_2011a}
-S.~Rifai, Y.~N. Dauphin, P.~Vincent, Y.~Bengio and X.~Muller, \emph{The
-  Manifold Tangent Classifier}.
-\newblock Curran Associates, Inc., 2011.
+\bibitem{kingma2014autoencoding}
+D.~P. Kingma and M.~Welling, \emph{Auto-encoding variational bayes},  2014.
 
-\bibitem{rifai2012generative}
-S.~Rifai, Y.~Bengio, Y.~Dauphin and P.~Vincent, \emph{A generative process for
-  sampling contractive auto-encoders},
-  \href{https://arxiv.org/abs/1206.6434}{{\ttfamily 1206.6434}}.
+\bibitem{HochSchm97}
+S.~Hochreiter and J.~Schmidhuber, \emph{Long short-term memory}, {\emph{Neural
+  Computation} {\bfseries 9} (1997) 1735--1780}.
+
+\bibitem{Bernard}
+F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
+  equation based on pod and optimal transport}, .
+
+\bibitem{eivazi2021recurrent}
+H.~Eivazi, L.~Guastoni, P.~Schlatter, H.~Azizpour and R.~Vinuesa,
+  \emph{Recurrent neural networks and koopman-based frameworks for temporal
+  predictions in a low-order model of turbulence},  2021.
 
 \bibitem{schaaf}
 S.~A. {Schaaf}, \emph{{Mechanics of Rarefied Gases}},

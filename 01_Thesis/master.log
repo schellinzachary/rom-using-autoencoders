@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  26 JUN 2021 18:33
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  26 JUN 2021 23:54
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1515,14 +1515,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--9
 
  []
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 10
-.
-(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
 
- []
+LaTeX Warning: Citation `tolstikhin2019wasserstein' on page 1 undefined on input
+ line 10.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 12.
+
+
+LaTeX Warning: Citation `bibid' on page 1 undefined on input line 12.
 
 
 warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
@@ -1530,16 +1534,16 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 
 
 ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 15
+.
+ (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+))
+Underfull \hbox (badness 10000) in paragraph at lines 15--38
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 14.
+ []
 
-
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 14.
-
-
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 14.
-
-) [2]
+[2]
 \openout2 = chapters/BGK_model.aux
  (./chapters/BGK_model.tex
 Chapter 2.
@@ -2082,7 +2086,7 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (67 pages, 7970581 bytes).
+Output written on master.pdf (67 pages, 7971254 bytes).
 
 PDF statistics: 2457 PDF objects out of 2487 (max. 8388607)
  1960 compressed objects within 20 object streams
