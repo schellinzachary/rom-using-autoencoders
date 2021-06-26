@@ -81,8 +81,9 @@ def fully(c,level):
 
     rec, z = model(c)
     paramcount = count_parameters(model)
-    print(paramcount)
-
+    #print(paramcount)
+    #r2 = 1 - (torch.sum((c - rec))**2 / torch.sum((rec - torch.mean(c))**2))
+    #print(r2)
     return rec, z
 
 def decoder(c, level):
@@ -108,6 +109,7 @@ def decoder(c, level):
         decoder.layer_4.bias.copy_(state_dict['dec.layer_4.bias'])
 
     rec = decoder(c)
+
     return rec
 
 

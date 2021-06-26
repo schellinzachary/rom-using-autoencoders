@@ -18,18 +18,14 @@ S.~R. Bukka, R.~Gupta, A.~R. Magee and R.~K. Jaiman, \emph{Assessment of
   unsteady flow predictions using hybrid deep learning based reduced order
   models},  2020.
 
-\bibitem{Franz}
-T.~Franz, \emph{Reduced-order modeling of steady transonic flows via manifold
-  learning}.
-\newblock 2016.
-
-\bibitem{Kutz}
-S.~L. Brunton and J.~N. Kutz, \emph{Data driven science and engineering}.
-\newblock 2019.
-
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
   equation based on pod and optimal transport}, .
+
+\bibitem{eivazi2021recurrent}
+H.~Eivazi, L.~Guastoni, P.~Schlatter, H.~Azizpour and R.~Vinuesa,
+  \emph{Recurrent neural networks and koopman-based frameworks for temporal
+  predictions in a low-order model of turbulence},  2021.
 
 \bibitem{Goodfellow}
 I.~J. Goodfellow, Y.~Bengio and A.~Courville, \emph{Deep Learning}.
@@ -78,6 +74,10 @@ G.~A. {Sod}, \emph{{Review. A Survey of Several Finite Difference Methods for
 \bibitem{CFD1}
 J.~Reiss, \emph{Skript zu cfd 1},
   \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
+
+\bibitem{Kutz}
+S.~L. Brunton and J.~N. Kutz, \emph{Data driven science and engineering}.
+\newblock 2019.
 
 \bibitem{LeCun98}
 Y.~LeCun, L.~Bottou, G.~Orr and K.~M{\"u}ller, \emph{Efficient backprop},  in
