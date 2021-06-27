@@ -53,6 +53,11 @@ A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
   T.~Unterthiner et~al., \emph{An image is worth 16x16 words: Transformers for
   image recognition at scale},  2021.
 
+\bibitem{reiss2018shifted}
+J.~Reiss, P.~Schulze, J.~Sesterhenn and V.~Mehrmann, \emph{The shifted proper
+  orthogonal decomposition: A mode decomposition for multiple transport
+  phenomena},  2018.
+
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
   equation based on pod and optimal transport}, .

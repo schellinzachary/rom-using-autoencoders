@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  27 JUN 2021 00:40
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  27 JUN 2021 02:12
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1522,20 +1522,19 @@ warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
 
 ]
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 12.
+LaTeX Warning: Citation `krah2020wavelet' on page 2 undefined on input line 12.
 
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 12.
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
+ []
 
-LaTeX Warning: Citation `bibid' on page 2 undefined on input line 12.
-
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 15
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 14
 .
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 15--38
+Underfull \hbox (badness 10000) in paragraph at lines 14--38
 
  []
 
@@ -2050,16 +2049,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46645 strings out of 481365
+ 46647 strings out of 481365
  156263,14696376 words of node,token memory allocated
  970 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 82 attribute, 88 glue_spec, 82 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:3,2:2065,3:376,4:160,5:896,6:46,7:16829,8:102,9:776,10:42,11:1
+   avail lists: 1:3,2:2065,3:376,4:160,5:896,6:46,7:16829,8:103,9:776,10:42,11:1
 102
- 60335 multiletter control sequences out of 65536+600000
+ 60336 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
- 81i,19n,138p,2756b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 81i,19n,138p,2756b,910s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -2082,10 +2081,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (67 pages, 7972526 bytes).
+Output written on master.pdf (67 pages, 7973110 bytes).
 
-PDF statistics: 2464 PDF objects out of 2487 (max. 8388607)
- 1967 compressed objects within 20 object streams
- 226 named destinations out of 1000 (max. 131072)
+PDF statistics: 2466 PDF objects out of 2487 (max. 8388607)
+ 1969 compressed objects within 20 object streams
+ 227 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 
