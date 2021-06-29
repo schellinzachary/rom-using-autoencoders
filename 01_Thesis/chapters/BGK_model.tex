@@ -5,61 +5,59 @@
 \label{Ch:BGK}
 %\pagenumbering{arabic}
 
-This chapter covers the BGK model, a kinetic gas model in Sod's shock tube. Sod's shock tube serves here as a test case for which solutions of the BGK model were made available for this thesis.\\
-The BGK model is valid for a broad range of rarefaction levels. From continuum flows, where the Navier-Stokes equations can be utilized, to highly rarefied regimes. Rarefaction levels are labeled with the so called Knudsen number \(\Kn\), first introduced by danish physicist Martin Knudsen \cite{Bernard}. The Knudsen number is given by
+This chapter discusses the BGK model, a kinetic gas model, in Sod's shock tube. Sod's shock tube serves as a test case for which solutions of the BGK model were made available for this thesis.\\
+The BGK model is valid for a broad range of rarefaction levels. From continuum flows where the Navier-Stokes equations can be utilized, to highly rarefied regimes. Rarefaction levels are labeled with the so-called Knudsen number \(\Kn\), first introduced by danish physicist Martin Knudsen \cite{Bernard}. The Knudsen number is given by
 \begin{equation}
 	\Kn = \frac{\lambda}{l}, 
 \end{equation}
-where \(\lambda\) is the mean free path of a particle and \(l\), some domain specific length as the diameter of a tube for example. The mean free path of a particle is defined as the distance between subsequent collisions. When the mean free path is much smaller than e.g. the diameter of a tube, then the fluid can be described as a continuum and the Navier-Stokes equations can be used to approximate it's answer to initial conditions. Obviously, in rarefied gases a particle's chance to collide is much smaller and therefore it travels further between collisions. In those cases the assumption that the fluid can be viewed as a continuum fails. \Cref{Fig:ExpKN}, which is taken from \cite{NumaKL},\cref shows a possible partitioning of \(\Kn\) into specific regimes, which is comfortable. Though no clear cut can be applied to different values of \(\Kn\). The boundaries are particularly blurry \cite{schaaf}.
+where \(\lambda\) is the mean free path of a particle and \(l\) some domain specific length. For example the diameter of a tube. The mean free path of a particle is defined as the distance between subsequent collisions. When the mean free path is much smaller than, e.g., the diameter of a tube, then the fluid can be described as a continuum and the Navier-Stokes equations can be used to approximate it's answer to initial conditions. Evidently, in rarefied gases, a particle's chance to collide is much smaller and therefore it travels further between collisions. In those cases, the assumption that the fluid can be viewed as a continuum fails. \Cref{Fig:ExpKN}, which is taken from \cite{NumaKUL}, shows a possible partitioning of \(\Kn\) into specific regimes. Though no clear cut can be applied to different values of \(\Kn\). The boundaries are particularly blurry \cite{schaaf}.
 \begin{figure}[H]
 	\input{Figures/Chapter_2/Kn.tex}
-	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. The Euler equations can be used up to approximately \(\Kn < 0.01\) and describe a \glqq continuum flow\grqq{}. A \grqq slip flow\grqq{} can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourrier equations yield accurate results as stated in \cite{NumaKUL}. From \(\Kn > 0.1\) onward (transition regime, kinetic regime and free flight) the rarefaction increases steadily and only kinetic gas models deliver reasonable results. The BGK model can be used for all rarefaction levels.}
+	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. Up to approximately \(\Kn < 0.01\), the Euler equations can be used and describe a continuum flow. A slip flow can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourrier equations yield accurate results as stated in \cite{NumaKUL}. From \(\Kn > 0.1\) onward (transition regime, kinetic regime and free flight), the rarefaction increases steadily and only kinetic gas models deliver reasonable results. The BGK model can be used for all rarefaction levels.}
 	\label{Fig:ExpKN}
 \end{figure}
 \section{Space and Velocity Discretization, Moments and Conservation}
-The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann transport equation. More precisely the right hand side of the Boltzmann equation is approximated by the BGK operator 
+The BGK model was introduced by, and named after, physicists Prabhu L. Bhatnagar, Eugene P. Gross and Max Krook in 1954 \cite{BGK}. It is an approximation of the standard Boltzmann transport equation. More precisely, the right-hand side of the Boltzmann equation is approximated by the BGK operator 
 \begin{equation}
 \partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f) \text{,}
 \label{Eq:BGK}
 \end{equation}
-which can be found in \cite{puppo2019kinetic}. It features the relaxation time \(\tau(x,t)\), the Maxwellian distribution \(M_f\) and \(f(t,v,x)\) the probability of a gas particle having a microscopic velocity \(v\) in phase space \((t,v,x)\). The right hand side is a source term describing the distance between the current probability density function \(f\) and it's equilibrium solution \(M_f\). Evidently when \(f = M_f\) the right hand side becomes zero. More precisely equilibirum is reached. A time scale for which \(f\) transitions into equilibrium is given by \(\tau\) which can be defined with
+which can be found in \cite{puppo2019kinetic}. It features the relaxation time \(\tau(x,t)\), the Maxwellian distribution \(M_f\) and \(f(t,v,x)\) the probability of a gas particle having a microscopic velocity \(v\) in phase space \((t,v,x)\). It is a source term describing the distance between the current probability density function \(f\) and it's equilibrium solution \(M_f\). Evidently, when \(f = M_f\) the right-hand side becomes zero and equilibrium is reached. A time scale for which \(f\) transitions into equilibrium is given by \(\tau\) and can be defined with
 \begin{equation}
 	\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{\Kn}\mathrm{,}
 \end{equation}
-taken from \cite{Bernard}. Through \(\tau\) the viscosity exponent \(\nu\), density \(\rho\), temperature \(T\) and Knudsen number \(\Kn\) additionally establish a scaling factor for the right hand side of the BGK model. The Maxwellian distribution \(M_f\) is defined by \(\rho(x,t)\), \(T(x,t)\) and \(u(x,t)\) the macroscopic velocity
+which is taken from \cite{Bernard}. Through \(\tau\), the viscosity exponent \(\nu\), density \(\rho(x,t)\), temperature \(T(x,t)\) and Knudsen number \(\Kn\) additionally establish a scaling factor for the right-hand side of the BGK model. The Maxwellian distribution \(M_f\) is defined by
 \begin{equation}
-M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) \text{.}
-\end{equation} 
-The left hand side of the BGK model is the Boltzmann transport equation for \(f(t,v,x)\) with microscopic transport velocity \(v\).
-In one dimension, the BGK model needs to be evaluated for the three independent variables \(x\), \(v\) and \(t\) as seen above. Furthermore in three dimensions one needs to include the evaluation at \((x,y,z)\) in space and \((v_x,v_y,v_z)\) in velocity space. Note that in this thesis the BGK model is discussed in one dimension only.\\ 
-Now what makes the BGK model especially attractive for model order reduction?
+M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) \text{,}
+\end{equation}
+with \(u(x,t)\) the macroscopic velocity and \(R\) the universal gas constant.
+The left-hand side of the BGK model is the Boltzmann transport equation for \(f(t,v,x)\).
+In one dimension, the BGK model needs to be evaluated for the three independent variables \(x\), \(v\) and \(t\) as seen above. Furthermore, in three dimensions, one needs to include the evaluation at \((x,y,z)\) in space and \((v_x,v_y,v_z)\) in velocity space. Note that in this thesis, the BGK model is discussed in one dimension only.\\
 The fruitfullness of performing a model order reduction on the BGK model becomes clearer when looking at it's space and velocity discretization
 \begin{equation}
 	\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t)) \text{,}
 	\label{Eq:Discrete BGK}
 \end{equation}
-found in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^i = i \Delta t\), \(i \in \mathbb{N}\) on which \(f_{j,k} = f(t,v_k,x_j)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
+as seen in \cite{puppo2019kinetic}. Here a uniform grid is considered with \(x_j = j\Delta x\), \(j \in \mathbb{Z}\), \(v_k = k\Delta v\), \(k \in \mathbb{Z}\) and \(t^i = i \Delta t\), \(i \in \mathbb{N}\) on which \(f_{j,k} = f(t,v_k,x_j)\) and \({M_f}_{j,k} = M_f(x_j,v_k,t)\) are evaluated at point \((x_j,v_k)\) in a time instance \(t\). For brevity \(D_x f|_{j,k}\) is the discrete space derivative at \((x_j,v_k)\). Now the partial differential equation (PDE) in \cref{Eq:BGK} is broken down into a system of ordinary differential equations (ODE's) in time, for which every ODE is a linear advection equation with constant scalar speed \(v_k\) and a source term.\\
 
-To continue let's consider \(K\) to be the number of gridpoints in velocity and \(J\) to be the number of grid points in space. Then a total of \(KJ\) first order differential equations need to be evaluated in 1D. Obviously in three dimensions the system of ODE's inflates up to \(K^3J^3\) first order differential equations. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together motivate for a reduced order model.\\
-A closer look on the discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations.\\  
-
-Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\) in velocity space which can be obtained with\\
+When considering \(K\) to be the number of gridpoints in velocity, and \(J\) to be the number of grid points in space, then a total of \(KJ\) first-order differential equations need to be evaluated in 1D. Evidently, in three dimensions, the system of ODEs inflates up to \(K^3J^3\) first-order differential equations. This in turn drives the evaluation of the BGK model at the edge of intractability for dense meshes in 3D and all together motivate for a reduced order model.\\
+The discretization in velocity space yields the necessity to compute the moments of \(f\) and provides a system of conservative equations. Moments or expected values of \(f\) are the density \(\rho\), the momentum \(\rho u\) and the energy \(E\), which can be obtained with\\
 \begin{minipage}{.25\textwidth}
-	\begin{equation}
-		\rho(x,t) = \int\! f \,\mathrm{d}v\label{Eq:Moments1} 
+	\begin{equation}\label{Eq:Moments1} 
+		\rho(x,t) = \int\! f \,\mathrm{d}v \,,
 	\end{equation}
 \end{minipage}%
 \begin{minipage}{.35\textwidth}
-	\begin{equation}
-			\mathrm{,}\quad\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v\label{Eq:Moments2}
+	\begin{equation}\label{Eq:Moments2}
+			\quad\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v
 	\end{equation}
 \end{minipage}%
 \begin{minipage}{.35\textwidth}
-	\begin{equation}
-	\mathrm{and}\quad E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v\mathrm{,}\label{Eq:Moments3}
+	\begin{equation}\label{Eq:Moments3}
+	\mathrm{and}\quad E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,,
 	\end{equation}
 \end{minipage}\\\\
-as explained in  \cite{puppo2019kinetic}. Additionally the temperature \(T\) and the pressure \(p\) can be obtained with\\
+as shown in  \cite{puppo2019kinetic}. Additionally, the temperature \(T\) and the pressure \(p\) can be obtained with\\
 \begin{minipage}{0.45\textwidth}
 	\begin{equation}
 		T = \frac{2E}{3\rho} - \frac{||u||^2}{3}
@@ -67,10 +65,10 @@ as explained in  \cite{puppo2019kinetic}. Additionally the temperature \(T\) and
 \end{minipage}%
 \begin{minipage}{.45\textwidth}
 	\begin{equation}
-		\mathrm{and}\quad p = \rho T
+		\mathrm{and}\quad p = \rho T \,.
 	\end{equation}
 \end{minipage}\\\\
-With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.\\
+Thus, multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, with \(f\) and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
 	\input{Figures/Chapter_2/Boltzmann.tex}
@@ -78,21 +76,21 @@ With multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invar
 	\vspace{-30pt}
 	\label{Fig:Demo Macro}
 \end{wrapfigure}
-Again the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Now by multiplying the equilibrium solution (left hand side of \cref{Eq:BGK} substituting \(f=M_f\)) by \(\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics using the equation of state of the gas as in \cite{puppo2019kinetic}. These are
+Again, the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Multiplying the equilibrium solution (left-hand side of \cref{Eq:BGK}, substituting \(f=M_f\)) with \(\Phi(v)\) and integrating in velocity space, one finds the Euler system of classical gas dynamics. Required is the equation of state of the gas as in \cite{puppo2019kinetic}. These are
 \begin{align}
-	\partial_t&\rho + \partial_x(\rho u) = 0 \mathrm{,}\label{Eq:Conservation1} \\
-	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0\mathrm{,}\label{Eq:Conservation2}\\
-	\partial_t&E + \partial_x(u(E+p)) = 0\label{Eq:Conservation3}\mathrm{,}
+	\partial_t&\rho + \partial_x(\rho u) = 0 \,, \label{Eq:Conservation1} \\
+	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0 \,, \label{Eq:Conservation2}\\
+	\partial_t&E + \partial_x(u(E+p)) = 0\,, \label{Eq:Conservation3}
 \end{align}
-and provide conservation laws for the BGK model. Note that the evaluation of the maxwellian\(M_f\) is not straight forward and requires three additional non linear equations for every \(K\)-th grid point in velocity space. This is due to the fact, that for \(M_f\) the moments in \cref{Eq:Moments1}, \cref{Eq:Moments2} and \cref{Eq:Moments3} are needed. The quadrature rule used to compute the moments requires to be exact because even small errors magnify when \(\tau \rightarrow 0\) and in turn one fails to obtain the Euler equations. Therefore \(M_f\) must satisfy  
+and provide conservation laws for the BGK model. Note that the evaluation of the maxwellian\(M_f\) is not straight forward and requires three additional non linear equations for every \(K\)-th grid point in velocity space. This is due to the fact, that for \(M_f\) the moments in \cref{Eq:Moments1}, \cref{Eq:Moments2} and \cref{Eq:Moments3} are required. The quadrature rule used to compute the moments requires to be exact because even small errors magnify when \(\tau \rightarrow 0\) and in turn one fails to obtain the Euler equations. Therefore \(M_f\) must satisfy  
 \begin{equation}
-	<\Phi(v)f> - <\Phi(v)M_f> = 0\mathrm{,}
+	<\Phi(v)f> - <\Phi(v)M_f> = 0\,,
 \end{equation}
 which is accomplished by the computation of a discrete Maxwellian \(\mathcal{M}_f\) by solving
 \begin{equation}
-	\sum_k w_k \Phi(v_k) [f(t,v_k,x) - \exp(\alpha(x,t)\Phi(v_k))] = 0\mathrm{.}
+	\sum_k w_k \Phi(v_k) [f(t,v_k,x) - \exp(\alpha(x,t)\Phi(v_k))] = 0\,.
 \end{equation}
-Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution for can be determined for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and time discretization will be omitted.\\
+Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution can be determined for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and the temporal discretization are provided in \cite{puppo2019kinetic}.\\
 
 Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distribution function \(f(v)\) gives the values for the macroscopic quantities. The distribution is centered around the macroscopic velocity \(u\), the mean velocity of the distribution \(f\) is the temperature \(T\), integrating \(f(v)\) over velocity space one obtains the density \(\rho\).\\ 
 

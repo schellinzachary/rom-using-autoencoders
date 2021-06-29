@@ -58,6 +58,10 @@ J.~Reiss, P.~Schulze, J.~Sesterhenn and V.~Mehrmann, \emph{The shifted proper
   orthogonal decomposition: A mode decomposition for multiple transport
   phenomena},  2018.
 
+\bibitem{krah2020wavelet}
+P.~Krah, T.~Engels, K.~Schneider and J.~Reiss, \emph{Wavelet adaptive proper
+  orthogonal decomposition for large scale flow data},  2020.
+
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
   equation based on pod and optimal transport}, .
@@ -67,14 +71,14 @@ H.~Eivazi, L.~Guastoni, P.~Schlatter, H.~Azizpour and R.~Vinuesa,
   \emph{Recurrent neural networks and koopman-based frameworks for temporal
   predictions in a low-order model of turbulence},  2021.
 
+\bibitem{NumaKUL}
+J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
+  equations.'' 2020.
+
 \bibitem{schaaf}
 S.~A. {Schaaf}, \emph{{Mechanics of Rarefied Gases}},
   \href{http://dx.doi.org/10.1007/978-3-662-10109-4_5}{\emph{Handbuch der
   Physik} {\bfseries 3} (Jan., 1963) 591--624}.
-
-\bibitem{NumaKUL}
-J.~Koellermeier, Y.~Fan, M.~Rominger and G.~Samaey, ``Moment models for kinetic
-  equations.'' 2020.
 
 \bibitem{puppo2019kinetic}
 G.~Puppo, \emph{Kinetic models of bgk type and their numerical integration},
