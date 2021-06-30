@@ -13,7 +13,7 @@ The BGK model is valid for a broad range of rarefaction levels. From continuum f
 where \(\lambda\) is the mean free path of a particle and \(l\) some domain specific length. For example the diameter of a tube. The mean free path of a particle is defined as the distance between subsequent collisions. When the mean free path is much smaller than, e.g., the diameter of a tube, then the fluid can be described as a continuum and the Navier-Stokes equations can be used to approximate it's answer to initial conditions. Evidently, in rarefied gases, a particle's chance to collide is much smaller and therefore it travels further between collisions. In those cases, the assumption that the fluid can be viewed as a continuum fails. \Cref{Fig:ExpKN}, which is taken from \cite{NumaKUL}, shows a possible partitioning of \(\Kn\) into specific regimes. Though no clear cut can be applied to different values of \(\Kn\). The boundaries are particularly blurry \cite{schaaf}.
 \begin{figure}[H]
 	\input{Figures/Chapter_2/Kn.tex}
-	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. Up to approximately \(\Kn < 0.01\), the Euler equations can be used and describe a continuum flow. A slip flow can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourrier equations yield accurate results as stated in \cite{NumaKUL}. From \(\Kn > 0.1\) onward (transition regime, kinetic regime and free flight), the rarefaction increases steadily and only kinetic gas models deliver reasonable results. The BGK model can be used for all rarefaction levels.}
+	\caption{Partitioning of \(\Kn\), the Knudsen number, into levels of rarefaction. Up to approximately \(\Kn < 0.01\), the Euler equations can be used and describe a continuum flow. A slip flow can be defined in the interval \(0.01 < \Kn < 0.1\), termed as slightly rarefied in \cite{schaaf}. Here the Navier-stokes-Fourier equations yield accurate results as stated in \cite{NumaKUL}. From \(\Kn > 0.1\) onward (transition regime, kinetic regime, and free flight), the rarefaction increases steadily and only kinetic gas models deliver reasonable results. The BGK model can be applied to all rarefaction levels.}
 	\label{Fig:ExpKN}
 \end{figure}
 \section{Space and Velocity Discretization, Moments and Conservation}
@@ -68,7 +68,7 @@ as shown in  \cite{puppo2019kinetic}. Additionally, the temperature \(T\) and th
 		\mathrm{and}\quad p = \rho T \,.
 	\end{equation}
 \end{minipage}\\\\
-Thus, multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, with \(f\) and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.
+Thus multiplying \(\Phi(v) = [1,v,\frac{1}{2} v^2]\), called the collision invariants, with \(f\) and integrating in velocity space, one obtains the moments of \(f\), which are needed to compute the maxwellian in \cref{Eq:Discrete BGK}.
 \begin{wrapfigure}{r}{0.5\textwidth}
 	\vspace{-10pt}
 	\input{Figures/Chapter_2/Boltzmann.tex}
@@ -82,7 +82,7 @@ Again, the system in \cref{Eq:BGK} is in equilibrium when \(f = M_f\). Multiplyi
 	\partial_t&(\rho u) + \partial_x(\rho u^2 + p) = 0 \,, \label{Eq:Conservation2}\\
 	\partial_t&E + \partial_x(u(E+p)) = 0\,, \label{Eq:Conservation3}
 \end{align}
-and provide conservation laws for the BGK model. Note that the evaluation of the maxwellian\(M_f\) is not straight forward and requires three additional non linear equations for every \(K\)-th grid point in velocity space. This is due to the fact, that for \(M_f\) the moments in \cref{Eq:Moments1}, \cref{Eq:Moments2} and \cref{Eq:Moments3} are required. The quadrature rule used to compute the moments requires to be exact because even small errors magnify when \(\tau \rightarrow 0\) and in turn one fails to obtain the Euler equations. Therefore \(M_f\) must satisfy  
+and provide conservation laws for the BGK model. Note that the evaluation of the maxwellian\(M_f\) is not straight forward and requires three additional non-linear equations for every \(K\)-th grid point in velocity space. This is due to the fact, that for \(M_f\) the moments in \cref{Eq:Moments1}, \cref{Eq:Moments2} and \cref{Eq:Moments3} are required. The quadrature rule used to compute the moments requires to be exact because even small errors magnify when \(\tau \rightarrow 0\) and in turn one fails to obtain the Euler equations. Therefore \(M_f\) must satisfy  
 \begin{equation}
 	<\Phi(v)f> - <\Phi(v)M_f> = 0\,,
 \end{equation}
@@ -90,14 +90,14 @@ which is accomplished by the computation of a discrete Maxwellian \(\mathcal{M}_
 \begin{equation}
 	\sum_k w_k \Phi(v_k) [f(t,v_k,x) - \exp(\alpha(x,t)\Phi(v_k))] = 0\,.
 \end{equation}
-Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution can be determined for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and the temporal discretization are provided in \cite{puppo2019kinetic}.\\
+Here \(w_k\) are weights and \(\alpha(x,t)\) is a vector of three elements from which a unique solution can be found for \(\mathcal{M}_f\). Further insights on \(\mathcal{M}_f\) and the temporal discretization are provided in \cite{puppo2019kinetic}.\\
 
 Displayed in \cref{Fig:Demo Macro} is a demonstrative example of how the distribution function \(f(v)\) gives the values for the macroscopic quantities. The distribution is centered around the macroscopic velocity \(u\), the mean velocity of the distribution \(f\) is the temperature \(T\), integrating \(f(v)\) over velocity space one obtains the density \(\rho\).\\ 
 
-The BGK model inherits global conservation of mass, momentum and energy from the Boltzmann equation as seen in \cref{Eq:Conservation1}, \cref{Eq:Conservation2} and \cref{Eq:Conservation3} found in \cite{puppo2019kinetic}.
+The BGK model inherits global conservation of mass, momentum and energy from the Boltzmann equation, as seen in \cref{Eq:Conservation1}, \cref{Eq:Conservation2} and \cref{Eq:Conservation3} found in \cite{puppo2019kinetic}.
 \section{Sod's shock tube as a test case for the BGK model} \label{Sec:FeaturesSOD}
-Using a shock tube as a test case for numerical schemes solving nonlinear hyperbolic conservation laws in gas dynamics was studied by Gary A. Sod in 1978 \cite{Sod}. He evaluated different schemes in their performance of capturing the rarefaction wave, the contact discontinuity and the shock wave, which develop in the shock tube. Since then it serves as a commonly used benchmark problem in numerical gas dynamics.\\
-Nonlinear conservation laws in a simple shock tube can be solved analytically and thereafter be compared to the numerical approximation. The analytical solution is obtained using the method of characteristics and the Rankine Hugoniot jump conditions to connect the states before and after the shock. Details about both methods can be found in \cite{CFD1}.\\
+Using a shock tube as a test case for numerical schemes solving non-linear hyperbolic conservation laws in gas dynamics was studied by Sod (1978) \cite{Sod}. Sod evaluated the performance of capturing the rarefaction wave, the contact discontinuity, and the shock wave, which develop in the shock tube for different numerical schemes. Since then it serves as a commonly used benchmark problem in numerical gas dynamics.\\
+Non-linear conservation laws in a simple shock tube can be solved analytically and thereafter be compared to the numerical approximation. The analytical solution is obtained using the method of characteristics and the Rankine Hugoniot jump conditions to connect the states before and after the shock. Details about both methods can be found in \cite{CFD1}.\\
 
 The problem setup for a shock tube at \(t=0\) is shown in \cref{Fig:SodProbSetup} and \cref{Fig:SodTime}, which is split into two regions (region 1 and region 5) via a diaphragm. Here the initial conditions for two fluids at rest are \(\rho_0 = 1\) and \(\rho_5=0.125\) for the density, \(p_0=1\) and \(p_5=0.1\) for the pressure and \(u_0=u_5=0\) for the macroscopic velocity \cite{Sod}.
 \begin{figure}[H]
@@ -106,31 +106,31 @@ The problem setup for a shock tube at \(t=0\) is shown in \cref{Fig:SodProbSetup
 	\caption{Problem setup for Sod's shock tube in 1D translated for the BGK model in velocity \(v\) and space \(x\). A diaphragm is positioned at \(x_d\), seperating the whole domain in two regions (region 1 and region 5). Initial conditions for density \(\rho\), pressure \(p\) and macroscopic velocity \(u\) are indicated.}
 	\label{Fig:SodProbSetup}
 \end{figure}
-At \(t>0\) the diaphragm is broken, which leads to the formation of five regions which are depicted in \cref{Fig:SodTime0}. Between \(x_1\) and \(x_2\) we find the head and tail of the rarefaction wave traveling left. The solution for \(\rho\), \(p\) and \(u\) is continuous in this area. The rarefaction wave is clearly discernible for a dilution of \(\Kn=0.01\) and \(\Kn=0.00001\) as seen \cref{Fig:SODHyRare}. The contact discontinuity at \(x_3\) is the point where a particle traveled from it's initial location at \(x_d\) in a time \(\Delta t\). The original paper by Sod mentions here, that across the contact discontinuity \(x_3\) the macroscopic velocity \(u\) and the pressure \(p\) are continuous in  contrast to the density \(\rho\) and the energy \(E\), as depicted in \cref{Fig:SodTime0}. This cannot be assumed for rarefied gases with \(\Kn=0.01\) as seen in \cref{Fig:SODHyRare}. A pronounced contact discontinuity in the density \(\rho\) and the energy \(E\) cannot be found. Labeled as \(x_4\) is the position of the shock wave, at which in general none of the microscopic quantities will be continuous for gases with \(\Kn=0.00001\). Again this does not hold for rarefied regimes as seen in \cref{Fig:SODHyRare}.\\
-Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} in order to elaborate the general evolution in time of a gas of \(\Kn<0.01\) in Sod's shock tube. \Cref{Fig:ExamplesSod} shows solutions \(f(t_i,v,x)\) of the BGK model at \(t_0=0s\),\(t_1=0.06\) and \(t_3=0.12s\) for two levels of rarefaction: \(\Kn=0.00001\) and \(\Kn=0.01\). There the difference when increasing the dilution of a gas in Sod's shock tube is visible: An increased dilution leads to a smooth transition from region 1 to region 5 with the abundance of a pronounced shock front. 
+At \(t>0\) the diaphragm is broken, which leads to the formation of five regions that are depicted in \cref{Fig:SodTime0}. Between \(x_1\) and \(x_2\), the head and tail of the rarefaction wave are traveling left. The solution for \(\rho\), \(p\) and \(u\) is continuous in this area. The rarefaction wave is clearly discernible for a dilution of \(\Kn=0.01\) and \(\Kn=0.00001\) depicted in \cref{Fig:SODHyRare}. The contact discontinuity at \(x_3\) marks the location to which a particle has traveled from its initial location at \(x_d\) in a time \(\Delta t\). Sod (1978) mentions, that across the contact discontinuity \(x_3\), the macroscopic velocity \(u\) and the pressure \(p\) are continuous in  contrast to the density \(\rho\) and the energy \(E\) that are shown in \cref{Fig:SodTime0}. Though for a rarefied gas with \(\Kn=0.01\) this is not expected as seen in \cref{Fig:SODHyRare}. A pronounced contact discontinuity in the density \(\rho\) and the energy \(E\) is not observed. Labeled as \(x_4\) is the position of the shock wave, at which in general none of the microscopic quantities will be continuous for gases with \(\Kn=0.00001\). Again, this does not hold for rarefied regimes shown in \cref{Fig:SODHyRare}.\\
+Note, that \cref{Fig:SodTime} and \cref{Fig:SodTime0} is taken from \cite{Sod} in order to elaborate the general evolution in time of a gas of \(\Kn<0.01\) in Sod's shock tube. \Cref{Fig:ExamplesSod} shows solutions \(f(t_i,v,x)\) of the BGK model at \(t_0=0s\),\(t_1=0.06\) and \(t_3=0.12s\) for two levels of rarefaction: \(\Kn=0.00001\) and \(\Kn=0.01\). Therein the difference when increasing the dilution of a gas in Sod's shock tube is visible: An increased dilution leads to a smooth transition from region 1 to region 5 with the abundance of a pronounced shock front. 
 \begin{figure}[H]
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\input{Figures/Chapter_2/Sod_time0.tex}
-		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding initial conditions for pressure \(p\), density \(\rho\) and macroscopic velocity \(u\). Position of the diaphragm is labeled as \(x_d\).\\ \\ \\}
+		\caption{Sod's shock tube at \(t=0\). The whole domain is split into two regions with corresponding initial conditions for pressure \(p\), density \(\rho\), and macroscopic velocity \(u\). The position of the diaphragm is labeled as \(x_d\).\\ \\ \\}
 		\label{Fig:SodTime}
 	\end{subfigure}\hfill
 	\begin{subfigure}{.45\textwidth}
 		\centering
 		\input{Figures/Chapter_2/Sod_time.tex}
-		\caption{Sod's shock tube at \(t>0\). Shown are pressure \(p\), denisty \(\rho\)  and macroscoppic velocity \(u\). Five regions can be identified marked out with \(x_1\) and \(x_2\) as head and tail of the rarefaction wave, \(x_3\) as the contact discontinuity and \(x_4\) as the position of the shock wave. The position of the initial diaphragm is labeled \(x_d\). A particle that traveled from \(x_d\) during \(\Delta t\) will be located at \(x_3\).}
+		\caption{Sod's shock tube at \(t>0\). Shown are pressure \(p\), density \(\rho\)  and macroscopic velocity \(u\). Five regions can be identified marked out with \(x_1\) and \(x_2\) as head and tail of the rarefaction wave, \(x_3\) as the contact discontinuity and \(x_4\) as the position of the shock wave. The position of the initial diaphragm is labeled \(x_d\). A particle that traveled from \(x_d\) during \(\Delta t\) will be located at \(x_3\).}
 		\label{Fig:SodTime0}
 	\end{subfigure}\\ \vfill
 	\begin{subfigure}{\textwidth}
 		\centering
 		\input{Figures/Chapter_2/ExamplesSod.tex}
-		\vspace{-10pt}
+		%\vspace{-10pt}
 		\caption{Two solutions of the BGK model \(f(t_i,v,x)\) in Sod's shock tube with \(\Kn=0.00001\) (top row) and \(\Kn=0.01\) (bottom row) for a fixed time \(t_i\). Solutions are presented for \(t_0=0s\), \(t_1=0.06s\) and \(t_2=0.12s\).}
 		\label{Fig:ExamplesSod}
 	\end{subfigure}\\%\vspace{5pt}
 	\begin{subfigure}{\textwidth}
 		\input{Figures/Chapter_2/MacroFOMhyvsrare.tex}
-		\caption{Macroscopic quantities \(\rho(x,t_i)\), \(\rho u(x,t_i)\) and \(E(x,t_i)\) in the SOD schock tube at \(t_i=0.12s\). Displayed are the quantities for \(\Kn=0.00001\) and for \(\Kn=0.01\), where the former is abbreviated with \(\hy\) and the latter with \(\rare\). The locations of head and tail of rarefaction wave \(x_1\) and \(x_2\), contact discontinuity \(x_3\) and shockwave \(x_4\) are labeled.}
+		\caption{Macroscopic quantities \(\rho(x,t_i)\), \(\rho u(x,t_i)\) and \(E(x,t_i)\) in Sod's shock tube at \(t_i=0.12s\). Displayed are the quantities for \(\Kn=0.00001\) and for \(\Kn=0.01\), where the former is abbreviated with \(\hy\) and the latter with \(\rare\). The locations of head and tail of rarefaction wave \(x_1\) and \(x_2\), contact discontinuity \(x_3\) and shockwave \(x_4\) are labeled.}
 		\label{Fig:SODHyRare}
 	\end{subfigure}\caption{BGK model in Sod's shock tube: Initial conditions and their evolution after \(\Delta t\) are shown in (a) and (b). Two solutions of differing rarefaction levels are presented in (c). Macroscopic quantities of (c) at \(t=0.12s\) are shown in (d).}
 	\label{Fig:Sod}

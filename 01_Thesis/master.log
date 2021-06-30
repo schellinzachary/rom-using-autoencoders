@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  29 JUN 2021 12:31
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  30 JUN 2021 15:03
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1631,6 +1631,11 @@ master-figure4.pdf><./Figures/master-figure5.pdf><./Figures/master-figure6.pdf>]
 \openout2 = chapters/Deep_Learning.aux
  (./chapters/Deep_Learning.tex
 Chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
 [8
 
 
@@ -2032,7 +2037,7 @@ Here is how much of LuaTeX's memory you used:
  970 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 82 attribute, 88 glue_spec, 82 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:3,2:2065,3:376,4:160,5:896,6:46,7:16829,8:104,9:776,10:42,11:1
+   avail lists: 1:4,2:2065,3:376,4:160,5:896,6:46,7:16829,8:104,9:776,10:42,11:1
 102
  60336 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
@@ -2059,10 +2064,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7972522 bytes).
+Output written on master.pdf (66 pages, 7972424 bytes).
 
-PDF statistics: 2466 PDF objects out of 2487 (max. 8388607)
- 1970 compressed objects within 20 object streams
+PDF statistics: 2467 PDF objects out of 2487 (max. 8388607)
+ 1971 compressed objects within 20 object streams
  227 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 
