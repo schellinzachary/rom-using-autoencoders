@@ -1665,6 +1665,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
  []
 
 
+LaTeX Warning: Citation `torch_ini' on page 12 undefined on input line 104.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 102--106
 
  []
@@ -1708,7 +1711,7 @@ Underfull \hbox (badness 10000) in alignment at lines 170--192
  []
 
 
-LaTeX Warning: Citation `torch' on page 17 undefined on input line 197.
+LaTeX Warning: Citation `torch_ini' on page 17 undefined on input line 195.
 
 [17<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/mast
 er-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
@@ -1878,8 +1881,4 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--72
 (./Figures/Chapter_5/code_cnn_pod.tex
 ===== Image 'Figures/master-figure34' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 96--113
-
- []
-
-(./Figures/Chapter_5/Hy_Int.te
+Underfull \hbox 
