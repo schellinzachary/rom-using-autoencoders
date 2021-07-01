@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  1 JUL 2021 17:34
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  1 JUL 2021 18:49
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1677,21 +1677,22 @@ Overfull \hbox (17.0pt too wide) detected at line 133
 [13] (./Figures/Chapter_3/Training.tex
 ===== Image 'Figures/master-figure9' is up-to-date. ======
 )
-Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--153
+Overfull \hbox (12.5599pt too wide) in paragraph at lines 2--151
  [][] 
  []
 
 
-LaTeX Warning: Float too large for page by 11.27496pt on input line 155.
+LaTeX Warning: Float too large for page by 11.27496pt on input line 153.
 
 (./Figures/Chapter_3/Capacity.tex
 ===== Image 'Figures/master-figure10' is up-to-date. ======
-) [14]
+) [14] [15<./Figures/master-figure9.pdf>] [16<./Figures/master-figure10.pdf>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 175.
+(Font)              <10> on input line 174.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 175.
- (./Figures/Chapter_3/ReLU.tex
+(Font)              <7> on input line 174.
+
+(./Figures/Chapter_3/ReLU.tex
 ===== Image 'Figures/master-figure11' is up-to-date. ======
 ) (./Figures/Chapter_3/LeakyReLU.tex
 ===== Image 'Figures/master-figure12' is up-to-date. ======
@@ -1702,28 +1703,27 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ) (./Figures/Chapter_3/Tanh.tex
 ===== Image 'Figures/master-figure15' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in alignment at lines 171--193
+Underfull \hbox (badness 10000) in alignment at lines 170--192
 [] [] [] [] []
  []
 
 
-LaTeX Warning: Citation `Pytorch website' on page 15 undefined on input line 199
+LaTeX Warning: Citation `Pytorch website' on page 17 undefined on input line 198
 .
 
-[15] [16<./Figures/master-figure9.pdf>] [17<./Figures/master-figure10.pdf><./Fig
-ures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/master-figure
-13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
-(./Figures/Chapter_3/Stride_01.tex
+[17<./Figures/master-figure11.pdf><./Figures/master-figure12.pdf><./Figures/mast
+er-figure13.pdf><./Figures/master-figure14.pdf><./Figures/master-figure15.pdf>]
+ (./Figures/Chapter_3/Stride_01.tex
 ===== Image 'Figures/master-figure16' is up-to-date. ======
 )
-Overfull \hbox (12.04819pt too wide) in paragraph at lines 1--209
+Overfull \hbox (12.04819pt too wide) in paragraph at lines 1--208
  [][] 
  []
 
 (./Figures/Chapter_3/Stride_02.tex
 ===== Image 'Figures/master-figure17' is up-to-date. ======
 )
-Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--215
+Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--214
  [][] 
  []
 
@@ -1734,12 +1734,12 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--215
 ) (./Figures/Chapter_3/Transpose_uneven.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
 ))
-Underfull \hbox (badness 10000) in paragraph at lines 203--40
+Underfull \hbox (badness 10000) in paragraph at lines 202--40
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--40
+Underfull \hbox (badness 10000) in paragraph at lines 202--40
 
  []
 
@@ -2049,12 +2049,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  46647 strings out of 481365
- 156263,14696376 words of node,token memory allocated
+ 156265,14696376 words of node,token memory allocated
  970 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 82 attribute, 88 glue_spec, 82 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:3,2:2065,3:358,4:154,5:858,6:43,7:15661,8:104,9:776,10:43,11:1
-103
+   avail lists: 1:3,2:2065,3:358,4:154,5:833,6:43,7:15122,8:104,9:776,10:43,11:1
+062
  60336 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2776b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -2080,10 +2080,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7970829 bytes).
+Output written on master.pdf (66 pages, 7969750 bytes).
 
-PDF statistics: 2469 PDF objects out of 2487 (max. 8388607)
- 1973 compressed objects within 20 object streams
+PDF statistics: 2470 PDF objects out of 2487 (max. 8388607)
+ 1974 compressed objects within 20 object streams
  227 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 

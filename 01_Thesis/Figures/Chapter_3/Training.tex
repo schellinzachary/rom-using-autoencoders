@@ -22,13 +22,13 @@ every join/.style={norm},   % Default linetype for connecting boxes
 }
 \tikzstyle{every node} = [font=\footnotesize]
 	% Start by placing the nodes
-	\node [proc] (mb) {Partition \(\btch_{train}\) into \(n\) Minibatches:\\ \(\btch_{train} = \{\minib_{i},\dots,\minib_{n}\}\)};
+	\node [proc] (mb) {Partition \(\btch_{train}\) into \(n\) Minibatches:\\ \(\btch_{train} = \{\minib,\dots,P_{n}\}\)};
 	\node [proc,join] (E0B0) {Epoch counter: \(ep_i = 0\)\\Batch counter: \(mb_i=0\)};
 	\node [proc,join] (ini) {Initialize weights to \(\frepar_0\)};
 	\node [test,join] (t1) {\(ep_i \leq ep_{H}\)};
 	\node [test,join] (t2) {\(mb_i\leq mb_{n}\)};
-	\node [proc,join] (p1) {Forward propagation:\\ \(AE(\minib_i)=\tilde{\minib}_i\)};
-	\node [proc,join] (p2) {Compute loss:\\ \(L(\minib_i,\tilde{\minib}_i)=E_{B_i}\)};
+	\node [proc,join] (p1) {Forward propagation:\\ \(AE(\minib)=\tilde{\minib}\)};
+	\node [proc,join] (p2) {Compute loss:\\ \(L(\minib,\tilde{\minib})=E_{B_i}\)};
 	\node [proc,join] (p3) {Backpropagation:\\ \(\nabla_{\frepar} J = \grd\) };
 	\node [proc,join] (p4) {Optimize \(\frepar\):\\\(\frepar_{i+1} = \frepar_i + \Delta\frepar_i\)};
 	\node [proc,join] (Bplus) {\(mb_{i+1} = mb_i + 1\)};
