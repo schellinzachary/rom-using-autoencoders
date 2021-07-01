@@ -6,10 +6,6 @@ A level-1 auxiliary file: front/title.aux
 A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/BGK_model.aux
 A level-1 auxiliary file: chapters/Deep_Learning.aux
-White space in argument---line 66 of file chapters/Deep_Learning.aux
- : \citation{Pytorch
- :                   website}
-I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/Reduced_order_Modeling.aux
 A level-1 auxiliary file: chapters/Results.aux
 Database file #1: other/references.bib
@@ -17,10 +13,11 @@ Repeated entry---line 202 of file other/references.bib
  : @misc{dumoulin2018guide
  :                        ,
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "torch_ini"
 Warning--empty publisher in Kutz
 You've used 33 entries,
             2189 wiz_defined-function locations,
-            705 strings with 8490 characters,
+            706 strings with 8495 characters,
 and the built_in function-call counts, 5825 in all, are:
 = -- 460
 > -- 420
@@ -59,4 +56,4 @@ warning$ -- 1
 while$ -- 41
 width$ -- 35
 write$ -- 245
-(There were 2 error messages)
+(There was 1 error message)
