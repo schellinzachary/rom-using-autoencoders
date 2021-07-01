@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  1 JUL 2021 14:27
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  1 JUL 2021 17:34
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1664,14 +1664,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
+
+ []
+
 [12]
 Overfull \hbox (17.0pt too wide) detected at line 133
 [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 107--135
-
  []
 
 [13] (./Figures/Chapter_3/Training.tex
@@ -2049,12 +2049,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 
 Here is how much of LuaTeX's memory you used:
  46647 strings out of 481365
- 156269,14696376 words of node,token memory allocated
+ 156263,14696376 words of node,token memory allocated
  970 words of node memory still in use:
    7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 82 attribute, 88 glue_spec, 82 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:2065,3:358,4:154,5:874,6:43,7:15764,8:104,9:776,10:43,11:1
-102
+   avail lists: 1:3,2:2065,3:358,4:154,5:858,6:43,7:15661,8:104,9:776,10:43,11:1
+103
  60336 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2776b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -2080,7 +2080,7 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7971231 bytes).
+Output written on master.pdf (66 pages, 7970829 bytes).
 
 PDF statistics: 2469 PDF objects out of 2487 (max. 8388607)
  1973 compressed objects within 20 object streams
