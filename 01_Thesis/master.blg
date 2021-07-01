@@ -6,6 +6,10 @@ A level-1 auxiliary file: front/title.aux
 A level-1 auxiliary file: chapters/introduction.aux
 A level-1 auxiliary file: chapters/BGK_model.aux
 A level-1 auxiliary file: chapters/Deep_Learning.aux
+White space in argument---line 73 of file chapters/Deep_Learning.aux
+ : \citation{Pytorch
+ :                   website}
+I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/Reduced_order_Modeling.aux
 A level-1 auxiliary file: chapters/Results.aux
 Database file #1: other/references.bib
@@ -15,36 +19,36 @@ Repeated entry---line 202 of file other/references.bib
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "torch_ini"
 Warning--empty publisher in Kutz
-You've used 33 entries,
+You've used 32 entries,
             2189 wiz_defined-function locations,
-            706 strings with 8495 characters,
-and the built_in function-call counts, 5825 in all, are:
-= -- 460
-> -- 420
+            699 strings with 8325 characters,
+and the built_in function-call counts, 5714 in all, are:
+= -- 450
+> -- 419
 < -- 0
-+ -- 124
++ -- 123
 - -- 91
-* -- 389
-:= -- 885
-add.period$ -- 35
-call.type$ -- 33
-change.case$ -- 31
+* -- 385
+:= -- 875
+add.period$ -- 34
+call.type$ -- 32
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 218
-empty$ -- 581
+cite$ -- 33
+duplicate$ -- 213
+empty$ -- 561
 format.name$ -- 91
-if$ -- 1451
+if$ -- 1419
 int.to.chr$ -- 0
-int.to.str$ -- 33
+int.to.str$ -- 32
 missing$ -- 57
-newline$ -- 105
+newline$ -- 102
 num.names$ -- 32
-pop$ -- 158
+pop$ -- 149
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 126
+skip$ -- 123
 stack$ -- 0
 substring$ -- 111
 swap$ -- 37
@@ -54,6 +58,6 @@ top$ -- 0
 type$ -- 0
 warning$ -- 1
 while$ -- 41
-width$ -- 35
-write$ -- 245
-(There was 1 error message)
+width$ -- 34
+write$ -- 238
+(There were 2 error messages)

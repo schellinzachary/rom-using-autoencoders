@@ -116,10 +116,6 @@ V.~Bushaev, ``Stochastic gradient descent with momentum.''
   \url{https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d},
   Dec, 2017.
 
-\bibitem{torch}
-``Pytroch documentation.'' \url{https://pytorch.org/docs/stable/index.html},
-  2019.
-
 \bibitem{lane_2018}
 T.~Lane, \emph{Transposed convolutions explained with… ms excel!},  Nov,
   2018.
