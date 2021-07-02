@@ -25,20 +25,21 @@ MOR is partitioned into two successive phases called the \textit{offline} - and 
 \begin{equation}
 	\L2 = \frac{||f - \tilde{f} ||_2}{||f||_2}
 \end{equation}
-which is called the relative \(\L2\)-Error norm. Note, the abbreviation \(\L2\) is used from here on. Therefore the online phase may be described as a stage of independence from the full order model.
-Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD \cref{Sec: POD}, depends on a rapidly decaying Kolmogorov N-width. In particular advection dominated problems exhibit a slow decay of the Kolmogorov N-width as described in \cite{ohlberger2015reduced}. Thus yielding a need for non-linear methods like autoencoders described in \cref{Sec:AE}. The Kolmogorov N-width is given by
+which is called the relative \(\L2\)-Error norm. Note, the abbreviation \(\L2\) is used from here on. Therefore the online phase may be described as a stage of independence from the full order model. Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD, depends on a rapidly decaying Kolmogorov N-width. In particular, advection-dominated problems exhibit a slow decay of the Kolmogorov N-width as described in \cite{ohlberger2015reduced}, thus yielding the need for non-linear methods like autoencoders. The Kolmogorov N-width is given by
 \begin{equation}
 	d_{V}(W):= \sup_{f \in W} \inf_{\tilde{f} \in V} ||f-\tilde{f}||
 	\label{Eq:Kolmogorov}
 \end{equation}
-and gives the worst best approximation error for elements of \(W\). The convergence behaviour of the Kolmogorov N-width for advection dominated problems, especially when jump conditions are involved as in Sod's shock tube \cref{Ch:BGK}, decays with
+and measures the worst best-approximation error for elements of \(W\). The convergence behavior of the Kolmogorov N-width for advection-dominated problems, especially when jump conditions are involved as in Sod's shock tube, decays with
 \begin{equation}
 	d_p(W) \leq \frac{1}{2} p^{-1/2},
 	\label{Eq:KolmoAdv}
 \end{equation}
-where \(p\) denotes the number of RB or intrinsic variables. Further insight in provided in \cite{ohlberger2015reduced}.\\
-Note that hereafter we will solely use the term intrinsic variables. The relevance of using non-linear reduction methods for MOR is often formulated in terms of a slow decaying Kolmogorov N-width. And even tough the BGK-model in Sod's shock tube describes an advection problem with jump discontinuities implies that linear reduction methods should fail, we will see in the following that this is only partly true in this case.
+where \(p\) denotes the number of RB or intrinsic variables. Further insight is provided in \cite{ohlberger2015reduced}.\\
+Note, that hereafter the term intrinsic variables will be used solely. The relevance of using non-linear reduction methods for MOR is often formulated in terms of a slow decaying Kolmogorov N-width. And even though the BGK-model in Sod's shock tube describes an advection problem with jump discontinuities implies that linear reduction methods should fail, the following will show that this is only partly true for this case.
+
 \section{Offline phase and number of intrinsic variables}\label{Sec: FOM}
+
 The FOM is the 1D BGK-model in Sod's shock tube for which solutions \(f(x,v,t)\) for two levels of rarefaction are gratefully provided by Julian K\"ollermeier and the Departement of Mathematics at the RWTH Aachen.\\
 One level with \(\Kn=0.01\) can be viewed as a slip flow as explained in \cite{schaaf}. The dilution up to this level of rarefaction is little, though the boundary to view this flow as a continuum is reached, leading to inaccuracies when employing the common Navier Stokes equations. Still the NFS-equations (Navier-Stokes-Fourrier) could be used \cite{NumaKUL} in addition to the BGK-model. The solution with this level of rarefaction is hereafter referred to as \(\rare\). The other is a solution which is situated in the continuum flow regime with \(\Kn=0.00001\) for which the Navier-Stokes equations can be utilized without hesitation. Hereafter the solution for this flow will be referred to as \(\hy\). An in-depth description of the BGK-model and Sod's shock can be found in \cref{Ch:BGK}.\\
 Note that both \(\hy\) and \(\rare\) are three dimensional tensors comprising \(f(x,v,t)\).\\
