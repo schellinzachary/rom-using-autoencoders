@@ -3,6 +3,8 @@ import scipy.io as sio
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
+import pandas as pd
+import seaborn as sn
 #import tikzplotlib
 
 #plt.style.use("seaborn")
@@ -77,7 +79,7 @@ fig_r.suptitle("Code FCNN  rare")
 fig_cnp.suptitle("Code CNN and POD hy&rare")
 
 
-for idx, level in enumerate(["hy","rare"]):
+for idx, level in enumerate(["rare","rare"]):
 
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
@@ -107,6 +109,20 @@ for idx, level in enumerate(["hy","rare"]):
 
     names = ["rho","rhou","E","T","u"]
     m_fom = macro(c_fom)
+    
+
+    # if level == "rare":
+
+    #     df_mfom = np.stack(m_fom,axis=1)
+    #     df_mfom = pd.DataFrame(df_mfom[-1,:,:].T,columns=names)
+    #     df_zfcnn = pd.DataFrame(z_fcnn[-1,:,:].T,columns=["1","2","3","4","5"])
+    #     df = pd.concat([df_mfom,df_zfcnn],axis=1)
+    #     corr = df.corr()
+        
+    #     sn.heatmap(corr.iloc[:5,5:], annot=True)
+    #     plt.show()
+
+    # exit()
 
     if level == "hy":
         for i in range(5):

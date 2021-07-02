@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  2 JUL 2021 18:08
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  2 JUL 2021 21:12
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1750,7 +1750,7 @@ Chapter 4.
 ) (./Figures/MOR/flow_red.tex
 ===== Image 'Figures/master-figure22' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 8--23
+Underfull \hbox (badness 10000) in paragraph at lines 7--21
 
  []
 
@@ -1758,7 +1758,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 8--23
 
 
 
-<./Figures/master-figure21.pdf><./Figures/master-figure22.pdf>] [23]
+<./Figures/master-figure21.pdf><./Figures/master-figure22.pdf>]
 (./Figures/Chapter_4/CumSum_Hydro.tex
 ===== Image 'Figures/master-figure23' is up-to-date. ======
 )
@@ -1793,7 +1793,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--116
 
  []
 
-[24] (./Figures/Chapter_4/Var_iv.tex
+[23] [24] (./Figures/Chapter_4/Var_iv.tex
 ===== Image 'Figures/master-figure25' is up-to-date. ======
 )
 Underfull \hbox (badness 10000) in paragraph at lines 117--131
@@ -2049,7 +2049,7 @@ Here is how much of LuaTeX's memory you used:
  983 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 83 attribute, 88 glue_spec, 83 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:2065,3:330,4:153,5:673,6:37,7:12177,8:104,9:776,10:43,11:8
+   avail lists: 1:2,2:2065,3:365,4:153,5:673,6:42,7:12177,8:104,9:776,10:43,11:8
 29
  60333 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
@@ -2076,10 +2076,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7968901 bytes).
+Output written on master.pdf (66 pages, 7968798 bytes).
 
-PDF statistics: 2468 PDF objects out of 2487 (max. 8388607)
- 1972 compressed objects within 20 object streams
+PDF statistics: 2467 PDF objects out of 2487 (max. 8388607)
+ 1971 compressed objects within 20 object streams
  226 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 
