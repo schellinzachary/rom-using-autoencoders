@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  1 JUL 2021 23:53
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  2 JUL 2021 18:08
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1735,23 +1735,13 @@ Overfull \hbox (15.38516pt too wide) in paragraph at lines 1--213
 
 (./Figures/Chapter_3/Kernel.tex
 ===== Image 'Figures/master-figure18' is up-to-date. ======
-) (./Figures/Chapter_3/Transpose_even.tex
+) [18] [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>]
+(./Figures/Chapter_3/Transpose_even.tex
 ===== Image 'Figures/master-figure19' is up-to-date. ======
 ) (./Figures/Chapter_3/Transpose_uneven.tex
 ===== Image 'Figures/master-figure20' is up-to-date. ======
-))
-Underfull \hbox (badness 10000) in paragraph at lines 201--40
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--40
-
- []
-
-[18] [19<./Figures/master-figure16.pdf><./Figures/master-figure17.pdf>]
-[20<./Figures/master-figure18.pdf>] [21<./Figures/master-figure19.pdf><./Figures
-/master-figure20.pdf>]
+)) [20<./Figures/master-figure18.pdf>] [21<./Figures/master-figure19.pdf><./Figu
+res/master-figure20.pdf>]
 \openout2 = chapters/Reduced_order_Modeling.aux
  (./chapters/Reduced_order_Modeling.tex
 Chapter 4.
@@ -2054,14 +2044,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46645 strings out of 481365
- 156265,14696376 words of node,token memory allocated
- 970 words of node memory still in use:
-   7 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 82 attribute, 88 glue_spec, 82 attr
+ 46643 strings out of 481365
+ 125007,14696376 words of node,token memory allocated
+ 983 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 83 attribute, 88 glue_spec, 83 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:2065,3:364,4:161,5:844,6:45,7:15440,8:104,9:776,10:43,11:1
-089
- 60335 multiletter control sequences out of 65536+600000
+   avail lists: 1:2,2:2065,3:330,4:153,5:673,6:37,7:12177,8:104,9:776,10:43,11:8
+29
+ 60333 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2776b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2086,7 +2076,7 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7969025 bytes).
+Output written on master.pdf (66 pages, 7968901 bytes).
 
 PDF statistics: 2468 PDF objects out of 2487 (max. 8388607)
  1972 compressed objects within 20 object streams
