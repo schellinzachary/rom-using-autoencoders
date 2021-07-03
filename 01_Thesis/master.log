@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  3 JUL 2021 19:25
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  3 JUL 2021 21:09
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1902,18 +1902,33 @@ Appendix A.
 ) [40
 
 <./Figures/master-figure36.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 41--91
+Underfull \hbox (badness 10000) in paragraph at lines 41--58
 
  []
 
-[41] [42]
-Overfull \hbox (12.01216pt too wide) in paragraph at lines 92--112
-\T1/lmr/m/n/10.95 Eight ex-per-i-ments with dif-fer-ent ac-ti-va-tion func-tion
-s namely ReLU, ELU, Tanh, SiLU and LeakyReLU
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 61--93
+
+ []
+
+[42]
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--112
+Overfull \hbox (12.01216pt too wide) in paragraph at lines 96--115
+[]\T1/lmr/m/n/10.95 Eight ex-per-i-ments with dif-fer-ent ac-ti-va-tion func-ti
+ons namely ReLU, ELU, Tanh, SiLU and LeakyReLU
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--115
 
  []
 
@@ -1950,7 +1965,7 @@ Appendix B.
 ) (./Figures/Parameterstudy/Convolutional/Layer.tex
 ===== Image 'Figures/master-figure48' is up-to-date. ======
 )
-Underfull \hbox (badness 10000) in paragraph at lines 2--284
+Underfull \hbox (badness 10000) in paragraph at lines 2--287
 [][]
  []
 
@@ -1958,12 +1973,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 2--284
 (./Figures/Parameterstudy/Convolutional/Batch.tex
 ===== Image 'Figures/master-figure49' is up-to-date. ======
 )
-Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--307
+Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--310
 [][]
  []
 
 
-Overfull \hbox (6.88399pt too wide) in alignment at lines 314--324
+Overfull \hbox (6.88399pt too wide) in alignment at lines 317--327
 [] [] [] [] [] [] [][][][]
  []
 
@@ -1971,17 +1986,17 @@ Overfull \hbox (6.88399pt too wide) in alignment at lines 314--324
 (./Figures/Parameterstudy/Convolutional/Channels.tex
 ===== Image 'Figures/master-figure50' is up-to-date. ======
 )
-Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--330
+Overfull \hbox (2.12492pt too wide) in paragraph at lines 2--333
 [][]
  []
 
 
-Overfull \hbox (13.94182pt too wide) in paragraph at lines 338--352
+Overfull \hbox (13.94182pt too wide) in paragraph at lines 341--355
  [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--354
+Underfull \hbox (badness 10000) in paragraph at lines 336--357
 
  []
 
@@ -1989,12 +2004,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--354
 (./Figures/Parameterstudy/Convolutional/ExpDatAug.tex
 ===== Image 'Figures/master-figure51' is up-to-date. ======
 )
-Overfull \hbox (16.99448pt too wide) in paragraph at lines 3--357
+Overfull \hbox (16.99448pt too wide) in paragraph at lines 3--360
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--357
+Underfull \hbox (badness 10000) in paragraph at lines 3--360
 
  []
 
@@ -2049,7 +2064,7 @@ Here is how much of LuaTeX's memory you used:
  983 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 83 attribute, 88 glue_spec, 83 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:2065,3:363,4:153,5:673,6:39,7:12177,8:104,9:776,10:43,11:8
+   avail lists: 1:2,2:1561,3:363,4:153,5:673,6:39,7:12177,8:104,9:638,10:43,11:8
 29
  60333 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
@@ -2076,7 +2091,7 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7968442 bytes).
+Output written on master.pdf (66 pages, 7968409 bytes).
 
 PDF statistics: 2464 PDF objects out of 2487 (max. 8388607)
  1968 compressed objects within 20 object streams
