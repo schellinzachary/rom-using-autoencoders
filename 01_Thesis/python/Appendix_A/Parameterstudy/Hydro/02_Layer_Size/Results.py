@@ -2,9 +2,6 @@
 Parameterstudy, Width, Hydro
 '''
 
-from pathlib import Path
-from os.path import join
-home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Width/hydro_width.tex"
 
@@ -12,16 +9,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-#import tikzplotlib
+#####import tikzplotlib
 
 
 import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
+from os.path import join
+from pathlib import Path
+home = Path.home()
+loc_chpt = "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/02_Layer_Size"
 
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+device = 'cpu'
 
 
 class params():
@@ -33,7 +35,7 @@ class params():
 class data():
     #load data
     f = np.load(join(home,loc_data))
-    f = tensor(f, dtype=torch.float).to(device)
+    f = tensor(f, dtype=torch.float)#.to(device)
 
 class Encoder(nn.Module):
     def __init__(self,h_size):
@@ -88,23 +90,25 @@ for idx, i in enumerate(params.H_SIZES):
     decoder = Decoder(i)
 
     #Autoencoder
-    model = Autoencoder(encoder, decoder).to(device)
+    model = Autoencoder(encoder, decoder)#.to(device)
 
-    checkpoint = torch.load('Results/P%s.pt'%i)
+    checkpoint = torch.load(join(home,loc_chpt,
+        'Results/P%s.pt'%i),
+    map_location="cpu")
     model.load_state_dict(checkpoint['model_state_dict'])
     train_loss = checkpoint['train_losses']
     val_loss = checkpoint['test_losses']
     N_EPOCHS = checkpoint['epoch']
-    print(N_EPOCHS)
+
     rec = model(data.f)
     l2_loss = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
 
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss)
+    l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
     width.append(i)
-    print(len(train_loss))
+
   
     
     ax[idx].semilogy(train_loss,'k''--',label='Train')
@@ -114,7 +118,7 @@ for idx, i in enumerate(params.H_SIZES):
     ax[idx].set_title('%s Nodes'%i)
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
-#tikzplotlib.save(join(home,loc_plot))
+####tikzplotlib.save(join(home,loc_plot))
 plt.show()
 
 loss_dict = {"Width":width,
@@ -124,5 +128,5 @@ loss_dict = {"Width":width,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict,dtype=float)
-
+print("Experiment FCNN Layer Hydro")
 print(loss_dict)

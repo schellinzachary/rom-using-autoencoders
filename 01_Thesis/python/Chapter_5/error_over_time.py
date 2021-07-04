@@ -8,22 +8,27 @@ from matplotlib import cm
 from os.path import join
 from pathlib import Path
 home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_5"
 
 
 
 #load the full order BGK data
 def load_BGKandMethod(method, level):
     if (method == 'Fully' or method=="POD") and level == 'hy':
-        c = np.load('Preprocessed_Data/sod25Kn0p00001_2D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p00001_2D_unshuffled.npy'))
 
     elif (method == 'Fully' or method=="POD") and level == 'rare':
-        c = np.load('Preprocessed_Data/sod25Kn0p01_2D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p01_2D_unshuffled.npy'))
 
     elif method == 'Conv' and level == 'hy':
-        c = np.load('Preprocessed_Data/sod25Kn0p00001_4D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p00001_4D_unshuffled.npy'))
 
     elif method == 'Conv' and level == 'rare':
-        c = np.load('Preprocessed_Data/sod25Kn0p01_4D_unshuffled.npy')   
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p01_4D_unshuffled.npy'))   
 
     return c
 
@@ -52,7 +57,6 @@ for idx, level in enumerate(["hy", "rare"]):
     rec_pod, z = pod(c,level)
 
     rec_pod = shapeback_field(rec_pod)
-    print(rec_pod.shape)
     c = shapeback_field(c)
     err_pod = l2_time(c, rec_pod)
 

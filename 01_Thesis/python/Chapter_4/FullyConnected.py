@@ -5,6 +5,11 @@ import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
+from os.path import join
+from pathlib import Path
+home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_4"
+
 device = 'cpu'
 
 class Encoder_rare(nn.Module):
@@ -95,12 +100,14 @@ def intr_eval(c,iv,level):
     if level == "hy":
         encoder = Encoder_hy(iv)
         decoder = Decoder_hy(iv)
-        checkpoint = torch.load("Models/FullyConnected/Hydro/%s"%hydro_models[iv],
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Hydro/%s"%hydro_models[iv]),
             map_location=torch.device('cpu'))
     else:
         encoder = Encoder_rare(iv)
         decoder = Decoder_rare(iv)
-        checkpoint = torch.load("Models/FullyConnected/Rare/%s"%rare_models[iv],
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Rare/%s"%rare_models[iv]),
             map_location=torch.device('cpu'))
     
     model   = Autoencoder(encoder, decoder).to(device)

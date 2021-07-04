@@ -31,5 +31,5 @@ def pod(c, level):
     xx = u[:,:level]@S[:level,:level]@vh[:level,:]
 
     paramcount = count_parameters(u[:,:level],S[:level,:level],vh[:level,:])
-    print(paramcount)
+    #print(paramcount)
     return xx, u[:,:level]

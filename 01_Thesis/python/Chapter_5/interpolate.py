@@ -13,6 +13,7 @@ import matplotlib
 from os.path import join
 from pathlib import Path
 home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_5"
 
 v = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/v.mat"))
 x = sio.loadmat(join(home, "rom-using-autoencoders/02_data_sod/sod25Kn0p01/x.mat"))
@@ -28,16 +29,20 @@ tnew = tnew['treport'].squeeze()
 #load the full order BGK data
 def load_BGKandMethod(method, level):
     if (method == 'Fully' or method=="POD") and level == 'hy':
-        c = np.load('Preprocessed_Data/sod25Kn0p00001_2D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p00001_2D_unshuffled.npy'))
 
     elif (method == 'Fully' or method=="POD") and level == 'rare':
-        c = np.load('Preprocessed_Data/sod25Kn0p01_2D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p01_2D_unshuffled.npy'))
 
     elif method == 'Conv' and level == 'hy':
-        c = np.load('Preprocessed_Data/sod25Kn0p00001_4D_unshuffled.npy')
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p00001_4D_unshuffled.npy'))
 
     elif method == 'Conv' and level == 'rare':
-        c = np.load('Preprocessed_Data/sod25Kn0p01_4D_unshuffled.npy')   
+        c = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod25Kn0p01_4D_unshuffled.npy'))   
 
     return c
 
@@ -140,7 +145,8 @@ for idx, level in enumerate(["hy"]):
         fnew=fnew.detach().numpy()
         fnew = shapeback_field(fnew)
         #fold = c.detach().numpy()
-        fold = np.load('Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy')
+        fold = np.load(join(home,loc_data,
+            'Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy'))
         fold = shapeback_field(fold)
         l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
 

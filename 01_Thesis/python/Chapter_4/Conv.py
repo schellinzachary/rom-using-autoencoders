@@ -8,6 +8,10 @@ import torch.tensor as tensor
 
 
 device = 'cpu'
+from os.path import join
+from pathlib import Path
+home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_4"
 
 
 class Encoder_2(nn.Module):
@@ -90,7 +94,7 @@ def intr_eval(c,iv,level):
     decoder = Decoder_2(iv)
     model   = Autoencoder(encoder, decoder).to(device)
     
-    checkpoint = torch.load("Models/Convolutional/%s"%models[iv],
+    checkpoint = torch.load(join(home,loc_data,"Models/Convolutional/%s"%models[iv]),
             map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['model_state_dict'])
 

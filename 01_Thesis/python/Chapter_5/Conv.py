@@ -6,6 +6,11 @@ import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
+from os.path import join
+from pathlib import Path
+home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_5"
+
 device = 'cpu'
 
 def count_parameters(model):
@@ -89,7 +94,8 @@ def conv(c):
     decoder = Decoder_2(act_h)
     model   = Autoencoder(encoder, decoder).to(device)
     
-    checkpoint = torch.load("Models/Convolutional/model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06.pt",
+    checkpoint = torch.load(join(home,loc_data,
+        "Models/Convolutional/model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06.pt"),
             map_location=torch.device('cpu'))
     model.load_state_dict(checkpoint['model_state_dict'])
 

@@ -5,6 +5,11 @@ import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
+from os.path import join
+from pathlib import Path
+home = Path.home()
+loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_5"
+
 device = 'cpu'
 
 def count_parameters(model):
@@ -44,9 +49,19 @@ class Decoder(nn.Module):
             x = method(x)
         return x
 
-hydro_model = "('elu', 'elu')-epoch4989-val_loss4.454E-09.pt"
+hydro_models = {
+    2: "del_var-2-epoch4990-val_loss2.521E-08.pt",
+    3: "del_var-3-epoch4988-val_loss2.909E-08.pt",
+    4: "del_var-4-epoch4990-val_loss2.598E-08.pt",
+    5: "del_var-5-epoch4990-val_loss1.776E-07.pt"
+}
 
-rare_model = "('relu', 'relu')-epoch4987-val_loss7.191E-09.pt"
+rare_models = {
+    2: "del_var-2-epoch4988-val_loss2.904E-07.pt",
+    3: "del_var-3-epoch3000-val_loss9.540E-08.pt",
+    4: "del_var-4-epoch4988-val_loss1.631E-07.pt",
+    5: "del_var-5-epoch4989-val_loss1.623E-07.pt"
+}
 
 #set variables
 activations = {
@@ -56,27 +71,30 @@ activations = {
 
 
 #Load & evaluate models for intrinsic variables variation
-def fully(c,level):
+def fully_int(del_var,c,level):
     c = tensor(c, dtype=torch.float)
 
 
     if level == "hy":
-        act_h = activations["elu"]
-        act_c = activations["elu"]
-        encoder = Encoder(act_h, act_c, 30, 3)
-        decoder = Decoder(act_h, 30, 3)
-        checkpoint = torch.load("Models/FullyConnected/Hydro/%s"%hydro_model,
+        # act_h = activations["elu"]
+        # act_c = activations["elu"]
+        encoder = Encoder(nn.ELU(), nn.ELU(), 30, 3)
+        decoder = Decoder(nn.ELU(), 30, 3)
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Hydro/%s"%hydro_models[del_var]),
             map_location=torch.device('cpu'))
-    else:
-        act_h = activations["relu"]
-        act_c = activations["relu"]
-        encoder = Encoder(act_h, act_c, 40, 5)
-        decoder = Decoder(act_h, 40, 5)
-        checkpoint = torch.load("Models/FullyConnected/Rare/%s"%rare_model,
+    if level == "rare":
+
+        # act_h = activations["relu"]
+        # act_c = activations["relu"]
+        encoder = Encoder(nn.ReLU(), nn.ReLU(), 40, 5)
+        decoder = Decoder(nn.ReLU(), 40, 5)
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Rare/%s"%rare_models[del_var]),
             map_location=torch.device('cpu'))
 
     model   = Autoencoder(encoder, decoder).to(device)
-    model.load_state_dict(checkpoint['model_state_dict'][0])
+    model.load_state_dict(checkpoint['model_state_dict'])
 
 
     rec, z = model(c)
@@ -86,22 +104,24 @@ def fully(c,level):
     #print(r2)
     return rec, z
 
-def decoder(c, level):
+def decoder_int(del_var,c, level):
     c = tensor(c, dtype=torch.float)
 
     if level == "hy":
-        act_h = activations["elu"]
-        decoder = Decoder(act_h, 30, 3)
-        checkpoint = torch.load("Models/FullyConnected/Hydro/%s"%hydro_model,
+        #act_h = activations["elu"]
+        decoder = Decoder(nn.ELU(), 30, 3)
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Hydro/%s"%hydro_models[del_var]),
             map_location=torch.device('cpu'))
 
     if level == "rare":
-        act_h = activations["relu"]
-        decoder = Decoder(act_h, 40, 5)
-        checkpoint = torch.load("Models/FullyConnected/Rare/%s"%rare_model,
+        #act_h = activations["relu"]
+        decoder = Decoder(nn.ReLU(), 40, 5)
+        checkpoint = torch.load(join(home,loc_data,
+            "Models/FullyConnected/Rare/%s"%rare_models[del_var]),
             map_location=torch.device('cpu'))
 
-    state_dict = checkpoint['model_state_dict'][0]
+    state_dict = checkpoint['model_state_dict']
     with torch.no_grad():
         decoder.layer_c.weight.copy_(state_dict['dec.layer_c.weight'])
         decoder.layer_c.bias.copy_(state_dict['dec.layer_c.bias'])
