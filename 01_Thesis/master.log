@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  3 JUL 2021 23:04
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  4 JUL 2021 15:16
  system commands enabled.
 **master.tex
 (./master.tex
@@ -1892,7 +1892,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--122
 [36<./Figures/master-figure35.pdf>]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 126.
+(hyperref)                than one, level fixed on input line 146.
 
 [37]) [38] (./appendix/appendixA.tex [39
 
@@ -2056,7 +2056,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `master.out' has not changed.
-(rerunfilecheck)             Checksum: D64CCDCFCEBE2685D56D5F4883EDC6BF;3132.
+(rerunfilecheck)             Checksum: BFE49A69BFC1A710DF284BD29C812EE7;3132.
 
 
 LaTeX Warning: There were undefined references.
@@ -2065,14 +2065,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46643 strings out of 481365
+ 46646 strings out of 481365
  125007,14696376 words of node,token memory allocated
  983 words of node memory still in use:
    8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 83 attribute, 88 glue_spec, 83 attr
 ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:1561,3:363,4:153,5:673,6:39,7:12177,8:104,9:638,10:43,11:8
+   avail lists: 1:2,2:1561,3:371,4:153,5:673,6:39,7:12177,8:104,9:638,10:43,11:8
 29
- 60333 multiletter control sequences out of 65536+600000
+ 60335 multiletter control sequences out of 65536+600000
  138 fonts using 7840667 bytes
  81i,19n,138p,2776b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
@@ -2097,10 +2097,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (66 pages, 7968349 bytes).
+Output written on master.pdf (66 pages, 7970497 bytes).
 
-PDF statistics: 2464 PDF objects out of 2487 (max. 8388607)
- 1968 compressed objects within 20 object streams
- 226 named destinations out of 1000 (max. 131072)
+PDF statistics: 2466 PDF objects out of 2487 (max. 8388607)
+ 1970 compressed objects within 20 object streams
+ 227 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -10,7 +10,7 @@ The benchmarking of POD and neural networks begins with a contrast of the number
 	\caption{Amount of parameters \(\frepar\) used to reconstruct \(f\), the number of intrinsic variables \(p\) and the corresponding $\L2$-Error for POD, the FCNNs, and the CNN.}
 	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
 		\toprule
-		Algorithm & \multicolumn{2}{c}{Parameters \(\frepar\)} & \multicolumn{2}{c}{Int. variables \(p\)}& \multicolumn{2}{c}{$\L2$-Error} \\ [.5ex]
+		Algorithm & \multicolumn{2}{c}{Parameters \(\frepar\)} & \multicolumn{2}{c}{Int. variables \(p\)}& \multicolumn{2}{c}{$\L2$-error} \\ [.5ex]
 		 & \(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)&\(\hy\)&\(\rare\)\\   
 		\hline
 		POD     & 15129 & 25225 & 3 & 5 & 0.0205 & 0.0087 \\
@@ -120,6 +120,26 @@ For this thesis, an additional solution \(\hy^*\) of the BGK model in Sod's shoc
 \end{figure}
 The generated snapshots match the macroscopic quantities almost exactly, similar to the results obtained without interpolation. Nonetheless, the resulting \(\L2\)-error for \(\widetilde{\hy}^*\) increases to \(\L2=0.0012\), which is 1.5 times higher than the original \(\L2\)-error.\\
 
+Furthermore, the temporal resolution of \(\hy\) and \(\rare\) is reduced. Every second, third, fourth and fifth timestep is isolated to create four versions \(\hy^*\) and \(\rare^*\) that have a lower temporal resolution. Thus, the four versions have 13, 9, 7 and 5 timesteps respectively.  With these, the FCNNs are again trained to simulate the situation in which fewer timesteps are available. This results in four autoencoders, each trained with fewer examples. Afterwards, cubic splines are used to interpolate in the temporal axis of the intrinsic variables \(\idhy^*\) and \(\idrare^*\), equally to previous the experiment. The decoders used to reconstruct \(\tilde{\hy}^*\) and \(\tilde{\rare}^*\) are obtained from the training with fewer examples. The results are presented in \cref{Tab: Int}.    
+\begin{table}[H]
+	\centering
+	\caption{Results for training with fewer samples and corresponding interpolation in time. The number of timesteps is given with \(n\), the resolution in time is given with \(\Delta \tilde{t}\). Validation error and associated \(\L2\)-error are given for \(\hy^*\) and \(\rare^*\). Additionally, the \(\L2\)-error for \(\tilde{\hy}^*\) and \(\tilde{\rare}^*\) show the results of the temporal  interpolation.}
+	\begin{tabular*}{16cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
+		\toprule
+		$n$& \(\Delta\tilde{t}\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(\L2\)-error}& \multicolumn{2}{c}{$\L2$-error} \\ [.5ex]
+		& & \(\hy^*\)&\(\rare^*\)&\(\hy^*\)&\(\rare^*\)&\(\tilde{\hy}^*\)&\(\tilde{\rare}^*\)\\   
+		\hline
+		13& 0.01s   & \num{2.5e-8} & \num{2.9e-7} & 0.0018 & 0.0054 & 0.0036 & 0.0058 \\
+		9& 	0.015s	& \num{2.9e-8} & \num{9.5e-8} & 0.0017 & 0.0038 & 0.0067 & 0.0056 \\
+		7&  0.02s 	& \num{2.5e-8} & \num{1.6e-7} & 0.0019 & 0.0042 & 0.0101 & 0.0073\\
+		5&  0.025s  & \num{1.7e-7} & \num{1.6e-7} & 0.0039 & 0.0051 & 0.0367 & 0.0138\\
+		\bottomrule
+	\end{tabular*} \label{Tab: Int}
+\end{table}
+%\begin{figure}
+%	\input{Figures/Chapter_5/all_int.tex}
+%\end{figure}
+%\\
 In summary, the reconstructions obtained from the CNN do not meet conservation of mass, momentum, and total energy, which devalues their physical applicableness. Nonetheless, the CNN uses with 8246, the second-highest amount of parameters. The attempt to learn both levels of rarefaction with the CNN subsequently also failed. Specifically, the CNN reconstructs \(\hy\) from \(\rare\) as input. In addition, the intrinsic variables of the CNN show, to some degree, similarities to POD basis modes. \\
 The FCNN uses with 2683 to 3725 parameters the least amount, while achieving the lowest \(\L2\)-error in the range of \num{8e-4} to \num{9e-4}. At the same time for \(\hy\), fewer parameters than for \(\rare\) are needed to achieve comparable results using the FCNN. Conservation of mass momentum and total energy is met, hence macroscopic quantities of considerable accuracy can be obtained which show a good fit to the FOM solution's. The question of the interpretability of the intrinsic variables is up to discussion owing to their entangled nature, especially for \(\rare\). Generalization was successfully tested, by generating new snapshots of \(\hy\) but at the same time increasing the \(\L2\)-error to \num{1.2e-3}.\\
 Both neural networks are tested against POD. By fixing \(p\) the algorithm is artificially limited and performs under its abilities. However, POD uses with this adjustment five to six times more parameters than the FCNN. Its deterministic character enables POD to achieve any possible accuracy, which was not observed with the neural networks.    
