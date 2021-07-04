@@ -50,7 +50,9 @@ for idx, level in enumerate(["hy", "rare"]):
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from POD import pod
     rec_pod, z = pod(c,level)
+
     rec_pod = shapeback_field(rec_pod)
+    print(rec_pod.shape)
     c = shapeback_field(c)
     err_pod = l2_time(c, rec_pod)
 

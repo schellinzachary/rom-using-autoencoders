@@ -41,7 +41,6 @@ def macro(f):
 
 def conservation(macro):
     rho, rhou, E = macro
-    print(rho.shape)
     dtrho = np.gradient(np.sum(rho,axis=1))
     dtrhou = np.gradient(np.sum(rhou,axis=1))
     dtE = np.gradient(np.sum(E,axis=1))

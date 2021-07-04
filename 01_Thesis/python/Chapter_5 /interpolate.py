@@ -6,7 +6,7 @@ from scipy.interpolate import BarycentricInterpolator
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
-##import tikzplotlib
+###import tikzplotlib
 
 #plt.style.use("seaborn")
 
@@ -143,7 +143,6 @@ for idx, level in enumerate(["hy"]):
         fold = np.load('Preprocessed_Data/sod241Kn0p00001_2D_unshuffled.npy')
         fold = shapeback_field(fold)
         l2 = np.linalg.norm((fnew - fold).flatten())/np.linalg.norm(fold.flatten()) # calculatre L2-Norm Error
-        print('Interpolation L2 Error:',l2)
 
         m_old = macro(fold)
         m_new = macro(fnew)
@@ -180,7 +179,6 @@ for del_var in del_vars:
             code = shapeback_code(code)
             cnew=np.empty([ti,iv,200])
             for i in range(iv):
-                print(t[::del_var])
                 f = interpolate.interp1d(t[::del_var],code[::1,i,:],
                     axis=0,kind=kind,
                     fill_value=fill
@@ -298,6 +296,6 @@ for idx, del_var in enumerate(del_vars):
     axxxs[1,idx].set_xlabel('\(x\)')
     axxxs[1,idx].set_ylabel('\(E\)')
     axxxs[1,idx].legend()
-###tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/all_int.tex"))
+####tikzplotlib.save(join(home,"rom-using-autoencoders/01_Thesis/Figures/Chapter_5/all_inttest.tex"))
 
 plt.show()

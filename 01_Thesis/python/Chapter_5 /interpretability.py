@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
 import seaborn as sn
-#import tikzplotlib
+###import tikzplotlib
 
 #plt.style.use("seaborn")
 
@@ -79,14 +79,13 @@ fig_r.suptitle("Code FCNN  rare")
 fig_cnp.suptitle("Code CNN and POD hy&rare")
 
 
-for idx, level in enumerate(["rare","rare"]):
+for idx, level in enumerate(["hy","rare"]):
 
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
     from POD import pod
-    rec_pod, z_pod = pod(c,level)
-    print(z_pod.shape)
-    z_pod = shapeback_code(z_pod)
+    rec_pod, z_pod = pod(c.T,level)
+    #z_pod = shapeback_code(z_pod)
 
 
 
@@ -97,8 +96,6 @@ for idx, level in enumerate(["rare","rare"]):
     z = z.detach().numpy()
     z_fcnn = shapeback_code(z)
     c_fom = shapeback_field(c)
-
-    z_fcnn = z_pod
 
 
     method = "Conv"

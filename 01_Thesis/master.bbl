@@ -2,7 +2,8 @@
 \providecommand{\href}[2]{#2}\begingroup\raggedright\begin{thebibliography}{10}
 
 \bibitem{BGK}
-Bhatnagar, Gross and Krook, \emph{A model for collision processes in gases}, .
+Bhatnagar, Gross and Krook, \emph{A model for collision processes in gases},
+  1954.
 
 \bibitem{rarefiedGDapplc}
 J.~Fan, \emph{Rarefied gas dynamics: Advances and applications},
@@ -24,10 +25,10 @@ I.~J. Goodfellow, Y.~Bengio and A.~Courville, \emph{Deep Learning}.
 
 \bibitem{Rumelhart}
 D.~Rumelhart, G.~Hinton and R.~Williams, \emph{Learning internal
-  representations by error propagation}, .
+  representations by error propagation},  1986.
 
 \bibitem{Ballard}
-D.~H. Ballard, \emph{Modular learning in neural networks}, .
+D.~H. Ballard, \emph{Modular learning in neural networks},  1987.
 
 \bibitem{Rifai2011}
 S.~Rifai, P.~Vincent, X.~Muller, X.~Glorot and Y.~Bengio, \emph{Contractive

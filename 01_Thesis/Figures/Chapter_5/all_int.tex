@@ -1,6 +1,8 @@
 % This file was created by tikzplotlib v0.9.8.
 \begin{tikzpicture}
 
+%\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+
 \begin{groupplot}[
 group style={group size=4 by 2,
 	horizontal sep= 1.1cm,
@@ -10,22 +12,21 @@ legend style={fill opacity=0.1, draw opacity=1, text opacity=1, at={(1,1)}, anch
 tick align=outside,
 tick pos=left,
 x grid style={white!69.0196078431373!black},
-xmin=0.375, xmax=0.75,
 xtick style={color=black},
+xmin=-0.04725, xmax=1.04725,
 y grid style={white!69.0196078431373!black},
-ymin=-10, ymax=10,
 ytick style={color=black},
+ymin=-0.00862946381914901, ymax=0.525234224104059,
 height=.26\textwidth,
 width=.26\textwidth,
-xlabel={\(x\)},
-y label style={yshift=-1.4em}
+ytick={0.4,0.0},
+y label style={yshift=-1.5em},
+ylabel={\(E\)},
+xlabel={\(x\)}
 ]
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.00862946381914901, ymax=0.525234224104059,
 ]
-\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.500966441400048
 0.0075 0.500966441400048
@@ -228,11 +229,9 @@ table {%
 0.9925 0.0167830305595778
 0.9975 0.0167830305595778
 };
-\addlegendentry{prediction}
-
+\addlegendentry{pred.}
 \addplot [semithick, black, mark=+, mark size=2, mark options={solid},
-dashed,%only marks,
-mark repeat=5]
+dashed,mark repeat=5]
 table {%
 0.0025 0.499999997249975
 0.0075 0.499999997249952
@@ -438,11 +437,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.0111195899654679, ymax=0.524339025212615,
 ]
-\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.499435741532944
 0.0075 0.499435741532944
@@ -645,10 +641,9 @@ table {%
 0.9925 0.0138918523114374
 0.9975 0.0138918523114374
 };
-\addlegendentry{prediction}
-
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,
-mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.499999997249975
 0.0075 0.499999997249952
@@ -854,11 +849,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.00858107903990665, ymax=0.524218143739969,
 ]
-\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid},mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.497372060669838
 0.0075 0.497372060669838
@@ -1061,9 +1053,9 @@ table {%
 0.9925 0.0156847620883809
 0.9975 0.0156856902709023
 };
-\addlegendentry{prediction}
-
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.499999997249975
 0.0075 0.499999997249952
@@ -1269,13 +1261,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.177896439736822, ymax=0.563159646091552,
 ]
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
-dashed,%only marks,
-mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.497951376883028
 0.0075 0.497951376883028
@@ -1478,9 +1465,9 @@ table {%
 0.9925 0.0152660796678828
 0.9975 0.0152664752511438
 };
-\addlegendentry{prediction}
-
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.499999997249975
 0.0075 0.499999997249952
@@ -1686,13 +1673,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.00929086466296649, ymax=0.52425127211348,
 ]
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
-dashed,%only marks,
-mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.499143715669147
 0.0075 0.499143768524006
@@ -1895,8 +1877,9 @@ table {%
 0.9925 0.014961885089289
 0.9975 0.0149610506450538
 };
-\addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.49999935680546
 0.0075 0.499999184516617
@@ -2102,13 +2085,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.00848958699034735, ymax=0.524213116033832,
 ]
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
-dashed,%only marks,
-mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.498474623274579
 0.0075 0.498474504729913
@@ -2311,9 +2289,9 @@ table {%
 0.9925 0.0171954419507427
 0.9975 0.0172031596826669
 };
-\addlegendentry{prediction}
-
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.49999935680546
 0.0075 0.499999184516617
@@ -2519,13 +2497,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.00849752246662563, ymax=0.524379761035676,
 ]
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
-dashed,%only marks,
-mark repeat=5]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.5001568833336
 0.0075 0.500156883286499
@@ -2728,8 +2701,9 @@ table {%
 0.9925 0.0157288135721268
 0.9975 0.0157274786905741
 };
-\addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.49999935680546
 0.0075 0.499999184516617
@@ -2935,11 +2909,8 @@ table {%
 \addlegendentry{truth}
 
 \nextgroupplot[
-xmin=-0.04725, xmax=1.04725,
-ylabel={\(E\)},
-ymin=-0.0129981168211312, ymax=0.524427807930536,
 ]
-\addplot [semithick, color0, mark=*, mark size=3, mark options={solid}]
+\addplot [semithick, color0, mark=pentagon, mark size=2, mark options={solid}, mark repeat=5]
 table {%
 0.0025 0.498438987743855
 0.0075 0.498438987743855
@@ -3142,8 +3113,9 @@ table {%
 0.9925 0.0188386299789867
 0.9975 0.0188387144933817
 };
-\addlegendentry{prediction}
-\addplot [semithick, black, mark=+, mark size=2, mark options={solid},dashed,mark repeat=5]
+\addlegendentry{pred.}
+\addplot [semithick, black, mark=+, mark size=2, mark options={solid},
+dashed,mark repeat=5]
 table {%
 0.0025 0.49999935680546
 0.0075 0.499999184516617

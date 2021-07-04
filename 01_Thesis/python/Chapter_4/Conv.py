@@ -96,6 +96,5 @@ def intr_eval(c,iv,level):
 
     rec = model(c)
     l2 = torch.norm((c - rec).flatten())/torch.norm(c.flatten()) # calculatre L2-Norm Error
-    print(l2)
     return(l2.detach().numpy())
 

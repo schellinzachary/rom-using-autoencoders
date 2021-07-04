@@ -5,7 +5,7 @@ from scipy import signal
 import numpy as np
 from numpy import linspace, zeros, sqrt, pi
 import matplotlib.pyplot as plt
-import tikzplotlib
+###import tikzplotlib
 
 
 #Variables
@@ -25,7 +25,7 @@ plt.plot(t,np.linspace(0.9,0.9,100),'--''k')
 plt.xlabel('v')
 plt.ylabel('f')
 plt.legend()
-tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/BGK/Boltzmann.tex')
+###tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/BGK/Boltzmann.tex')
 plt.show()
 
 

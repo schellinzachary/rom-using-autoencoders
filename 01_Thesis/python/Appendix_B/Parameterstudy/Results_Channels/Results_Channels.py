@@ -281,8 +281,8 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('last-model-{}exp-4.pt'.format(idx+2))
+    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location="cpu")
+    checkpoint_loss = torch.load('last-model-{}exp-4.pt'.format(idx+2),map_location="cpu")
 
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']

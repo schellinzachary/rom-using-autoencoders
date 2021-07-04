@@ -303,10 +303,10 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     a = activations[a]
     c = activations[c]
     #encoder
-    encoder = Encoder_2(a,c) #change to Encoder_4(a,c)
+    encoder = Encoder_2(a,c) #change to Encoder_4(a,c) for 4 layer
 
     #decoder
-    decoder = Decoder_2(a) #change to Decoder_4(a)
+    decoder = Decoder_2(a) #change to Decoder_4(a) for 4 layer
 
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)

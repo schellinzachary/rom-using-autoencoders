@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+###import tikzplotlib
 
 
 import torch
@@ -221,9 +221,9 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('{}.pt'.format(best_model))
+    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location="cpu")
     #checkpoint_loss = torch.load('last-model-{}.pt'.format(idx))
-    checkpoint_loss = torch.load('last-model-{}_sched.pt'.format(idx)) #uncomment for lr schedules results           
+    checkpoint_loss = torch.load('last-model-{}_sched.pt'.format(idx),map_location="cpu") #uncomment for lr schedules results           
 
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']

@@ -22,33 +22,33 @@ Warning--empty publisher in Kutz
 You've used 32 entries,
             2189 wiz_defined-function locations,
             699 strings with 8325 characters,
-and the built_in function-call counts, 5714 in all, are:
-= -- 450
+and the built_in function-call counts, 5813 in all, are:
+= -- 456
 > -- 419
 < -- 0
 + -- 123
 - -- 91
-* -- 385
+* -- 388
 := -- 875
 add.period$ -- 34
 call.type$ -- 32
 change.case$ -- 30
 chr.to.int$ -- 0
 cite$ -- 33
-duplicate$ -- 213
-empty$ -- 561
+duplicate$ -- 216
+empty$ -- 594
 format.name$ -- 91
-if$ -- 1419
+if$ -- 1452
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 57
+missing$ -- 48
 newline$ -- 102
 num.names$ -- 32
-pop$ -- 149
+pop$ -- 167
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 123
+skip$ -- 132
 stack$ -- 0
 substring$ -- 111
 swap$ -- 37
@@ -59,5 +59,5 @@ type$ -- 0
 warning$ -- 1
 while$ -- 41
 width$ -- 34
-write$ -- 238
+write$ -- 241
 (There were 2 error messages)

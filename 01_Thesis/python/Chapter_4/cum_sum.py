@@ -1,3 +1,5 @@
+
+ 
 ### Producing the plots for for Chapter 4
 ###
 ### Usage : 1. Choose rarefaction level: hy, rare
@@ -35,7 +37,6 @@ def POD(c):
 	for i in range(len(s)):
 		xx = u[:,:i]@S[:i,:i]@vh[:i,:]
 		l2 = np.linalg.norm((c - xx).flatten())/np.linalg.norm(c.flatten()) # calculatre L2-Norm Error
-		print(i,l2)
 	return s
 
 
