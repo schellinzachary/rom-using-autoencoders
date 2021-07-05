@@ -1,16 +1,19 @@
-########################################################################
-This work contains the thesis: Reduced Order Modeling using Autoencoders
-########################################################################
+##############################################################################
+Bachelorarbeit: Model order reduction of rarefied gases using neural networks
+#############################################################################
+Name: Zachary Schellin
+Matr.:376930
 
-It is structured as follows
-    - 01_Thesis contains the thesis itself
-    - 02_data_sod contains the FOM BGK data in the sods's schock tube
-    - 03_POD contains the POD
-    - 04_Autoencoder contains the trained Autoencoders for the hydrodynamic data and the
-      rarefied data with fully connected and convolutional layers  
+This thesis is structured as follows
+    - 01_Thesis contains all LaTeX files
+    -01_Thesis/python contains all python files for plotting (data generation) sortet   by chapters 1 - 5 & Appendix A and Appendix B
+    - 02_data_sod contains the FOM BGK data in the Sods's schock tube
+    - 03_POD contains python files for initial developement of POD
+    - 04_Autoencoder python files for initial experimentation with neural networks and the Parameterstudy
+    - 04_Autoencoder/01_Fully_Connected contains python files for the Parameterstudy  devided in /Hydro and /Rare
+    - 04_Autoencoder/02_Convolutional contains python files for the Parameterstudy
+    - 04_Autoencoder/Preprocessing contains python files for Preprocessing
     - 05_Misc Conatians :
-        - BA_Notes Contains notes taken during developement
-        - Neural_Network contains the Neural Network developement i.e. the Parameterstudy
         - paper contains all papers used in this thesis
            
 How to use the thesis: 

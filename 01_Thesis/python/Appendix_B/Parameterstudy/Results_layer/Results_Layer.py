@@ -333,9 +333,9 @@ for exp in experiments:
         ax[idx].set_ylim(ymax=1e-2)
         ax[idx].legend()
         if exp == 2:
-            fig.suptitle("Increasing Layers")
+            fig.suptitle("Increasing Layers CNN")
         if exp == 3:
-            fig.suptitle("Increasing Batch Size")
+            fig.suptitle("Increasing Batch Size CNN")
 
 
 #tikzplotlib.save(join(home,loc_plot))

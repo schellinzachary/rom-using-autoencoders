@@ -108,6 +108,7 @@ act = []
 min_idx = []
 
 fig, ax = plt.subplots(8,1)
+fig.suptitle("Activations FCNN Rare")
 
 for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     a, c = ac_combo

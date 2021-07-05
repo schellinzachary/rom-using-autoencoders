@@ -12,7 +12,7 @@ J.~Fan, \emph{Rarefied gas dynamics: Advances and applications},
 
 \bibitem{Carlberg}
 K.~Lee and K.~T. Carlberg, \emph{Model reduction of dynamical systems on
-  nonlinear manifolds using deep convolutional autoencoders}, .
+  nonlinear manifolds using deep convolutional autoencoders},  2019.
 
 \bibitem{bukka2020assessment}
 S.~R. Bukka, R.~Gupta, A.~R. Magee and R.~K. Jaiman, \emph{Assessment of
@@ -65,7 +65,7 @@ P.~Krah, T.~Engels, K.~Schneider and J.~Reiss, \emph{Wavelet adaptive proper
 
 \bibitem{Bernard}
 F.~Bernard, A.~Iollo and S.~Riffaud, \emph{Reduced-order model for the bgk
-  equation based on pod and optimal transport}, .
+  equation based on pod and optimal transport},  2018.
 
 \bibitem{eivazi2021recurrent}
 H.~Eivazi, L.~Guastoni, P.~Schlatter, H.~Azizpour and R.~Vinuesa,
@@ -92,12 +92,11 @@ G.~A. {Sod}, \emph{{Review. A Survey of Several Finite Difference Methods for
   Computational Physics} {\bfseries 27} (Apr., 1978) 1--31}.
 
 \bibitem{CFD1}
-J.~Reiss, \emph{Skript zu cfd 1},
-  \href{https://arxiv.org/abs/1603.07285}{{\ttfamily 1603.07285}}.
+J.~Reiss, \emph{Skript zu cfd 1}, .
 
 \bibitem{Kutz}
 S.~L. Brunton and J.~N. Kutz, \emph{Data driven science and engineering}.
-\newblock 2019.
+\newblock Cambridge University Press, 2019.
 
 \bibitem{LeCun98}
 Y.~LeCun, L.~Bottou, G.~Orr and K.~M{\"u}ller, \emph{Efficient backprop},  in
@@ -118,11 +117,14 @@ V.~Bushaev, ``Stochastic gradient descent with momentum.''
   Dec, 2017.
 
 \bibitem{lane_2018}
-T.~Lane, \emph{Transposed convolutions explained with… ms excel!},  Nov,
-  2018.
+T.~Lane, ``Transposed convolutions explained with… ms excel!.''
+  \url{https://medium.com/apache-mxnet/transposed-convolutions-explained-with-ms-excel-52d13030c7e8},
+  Nov, 2018.
 
 \bibitem{divyanshu_2020}
-M.~Divyanshu, \emph{Transposed convolution demystified},  Mar, 2020.
+M.~Divyanshu, ``Transposed convolution demystified.''
+  \url{https://towardsdatascience.com/transposed-convolution-demystified-84ca81b4baba},
+  Mar, 2020.
 
 \bibitem{dumoulin2018guide}
 V.~Dumoulin and F.~Visin, \emph{A guide to convolution arithmetic for deep

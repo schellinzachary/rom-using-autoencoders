@@ -1,5 +1,7 @@
 #!/bin/sh
 python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_2/gauss_example.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_2/example_hy_rare.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_3/capacity.py
 python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_4/cum_sum.py
 python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_4/intrinsic_variables.py
 python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_5/error_over_time.py

@@ -25,6 +25,7 @@ plt.plot(t,np.linspace(0.9,0.9,100),'--''k')
 plt.xlabel('v')
 plt.ylabel('f')
 plt.legend()
+plt.title("Boltzmann Dummy")
 ###tikzplotlib.save('/home/zachi/ROM_using_Autoencoders/Bachelorarbeit/Figures/BGK/Boltzmann.tex')
 plt.show()
 

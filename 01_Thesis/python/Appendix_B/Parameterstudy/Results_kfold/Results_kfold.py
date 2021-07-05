@@ -87,6 +87,7 @@ variable = []
 min_idx = []
 
 fig, ax = plt.subplots(1,5)
+fig.suptitle("KFold Results CNN")
 
 for idx, best_model in enumerate(best_models):
 

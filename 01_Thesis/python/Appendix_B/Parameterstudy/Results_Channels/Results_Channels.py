@@ -313,7 +313,7 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     ax[idx].set_title('Model{} '.format(idx+2))
     ax[idx].set_ylim(ymax=1e-2)
     ax[idx].legend()
-    fig.suptitle("Channels Rare")
+    fig.suptitle("Channels CNN")
 
 #tikzplotlib.save(join(home,loc_plot))
 

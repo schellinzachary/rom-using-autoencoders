@@ -214,10 +214,10 @@ for exp in [1,"sched"]:
     fig, ax = plt.subplots(2)
     if exp == 1:
         best_models = best_models
-        fig.suptitle("Dataaugmentation")
+        fig.suptitle("Dataaugmentation for CNN")
     if exp == "sched":
         best_models = best_modelslr
-        fig.suptitle("Dataaugmentation with lr adjustment")
+        fig.suptitle("Dataaugmentation with lr adjustment for CNN")
 
     for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
 

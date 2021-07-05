@@ -49,7 +49,9 @@ s_r = POD(c_r)
 
 k = range(1,len(s_h)+1)
 fig, ax = plt.subplots(1,2)
+fig.suptitle("Cumultative Energy and Sigma for Hy")
 figs, axs = plt.subplots(1,2)
+figs.suptitle("Cumultative Energy and Sigma for Rare")
 lvl = ["hy","rare"]
 labels = ["o-","-v"]
 
@@ -61,6 +63,7 @@ ax[1].set_ylabel('Cumultative Energy')
 ax[1].set_xlabel('k')
 ax[0].legend()
 ax[1].legend()
+
 ### tikzplotlib.save('%s/rom-using-autoencoders/01_Thesis/Figures/SVD/CumSum_test_hy.tex'%home)
 
 axs[0].semilogy(k,s_r,labels[1],label='%s'%lvl[1])

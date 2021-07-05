@@ -1,4 +1,5 @@
 import numpy as np
+import scipy.io as sio
 from numpy.linalg import norm
 import matplotlib.pyplot as plt
 import matplotlib
@@ -9,7 +10,6 @@ from os.path import join
 from pathlib import Path
 home = Path.home()
 loc_data = "rom-using-autoencoders/01_Thesis/python/Chapter_5"
-
 
 
 #load the full order BGK data
@@ -46,7 +46,9 @@ def l2_time(org, rec):
     return(norm((rec - org),axis=(1,2)) / norm(org,axis=(1,2)))
 
 fig,axs = plt.subplots(1,2)
+fig.suptitle("Error over time for Hy (left) and Rare (right)")
 figg,axxs = plt.subplots(2,4)
+figg.suptitle("\tilde(f) for POD,the FCNNs, and CNN and f x =[0.375,0.75] and t=0.12; Hy top, Rare bottom")
 im = ["im1","im2"]
 
 for idx, level in enumerate(["hy", "rare"]):
@@ -85,6 +87,8 @@ for idx, level in enumerate(["hy", "rare"]):
     axs[idx].plot(t,err_pod,'k''-x',label="POD")
     axs[idx].plot(t,err_fully,'r''-o',label="Fully")
     axs[idx].plot(t,err_conv,'g''-v',label="Conv")
+    axs[idx].set_xlabel("t")
+    axs[idx].set_ylabel("L2-error")
     axs[idx].legend()
 
     im = axxs[idx,0].imshow(c[:,-1,75:150],
@@ -93,6 +97,8 @@ for idx, level in enumerate(["hy", "rare"]):
         aspect="auto",
         origin="lower"
         )
+    axxs[idx,0].set_xlabel("\(x\)")
+    axxs[idx,0].set_ylabel("\(v\)")
     axxs[idx,1].imshow(rec_pod[-1,:,75:150],
         cmap='gray',label="POD",
         vmin=np.min(c),
@@ -101,6 +107,8 @@ for idx, level in enumerate(["hy", "rare"]):
         aspect="auto",
         origin="lower"
         )
+    axxs[idx,1].set_xlabel("\(x\)")
+    axxs[idx,1].set_ylabel("\(v\)")
     axxs[idx,2].imshow(rec_fully[-1,:,75:150],
         'gray',label="Fully",
         vmin=np.min(c),
@@ -117,6 +125,8 @@ for idx, level in enumerate(["hy", "rare"]):
         aspect="auto",
         origin="lower"
         )
+    axxs[idx,3].set_xlabel("\(x\)")
+    axxs[idx,3].set_ylabel("\(v\)")
 
     figg.colorbar(im, ax=axxs[idx])
 ##tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_5/ErrTime_test.tex'))

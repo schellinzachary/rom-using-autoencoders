@@ -81,7 +81,7 @@ fig_fh.suptitle("FOM Macro. qty hydro")
 fig_fr.suptitle("FOM Macro. qty rare")
 fig_h.suptitle("Code FCNN  hydro")
 fig_r.suptitle("Code FCNN  rare")
-fig_cnp.suptitle("Code CNN and POD hy&rare")
+fig_cnp.suptitle("Code CNN and POD hy(top)&rare(bottom)")
 
 
 for idx, level in enumerate(["hy","rare"]):

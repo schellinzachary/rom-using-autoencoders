@@ -1,0 +1,75 @@
+
+%%% Magic comments for setting the correct parameters in compatible IDEs
+% !TeX encoding = utf8
+% !TeX program = pdflatex
+%!TeX spellcheck = en-US
+
+\documentclass[hidelinks,master,english,twoside]{hgbthesis}
+% Permissible options in [..]:
+%   Type of work: diploma, master (default), bachelor, internship
+%   Main language: german, english (default)
+%%%----------------------------------------------------------
+
+\graphicspath{{images/}}    % location of images and graphics
+\logofile{TU_Logo_kurz_RGB_schwarz.pdf}				% logo file = images/logo.pdf (use \logofile{} for no logo)
+
+%%%----------------------------------------------------------
+% Title page entries
+%%%----------------------------------------------------------
+
+%%% Entries for ALL types of work: --------------------------
+\title{Title of my awesome bachelor thesis}
+\author{Henry}
+\programname{Physikalische Ingenieurwissenschaft}
+\placeofstudy{Berlin}
+\dateofsubmission{2020}{03}{01}
+
+%%% Entries for Bachelor theses only: -----------------------
+%\thesisnumber{XXXXXXXXXX-A}   %e.g. 1310238045-A
+% (Stud-ID, A = 1st Bachelor thesis)
+\semester{Wintersemester 2019} 	% Fall/Spring Semester YYYY
+\coursetitle{Technical }
+\advisor{Julius Reiß, Prof.~Dr.~}
+
+%%% Restricted publication license instead of CC (master only):
+\strictlicense
+%%%----------------------------------------------------------
+%\includeonly{chapters/numerics}
+\begin{document}
+%%%----------------------------------------------------------
+%%%----------------------------------------------------------
+\frontmatter							% title part (roman page numbers)
+%%%----------------------------------------------------------
+
+\maketitle
+
+\include{front/abstract}
+
+\tableofcontents
+
+
+%%%----------------------------------------------------------
+\mainmatter          			% main part (arabic page numbers)
+%%%----------------------------------------------------------
+
+\include{chapters/introduction}
+\include{chapters/BGK}
+\include{chapters/Deep_Learning}
+\include{chapters/Reduced_order_Algorithms}
+\include{chapters/Results}
+%%%----------------------------------------------------------
+%\appendix                                         % appendix
+%%%----------------------------------------------------------
+
+%\include{back/appendix_a}	% technical supplements
+
+%%%----------------------------------------------------------
+\bibliography{./other/references}          				% references
+%%%----------------------------------------------------------
+
+%%% special page for checking print size --------------------
+%\include{back/printbox}
+
+%%%----------------------------------------------------------
+\end{document}
+%%%----------------------------------------------------------

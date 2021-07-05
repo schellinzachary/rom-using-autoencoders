@@ -83,6 +83,7 @@ decoder = Decoder()
 model = Autoencoder(encoder, decoder).to(device)
 
 fig, ax = plt.subplots(5,1)
+fig.suptitle("Batch Size FCNN Hy")
 
 train_losses = []
 val_losses = []

@@ -25,7 +25,7 @@ MOR is partitioned into two successive phases called the \textit{offline} - and 
 \begin{equation}
 	\L2 = \frac{||f - \tilde{f} ||_2}{||f||_2}
 \end{equation}
-which is called the relative \(\L2\)-Error norm. Note, the abbreviation \(\L2\)-Error is used from here on. Therefore the online phase may be described as a stage of independence from the full order model. Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD, depends on a rapidly decaying Kolmogorov N-width. In particular, advection-dominated problems exhibit a slow decay of the Kolmogorov N-width as described in \cite{ohlberger2015reduced}, thus yielding the need for non-linear methods like autoencoders. The Kolmogorov N-width is given by
+which is called the relative \(\L2\)-Error norm. Note, the abbreviation \(\L2\)-Error or simply \(\L2\) is used from here on. Therefore the online phase may be described as a stage of independence from the full order model. Following \cite{ohlberger2015reduced} and \cite{Carlberg}, the success when building a ROM through linear reduction methods like the POD, depends on a rapidly decaying Kolmogorov N-width. In particular, advection-dominated problems exhibit a slow decay of the Kolmogorov N-width as described in \cite{ohlberger2015reduced}, thus yielding the need for non-linear methods like autoencoders. The Kolmogorov N-width is given by
 \begin{equation}
 	d_{V}(W):= \sup_{f \in W} \inf_{\tilde{f} \in V} ||f-\tilde{f}||
 	\label{Eq:Kolmogorov}

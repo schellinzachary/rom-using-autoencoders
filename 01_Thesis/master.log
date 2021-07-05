@@ -1,23 +1,73 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  4 JUL 2021 19:08
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  5 JUL 2021 15:31
  system commands enabled.
-**master.tex
+**master.tex master.tex
 (./master.tex
 LaTeX2e <2020-02-02> patch level 2
-[\directlua]:1: module 'luaotfload-main' not found:
-	no field package.preload['luaotfload-main']
-	[kpse lua searcher] file not found: 'luaotfload-main'
-	[kpse C searcher] file not found: 'luaotfload-main'
-Error in luaotfload: reverting to OT1 L3 programming layer <2020-02-14>
-(./other/preamble.tex (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initializatio
+n
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended c
+ollection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / conf
+ig file reader
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse
+-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader
+-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback h
+andling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode he
+lpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolver
+s
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliar
+y functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multis
+cript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script help
+ers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicod
+e
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2020-02-14> (./other/preamble.tex
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/bk11.clo
 File: bk11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 54
-.
-
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-))
+luaotfload | db : Font names database loaded from /home/zachi/.texlive2019/texmf
+-var/luatex-cache/generic-dev/names/luaotfload-names.luc)
 \c@part=\count163
 \c@chapter=\count164
 \c@section=\count165
@@ -42,15 +92,88 @@ File: switch.def 2020/02/14 3.40 Babel switching mechanism
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 117.
 \l@nohyphenation=\language3
-\l@ngerman-x-2019-04-04=\language4
-\l@german-x-2019-04-04=\language5
-\l@ancientgreek=\language6
-\l@monogreek=\language7
-\l@german=\language8
-\l@ngerman=\language9
-\l@greek=\language10
-\l@swissgerman=\language11
-\l@ibycus=\language12
+\l@ethiopic=\language4
+\l@thai=\language5
+\l@turkmen=\language6
+\l@polish=\language7
+\l@swedish=\language8
+\l@slovak=\language9
+\l@sanskrit=\language10
+\l@dutch=\language11
+\l@estonian=\language12
+\l@assamese=\language13
+\l@latvian=\language14
+\l@friulan=\language15
+\l@pali=\language16
+\l@monogreek=\language17
+\l@esperanto=\language18
+\l@tamil=\language19
+\l@romanian=\language20
+\l@lithuanian=\language21
+\l@georgian=\language22
+\l@piedmontese=\language23
+\l@ibycus=\language24
+\l@bengali=\language25
+\l@ukenglish=\language26
+\l@german=\language27
+\l@bulgarian=\language28
+\l@italian=\language29
+\l@greek=\language30
+\l@belarusian=\language31
+\l@bokmal=\language32
+\l@ngerman=\language33
+\l@portuguese=\language34
+\l@panjabi=\language35
+\l@latin=\language36
+\l@turkish=\language37
+\l@spanish=\language38
+\l@mongolianlmc=\language39
+\l@ancientgreek=\language40
+\l@croatian=\language41
+\l@danish=\language42
+\l@irish=\language43
+\l@welsh=\language44
+\l@french=\language45
+\l@churchslavonic=\language46
+\l@pinyin=\language47
+\l@armenian=\language48
+\l@finnish=\language49
+\l@serbian=\language50
+\l@mongolian=\language51
+\l@swissgerman=\language52
+\l@arabic=\language53
+\l@serbianc=\language54
+\l@catalan=\language55
+\l@galician=\language56
+\l@oriya=\language57
+\l@usenglishmax=\language58
+\l@nynorsk=\language59
+\l@occitan=\language60
+\l@hungarian=\language61
+\l@russian=\language62
+\l@farsi=\language63
+\l@ngerman-x-2019-04-04=\language64
+\l@afrikaans=\language65
+\l@gujarati=\language66
+\l@ukrainian=\language67
+\l@slovenian=\language68
+\l@romansh=\language69
+\l@kannada=\language70
+\l@telugu=\language71
+\l@hindi=\language72
+\l@czech=\language73
+\l@interlingua=\language74
+\l@basque=\language75
+\l@icelandic=\language76
+\l@marathi=\language77
+\l@german-x-2019-04-04=\language78
+\l@indonesian=\language79
+\l@malayalam=\language80
+\l@kurmanji=\language81
+\l@uppersorbian=\language82
+\l@coptic=\language83
+\l@classiclatin=\language84
+\l@liturgicallatin=\language85
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
@@ -61,18 +184,14 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 \U@D=\dimen135
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
-\bbl@attr@locale=\attribute2
+\bbl@attr@locale=\attribute6
 ))
-Package babel Info: \l@british = using hyphenrules for english
-(babel)             (\language0) on input line 82.
-Package babel Info: \l@UKenglish = using hyphenrules for english
-(babel)             (\language0) on input line 83.
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for english
-(babel)             (\language0) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for english
-(babel)             (\language0) on input line 108.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 108.
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
 Package: dblfloatfix 2012/12/31 v1.0a (JAW)
@@ -1411,6 +1530,12 @@ Dictionary: translator-basic-dictionary, Language: English
 (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 )
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 6.
+
+
+(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 6.
 
 
@@ -1465,10 +1590,10 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 \openout2 = front/title.aux
  (./front/title.tex)
 Package epstopdf Info: Source file: <Figures/TUBlogo.eps>
-(epstopdf)                    date: 2021-06-07 15:44:54
+(epstopdf)                    date: 2021-02-24 09:58:11
 (epstopdf)                    size: 440902 bytes
 (epstopdf)             Output file: <Figures/TUBlogo-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-06-07 15:44:54
+(epstopdf)                    date: 2021-02-24 09:58:11
 (epstopdf)                    size: 22115 bytes
 (epstopdf)             Command: <epstopdf --outfile=Figures/TUBlogo-eps-converte
 d-to.pdf Figures/TUBlogo.eps>
@@ -2045,16 +2170,15 @@ es/master-figure55.pdf><./Figures/master-figure56.pdf>]
 (./master.bbl [61
 
 ]) [62
-Missing character: There is no … (U+2026) in font ec-lmri10!
-] (./back/acknowledgement.tex) [63
-
-]
-(./back/declaration.tex
+Missing character: There is no … (U+2026) in font ec-lmr10!
+] (./back/declaration.tex
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
 
-) [64]
+) [63
+
+]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./master.aux (./front/title.aux) (./chapters/introduction.aux)
@@ -2072,16 +2196,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
 )
 
 Here is how much of LuaTeX's memory you used:
- 46672 strings out of 481365
+ 46748 strings out of 481365
  125007,14696376 words of node,token memory allocated
- 983 words of node memory still in use:
-   8 hlist, 2 vlist, 2 rule, 2 glue, 1 kern, 83 attribute, 88 glue_spec, 83 attr
-ibute_list, 2 write, 2 pdf_action nodes
-   avail lists: 1:2,2:1561,3:371,4:153,5:673,6:39,7:12177,8:104,9:638,10:43,11:8
+ 1207 words of node memory still in use:
+   8 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 173 attribute, 88 glue_spe
+c, 88 attribute_list, 2 write, 4 pdf_action nodes
+   avail lists: 1:3,2:2329,3:372,4:153,5:673,6:37,7:12177,8:112,9:640,10:43,11:8
 29
- 60338 multiletter control sequences out of 65536+600000
- 138 fonts using 7840667 bytes
- 81i,19n,138p,2776b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 60421 multiletter control sequences out of 65536+600000
+ 132 fonts using 11130003 bytes
+ 81i,19n,138p,2787b,912s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/d
 vips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share
 /texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
@@ -2104,10 +2228,10 @@ c/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy9.pfb></usr/share/tex
 mf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on master.pdf (67 pages, 8028051 bytes).
+Output written on master.pdf (66 pages, 8028746 bytes).
 
-PDF statistics: 2495 PDF objects out of 2984 (max. 8388607)
+PDF statistics: 2494 PDF objects out of 2984 (max. 8388607)
  1995 compressed objects within 20 object streams
- 229 named destinations out of 1000 (max. 131072)
+ 228 named destinations out of 1000 (max. 131072)
  144 words of extra memory for PDF output out of 10000 (max. 100000000)
 

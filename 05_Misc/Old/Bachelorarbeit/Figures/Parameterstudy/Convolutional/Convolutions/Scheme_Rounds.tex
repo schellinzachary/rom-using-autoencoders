@@ -1,0 +1,44 @@
+
+\begin{tikzpicture}[scale=.5,every node/.style={scale=.8}]
+\matrix[matrix of nodes,column sep= .5em,row sep= 3ex]{
+	&\node [circ] (2l) {2 Layers};&
+	&
+	 \node [block] (1) {Kernel \& Stride Design};&
+	&
+	\node [block] (2) {Channel Designs};&
+	&
+	\node [block] (3) {Single Activation Function};&
+	&
+	\node [block] (4) {Combined Activation Functions};&
+\\
+	&\node [circ] (3l) {3 Layers};&
+	&
+	 \node [block] (5) {Kernel \& Stride Design};&
+	&\node [block] (6) {Channel Designs};&
+	&\node [block] (7) {Single Activation Function};&
+	&\node [block] (8) {Combined Activation Functions};&
+	&\node [block] (13){Final Model};&	
+\\
+	&\node [circ] (4l) {4 Layers};&
+	&
+	 \node [block] (9)  {Kernel \& Stride Design};&
+	&\node [block] (10) {Channel Designs};&
+	&\node [block] (11) {Single Activation Function};&
+	&\node [block] (12) {Combined Activations Functions};&
+\\
+};
+
+\path[->]
+(1) edge[thick] (2)
+(2) edge[thick] (3)
+(3) edge[thick] (4)
+(4) edge[thick] (13)
+(5) edge[thick] (6)
+(6) edge[thick] (7)
+(7) edge[thick] (8)
+(8) edge[thick] (13)
+(9) edge[thick] (10)
+(10) edge[thick] (11)
+(11) edge[thick] (12)
+(12) edge[thick] (13);
+\end{tikzpicture}

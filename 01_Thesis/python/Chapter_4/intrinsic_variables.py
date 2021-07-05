@@ -26,6 +26,7 @@ def load_BGKandMethod(method, level):
 
 #Plot the results of the variation of intrinsic variables
 fig,axs = plt.subplots(1,2)
+fig.suptitle("Variation of intrinsic variables for Hy and Rare")
 
 for idx, level in enumerate(["hy","rare"]):
     pod = []
@@ -57,7 +58,10 @@ for idx, level in enumerate(["hy","rare"]):
     axs[idx].semilogy([1,2,4,8,16,32],fully,'r''o',label="Fully")
     axs[idx].semilogy([1,2,4,8,16,32],fully,'r''o',label="Fully")
     axs[idx].set_title("%s"%level)
+    axs[idx].set_xlabel("p (#intr. vars)")
+    axs[idx].set_ylabel("L2-error")
     axs[idx].grid(True,which="both")
     axs[idx].legend()
+
 ###tikzplotlib.save(join(home,'rom-using-autoencoders/01_Thesis/Figures/Chapter_4/Var_iv.tex'))
 plt.show()

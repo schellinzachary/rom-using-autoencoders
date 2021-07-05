@@ -81,6 +81,7 @@ width = []
 min_idx = []
 
 fig, ax = plt.subplots(5)
+fig.suptitle("Layer Size FCNN Rare")
 
 for idx, i in enumerate(params.H_SIZES):
     #encoder

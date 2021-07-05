@@ -13,42 +13,46 @@ I'm skipping whatever remains of this command
 A level-1 auxiliary file: chapters/Reduced_order_Modeling.aux
 A level-1 auxiliary file: chapters/Results.aux
 Database file #1: other/references.bib
-Repeated entry---line 202 of file other/references.bib
+I was expecting a `,' or a `}'---line 132 of file other/references.bib
+ :  
+ :  year={2018},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 200 of file other/references.bib
  : @misc{dumoulin2018guide
  :                        ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "torch_ini"
-Warning--empty publisher in Kutz
 You've used 32 entries,
             2189 wiz_defined-function locations,
-            699 strings with 8325 characters,
-and the built_in function-call counts, 5813 in all, are:
-= -- 456
+            703 strings with 8563 characters,
+and the built_in function-call counts, 5872 in all, are:
+= -- 461
 > -- 419
 < -- 0
 + -- 123
 - -- 91
-* -- 388
-:= -- 875
+* -- 384
+:= -- 876
 add.period$ -- 34
 call.type$ -- 32
 change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 33
-duplicate$ -- 216
-empty$ -- 594
+cite$ -- 32
+duplicate$ -- 218
+empty$ -- 615
 format.name$ -- 91
-if$ -- 1452
+if$ -- 1474
 int.to.chr$ -- 0
 int.to.str$ -- 32
-missing$ -- 48
+missing$ -- 42
 newline$ -- 102
 num.names$ -- 32
-pop$ -- 167
+pop$ -- 177
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 132
+skip$ -- 138
 stack$ -- 0
 substring$ -- 111
 swap$ -- 37
@@ -56,8 +60,8 @@ text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 1
+warning$ -- 0
 while$ -- 41
 width$ -- 34
-write$ -- 241
-(There were 2 error messages)
+write$ -- 245
+(There were 3 error messages)

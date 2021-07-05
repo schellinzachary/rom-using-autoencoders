@@ -62,8 +62,9 @@ def shapeback_field(c):  #Shape the reconstruction from 5000x40 bach to 25x40x20
     return(f)
 
 fig,ax = plt.subplots(2,3,tight_layout=True) # for macroscopic quantities
+fig.suptitle("rho, rho u and E from FOM, POD, the FCNNs, and the CNN at t=0.12s")
 figg,axxs = plt.subplots(2,3,tight_layout=True) # for conservation
-
+figg.suptitle("Consevation for Hy top (rare) (bottom) from FOM, POD,The FCNNs, and the CNN")
 
 for idx, level in enumerate(["hy","rare"]):
 

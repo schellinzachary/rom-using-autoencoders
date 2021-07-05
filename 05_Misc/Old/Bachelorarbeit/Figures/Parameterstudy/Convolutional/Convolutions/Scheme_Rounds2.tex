@@ -1,0 +1,28 @@
+
+\begin{tikzpicture}[>=latex,text height=1.5ex,text depth=0.25ex,scale=.5,every node/.style={scale=.8}]
+\matrix[matrix of nodes,column sep= .5em,row sep= 3ex]{
+	2 Layer:
+	&3 Layer:&
+	&4 layer:
+\\
+	&
+	 \node [rect] (1) {Kernel \& Stride};&
+\\
+	&
+	 \node [rect] (2) {Channels};&
+\\
+	&\node [rect] (4) {Single A};&
+\\
+	&\node [rect] (5) {Combined A};&
+\\
+	&\node [rect] (6) {Final Model};&
+\\
+};
+
+\path[->]
+(1) edge[thick] (2)
+(2) edge[thick] (3)
+(3) edge[thick] (4)
+(4) edge[thick] (5)
+(5) edge[thick] (6);
+\end{tikzpicture}

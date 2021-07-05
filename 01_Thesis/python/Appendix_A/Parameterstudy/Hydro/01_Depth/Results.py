@@ -43,6 +43,7 @@ depth = [10,8,6,4,2]
 min_idx = []
 
 fig, ax  = plt.subplots(5)
+fig.suptitle("Depth FCNN Hy")
 
 
 for g in range(5):

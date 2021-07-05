@@ -106,9 +106,10 @@ def shape_AE_code(g):
     return(c)
 
 fig, axs = plt.subplots(1,3,tight_layout=True)
+fig.suptitle("Interpolation results from t=25 to t=241: E (Hy)")
 #figg, axxs = plt.subplots(1,3,tight_layout=True)
 figgg, axxxs = plt.subplots(2,4,tight_layout=True)
-
+figgg.suptitle("Interpolation Results: 13 to 25, 9 to 25, 7 to 25 and 5 to 25; E Hy(top),Rare(bottom)")
 
 
 
@@ -253,6 +254,7 @@ for del_var in del_vars:
 l2_list = np.stack([l2_hy,l2_rare,l2_hy_int,l2_rare_int],axis=1)
 l2_list = pd.DataFrame(l2_list,
     columns=["l2 hy", "l2 rare","l2 hy int","l2 rare int"])
+print("Results for new trained models and interpolation")
 print(l2_list)
 
 
