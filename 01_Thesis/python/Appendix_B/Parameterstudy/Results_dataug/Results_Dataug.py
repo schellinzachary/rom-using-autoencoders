@@ -7,7 +7,7 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/DatAug.tex"
-
+loc_chpt = "rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_dataug"
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -189,16 +189,16 @@ dec_dict = [
 ]
 
 best_models = (
-    # # # 2 Layer
-    # "model0-epoch1989-val_loss1.413E-05",
-    # # 4 Layer
-    # "model1-epoch1988-val_loss1.572E-05",
+    # # 2 Layer
+    "model0-epoch1989-val_loss1.413E-05",
+    # 4 Layer
+    "model1-epoch1988-val_loss1.572E-05"
+    )
+best_modelslr = (
     # 2 Layer with scheduler
     "model0-sched-epoch1988-val_loss2.190E-05",
     # 4 Layer with scheduler
     "model1-sched-epoch1988-val_loss1.854E-05",
-
-  
     )
 
 train_losses = []
@@ -209,46 +209,63 @@ min_idx = []
 
 
 
-fig, ax = plt.subplots(2)#Change to 3 for Exp. No. 3
+for exp in [1,"sched"]:
+    mid=2
+    fig, ax = plt.subplots(2)
+    if exp == 1:
+        best_models = best_models
+        fig.suptitle("Dataaugmentation")
+    if exp == "sched":
+        best_models = best_modelslr
+        fig.suptitle("Dataaugmentation with lr adjustment")
 
-for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
+    for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
 
-    best_model = best_models[idx]
-    #encoder
-    encoder = encoder
-    #decoder
-    decoder = decoder
-    #Autoencoder
-    model = Autoencoder(encoder, decoder).to(device)
+        best_model = best_models[idx]
+        #encoder
+        encoder = encoder
+        #decoder
+        decoder = decoder
+        #Autoencoder
+        model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location="cpu")
-    #checkpoint_loss = torch.load('last-model-{}.pt'.format(idx))
-    checkpoint_loss = torch.load('last-model-{}_sched.pt'.format(idx),map_location="cpu") #uncomment for lr schedules results           
+        checkpoint_model = torch.load(join(home,loc_chpt,
+            '{}.pt'.format(best_model)),
+        map_location="cpu")
+        if exp == 1:
+            checkpoint_loss = torch.load(join(home,loc_chpt,
+                'last-model-{}.pt'.format(idx)),
+            map_location="cpu")
+        if exp == "sched":
+            checkpoint_loss = torch.load(join(home,loc_chpt,
+        'last-model-{}_sched.pt'.format(idx)),
+        map_location="cpu") 
 
-    model.load_state_dict(checkpoint_model['model_state_dict'])
-    train_loss = checkpoint_loss['train_losses']
-    val_loss = checkpoint_loss['test_losses']
+        model.load_state_dict(checkpoint_model['model_state_dict'])
+        train_loss = checkpoint_loss['train_losses']
+        val_loss = checkpoint_loss['test_losses']
 
 
-    rec = model(f)
+        rec = model(f)
 
-    l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
-    l2_loss = l2_loss.to('cpu')
+        l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+        l2_loss = l2_loss.to('cpu')
 
-    train_losses.append(np.min(train_loss))
-    val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss.detach().numpy())
-    min_idx.append(val_loss.index(min(val_loss)))
-    variable.append(idx)
-    
+        train_losses.append(np.min(train_loss))
+        val_losses.append(np.min(val_loss))
+        l2_losses.append(l2_loss.detach().numpy())
+        min_idx.append(val_loss.index(min(val_loss)))
+        variable.append(mid)
+        
 
-    ax[idx].semilogy(train_loss,'k''--',label='Train')
-    ax[idx].semilogy(val_loss,'k''-',label='Test')
-    ax[idx].set_xlabel('Epoch')
-    ax[idx].set_ylabel('MSE Loss')
-    ax[idx].set_title('Model{} '.format(idx+3))#Change to 3 for Exp. No. 3
-    ax[idx].set_ylim(ymax=1e-3)
-    ax[idx].legend()
+        ax[idx].semilogy(train_loss,'k''--',label='Train')
+        ax[idx].semilogy(val_loss,'k''-',label='Test')
+        ax[idx].set_xlabel('Epoch')
+        ax[idx].set_ylabel('MSE Loss')
+        ax[idx].set_title('Model{} '.format(mid))#Change to 3 for Exp. No. 3
+        ax[idx].set_ylim(ymax=1e-3)
+        ax[idx].legend()
+        mid+=2
 
 #tikzplotlib.save(join(home,loc_plot))
 
@@ -261,7 +278,7 @@ loss_dict = {
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Dataaugmentation")
 print(loss_dict)
 plt.show()
 

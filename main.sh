@@ -8,3 +8,15 @@ python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_5/interpretability.
 python $HOME/rom-using-autoencoders/01_Thesis/python/Chapter_5/interpolate.py
 python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/01_Depth/Results.py
 python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/02_Layer_Size/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/03_Batch_Size/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/04_Activations/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/01_Depth/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/02_Layer_Size/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/03_Batch_Size/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/04_Activations/Results.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_kfold/Results_kfold.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_layer/Results_Layer.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_Channels/Results_Channels.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_act/Results_act.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/ExampleDatAug.py
+python $HOME/rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_dataug/Results_Dataug.py

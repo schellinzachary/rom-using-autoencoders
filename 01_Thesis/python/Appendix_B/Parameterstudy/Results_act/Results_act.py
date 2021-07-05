@@ -7,6 +7,7 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/4l_activations.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_act"
 
 
 import numpy as np
@@ -261,8 +262,8 @@ experiments = (
     )
 
 
-best_models = (
-	#uncomment for models for 2 Layer Autoencoder
+best_models2 = [
+	#models and 2 Layer Autoencoder
     "model0-act-('elu', 'elu')-epoch1969-val_loss6.500E-06",
     "model0-act-('elu', 'silu')-epoch1974-val_loss5.696E-06",
     "model0-act-('elu', 'tanh')-epoch1970-val_loss5.939E-06",
@@ -271,15 +272,17 @@ best_models = (
     "model0-act-('relu', 'relu')-epoch1984-val_loss1.319E-05",
     "model0-act-('silu', 'silu')-epoch1972-val_loss7.856E-06",
     "model0-act-('tanh', 'tanh')-epoch1909-val_loss7.762E-06"
-    #uncomment models for 4 Layer Autoencoder
-    # "model1-act-('elu', 'elu')-epoch1365-val_loss6.916E-06",
-    # "model1-act-('elu', 'silu')-epoch1808-val_loss7.532E-06",
-    # "model1-act-('elu', 'tanh')-epoch1498-val_loss9.252E-06",
-    # "model1-act-('leaky', 'leaky')-epoch1971-val_loss9.615E-06",
-    # "model1-act-('leaky', 'tanh')-epoch1722-val_loss9.401E-06",
-    # "model1-act-('relu', 'relu')-epoch1985-val_loss1.073E-05",
-    # "model1-act-('silu', 'silu')-epoch1550-val_loss6.497E-06",
-    # "model1-act-('tanh', 'tanh')-epoch975-val_loss8.390E-06"
+    ]
+best_models4 = (
+    #models and 4 Layer Autoencoder
+    "model1-act-('elu', 'elu')-epoch1365-val_loss6.916E-06",
+    "model1-act-('elu', 'silu')-epoch1808-val_loss7.532E-06",
+    "model1-act-('elu', 'tanh')-epoch1498-val_loss9.252E-06",
+    "model1-act-('leaky', 'leaky')-epoch1971-val_loss9.615E-06",
+    "model1-act-('leaky', 'tanh')-epoch1722-val_loss9.401E-06",
+    "model1-act-('relu', 'relu')-epoch1985-val_loss1.073E-05",
+    "model1-act-('silu', 'silu')-epoch1550-val_loss6.497E-06",
+    "model1-act-('tanh', 'tanh')-epoch975-val_loss8.390E-06"
     )
 
 #load data
@@ -292,63 +295,79 @@ val_losses = []
 l2_losses = []
 act = []
 min_idx = []
-
-fig, ax = plt.subplots(8,1)
-
-for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
-    
-    idx_model = 0 #0 for 2 Layer and 1 for 4 Layer
-
-    a, c = ac_combo
-    a = activations[a]
-    c = activations[c]
-    #encoder
-    encoder = Encoder_2(a,c) #change to Encoder_4(a,c) for 4 layer
-
-    #decoder
-    decoder = Decoder_2(a) #change to Decoder_4(a) for 4 layer
-
-    #Autoencoder
-    model = Autoencoder(encoder, decoder).to(device)
-
-    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location=torch.device('cpu'))
-    checkpoint_loss = torch.load('last-model-{}-act-{}.pt'.format(idx_model,
-    	ac_combo
-    	),
-    map_location=torch.device('cpu'))
-    model.load_state_dict(checkpoint_model['model_state_dict'])
-    #model.load_state_dict(checkpoint_loss['model_state_dict'])
-    train_loss = checkpoint_loss['train_losses']
-    val_loss = checkpoint_loss['test_losses']
+layers = []
 
 
-    rec = model(f)
-    l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+for modelid in [2,4]:
+    fig, ax = plt.subplots(8,1)
+    if modelid == 2:
+        best_models = best_models2
+        fig.suptitle("Activations 2 Layer Model")
+    if modelid == 4:
+        best_models = best_models4
+        fig.suptitle("Activations 4 Layer Model")
 
-    train_losses.append(np.min(train_loss))
-    val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss.detach().numpy())
-    min_idx.append(val_loss.index(min(val_loss)))
-    act.append(ac_combo)
-    
-    ax[idx].semilogy(train_loss,'k''--',label='Train')
-    ax[idx].semilogy(val_loss,'k''-',label='Test')
-    ax[idx].set_xlabel('Epoch')
-    ax[idx].set_ylabel('MSE Loss')
-    ax[idx].set_title('{} '.format(ac_combo))
-    ax[idx].set_ylim(ymax=1e-3)
-    ax[idx].legend()
+    for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
+        a, c = ac_combo
+        a = activations[a]
+        c = activations[c]
+        if modelid == 2:
+            idx_model = 0 #0 for 2 Layer and 1 for 4 Layer
+            encoder = Encoder_2(a,c)
+            decoder = Decoder_2(a)
+        if modelid == 4:
+            idx_model = 1 #0 for 2 Layer and 1 for 4 Layer
+            encoder = Encoder_4(a,c)
+            decoder = Decoder_4(a)
+
+        #Autoencoder
+        model = Autoencoder(encoder, decoder).to(device)
+
+        checkpoint_model = torch.load(join(home,loc_chpt,
+            '{}.pt'.format(best_model))),
+        map_location=torch.device('cpu')
+        checkpoint_loss = torch.load(join(home,loc_chpt,
+            'last-model-{}-act-{}.pt'.format(idx_model,
+        	ac_combo
+        	)),
+        map_location=torch.device('cpu'))
+        
+        model.load_state_dict(checkpoint_model[0]['model_state_dict'])
+        #model.load_state_dict(checkpoint_loss['model_state_dict'])
+        train_loss = checkpoint_loss['train_losses']
+        val_loss = checkpoint_loss['test_losses']
+
+
+        rec = model(f)
+        l2_loss = torch.norm((f - rec).flatten())/torch.norm(f.flatten())
+
+        train_losses.append(np.min(train_loss))
+        val_losses.append(np.min(val_loss))
+        l2_losses.append(l2_loss.detach().numpy())
+        min_idx.append(val_loss.index(min(val_loss)))
+        act.append(ac_combo)
+        layers.append(modelid)
+        
+        ax[idx].semilogy(train_loss,'k''--',label='Train')
+        ax[idx].semilogy(val_loss,'k''-',label='Test')
+        ax[idx].set_xlabel('Epoch')
+        ax[idx].set_ylabel('MSE Loss')
+        ax[idx].set_title('{} '.format(ac_combo))
+        ax[idx].set_ylim(ymax=1e-3)
+        ax[idx].legend()
 
 #tikzplotlib.save(join(home,loc_plot))
 
 
-loss_dict = {"act":act,
+loss_dict = {
+    "#Layers":layers,
+    "act":act,
     "train_loss": train_losses,
     "val_loss": val_losses,
     "l2_loss": l2_losses,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Experiment CNN Activations")
 print(loss_dict)
 plt.show()

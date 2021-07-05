@@ -7,13 +7,14 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Activations/rare_act.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/04_Activations"
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+####import tikzplotlib
 
 
 import torch
@@ -23,10 +24,8 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader
 from torch.optim.lr_scheduler import StepLR
 
-
-#device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device='cpu'
-print(device)
+
 
 #set variables
 activations = {
@@ -123,8 +122,12 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo))
+    checkpoint_model = torch.load(join(home,loc_chpt,
+        'Results/{}.pt'.format(best_model)),
+    map_location="cpu")
+    checkpoint_loss = torch.load(join(home,loc_chpt,
+        'Results/last-{}.pt'.format(ac_combo)),
+    map_location="cpu")
     model.load_state_dict(checkpoint_model['model_state_dict'][0])
     #model.load_state_dict(checkpoint_loss['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
@@ -148,7 +151,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+####tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {"act":act,
@@ -158,6 +161,6 @@ loss_dict = {"act":act,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Experiment FCNN Activations Rare")
 print(loss_dict)
 plt.show()

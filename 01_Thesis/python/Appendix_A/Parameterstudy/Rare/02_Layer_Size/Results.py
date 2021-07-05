@@ -7,13 +7,14 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Width/rare_width.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/02_Layer_Size"
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-#import tikzplotlib
+####import tikzplotlib
 
 
 import torch
@@ -22,7 +23,7 @@ import torch.tensor as tensor
 
 
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 
 
 class params():
@@ -91,19 +92,21 @@ for idx, i in enumerate(params.H_SIZES):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint = torch.load('Results/%s.pt'%i)
+    checkpoint = torch.load(join(home,loc_chpt,
+        'Results/%s.pt'%i),
+    map_location="cpu")
     model.load_state_dict(checkpoint['model_state_dict'])
     train_loss = checkpoint['train_losses']
     val_loss = checkpoint['test_losses']
     N_EPOCHS = checkpoint['epoch']
-    print(N_EPOCHS)
+
 
     rec = model(data.f)
     l2_loss = torch.norm((data.f - rec).flatten())/torch.norm(data.f.flatten())
 
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss)
+    l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
     width.append(i)
 
@@ -116,7 +119,7 @@ for idx, i in enumerate(params.H_SIZES):
     ax[idx].set_ylim(ymax=1e-5)
     #ax[idx].set_xticks((0,500,1500,2000))
     ax[idx].legend()
-#tikzplotlib.save(join(home,loc_plot))
+###tikzplotlib.save(join(home,loc_plot))
 plt.show()
 
 loss_dict = {"Width":width,
@@ -126,5 +129,5 @@ loss_dict = {"Width":width,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict,dtype=float)
-
+print("Experiment FCNN Layer Rare")
 print(loss_dict)

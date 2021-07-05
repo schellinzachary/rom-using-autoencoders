@@ -7,13 +7,14 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Batch_Size/rare_batch.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/03_Batch_Size"
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-import tikzplotlib
+####import tikzplotlib
 
 
 import torch
@@ -92,7 +93,9 @@ min_idx = []
 
 for idx, batch in enumerate([32,16,8,4,2]):
 
-    checkpoint = torch.load('Results/{}.pt'.format(batch), map_location=lambda storage, loc: storage)
+    checkpoint = torch.load(join(home,loc_chpt,
+        'Results/{}.pt'.format(batch))
+    , map_location=lambda storage, loc: storage)
     model.load_state_dict(checkpoint['model_state_dict'])
     train_loss = checkpoint['train_losses']
     val_loss = checkpoint['test_losses']
@@ -104,7 +107,7 @@ for idx, batch in enumerate([32,16,8,4,2]):
 
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss)
+    l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
     batch_s.append(batch)
     
@@ -116,7 +119,7 @@ for idx, batch in enumerate([32,16,8,4,2]):
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+####tikzplotlib.save(join(home,loc_plot))
 
 
 
@@ -127,5 +130,6 @@ loss_dict = {"Batch Size":batch_s,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict,dtype=float)
+print("Experiment FCNN Batch Rare")
 print(loss_dict)
 plt.show()

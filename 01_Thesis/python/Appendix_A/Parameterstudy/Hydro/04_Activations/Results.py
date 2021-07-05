@@ -7,6 +7,7 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p00001_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Activations/hydro_act.tex"
+loc_chpt = "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Hydro/04_Activations"
 
 
 import numpy as np
@@ -14,7 +15,7 @@ import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
 from tqdm import tqdm
-import tikzplotlib
+###import tikzplotlib
 
 
 import torch
@@ -124,8 +125,12 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/last-{}.pt'.format(ac_combo))
+    checkpoint_model = torch.load(join(home,loc_chpt,
+        'Results/{}.pt'.format(best_model)),
+    map_location="cpu")
+    checkpoint_loss = torch.load(join(home,loc_chpt,
+        'Results/last-{}.pt'.format(ac_combo)),
+    map_location="cpu")
     model.load_state_dict(checkpoint_model['model_state_dict'][0])
     train_loss = checkpoint_loss['train_losses']
     val_loss = checkpoint_loss['test_losses']
@@ -148,7 +153,7 @@ for idx, (ac_combo, best_model) in enumerate(zip(experiments,best_models)):
     ax[idx].set_ylim(ymax=1e-5)
     ax[idx].legend()
 
-tikzplotlib.save(join(home,loc_plot))
+###tikzplotlib.save(join(home,loc_plot))
 
 
 loss_dict = {"act":act,
@@ -158,6 +163,6 @@ loss_dict = {"act":act,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Experiment FCNN Activations Hydro")
 print(loss_dict)
 plt.show()

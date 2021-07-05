@@ -7,6 +7,7 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/Channels.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_Channels"
 
 
 import numpy as np
@@ -26,7 +27,7 @@ from torch.optim.lr_scheduler import MultiStepLR
 
 
 torch.manual_seed(42)
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 
 
 #load data
@@ -281,8 +282,12 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('{}.pt'.format(best_model),map_location="cpu")
-    checkpoint_loss = torch.load('last-model-{}exp-4.pt'.format(idx+2),map_location="cpu")
+    checkpoint_model = torch.load(join(home,loc_chpt,
+        '{}.pt'.format(best_model)),
+        map_location="cpu")
+    checkpoint_loss = torch.load(join(home,loc_chpt,
+        'last-model-{}exp-4.pt'.format(idx+2)),
+    map_location="cpu")
 
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
@@ -308,6 +313,7 @@ for idx, (encoder, decoder) in enumerate(zip(enc_dict,dec_dict)):
     ax[idx].set_title('Model{} '.format(idx+2))
     ax[idx].set_ylim(ymax=1e-2)
     ax[idx].legend()
+    fig.suptitle("Channels Rare")
 
 #tikzplotlib.save(join(home,loc_plot))
 
@@ -320,7 +326,7 @@ loss_dict = {
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Experiment CNN Channels")
 print(loss_dict)
 plt.show()
 

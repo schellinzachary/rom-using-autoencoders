@@ -8,19 +8,20 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/sod25Kn0p01_2D_unshuffled.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Fully_Connected/Depth/rare_depth.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_A/Parameterstudy/Rare/01_Depth"
 
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy.io as sio
 import pandas as pd
-import tikzplotlib
+####import tikzplotlib
 
 
 import torch
 import torch.nn as nn
 import torch.tensor as tensor
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device = 'cpu'
 
 
 
@@ -104,7 +105,9 @@ for g in range(5):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint = torch.load('Results/LS_{}.pt'.format(g))
+    checkpoint = torch.load(join(home,loc_chpt,
+        'Results/LS_{}.pt'.format(g)),
+    map_location="cpu")
 
     model.load_state_dict(checkpoint['model_state_dict'])
     train_loss = checkpoint['train_losses']
@@ -117,7 +120,7 @@ for g in range(5):
 
     train_losses.append(np.min(train_loss))
     val_losses.append(np.min(val_loss))
-    l2_losses.append(l2_loss)
+    l2_losses.append(l2_loss.detach().numpy())
     min_idx.append(val_loss.index(min(val_loss)))
 
 
@@ -130,7 +133,7 @@ for g in range(5):
     i = [10,8,6,4,2]
     ax[g].set_title('{} Layer'.format(i[g]))
     ax[g].legend()
-tikzplotlib.save(join(home,loc_plot))
+####tikzplotlib.save(join(home,loc_plot))
 plt.show()
 
 loss_dict = {"Depth":depth,
@@ -140,6 +143,6 @@ loss_dict = {"Depth":depth,
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict,dtype=float)
-
+print("Experiment FCNN Depth Rare")
 print(loss_dict)
 

@@ -8,10 +8,11 @@ from os.path import join
 home = str(Path.home())
 loc_data = "rom-using-autoencoders/04_Autoencoder/Preprocessing/Data/flow_4D.npy"
 loc_plot = "rom-using-autoencoders/01_Thesis/Figures/Parameterstudy/Convolutional/kfold.tex"
+loc_chpt= "rom-using-autoencoders/01_Thesis/python/Appendix_B/Parameterstudy/Results_kfold"
 
 import pandas as pd
 import numpy as np
-#import tikzplotlib
+###import tikzplotlib
 import matplotlib.pyplot as plt
 
 import torch
@@ -96,8 +97,12 @@ for idx, best_model in enumerate(best_models):
     #Autoencoder
     model = Autoencoder(encoder, decoder).to(device)
 
-    checkpoint_model = torch.load('Results/{}.pt'.format(best_model))
-    checkpoint_loss = torch.load('Results/last-fold-{}.pt'.format(idx))
+    checkpoint_model = torch.load(join(home,loc_chpt,
+        '{}.pt'.format(best_model)),
+    map_location="cpu")
+    checkpoint_loss = torch.load(join(home,loc_chpt,
+        'last-fold-{}.pt'.format(idx)),
+    map_location="cpu")
     model.load_state_dict(checkpoint_model['model_state_dict'])
     train_loss = checkpoint_loss['train_losses']
     val_loss = checkpoint_loss['test_losses']
@@ -136,7 +141,7 @@ loss_dict = {
     "epoch val min": min_idx
     }
 loss_dict = pd.DataFrame(loss_dict)
-
+print("Experiment CNN kfold")
 print(loss_dict)
 print()
 print("Mean of val loss:",mean)
