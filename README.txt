@@ -6,7 +6,7 @@ Matr.:376930
 
 This thesis is structured as follows
     - 01_Thesis contains all LaTeX files
-    -01_Thesis/python contains all python files for plotting (data generation) sortet   by chapters 1 - 5 & Appendix A and Appendix B
+    - 01_Thesis/python contains all python files for plotting (data generation) sortet   by chapters 1 - 5 & Appendix A and Appendix B
     - 02_data_sod contains the FOM BGK data in the Sods's schock tube
     - 03_POD contains python files for initial developement of POD
     - 04_Autoencoder python files for initial experimentation with neural networks and the Parameterstudy
@@ -16,10 +16,10 @@ This thesis is structured as follows
     - 05_Misc Conatians :
         - paper contains all papers used in this thesis
            
-How to use the thesis: 
-- You are invited to read the thesis by clicking on the .pfd file in 01_Thesis
-- The folder "python" in 01_Thesis, contains the code to produce the beautiful plots
-    in the thesis, arranged by chapters
+To create all figures and data execute the bashscript main.sh:
+    - the folder needs to be in your home directory
+    - open a terminal in the home directory
+    - type bash ./main.sh
 
 For questions and suggestions pls contact me via mail and phone:
 
