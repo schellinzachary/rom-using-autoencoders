@@ -1,0 +1,102 @@
+\documentclass[Nike]{tuberlinbeamer}
+
+\usepackage[ngerman,english]{babel}  % 'babel' muss geladen werden
+\usepackage[utf8]{inputenc}  % optional, aber empfehlenswert
+\usepackage{
+	tikz,
+	pgfplots,
+	xparse,
+	boxedminipage2e}
+\usepackage[font={footnotesize}]{caption}
+\usetikzlibrary{
+	shapes,
+	arrows,
+	snakes,
+	chains}
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% Die ueblichen Angaben
+\title{Model Order Reduction of Rarefied Gases Using Neural Networks}
+\subtitle{Institut für Numerische Fluiddynamik}
+\author[Zachary Schellin]{Zachary Schellin}
+\institute{Technische Universität Berlin}
+
+% Eigenes Logo einfuegen:
+\renewcommand{\pathtomylogo}{csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png}
+
+\begin{document}
+
+\begin{frame}
+\maketitle
+\end{frame}
+
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+\section{Introduction}
+\begin{frame}[fragile]{Introduction}
+ hallo
+\end{frame}
+\section{The BGK-Model}
+\begin{frame}[fragile]{The BGK-Model}
+	\begin{boxedminipage}{.4\textwidth}
+		\centering
+		The BGK transport equation
+		\begin{equation}
+		\partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f)
+		\end{equation}
+	\end{boxedminipage}%
+\hspace{1.5cm}
+	\begin{boxedminipage}{.45\textwidth}
+		\centering
+		The Maxwellian distribution $M_f$
+		\begin{equation}
+		M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) 
+		\end{equation}
+	\end{boxedminipage}
+\vspace{2cm}
+	\begin{boxedminipage}{.4\textwidth}
+		\centering
+		The relaxation time $\tau$
+		\begin{equation}
+		\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{Kn}
+		\end{equation}
+	\end{boxedminipage}%
+\hspace{1cm}
+	\begin{boxedminipage}{.33\textwidth}
+		\centering
+		The Knudsen number $Kn$
+		\begin{equation}
+		Kn = \frac{\lambda}{l}
+		\end{equation}
+	\end{boxedminipage}
+	\begin{figure}[H]
+		\input{Figures/Kn.tex}
+		\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
+		\label{Fig:ExpKN}
+	\end{figure}
+\end{frame}
+
+\section{Sod's shock tube}
+\section{Proper Orthogonal Decomposotion (POD)}
+\section{Neural Networks}
+\section{Results}
+
+\begin{frame}[fragile]{Verwendung der \texttt{tuberlinbeamer}-Klasse}
+Es folgen demnächst ein paar Folien zur Verwendung dieser Dokumentklasse.
+\begin{itemize}
+\item Kenntnis der \emph{beamer}-Klasse ist von Vorteil
+\end{itemize}
+\end{frame}
+
+\section{Discussion}
+
+\begin{frame}{ToDo}
+\begin{itemize}
+\item \emph{ToDo} schreiben
+\item \emph{ToDo} abarbeiten
+\end{itemize}
+\end{frame}
+
+\end{document}
