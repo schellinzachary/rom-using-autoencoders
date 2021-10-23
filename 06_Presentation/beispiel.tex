@@ -6,7 +6,12 @@
 	tikz,
 	pgfplots,
 	xparse,
-	boxedminipage2e}
+	boxedminipage2e,
+	amsmath,
+	hyperref,
+	tocbibind
+	}
+\bibliographystyle{JHEP}
 \usepackage[font={footnotesize}]{caption}
 \usetikzlibrary{
 	shapes,
@@ -17,7 +22,7 @@
 
 % Die ueblichen Angaben
 \title{Model Order Reduction of Rarefied Gases Using Neural Networks}
-\subtitle{Institut für Numerische Fluiddynamik}
+\subtitle{Institut f\"ur Numerische Fluiddynamik}
 \author[Zachary Schellin]{Zachary Schellin}
 \institute{Technische Universität Berlin}
 
@@ -40,43 +45,36 @@
 \end{frame}
 \section{The BGK-Model}
 \begin{frame}[fragile]{The BGK-Model}
-	\begin{boxedminipage}{.4\textwidth}
-		\centering
-		The BGK transport equation
+	\begin{itemize}
+		\item The Boltzmann equation approximated by $\boldsymbol{Q}$ the BGK operator as a source term with
 		\begin{equation}
-		\partial_t f + v \partial_x f = \frac{1}{\tau} (M_f - f)
+		\partial_t f + v \partial_x f = \overbrace{\frac{1}{\tau} (M_f - f)}^{Q}
 		\end{equation}
-	\end{boxedminipage}%
-\hspace{1.5cm}
-	\begin{boxedminipage}{.45\textwidth}
-		\centering
-		The Maxwellian distribution $M_f$
+
+		\item The equilibrium solution is a Maxwellian distribution $\boldsymbol{M_f}$ with
 		\begin{equation}
 		M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) 
 		\end{equation}
-	\end{boxedminipage}
-\vspace{2cm}
-	\begin{boxedminipage}{.4\textwidth}
-		\centering
-		The relaxation time $\tau$
+
+		\item The duration to evolve into equilibrium is given by the relaxation time $\boldsymbol{\tau}$ with
 		\begin{equation}
 		\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{Kn}
 		\end{equation}
-	\end{boxedminipage}%
-\hspace{1cm}
-	\begin{boxedminipage}{.33\textwidth}
-		\centering
-		The Knudsen number $Kn$
+
+		\item The rarefaction level is defined over the Knudsen number $\boldsymbol{Kn}$ with
 		\begin{equation}
 		Kn = \frac{\lambda}{l}
 		\end{equation}
-	\end{boxedminipage}
-	\begin{figure}[H]
+	\end{itemize}\footnote{\cite{BGK}}
+\end{frame}
+\begin{frame}[fragile]{The BGK-Model}
+		\begin{figure}[H]
 		\input{Figures/Kn.tex}
 		\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
 		\label{Fig:ExpKN}
 	\end{figure}
 \end{frame}
+
 
 \section{Sod's shock tube}
 \section{Proper Orthogonal Decomposotion (POD)}
@@ -98,5 +96,5 @@ Es folgen demnächst ein paar Folien zur Verwendung dieser Dokumentklasse.
 \item \emph{ToDo} abarbeiten
 \end{itemize}
 \end{frame}
-
+\bibliography{./other/references.bib}
 \end{document}
