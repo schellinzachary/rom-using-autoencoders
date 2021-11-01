@@ -1,9 +1,16 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \babel@toc {english}{}
-\contentsline {section}{Contents}
-\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {3}{The BGK-Model}{4}{0}{2}
-\beamer@sectionintoc {4}{Sod's shock tube}{6}{0}{3}
-\beamer@sectionintoc {5}{Proper Orthogonal Decomposotion (POD)}{6}{0}{4}
-\beamer@sectionintoc {6}{Neural Networks}{6}{0}{5}
-\beamer@sectionintoc {7}{Results}{6}{0}{6}
-\beamer@sectionintoc {8}{Discussion}{7}{0}{7}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {2}{The BGK-Model}{4}{0}{2}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {3}{Sod's shock tube}{6}{0}{3}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {4}{Proper Orthogonal Decomposotion (POD)}{6}{0}{4}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {5}{Neural Networks}{6}{0}{5}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {6}{Results}{6}{0}{6}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {7}{Discussion}{7}{0}{7}

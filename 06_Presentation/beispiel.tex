@@ -8,10 +8,11 @@
 	xparse,
 	boxedminipage2e,
 	amsmath,
-	hyperref,
-	tocbibind
+	hyperref
 	}
-\bibliographystyle{JHEP}
+\usepackage[backend=biber]{biblatex}
+%\bibliographystyle{JHEP}
+\bibliography{other/references}
 \usepackage[font={footnotesize}]{caption}
 \usetikzlibrary{
 	shapes,
@@ -65,7 +66,8 @@
 		\begin{equation}
 		Kn = \frac{\lambda}{l}
 		\end{equation}
-	\end{itemize}\footnote{\cite{BGK}}
+	\end{itemize}
+\footcite{PhysRev.94.511}
 \end{frame}
 \begin{frame}[fragile]{The BGK-Model}
 		\begin{figure}[H]
@@ -96,5 +98,7 @@ Es folgen demnächst ein paar Folien zur Verwendung dieser Dokumentklasse.
 \item \emph{ToDo} abarbeiten
 \end{itemize}
 \end{frame}
-\bibliography{./other/references.bib}
+\begin{frame}
+	\printbibliography
+\end{frame}
 \end{document}
