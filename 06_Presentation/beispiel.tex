@@ -10,9 +10,10 @@
 	amsmath,
 	hyperref
 	}
-\usepackage[backend=biber]{biblatex}
+\usepackage[style=verbose,backend=biber]{biblatex}
 %\bibliographystyle{JHEP}
-\bibliography{other/references}
+\bibliography{other/references.bib}
+%\addbibresource{other/references}
 \usepackage[font={footnotesize}]{caption}
 \usetikzlibrary{
 	shapes,
@@ -29,7 +30,14 @@
 
 % Eigenes Logo einfuegen:
 \renewcommand{\pathtomylogo}{csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png}
-
+\AtBeginSection[]
+{
+	\begin{frame}
+		\frametitle{Table of Contents}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+\renewcommand{\footnotesize}{\tiny}
 \begin{document}
 
 \begin{frame}
@@ -37,15 +45,13 @@
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[fragile]{Outline}
 \tableofcontents
 \end{frame}
 \section{Introduction}
-\begin{frame}[fragile]{Introduction}
- hallo
-\end{frame}
+
 \section{The BGK-Model}
-\begin{frame}[fragile]{The BGK-Model}
+\begin{frame}[fragile]{Governing equations}
 	\begin{itemize}
 		\item The Boltzmann equation approximated by $\boldsymbol{Q}$ the BGK operator as a source term with
 		\begin{equation}
@@ -67,17 +73,64 @@
 		Kn = \frac{\lambda}{l}
 		\end{equation}
 	\end{itemize}
-\footcite{PhysRev.94.511}
-\end{frame}
-\begin{frame}[fragile]{The BGK-Model}
-		\begin{figure}[H]
-		\input{Figures/Kn.tex}
-		\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
-		\label{Fig:ExpKN}
-	\end{figure}
+	\footfullcite{PhysRev.94.511}
 \end{frame}
 
+\begin{frame}[fragile]{Knudsen number}
+	\begin{itemize}
+		\item Solution is $f(x,v,t)$ in 1D and $f(x,y,v_x,v_y,t)$ in 2D and $f(x,y,z,v_x,v_y,v_z,t)$ in 3D 
+	\end{itemize}
+	\hfill
+	\begin{center}
+			\begin{figure}
+			\centering
+			\input{Figures/Kn.tex}
+			\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
+			\label{Fig:ExpKN}
+			\footfullcite{NumaKUL}
+		\end{figure}
+	\end{center}
+\end{frame}
 
+\begin{frame}[fragile]{Discretization in space and velocity space in 1D}
+	\begin{itemize}
+		\item Space and time discretization considering a uniform grid i.e.\\ $x_j = j\Delta x$ and $j\in \mathbb{Z}$, $v_k = k\Delta v$ and $k\in \mathbb{Z}$, $t^i=i\Delta t$ and $t\in \mathbb{N}$,
+		\item is leading from the full PDE to a set of ODE's in time 
+			\begin{equation}
+			\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t))\mathrm{.}
+			\end{equation}
+		\item $KJ$ first-order differential equations need to be evaluated when $K$ and $J$ are the number of gridpoints in space and velocity space.
+		\item In 3D there are $K^3J^3$ first-order differential equations.
+		\item The discretization in velocity space requires the computation of the moments of $f$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Moments/ Expected values of $f$}
+	\begin{itemize}
+		\item By multiplying the collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$ with $f$ and integrating in velocity space $v$ the moments are obtained.
+		\item The first moment/ the Density is
+		\begin{equation}
+				\rho(x,t) = \int\! f \,\mathrm{d}v \,,
+		\end{equation}
+		\item the second moment/ the Momentum is
+		\begin{equation}
+			\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
+		\end{equation}
+		\item the third moment/ the kinetic Energy is
+		\begin{equation}
+			E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
+		\end{equation}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Moments/ Expected values of $f$}
+	\begin{center}
+		\begin{figure}
+			\input{Figures/Boltzmann.tex}
+			\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
+		\end{figure}
+	\end{center}
+\end{frame}
 \section{Sod's shock tube}
 \section{Proper Orthogonal Decomposotion (POD)}
 \section{Neural Networks}
