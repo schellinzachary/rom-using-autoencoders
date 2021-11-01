@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  1 NOV 2021 14:00
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  1 NOV 2021 17:54
  system commands enabled.
 **beispiel.tex beispiel.tex
 (./beispiel.tex
@@ -975,13 +975,8 @@ Package babel Info: Non-standard hyphenation setup on input line 117.
 \l@classiclatin=\language84
 \l@liturgicallatin=\language85
 )
-(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
-Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthograp
-hy)
-
-(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogra
-phy)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
@@ -993,22 +988,14 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 )
 LaTeX Info: Redefining \textlatin on input line 2319.
 )
-Package babel Info: Making " an active character on input line 121.
-
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.
-tex UTF-8 German hyphenation patterns (reformed orthography)
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.
-tex
-German Hyphenation Patterns (Reformed Orthography, 2006) `dehyphn-x' 2019-04-04
- (WL))))) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
-Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
 Package babel Info: \l@australian = using hyphenrules for ukenglish
 (babel)             (\language26) on input line 105.
 Package babel Info: \l@newzealand = using hyphenrules for ukenglish
 (babel)             (\language26) on input line 108.
-)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks46
 \inpenc@posthook=\toks47
@@ -1016,7 +1003,18 @@ Package: inputenc 2018/08/11 v1.3c Input encoding file
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 112
+.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 7.65005pt on input line 112.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
 
@@ -1581,63 +1579,56 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (./beispiel.aux)
 \openout1 = beispiel.aux
 
-LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 40.
 LaTeX Font Info:    Trying to load font information for OML+cmssm on input line 
-41.
+40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omlcmssm.fd
 File: omlcmssm.fd 2019/04/04
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsssy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsssy/m/n on input line 40.
 LaTeX Font Info:    Trying to load font information for OMS+cmsssy on input line
- 41.
+ 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omscmsssy.fd
 File: omscmsssy.fd 2019/04/04
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 41
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 40
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmssex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmssex/m/n on input line 40.
 LaTeX Font Info:    Trying to load font information for OMX+cmssex on input line
- 41.
+ 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omxcmssex.fd
 File: omxcmssex.fd 2019/06/10
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/xcmss/m/n on input line 41.
-LaTeX Font Info:    Trying to load font information for U+xcmss on input line 41
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/xcmss/m/n on input line 40.
+LaTeX Font Info:    Trying to load font information for U+xcmss on input line 40
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/uxcmss.fd
 File: uxcmss.fd 2019/04/04
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Trying to load font information for TU+phv on input line 41.
-
-LaTeX Font Info:    No file TUphv.fd. on input line 41.
-
-
-LaTeX Font Warning: Font shape `TU/phv/m/n' undefined
-(Font)              using `TU/lmr/m/n' instead on input line 41.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: luatex
@@ -1705,7 +1696,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box104
-Package hyperref Info: Link coloring OFF on input line 41.
+Package hyperref Info: Link coloring OFF on input line 40.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1718,9 +1709,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count468
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 (./beispiel.out) (./beispiel.out)
 \@outlinefile=\write6
@@ -1751,45 +1742,28 @@ Dictionary: translator-numbers-dictionary, Language: English
 ry-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 41.
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 41.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
-(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 41.
-LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 41.
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 40.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 40.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 41.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 40.
 LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
-(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 41.
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 40.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 ck labels; missing features). Consider writing \pgfplotsset{compat=1.16} into yo
 ur preamble.
- on input line 41.
+ on input line 40.
 
 Package biblatex Info: Trying to load language 'english'...
 Package biblatex Info: ... file 'english.lbx' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
 )
-Package biblatex Info: Trying to load language 'ngerman'...
-Package biblatex Info: ... file 'ngerman.lbx' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/ngerman.lbx
-File: ngerman.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
-)
-Package biblatex Info: Trying to load language 'german'...
-Package biblatex Info: ... file 'german.lbx' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/german.lbx
-File: german.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
-))
 Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1800,48 +1774,48 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'beispiel.bbl' found.
 
 (./beispiel.bbl)
-Package biblatex Info: Reference section=0 on input line 41.
-Package biblatex Info: Reference segment=0 on input line 41.
+Package biblatex Info: Reference section=0 on input line 40.
+Package biblatex Info: Reference segment=0 on input line 40.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (./beispiel.nav)
-
-LaTeX Font Warning: Font shape `TU/phv/b/n' undefined
-(Font)              using `TU/phv/m/n' instead on input line 41.
-
-
-Overfull \vbox (0.5237pt too high) detected at line 41
- []
-
-<csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png, id=43, 7.82
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 4.25003pt on input line 40.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 4.25003pt on input line 40.
+<csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png, id=42, 7.82
 925pt x 7.82925pt>
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 41.
+262aacf.png  used on input line 40.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-<TU_Logo_lang_RGB_rot.pdf, id=44, 202.7575pt x 113.42375pt>
+<TU_Logo_lang_RGB_rot.pdf, id=43, 202.7575pt x 113.42375pt>
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 41.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 40.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-<Nike_head.png, id=45, 267.399pt x 28.54665pt>
+<Nike_head.png, id=44, 267.399pt x 28.54665pt>
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 41.
+Package luatex.def Info: Nike_head.png  used on input line 40.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 45.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 44.
 (luatex.def)             Requested size: 85.35826pt x 47.75014pt.
-<Nike.png, id=46, 335.8146pt x 91.0602pt>
+<Nike.png, id=45, 335.8146pt x 91.0602pt>
 File: Nike.png Graphic file (type png)
 <use Nike.png>
-Package luatex.def Info: Nike.png  used on input line 45.
+Package luatex.def Info: Nike.png  used on input line 44.
 (luatex.def)             Requested size: 335.74203pt x 91.05301pt.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 44.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.80005pt on input line 44.
 
-Overfull \vbox (32.16801pt too high) detected at line 45
+Overfull \vbox (32.16801pt too high) detected at line 44
  []
 
 [1
@@ -1849,7 +1823,32 @@ Overfull \vbox (32.16801pt too high) detected at line 45
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}<./TU_Logo_lang_RGB_rot.pdf><
 ./Nike.png>]
 \openout4 = beispiel.vrb
- (./beispiel.vrb) (./beispiel.toc)
+ (./beispiel.vrb) (./beispiel.toc
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.65005pt on input line 4.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 49.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 3.40002pt on input line 49.
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 49.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 49.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 49.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [2
+
+<./Nike_head.png><./csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aa
+cf.png>] (./beispiel.toc)
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
 Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 50.
@@ -1858,9 +1857,6 @@ File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
 Package luatex.def Info: Nike_head.png  used on input line 50.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
@@ -1868,57 +1864,32 @@ Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
 262aacf.png  used on input line 50.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
 
-[2
-
-<./Nike_head.png><./csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aa
-cf.png>] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 51.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 51.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 51.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
 [3
 
 ] (./beispiel.toc)
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 53.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 52.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 53.
+Package luatex.def Info: Nike_head.png  used on input line 52.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 53.
+262aacf.png  used on input line 52.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[4
+ [4
 
 ]
 \openout4 = beispiel.vrb
  (./beispiel.vrb
 LaTeX Font Info:    Trying to load font information for OT1+phv on input line 3.
 
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
@@ -1969,32 +1940,38 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <5> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
 (Font)              scaled to size 4.25003pt on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.10004pt on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 5.95004pt on input line 23.
 
 
 LaTeX Warning: Citation 'PhysRev.94.511' on page 5 undefined on input line 23.
 
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
 )
-Overfull \vbox (11.23932pt too high) detected at line 77
+Overfull \vbox (1.92155pt too high) detected at line 76
  []
 
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 77.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 76.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 77.
+Package luatex.def Info: Nike_head.png  used on input line 76.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 77.
+262aacf.png  used on input line 76.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
 [5
 
 ]
@@ -2016,81 +1993,83 @@ LaTeX Warning: Citation 'NumaKUL' on page 6 undefined on input line 12.
 )
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 93.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 92.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 93.
+Package luatex.def Info: Nike_head.png  used on input line 92.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 93.
+262aacf.png  used on input line 92.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[6
+ [6
 
 ]
 \openout4 = beispiel.vrb
  (./beispiel.vrb)
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 106.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 105.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 106.
+Package luatex.def Info: Nike_head.png  used on input line 105.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 106.
+262aacf.png  used on input line 105.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[7
+ [7
 
 ]
 \openout4 = beispiel.vrb
  (./beispiel.vrb)
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 124.
-LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 5.95004pt on input line 124.
+(Font)              scaled to size 8.50006pt on input line 123.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 8.50006pt on input line 124.
-LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 5.95004pt on input line 124.
+(Font)              scaled to size 8.50006pt on input line 123.
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 124.
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 123.
 (luatex.def)             Requested size: 51.21495pt x 28.65007pt.
 File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 124.
+Package luatex.def Info: Nike_head.png  used on input line 123.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 124.
+262aacf.png  used on input line 123.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[8
+ [8
 
 ]
 \openout4 = beispiel.vrb
- (./beispiel.vrb (./Figures/Boltzmann.tex))
+ (./beispiel.vrb
+(./Figures/Boltzmann.tex))
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 132.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 132.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 132.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [9
+
+] (./beispiel.toc)
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
 Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 133.
@@ -2099,171 +2078,18 @@ File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
 Package luatex.def Info: Nike_head.png  used on input line 133.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
 262aacf.png  used on input line 133.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[9
-
-] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 134.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 134.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 134.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[10
-
-] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 135.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 135.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 135.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[11
-
-] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 136.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 136.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 136.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[12
-
-] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 137.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 137.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 137.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[13
+ [10
 
 ]
 \openout4 = beispiel.vrb
- (./beispiel.vrb)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 144.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 144.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 144.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[14
-
-] (./beispiel.toc)
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 146.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 146.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 146.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[15
-
-]
-File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
-<use TU_Logo_lang_RGB_rot.pdf>
-Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 153.
-(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
-File: Nike_head.png Graphic file (type png)
-<use Nike_head.png>
-Package luatex.def Info: Nike_head.png  used on input line 153.
-(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
-File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
- file (type png)
-<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
-Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
-262aacf.png  used on input line 153.
-(luatex.def)             Requested size: 15.6491pt x 15.649pt.
-
-[16
-
-]
-
-LaTeX Warning: Empty bibliography on input line 156.
-
+ (./beispiel.vrb
+(./Figures/Sod.tex))
 File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
 <use TU_Logo_lang_RGB_rot.pdf>
 Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 156.
@@ -2272,17 +2098,138 @@ File: Nike_head.png Graphic file (type png)
 <use Nike_head.png>
 Package luatex.def Info: Nike_head.png  used on input line 156.
 (luatex.def)             Requested size: 267.47586pt x 28.45422pt.
-
-Overfull \vbox (0.5237pt too high) has occurred while \output is active []
-
 File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
  file (type png)
 <use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
 Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
 262aacf.png  used on input line 156.
 (luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [11
 
-[17
+]
+\openout4 = beispiel.vrb
+ (./beispiel.vrb)
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 161.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 161.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 161.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [12
+
+] (./beispiel.toc)
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 162.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 162.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 162.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [13
+
+]
+(./beispiel.toc)
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 163.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 163.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 163.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [14
+
+] (./beispiel.toc)
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 164.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 164.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 164.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [15
+
+] (./beispiel.toc)
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 165.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 165.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 165.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [16
+
+]
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 172.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 172.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 172.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+ [17
+
+]
+
+LaTeX Warning: Empty bibliography on input line 175.
+
+File: TU_Logo_lang_RGB_rot.pdf Graphic file (type pdf)
+<use TU_Logo_lang_RGB_rot.pdf>
+Package luatex.def Info: TU_Logo_lang_RGB_rot.pdf  used on input line 175.
+(luatex.def)             Requested size: 51.21495pt x 28.65007pt.
+File: Nike_head.png Graphic file (type png)
+<use Nike_head.png>
+Package luatex.def Info: Nike_head.png  used on input line 175.
+(luatex.def)             Requested size: 267.47586pt x 28.45422pt.
+File: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png Graphic
+ file (type png)
+<use csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png>
+Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
+262aacf.png  used on input line 175.
+(luatex.def)             Requested size: 15.6491pt x 15.649pt.
+[18
 
 ]
 \tf@nav=\write7
@@ -2294,16 +2241,13 @@ Package luatex.def Info: csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa
 \tf@snm=\write9
 
 \openout9 = beispiel.snm
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 157.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 157.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 176.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 176.
  (./beispiel.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 157.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 157.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 176.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 176.
 Package rerunfilecheck Info: File `beispiel.out' has not changed.
 (rerunfilecheck)             Checksum: 530067EBF03DF9527F496C7B2C0206AA;878.
-
-
-LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
@@ -2319,38 +2263,34 @@ Package logreq Info: Writing requests to 'beispiel.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 48596 strings out of 481365
+ 48735 strings out of 481365
  125171,1977958 words of node,token memory allocated
- 1519 words of node memory still in use:
-   34 hlist, 6 vlist, 5 rule, 1 local_par, 25 glue, 9 kern, 8 penalty, 1 glyph, 
-116 attribute, 77 glue_spec, 60 attribute_list, 4 write, 6 pdf_colorstack, 2 pdf
-_setmatrix, 2 pdf_save, 2 pdf_restore nodes
-   avail lists: 1:4,2:2963,3:1041,4:132,5:244,6:38,7:2169,8:59,9:483,10:17,11:96
+ 1871 words of node memory still in use:
+   33 hlist, 6 vlist, 5 rule, 1 local_par, 22 glue, 55 kern, 8 penalty, 1 glyph,
+ 167 attribute, 77 glue_spec, 85 attribute_list, 4 write, 6 pdf_colorstack, 2 pd
+f_setmatrix, 2 pdf_save, 2 pdf_restore nodes
+   avail lists: 1:4,2:2912,3:1041,4:132,5:230,6:39,7:2167,8:59,9:555,10:18,11:96
 
- 63407 multiletter control sequences out of 65536+600000
- 114 fonts using 9635179 bytes
- 67i,18n,111p,825b,2331s stack positions out of 5000i,500n,10000p,200000b,100000s
-</usr/share/texmf/fonts/opentype/public/lm/lmmono10-regular.otf></usr/share/texm
-f/fonts/opentype/public/lm/lmroman6-regular.otf>{/usr/share/texlive/texmf-dist/f
-onts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/opentype/public/lm/lmroman5-r
-egular.otf></usr/share/texmf/fonts/opentype/public/lm/lmroman9-regular.otf></usr
-/share/texmf/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf/fo
-nts/opentype/public/lm/lmroman8-regular.otf></usr/share/texmf/fonts/opentype/pub
-lic/lm/lmroman12-regular.otf></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathf
-onts/cmssex9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts
-/cmssmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/cms
-smi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/cmssmib
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/cmsssy9.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/sansmathfonts/ssmsbm10.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on beispiel.pdf (17 pages, 1592810 bytes).
+ 63535 multiletter control sequences out of 65536+600000
+ 121 fonts using 9861971 bytes
+ 67i,18n,111p,876b,2331s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/sansmathfonts/cmssex9.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/sansmathfonts/cmssmi6.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/sansmathfonts/cmssmi9.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/sansmathfonts/cmssmib9.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/sansmathfonts/cmsssy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/sansmathfonts/cmsssy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
+sfonts/latxfont/lcircle1.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/s
+ansmathfonts/ssmsbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helveti
+c/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
+Output written on beispiel.pdf (18 pages, 1580566 bytes).
 
-PDF statistics: 344 PDF objects out of 1000 (max. 8388607)
- 277 compressed objects within 3 object streams
- 43 named destinations out of 1000 (max. 131072)
+PDF statistics: 293 PDF objects out of 1000 (max. 8388607)
+ 245 compressed objects within 3 object streams
+ 45 named destinations out of 1000 (max. 131072)
  72 words of extra memory for PDF output out of 10000 (max. 100000000)
 

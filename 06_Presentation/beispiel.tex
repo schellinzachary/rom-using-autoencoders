@@ -1,7 +1,7 @@
 \documentclass[Nike]{tuberlinbeamer}
-
-\usepackage[ngerman,english]{babel}  % 'babel' muss geladen werden
+\usepackage[english]{babel}  % 'babel' muss geladen werden
 \usepackage[utf8]{inputenc}  % optional, aber empfehlenswert
+\usepackage[T1]{fontenc}
 \usepackage{
 	tikz,
 	pgfplots,
@@ -14,7 +14,7 @@
 %\bibliographystyle{JHEP}
 \bibliography{other/references.bib}
 %\addbibresource{other/references}
-\usepackage[font={footnotesize}]{caption}
+\usepackage[font={small}]{caption}
 \usetikzlibrary{
 	shapes,
 	arrows,
@@ -24,9 +24,9 @@
 
 % Die ueblichen Angaben
 \title{Model Order Reduction of Rarefied Gases Using Neural Networks}
-\subtitle{Institut f\"ur Numerische Fluiddynamik}
+\subtitle{}
 \author[Zachary Schellin]{Zachary Schellin}
-\institute{Technische Universität Berlin}
+\institute{Institut f\"ur Numerische Fluiddynamik}
 
 % Eigenes Logo einfuegen:
 \renewcommand{\pathtomylogo}{csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png}
@@ -37,7 +37,6 @@
 		\tableofcontents[currentsection]
 	\end{frame}
 }
-\renewcommand{\footnotesize}{\tiny}
 \begin{document}
 
 \begin{frame}
@@ -49,7 +48,7 @@
 \tableofcontents
 \end{frame}
 \section{Introduction}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The BGK-Model}
 \begin{frame}[fragile]{Governing equations}
 	\begin{itemize}
@@ -132,17 +131,37 @@
 	\end{center}
 \end{frame}
 \section{Sod's shock tube}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Sod's shock tube}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+				\begin{figure}
+					\input{Figures/Sod.tex}
+					\caption{Problem setup of Sod's shock tube for the BGK model in 1D.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+				\begin{itemize}
+					\item Test case for numerical schemes solving
+					\item \emph{non-linear hyperbolic conservation laws} in gas dynamics (Gary A. Sod in 1978)
+					\item \emph{Idea}:
+					\begin{itemize}
+						\item Solve problem analytically (Rankine-Hugoniot jump conditions)
+						\item Solve problem numerically
+						\item Compare resolution of discontinuities
+					\end{itemize}
+				\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Sod's shock tube}
+		\begin{itemize}
+			\item 
+	\end{itemize}
+\end{frame}
 \section{Proper Orthogonal Decomposotion (POD)}
 \section{Neural Networks}
 \section{Results}
-
-\begin{frame}[fragile]{Verwendung der \texttt{tuberlinbeamer}-Klasse}
-Es folgen demnächst ein paar Folien zur Verwendung dieser Dokumentklasse.
-\begin{itemize}
-\item Kenntnis der \emph{beamer}-Klasse ist von Vorteil
-\end{itemize}
-\end{frame}
-
 \section{Discussion}
 
 \begin{frame}{ToDo}
