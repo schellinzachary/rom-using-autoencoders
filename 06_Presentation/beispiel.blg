@@ -1,16 +1,16 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'beispiel.blg'
-[58] biber:322> INFO - === Mon Nov  1, 2021, 17:54:21
-[70] Biber.pm:415> INFO - Reading 'beispiel.bcf'
-[121] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
-[131] Biber.pm:4256> INFO - Processing section 0
-[132] Utils.pm:75> INFO - Globbing data source 'other/references.bib'
-[132] Utils.pm:91> INFO - Globbed data source 'other/references.bib' to other/references.bib
-[140] Biber.pm:4455> INFO - Looking for bibtex format file 'other/references.bib' for section 0
-[141] bibtex.pm:1653> INFO - LaTeX decoding ...
-[174] bibtex.pm:1471> INFO - Found BibTeX data source 'other/references.bib'
-[175] Utils.pm:293> WARN - Duplicate entry key: 'dumoulin2018guide' in file 'other/references.bib', skipping ...
-[193] Utils.pm:293> WARN - month field 'May' in entry 'PhysRev.94.511' is not an integer - this will probably not sort properly.
-[199] Utils.pm:309> ERROR - BibTeX subsystem: /tmp/biber_tmp_ho97/references.bib_1409342.utf8, line 143, syntax error: found "year", expected end of entry ("}" or ")") (skipping to next "@")
-[199] Biber.pm:128> INFO - WARNINGS: 2
-[199] Biber.pm:132> INFO - ERRORS: 1
+[57] biber:322> INFO - === Wed Nov  3, 2021, 20:03:27
+[68] Biber.pm:415> INFO - Reading 'beispiel.bcf'
+[118] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
+[128] Biber.pm:4256> INFO - Processing section 0
+[128] Utils.pm:75> INFO - Globbing data source 'other/references.bib'
+[128] Utils.pm:91> INFO - Globbed data source 'other/references.bib' to other/references.bib
+[136] Biber.pm:4455> INFO - Looking for bibtex format file 'other/references.bib' for section 0
+[137] bibtex.pm:1653> INFO - LaTeX decoding ...
+[170] bibtex.pm:1471> INFO - Found BibTeX data source 'other/references.bib'
+[172] Utils.pm:293> WARN - Duplicate entry key: 'dumoulin2018guide' in file 'other/references.bib', skipping ...
+[190] Utils.pm:293> WARN - month field 'May' in entry 'PhysRev.94.511' is not an integer - this will probably not sort properly.
+[195] Utils.pm:309> ERROR - BibTeX subsystem: /tmp/biber_tmp_gSf1/references.bib_4111253.utf8, line 143, syntax error: found "year", expected end of entry ("}" or ")") (skipping to next "@")
+[195] Biber.pm:128> INFO - WARNINGS: 2
+[195] Biber.pm:132> INFO - ERRORS: 1

@@ -1,15 +1,28 @@
-\documentclass[Nike]{tuberlinbeamer}
+\documentclass[usenames,dvipsnames,Nike]{tuberlinbeamer}
 \usepackage[english]{babel}  % 'babel' muss geladen werden
 \usepackage[utf8]{inputenc}  % optional, aber empfehlenswert
 \usepackage[T1]{fontenc}
 \usepackage{
 	tikz,
 	pgfplots,
+	pgfplotstable,
 	xparse,
 	boxedminipage2e,
 	amsmath,
-	hyperref
+	amssymb,
+	amsfonts,
+	hyperref,
+	graphicx,
+	soul,
+	xcolor,
+	color,
+	caption,
+	subfig
 	}
+\usepackage[skins,theorems]{tcolorbox}
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{groupplots}
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
 \usepackage[style=verbose,backend=biber]{biblatex}
 %\bibliographystyle{JHEP}
 \bibliography{other/references.bib}
@@ -105,39 +118,47 @@
 \end{frame}
 
 \begin{frame}[fragile]{Moments/ Expected values of $f$}
-	\begin{itemize}
-		\item By multiplying the collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$ with $f$ and integrating in velocity space $v$ the moments are obtained.
-		\item The first moment/ the Density is
-		\begin{equation}
-				\rho(x,t) = \int\! f \,\mathrm{d}v \,,
-		\end{equation}
-		\item the second moment/ the Momentum is
-		\begin{equation}
-			\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
-		\end{equation}
-		\item the third moment/ the kinetic Energy is
-		\begin{equation}
-			E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
-		\end{equation}
-	\end{itemize}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+				\begin{itemize}
+				\item Collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$
+				\item The first moment/ Density is
+				\begin{equation}
+					\rho(x,t) = \int\! f \,\mathrm{d}v \,,
+				\end{equation}
+				\item the second moment/ Momentum is
+				\begin{equation}
+					\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
+				\end{equation}
+				\item the third moment/ kinetic Energy is
+				\begin{equation}
+					E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
+				\end{equation}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{center}
+				\begin{figure}
+					\input{Figures/Boltzmann.tex}
+					\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}
 \end{frame}
 
-\begin{frame}[fragile]{Moments/ Expected values of $f$}
-	\begin{center}
-		\begin{figure}
-			\input{Figures/Boltzmann.tex}
-			\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
-		\end{figure}
-	\end{center}
-\end{frame}
 \section{Sod's shock tube}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Sod's shock tube}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
 				\begin{figure}
-					\input{Figures/Sod.tex}
-					\caption{Problem setup of Sod's shock tube for the BGK model in 1D.}
+					\only<1>{\input{Figures/Sod.tex}}
+					\only<1>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t=0s$.}}
+					\only<2>{\input{Figures/Sod_time0.tex}}
+					\only<2>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t=0s$.}}
+					\only<3>{\input{Figures/Sod_time.tex}}
+					\only<3>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t>0s$.}}
 			\end{figure}
 		\end{column}
 		\begin{column}{.5\textwidth}
@@ -148,18 +169,142 @@
 					\begin{itemize}
 						\item Solve problem analytically (Rankine-Hugoniot jump conditions)
 						\item Solve problem numerically
-						\item Compare resolution of discontinuities
+						\item Compare results expecially \emph{resolution of discontinuities}
+				   \only<3>{\begin{itemize}
+								\item $\mathbf{x_1}$ head of rarefaction wave
+								\item $\mathbf{x_2}$ tail of rarefaction wave
+								\item $\mathbf{x_3}$ contact discontinuity
+								\item $\mathbf{x_4}$ position of shockwave
+							\end{itemize}}
 					\end{itemize}
 				\end{itemize}
 		\end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}[fragile]{Sod's shock tube}
+\begin{frame}[fragile]{Two Case Studies}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\input{Figures/MacroFOMhyvsrare.tex}
+				\caption{Moments of $\mathbf{H}$ and $\mathbf{R}$ at $t=0.12s$ and $v=v_0$ in Sod's shock tube.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Two solutions of the BGK model in Sod's shock tube
+				\item Two levels of rarefaction
+				\begin{itemize}
+					\item $\mathbf{H}$, $Kn=0.00001$, "Continuum Flow"
+					\item $\mathbf{R}$, $Kn=0.001$, "Slip flow"
+				\end{itemize}
+				\item Present discontinuities
+			\begin{columns}
+				\begin{column}{.3\textwidth}
+					$\mathbf{H}$
+					\hrule
+					\begin{itemize}
+						%\only<1>{\item $x_1$}
+						\item \only<2,3,4>{\colorbox{Cyan}}{$x_1$}
+						\item \only<2,3,4>{\colorbox{Cyan}}{$x_2$}
+						\item \only<3,4>{\colorbox{Cyan}}{$x_3$}
+						\item \only<4>{\colorbox{Cyan}}{$x_4$}
+					\end{itemize}
+				\end{column}
+				\begin{column}{.3\textwidth}
+					$\mathbf{R}$
+					\hrule
+					\begin{itemize}
+						\item \only<2,3,4>{\colorbox{Cyan}}{$x_1$}
+						\item \only<2,3,4>{\colorbox{Cyan}}{$x_2$}
+						\item \only<3,4>{\colorbox{red}}{$x_3$}
+						\item \only<4>{\colorbox{red}}{$x_4$}
+					\end{itemize}
+				\end{column}
+			\end{columns}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Two Case Studies}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+
+			\begin{itemize}
+				\item Spatial resolution $J = 200$
+				\item Temporal resolution $I = 25$
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Velocious resolution $K = 40$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\begin{figure}
+		 \input{Figures/ExamplesSOD.tex}
+		 \caption{Solution $f$ for $\mathbf{H}$ and $\mathbf{R}$ in $x$ and $v$.}
+	\end{figure}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Model Order Reduction}
+\begin{frame}[fragile]{Model Order Reduction}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\subfloat[Evolving the FOM in time.]{\input{Figures/flow.tex}}\\
+				\subfloat[Evolving the ROM in time.]{\input{Figures/flow_red.tex}}
+				\caption{In the online phase the operator $Q$ is different for the FOM and the ROM.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item<1->\emph{Goal}: Reduce computational cost
+				\begin{itemize}
+					\item<2->$f(x,v,t)$ with $KJ$ ODE's in time for 1D
+				\end{itemize}
+				\item<3-> \emph{Require}: Reduction algorithm 
+				\begin{itemize}
+					\item<4-> Proper Orthogonal Decomposition \emph{(POD)}
+					\item<4-> Neural Networks \emph{(NN)}
+				\end{itemize}
+				\item<5->\emph{Require}: Solution of $f$ (only few timesteps)
+				\item<6->\emph{Reduce}: $POD(f(x,v,t))=q(x,n,t)$
+				\begin{itemize}
+					\item<7->$P$ is \# n with $P<<K$
+					\item<8->$KJ$ ODE's vs. $PJ$ ODE's
+				\end{itemize}
+				\item<9->\emph{Evolve in time}  $\rightarrow Q(q,t)=\tilde{f}$
+				\item<10->$f-\tilde{f}<\epsilon$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proper Orthogonal Decomposotion (POD)}
+\begin{frame}[fragile]{Proper Orthogonal Decomposition}
+	\begin{itemize}
+		\item<1-> Solution of a PDE is $f(x,v,t)$ can be obtained
 		\begin{itemize}
-			\item 
+			\item<2->Discretization into a system of ODE's
+			\item<3->Separation of variables ansatz
+			\begin{itemize}
+				\item<4->$
+					f(t,v,x) = \sum_{i=1}^n \tcbhighmath[
+					size=title,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=red]{a_i(t)}
+					\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i(x,v)}$   (9)
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\begin{itemize}
+		\item<5->How to get $\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i}$?
+		\begin{itemize}
+			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
+			\begin{itemize}
+				\item $P=\input{Figures/Mat.tex}$
+			\end{itemize}
+		\end{itemize}
 	\end{itemize}
 \end{frame}
-\section{Proper Orthogonal Decomposotion (POD)}
 \section{Neural Networks}
 \section{Results}
 \section{Discussion}

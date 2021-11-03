@@ -1,0 +1,135 @@
+% This file was created by tikzplotlib v0.9.6.
+\begin{tikzpicture}[scale=.8]
+
+\begin{groupplot}[group style={group size=3 by 2,horizontal sep=.8cm,vertical sep=0.9cm}]
+\nextgroupplot[
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975, ymin=-10,ymax=10] {Figures/ExamplesSOD-000.png};
+\node[fill=white] at (axis cs:.77,-6.5) {\small $\mathbf{H},t=0s$};
+
+\nextgroupplot[
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975, ymin=-10,ymax=10] {Figures/ExamplesSOD-001.png};
+\node[fill=white] at (axis cs:.71,-6.5) {\small $\mathbf{H},t=0.06s$};
+
+\nextgroupplot[
+colorbar,
+colorbar style={width=1.5ex,ylabel={$f$},ytick={0,0.39},y label style={yshift=2.3em}},
+colormap/blackwhite,
+point meta max=0.398587408411986,
+point meta min=1.61655951012117e-88,
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975,ymin=-10,ymax=10] {Figures/ExamplesSOD-002.png};
+\node[fill=white] at (axis cs:.71,-6.5) {\small $\mathbf{H},t=0.12s$};
+
+\nextgroupplot[
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975, ymin=-10,ymax=10] {Figures/ExamplesSOD-003.png};
+\node[fill=white] at (axis cs:.77,-6.5) {\small $\mathbf{R},t=0s$};
+
+\nextgroupplot[
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975, ymin=-10,ymax=10] {Figures/ExamplesSOD-004.png};
+\node[fill=white] at (axis cs:.71,-6.5) {\small $\mathbf{R},t=0.06s$};
+\nextgroupplot[
+colorbar,
+colorbar style={width=1.5ex,ylabel={$f$},ytick={0,0.4},y label style={yshift=1.7em}},
+colormap/blackwhite,
+point meta max=0.406101604565777,
+point meta min=1.62163282651898e-88,
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=.0025,xmax=0.9975,
+xtick style={color=black},
+%y dir=reverse,
+y grid style={white!69.0196078431373!black},
+ymin=-10,ymax=10,
+ytick style={color=black},
+width = .45\textwidth,
+height = .25\textwidth,
+ylabel= $v$,
+y label style={yshift=-1.5em},
+x label style={yshift=.3em},
+xlabel = $x$
+]
+\addplot graphics [includegraphics cmd=\pgfimage,xmin=.0025,xmax=0.9975, ymin=-10,ymax=10] {Figures/ExamplesSOD-005.png};
+\node[fill=white] at (axis cs:.71,-6.5) {\small $\mathbf{R},t=0.12s$};
+\end{groupplot}
+
+\end{tikzpicture}

@@ -5,12 +5,14 @@
 \defcounter {refsection}{0}\relax 
 \beamer@sectionintoc {2}{The BGK-Model}{4}{0}{2}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {3}{Sod's shock tube}{10}{0}{3}
+\beamer@sectionintoc {3}{Sod's shock tube}{9}{0}{3}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {4}{Proper Orthogonal Decomposotion (POD)}{13}{0}{4}
+\beamer@sectionintoc {4}{Model Order Reduction}{18}{0}{4}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {5}{Neural Networks}{14}{0}{5}
+\beamer@sectionintoc {5}{Proper Orthogonal Decomposotion (POD)}{29}{0}{5}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {6}{Results}{15}{0}{6}
+\beamer@sectionintoc {6}{Neural Networks}{36}{0}{6}
 \defcounter {refsection}{0}\relax 
-\beamer@sectionintoc {7}{Discussion}{16}{0}{7}
+\beamer@sectionintoc {7}{Results}{37}{0}{7}
+\defcounter {refsection}{0}\relax 
+\beamer@sectionintoc {8}{Discussion}{38}{0}{8}

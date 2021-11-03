@@ -1,0 +1,6 @@
+\tikzstyle{reco} = [rectangle,minimum height=4em,text centered, fill=blue!20,draw=black]
+\begin{tikzpicture}[scale=0.5]
+	\node [reco,label=ROM] (red) {$\frac{d}{dt}q = Q(q,t)$};
+	\draw [<-,thick] (red)--+ (-4,0) node[midway,above] {input \(t\)};
+	\draw [->,thick] (red)--+ (4,0) node[midway,above] {output $\tilde{f}$};
+\end{tikzpicture}

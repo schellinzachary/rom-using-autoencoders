@@ -1,4 +1,23 @@
-\frametitle{Sod's shock tube}
+\frametitle{Proper Orthogonal Decomposition}
 \begin{itemize}
-			\item
+		\item<1-> Solution of a PDE is $f(x,v,t)$ can be obtained
+		\begin{itemize}
+			\item<2->Discretization into a system of ODE's
+			\item<3->Separation of variables ansatz
+			\begin{itemize}
+				\item<4->$
+					f(t,v,x) = \sum_{i=1}^n \tcbhighmath[
+					size=title,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=red]{a_i(t)}
+					\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i(x,v)}$   (9)
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+	\begin{itemize}
+		\item<5->How to get $\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i}$?
+		\begin{itemize}
+			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
+			\begin{itemize}
+				\item $P=\input{Figures/Mat.tex}$
+			\end{itemize}
+		\end{itemize}
 	\end{itemize}

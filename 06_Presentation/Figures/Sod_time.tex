@@ -1,0 +1,94 @@
+\begin{tikzpicture}[scale=0.8]
+	\draw[draw=none,fill=green] (0.0,0.0) rectangle ++(2,3);
+	\draw[draw=none,fill=BlueGreen] (5.5,0.0) rectangle ++(2,3);
+	\fill[left color = green, right color=BlueGreen, middle color = yellow](2,0.0) rectangle ++(3.5,3);
+	%ground nodes
+	\node [] at (0,0) (a0) {};
+	\node [] at (2,0) (a1) {};
+	\node [] at (3,0) (a2) {};
+	\node [] at (3.5,0) (a3) {};
+	\node [] at (4.5,0) (a4) {};
+	\node [] at (5.5,0) (a5) {};
+	\node [] at (7.5,0) (a6) {};
+	\node [on grid,below = 1.5ex of a2] (xd) {$x_d$};
+	\node [on grid,below = 1.5ex of a1] (x1) {$x_1$};
+	\node [on grid,below = 1.5ex of a3] (x2) {$x_2$};
+	\node [on grid,below = 1.5ex of a4] (x3) {$x_3$};
+	\node [on grid,below = 1.5ex of a5] (x4) {$x_4$};
+	%level 1 nodes
+	\node [] at (7.5,0.5) (b6) {};
+	\node [] at (5.5,0.5) (b5) {};
+	%level 2 nodes
+	\node [] at (3,.9) (c2) {};
+	\node [] at (3.5,.9) (c3) {};
+	\node [] at (4.5,.9) (c4) {};
+	%level 3 nodes
+	\node [] at (7.5,1) (d6) {};
+	\node [] at (5.5,1) (d5) {};
+	%level 4 nodes
+	\node [] at (4.5,1.5) (e4) {};
+	\node [] at (5.5,1.5) (e5) {};
+	%level 5 nodes
+	\node [] at (0,1.6) (f0) {};
+	\node [] at (2,1.6) (f1) {};
+	%level 6 nodes
+	\node [] at (3,2) (g2) {};
+	\node [] at (3.5,2) (g3) {};
+	\node [] at (4.5,2) (g4) {};
+	\node [] at (5.5,2) (g5) {};
+	\node [] at (7.5,2) (g6) {};
+	%level 7 nodes
+	\node [] at (0,2.5) (h0) {};
+	\node [] at (2,2.5) (h1) {};
+	\node [] at (3,2.5) (h2) {};
+	\node [] at (3.5,2.5) (h3) {};
+	\node [] at (4.5,2.5) (h4) {};
+	\node [] at (5.5,2.5) (h5) {};
+	%top nodes
+	\node [] at (0,3) (i0) {};
+	\node [] at (2,3) (i1) {};
+	\node [] at (3,3) (i2) {};
+	\node [] at (3.5,3) (i3) {};
+	\node [] at (4.5,3) (i4) {};
+	\node [] at (5.5,3) (i5) {};
+	\node [] at (7.5,3) (i6) {};
+	%draw and bottom edge
+	\draw [|->,thick] (a0.center) -- (a6.center) node [below left] {$x$};
+	\path [] (a0.center) -- (a1.center) node [midway,above] {$u_1$};
+	\path [] (a5.center) -- (a6.center) node [midway,above] { $u_5$};
+	%draw top descriptors
+	\path[] (i0.center) -- (i1.center) node [midway,above] {\footnotesize Region 1};
+	\path[] (i1.center) -- (i3.center) node [midway,above] {\footnotesize Region 2};
+	\path[] (i3.center) -- (i4.center) node [midway,above] {\footnotesize Reg.3};
+	\path[] (i4.center) -- (i5.center) node [midway,above] {\footnotesize Reg.4};
+	\path[] (i5.center) -- (i6.center) node [midway,above] {\footnotesize Region 5};
+	%draw level 1
+	\draw[thick] (b5.center) -- (b6.center) {};
+	\path[] (b5.center) -- (b6.center) node [midway,above] {$\rho_5$};
+	%draw level 3
+	\path[] (c3.center) -- (c4.center) node [midway,above] {$\rho_3$};
+	%draw level 4
+	\draw[thick] (d5.center) -- (d6.center) {};
+	\path[] (d5.center) -- (d6.center) node [midway,above] {$p_5$};
+	%draw level 5
+	\draw[thick] (e4.center) -- (e5.center) {};
+	\path[] (e4.center) -- (e5.center) node [midway,above] {$\rho_4$};
+	\draw[thick] plot [smooth] coordinates {(f1)(2.6,1.1)(c2)(c3)(c4)};
+	\draw[thick] (f0.center) -- (f1.center) node [midway,above] {$\rho_1$};
+	%draw level 6
+	\path[] (g3.center) -- (g4.center) node [midway,above] {$p_3$};
+	\path[] (g4.center) -- (g5.center) node [midway,above] {$p_4$};
+	\draw[thick] plot [smooth] coordinates {(h1)(2.5,2.2)(g2)(g3)(g4)(g5)};
+	\draw[thick] (h3.center) -- (a1.center) {};
+
+	\draw[thick] (h0.center) -- (h1.center) node [midway,above] {$p_1$};
+	\draw[thick] (h3.center) -- (h4.center) node [midway,above] {$u_3$};
+	\draw[thick] (h4.center) -- (h5.center) node [midway,above] {$u_4$};
+	%draw vertical lines
+	\draw[dashed] (a1.center) -- (i1.center) {};
+	\draw[thick,dashed,blue] (a2.center) -- (h2.center) {};
+	\draw[dashed] (a3.center) -- (i3.center) {};
+	\draw[dashed] (a4.center) -- (i4.center) {};
+	\draw[dashed] (a5.center) -- (i5.center) {};
+
+\end{tikzpicture}
