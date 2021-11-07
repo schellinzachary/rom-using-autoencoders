@@ -1,0 +1,14 @@
+\frametitle{Concepts}
+\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\scalebox{.5}[.5]{\input{Figures/Capacity.tex}}
+				\caption{Influence of capacity}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item
+			\end{itemize}
+		\end{column}
+	\end{columns}

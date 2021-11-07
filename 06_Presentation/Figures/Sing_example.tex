@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+	\node [fill=yellow,circ] (x) {\(x\)};
+	\node [circ,draw=gray,fill=yellow,opacity=.5,right of = x] (empt1) {};
+	\node [circ,draw=gray,fill=yellow,opacity=.5,right of = empt1] (empt2) {};
+	\path (x) -- (empt1) node [fill=green,circ, midway, above=.5cm] (z) {\(z\)};
+	\node [fill=green,opacity=.5,circ,draw=gray,right of = z] (hidden1) {};
+	\path (z) -- (hidden1) node [fill=BlueGreen,circ,midway, above=.5cm] (y) {\(y\)};
+	\draw [arrow] (x)--(z) node [midway,xshift=-1.1ex] {g};
+	\draw [arrow] (z)--(y) node [midway,xshift=-1.1ex] {h};
+	\draw [gray] (x)--(hidden1);
+	\draw [gray] (empt1)--(z);
+	\draw [gray] (empt1)--(hidden1);
+	\draw [gray] (empt2)--(z);
+	\draw [gray] (empt2)--(hidden1);
+	\draw [gray] (hidden1)--(y);
+\end{tikzpicture}

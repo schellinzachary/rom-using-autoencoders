@@ -1,0 +1,27 @@
+\frametitle{Concepts}
+\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\scalebox{.5}[.5]{\input{Figures/Capacity.tex}}
+				\caption{Influence of capacity}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item \emph{Over- and Underfitting}:
+					\begin{itemize}
+						\item<2->\emph{Goal}: Reach optimal capacity
+					\end{itemize}
+				\item<3->\emph{How to direct capacity ?}:
+				\begin{itemize}
+					\item<4-> Size of the network
+					\item<5-> Activation functions
+					\item<6-> Loss function
+					\item<7-> Data distortion/ add variation to existing data
+					\item<8-> ...
+					\item<8-> Any other means of regularization
+				\end{itemize}
+				\item<5->\emph{Initialization}
+			\end{itemize}
+		\end{column}
+	\end{columns}

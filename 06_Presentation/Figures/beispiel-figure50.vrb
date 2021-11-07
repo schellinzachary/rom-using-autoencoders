@@ -1,0 +1,22 @@
+\frametitle{Convolutional Autoencoder}
+\begin{columns}
+		\begin{column}{.6\textwidth}
+			\vspace{-1cm}
+			\begin{figure}
+				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
+					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
+				\only<2>{\subfloat[Convolutional operation]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
+						}
+				\only<3>{\subfloat[Convolutional operation]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
+						}
+				\caption{Fundamental features of convolutional networks.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\begin{itemize}
+				\item
+			\end{itemize}
+		\end{column}
+	\end{columns}

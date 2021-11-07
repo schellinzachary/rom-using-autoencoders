@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  3 FEB 2021 16:50
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  7 NOV 2021 11:02
  system commands enabled.
 **ErrWorst.tex ErrWorst.tex
 (./ErrWorst.tex
@@ -83,7 +83,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.4 \begin{groupplot}
-                   [group style={group size=4 by 2,horizontal sep=1.5cm,vert...
+                   [
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
@@ -96,24 +96,15 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.4 \begin{groupplot}[
-                    group style={group size=4 by 2,horizontal sep=1.5cm,vert...
+                    
 You're in trouble here.  Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-l.5 \nextgroupplot
-                [
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
 
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 w
-l.15 w
-    idth=.26\textwidth,
+l.17 w
+    idth=.16\textwidth,
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
 I'll assume that you meant to say pt, for printer's points.
@@ -124,7 +115,7 @@ two letters. (See Chapter 27 of The TeXbook.)
 ! Illegal unit of measure (pt inserted).
 <to be read again> 
 x
-l.16 x
+l.18 x
     label={\(x\)},
 Dimensions can be in units of em, ex, in, pt, pc,
 cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
@@ -134,36 +125,9 @@ delete the erroneous units; e.g., type `2' to delete
 two letters. (See Chapter 27 of The TeXbook.)
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 16.
+(Font)              <7> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 16.
-! Undefined control sequence.
-l.20 \addplot
-            graphics [includegraphics cmd=\pgfimage,xmin=74.5, xmax=150.5, y...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.20 ...plot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=74.5, xmax=150.5, ym...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.21 \node
-        [fill=white] at (axis cs:130,15) {FOM};
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
+(Font)              <5> on input line 18.
 ! Undefined control sequence.
 l.22 \nextgroupplot
                  [
@@ -173,33 +137,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.32 w
-    idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.33 x
-    label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 ! Undefined control sequence.
-l.37 \addplot
-            graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, y...
+l.24 \addplot
+            graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -207,8 +147,34 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.37 ...plot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.25 includegraphics cmd=\pgfimage
+                                ,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.28 ] {Figures/Chapter_
+                      5/ErrWorst-000.png};
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.28 ] {Figures/Chapter_5/ErrWorst-000.png}
+                                         ;
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.29 \node
+        [fill=white] at (axis cs:0.65,7.5) {FOM};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -216,16 +182,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.38 \node
-        [fill=white] at (axis cs:130,15) {POD};
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.39 \nextgroupplot
+l.30 \nextgroupplot
                  [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -233,33 +190,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.49 w
-    idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.50 x
-    label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 ! Undefined control sequence.
-l.54 \addplot
-            graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, y...
+l.32 \addplot
+            graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -267,8 +200,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.54 ...plot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.33 includegraphics cmd=\pgfimage
+                                ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -276,8 +209,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.55 \node
-        [fill=white] at (axis cs:130,15) {FCNN};
+l.37 \node
+        [fill=white] at (axis cs:0.65,7.5) {POD};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -285,7 +218,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.56 \nextgroupplot
+l.38 \nextgroupplot
                  [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -293,33 +226,155 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.66 w
-    idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+! Undefined control sequence.
+l.40 \addplot
+            graphics [
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.67 x
-    label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+! Undefined control sequence.
+l.41 includegraphics cmd=\pgfimage
+                                ,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.45 \node
+        [fill=white] at (axis cs:0.65,7.5) {FCNN};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.46 \nextgroupplot
+                 [
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.49 	ylabel={$
+             \tilde{f}$},
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing } inserted.
+<inserted text> 
+}
+l.49 	ylabel={$
+             \tilde{f}$},
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.49 	ylabel={$\tilde
+                   {f}$},
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Undefined control sequence.
+l.53 	ticklabel style={font=\footnotesize
+                                       },
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.56 	width=0.1*\pgfkeysvalueof
+                             {/pgfplots/parent axis width},
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Extra }, or forgotten \endgroup.
+l.58 }
+    ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.63 \addplot
+            graphics [
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.64 includegraphics cmd=\pgfimage
+                                ,
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Missing $ inserted.
+<inserted text> 
+$
+l.67 ] {Figures/Chapter_
+                      5/ErrWorst-003.png};
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.67 ] {Figures/Chapter_5/ErrWorst-003.png}
+                                         ;
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+l.68 \node
+        [fill=white] at (axis cs:0.65,7.5) {CNN};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.69 \nextgroupplot
+                 [
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
 l.71 \addplot
-            graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, y...
+            graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -327,8 +382,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.71 ...plot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.72 includegraphics cmd=\pgfimage
+                                ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -336,8 +391,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.72 \node
-        [fill=white] at (axis cs:130,15) {CNN};
+l.76 \node
+        [fill=white] at (axis cs:0.65,7.5) {FOM};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -345,7 +400,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.73 \nextgroupplot
+l.77 \nextgroupplot
                  [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -353,33 +408,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.83 w
-    idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.84 x
-    label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 ! Undefined control sequence.
-l.88 \addplot
-            graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, y...
+l.79 \addplot
+            graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -387,8 +418,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.88 ...plot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.80 includegraphics cmd=\pgfimage
+                                ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -396,8 +427,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.89 \node
-        [fill=white] at (axis cs:130,15) {FOM};
+l.84 \node
+        [fill=white] at (axis cs:0.65,7.5) {POD};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -405,7 +436,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.90 \nextgroupplot
+l.85 \nextgroupplot
                  [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -413,33 +444,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.100 w
-     idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.101 x
-     label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
 ! Undefined control sequence.
-l.105 \addplot
-             graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ...
+l.87 \addplot
+            graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -447,8 +454,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.105 ...lot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.88 includegraphics cmd=\pgfimage
+                                ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -456,8 +463,8 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.106 \node
-         [fill=white] at (axis cs:130,15) {POD};
+l.92 \node
+        [fill=white] at (axis cs:0.65,7.5) {FCNN};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -465,59 +472,47 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.107 \nextgroupplot
-                  [
+l.93 \nextgroupplot
+                 [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.117 w
-     idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+! Missing } inserted.
+<inserted text> 
+}
+l.96 	ylabel={$
+             \tilde{f}$},
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.118 x
-     label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+! Missing } inserted.
+<inserted text> 
+}
+l.96 	ylabel={$
+             \tilde{f}$},
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-! Undefined control sequence.
-l.122 \addplot
-             graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
+! Missing $ inserted.
+<inserted text> 
+$
+l.96 	ylabel={$\tilde
+                   {f}$},
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
 
 ! Undefined control sequence.
-l.122 ...lot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.123 \node
-         [fill=white] at (axis cs:130,15) {FCNN};
+l.100 	ticklabel style={font=\footnotesize
+                                        },
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -525,41 +520,26 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.124 \nextgroupplot
-                  [
+l.103 	width=0.1*\pgfkeysvalueof
+                              {/pgfplots/parent axis width},
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-w
-l.134 w
-     idth=.26\textwidth,
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-x
-l.135 x
-     label={\(x\)},
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, nd, nc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+! Extra }, or forgotten \endgroup.
+l.105 }
+     ,
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.139 \addplot
-             graphics [includegraphics cmd=\pgfimage,xmin=75.5, xmax=150.5, ...
+l.110 \addplot
+             graphics [
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -567,17 +547,34 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.139 ...lot graphics [includegraphics cmd=\pgfimage
-                                                  ,xmin=75.5, xmax=150.5, ym...
+l.111 includegraphics cmd=\pgfimage
+                                 ,
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+! Missing $ inserted.
+<inserted text> 
+$
+l.114 ] {Figures/Chapter_
+                       5/ErrWorst-007.png};
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Extra }, or forgotten $.
+l.114 ] {Figures/Chapter_5/ErrWorst-007.png}
+                                          ;
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
 ! Undefined control sequence.
-l.140 \node
-         [fill=white] at (axis cs:130,15) {CNN};
+l.115 \node
+         [fill=white] at (axis cs:0.65,7.5) {CNN};
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -591,95 +588,328 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.141 \end{groupplot}
+l.116 \end{groupplot}
                    
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
+! Missing $ inserted.
+<inserted text> 
+$
+l.116 \end{groupplot}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
 
-Overfull \hbox (20.0pt too wide) in paragraph at lines 4--142
-[][group
+! Missing } inserted.
+<inserted text> 
+}
+l.116 \end{groupplot}
+                   
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 4--117
+[][
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--117
+height=.16width=.16xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
+Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--117
 ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (63.56955pt too wide) in paragraph at lines 4--117
+Figures/Chapter$[][]\OML/cmm/m/it/10 =ErrWorst \OMS/cmsy/m/n/10  
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (67.49614pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 000\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 ; [\OML/cmm/m/it/10 fil
+l \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (216.50627pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; []\OML/cmm/m/it/10 graphics\O
+T1/cmr/m/n/10 [\OML/cmm/m/it/10 includegraphicscmd \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (38.94281pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 ; xmin \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (63.27434pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 375\OML/cmm/m/it/10 ; xmax \
+OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (56.26697pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 75\OML/cmm/m/it/10 ; ymin \O
+T1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (57.82065pt too wide) in paragraph at lines 4--117
+\OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; ymax \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (226.25879pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 10][]; [\OML/cmm/m/it/10 fill \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (214.26114pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; []\OML/cmm/m/it/10 graphics\O
+T1/cmr/m/n/10 [\OML/cmm/m/it/10 includegraphicscmd \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (38.94281pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 ; xmin \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.71527pt too wide) in paragraph at lines 4--142
-height=.26width=.26xlabel=$\OML/cmm/m/it/10 x$\nullfont ,
+Overfull \hbox (63.27434pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 375\OML/cmm/m/it/10 ; xmax \
+OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (5.20601pt too wide) in paragraph at lines 4--142
-ylabel=$\OML/cmm/m/it/10 v$\nullfont ,
+Overfull \hbox (56.26697pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 75\OML/cmm/m/it/10 ; ymin \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (57.82065pt too wide) in paragraph at lines 4--117
+\OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; ymax \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (226.25879pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 10][]; [\OML/cmm/m/it/10 fill \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (188.6022pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; [\OML/cmm/m/it/10 colorbar; c
+olorbarstyle \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (45.16203pt too wide) in paragraph at lines 4--117
+[]$$[]$,
+ []
+
+
+Overfull \hbox (63.56955pt too wide) in paragraph at lines 4--117
+Figures/Chapter$[][]\OML/cmm/m/it/10 =ErrWorst \OMS/cmsy/m/n/10  
+ []
+
+
+Overfull \hbox (67.49614pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 003\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 ; [\OML/cmm/m/it/10 fil
+l \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (216.10204pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; []\OML/cmm/m/it/10 graphics\O
+T1/cmr/m/n/10 [\OML/cmm/m/it/10 includegraphicscmd \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (38.94281pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 ; xmin \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (63.27434pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 375\OML/cmm/m/it/10 ; xmax \
+OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.26697pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 75\OML/cmm/m/it/10 ; ymin \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (57.82065pt too wide) in paragraph at lines 4--117
+\OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; ymax \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (226.25879pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 10][]; [\OML/cmm/m/it/10 fill \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (216.50627pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; []\OML/cmm/m/it/10 graphics\O
+T1/cmr/m/n/10 [\OML/cmm/m/it/10 includegraphicscmd \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (38.94281pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 ; xmin \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (63.27434pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 375\OML/cmm/m/it/10 ; xmax \
+OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.26697pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 75\OML/cmm/m/it/10 ; ymin \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (57.82065pt too wide) in paragraph at lines 4--117
+\OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; ymax \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (226.25879pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 10][]; [\OML/cmm/m/it/10 fill \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (214.26114pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; []\OML/cmm/m/it/10 graphics\O
+T1/cmr/m/n/10 [\OML/cmm/m/it/10 includegraphicscmd \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (38.94281pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 ; xmin \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (63.27434pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 375\OML/cmm/m/it/10 ; xmax \
+OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (56.26697pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 75\OML/cmm/m/it/10 ; ymin \O
+T1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (57.82065pt too wide) in paragraph at lines 4--117
+\OMS/cmsy/m/n/10  \OT1/cmr/m/n/10 10\OML/cmm/m/it/10 ; ymax \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (226.25879pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 10][]; [\OML/cmm/m/it/10 fill \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (188.6022pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[]; [\OML/cmm/m/it/10 colorbar; c
+olorbarstyle \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (45.16203pt too wide) in paragraph at lines 4--117
+[]$$[]$,
+ []
+
+
+Overfull \hbox (63.56955pt too wide) in paragraph at lines 4--117
+Figures/Chapter$[][]\OML/cmm/m/it/10 =ErrWorst \OMS/cmsy/m/n/10  
+ []
+
+
+Overfull \hbox (67.49614pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 007\OML/cmm/m/it/10 :png\OT1/cmr/m/n/10 ; [\OML/cmm/m/it/10 fil
+l \OT1/cmr/m/n/10 =
+ []
+
+
+Overfull \hbox (74.17038pt too wide) in paragraph at lines 4--117
+\OML/cmm/m/it/10 white\OT1/cmr/m/n/10 ]\OML/cmm/m/it/10 at\OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 axiscs \OT1/cmr/m/n/10 :
+ []
+
+
+Overfull \hbox (67.77917pt too wide) in paragraph at lines 4--117
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 65\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 7\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5)[];$ 
  []
 
 
@@ -689,7 +919,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.143 \end{tikzpicture}
+l.118 \end{tikzpicture}
                      
 Your command was ignored.
 Type  I <command> <return>  to replace it with another command,
@@ -717,11 +947,12 @@ If that doesn't work, type  X <return>  to quit.
 
 Here is how much of LuaTeX's memory you used:
  35 strings out of 481365
- 100000,319454 words of node,token memory allocated 26953 words of node memory still in use:
-   29 hlist, 32 disc, 2 local_par, 1 dir, 32 math, 336 glue, 11 kern, 3 penalty,
- 3300 glyph, 80 attribute, 39 glue_spec, 80 attribute_list, 1 temp nodes
-   avail lists: 3:1,4:40,5:2,7:323,8:1,10:39
+ 100000,319454 words of node,token memory allocated 19124 words of node memory still in use:
+   91 hlist, 2 vlist, 9 disc, 2 local_par, 1 dir, 14 math, 328 glue, 191 kern, 4
+9 penalty, 2032 glyph, 47 attribute, 39 glue_spec, 47 attribute_list, 1 temp nod
+es
+   avail lists: 3:479,4:37,5:2,7:157,8:507,10:36
  17249 multiletter control sequences out of 65536+600000
  34 fonts using 3749011 bytes
- 18i,1n,15p,158b,67s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 18i,3n,15p,83b,67s stack positions out of 5000i,500n,10000p,200000b,100000s
 !  ==> Fatal error occurred, no output PDF file produced!

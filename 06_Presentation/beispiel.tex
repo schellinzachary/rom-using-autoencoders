@@ -1,4 +1,4 @@
-\documentclass[usenames,dvipsnames,Nike]{tuberlinbeamer}
+\documentclass[usenames,dvipsnames,Nike,mathserif]{tuberlinbeamer}
 \usepackage[english]{babel}  % 'babel' muss geladen werden
 \usepackage[utf8]{inputenc}  % optional, aber empfehlenswert
 \usepackage[T1]{fontenc}
@@ -17,24 +17,34 @@
 	xcolor,
 	color,
 	caption,
-	subfig
+	subfig,
+	booktabs,
+	siunitx
 	}
 \usepackage[skins,theorems]{tcolorbox}
-\pgfplotsset{compat=newest}
-\usepgfplotslibrary{groupplots}
-\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
-\usepackage[style=verbose,backend=biber]{biblatex}
-%\bibliographystyle{JHEP}
-\bibliography{other/references.bib}
-%\addbibresource{other/references}
 \usepackage[font={small}]{caption}
+%Biblography
+\usepackage[style=verbose,backend=biber]{biblatex}
+\bibliography{other/references.bib}
+%\bibliographystyle{JHEP}
+%\addbibresource{other/references}
+%colors
+\definecolor{color0}{rgb}{0.12156862745098,0.466666666666667,0.705882352941177}
+%Mathoperators
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand\inlineeqno{\stepcounter{equation}\ (\theequation)}
+%PGF and TIKz
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest}
 \usetikzlibrary{
 	shapes,
 	arrows,
 	snakes,
 	chains}
 \tikzstyle{arrow} = [thick,->,>=stealth]
-
+\tikzstyle{circ} = [circle,minimum size =0.4cm,text centered, draw=black,inner sep = 0pt]
+\usetikzlibrary{external,positioning,backgrounds}
+\tikzexternalize[prefix=Figures/]
 % Die ueblichen Angaben
 \title{Model Order Reduction of Rarefied Gases Using Neural Networks}
 \subtitle{}
@@ -43,6 +53,7 @@
 
 % Eigenes Logo einfuegen:
 \renewcommand{\pathtomylogo}{csm_cfd_logo_invers_ohne_schrift_blauer_hintergrund_3fa262aacf.png}
+%COntext after every Section
 \AtBeginSection[]
 {
 	\begin{frame}
@@ -282,31 +293,420 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Proper Orthogonal Decomposotion (POD)}
 \begin{frame}[fragile]{Proper Orthogonal Decomposition}
-	\begin{itemize}
-		\item<1-> Solution of a PDE is $f(x,v,t)$ can be obtained
+	\only<1,2,3,4>{\begin{itemize}
+		\item<1,2,3,4> Solution of a PDE is $f(x,v,t)$ can be obtained
 		\begin{itemize}
-			\item<2->Discretization into a system of ODE's
-			\item<3->Separation of variables ansatz
+			\item<2,3,4>Discretization into a system of ODE's
+			\item<3,4>Separation of variables ansatz
 			\begin{itemize}
-				\item<4->$
-					f(t,v,x) = \sum_{i=1}^n \tcbhighmath[
-					size=title,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=red]{a_i(t)}
-					\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i(x,v)}$   (9)
+				\item<4>$
+						f(t,v,x) = \sum_{i=1}^n \tcbhighmath[
+						size=title,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=red]{a_i(t)}
+						\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i(x,v)}
+						\inlineeqno$
 			\end{itemize}
 		\end{itemize}
-	\end{itemize}
+	\end{itemize}}
 	\begin{itemize}
 		\item<5->How to get $\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i}$?
 		\begin{itemize}
 			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
 			\begin{itemize}
-				\item $P=\input{Figures/Mat.tex}$
+				\item $P=\input{Figures/Mat.tex}$ 
+				%\only<8->{\qquad \qquad \input{Figures/singvec.tex}}
 			\end{itemize}
+			\item<7->\emph{Sigular Value Decomposition}: \qquad 
+				$X=
+				\tcbhighmath[
+				size=title,boxrule=0.5pt,colframe=blue,drop fuzzy shadow=red,title=LSV]{U}
+				\tcbhighmath[
+				size=title,boxrule=0.4pt,colframe=red,drop fuzzy shadow=blue,title=SV]{\Sigma}
+				\tcbhighmath[
+				 size=title,boxrule=0.4pt,colframe=green,drop fuzzy shadow=blue,title=RSV]{V^*}\inlineeqno$
+			 \item<7->\emph{Truncation}:\qquad 
+				 $\tilde{X} = \tcbhighmath[
+				 size=title,boxrule=0.5pt,colframe=blue,drop fuzzy shadow=red,title=\Phi]{\tilde{U}}
+				 \tilde{\Sigma}\tilde{V^*}\inlineeqno$,
+				 \qquad\qquad
+				 $\tilde{U}=\Phi=[\Phi_1,\Phi_2,\dots,\Phi_p]\inlineeqno$
+			\item<8->\emph{Eckard-Young Theorem}:
+				\begin{equation}
+					\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} \| 
+					X -\tilde{X}\|_F
+					=\tilde{U}\tilde{\Sigma}\tilde{V}^*
+				\end{equation}
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \section{Neural Networks}
+\begin{frame}[fragile]{Terminology}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\input{Figures/Sing_example.tex}
+				\caption{Example of a simple network.}
+			\end{figure}
+			\begin{itemize}
+				\item<1-> Network with three layers
+				\begin{itemize}
+					\item<2->\colorbox{yellow}{Input layer}
+					\item<2-> \colorbox{green}{Hidden layer}
+					\item<2-> \colorbox{BlueGreen}{Output layer}
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item<3->\emph{Layer}: Stage of computation
+				\item<4->\emph{Computations}/ Forward pass
+					\begin{itemize}
+						\item $g(x)=g(xW+b)=z$
+						\item $h(z)=h(zW+b)=y$
+						 \begin{itemize}
+						 	\item $h(g(x))=y$
+						 \end{itemize}
+					\end{itemize}
+				\item<5->\emph{Neuron}: Entry in 'Tensor'
+				\item<6->\emph{Trainable parameters}: $W$, $b$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Autoencoders}
+	\begin{figure}
+		\scalebox{.7}[.7]{\input{Figures/AE_scheme.tex}}
+		\caption{A fully connected autoencoder.}
+	\end{figure}
+	\vspace{-3em}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item <2->\emph{Structure}: Encoder \& Decoder
+				\item <2->\emph{Layers}: Input-, Output- \emph{and} Code layer
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item <2->\emph{Category}: Self-supervised learning
+				\item <2->\emph{Main hyperparameters}:\\
+					 	Number \& size of hidden layers\\
+					 	esp. size of code layer
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Convolutional Autoencoder}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\vspace{-1cm}
+			\begin{figure}
+				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
+					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
+				\only<2>{\subfloat[Convolutional operation, 1 strided.]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
+						}
+				\only<3>{\subfloat[Convolutional operation, 2 strided.]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
+						}
+				\only<4>{\subfloat[Even deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_even.tex}}}
+						}
+				\only<5->{\subfloat[Uneven deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_uneven.tex}}}
+						}
+				\caption{Fundamental features of conv. networks.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Designed for 2D/3D input
+				\item<6->\emph{Peculiarities}: Sparse connections, parameter sharing
+				\begin{itemize}
+					\item<6->Promotes generalization
+				\end{itemize}
+				\item<7->\emph{Hyperparameters}: Number \& size of layers, kernel dimensions, stride increments
+				\begin{itemize}
+					\item<-8>Non-trivial influence of output dimensions \& quality
+				\end{itemize}  
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Training}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\scalebox{1}[1]{\input{Figures/Sing_example_01.tex}}
+				\caption{A very simple network}
+			\end{figure}
+		\end{column}
+	\begin{column}{.5\textwidth}
+		\begin{itemize}
+			\item \emph{Forward propagation}: $y=h(z,b)=h((g(x,a)),b) \qquad\inlineeqno$ 
+			\item<2-> \emph{Loss function}: $L(y,\tilde{y_0})=
+			\frac{1}{2}(y - \tilde{y}_0)^2 = E\qquad\inlineeqno$
+			\item<3-> \emph{Backpropagation}:
+			\begin{itemize}
+				\item<4-> $\frac{\partial E}{\partial a} =
+				-(y_0 - y)\frac{\partial y}{\partial z}\frac{\partial z}{\partial a}\qquad\inlineeqno$
+				\item<4-> $\frac{\partial E}{\partial b} =
+				-(y_0 - y)\frac{\partial y}{\partial b}\qquad\inlineeqno$ 
+			\end{itemize} 
+			\item<5-> \emph{Optimize}:
+				\begin{itemize}
+					\item<5->$a_{i+1}=a_i + \epsilon \frac{\partial E}{\partial a_i}\qquad\inlineeqno$
+					\item<5->$b_{i+1}=b_i + \epsilon \frac{\partial E}{\partial b_i}\qquad\inlineeqno$
+				\end{itemize}
+			\item<6-> \emph{Hyperparameter}: learning rate $\epsilon$
+		\end{itemize}
+	\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Concepts}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\scalebox{.5}[.5]{\input{Figures/Capacity.tex}}
+				\caption{Influence of capacity}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item \emph{Over- and Underfitting}:
+					\begin{itemize}
+						\item<2->\emph{Goal}: Reach optimal capacity
+					\end{itemize}
+				\item<3->\emph{How to direct capacity ?}:
+				\begin{itemize}
+					\item<4-> Size of the network
+					\item<5-> Activation functions
+					\item<6-> Loss function
+					\item<7-> Data distortion/ add variation to existing data
+					\item<8-> ...
+					\item<8-> Any other means of regularization
+				\end{itemize}
+				\item<5->\emph{Initialization}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
+\begin{frame}[fragile]{Number of intrinsic variables}
+	\begin{figure}
+		\centering
+		\scalebox{.8}[.8]{\input{Figures/Var_iv.tex}}
+		\caption{Variation of $p$ for $\mathbf{H}$ left and $\mathbf{R}$ right.}
+	\end{figure}
+	\begin{itemize}
+		\item \emph{Evaluation metric}:
+			\begin{equation}
+				L_2\text{-Error} = \frac{||f-\tilde{f}||_2}{||f||_2}
+			\end{equation}
+	\end{itemize}
+\end{frame}
+\begin{frame}[fragile]{Amount of parameters}
+	\begin{table}[htp]
+		\centering
+		\caption{Amount of parameters used to reconstruct \(f\), the number of intrinsic variables \(p\) and the corresponding $L_2$-Error for POD, the FCNNs, and the CNN.}
+		\begin{tabular*}{10cm}{ @{\extracolsep{\fill}} c c c c c c c @{} }
+			\toprule
+			Algorithm & \multicolumn{2}{c}{Parameters} & \multicolumn{2}{c}{Int. variables \(p\)}& \multicolumn{2}{c}{$\L2$-error} \\ [.5ex]
+			& $\mathbf{H}$&$\mathbf{R}$&$\mathbf{H}$&$\mathbf{R}$&$\mathbf{H}$&$\mathbf{R}$\\   
+			\hline
+			POD     & 15129 & 25225 & 3 & 5 & 0.0205 & 0.0087 \\
+			FCNN 	& 2683 & 3725 & 3 & 5 & 0.0008 & 0.0009 \\
+			CNN   	& 8246 & 8246 & 5 & 5 &	0.025 & 0.027\\
+			\bottomrule
+		\end{tabular*} \label{Tab: Parameters}
+	\end{table}
+\end{frame}
+\begin{frame}[fragile]{Time dependece of $L_2$-Error}
+	\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\scalebox{.7}[.7]{\input{Figures/ErrTime.tex}}
+				\caption{
+					Comparison of the $L_2$-Error over time, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - lin. increase of $L_2$
+					\item $\mathbf{R}$ - increase \& stagnation of $L_2$
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - no distinct time dependence $L_2$
+					\item biggest value at onset  
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - similar evolution
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{A detailed look at reconstructions}
+	\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\vspace{-.5cm}
+				\scalebox{.7}[.7]{\input{Figures/ErrWorst.tex}}
+				\caption{
+					Comparision of $f$ and $\tilde{f}$ at $t=t_{end}$ and $x\in[0.375,0.75]$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - defective after $x=0.6$: Errors in temperature
+					\item $\mathbf{R}$ - almost exact
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - almost exact 
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - average of $\mathbf{H}$ \& $\mathbf{R}$
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Moments of $f$ and $\tilde{f}$}
+	\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\scalebox{.7}[.7]{\input{Figures/MacroError.tex}}
+				\caption{
+					Comparison of moments of $f$ and $\tilde{f}$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - undercuts shockwave in $\rho$, $\rho u$ and $E$\\
+									   ++\quad - $\rho u$ exceeds tail of rarefaction wave
+					
+					\item $\mathbf{R}$ - only small deviations at shockwave for $\rho u$ and $E$
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{R}$ - severe deviation at transition: tail of rarefaction wave $\rightarrow$ shockfront 
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{R}$ is copy of $\mathbf{H}$ 
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Physical consistency}
+		\begin{columns}
+			\begin{column}{.61\textwidth}
+				\begin{figure}
+					\scalebox{.7}[.7]{\input{Figures/Conservation.tex}}
+					\caption{
+						Conservation properties of $f$ and $\tilde{f}$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+				\end{figure}
+			\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{red}{- mass} 
+					\& \colorbox{ProcessBlue}{+ mass}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{ProcessBlue}{+++ momentum}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{energy} 
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{mass} 
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{red}{- momentum} 
+					\& \colorbox{ProcessBlue}{+ momentum}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{energy} 
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item No conservation
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Interpretabiliy}
+			\begin{columns}
+		\begin{column}{.65\textwidth}
+			\begin{figure}
+				\only<1>{\scalebox{.7}[.7]{\input{Figures/heat_hy.tex}}
+					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
+				\only<2>{\scalebox{.7}[.7]{\input{Figures/heat_rare.tex}}
+					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
+			\end{figure}
+		\end{column}
+		\begin{column}{.35\textwidth}
+			\begin{itemize}
+				\item\emph{1}:
+				\begin{itemize}
+					\only<1>{\item $E$: $0.98$ \& $\rho$: $0.97$}
+					\only<2>{\item $u$: $-0.92$ \& $\rho u$: $-0.85$} 
+				\end{itemize}
+				\item\emph{2}:
+				\begin{itemize}
+					\only<1>{\item $u$: $-0.75$ \& $\rho$: $0.71$}
+					\only<2>{\item $\rho$: $-0.8$ \& $E$: $-0.74$}
+				\end{itemize}
+				\item\emph{3}:
+				\begin{itemize}
+					\only<1>{\item $\rho u$: $0.69$ \& $T$: $-0.54$}
+					\only<2>{\item $\rho$: $0.49$ \& $\rho u$: $0.49$}
+				\end{itemize}
+				\only<2>{\item\emph{4}:
+				\begin{itemize}
+					\item $\rho$: $1$ \& $E$: $0.96$
+				\end{itemize}}
+				\only<2>{\item\emph{5}:
+				\begin{itemize}
+					\item $\rho$: $-0.89$ \& $T$: $-0.89$
+				\end{itemize}}
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+\begin{frame}[fragile]{Interpolation}
+	\begin{table}[H]
+		\vspace{-2em}
+		\footnotesize
+		\centering
+		\vspace{.5em}
+		\caption{Validation and metric results for the interpolation task with 13, 9, 7 and 5 time steps.}
+		\begin{tabular*}{11cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
+			\toprule
+			$n$& \(\Delta t^*\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(L_2\)-error}& \multicolumn{2}{c}{$L_2$-error} \\ [.5ex]
+			& & \(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\tilde{\mathbf{H}}^*\)&\(\tilde{\mathbf{R}}^*\)\\   
+			\hline
+			13& 0.01s   & \num{2.5e-8} & \num{2.9e-7} & 0.0018 & 0.0054 & 0.0036 & 0.0058 \\
+			9& 	0.015s	& \num{2.9e-8} & \num{9.5e-8} & 0.0017 & 0.0038 & 0.0067 & 0.0056 \\
+			7&  0.02s 	& \num{2.5e-8} & \num{1.6e-7} & 0.0019 & 0.0042 & 0.0101 & 0.0073\\
+			5&  0.025s  & \num{1.7e-7} & \num{1.6e-7} & 0.0039 & 0.0051 & 0.0367 & 0.0138\\
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	\begin{figure}
+		\scalebox{.7}[.7]{\input{Figures/all_int.tex}}
+		\vspace{-.3em}
+		\caption{Energy after interpolation using the FCNN trained on 13,9,7 and 5 time steps, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+	\end{figure}
+\end{frame}
 \section{Discussion}
 
 \begin{frame}{ToDo}

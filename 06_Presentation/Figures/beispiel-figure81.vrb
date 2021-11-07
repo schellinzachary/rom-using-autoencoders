@@ -1,0 +1,27 @@
+\frametitle{Interpretabiliy}
+\begin{columns}
+		\begin{column}{.65\textwidth}
+			\begin{figure}
+				\only<1>{\scalebox{.7}[.7]{\input{Figures/heat_hy.tex}}
+					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
+				\only<2>{\scalebox{.7}[.7]{\input{Figures/heat_rare.tex}}
+					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
+			\end{figure}
+		\end{column}
+		\begin{column}{.35\textwidth}
+			\begin{itemize}
+				\item\emph{1}:
+				\begin{itemize}
+					\item $E$: $0.98$ \& $\rho$: $0.97$
+				\end{itemize}
+				\item\emph{2}:
+				\begin{itemize}
+					\item $u$: $-0.75$ \& $\rho$: $0.71$
+				\end{itemize}
+				\item\emph{3}:
+				\begin{itemize}
+					\item $\rho u$: $0.69$ \& $T$: $-0.54$
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}

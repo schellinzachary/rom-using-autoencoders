@@ -1,0 +1,4 @@
+\frametitle{Interpretabiliy}
+\begin{figure}
+		\scalebox{.7}[.7]{\input{Figures/heat_hy.tex}}
+	\end{figure}

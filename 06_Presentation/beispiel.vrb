@@ -1,23 +1,24 @@
-\frametitle{Proper Orthogonal Decomposition}
-\begin{itemize}
-		\item<1-> Solution of a PDE is $f(x,v,t)$ can be obtained
-		\begin{itemize}
-			\item<2->Discretization into a system of ODE's
-			\item<3->Separation of variables ansatz
-			\begin{itemize}
-				\item<4->$
-					f(t,v,x) = \sum_{i=1}^n \tcbhighmath[
-					size=title,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=red]{a_i(t)}
-					\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i(x,v)}$   (9)
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
-	\begin{itemize}
-		\item<5->How to get $\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i}$?
-		\begin{itemize}
-			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
-			\begin{itemize}
-				\item $P=\input{Figures/Mat.tex}$
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
+\frametitle{Interpolation}
+\begin{table}[H]
+		\vspace{-2em}
+		\footnotesize
+		\centering
+		\vspace{.5em}
+		\caption{Validation and metric results for the interpolation task with 13, 9, 7 and 5 time steps.}
+		\begin{tabular*}{11cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
+			\toprule
+			$n$& \(\Delta t^*\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(L_2\)-error}& \multicolumn{2}{c}{$L_2$-error} \\ [.5ex]
+			& & \(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\tilde{\mathbf{H}}^*\)&\(\tilde{\mathbf{R}}^*\)\\
+			\hline
+			13& 0.01s   & \num{2.5e-8} & \num{2.9e-7} & 0.0018 & 0.0054 & 0.0036 & 0.0058 \\
+			9& 	0.015s	& \num{2.9e-8} & \num{9.5e-8} & 0.0017 & 0.0038 & 0.0067 & 0.0056 \\
+			7&  0.02s 	& \num{2.5e-8} & \num{1.6e-7} & 0.0019 & 0.0042 & 0.0101 & 0.0073\\
+			5&  0.025s  & \num{1.7e-7} & \num{1.6e-7} & 0.0039 & 0.0051 & 0.0367 & 0.0138\\
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	\begin{figure}
+		\scalebox{.7}[.7]{\input{Figures/all_int.tex}}
+		\vspace{-.3em}
+		\caption{Energy after interpolation using the FCNN trained on 13,9,7 and 5 time steps, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+	\end{figure}

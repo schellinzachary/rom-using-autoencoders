@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import pandas as pd
 import seaborn as sn
-###import tikzplotlib
+#####import tikzplotlib
 
 #plt.style.use("seaborn")
 
@@ -70,21 +70,23 @@ def shapeback_code(z):
         n += 200
     return(c) # shaping back the code
 
-fig_h, hyax = plt.subplots(3,3,tight_layout=True)
-fig_r, rarax = plt.subplots(3,5,tight_layout=True)
-fig_fr, fomarx = plt.subplots(3,5,tight_layout=True)
-fig_fh, fomahx = plt.subplots(3,5,tight_layout=True)
-fig_cnp, cnpax = plt.subplots(4,5,tight_layout=True)
+# fig_h, hyax = plt.subplots(3,3,tight_layout=True)
+# fig_r, rarax = plt.subplots(3,5,tight_layout=True)
+# fig_fr, fomarx = plt.subplots(3,5,tight_layout=True)
+# fig_fh, fomahx = plt.subplots(3,5,tight_layout=True)
+# fig_cnp, cnpax = plt.subplots(4,5,tight_layout=True)
+fig_heat_r, heatax = plt.subplots(1,tight_layout=True)
 
 
-fig_fh.suptitle("FOM Macro. qty hydro")
-fig_fr.suptitle("FOM Macro. qty rare")
-fig_h.suptitle("Code FCNN  hydro")
-fig_r.suptitle("Code FCNN  rare")
-fig_cnp.suptitle("Code CNN and POD hy(top)&rare(bottom)")
+# fig_fh.suptitle("FOM Macro. qty hydro")
+# fig_fr.suptitle("FOM Macro. qty rare")
+# fig_h.suptitle("Code FCNN  hydro")
+# fig_r.suptitle("Code FCNN  rare")
+# fig_cnp.suptitle("Code CNN and POD hy(top)&rare(bottom)")
+fig_heat_r.suptitle("Correlation for R")
 
 
-for idx, level in enumerate(["hy","rare"]):
+for idx, level in enumerate(["rare","rare"]):
 
     method = "POD"
     c = load_BGKandMethod(method, level) # load FOM data for evaluation
@@ -112,7 +114,7 @@ for idx, level in enumerate(["hy","rare"]):
     names = ["rho","rhou","E","T","u"]
     m_fom = macro(c_fom)
     
-
+    ####only for presentation not for Bchelor Thesis
     # if level == "rare":
 
     #     df_mfom = np.stack(m_fom,axis=1)
@@ -122,6 +124,8 @@ for idx, level in enumerate(["hy","rare"]):
     #     corr = df.corr()
         
     #     sn.heatmap(corr.iloc[:5,5:], annot=True)
+    #     tikzplotlib.save(join(home,
+    #             "rom-using-autoencoders/06_Presentation/Figures/heat_rare.tex"),strict=True)
     #     plt.show()
 
     # exit()

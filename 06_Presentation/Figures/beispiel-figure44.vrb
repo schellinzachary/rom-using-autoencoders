@@ -1,0 +1,14 @@
+\frametitle{Convolutional Autoencoder}
+\begin{columns}
+		\begin{column}{.6\textwidth}
+			\begin{figure}
+				\scalebox{.6}[.6]{\input{Figures/Kernel.tex}}
+				\caption{Encoder of a convolutional autoencoder without input layer.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.4\textwidth}
+			\begin{itemize}
+				\item
+			\end{itemize}
+		\end{column}
+	\end{columns}

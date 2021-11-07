@@ -1,0 +1,22 @@
+\frametitle{Interpolation}
+\begin{table}[H]
+		\vspace{-2em}
+		\footnotesize
+		\centering
+		\caption{}
+		\begin{tabular*}{11cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
+			\toprule
+			$n$& \(\Delta t^*\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(L_2\)-error}& \multicolumn{2}{c}{$L_2$-error} \\ [.5ex]
+			& & \(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\tilde{\mathbf{H}}^*\)&\(\tilde{\mathbf{R}}^*\)\\
+			\hline
+			13& 0.01s   & \num{2.5e-8} & \num{2.9e-7} & 0.0018 & 0.0054 & 0.0036 & 0.0058 \\
+			9& 	0.015s	& \num{2.9e-8} & \num{9.5e-8} & 0.0017 & 0.0038 & 0.0067 & 0.0056 \\
+			7&  0.02s 	& \num{2.5e-8} & \num{1.6e-7} & 0.0019 & 0.0042 & 0.0101 & 0.0073\\
+			5&  0.025s  & \num{1.7e-7} & \num{1.6e-7} & 0.0039 & 0.0051 & 0.0367 & 0.0138\\
+			\bottomrule
+		\end{tabular*}
+	\end{table}
+	\begin{figure}
+		\scalebox{.7}[.7]{\input{Figures/all_int.tex}}
+		\caption{Interpolation}
+	\end{figure}

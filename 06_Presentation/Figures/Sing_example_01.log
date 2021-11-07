@@ -1,0 +1,178 @@
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  6 NOV 2021 13:25
+ system commands enabled.
+**Sing_example_01.tex Sing_example_01.tex
+(./Sing_example_01.tex
+LaTeX2e <2020-02-02> patch level 2
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initializatio
+n
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended c
+ollection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / conf
+ig file reader
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse
+-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader
+-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback h
+andling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode he
+lpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolver
+s
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/l
+uatex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliar
+y functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_fon
+t'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multis
+cript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script help
+ers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicod
+e
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'
+. L3 programming layer <2020-02-14>
+
+! LaTeX Error: Environment tikzpicture undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \begin{tikzpicture}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+l.3 	\node
+         [circ] (x) {\(x\)};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 	\node [
+          circ] (x) {\(x\)};
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+! Undefined control sequence.
+l.4 	\node
+         [circ,right of = x] (z) {\(z\)};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.5 	\node
+         [circ,right of = z] (y) {\(y\)};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.6 	\draw
+         [arrow] (x)--(z) node [midway,above,xshift=1ex] {f};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+l.7 	\draw
+         [arrow] (z)--(y) node [midway,above,xshift=1ex] {g};
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+! LaTeX Error: \begin{document} ended by \end{tikzpicture}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.8 \end{tikzpicture}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+)
+! Missing $ inserted.
+<inserted text> 
+$
+<*> Sing_example_01.tex Sing_
+                          example_01.tex
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Emergency stop.
+<*> Sing_example_01.tex Sing_example_01.tex
+                                        
+*** (job aborted, no legal \end found)
+
+
+
+Here is how much of LuaTeX's memory you used:
+ 34 strings out of 481365
+ 100000,319454 words of node,token memory allocated 1783 words of node memory still in use:
+   2 hlist, 1 local_par, 2 dir, 6 math, 27 glue, 5 kern, 12 noad, 13 math_char, 
+1 sub_mlist, 150 glyph, 10 attribute, 39 glue_spec, 10 attribute_list, 2 temp no
+des
+   avail lists: 2:1,4:2,5:1,9:1
+ 17248 multiletter control sequences out of 65536+600000
+ 34 fonts using 3749011 bytes
+ 18i,1n,15p,100b,61s stack positions out of 5000i,500n,10000p,200000b,100000s
+!  ==> Fatal error occurred, no output PDF file produced!

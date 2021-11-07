@@ -1,0 +1,8 @@
+\begin{tikzpicture}
+%\tikzstyle{every node} = [font=\footnotesize]
+	\node [draw,fill=yellow,circ] (x) {\(x\)};
+	\node [draw,fill=green,circ,right of = x] (z) {\(z\)};
+	\node [draw,fill=BlueGreen,circ,right of = z] (y) {\(y\)};
+	\draw [arrow] (x)--(z) node [midway,above,xshift=1ex] {g};
+	\draw [arrow] (z)--(y) node [midway,above,xshift=1ex] {h};
+\end{tikzpicture}

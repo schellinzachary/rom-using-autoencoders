@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  19 OCT 2021 18:57
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  4 NOV 2021 21:09
  system commands enabled.
 **\def\tikzexternalrealjob{beispiel}\input{beispiel}
 Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
@@ -248,7 +248,9 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/shar
 e/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texl
@@ -876,12 +878,8 @@ Package babel Info: Non-standard hyphenation setup on input line 117.
 \l@coptic=\language83
 \l@classiclatin=\language84
 \l@liturgicallatin=\language85
-) (/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngerman.ldf
-Language: ngerman 2018/12/08 v2.11 German support for babel (post-1996 orthograp
-hy)
-(/usr/share/texlive/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2018/12/08 v2.11 German support for babel (post-1996 orthogra
-phy)
+) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/06/06 v3.3r English support from the babel system
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count312
@@ -891,55 +889,19 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 )
 LaTeX Info: Redefining \textlatin on input line 2319.
 )
-Package babel Info: Making " an active character on input line 121.
-
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/loadhyph/loadhyph-de-1996.
-tex UTF-8 German hyphenation patterns (reformed orthography)
-(/usr/share/texlive/texmf-dist/tex/generic/hyph-utf8/patterns/tex/hyph-de-1996.
-tex
-German Hyphenation Patterns (Reformed Orthography, 2006) `dehyphn-x' 2019-04-04
- (WL)))))) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package babel Info: \l@canadian = using hyphenrules for english
+(babel)             (\language0) on input line 102.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 108.
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks46
 \inpenc@posthook=\toks47
 
 Package inputenc Warning: inputenc package ignored with utf8 based engines.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/filecontents/filecontents.sty
-Package: filecontents 2019/09/20 v1.5 Create an external file from within a LaTe
-X document
-
-Package filecontents Warning: This package is obsolete. Disabling it and
-(filecontents)                passing control to the filecontents environment
-(filecontents)                defined by the LaTeX kernel.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/dblfloatfix/dblfloatfix.sty
-Package: dblfloatfix 2012/12/31 v1.0a (JAW)
-(/usr/share/texlive/texmf-dist/tex/latex/base/fixltx2e.sty
-Package: fixltx2e 2016/12/29 v2.1a fixes to LaTeX (obsolete)
-Applying: [2015/01/01] Old fixltx2e package on input line 46.
-
-Package fixltx2e Warning: fixltx2e is not required with releases after 2015
-(fixltx2e)                All fixes are now in the LaTeX kernel.
-(fixltx2e)                See the latexrelease package for details.
-
-Already applied: [0000/00/00] Old fixltx2e package on input line 53.
-)
-\@dblbotnum=\count313
-\c@dblbotnumber=\count314
-) (/usr/share/texlive/texmf-dist/tex/latex/doublestroke/dsfont.sty
-Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
-) (/usr/share/texlive/texmf-dist/tex/latex/base/exscale.sty
-Package: exscale 2018/09/24 v2.1i Standard LaTeX package exscale
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 57.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmssex/m/n --> OMX/cmex/m/n on input line 57.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmssex/m/n --> OMX/cmex/m/n on input line 57.
-\big@size=\dimen282
-) (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
-Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
-\symrsfs=\mathgroup10
 ) (/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+phv on input line 112
@@ -949,61 +911,1843 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 7.65005pt on input line 112.
-) (/usr/share/texmf/tex/latex/lm/lmodern.sty
-Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/phv/m/n --> OT1/lmr/m/n on input line 22.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmssm/m/it --> OML/lmm/m/it on input line 23.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsssy/m/n --> OMS/lmsy/m/n on input line 24.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/phv/bx/n --> OT1/lmr/bx/n on input line 26.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmssm/b/it --> OML/lmm/b/it on input line 27.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsssy/b/n --> OMS/lmsy/b/n on input line 28.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/phv/bx/n --> OT1/lmr/bx/n on input line 31.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/phv/m/n --> OT1/lmss/m/n on input line 32.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/phv/m/sl --> OT1/lmr/m/it on input line 33.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/phv/bx/n --> OT1/lmr/bx/n on input line 35.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/phv/bx/n --> OT1/lmss/bx/n on input line 36.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/phv/bx/sl --> OT1/lmr/bx/it on input line 37.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
-Package: footnote 1997/01/28 1.13 Save footnotes around boxes
-\fn@notes=\box75
-\fn@width=\dimen283
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/sha
+re/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodeparttextbox=\box75
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )
-Runaway argument?
-\def \insertfootnotetext {\@@ }\def \insertfootnotemark {\@makefnmark \ETC.
-! File ended while scanning use of \@tempa.
-<inserted text> 
-\par 
-l.19 
-   
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty
+Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@nodesepstart=\dimen282
+\pgf@nodesepend=\dimen283
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty
+Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
+)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/shar
+e/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/te
+xmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf
+-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic
+/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/uti
+lities/pgffor.code.tex
+Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen284
+\pgffor@skip=\dimen285
+\pgffor@stack=\toks48
+\pgffor@toks=\toks49
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex
+File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@plot@mark@count=\count313
+\pgfplotmarksize=\dimen286
+)
+\tikz@lastx=\dimen287
+\tikz@lasty=\dimen288
+\tikz@lastxsaved=\dimen289
+\tikz@lastysaved=\dimen290
+\tikz@lastmovetox=\dimen291
+\tikz@lastmovetoy=\dimen292
+\tikzleveldistance=\dimen293
+\tikzsiblingdistance=\dimen294
+\tikz@figbox=\box76
+\tikz@figbox@bg=\box77
+\tikz@tempbox=\box78
+\tikz@tempbox@bg=\box79
+\tikztreelevel=\count314
+\tikznumberofchildren=\count315
+\tikznumberofcurrentchild=\count316
+\tikz@fig@count=\count317
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfmatrixcurrentrow=\count318
+\pgfmatrixcurrentcolumn=\count319
+\pgf@matrix@numberofcolumns=\count320
+)
+\tikz@expandcount=\count321
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty (/usr/share/
+texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2018/03/28 v1.16 Data Visualization (1.16)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (/usr/sha
+re/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+Package pgfplots info on input line 124: Initializing with LUA version Lua 5.3
+\pgfplots@luabackend@table=\catcodetable5
+\t@pgfplots@toka=\toks50
+\t@pgfplots@tokb=\toks51
+\t@pgfplots@tokc=\toks52
+\pgfplots@tmpa=\dimen295
+\c@pgfplots@coordindex=\count322
+\c@pgfplots@scanlineindex=\count323
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/luamath/pgflibraryluam
+ath.code.tex)
+Package pgfplots info on input line 275: luamath library shipped with pgf 3.1.5b
+ is up-to-date
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.te
+x
+Package pgfplots info on input line 82: Found new luatex: initializing lua comma
+nds instead of write18 (shell-escape)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex
+\c@pgfplotsarray@tmp=\count324
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex
+\c@pgfplotstable@counta=\count325
+\t@pgfplotstable@a=\toks53
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+\c@pgfplotslibrarysurf@no=\count326
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-luatex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex
+\pgfdecoratedcompleteddistance=\dimen296
+\pgfdecoratedremainingdistance=\dimen297
+\pgfdecoratedinputsegmentcompleteddistance=\dimen298
+\pgfdecoratedinputsegmentremainingdistance=\dimen299
+\pgf@decorate@distancetomove=\dimen300
+\pgf@decorate@repeatstate=\count327
+\pgfdecorationsegmentamplitude=\dimen301
+\pgfdecorationsegmentlength=\dimen302
+)
+\tikz@lib@dec@box=\box80
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex))
+\pgfplots@numplots=\count328
+\pgfplots@xmin@reg=\dimen303
+\pgfplots@xmax@reg=\dimen304
+\pgfplots@ymin@reg=\dimen305
+\pgfplots@ymax@reg=\dimen306
+\pgfplots@zmin@reg=\dimen307
+\pgfplots@zmax@reg=\dimen308
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex
+File: pgflibraryplotmarks.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))) (/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplotstable.sty (/usr/s
+hare/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplotstable 2018/03/28 v1.16 Table typesetting and Pretty-printing (1
+.16)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.code
+.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstable.colt
+ype.code.tex))) (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xpar
+se.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2020-02-14 L3 programming layer (loader) 
+(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count329
+\l__pdf_internal_box=\box81
+))
+Package: xparse 2020-02-14 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count330
+\g__xparse_grabber_int=\count331
+\l__xparse_m_args_int=\count332
+\l__xparse_v_nesting_int=\count333
+) (/usr/share/texlive/texmf-dist/tex/latex/boxedminipage2e/boxedminipage2e.sty
+Package: boxedminipage2e 2015/03/09 v1.0 Boxed LaTeX2e minipages
+\bmp@box=\box82
+\bmp@width=\skip77
+\bmp@height=\skip78
+) (/usr/share/texlive/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks54
+\SOUL@lasttoken=\toks55
+\SOUL@cmds=\toks56
+\SOUL@buffer=\toks57
+\SOUL@token=\toks58
+\SOUL@spaceskip=\skip79
+\SOUL@ttwidth=\dimen309
+\SOUL@uldp=\dimen310
+\SOUL@ulht=\dimen311
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2020/01/03 v3.4h Customizing captions (AR)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2020/01/03 v1.8h caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 61.
+\captionmargin=\dimen312
+\captionmargin@=\dimen313
+\captionwidth=\dimen314
+\caption@tempdima=\dimen315
+\caption@indent=\dimen316
+\caption@parindent=\dimen317
+\caption@hangindent=\dimen318
+Package caption Info: beamer document class detected.
+)
+\c@caption@flags=\count334
+\c@continuedfloat=\count335
+Package caption Info: beamer document class.
+Package caption Info: hyperref package is loaded.
+Package caption Info: Hyperref support is turned off
+(caption)             because hyperref has stopped early.
+) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count336
+\sf@farskip=\skip80
+\sf@captopadj=\dimen319
+\sf@capskip=\skip81
+\sf@nearskip=\skip82
+\c@subfigure=\count337
+\c@subfigure@save=\count338
+\c@depth=\count339
+\c@subtable=\count340
+\c@subtable@save=\count341
+\sf@top=\skip83
+\sf@bottom=\skip84
+) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2019/11/15 version 4.22 text color boxes
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks59
+\verbatim@line=\toks60
+\verbatim@in@stream=\read4
+) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+\tcb@titlebox=\box83
+\tcb@upperbox=\box84
+\tcb@lowerbox=\box85
+\tcb@phantombox=\box86
+\c@tcbbreakpart=\count342
+\c@tcblayer=\count343
+\tcolorbox@number=\count344
+\tcb@temp=\box87
+\tcb@temp=\box88
+\tcb@temp=\box89
+\tcb@temp=\box90
+\tcb@out=\write5
+\tcb@record@out=\write6
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.22'
+\tcb@waterbox=\box91
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.22'
+)) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.22'
+)) (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2019/12/01 v3.14 programmable bibliographies (PK/MW)
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count345
+(/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+)) (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@tabx@nest=\count346
+\c@listtotal=\count347
+\c@listcount=\count348
+\c@liststart=\count349
+\c@liststop=\count350
+\c@citecount=\count351
+\c@citetotal=\count352
+\c@multicitecount=\count353
+\c@multicitetotal=\count354
+\c@instcount=\count355
+\c@maxnames=\count356
+\c@minnames=\count357
+\c@maxitems=\count358
+\c@minitems=\count359
+\c@citecounter=\count360
+\c@maxcitecounter=\count361
+\c@savedcitecounter=\count362
+\c@uniquelist=\count363
+\c@uniquename=\count364
+\c@refsection=\count365
+\c@refsegment=\count366
+\c@maxextratitle=\count367
+\c@maxextratitleyear=\count368
+\c@maxextraname=\count369
+\c@maxextradate=\count370
+\c@maxextraalpha=\count371
+\c@abbrvpenalty=\count372
+\c@highnamepenalty=\count373
+\c@lownamepenalty=\count374
+\c@maxparens=\count375
+\c@parenlevel=\count376
+\blx@tempcnta=\count377
+\blx@tempcntb=\count378
+\blx@tempcntc=\count379
+\blx@maxsection=\count380
+\blx@maxsegment@0=\count381
+\blx@notetype=\count382
+\blx@parenlevel@text=\count383
+\blx@parenlevel@foot=\count384
+\blx@sectionciteorder@0=\count385
+\blx@entrysetcounter=\count386
+\labelnumberwidth=\skip85
+\labelalphawidth=\skip86
+\biblabelsep=\skip87
+\bibitemsep=\skip88
+\bibnamesep=\skip89
+\bibinitsep=\skip90
+\bibparsep=\skip91
+\bibhang=\skip92
+\blx@bcfin=\read5
+\blx@bcfout=\write7
+\blx@langwohyphens=\language86
+\c@mincomprange=\count387
+\c@maxcomprange=\count388
+\c@mincompwidth=\count389
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'verbose.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count390
+\c@savedafterword=\count391
+\c@annotator=\count392
+\c@savedannotator=\count393
+\c@author=\count394
+\c@savedauthor=\count395
+\c@bookauthor=\count396
+\c@savedbookauthor=\count397
+\c@commentator=\count398
+\c@savedcommentator=\count399
+\c@editor=\count400
+\c@savededitor=\count401
+\c@editora=\count402
+\c@savededitora=\count403
+\c@editorb=\count404
+\c@savededitorb=\count405
+\c@editorc=\count406
+\c@savededitorc=\count407
+\c@foreword=\count408
+\c@savedforeword=\count409
+\c@holder=\count410
+\c@savedholder=\count411
+\c@introduction=\count412
+\c@savedintroduction=\count413
+\c@namea=\count414
+\c@savednamea=\count415
+\c@nameb=\count416
+\c@savednameb=\count417
+\c@namec=\count418
+\c@savednamec=\count419
+\c@translator=\count420
+\c@savedtranslator=\count421
+\c@shortauthor=\count422
+\c@savedshortauthor=\count423
+\c@shorteditor=\count424
+\c@savedshorteditor=\count425
+\c@labelname=\count426
+\c@savedlabelname=\count427
+\c@institution=\count428
+\c@savedinstitution=\count429
+\c@lista=\count430
+\c@savedlista=\count431
+\c@listb=\count432
+\c@savedlistb=\count433
+\c@listc=\count434
+\c@savedlistc=\count435
+\c@listd=\count436
+\c@savedlistd=\count437
+\c@liste=\count438
+\c@savedliste=\count439
+\c@listf=\count440
+\c@savedlistf=\count441
+\c@location=\count442
+\c@savedlocation=\count443
+\c@organization=\count444
+\c@savedorganization=\count445
+\c@origlocation=\count446
+\c@savedoriglocation=\count447
+\c@origpublisher=\count448
+\c@savedorigpublisher=\count449
+\c@publisher=\count450
+\c@savedpublisher=\count451
+\c@language=\count452
+\c@savedlanguage=\count453
+\c@origlanguage=\count454
+\c@savedoriglanguage=\count455
+\c@pageref=\count456
+\c@savedpageref=\count457
+\shorthandwidth=\skip93
+\shortjournalwidth=\skip94
+\shortserieswidth=\skip95
+\shorttitlewidth=\skip96
+\shortauthorwidth=\skip97
+\shorteditorwidth=\skip98
+\locallabelnumberwidth=\skip99
+\locallabelalphawidth=\skip100
+\localshorthandwidth=\skip101
+\localshortjournalwidth=\skip102
+\localshortserieswidth=\skip103
+\localshorttitlewidth=\skip104
+\localshortauthorwidth=\skip105
+\localshorteditorwidth=\skip106
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2019/12/01 v3.14 biblatex compatibility (PK/MW)
+\c@textcitecount=\count458
+\c@textcitetotal=\count459
+\c@textcitemaxnames=\count460
+\c@biburlbigbreakpenalty=\count461
+\c@biburlbreakpenalty=\count462
+\c@biburlnumpenalty=\count463
+\c@biburlucpenalty=\count464
+\c@biburllcpenalty=\count465
+\biburlbigskip=\muskip18
+\biburlnumskip=\muskip19
+\biburlucskip=\muskip20
+\biburllcskip=\muskip21
+\c@smartand=\count466
+)
+Package biblatex Info: Trying to load bibliography style 'verbose'...
+Package biblatex Info: ... file 'verbose.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/verbose.bbx
+File: verbose.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'authortitle'...
+Package biblatex Info: ... file 'authortitle.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/authortitle.bbx
+File: authortitle.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2019/12/01 v3.14 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count467
+\c@bbx:relatedtotal=\count468
+)))
+Package biblatex Info: Trying to load citation style 'verbose'...
+Package biblatex Info: ... file 'verbose.cbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/cbx/verbose.cbx
+File: verbose.cbx 2019/12/01 v3.14 biblatex citation style (PK/MW)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.gr
+oupplots.code.tex
+\pgfplots@group@current@plot=\count469
+\pgfplots@group@current@row=\count470
+\pgfplots@group@current@column=\count471
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.callouts.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.callouts.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgfnodepartlowerbox=\box92
+\pgfnodeparttwobox=\box93
+\pgfnodepartthreebox=\box94
+\pgfnodepartfourbox=\box95
+\pgfnodeparttwentybox=\box96
+\pgfnodepartnineteenbox=\box97
+\pgfnodeparteighteenbox=\box98
+\pgfnodepartseventeenbox=\box99
+\pgfnodepartsixteenbox=\box100
+\pgfnodepartfifteenbox=\box101
+\pgfnodepartfourteenbox=\box102
+\pgfnodepartthirteenbox=\box103
+\pgfnodeparttwelvebox=\box104
+\pgfnodepartelevenbox=\box105
+\pgfnodeparttenbox=\box106
+\pgfnodepartninebox=\box107
+\pgfnodeparteightbox=\box108
+\pgfnodepartsevenbox=\box109
+\pgfnodepartsixbox=\box110
+\pgfnodepartfivebox=\box111
+)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen320
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarysnakes.code.tex
+File: tikzlibrarysnakes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+Package pgf Warning: Snakes have been superseded by decorations. Please use the 
+decoration libraries instead of the snakes library on input line 14.
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.shapes.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.shapes.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarychains.code.tex
+File: tikzlibrarychains.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex
+File: tikzlibrarypositioning.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/libraries/tikzlibrar
+yexternal.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zexternalshared.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\pgf@layerbox@background=\box112
+\pgf@layerboxsaved@background=\box113
+)
+No auxiliary output files.
+
+\w@pgfexternal@auxout=\write8
+Package TikZ externalization: calling \geometry{driver=none} during externalizat
+ion.
+
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count472
+\@quotereset=\count473
+No file Figures/beispiel-figure0.aux.
+LaTeX Font Info:    Checking defaults for OML/cmssm/m/it on input line 62.
+LaTeX Font Info:    Trying to load font information for OML+cmssm on input line 
+62.
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omlcmssm.fd
+File: omlcmssm.fd 2019/04/04
+)
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsssy/m/n on input line 62.
+LaTeX Font Info:    Trying to load font information for OMS+cmsssy on input line
+ 62.
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omscmsssy.fd
+File: omscmsssy.fd 2019/04/04
+)
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 62
+.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmssex/m/n on input line 62.
+LaTeX Font Info:    Trying to load font information for OMX+cmssex on input line
+ 62.
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/omxcmssex.fd
+File: omxcmssex.fd 2019/06/10
+)
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/xcmss/m/n on input line 62.
+LaTeX Font Info:    Trying to load font information for U+xcmss on input line 62
+.
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/uxcmss.fd
+File: uxcmss.fd 2019/04/04
+)
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+*geometry* detected driver: <none>
+*geometry* verbose mode - [ preamble ] result:
+* driver: \Gm@driver 
+* paper: custom
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(14.22636pt, 335.74263pt, 14.22636pt)
+* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
+* \paperwidth=364.19536pt
+* \paperheight=273.14662pt
+* \textwidth=335.74263pt
+* \textheight=244.6939pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-72.26999pt
+* \headheight=14.22636pt
+* \headsep=0.0pt
+* \topskip=9.0pt
+* \footskip=14.22636pt
+* \marginparwidth=4.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=8.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count474
+\scratchdimen=\dimen321
+\scratchbox=\box114
+\nofMPsegments=\count475
+\nofMParguments=\count476
+\everyMPshowfont=\toks61
+\MPscratchCnt=\count477
+\MPscratchDim=\dimen322
+\MPnumerator=\count478
+\makeMPintoPDFobject=\count479
+\everyMPtoPDFconversion=\toks62
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
+5.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG
+,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+)) ABD: EveryShipout initializing macros
+\AtBeginShipoutBox=\box115
+Package hyperref Info: Link coloring OFF on input line 62.
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count480
+)
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
+
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-basic-dictionary
+-English.dict
+Dictionary: translator-basic-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-bibliography-dic
+tionary-English.dict
+Dictionary: translator-bibliography-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-environment-dict
+ionary-English.dict
+Dictionary: translator-environment-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-months-dictionar
+y-English.dict
+Dictionary: translator-months-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-numbers-dictiona
+ry-English.dict
+Dictionary: translator-numbers-dictionary, Language: English 
+)
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator-theorem-dictiona
+ry-English.dict
+Dictionary: translator-theorem-dictionary, Language: English 
+)
+LaTeX Font Info:    Redeclaring symbol font `AMSa' on input line 62.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `normal'
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 62.
+LaTeX Font Info:    Overwriting symbol font `AMSa' in version `bold'
+(Font)                  U/msa/m/n --> U/ssmsa/m/n on input line 62.
+LaTeX Font Info:    Redeclaring symbol font `AMSb' on input line 62.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `normal'
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 62.
+LaTeX Font Info:    Overwriting symbol font `AMSb' in version `bold'
+(Font)                  U/msb/m/n --> U/ssmsb/m/n on input line 62.
+Package pgfplots notification 'compat/show suggested version=true': document has
+ been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2019/12/01 v3.14 biblatex localization (PK/MW)
+)
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'Figures/beispiel-figure0.bbl' not found.
+No file Figures/beispiel-figure0.bbl.
+Package biblatex Info: Reference section=0 on input line 62.
+Package biblatex Info: Reference segment=0 on input line 62.
+No file Figures/beispiel-figure0.nav.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 4.25003pt on input line 62.
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 4.25003pt on input line 62.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
+(Font)              scaled to size 4.25003pt on input line 62.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [width=30mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+LaTeX Font Info:    Font shape `T1/phv/m/sc' will be
+(Font)              scaled to size 7.65005pt on input line 66.
+The command '\includegraphics [height=32mm,width=118mm]{\FileName }' has been op
+timized away. Use '/tikz/external/optimize=false' to disable this.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 10.20007pt on input line 66.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 6.80005pt on input line 66.
+
+Overfull \vbox (32.16801pt too high) detected at line 66
+ []
+
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb)
+No file Figures/beispiel-figure0.toc.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 71.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 3.40002pt on input line 71.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb
+LaTeX Font Info:    Trying to load font information for OT1+phv on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 7.65005pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 5.10004pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 4.25003pt on input line 3.
+LaTeX Font Info:    Trying to load font information for U+ssmsa on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/ussmsa.fd
+File: ussmsa.fd 2019/04/04
+)
+LaTeX Font Info:    Trying to load font information for U+ssmsb on input line 3.
+
+(/usr/share/texlive/texmf-dist/tex/latex/sansmathfonts/ussmsb.fd
+File: ussmsb.fd 2019/04/04
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 7.65005pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 5.10004pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 4.25003pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 7.65005pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 5.10004pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <5> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 4.25003pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <9> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
+(Font)              scaled to size 7.65005pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <6> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
+(Font)              scaled to size 5.10004pt on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <5> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
+(Font)              scaled to size 4.25003pt on input line 3.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.10004pt on input line 23.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+
+LaTeX Warning: Citation 'PhysRev.94.511' on page 5 undefined on input line 23.
+
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 5.95004pt on input line 23.
+)
+Overfull \vbox (1.92155pt too high) detected at line 98
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/Kn.tex
+\openout8 = Figures/beispiel-figure0.dpth
+
+Package pgfplots info on input line 13: Using 'lua backend=false' for axis: xmod
+e=log unsupported (yet).
+
+Package pgfplots Warning: Axis range for axis y is approximately empty; enlargin
+g it (it is [0.9:0.9]) on input line 22.
+
+ [warning /pgfplots/warning/approx empty range enlarged]
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 6.80005pt on input line 22.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 6.80005pt on input line 22.
+[6
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+
+LaTeX Warning: Citation 'NumaKUL' on page 6 undefined on input line 12.
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/Boltzmann.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 8.50006pt on input line 157.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 8.50006pt on input line 157.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/Sod.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+LaTeX Font Info:    Font shape `T1/phv/b/n' will be
+(Font)              scaled to size 7.65005pt on input line 16.
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sod_time0.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+Overfull \vbox (5.04823pt too high) detected at line 192
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 6.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 6.80005pt on input line 6.
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/ExamplesSOD.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/flow.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 5--5
+ [] 
+ []
+
+(./Figures/flow_red.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
+ [][] 
+ []
+
+)
+Overfull \vbox (3.22621pt too high) detected at line 290
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+Overfull \vbox (27.95369pt too high) detected at line 338
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+Overfull \vbox (27.95369pt too high) detected at line 338
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+Overfull \vbox (27.95369pt too high) detected at line 338
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+Overfull \vbox (27.95369pt too high) detected at line 338
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure0.vrb (./Figures/Sing_example.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure0.vrb
+(./Figures/beispiel-figure0.vrb (./Figures/AE_scheme.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+No file Figures/beispiel-figure0.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+LaTeX Warning: Empty bibliography on input line 391.
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 392.
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Figures/beispiel-figure0
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'Figures/beispiel-figure0.run.xml'.
+
+\openout1 = Figures/beispiel-figure0.run.xml
+)
 
 Here is how much of LuaTeX's memory you used:
- 21820 strings out of 481365
- 125171,953878 words of node,token memory allocated
- 518 words of node memory still in use:
-   5 hlist, 1 rule, 1 dir, 3 glue, 3 kern, 1 glyph, 7 attribute, 63 glue_spec, 7
- attribute_list, 1 write, 1 pdf_colorstack nodes
-   avail lists: 1:2,2:11,3:3,4:1,5:2,7:1,9:2
- 37962 multiletter control sequences out of 65536+600000
- 28 fonts using 3551523 bytes
- 67i,0n,73p,843b,283s stack positions out of 5000i,500n,10000p,200000b,100000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 53403 strings out of 481365
+ 125171,1977958 words of node,token memory allocated
+ 3778 words of node memory still in use:
+   22 hlist, 6 vlist, 3 rule, 16 disc, 1 local_par, 40 glue, 135 kern, 8 penalty
+, 158 glyph, 242 attribute, 80 glue_spec, 123 attribute_list, 4 write, 6 pdf_col
+orstack nodes
+   avail lists: 1:5,2:3940,3:1386,4:348,5:333,6:66,7:2855,8:52,9:653,10:18,11:15
+3
+ 67704 multiletter control sequences out of 65536+600000
+ 129 fonts using 10490331 bytes
+ 80i,16n,138p,901b,2323s stack positions out of 5000i,500n,10000p,200000b,100000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
+exmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/urw/helvetic/uhvro8a.pfb>
+Output written on Figures/beispiel-figure0.pdf (1 page, 20418 bytes).
+
+PDF statistics: 82 PDF objects out of 1000 (max. 8388607)
+ 18 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 131072)
+ 16 words of extra memory for PDF output out of 10000 (max. 100000000)
+

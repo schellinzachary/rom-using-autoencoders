@@ -1,0 +1,29 @@
+\frametitle{Moments of $f$ and $\tilde {f}$}
+\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\scalebox{.7}[.7]{\input{Figures/MacroError.tex}}
+				\caption{
+					Comparison of moments of $f$ and $\tilde{f}$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - undercuts shockwave in $\rho$, $\rho u$ and $E$\\
+									   \quad - $\rho u$ exceeds tail of rarefaction wave
+					
+					\item $\mathbf{R}$ - only small deviations at shockwave for $\rho u$ and $E$
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{R}$ - severe deviation at transition: tail of rarefaction wave $\rightarrow$ shockfront
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{R}$ is copy of $\mathbf{H}$
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}

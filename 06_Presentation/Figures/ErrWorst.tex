@@ -1,0 +1,118 @@
+% This file was created by tikzplotlib v0.9.6.
+\begin{tikzpicture}
+
+\begin{groupplot}[
+group style={group size=4 by 2,
+	horizontal sep= .8cm,
+	vertical sep = 1.5cm},
+tick align=outside,
+tick pos=left,
+x grid style={white!69.0196078431373!black},
+xmin=0.375, xmax=0.75,
+xtick style={color=black},
+y grid style={white!69.0196078431373!black},
+ymin=-10, ymax=10,
+ytick style={color=black},
+height=.45\textwidth,
+width=.45\textwidth,
+xlabel={\(x\)},
+ylabel={\(v\)},
+y label style={yshift=-1.4em}
+]
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-000.png};
+\node[fill=white] at (axis cs:0.65,7.5) {FOM};
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-001.png};
+\node[fill=white] at (axis cs:0.65,7.5) {POD};
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-002.png};
+\node[fill=white] at (axis cs:0.65,7.5) {FCNN};
+\nextgroupplot[
+colorbar,
+colorbar style={
+	ylabel={$\tilde{f}$},
+	ytick={0,0.1,.3,.39},
+	yticklabels={0,0.1,0.3,0.39},
+	y label style={yshift=.9cm},
+	ticklabel style={font=\footnotesize},
+	tick align=outside,
+	tick pos=right,
+	width=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
+	xshift=-0.2cm
+},
+colormap/blackwhite,
+point meta max=0.397007430832041,
+point meta min=8.50982895819395e-73,
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-003.png};
+\node[fill=white] at (axis cs:0.65,7.5) {CNN};
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-004.png};
+\node[fill=white] at (axis cs:0.65,7.5) {FOM};
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-005.png};
+\node[fill=white] at (axis cs:0.65,7.5) {POD};
+\nextgroupplot[
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-006.png};
+\node[fill=white] at (axis cs:0.65,7.5) {FCNN};
+\nextgroupplot[
+colorbar,
+colorbar style={
+	ylabel={$\tilde{f}$},
+	ytick={0,0.1,.3,.4},
+	yticklabels={0,0.1,0.3,0.4},
+	y label style={yshift=.9cm},
+	ticklabel style={font=\footnotesize},
+	tick align=outside,
+	tick pos=right,
+	width=0.1*\pgfkeysvalueof{/pgfplots/parent axis width},
+	xshift=-0.2cm
+},
+colormap/blackwhite,
+point meta max=0.406101604565777,
+point meta min=1.26406789996295e-34
+]
+\addplot graphics [
+includegraphics cmd=\pgfimage,
+xmin=0.375, xmax=0.75,
+ymin=-10, ymax=10
+] {Figures/ErrWorst-007.png};
+\node[fill=white] at (axis cs:0.65,7.5) {CNN};
+\end{groupplot}
+
+\end{tikzpicture}

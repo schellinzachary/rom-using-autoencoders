@@ -1,0 +1,28 @@
+\frametitle{Convolutional Autoencoder}
+\begin{columns}
+		\begin{column}{.5\textwidth}
+			\vspace{-1cm}
+			\begin{figure}
+				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
+					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
+				\only<2>{\subfloat[Convolutional operation, 1 strided.]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
+						}
+				\only<3>{\subfloat[Convolutional operation, 2 strided.]{
+					\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
+						}
+				\only<4>{\subfloat[Even deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_even.tex}}}
+						}
+				\only<5>{\subfloat[Uneven deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_uneven.tex}}}
+						}
+				\caption{Fundamental features of conv. networks.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item \emph{Hyperparameters}:
+			\end{itemize}
+		\end{column}
+	\end{columns}
