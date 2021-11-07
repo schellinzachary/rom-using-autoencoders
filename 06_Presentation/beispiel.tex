@@ -75,73 +75,88 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{The BGK-Model}
 \begin{frame}[fragile]{Governing equations}
-	\begin{itemize}
-		\item The Boltzmann equation approximated by $\boldsymbol{Q}$ the BGK operator as a source term with
+\begin{columns}
+	\begin{column}{.5\textwidth}
+		 \onslide<1->{\emph{Boltzmann equation with the BGK operator}
 		\begin{equation}
-		\partial_t f + v \partial_x f = \overbrace{\frac{1}{\tau} (M_f - f)}^{Q}
-		\end{equation}
-
-		\item The equilibrium solution is a Maxwellian distribution $\boldsymbol{M_f}$ with
+			\tcbhighmath[
+			size=title,title=transport,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=green]{\partial_t f + v \partial_x f} =
+			 \tcbhighmath[
+			 size=title,title=BGK op.,boxrule=0.4pt,colframe=red,drop fuzzy shadow=red]{\frac{1}{\tau} (M_f - f)}
+		\end{equation}}
+	\end{column}
+	\begin{column}{.5\textwidth}
+		\onslide<2->-{\emph{Equilibrium solution}: Maxwellian distribution $\boldsymbol{M_f}$
+		\vspace{.5em}
 		\begin{equation}
-		M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) 
-		\end{equation}
-
-		\item The duration to evolve into equilibrium is given by the relaxation time $\boldsymbol{\tau}$ with
+			M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) 
+		\end{equation}}
+	\end{column}
+\end{columns}\vspace{2em}
+\begin{columns}
+	\begin{column}{.5\textwidth}
+		\onslide<3->{\emph{Scale the duration to evolve into equilibrium}: relaxation time $\boldsymbol{\tau}$
 		\begin{equation}
-		\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{Kn}
-		\end{equation}
-
-		\item The rarefaction level is defined over the Knudsen number $\boldsymbol{Kn}$ with
+			\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{Kn}
+		\end{equation}}
+	\end{column}
+	\begin{column}{.5\textwidth}
+		\onslide<4->{\emph{Rarefaction level}: Knudsen number $\boldsymbol{Kn}$
+		\vspace{2em}
 		\begin{equation}
-		Kn = \frac{\lambda}{l}
-		\end{equation}
-	\end{itemize}
-	\footfullcite{PhysRev.94.511}
+			Kn = \frac{\lambda}{l}
+		\end{equation}}
+	\end{column}
+\end{columns}
+\footfullcite{PhysRev.94.511}
 \end{frame}
 
 \begin{frame}[fragile]{Knudsen number}
-	\begin{itemize}
+	\onslide<1->{\begin{itemize}
 		\item Solution is $f(x,v,t)$ in 1D and $f(x,y,v_x,v_y,t)$ in 2D and $f(x,y,z,v_x,v_y,v_z,t)$ in 3D 
-	\end{itemize}
-	\hfill
-	\begin{center}
+	\end{itemize}}
+	\vspace{1em}
+	\onslide<2->{\begin{center}
 			\begin{figure}
 			\centering
 			\input{Figures/Kn.tex}
 			\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
 			\label{Fig:ExpKN}
 			\footfullcite{NumaKUL}
-		\end{figure}
+		\end{figure}}
 	\end{center}
 \end{frame}
 
 \begin{frame}[fragile]{Discretization in space and velocity space in 1D}
 	\begin{itemize}
-		\item Space and time discretization considering a uniform grid i.e.\\ $x_j = j\Delta x$ and $j\in \mathbb{Z}$, $v_k = k\Delta v$ and $k\in \mathbb{Z}$, $t^i=i\Delta t$ and $t\in \mathbb{N}$,
-		\item is leading from the full PDE to a set of ODE's in time 
+		\item \emph{Space and time discretization}:
+		 $x_j = j\Delta x$ and $j\in \mathbb{Z}$, $v_k = k\Delta v$ and $k\in \mathbb{Z}$, $t^i=i\Delta t$ and $t\in \mathbb{N}$,
+		\item \emph{Leads to:} set of ODE's in time 
 			\begin{equation}
 			\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t))\mathrm{.}
 			\end{equation}
-		\item $KJ$ first-order differential equations need to be evaluated when $K$ and $J$ are the number of gridpoints in space and velocity space.
-		\item In 3D there are $K^3J^3$ first-order differential equations.
-		\item The discretization in velocity space requires the computation of the moments of $f$.
+		\item \emph{$\mathbf{KJ}$ first-order differential equations}:\\
+		$K$ gridpoints in space \& $J$ number of gridpoints in velocity space
+		\item \emph{3D}:\\ $K^3J^3$ first-order differential equations
+		\item \emph{Evaluation requires}: the moments of $f$.
 	\end{itemize}
 \end{frame}
 
 \begin{frame}[fragile]{Moments/ Expected values of $f$}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
+			\onslide<1->{\emph{Question}: How do we get the moments of $f$?}
 				\begin{itemize}
-				\item Collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$
-				\item The first moment/ Density is
+				\item<2-> Collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$
+				\item<3-> The first moment/ \emph{Density} is
 				\begin{equation}
 					\rho(x,t) = \int\! f \,\mathrm{d}v \,,
 				\end{equation}
-				\item the second moment/ Momentum is
+				\item<4-> the second moment/ \emph{Momentum} is
 				\begin{equation}
 					\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
 				\end{equation}
-				\item the third moment/ kinetic Energy is
+				\item<5-> the third moment/ \emph{Energy} is
 				\begin{equation}
 					E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
 				\end{equation}
@@ -151,7 +166,7 @@
 			\begin{center}
 				\begin{figure}
 					\input{Figures/Boltzmann.tex}
-					\caption{Illustration of the linkage between the macroscopic quantities of the gas flow and the distribution function \(f\).}
+					\caption{Illustration of the linkage between \(f\) and the moments of \(f\).}
 				\end{figure}
 			\end{center}
 		\end{column}
@@ -174,7 +189,7 @@
 		\end{column}
 		\begin{column}{.5\textwidth}
 				\begin{itemize}
-					\item Test case for numerical schemes solving
+					\item \emph{Test case} for numerical schemes solving
 					\item \emph{non-linear hyperbolic conservation laws} in gas dynamics (Gary A. Sod in 1978)
 					\item \emph{Idea}:
 					\begin{itemize}
@@ -312,7 +327,7 @@
 		\begin{itemize}
 			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
 			\begin{itemize}
-				\item $P=\input{Figures/Mat.tex}$ 
+				\item $X=\input{Figures/Mat.tex}$ 
 				%\only<8->{\qquad \qquad \input{Figures/singvec.tex}}
 			\end{itemize}
 			\item<7->\emph{Sigular Value Decomposition}: \qquad 
@@ -486,7 +501,7 @@
 					\item<8-> ...
 					\item<8-> Any other means of regularization
 				\end{itemize}
-				\item<5->\emph{Initialization}
+				\item<9->\emph{Initialization}
 			\end{itemize}
 		\end{column}
 	\end{columns}

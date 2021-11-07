@@ -2182,7 +2182,11 @@
   </bcf:bibdata>
   <bcf:section number="0">
     <bcf:citekey order="1">PhysRev.94.511</bcf:citekey>
-    <bcf:citekey order="2">NumaKUL</bcf:citekey>
+    <bcf:citekey order="2">PhysRev.94.511</bcf:citekey>
+    <bcf:citekey order="3">PhysRev.94.511</bcf:citekey>
+    <bcf:citekey order="4">PhysRev.94.511</bcf:citekey>
+    <bcf:citekey order="5">NumaKUL</bcf:citekey>
+    <bcf:citekey order="6">NumaKUL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

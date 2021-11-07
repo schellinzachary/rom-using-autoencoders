@@ -3,7 +3,8 @@
 		\vspace{-2em}
 		\footnotesize
 		\centering
-		\caption{}
+		\vspace{.5em}
+		\caption{Validation and metric results for the interpolation task with 13, 9, 7 and 5 time steps.}
 		\begin{tabular*}{11cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
 			\toprule
 			$n$& \(\Delta t^*\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(L_2\)-error}& \multicolumn{2}{c}{$L_2$-error} \\ [.5ex]
@@ -18,5 +19,6 @@
 	\end{table}
 	\begin{figure}
 		\scalebox{.7}[.7]{\input{Figures/all_int.tex}}
-		\caption{Interpolation}
+		\vspace{-.3em}
+		\caption{Energy after interpolation using the FCNN trained on 13,9,7 and 5 time steps, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
 	\end{figure}
