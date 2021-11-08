@@ -19,6 +19,105 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{Bernard}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=0a6890a43e6042e7c0f290c5092fa52e}{%
+           family={Bernard},
+           familyi={B\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+        {{hash=53a039579d59b9dc3e01be39c5f76344}{%
+           family={Iollo},
+           familyi={I\bibinitperiod},
+           given={Angelo},
+           giveni={A\bibinitperiod}}}%
+        {{hash=fe274a021e4d454e414d34b3292d4e9d}{%
+           family={Riffaud},
+           familyi={R\bibinitperiod},
+           given={Sebatian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \strng{fullhash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \strng{bibnamehash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \strng{authorbibnamehash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \strng{authornamehash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \strng{authorfullhash}{aaadd8f91a827d511baa0b4fc9d88684}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Reduced-order model for the BGK equation based on POD and optimal transport}
+      \field{year}{2018}
+    \endentry
+    \entry{Kutz}{book}{}
+      \name{author}{2}{}{%
+        {{hash=6b16ad4dc59b359f830ae6321ecd74c5}{%
+           family={Brunton},
+           familyi={B\bibinitperiod},
+           given={Steve\bibnamedelima L.},
+           giveni={S\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=39878c41ca2338687a0064bcc2ba2922}{%
+           family={Kutz},
+           familyi={K\bibinitperiod},
+           given={J.\bibnamedelimi Nathan},
+           giveni={J\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{311e0acb828ad6efbe21db395b2ea15d}
+      \strng{fullhash}{311e0acb828ad6efbe21db395b2ea15d}
+      \strng{bibnamehash}{311e0acb828ad6efbe21db395b2ea15d}
+      \strng{authorbibnamehash}{311e0acb828ad6efbe21db395b2ea15d}
+      \strng{authornamehash}{311e0acb828ad6efbe21db395b2ea15d}
+      \strng{authorfullhash}{311e0acb828ad6efbe21db395b2ea15d}
+      \field{sortinit}{B}
+      \field{sortinithash}{8de16967003c7207dae369d874f1456e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{Machine learning, dynamical systems and control}
+      \field{title}{Data driven science and engineering}
+      \field{year}{2019}
+    \endentry
+    \entry{Goodfellow}{book}{}
+      \name{author}{3}{}{%
+        {{hash=d4f74ef4c79f3bb1e51e378184d8850e}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian\bibnamedelima J.},
+           giveni={I\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, MA, USA}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \strng{fullhash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \strng{bibnamehash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \strng{authorbibnamehash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \strng{authornamehash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \strng{authorfullhash}{30d22756f6c7a7d482bdcb6c542461ed}
+      \field{sortinit}{G}
+      \field{sortinithash}{62eb2aa29549e4fdbd3cb154ec5711cb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{http://www.deeplearningbook.org}}
+      \field{title}{Deep Learning}
+      \field{year}{2016}
+    \endentry
     \entry{NumaKUL}{unpublished}{}
       \name{author}{4}{}{%
         {{hash=5d651b45064f5a5490e3d64e310b50d4}{%
@@ -62,8 +161,64 @@
       \verb https://wms.cs.kuleuven.be/groups/NUMA/events
       \endverb
     \endentry
+    \entry{puppo2019kinetic}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4f17fa02c4a26698e823574dfb47a553}{%
+           family={Puppo},
+           familyi={P\bibinitperiod},
+           given={Gabriella},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{4f17fa02c4a26698e823574dfb47a553}
+      \strng{fullhash}{4f17fa02c4a26698e823574dfb47a553}
+      \strng{bibnamehash}{4f17fa02c4a26698e823574dfb47a553}
+      \strng{authorbibnamehash}{4f17fa02c4a26698e823574dfb47a553}
+      \strng{authornamehash}{4f17fa02c4a26698e823574dfb47a553}
+      \strng{authorfullhash}{4f17fa02c4a26698e823574dfb47a553}
+      \field{sortinit}{P}
+      \field{sortinithash}{bb5b15f2db90f7aef79bb9e83defefcb}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{physics.comp-ph}
+      \field{eprinttype}{arXiv}
+      \field{title}{Kinetic models of BGK type and their numerical integration}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1902.08311
+      \endverb
+    \endentry
+    \entry{Sod}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5d6848122bd792f2b847e5b94431fd1b}{%
+           family={{Sod}},
+           familyi={S\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d6848122bd792f2b847e5b94431fd1b}
+      \strng{fullhash}{5d6848122bd792f2b847e5b94431fd1b}
+      \strng{bibnamehash}{5d6848122bd792f2b847e5b94431fd1b}
+      \strng{authorbibnamehash}{5d6848122bd792f2b847e5b94431fd1b}
+      \strng{authornamehash}{5d6848122bd792f2b847e5b94431fd1b}
+      \strng{authorfullhash}{5d6848122bd792f2b847e5b94431fd1b}
+      \field{sortinit}{S}
+      \field{sortinithash}{c319cff79d99c853d775f88277d4e45f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Computational Physics}
+      \field{month}{4}
+      \field{number}{1}
+      \field{title}{{Review. A Survey of Several Finite Difference Methods for Systems of Nonlinear Hyperbolic Conservation Laws}}
+      \field{volume}{27}
+      \field{year}{1978}
+      \field{pages}{1\bibrangedash 31}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/0021-9991(78)90023-2
+      \endverb
+      \keyw{Conservation Laws,Finite Difference Theory,Flow Equations,Gas Flow,Hyperbolic Differential Equations,Nonlinear Equations,Cartesian Coordinates,Flow Theory,Gas Dynamics,One Dimensional Flow,Shock Tubes,Fluid Mechanics and Heat Transfer}
+    \endentry
   \enddatalist
-  \missing{PhysRev.94.511}
 \endrefsection
 \endinput
 

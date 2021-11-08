@@ -1,35 +1,27 @@
-\frametitle{Convolutional Autoencoder}
+\frametitle{Time dependece of $L_2$-Error}
 \begin{columns}
-		\begin{column}{.5\textwidth}
-			\vspace{-1cm}
+		\begin{column}{.61\textwidth}
 			\begin{figure}
-				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
-					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
-				\only<2>{\subfloat[Convolutional operation, 1 strided.]{
-						\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
-				}
-				\only<3>{\subfloat[Convolutional operation, 2 strided.]{
-						\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
-				}
-				\only<4>{\subfloat[Even deconvolution]{
-						\scalebox{.5}[.5]{\input{Figures/Transpose_even.tex}}}
-				}
-				\only<5->{\subfloat[Uneven deconvolution]{
-						\scalebox{.5}[.5]{\input{Figures/Transpose_uneven.tex}}}
-				}
-				\caption{Fundamental features of conv. networks.}
+				\scalebox{.7}[.7]{\input{Figures/ErrTime.tex}}
+				\caption{
+					Comparison of the $L_2$-Error over time, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
 			\end{figure}
 		\end{column}
-		\begin{column}{.5\textwidth}
+		\begin{column}{.39\textwidth}
 			\begin{itemize}
-				\item Designed for 2D/3D input
-				\item<6->\emph{Peculiarities}: Sparse connections, parameter sharing
+				\item\emph{POD}:
 				\begin{itemize}
-					\item<6->Promotes generalization
+					\item $\mathbf{H}$ - lin. increase of $L_2$
+					\item $\mathbf{R}$ - increase \& stagnation of $L_2$
 				\end{itemize}
-				\item<7->\emph{Hyperparameters}: Number \& size of layers, kernel dimensions, stride increments
+				\item\emph{FCNN}:
 				\begin{itemize}
-					\item<8->Non-trivial influence of output dimensions \& quality
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - no distinct time dependence $L_2$
+					\item biggest value at onset
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - similar evolution
 				\end{itemize}
 			\end{itemize}
 		\end{column}

@@ -217,7 +217,6 @@
 \setbeamerfont{title in head}{series=\bfseries}
 \setbeamerfont{frametitle}{size=\large}
 \setbeamerfont{section in toc}{series=\bfseries}
-\usefonttheme[onlymath]{serif}
 
 \setbeamerfont*{itemize/enumerate body}{parent=normal text}
 \setbeamerfont*{itemize/enumerate subbody}{parent=itemize/enumerate body}

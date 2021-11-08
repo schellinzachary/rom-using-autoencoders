@@ -2181,12 +2181,48 @@
     <bcf:datasource type="file" datatype="bibtex">references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">PhysRev.94.511</bcf:citekey>
-    <bcf:citekey order="2">PhysRev.94.511</bcf:citekey>
-    <bcf:citekey order="3">PhysRev.94.511</bcf:citekey>
-    <bcf:citekey order="4">PhysRev.94.511</bcf:citekey>
-    <bcf:citekey order="5">NumaKUL</bcf:citekey>
-    <bcf:citekey order="6">NumaKUL</bcf:citekey>
+    <bcf:citekey order="1">Bernard</bcf:citekey>
+    <bcf:citekey order="2">Bernard</bcf:citekey>
+    <bcf:citekey order="3">Bernard</bcf:citekey>
+    <bcf:citekey order="4">Bernard</bcf:citekey>
+    <bcf:citekey order="5">puppo2019kinetic</bcf:citekey>
+    <bcf:citekey order="6">puppo2019kinetic</bcf:citekey>
+    <bcf:citekey order="7">puppo2019kinetic</bcf:citekey>
+    <bcf:citekey order="8">puppo2019kinetic</bcf:citekey>
+    <bcf:citekey order="9">puppo2019kinetic</bcf:citekey>
+    <bcf:citekey order="10">Sod</bcf:citekey>
+    <bcf:citekey order="11">Sod</bcf:citekey>
+    <bcf:citekey order="12">Sod</bcf:citekey>
+    <bcf:citekey order="13">Sod</bcf:citekey>
+    <bcf:citekey order="14">Sod</bcf:citekey>
+    <bcf:citekey order="15">Sod</bcf:citekey>
+    <bcf:citekey order="16">Kutz</bcf:citekey>
+    <bcf:citekey order="17">Kutz</bcf:citekey>
+    <bcf:citekey order="18">Kutz</bcf:citekey>
+    <bcf:citekey order="19">Kutz</bcf:citekey>
+    <bcf:citekey order="20">Kutz</bcf:citekey>
+    <bcf:citekey order="21">Kutz</bcf:citekey>
+    <bcf:citekey order="22">Kutz</bcf:citekey>
+    <bcf:citekey order="23">Kutz</bcf:citekey>
+    <bcf:citekey order="24">Kutz</bcf:citekey>
+    <bcf:citekey order="25">Kutz</bcf:citekey>
+    <bcf:citekey order="26">Kutz</bcf:citekey>
+    <bcf:citekey order="27">Kutz</bcf:citekey>
+    <bcf:citekey order="28">Kutz</bcf:citekey>
+    <bcf:citekey order="29">Kutz</bcf:citekey>
+    <bcf:citekey order="30">Kutz</bcf:citekey>
+    <bcf:citekey order="31">Kutz</bcf:citekey>
+    <bcf:citekey order="32">Goodfellow</bcf:citekey>
+    <bcf:citekey order="33">Goodfellow</bcf:citekey>
+    <bcf:citekey order="34">Goodfellow</bcf:citekey>
+    <bcf:citekey order="35">Goodfellow</bcf:citekey>
+    <bcf:citekey order="36">Goodfellow</bcf:citekey>
+    <bcf:citekey order="37">Goodfellow</bcf:citekey>
+    <bcf:citekey order="38">Goodfellow</bcf:citekey>
+    <bcf:citekey order="39">Goodfellow</bcf:citekey>
+    <bcf:citekey order="40">Goodfellow</bcf:citekey>
+    <bcf:citekey order="41">NumaKUL</bcf:citekey>
+    <bcf:citekey order="42">NumaKUL</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

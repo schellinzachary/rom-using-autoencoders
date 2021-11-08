@@ -1,0 +1,12 @@
+*.aux
+*.log
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.gz
+lecture.tex
+latex.tex
+tubphIT.pdf
+test*

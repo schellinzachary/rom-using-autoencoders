@@ -109,28 +109,12 @@
 		\end{equation}}
 	\end{column}
 \end{columns}
-\footcite{PhysRev.94.511}
-\end{frame}
-
-\begin{frame}[fragile]{Knudsen number}
-	\onslide<1->{\begin{center}
-			\begin{figure}
-			\centering
-			\input{Figures/Kn.tex}
-			\caption{Partitioning of $Kn$ into levels of rarefaction.}
-			\label{Fig:ExpKN}
-			\footfullcite{NumaKUL}
-		\end{figure}}
-	\end{center}
-	\onslide<2->{\begin{itemize}
-		\item Solution is $\mathbf{f(x,v,t)}$ in 1D and $\mathbf{f(x,y,v_x,v_y,t)}$ in 2D and $\mathbf{f(x,y,z,v_x,v_y,v_z,t)}$ in 3D 
-\end{itemize}}
-\vspace{1em}
+\footfullcite{Bernard}
 \end{frame}
 
 \begin{frame}[fragile]{Discretization in space and velocity space in 1D}
 	\begin{itemize}
-		\item<1-> \emph{Space and time discretization}:
+		\item<1-> \emph{Space and time discretization}:\\
 		 $x_j = j\Delta x$ and $j\in \mathbb{Z}$, $v_k = k\Delta v$ and $k\in \mathbb{Z}$, $t^i=i\Delta t$ and $t\in \mathbb{N}$,
 		\item<2-> \emph{Leads to:} set of ODE's in time 
 			\begin{equation}
@@ -139,44 +123,15 @@
 		\item<3-> \emph{$\mathbf{KJ}$ first-order differential equations}:\\
 		$K$ gridpoints in space \& $J$ number of gridpoints in velocity space
 		\item<4-> \emph{3D}:\\ $K^3J^3$ first-order differential equations
-		\item<5-> \emph{Evaluation requires}: the moments of $f$.
+		\item<5-> Solution is $\mathbf{f(x,v,t)}$ in 1D and $\mathbf{f(x,y,v_x,v_y,t)}$ in 2D and $\mathbf{f(x,y,z,v_x,v_y,v_z,t)}$ in 3D 
 	\end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]{Moments/ Expected values of $f$}
-	\begin{columns}
-		\begin{column}{.5\textwidth}
-			\onslide<1->{\emph{Question}: How do we get the moments of $f$?}
-				\begin{itemize}
-				\item<2-> Collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$
-				\item<3-> The first moment/ \emph{Density} is
-				\begin{equation}
-					\rho(x,t) = \int\! f \,\mathrm{d}v \,,
-				\end{equation}
-				\item<4-> the second moment/ \emph{Momentum} is
-				\begin{equation}
-					\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
-				\end{equation}
-				\item<5-> the third moment/ \emph{Energy} is
-				\begin{equation}
-					E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
-				\end{equation}
-			\end{itemize}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{center}
-				\begin{figure}
-					\input{Figures/Boltzmann.tex}
-					\caption{Illustration of the linkage between \(f\) and the moments of \(f\).}
-				\end{figure}
-			\end{center}
-		\end{column}
-	\end{columns}
+\footfullcite{puppo2019kinetic}
 \end{frame}
 
 \section{Sod's shock tube}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{Sod's shock tube}
+	\vspace{-1em}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
 				\begin{figure}
@@ -191,8 +146,6 @@
 		\begin{column}{.5\textwidth}
 			\vspace{-1em}
 				\begin{itemize}
-					\item \emph{Test case} for numerical schemes solving
-					\item \emph{non-linear hyperbolic conservation laws} in gas dynamics (Gary A. Sod in 1978)
 					\item \emph{Idea}:
 					\begin{itemize}
 						\item Solve problem analytically (Rankine-Hugoniot jump conditions)
@@ -208,6 +161,7 @@
 				\end{itemize}
 		\end{column}
 	\end{columns}
+\footfullcite{Sod}
 \end{frame}
 \begin{frame}[fragile]{Two Case Studies}
 	\begin{columns}
@@ -253,26 +207,7 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}[fragile]{Two Case Studies}
-	\begin{columns}
-		\begin{column}{.5\textwidth}
 
-			\begin{itemize}
-				\item Spatial resolution $J = 200$
-				\item Temporal resolution $I = 25$
-			\end{itemize}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{itemize}
-				\item Velocious resolution $K = 40$
-			\end{itemize}
-		\end{column}
-	\end{columns}
-	\begin{figure}
-		 \input{Figures/ExamplesSOD.tex}
-		 \caption{Solution $f$ top row for $\mathbf{H}$ and bottom row fro $\mathbf{R}$ in $x$ and $v$.}
-	\end{figure}
-\end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Model Order Reduction}
 \begin{frame}[fragile]{Model Order Reduction}
@@ -328,7 +263,7 @@
 	\begin{itemize}
 		\item<5->How to get $\tcbhighmath[size=title,arc=4pt,drop fuzzy shadow=green]{\Phi_i}$?
 		\begin{itemize}
-			\item<6->\emph{Preprocessing}: Seperating the spatial and temporal axis of the solution $f(x,v,t)$
+			\item<6->\emph{Preprocessing}: Separating the spatial and temporal axis of the solution $f(x,v,t)$
 			\begin{itemize}
 				\item $X=\input{Figures/Mat.tex}$ 
 				%\only<8->{\qquad \qquad \input{Figures/singvec.tex}}
@@ -355,42 +290,12 @@
 				\end{equation}
 		\end{itemize}
 	\end{itemize}
+\vspace{-2em}
+\footfullcite{Kutz}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \section{Neural Networks}
-\begin{frame}[fragile]{Terminology}
-	\begin{columns}
-		\begin{column}{.5\textwidth}
-			\begin{figure}
-				\input{Figures/Sing_example.tex}
-				\caption{Example of a simple network.}
-			\end{figure}
-			\begin{itemize}
-				\item<1-> Network with three layers
-				\begin{itemize}
-					\item<2->\colorbox{yellow}{Input layer}
-					\item<2-> \colorbox{green}{Hidden layer}
-					\item<2-> \colorbox{BlueGreen}{Output layer}
-				\end{itemize}
-			\end{itemize}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{itemize}
-				\item<3->\emph{Layer}: Stage of computation
-				\item<4->\emph{Computations}/ Forward pass
-					\begin{itemize}
-						\item $g(x)=g(xW+b)=z$
-						\item $h(z)=h(zW+b)=y$
-						 \begin{itemize}
-						 	\item $h(g(x))=y$
-						 \end{itemize}
-					\end{itemize}
-				\item<5->\emph{Neuron}: Entry in 'Tensor'
-				\item<6->\emph{Trainable parameters}: $W$, $b$
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
+
 \begin{frame}[fragile]{Autoencoders}
 	\begin{figure}
 		\scalebox{.7}[.7]{\input{Figures/AE_scheme.tex}}
@@ -401,13 +306,14 @@
 		\begin{column}{.5\textwidth}
 			\begin{itemize}
 				\item <2->\emph{Structure}: Encoder \& Decoder
-				\item <2->\emph{Layers}: Input-, Output- \emph{and} Code layer
+				\item <3->\emph{Layers}: Input-, Output- \emph{and} Code layer
+				\item <4->\emph{Compress}$\rightarrow$ \colorbox{yellow}{Salient features} $\rightarrow$ \emph{Decompress} $\rightarrow$ Reconstruction
 			\end{itemize}
 		\end{column}
 		\begin{column}{.5\textwidth}
 			\begin{itemize}
-				\item <2->\emph{Category}: Self-supervised learning
-				\item <2->\emph{Main hyperparameters}:\\
+				\item <5->\emph{Category}: Self-supervised learning
+				\item <6->\emph{Main hyperparameters}:\\
 					 	Number \& size of hidden layers\\
 					 	esp. size of code layer
 			\end{itemize}
@@ -416,34 +322,44 @@
 \end{frame}
 
 \begin{frame}[fragile]{Training}
+	\vspace{-2em}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
 			\begin{figure}
 				\scalebox{1}[1]{\input{Figures/Sing_example_01.tex}}
 				\caption{A very simple network}
 			\end{figure}
+			\begin{itemize}
+			\item<1-> Network with three layers
+			\begin{itemize}
+				\item<2->\colorbox{yellow}{Input layer}
+				\item<2-> \colorbox{green}{Hidden layer}
+				\item<2-> \colorbox{BlueGreen}{Output layer}
+			\end{itemize}
+		\end{itemize}
 		\end{column}
 	\begin{column}{.5\textwidth}
 		\begin{itemize}
-			\item \emph{Forward propagation}: $\tilde{y}=h(z,b)=h((g(y,a)),b) \qquad\inlineeqno$ 
-			\item<2-> \emph{Loss function}: $L(y,\tilde{y})=
+			\item<3-> \emph{Forward propagation}: $\tilde{y}=h(z,b)=h((g(y,a)),b) \qquad\inlineeqno$ 
+			\item<4-> \emph{Loss function}: $L(y,\tilde{y})=
 			\frac{1}{2}(y - \tilde{y})^2 = E\qquad\inlineeqno$
-			\item<3-> \emph{Backpropagation}:
+			\item<5-> \emph{Backpropagation}:
 			\begin{itemize}
-				\item<4-> $\frac{\partial E}{\partial a} =
+				\item<6-> $\frac{\partial E}{\partial a} =
 				-(y - \tilde{y})\frac{\partial y}{\partial z}\frac{\partial z}{\partial a}\qquad\inlineeqno$
-				\item<4-> $\frac{\partial E}{\partial b} =
+				\item<6-> $\frac{\partial E}{\partial b} =
 				-(y - \tilde{y})\frac{\partial y}{\partial b}\qquad\inlineeqno$ 
 			\end{itemize} 
-			\item<5-> \emph{Optimize}:
+			\item<7-> \emph{Optimize}:
 				\begin{itemize}
-					\item<5->$a_{i+1}=a_i + \epsilon \frac{\partial E}{\partial a_i}\qquad\inlineeqno$
-					\item<5->$b_{i+1}=b_i + \epsilon \frac{\partial E}{\partial b_i}\qquad\inlineeqno$
+					\item<7->$a_{i+1}=a_i + \epsilon \frac{\partial E}{\partial a_i}\qquad\inlineeqno$
+					\item<7->$b_{i+1}=b_i + \epsilon \frac{\partial E}{\partial b_i}\qquad\inlineeqno$
 				\end{itemize}
-			\item<6-> \emph{Hyperparameter}: learning rate $\epsilon$
+			\item<8-> \emph{Hyperparameter}: learning rate $\epsilon$
 		\end{itemize}
 	\end{column}
 	\end{columns}
+\footfullcite{Kutz}
 \end{frame}
 \begin{frame}[fragile]{Concepts}
 	\begin{columns}
@@ -459,7 +375,7 @@
 					\begin{itemize}
 						\item<2->\emph{Goal}: Reach optimal capacity
 					\end{itemize}
-				\item<3->\emph{How to direct capacity ?}:
+				\item<3->\emph{How to direct capacity ?}
 				\begin{itemize}
 					\item<4-> Size of the network
 					\item<5-> Activation functions
@@ -472,6 +388,7 @@
 			\end{itemize}
 		\end{column}
 	\end{columns}
+\footfullcite{Goodfellow}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
@@ -504,35 +421,7 @@
 		\end{tabular*} \label{Tab: Parameters}
 	\end{table}
 \end{frame}
-\begin{frame}[fragile]{Time dependece of $L_2$-Error}
-	\begin{columns}
-		\begin{column}{.61\textwidth}
-			\begin{figure}
-				\scalebox{.7}[.7]{\input{Figures/ErrTime.tex}}
-				\caption{
-					Comparison of the $L_2$-Error over time, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
-			\end{figure}
-		\end{column}
-		\begin{column}{.39\textwidth}
-			\begin{itemize}
-				\item\emph{POD}:
-				\begin{itemize}
-					\item $\mathbf{H}$ - lin. increase of $L_2$
-					\item $\mathbf{R}$ - increase \& stagnation of $L_2$
-				\end{itemize}
-				\item\emph{FCNN}:
-				\begin{itemize}
-					\item $\mathbf{H}$ \& $\mathbf{R}$ - no distinct time dependence $L_2$
-					\item biggest value at onset  
-				\end{itemize}
-				\item\emph{CNN}:
-				\begin{itemize}
-					\item $\mathbf{H}$ \& $\mathbf{R}$ - similar evolution
-				\end{itemize}
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
+
 \begin{frame}[fragile]{A detailed look at reconstructions}
 	\begin{columns}
 		\begin{column}{.61\textwidth}
@@ -545,16 +434,16 @@
 		\end{column}
 		\begin{column}{.39\textwidth}
 			\begin{itemize}
-				\item\emph{POD}:
+				\item<2->\emph{POD}:
 				\begin{itemize}
 					\item $\mathbf{H}$ - defective after $x=0.6$: Errors in temperature
 					\item $\mathbf{R}$ - almost exact
 				\end{itemize}
-				\item\emph{FCNN}:
+				\item<3->\emph{FCNN}:
 				\begin{itemize}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ - almost exact 
 				\end{itemize}
-				\item\emph{CNN}:
+				\item<4->\emph{CNN}:
 				\begin{itemize}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ - average of $\mathbf{H}$ \& $\mathbf{R}$
 				\end{itemize}
@@ -573,18 +462,18 @@
 		\end{column}
 		\begin{column}{.39\textwidth}
 			\begin{itemize}
-				\item\emph{POD}:
+				\item<2->\emph{POD}:
 				\begin{itemize}
 					\item $\mathbf{H}$ - undercuts shockwave in $\rho$, $\rho u$ and $E$\\
 									   ++\quad - $\rho u$ exceeds tail of rarefaction wave
 					
 					\item $\mathbf{R}$ - only small deviations at shockwave for $\rho u$ and $E$
 				\end{itemize}
-				\item\emph{FCNN}:
+				\item<3->\emph{FCNN}:
 				\begin{itemize}
 					\item $\mathbf{R}$ - severe deviation at transition: tail of rarefaction wave $\rightarrow$ shockfront 
 				\end{itemize}
-				\item\emph{CNN}:
+				\item<4->\emph{CNN}:
 				\begin{itemize}
 					\item $\mathbf{R}$ is copy of $\mathbf{H}$ 
 				\end{itemize}
@@ -603,21 +492,21 @@
 			\end{column}
 		\begin{column}{.39\textwidth}
 			\begin{itemize}
-				\item\emph{POD}:
+				\item<2->\emph{POD}:
 				\begin{itemize}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{red}{- mass} 
 					\& \colorbox{ProcessBlue}{+ mass}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{ProcessBlue}{+++ momentum}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{energy} 
 				\end{itemize}
-				\item\emph{FCNN}:
+				\item<3->\emph{FCNN}:
 				\begin{itemize}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{mass} 
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{red}{- momentum} 
 					\& \colorbox{ProcessBlue}{+ momentum}
 					\item $\mathbf{H}$ \& $\mathbf{R}$ \colorbox{green}{energy} 
 				\end{itemize}
-				\item\emph{CNN}:
+				\item<4->\emph{CNN}:
 				\begin{itemize}
 					\item No conservation
 				\end{itemize}
@@ -691,11 +580,133 @@
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-\begin{frame}[shrink=10]{Bibliography}
-	\printbibliography
+\begin{frame}
+	\begin{itemize}
+		\item \emph{Outlook}:
+		\begin{itemize}
+			\item disentangle intrinsic variables
+			\item train a model on various rarefaction levels
+			\item evolve intrinsic variables in time with an LSTM
+		\end{itemize}
+		\item \emph{Discussion}:
+		\begin{itemize}
+			\item When does the training time and finding of hyperparameters pay up?
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+\begin{frame}
+	\begin{center}
+		\Huge Thank you for your attention!
+	\end{center}
+\end{frame}
+\begin{frame}{Bibliography}
+	\printbibliography	
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Appendix}
+
+\begin{frame}[fragile]{Knudsen number}
+	\onslide<1->{\begin{center}
+			\begin{figure}
+				\centering
+				\input{Figures/Kn.tex}
+				\caption{Partitioning of $Kn$ into levels of rarefaction.}
+				\label{Fig:ExpKN}
+				\footfullcite{NumaKUL}
+		\end{figure}}
+	\end{center}
+	\onslide<2->{\begin{itemize}
+			\item Solution is $\mathbf{f(x,v,t)}$ in 1D and $\mathbf{f(x,y,v_x,v_y,t)}$ in 2D and $\mathbf{f(x,y,z,v_x,v_y,v_z,t)}$ in 3D 
+	\end{itemize}}
+	\vspace{1em}
+\end{frame}
+
+\begin{frame}[fragile]{Moments/ Expected values of $f$}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\onslide<1->{\emph{Question}: How do we get the moments of $f$?}
+			\begin{itemize}
+				\item<2-> Collision invariants $\Phi(v)=[1,v,\frac{1}{2}v^2]$
+				\item<3-> The first moment/ \emph{Density} is
+				\begin{equation}
+				\rho(x,t) = \int\! f \,\mathrm{d}v \,,
+				\end{equation}
+				\item<4-> the second moment/ \emph{Momentum} is
+				\begin{equation}
+				\rho(x,t) u(x,t) = \int\! v f \,\mathrm{d}v \,,
+				\end{equation}
+				\item<5-> the third moment/ \emph{Energy} is
+				\begin{equation}
+				E(x,t) = \int\! \frac{1}{2}v^2 f  \,\mathrm{d}v \,.
+				\end{equation}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{center}
+				\begin{figure}
+					\input{Figures/Boltzmann.tex}
+					\caption{Illustration of the linkage between \(f\) and the moments of \(f\).}
+				\end{figure}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Two Case Studies}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			
+			\begin{itemize}
+				\item Spatial resolution $J = 200$
+				\item Temporal resolution $I = 25$
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Velocious resolution $K = 40$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+	\begin{figure}
+		\input{Figures/ExamplesSOD.tex}
+		\caption{Solution $f$ top row for $\mathbf{H}$ and bottom row fro $\mathbf{R}$ in $x$ and $v$.}
+	\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]{Terminology}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\begin{figure}
+				\input{Figures/Sing_example.tex}
+				\caption{Example of a simple network.}
+			\end{figure}
+			\begin{itemize}
+				\item<1-> Network with three layers
+				\begin{itemize}
+					\item<2->\colorbox{yellow}{Input layer}
+					\item<2-> \colorbox{green}{Hidden layer}
+					\item<2-> \colorbox{BlueGreen}{Output layer}
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item<3->\emph{Layer}: Stage of computation
+				\item<4->\emph{Computations}/ Forward pass
+				\begin{itemize}
+					\item $g(x)=g(xW+b)=z$
+					\item $h(z)=h(zW+b)=y$
+					\begin{itemize}
+						\item $h(g(x))=y$
+					\end{itemize}
+				\end{itemize}
+				\item<5->\emph{Neuron}: Entry in 'Tensor'
+				\item<6->\emph{Trainable parameters}: $W$, $b$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
 \begin{frame}[fragile]{Convolutional Autoencoder}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
@@ -729,6 +740,36 @@
 				\begin{itemize}
 					\item<8->Non-trivial influence of output dimensions \& quality
 				\end{itemize}  
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Time dependece of $L_2$-Error}
+	\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\scalebox{.7}[.7]{\input{Figures/ErrTime.tex}}
+				\caption{
+					Comparison of the $L_2$-Error over time, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - lin. increase of $L_2$
+					\item $\mathbf{R}$ - increase \& stagnation of $L_2$
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - no distinct time dependence $L_2$
+					\item biggest value at onset  
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - similar evolution
+				\end{itemize}
 			\end{itemize}
 		\end{column}
 	\end{columns}

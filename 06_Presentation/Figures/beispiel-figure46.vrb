@@ -1,24 +1,28 @@
-\frametitle{Interpolation}
-\begin{table}[H]
-		\vspace{-2em}
-		\footnotesize
-		\centering
-		\vspace{.5em}
-		\caption{Validation and metric results for the interpolation task with 13, 9, 7 and 5 time steps.}
-		\begin{tabular*}{11cm}{ @{\extracolsep{\fill}} c c c c c c c c @{} }
-			\toprule
-			$n$& \(\Delta t^*\) & \multicolumn{2}{c}{Validation error} & \multicolumn{2}{c}{\(L_2\)-error}& \multicolumn{2}{c}{$L_2$-error} \\ [.5ex]
-			& & \(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\mathbf{H}^*\)&\(\mathbf{R}^*\)&\(\tilde{\mathbf{H}}^*\)&\(\tilde{\mathbf{R}}^*\)\\
-			\hline
-			13& 0.01s   & \num{2.5e-8} & \num{2.9e-7} & 0.0018 & 0.0054 & 0.0036 & 0.0058 \\
-			9& 	0.015s	& \num{2.9e-8} & \num{9.5e-8} & 0.0017 & 0.0038 & 0.0067 & 0.0056 \\
-			7&  0.02s 	& \num{2.5e-8} & \num{1.6e-7} & 0.0019 & 0.0042 & 0.0101 & 0.0073\\
-			5&  0.025s  & \num{1.7e-7} & \num{1.6e-7} & 0.0039 & 0.0051 & 0.0367 & 0.0138\\
-			\bottomrule
-		\end{tabular*}
-	\end{table}
-	\begin{figure}
-		\scalebox{.7}[.7]{\input{Figures/all_int.tex}}
-		\vspace{-.3em}
-		\caption{Energy after interpolation using the FCNN trained on 13,9,7 and 5 time steps, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
-	\end{figure}
+\frametitle{Time dependece of $L_2$-Error}
+\begin{columns}
+		\begin{column}{.61\textwidth}
+			\begin{figure}
+				\scalebox{.7}[.7]{\input{Figures/ErrTime.tex}}
+				\caption{
+					Comparison of the $L_2$-Error over time, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.39\textwidth}
+			\begin{itemize}
+				\item\emph{POD}:
+				\begin{itemize}
+					\item $\mathbf{H}$ - lin. increase of $L_2$
+					\item $\mathbf{R}$ - increase \& stagnation of $L_2$
+				\end{itemize}
+				\item\emph{FCNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - no distinct time dependence $L_2$
+					\item biggest value at onset
+				\end{itemize}
+				\item\emph{CNN}:
+				\begin{itemize}
+					\item $\mathbf{H}$ \& $\mathbf{R}$ - similar evolution
+				\end{itemize}
+			\end{itemize}
+		\end{column}
+	\end{columns}

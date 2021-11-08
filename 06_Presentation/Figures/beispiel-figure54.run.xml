@@ -81,7 +81,7 @@
       <file>Figures/beispiel-figure54.bcf</file>
     </requires>
     <requires type="editable">
-      <file>other/references.bib</file>
+      <file>references.bib</file>
     </requires>
   </external>
 </requests>
