@@ -24,8 +24,9 @@
 \usepackage[skins,theorems]{tcolorbox}
 \usepackage[font={small}]{caption}
 %Biblography
+%\usepackage[natbib=true,style=authoryear,backend=bibtex,useprefix=true]{biblatex}
 \usepackage[style=verbose,backend=biber]{biblatex}
-\bibliography{other/references.bib}
+\bibliography{references.bib}
 %\bibliographystyle{JHEP}
 %\addbibresource{other/references}
 %colors
@@ -82,12 +83,12 @@
 			\tcbhighmath[
 			size=title,title=transport,boxrule=0.4pt,colframe=blue,drop fuzzy shadow=green]{\partial_t f + v \partial_x f} =
 			 \tcbhighmath[
-			 size=title,title=BGK op.,boxrule=0.4pt,colframe=red,drop fuzzy shadow=red]{\frac{1}{\tau} (M_f - f)}
+			 size=title,title=collisions,boxrule=0.4pt,colframe=red,drop fuzzy shadow=red]{\frac{1}{\tau} (M_f - f)}
 		\end{equation}}
 	\end{column}
 	\begin{column}{.5\textwidth}
-		\onslide<2->-{\emph{Equilibrium solution}: Maxwellian distribution $\boldsymbol{M_f}$
-		\vspace{.5em}
+		\onslide<2->{\emph{Equilibrium solution}: Maxwellian distribution $\boldsymbol{M_f}$
+		\vspace{1.5em}
 		\begin{equation}
 			M_f = \frac{\rho(x,t)}{(2\pi R T(x,t))^{\frac{3}{2}}}\exp(-\frac{(v - u(x,t))^2}{2 R T(x,t)}) 
 		\end{equation}}
@@ -95,50 +96,50 @@
 \end{columns}\vspace{2em}
 \begin{columns}
 	\begin{column}{.5\textwidth}
-		\onslide<3->{\emph{Scale the duration to evolve into equilibrium}: relaxation time $\boldsymbol{\tau}$
+		\onslide<3->{\emph{Duration to evolve into equilibrium}: relaxation time $\boldsymbol{\tau}$
 		\begin{equation}
 			\tau^{-1} = \frac{\rho(x,t)T^{1-\nu}(x,t)}{Kn}
 		\end{equation}}
 	\end{column}
 	\begin{column}{.5\textwidth}
 		\onslide<4->{\emph{Rarefaction level}: Knudsen number $\boldsymbol{Kn}$
-		\vspace{2em}
+		\vspace{1em}
 		\begin{equation}
 			Kn = \frac{\lambda}{l}
 		\end{equation}}
 	\end{column}
 \end{columns}
-\footfullcite{PhysRev.94.511}
+\footcite{PhysRev.94.511}
 \end{frame}
 
 \begin{frame}[fragile]{Knudsen number}
-	\onslide<1->{\begin{itemize}
-		\item Solution is $f(x,v,t)$ in 1D and $f(x,y,v_x,v_y,t)$ in 2D and $f(x,y,z,v_x,v_y,v_z,t)$ in 3D 
-	\end{itemize}}
-	\vspace{1em}
-	\onslide<2->{\begin{center}
+	\onslide<1->{\begin{center}
 			\begin{figure}
 			\centering
 			\input{Figures/Kn.tex}
-			\caption{Partitioning of $Kn$, the Knudsen number, into levels of rarefaction.}
+			\caption{Partitioning of $Kn$ into levels of rarefaction.}
 			\label{Fig:ExpKN}
 			\footfullcite{NumaKUL}
 		\end{figure}}
 	\end{center}
+	\onslide<2->{\begin{itemize}
+		\item Solution is $\mathbf{f(x,v,t)}$ in 1D and $\mathbf{f(x,y,v_x,v_y,t)}$ in 2D and $\mathbf{f(x,y,z,v_x,v_y,v_z,t)}$ in 3D 
+\end{itemize}}
+\vspace{1em}
 \end{frame}
 
 \begin{frame}[fragile]{Discretization in space and velocity space in 1D}
 	\begin{itemize}
-		\item \emph{Space and time discretization}:
+		\item<1-> \emph{Space and time discretization}:
 		 $x_j = j\Delta x$ and $j\in \mathbb{Z}$, $v_k = k\Delta v$ and $k\in \mathbb{Z}$, $t^i=i\Delta t$ and $t\in \mathbb{N}$,
-		\item \emph{Leads to:} set of ODE's in time 
+		\item<2-> \emph{Leads to:} set of ODE's in time 
 			\begin{equation}
 			\partial_t f_{j,k} = -(v_k)_1D_x f|_{j,k}(t) + \frac{1}{\tau}({M_f}_{j,k}(t) - f_{j,k}(t))\mathrm{.}
 			\end{equation}
-		\item \emph{$\mathbf{KJ}$ first-order differential equations}:\\
+		\item<3-> \emph{$\mathbf{KJ}$ first-order differential equations}:\\
 		$K$ gridpoints in space \& $J$ number of gridpoints in velocity space
-		\item \emph{3D}:\\ $K^3J^3$ first-order differential equations
-		\item \emph{Evaluation requires}: the moments of $f$.
+		\item<4-> \emph{3D}:\\ $K^3J^3$ first-order differential equations
+		\item<5-> \emph{Evaluation requires}: the moments of $f$.
 	\end{itemize}
 \end{frame}
 
@@ -183,11 +184,12 @@
 					\only<1>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t=0s$.}}
 					\only<2>{\input{Figures/Sod_time0.tex}}
 					\only<2>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t=0s$.}}
-					\only<3>{\input{Figures/Sod_time.tex}}
-					\only<3>{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t>0s$.}}
+					\onslide<3->{\input{Figures/Sod_time.tex}}
+					\onslide<3->{\caption{Problem setup of Sod's shock tube for the BGK model in 1D at $t>0s$.}}
 			\end{figure}
 		\end{column}
 		\begin{column}{.5\textwidth}
+			\vspace{-1em}
 				\begin{itemize}
 					\item \emph{Test case} for numerical schemes solving
 					\item \emph{non-linear hyperbolic conservation laws} in gas dynamics (Gary A. Sod in 1978)
@@ -196,11 +198,11 @@
 						\item Solve problem analytically (Rankine-Hugoniot jump conditions)
 						\item Solve problem numerically
 						\item Compare results expecially \emph{resolution of discontinuities}
-				   \only<3>{\begin{itemize}
-								\item $\mathbf{x_1}$ head of rarefaction wave
-								\item $\mathbf{x_2}$ tail of rarefaction wave
-								\item $\mathbf{x_3}$ contact discontinuity
-								\item $\mathbf{x_4}$ position of shockwave
+				   \onslide<3->{\begin{itemize}
+								\item<4-> \colorbox{green}{$\mathbf{x_1}$ head of rarefaction wave}
+								\item<4-> \colorbox{green}{$\mathbf{x_2}$ tail of rarefaction wave}
+								\item<5-> \colorbox{yellow}{$\mathbf{x_3}$ contact discontinuity}
+								\item<6-> \colorbox{BlueGreen}{$\mathbf{x_4}$ position of shockwave}
 							\end{itemize}}
 					\end{itemize}
 				\end{itemize}
@@ -217,33 +219,33 @@
 		\end{column}
 		\begin{column}{.5\textwidth}
 			\begin{itemize}
-				\item Two solutions of the BGK model in Sod's shock tube
-				\item Two levels of rarefaction
+				\item<1-> Two solutions of the BGK model in Sod's shock tube
+				\item<2-> Two levels of rarefaction
 				\begin{itemize}
 					\item $\mathbf{H}$, $Kn=0.00001$, "Continuum Flow"
 					\item $\mathbf{R}$, $Kn=0.001$, "Slip flow"
 				\end{itemize}
-				\item Present discontinuities
+				\item<3-> Pronounced discontinuities
 			\begin{columns}
 				\begin{column}{.3\textwidth}
 					$\mathbf{H}$
 					\hrule
 					\begin{itemize}
 						%\only<1>{\item $x_1$}
-						\item \only<2,3,4>{\colorbox{Cyan}}{$x_1$}
-						\item \only<2,3,4>{\colorbox{Cyan}}{$x_2$}
-						\item \only<3,4>{\colorbox{Cyan}}{$x_3$}
-						\item \only<4>{\colorbox{Cyan}}{$x_4$}
+						\item \only<4,5,6>{\colorbox{Cyan}}{$x_1$}
+						\item \only<4,5,6>{\colorbox{Cyan}}{$x_2$}
+						\item \only<5,6>{\colorbox{Cyan}}{$x_3$}
+						\item \only<6>{\colorbox{Cyan}}{$x_4$}
 					\end{itemize}
 				\end{column}
 				\begin{column}{.3\textwidth}
 					$\mathbf{R}$
 					\hrule
 					\begin{itemize}
-						\item \only<2,3,4>{\colorbox{Cyan}}{$x_1$}
-						\item \only<2,3,4>{\colorbox{Cyan}}{$x_2$}
-						\item \only<3,4>{\colorbox{red}}{$x_3$}
-						\item \only<4>{\colorbox{red}}{$x_4$}
+						\item \only<4,5,6>{\colorbox{Cyan}}{$x_1$}
+						\item \only<4,5,6>{\colorbox{Cyan}}{$x_2$}
+						\item \only<5,6>{\colorbox{red}}{$x_3$}
+						\item \only<6>{\colorbox{red}}{$x_4$}
 					\end{itemize}
 				\end{column}
 			\end{columns}
@@ -268,7 +270,7 @@
 	\end{columns}
 	\begin{figure}
 		 \input{Figures/ExamplesSOD.tex}
-		 \caption{Solution $f$ for $\mathbf{H}$ and $\mathbf{R}$ in $x$ and $v$.}
+		 \caption{Solution $f$ top row for $\mathbf{H}$ and bottom row fro $\mathbf{R}$ in $x$ and $v$.}
 	\end{figure}
 \end{frame}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -299,8 +301,9 @@
 					\item<7->$P$ is \# n with $P<<K$
 					\item<8->$KJ$ ODE's vs. $PJ$ ODE's
 				\end{itemize}
-				\item<9->\emph{Evolve in time}  $\rightarrow Q(q,t)=\tilde{f}$
-				\item<10->$f-\tilde{f}<\epsilon$
+				\item<9->\emph{Evolve in time}:  $\rightarrow Q(q,t)=\tilde{f}$
+				\item<10->\emph{Evaluate mistake}: $f-\tilde{f}<\epsilon$
+				
 			\end{itemize}
 		\end{column}
 	\end{columns}
@@ -346,7 +349,7 @@
 				 $\tilde{U}=\Phi=[\Phi_1,\Phi_2,\dots,\Phi_p]\inlineeqno$
 			\item<8->\emph{Eckard-Young Theorem}:
 				\begin{equation}
-					\underset{\tilde{X}, s.t. rank(\tilde{X})=r}{\operatorname{argmin}} \| 
+					\underset{\tilde{X}, s.t. rank(\tilde{X})=p}{\operatorname{argmin}} \| 
 					X -\tilde{X}\|_F
 					=\tilde{U}\tilde{\Sigma}\tilde{V}^*
 				\end{equation}
@@ -411,43 +414,7 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-\begin{frame}[fragile]{Convolutional Autoencoder}
-	\begin{columns}
-		\begin{column}{.5\textwidth}
-			\vspace{-1cm}
-			\begin{figure}
-				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
-					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
-				\only<2>{\subfloat[Convolutional operation, 1 strided.]{
-					\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
-						}
-				\only<3>{\subfloat[Convolutional operation, 2 strided.]{
-					\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
-						}
-				\only<4>{\subfloat[Even deconvolution]{
-						\scalebox{.5}[.5]{\input{Figures/Transpose_even.tex}}}
-						}
-				\only<5->{\subfloat[Uneven deconvolution]{
-						\scalebox{.5}[.5]{\input{Figures/Transpose_uneven.tex}}}
-						}
-				\caption{Fundamental features of conv. networks.}
-			\end{figure}
-		\end{column}
-		\begin{column}{.5\textwidth}
-			\begin{itemize}
-				\item Designed for 2D/3D input
-				\item<6->\emph{Peculiarities}: Sparse connections, parameter sharing
-				\begin{itemize}
-					\item<6->Promotes generalization
-				\end{itemize}
-				\item<7->\emph{Hyperparameters}: Number \& size of layers, kernel dimensions, stride increments
-				\begin{itemize}
-					\item<-8>Non-trivial influence of output dimensions \& quality
-				\end{itemize}  
-			\end{itemize}
-		\end{column}
-	\end{columns}
-\end{frame}
+
 \begin{frame}[fragile]{Training}
 	\begin{columns}
 		\begin{column}{.5\textwidth}
@@ -458,15 +425,15 @@
 		\end{column}
 	\begin{column}{.5\textwidth}
 		\begin{itemize}
-			\item \emph{Forward propagation}: $y=h(z,b)=h((g(x,a)),b) \qquad\inlineeqno$ 
-			\item<2-> \emph{Loss function}: $L(y,\tilde{y_0})=
-			\frac{1}{2}(y - \tilde{y}_0)^2 = E\qquad\inlineeqno$
+			\item \emph{Forward propagation}: $\tilde{y}=h(z,b)=h((g(y,a)),b) \qquad\inlineeqno$ 
+			\item<2-> \emph{Loss function}: $L(y,\tilde{y})=
+			\frac{1}{2}(y - \tilde{y})^2 = E\qquad\inlineeqno$
 			\item<3-> \emph{Backpropagation}:
 			\begin{itemize}
 				\item<4-> $\frac{\partial E}{\partial a} =
-				-(y_0 - y)\frac{\partial y}{\partial z}\frac{\partial z}{\partial a}\qquad\inlineeqno$
+				-(y - \tilde{y})\frac{\partial y}{\partial z}\frac{\partial z}{\partial a}\qquad\inlineeqno$
 				\item<4-> $\frac{\partial E}{\partial b} =
-				-(y_0 - y)\frac{\partial y}{\partial b}\qquad\inlineeqno$ 
+				-(y - \tilde{y})\frac{\partial y}{\partial b}\qquad\inlineeqno$ 
 			\end{itemize} 
 			\item<5-> \emph{Optimize}:
 				\begin{itemize}
@@ -601,7 +568,7 @@
 			\begin{figure}
 				\scalebox{.7}[.7]{\input{Figures/MacroError.tex}}
 				\caption{
-					Comparison of moments of $f$ and $\tilde{f}$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
+					Moments of $f$ and $\tilde{f}$ at $t=t_{end}$, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
 			\end{figure}
 		\end{column}
 		\begin{column}{.39\textwidth}
@@ -665,7 +632,7 @@
 				\only<1>{\scalebox{.7}[.7]{\input{Figures/heat_hy.tex}}
 					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
 				\only<2>{\scalebox{.7}[.7]{\input{Figures/heat_rare.tex}}
-					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{H}$}}
+					\caption{Pearson correlation between of macroscopic quantities and intrinsic variables for $\mathbf{R}$}}
 			\end{figure}
 		\end{column}
 		\begin{column}{.35\textwidth}
@@ -722,15 +689,48 @@
 		\caption{Energy after interpolation using the FCNN trained on 13,9,7 and 5 time steps, $\mathbf{H}$ top and $\mathbf{R}$ bottom.}
 	\end{figure}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Discussion}
-
-\begin{frame}{ToDo}
-\begin{itemize}
-\item \emph{ToDo} schreiben
-\item \emph{ToDo} abarbeiten
-\end{itemize}
-\end{frame}
-\begin{frame}
+\begin{frame}[shrink=10]{Bibliography}
 	\printbibliography
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Appendix}
+\begin{frame}[fragile]{Convolutional Autoencoder}
+	\begin{columns}
+		\begin{column}{.5\textwidth}
+			\vspace{-1cm}
+			\begin{figure}
+				\subfloat[Encoder of a convolutional autoencoder without input layer.]{
+					\scalebox{.5}[.5]{\input{Figures/Kernel.tex}}}\\
+				\only<2>{\subfloat[Convolutional operation, 1 strided.]{
+						\scalebox{.5}[.5]{\input{Figures/Stride_01.tex}}}
+				}
+				\only<3>{\subfloat[Convolutional operation, 2 strided.]{
+						\scalebox{.5}[.5]{\input{Figures/Stride_02.tex}}}
+				}
+				\only<4>{\subfloat[Even deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_even.tex}}}
+				}
+				\only<5->{\subfloat[Uneven deconvolution]{
+						\scalebox{.5}[.5]{\input{Figures/Transpose_uneven.tex}}}
+				}
+				\caption{Fundamental features of conv. networks.}
+			\end{figure}
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{itemize}
+				\item Designed for 2D/3D input
+				\item<6->\emph{Peculiarities}: Sparse connections, parameter sharing
+				\begin{itemize}
+					\item<6->Promotes generalization
+				\end{itemize}
+				\item<7->\emph{Hyperparameters}: Number \& size of layers, kernel dimensions, stride increments
+				\begin{itemize}
+					\item<8->Non-trivial influence of output dimensions \& quality
+				\end{itemize}  
+			\end{itemize}
+		\end{column}
+	\end{columns}
 \end{frame}
 \end{document}

@@ -1,11 +1,45 @@
-This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2021.6.7)  7 NOV 2021 21:27
+This is LuaTeX, Version 1.10.0 (TeX Live 2019/Debian)  (format=lualatex 2020.12.7)  8 NOV 2021 15:34
  system commands enabled.
 **\def\tikzexternalrealjob{beispiel}\input{beispiel}
-[\directlua]:1: module 'luaotfload-main' not found:
-	no field package.preload['luaotfload-main']
-	[kpse lua searcher] file not found: 'luaotfload-main'
-	[kpse C searcher] file not found: 'luaotfload-main'
-Error in luaotfload: reverting to OT1
+Lua module: luaotfload-main 2020-02-02 3.12 luaotfload entry point
+Lua module: luaotfload-init 2020-02-02 3.12 luaotfload submodule / initialization
+Lua module: lualibs 2020-02-02 2.70 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2020-02-02 2.70 ConTeXt Lua libraries -- extended collection.
+Lua module: luaotfload-log 2020-02-02 3.12 luaotfload submodule / logging
+Lua module: luaotfload-parsers 2020-02-02 3.12 luaotfload submodule / filelist
+Lua module: luaotfload-configuration 2020-02-02 3.12 luaotfload submodule / config file reader
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/luatex-cache/generic-dev/names.
+luaotfload | init : Loading fontloader “fontloader-2020-01-26.lua” from kpse-resolved path “/usr/share/texlive/texmf-dist/tex/luatex/luaotfload/fontloader-2020-01-26.lua”.
+Lua-only attribute luaotfload@state = 2
+Lua-only attribute luaotfload@noligature = 3
+Lua-only attribute luaotfload@syllabe = 4
+luaotfload | init : Context OpenType loader version “3.11”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Lua module: luaotfload-loaders 2020-02-02 3.12 luaotfload submodule / callback handling
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua module: luaotfload-database 2020-02-02 3.12 luaotfload submodule / database
+Lua module: luaotfload-unicode 2020-02-02 3.12 luaotfload submodule / Unicode helpers
+Lua module: luaotfload-colors 2020-02-02 3.12 luaotfload submodule / color
+Lua-only attribute luaotfload_color_attribute = 5
+Lua module: luaotfload-resolvers 2020-02-02 3.12 luaotfload submodule / resolvers
+luaotfload | conf : Root cache directory is /home/zachi/.texlive2019/texmf-var/luatex-cache/generic-dev/names.
+Lua module: luaotfload-features 2020-02-02 3.12 luaotfload submodule / features
+Lua module: luaotfload-letterspace 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-embolden 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-notdef 2020-02-02 3.12 luaotfload submodule / color
+Lua module: luaotfload-auxiliary 2020-02-02 3.12 luaotfload submodule / auxiliary functions
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' at position 2 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 3 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 4 in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' at position 5 in `luaotfload.patch_font'.
+Lua module: luaotfload-fallback 2020-02-02 3.12 luaotfload submodule / fallback
+Lua module: luaotfload-multiscript 2020-02-02 3.12 luaotfload submodule / multiscript
+Lua module: luaotfload-script 2020-02-02 3.12 luaotfload submodule / Script helpers
+Lua module: luaotfload-tounicode 2020-02-02 3.12 luaotfload submodule / tounicode
+Inserting `luaotfload.rewrite_fontname' at position 6 in `luaotfload.patch_font'.
 (./beispiel.tex (./tuberlinbeamer.cls
 Document Class: tuberlinbeamer 
 \c@tubdeko=\count163
@@ -105,12 +139,10 @@ ption ``onlymath'' on input line 336.
 
 (/usr/share/texlive/texmf-dist/tex/latex/extsizes/size9.clo
 File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 18
-.
-(/usr/share/texmf/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/sh
-are/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+luaotfload | db : Font names database loaded from /home/zachi/.texlive2019/texmf
+-var/luatex-cache/generic-dev/names/luaotfload-names.luc) (/usr/share/texlive/t
+exmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/t
+ex/latex/graphics/graphicx.sty
 Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
@@ -606,15 +638,11 @@ Package: amsthm 2017/10/31 v2.20.4
 \dth@everypar=\toks45
 )
 \c@theorem=\count308
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty))
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 3
-63.
-(/usr/share/texmf/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/
-share/texlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/sha
-re/texlive/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share
-/texlive/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerbasethemes.sty)) (/usr/
+share/texlive/texmf-dist/tex/latex/beamer/beamerthemedefault.sty (/usr/share/te
+xlive/texmf-dist/tex/latex/beamer/beamerfontthemedefault.sty) (/usr/share/texli
+ve/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty) (/usr/share/texlive
+/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 \beamer@dima=\dimen277
 \beamer@dimb=\dimen278
 ) (/usr/share/texlive/texmf-dist/tex/latex/beamer/beamerouterthemedefault.sty)))
@@ -770,15 +798,88 @@ File: switch.def 2020/02/14 3.40 Babel switching mechanism
 \l@dumylang=\language2
 Package babel Info: Non-standard hyphenation setup on input line 117.
 \l@nohyphenation=\language3
-\l@ngerman-x-2019-04-04=\language4
-\l@german-x-2019-04-04=\language5
-\l@ancientgreek=\language6
-\l@monogreek=\language7
-\l@german=\language8
-\l@ngerman=\language9
-\l@greek=\language10
-\l@swissgerman=\language11
-\l@ibycus=\language12
+\l@ethiopic=\language4
+\l@thai=\language5
+\l@turkmen=\language6
+\l@polish=\language7
+\l@swedish=\language8
+\l@slovak=\language9
+\l@sanskrit=\language10
+\l@dutch=\language11
+\l@estonian=\language12
+\l@assamese=\language13
+\l@latvian=\language14
+\l@friulan=\language15
+\l@pali=\language16
+\l@monogreek=\language17
+\l@esperanto=\language18
+\l@tamil=\language19
+\l@romanian=\language20
+\l@lithuanian=\language21
+\l@georgian=\language22
+\l@piedmontese=\language23
+\l@ibycus=\language24
+\l@bengali=\language25
+\l@ukenglish=\language26
+\l@german=\language27
+\l@bulgarian=\language28
+\l@italian=\language29
+\l@greek=\language30
+\l@belarusian=\language31
+\l@bokmal=\language32
+\l@ngerman=\language33
+\l@portuguese=\language34
+\l@panjabi=\language35
+\l@latin=\language36
+\l@turkish=\language37
+\l@spanish=\language38
+\l@mongolianlmc=\language39
+\l@ancientgreek=\language40
+\l@croatian=\language41
+\l@danish=\language42
+\l@irish=\language43
+\l@welsh=\language44
+\l@french=\language45
+\l@churchslavonic=\language46
+\l@pinyin=\language47
+\l@armenian=\language48
+\l@finnish=\language49
+\l@serbian=\language50
+\l@mongolian=\language51
+\l@swissgerman=\language52
+\l@arabic=\language53
+\l@serbianc=\language54
+\l@catalan=\language55
+\l@galician=\language56
+\l@oriya=\language57
+\l@usenglishmax=\language58
+\l@nynorsk=\language59
+\l@occitan=\language60
+\l@hungarian=\language61
+\l@russian=\language62
+\l@farsi=\language63
+\l@ngerman-x-2019-04-04=\language64
+\l@afrikaans=\language65
+\l@gujarati=\language66
+\l@ukrainian=\language67
+\l@slovenian=\language68
+\l@romansh=\language69
+\l@kannada=\language70
+\l@telugu=\language71
+\l@hindi=\language72
+\l@czech=\language73
+\l@interlingua=\language74
+\l@basque=\language75
+\l@icelandic=\language76
+\l@marathi=\language77
+\l@german-x-2019-04-04=\language78
+\l@indonesian=\language79
+\l@malayalam=\language80
+\l@kurmanji=\language81
+\l@uppersorbian=\language82
+\l@coptic=\language83
+\l@classiclatin=\language84
+\l@liturgicallatin=\language85
 ) (/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
@@ -786,20 +887,16 @@ File: babel.def 2020/02/14 3.40 Babel common definitions
 \babel@savecnt=\count312
 \U@D=\dimen281
 (/usr/share/texlive/texmf-dist/tex/generic/babel/luababel.def
-\bbl@attr@locale=\attribute2
+\bbl@attr@locale=\attribute6
 )
 LaTeX Info: Redefining \textlatin on input line 2319.
 )
-Package babel Info: \l@british = using hyphenrules for english
-(babel)             (\language0) on input line 82.
-Package babel Info: \l@UKenglish = using hyphenrules for english
-(babel)             (\language0) on input line 83.
 Package babel Info: \l@canadian = using hyphenrules for english
 (babel)             (\language0) on input line 102.
-Package babel Info: \l@australian = using hyphenrules for english
-(babel)             (\language0) on input line 105.
-Package babel Info: \l@newzealand = using hyphenrules for english
-(babel)             (\language0) on input line 108.
+Package babel Info: \l@australian = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 105.
+Package babel Info: \l@newzealand = using hyphenrules for ukenglish
+(babel)             (\language26) on input line 108.
 )) (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2018/08/11 v1.3c Input encoding file
 \inpenc@prehook=\toks46
@@ -1229,7 +1326,7 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \bibhang=\skip96
 \blx@bcfin=\read5
 \blx@bcfout=\write7
-\blx@langwohyphens=\language13
+\blx@langwohyphens=\language86
 \c@mincomprange=\count408
 \c@maxcomprange=\count409
 \c@mincompwidth=\count410
@@ -1778,29 +1875,29 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 7.65005pt on input line 10.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 7.65005pt on input line 13.
+(Font)              scaled to size 7.65005pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <6> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 5.10004pt on input line 13.
+(Font)              scaled to size 5.10004pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <5> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 4.25003pt on input line 13.
+(Font)              scaled to size 4.25003pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 7.65005pt on input line 13.
+(Font)              scaled to size 7.65005pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <6> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 5.10004pt on input line 13.
+(Font)              scaled to size 5.10004pt on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <5> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 13.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `OT1/phv/b/sl' will be
-(Font)              scaled to size 4.25003pt on input line 13.
+(Font)              scaled to size 4.25003pt on input line 17.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 5.10004pt on input line 35.
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
@@ -1861,11 +1958,11 @@ A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 13.
+(Font)              scaled to size 6.80005pt on input line 9.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
-(Font)              scaled to size 6.80005pt on input line 13.
+(Font)              scaled to size 6.80005pt on input line 9.
 
-LaTeX Warning: Citation 'NumaKUL' on page 9 undefined on input line 13.
+LaTeX Warning: Citation 'NumaKUL' on page 9 undefined on input line 9.
 
 )
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -1878,8 +1975,16 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 6.80005pt on input line 9.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <7> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 9.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 5.95004pt on input line 9.
 
-LaTeX Warning: Citation 'NumaKUL' on page 10 undefined on input line 13.
+LaTeX Warning: Citation 'NumaKUL' on page 10 undefined on input line 9.
 
 )
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -1897,27 +2002,46 @@ The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
 n optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
  away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
 
 \openout4 = Figures/beispiel-figure82.vrb
 (./Figures/beispiel-figure82.vrb (./Figures/Boltzmann.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
-)
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 6.80005pt on input line 25.
-)
+))
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 174.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 174.
 LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
 (Font)              scaled to size 8.50006pt on input line 174.
-LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <7> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 174.
-LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
-(Font)              scaled to size 5.95004pt on input line 174.
 LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
 (Font)              scaled to size 8.50006pt on input line 174.
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -1978,7 +2102,13 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 (./Figures/beispiel-figure82.vrb (./Figures/Sod.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
+) (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
 ))
+Overfull \vbox (5.57706pt too high) detected at line 210
+ []
+
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
 y. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
@@ -1988,7 +2118,13 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 (./Figures/beispiel-figure82.vrb (./Figures/Sod_time0.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
+) (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
 ))
+Overfull \vbox (5.57706pt too high) detected at line 210
+ []
+
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
 y. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
@@ -1999,7 +2135,46 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ))
-Overfull \vbox (5.04823pt too high) detected at line 209
+Overfull \vbox (5.57706pt too high) detected at line 210
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+Overfull \vbox (5.57706pt too high) detected at line 210
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+Overfull \vbox (5.57706pt too high) detected at line 210
+ []
+
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Sod_time.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+Overfull \vbox (5.57706pt too high) detected at line 210
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2010,6 +2185,26 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
  away. Use '/tikz/external/optimize=false' to disable this.
 
 \openout4 = Figures/beispiel-figure82.vrb
+(./Figures/beispiel-figure82.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/MacroFOMhyvsrare.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
 (./Figures/beispiel-figure82.vrb (./Figures/MacroFOMhyvsrare.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
@@ -2088,7 +2283,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2114,7 +2309,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2140,7 +2335,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2166,7 +2361,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2192,7 +2387,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2218,7 +2413,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2244,7 +2439,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2270,7 +2465,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2296,7 +2491,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2322,7 +2517,7 @@ Overfull \hbox (141.37772pt too wide) in paragraph at lines 6--7
  []
 
 )
-Overfull \vbox (3.22621pt too high) detected at line 307
+Overfull \vbox (3.22621pt too high) detected at line 309
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2344,7 +2539,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2369,7 +2564,7 @@ Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
  []
 
 )
-Overfull \vbox (27.95369pt too high) detected at line 355
+Overfull \vbox (27.95369pt too high) detected at line 357
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2382,7 +2577,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2407,7 +2602,7 @@ Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
  []
 
 )
-Overfull \vbox (27.95369pt too high) detected at line 355
+Overfull \vbox (27.95369pt too high) detected at line 357
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2420,7 +2615,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2445,7 +2640,7 @@ Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
  []
 
 )
-Overfull \vbox (27.95369pt too high) detected at line 355
+Overfull \vbox (27.95369pt too high) detected at line 357
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2458,7 +2653,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2483,7 +2678,7 @@ Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
  []
 
 )
-Overfull \vbox (27.95369pt too high) detected at line 355
+Overfull \vbox (27.95369pt too high) detected at line 357
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -2496,42 +2691,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
-\OT1/phv/m/n/9 [[]]$  
- []
-
-
-Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
-[]\T1/phv/m/n/9 LSV 
- []
-
-
-Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
-[]\T1/phv/m/n/9 SV 
- []
-
-
-Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
-[]\T1/phv/m/n/9 RSV 
- []
-
-
-Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
-[]\OT1/cmss/m/n/9  
- []
-
-)
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Mat.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-)
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2566,7 +2726,7 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2601,7 +2761,42 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 )
-Overfull \hbox (20.49931pt too wide) in paragraph at lines 21--23
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
+\OT1/phv/m/n/9 [[]]$  
+ []
+
+
+Overfull \hbox (8.36136pt too wide) in paragraph at lines 27--27
+[]\T1/phv/m/n/9 LSV 
+ []
+
+
+Overfull \hbox (3.52454pt too wide) in paragraph at lines 29--29
+[]\T1/phv/m/n/9 SV 
+ []
+
+
+Overfull \hbox (5.60846pt too wide) in paragraph at lines 31--31
+[]\T1/phv/m/n/9 RSV 
+ []
+
+
+Overfull \hbox (0.58345pt too wide) in paragraph at lines 34--34
+[]\OT1/cmss/m/n/9  
+ []
+
+)
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Mat.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (18.99986pt too wide) in paragraph at lines 21--23
 \OT1/phv/m/n/9 [[]]$  
  []
 
@@ -2714,109 +2909,6 @@ n optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
  away. Use '/tikz/external/optimize=false' to disable this.
 (./Figures/beispiel-figure82.vrb (./Figures/AE_scheme.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-
-\openout4 = Figures/beispiel-figure82.vrb
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Stride_01.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Stride_02.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Transpose_even.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Transpose_uneven.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Transpose_uneven.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Transpose_uneven.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-))
-The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
-y. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
-n optimized away. Use '/tikz/external/optimize=false' to disable this.
-The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
- away. Use '/tikz/external/optimize=false' to disable this.
-(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
-A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
-sable this.
-) (./Figures/Transpose_uneven.tex
 A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
 sable this.
 ))
@@ -3088,14 +3180,10 @@ The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
 
 \openout4 = Figures/beispiel-figure82.vrb
 (./Figures/beispiel-figure82.vrb (./Figures/ErrTime.tex
-\openout8 = Figures/beispiel-figure82.dpth
- [81
-
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
-Overfull \hbox (3.6589pt too wide) in paragraph at lines 5--7
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+)
+Overfull \hbox (10.18152pt too wide) in paragraph at lines 5--7
  [] 
  []
 
@@ -3134,7 +3222,7 @@ Overfull \hbox (10.18152pt too wide) in paragraph at lines 5--7
  []
 
 )
-Overfull \vbox (6.97171pt too high) detected at line 627
+Overfull \vbox (6.97171pt too high) detected at line 593
  []
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
@@ -3208,7 +3296,7 @@ n optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
  away. Use '/tikz/external/optimize=false' to disable this.
 
-LaTeX Warning: Empty bibliography on input line 735.
+LaTeX Warning: Empty bibliography on input line 701.
 
 The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
 y. Use '/tikz/external/optimize=false' to disable this.
@@ -3216,10 +3304,124 @@ The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
 n optimized away. Use '/tikz/external/optimize=false' to disable this.
 The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
  away. Use '/tikz/external/optimize=false' to disable this.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 736.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 736.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 736.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 736.
+No file Figures/beispiel-figure82.toc.
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+
+\openout4 = Figures/beispiel-figure82.vrb
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+\openout8 = Figures/beispiel-figure82.dpth
+ [94
+
+
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]) (./Figures/Stride_01.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Stride_02.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Transpose_even.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Transpose_uneven.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Transpose_uneven.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Transpose_uneven.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+(./Figures/beispiel-figure82.vrb (./Figures/Kernel.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+) (./Figures/Transpose_uneven.tex
+A tikzpicture has been optimized away. Use '/tikz/external/optimize=false' to di
+sable this.
+))
+The command '\includegraphics [width=18mm]{\pathtologo }' has been optimized awa
+y. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=10mm,width=94mm]{\FileName _head}' has bee
+n optimized away. Use '/tikz/external/optimize=false' to disable this.
+The command '\includegraphics [height=5.5mm]{\pathtomylogo }' has been optimized
+ away. Use '/tikz/external/optimize=false' to disable this.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 740.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 740.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 740.
 
 LaTeX Warning: There were undefined references.
 
@@ -3234,26 +3436,23 @@ Package logreq Info: Writing requests to 'Figures/beispiel-figure82.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 56093 strings out of 481365
- 100000,2373549 words of node,token memory allocated
- 4704 words of node memory still in use:
-   22 hlist, 6 vlist, 3 rule, 16 disc, 1 local_par, 40 glue, 258 kern, 8 penalty
-, 157 glyph, 257 attribute, 84 glue_spec, 257 attribute_list, 4 write, 6 pdf_col
-orstack nodes
-   avail lists: 2:5661,3:1933,4:349,5:322,6:66,7:2856,8:52,9:655,10:20,11:219,12
-:1
- 69579 multiletter control sequences out of 65536+600000
- 147 fonts using 8208835 bytes
- 86i,24n,138p,901b,3102s stack positions out of 5000i,500n,10000p,200000b,100000s
+ 55942 strings out of 481365
+ 125171,2373549 words of node,token memory allocated
+ 14706 words of node memory still in use:
+   92 hlist, 20 vlist, 12 rule, 88 disc, 17 local_par, 258 glue, 356 kern, 55 pe
+nalty, 721 glyph, 942 attribute, 84 glue_spec, 473 attribute_list, 4 write, 56 p
+df_literal, 52 pdf_colorstack, 2 pdf_setmatrix, 2 pdf_save, 2 pdf_restore nodes
+   avail lists: 1:3,2:3515,3:1289,4:303,5:261,6:50,7:2162,8:52,9:562,10:20,11:14
+8
+ 69303 multiletter control sequences out of 65536+600000
+ 138 fonts using 11066715 bytes
+ 80i,16n,138p,901b,1586s stack positions out of 5000i,500n,10000p,200000b,100000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/t
-exmf-dist/fonts/type1/public/sansmathfonts/cmsssy6.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/sansmathfonts/cmsssy9.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/helvetic/uhvro8a.pfb>
-Output written on Figures/beispiel-figure82.pdf (1 page, 32827 bytes).
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on Figures/beispiel-figure82.pdf (1 page, 10382 bytes).
 
-PDF statistics: 125 PDF objects out of 1000 (max. 8388607)
- 21 compressed objects within 1 object stream
+PDF statistics: 123 PDF objects out of 1000 (max. 8388607)
+ 12 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  16 words of extra memory for PDF output out of 10000 (max. 100000000)
 
